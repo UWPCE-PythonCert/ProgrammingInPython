@@ -1,2 +1,5 @@
 # Python210CourseMaterials
-Course Materials fopr Python 210
+
+Course Materials for Python 210
+
+**LICENSE:** Creative Commons Attribution-ShareAlike 4.0 International Public License
