@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mailroom Part 1 &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mailroom Tutorial" href="mailroom_tutorial.html" />
+    <link rel="prev" title="String Formatting Exercise" href="string_formatting.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="slicing.html">Slicing Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="list_lab.html">List Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Mailroom Part 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Mailroom Part 1</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/mailroom-part1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mailroom-part-1">
+<span id="exercise-mailroom-part1"></span><h1>Mailroom Part 1<a class="headerlink" href="#mailroom-part-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Overall Assignment Structure</strong></p>
+<p>This is the first in a four-part that will make use of your Python programming skills as you develop them during this course. You will start work on the program in this assignment (Part 1) that will will submit for. Lesson 3. You will submit Part 2 for Lesson 4,  Part 3 for Lesson 5, and Part 4 for Lesson 6.</p>
+<p>This progressive work will give you a strong foundation for success in the final project, a Mailroom program using object-oriented programming in lesson 9.</p>
+<div class="section" id="overall-program-goal">
+<h2>Overall Program Goal:<a class="headerlink" href="#overall-program-goal" title="Permalink to this headline">¶</a></h2>
+<p>You work in the mail room at a local charity. Part of your job is to write
+incredibly boring, repetitive emails thanking your donors for their generous
+gifts. You are tired of doing this over and over again, so you’ve decided to
+let Python help you out of a jam and do your work for you.</p>
+</div>
+<div class="section" id="the-program-part-1">
+<h2>The Program: Part 1<a class="headerlink" href="#the-program-part-1" title="Permalink to this headline">¶</a></h2>
+<p>Write a small command-line script called <code class="docutils literal notranslate"><span class="pre">mailroom.py</span></code>. This script should be executable. The script should accomplish the following goals:</p>
+<ul class="simple">
+<li><p>It should have a data structure that holds a list of your donors and a
+history of the amounts they have donated. This structure should be populated
+at first with at least five donors, with between 1 and 3 donations each. You can store that data structure in the global namespace.</p></li>
+<li><p>The script should prompt the user (you) to choose from a menu of 3 actions:
+“Send a Thank You”, “Create a Report” or “quit”.</p></li>
+</ul>
+</div>
+<div class="section" id="send-a-thank-you">
+<h2>Send a Thank You<a class="headerlink" href="#send-a-thank-you" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If the user (you) selects “Send a Thank You” option, prompt for a Full Name.</p>
+<ul>
+<li><p>If the user types <code class="docutils literal notranslate"><span class="pre">list</span></code> show them a list of the donor names and re-prompt.</p></li>
+<li><p>If the user types a name not in the list, add that name to the data structure and use it.</p></li>
+<li><p>If the user types a name in the list, use it.</p></li>
+</ul>
+</li>
+<li><p>Once a name has been selected, prompt for a donation amount.</p>
+<ul>
+<li><p>Convert the amount into a number; it is OK at this point for the program to crash if someone types a bogus amount.</p></li>
+<li><p>Add that amount to the donation history of the selected user.</p></li>
+</ul>
+</li>
+<li><p>Finally, use string formatting to compose an email thanking the donor for their generous donation. Print the email to the terminal and return to the original prompt.</p></li>
+</ul>
+<p>It is fine (for now) for the program not to store the names of the new donors that had been added, in other words, to forget new donors once the script quits running.</p>
+</div>
+<div class="section" id="create-a-report">
+<h2>Create a Report<a class="headerlink" href="#create-a-report" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If the user (you) selected “Create a Report,” print a list of your donors,
+sorted by total historical donation amount.</p>
+<ul>
+<li><p>Include Donor Name, total donated, number of donations, and average donation amount as values in each row. You do not need to print out all of each donor’s donations, just the summary info.</p></li>
+<li><p>Using string formatting, format the output rows as nicely as possible.  The end result should be tabular (values in each column should align with those above and below).</p></li>
+<li><p>After printing this report, return to the original prompt.</p></li>
+</ul>
+</li>
+<li><p>At any point, the user should be able to quit their current task and return
+to the original prompt.</p></li>
+<li><p>From the original prompt, the user should be able to quit the script cleanly.</p></li>
+</ul>
+<p>Your report should look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Donor Name                | Total Given | Num Gifts | Average Gift
+------------------------------------------------------------------
+William Gates, III         $  653784.49           2  $   326892.24
+Mark Zuckerberg            $   16396.10           3  $     5465.37
+Jeff Bezos                 $     877.33           1  $      877.33
+Paul Allen                 $     708.42           3  $      236.14
+</pre></div>
+</div>
+</div>
+<div class="section" id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
+<p>First, factor your script into separate functions. Each of the above
+tasks can be accomplished by a series of steps.  Write discreet functions
+that accomplish individual steps and call them.</p>
+<p>Second, use loops to control the logical flow of your program. Interactive
+programs are a classic use case for the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<p>Of course, <code class="docutils literal notranslate"><span class="pre">input()</span></code> will be useful here.</p>
+<p>Put the functions you write into the script at the top.</p>
+<p>Put your main interaction into an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> block.</p>
+<p>Finally, for Part 1 use only functions and the basic Python data types you’ve learned
+about so far in Lessons 1-3. There is no need to go any farther than that for this assignment.</p>
+<p>If you’re having a hard time getting started, or need some pointers, you should read the tutorial here: <a class="reference internal" href="mailroom_tutorial.html#exercise-mailroom-part1-tutorial"><span class="std std-ref">Mailroom Tutorial</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mailroom_tutorial.html" class="btn btn-neutral float-right" title="Mailroom Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="string_formatting.html" class="btn btn-neutral float-left" title="String Formatting Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

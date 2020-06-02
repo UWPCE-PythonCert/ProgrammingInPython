@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Logging and the logging module &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Logging and the logging module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Logging.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="logging-and-the-logging-module">
+<span id="logging"></span><h1>Logging and the logging module<a class="headerlink" href="#logging-and-the-logging-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-logging">
+<h2>What is Logging?<a class="headerlink" href="#what-is-logging" title="Permalink to this headline">¶</a></h2>
+<p class="left small">What is logging?</p>
+<blockquote class="left small">
+<div><p>In computing, a logfile is a file that records either events that occur in an operating system or other software runs, or messages between different users of a communication software.</p>
+<p>Logging is the act of keeping a log. In the simplest case, messages are written to a single logfile.</p>
+</div></blockquote>
+<p class="left small">(<a class="reference external" href="https://en.wikipedia.org/wiki/Logfile">https://en.wikipedia.org/wiki/Logfile</a>)</p>
+<p class="left small">But in fact, a file is only <em>one</em> place to keep a log. You may want to send a log of what your program is doing to another system, to the console, or????</p>
+<div class="section" id="what-to-log">
+<h3>what to log?<a class="headerlink" href="#what-to-log" title="Permalink to this headline">¶</a></h3>
+<p class="medium">What might you want to log?</p>
+<p>System information</p>
+<p>Error messages</p>
+<p>Fine-grain tracing output</p>
+</div>
+<div class="section" id="the-logging-module">
+<h3>The logging module<a class="headerlink" href="#the-logging-module" title="Permalink to this headline">¶</a></h3>
+<p>A flexible logging system that comes with the standard library</p>
+<p>Any module using the logging api can have logging output routed the same
+as your code.</p>
+<p>Resources for learning more:</p>
+<p><a class="reference external" href="https://docs.python.org/3.5/howto/logging.html">https://docs.python.org/3.5/howto/logging.html</a></p>
+<p><a class="reference external" href="http://docs.python-guide.org/en/latest/writing/logging/">http://docs.python-guide.org/en/latest/writing/logging/</a></p>
+<p><a class="reference external" href="https://pymotw.com/3/logging/">https://pymotw.com/3/logging/</a></p>
+</div>
+<div class="section" id="why-not-print">
+<h3>Why not <code class="docutils literal notranslate"><span class="pre">print()</span></code>?<a class="headerlink" href="#why-not-print" title="Permalink to this headline">¶</a></h3>
+<p>We’ve all been using <code class="docutils literal notranslate"><span class="pre">print()</span></code> all over the place to track what’s going on in a program.</p>
+<p>And I still use it – a lot.</p>
+<p>But we (usually) don’t want all sorts of crap sent to stdout when the program is running in production.</p>
+<p>So we comment out or delete those <code class="docutils literal notranslate"><span class="pre">print()</span></code> s – but if we wanted to know what the program was doing when developing – maybe we want to know when something unanticipated goes wrong, too?</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">logging</span></code> module give you a flexible system that allows you to monitor what’s going on in your system, when you need to, without cluttering things up when you don’t need it.</p>
+</div>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p class="left">There are lots of good tutorials, etc, on the web for getting you started with <em>using</em> the logging module.</p>
+<p class="left">But not much about how it works – how it is structured.</p>
+<p class="left">I found it hard to get beyond the basics without that knowledge, so the following should help.</p>
+<p class="left">The logging module provides a very flexible framework for customizing the logging in a simple or complex application.</p>
+<div class="section" id="id1">
+<h3>The <code class="docutils literal notranslate"><span class="pre">logging</span></code> module<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+</pre></div>
+</div>
+<p>The logging module not only provides the classes and functions required to build a logging system, but also a place to centrally manage the logging for an entire application.</p>
+<p>This allows you to set up logging in one place, and everywhere in the app, the system can be used.</p>
+<p>So, for instance, when developing and debugging, you may want logging messages to go to the console, but for deployment, to log files.</p>
+<p>That configuration can be changed in one place.</p>
+<p>(NOTE: this is one good reason to prefer logging over <code class="docutils literal notranslate"><span class="pre">print()</span></code>)</p>
+</div>
+<div class="section" id="logging-levels">
+<h3>Logging “levels”<a class="headerlink" href="#logging-levels" title="Permalink to this headline">¶</a></h3>
+<p>The built in way to catagorize logging messages is by level.</p>
+<p>Levels are ordered numerically, so you can think of them as in order of importance, and it’s easy to choose how much detail you want.</p>
+<p>The built-in set is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CRITICAL</span>    <span class="mi">50</span>
+<span class="n">ERROR</span>       <span class="mi">40</span>
+<span class="n">WARNING</span>     <span class="mi">30</span>
+<span class="n">INFO</span>        <span class="mi">20</span>
+<span class="n">DEBUG</span>       <span class="mi">10</span>
+</pre></div>
+</div>
+<p>so DEBUG provides the most detail, and CRITICAL you’d pretty much always want to see.</p>
+<p>The logging API provides easy ways to send messages with these levels:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this is a debugging message&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.python.org/3/library/logging.html#levels">https://docs.python.org/3/library/logging.html#levels</a></p>
+<p>similarly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;this is a critical message&#39;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;this is a error message&#39;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;this is a warning message&#39;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;this is a information message&#39;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this is a debug message&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that if you have not configured the logger, a default configuration will automatically be set up – so you can alwlays call these in yoru code, and it won’t fail.</p>
+<p>This is actually particularly nice – you can add logging messages to your code, and they will “do the right thing” when run inside any application, whether it’s been spcifically configured or not.</p>
+</div>
+<div class="section" id="the-logging-classes">
+<h3>The logging classes<a class="headerlink" href="#the-logging-classes" title="Permalink to this headline">¶</a></h3>
+<p>The four main classes (you need to deal with) for logging</p>
+<ul class="simple">
+<li><p>Loggers  - the interface for your code</p></li>
+<li><p>Handlers - handle log routing</p></li>
+<li><p>Filters  - define which log messages to let through</p></li>
+<li><p>Formatters - how the log messages get rendered</p></li>
+</ul>
+</div>
+<div class="section" id="the-logger-class">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Logger</span></code> class<a class="headerlink" href="#the-logger-class" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Logger</span></code> class is the core class that handles logging.</p>
+<p>Messages get sent to a <code class="docutils literal notranslate"><span class="pre">Logger</span></code> instance, and it is responsibile for routing them appropriately.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Logger</span></code> s can be  nested in a hierarchical fashion, so that a message can be sent to sub-loggers, and any messages not handled will be passed the chain to eventually be handled by the “root” logger.</p>
+<p>There is always a root logger, and often the only one you need.</p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">Logger</span></code> represents a single logging channel.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Logger</span></code> instances are given text names, with module-style “dots” representing the hierarchy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;main&quot;</span>
+<span class="s2">&quot;main.sub_logger1&quot;</span>
+<span class="s2">&quot;main.sub_logger2&quot;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>The “root” logger has no name, but is the root of all created loggers</p>
+<p>The logging module keeps track of all the loggers you create, so you can reference them by name.</p>
+</div>
+<div class="section" id="logging-getlogger">
+<h3><code class="docutils literal notranslate"><span class="pre">logging.getLogger()</span></code><a class="headerlink" href="#logging-getlogger" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">logging.getLogger()</span></code> function returns the logger you ask for:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">the_root_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">another_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the logger you ask for doesn’t exist, <code class="docutils literal notranslate"><span class="pre">getLogger()</span></code> will create a new one for you by that name. (It won’t be configured, though…)</p>
+<p>This whole system allows you to have multiple loggers without having to pass logging instances around.</p>
+</div>
+<div class="section" id="the-handler-classes">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Handler</span></code> classes<a class="headerlink" href="#the-handler-classes" title="Permalink to this headline">¶</a></h3>
+<p>logging <code class="docutils literal notranslate"><span class="pre">Handler</span></code> s are what actually do the work of, well, handling, the log message.</p>
+<p>Formatting it, and actually writing to a file or somehow performing the ‘log’ duty.</p>
+<p>There are handlers for writing to files, streams (stdout, stderr), sockets, and nifty things like automaticaly rotating log files.</p>
+<p>And, of course, you can make your own.</p>
+<p>Each logger can have multiple Handlers</p>
+<p>You will most likely use:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FileHandler</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StreamHandler</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>The others are documented here.</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/logging.handlers.html#module-logging.handlers">https://docs.python.org/3/library/logging.handlers.html#module-logging.handlers</a></p>
+</div>
+<div class="section" id="the-formatter-classes">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Formatter</span></code> classes<a class="headerlink" href="#the-formatter-classes" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Formatters</span></code> are responsible for formatting the log message.</p>
+<p>Each log message is stored in a <code class="docutils literal notranslate"><span class="pre">LogRecord</span></code> object, which has a lot of data about the message and where it came from.</p>
+<p>So you can use a formatter to add the data you want to your log entry.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(module)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">levelname</span></code> is the “level” of the log message: debug, warning, etc. <code class="docutils literal notranslate"><span class="pre">module</span></code> is the name of the module the message came from. <code class="docutils literal notranslate"><span class="pre">message</span></code> is the message itself.</p>
+<p>There are lots of other options:</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logrecord-attributes">https://docs.python.org/3/library/logging.html#logrecord-attributes</a></p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">Handler</span></code> can have its own <code class="docutils literal notranslate"><span class="pre">Formatter</span></code></p>
+</div>
+<div class="section" id="the-filter-classes">
+<h3>The Filter classes<a class="headerlink" href="#the-filter-classes" title="Permalink to this headline">¶</a></h3>
+<p>Each <code class="docutils literal notranslate"><span class="pre">Logger</span></code> can have a <code class="docutils literal notranslate"><span class="pre">Filter</span></code> object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Filters</span></code> determine which messages will be handled by a given logger, and which pass on to other loggers up the hierarchy.</p>
+<p>They can do very flexible filtering based on where the message came from, etc.</p>
+<p>But only really needed for complex systems:</p>
+<p>Loggers filter by “level” by default – which is enough for most uses.</p>
+</div>
+<div class="section" id="basic-logging-usage">
+<h3>Basic logging usage<a class="headerlink" href="#basic-logging-usage" title="Permalink to this headline">¶</a></h3>
+<p>As you can see from the above – the logging system is a complex nest of classes that can be configured and mixed and matched in complex ways.</p>
+<p>The system was ported from Java – can you tell?</p>
+<p>However, the module provides a Pythonic API for common usage: the <code class="docutils literal notranslate"><span class="pre">logging.basicConfig()</span></code> function.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;example.log&#39;</span><span class="p">,</span>
+                    <span class="n">filemode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This creates a “root” logger, and sets it up with:</p>
+<ul>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">FileHandler</span></code> with the given filename and mode</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The mode is the file opening mode: ‘w’ to clobber and make a new file each time, ‘a’ to append to an existing file</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>sets up the handler to use the provided format string</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">asctime</span></code> provides a datetime stamp (you can specify a format for that, too)</p></li>
+</ul>
+</li>
+<li><p>sets the level to debug – so all messages will get logged.</p></li>
+</ul>
+</div>
+<div class="section" id="what-does-basicconfig-do-for-you">
+<h3>What does <code class="docutils literal notranslate"><span class="pre">basicConfig</span></code> do for you?<a class="headerlink" href="#what-does-basicconfig-do-for-you" title="Permalink to this headline">¶</a></h3>
+<p>A LOT!</p>
+<p>If you were to do this by hand:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;example.log&#39;</span>
+<span class="n">filemode</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
+<span class="n">handler</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="n">format_str</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="n">format_str</span><span class="p">)</span>
+<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">EBUG</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wouldn’t that be fun?</p>
+</div>
+<div class="section" id="a-more-complex-logging-setup">
+<h3>A more complex logging setup<a class="headerlink" href="#a-more-complex-logging-setup" title="Permalink to this headline">¶</a></h3>
+<p>See:</p>
+<p><code class="docutils literal notranslate"><span class="pre">examples/logging/example.py</span></code></p>
+<p>In there, a logging system is set up that logs to a file, and also the console.</p>
+<p>It calls a fake “application” that does things in random order, logging as it goes…</p>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<p>The logging system is very powerful and flexible.</p>
+<p>And frankly, not as clean and Pythonic as it could be…</p>
+<p>So it’s pretty tricky to figure out.</p>
+<p>I highly recommend the cookbook to get beyond the basics:</p>
+<p><a class="reference external" href="https://docs.python.org/3/howto/logging-cookbook.html">https://docs.python.org/3/howto/logging-cookbook.html</a></p>
+<p>Also these:</p>
+<p><a class="reference external" href="http://atlee.ca/blog/posts/diving-into-python-logging.html">http://atlee.ca/blog/posts/diving-into-python-logging.html</a></p>
+<p><a class="reference external" href="http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python">http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

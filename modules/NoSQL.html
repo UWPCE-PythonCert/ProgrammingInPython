@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>No SQL Databases &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>No SQL Databases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/NoSQL.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="no-sql-databases">
+<span id="nosql"></span><h1>No SQL Databases<a class="headerlink" href="#no-sql-databases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="no-sql">
+<h2>“No SQL”?<a class="headerlink" href="#no-sql" title="Permalink to this headline">¶</a></h2>
+<p>Structured Query Language (SQL) is the standard language for communicating with relational database management systems (RDBMS).</p>
+<p>But an RDBMS system is not always the best way to store your data.</p>
+<p>There are other alternatives, each with there own approach, but as RDBMSs and SQL are so ubiquitous, they are all lumped in under the moniker “NoSQL”.</p>
+<p>I personally hate things that are defined by what they are NOT, rather than what they are, but that’s the terminology these days.</p>
+<div class="section" id="what-is-a-database">
+<h3>What is a Database?<a class="headerlink" href="#what-is-a-database" title="Permalink to this headline">¶</a></h3>
+<p>A database is an organized collection of data. The data are typically organized to model relevant aspects of reality in a way that supports processes requiring this information.</p>
+<p>Usually a way to persist and recover that organized data.</p>
+<p>These days, when you say “Database” almost everyone thinks “Relational Database”, and SQL is the standard way to do that.</p>
+<p>SQL RDBMS systems are robust, powerful, scalable, and very well optimized.</p>
+<p>But: They require you to adapt the relational data model.</p>
+</div>
+<div class="section" id="non-rdbms-options">
+<h3>Non RDBMS options:<a class="headerlink" href="#non-rdbms-options" title="Permalink to this headline">¶</a></h3>
+<p>A key buzzword these days is “NOSQL”</p>
+<p>OK: They don’t use SQL – but what are they?</p>
+<p>Not one thing, but key features are mostly shared:</p>
+<ul class="simple">
+<li><p>“schema less”</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Document oriented</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>More direct mapping to an object model.</p></li>
+<li><p>Highly Scalable</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Easier to distribute / parallelize than RDBMSs</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="database-schema">
+<h3>Database Schema<a class="headerlink" href="#database-schema" title="Permalink to this headline">¶</a></h3>
+<p><strong>Schema:</strong></p>
+<p>A database schema is the organization of data, and description of how a database is constructed: Divided into database tables, and relationships: foreign keys, etc…</p>
+<p>Includes what fields in which tables, what data type each field is, normalization of shared data, etc.</p>
+<p>This requires a fair bit of work up-front, and can be hard to adapt as the system requirements changes.</p>
+<p>It also can be a bit ugly to map your programming data model to the schema.</p>
+</div>
+<div class="section" id="schemaless">
+<h3>Schemaless<a class="headerlink" href="#schemaless" title="Permalink to this headline">¶</a></h3>
+<p>Schemaless databases generally follow a “document model”.</p>
+<p>Each entry in the database is a “document”:</p>
+<ul class="simple">
+<li><p>essentially an arbitrary collection of fields.</p></li>
+<li><p>often looks like a Python dict.</p></li>
+</ul>
+<p>Not every entry has to have exactly the same structure.</p>
+<p>Maps well to dynamic programming languages.</p>
+<p>Adapts well as the system changes.</p>
+</div>
+<div class="section" id="nosql-in-python">
+<h3>NoSQL in Python:<a class="headerlink" href="#nosql-in-python" title="Permalink to this headline">¶</a></h3>
+<p>Three Categories:</p>
+</div>
+<div class="section" id="simple-key-value-object-store">
+<h3>1. Simple key-value object store:<a class="headerlink" href="#simple-key-value-object-store" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>shelve</p></li>
+<li><p>anydbm</p></li>
+<li><p>Can store (almost) any Python object</p></li>
+<li><p>Only provides storage and retrieval</p></li>
+</ul>
+</div>
+<div class="section" id="external-nosql-system">
+<h3>2. External NoSQL system:<a class="headerlink" href="#external-nosql-system" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Python bindings to external NoSQL system</p></li>
+<li><p>Doesn’t store full Python objects</p></li>
+<li><p>Generally stores arbitrary collections of data (but not classes)</p></li>
+<li><p>Can be simple key-value stores:</p>
+<ul class="simple">
+<li><p>Redis, etc…</p></li>
+</ul>
+</li>
+<li><p>Or a more full featured document database:</p>
+<ul class="simple">
+<li><p>In-database searching, etc.</p></li>
+<li><p>mongoDB, etc…</p></li>
+</ul>
+</li>
+<li><p>“Graph” databases (<a class="reference internal" href="GraphDatabases.html#graph-databases"><span class="std std-ref">Graph Databases</span></a>):</p>
+<ul class="simple">
+<li><p>neo4j, etc.</p></li>
+</ul>
+</li>
+<li><p>Or a Map/Reduce engine:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Hadoop</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="python-object-database">
+<h3>3. Python Object Database:<a class="headerlink" href="#python-object-database" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Stores and retrieves arbitrary Python objects.</p>
+<ul>
+<li><p>Don’t need to adapt your data model at all.</p></li>
+</ul>
+</li>
+<li><p>ZODB is the only robust maintained system (I know of)</p></li>
+<li><p>ZODB is as close a match as you can get between the store and your code – references and everything.</p></li>
+</ul>
+<p><a class="reference external" href="http://blog.startifact.com/posts/older/a-misconception-about-the-zodb.html">http://blog.startifact.com/posts/older/a-misconception-about-the-zodb.html</a></p>
+<p>(note that that post says “it’s been around for more than a decade”, and it was written a decade ago!)</p>
+</div>
+<div class="section" id="why-a-db-at-all">
+<h3>Why a DB at all?<a class="headerlink" href="#why-a-db-at-all" title="Permalink to this headline">¶</a></h3>
+<p>Reasons to use a database:</p>
+<ul class="simple">
+<li><p>Need to persist the data your application uses</p></li>
+<li><p>May need to store more data than you can hold in memory</p></li>
+<li><p>May need to have multiple applications (or multiple instances) accessing the same data</p></li>
+<li><p>May need to scale – have the DB running on a separate server(s)</p></li>
+<li><p>May need to access data from systems written in different languages.</p></li>
+</ul>
+</div>
+<div class="section" id="zodb">
+<h3>ZODB<a class="headerlink" href="#zodb" title="Permalink to this headline">¶</a></h3>
+<p>The Zope Object Data Base: A native object database for Python</p>
+<ul class="simple">
+<li><p>Transparent persistence for Python objects</p></li>
+<li><p>Full ACID-compatible transaction support (including savepoints)</p></li>
+<li><p>History/undo ability</p></li>
+<li><p>Efficient support for binary large objects (BLOBs)</p></li>
+<li><p>Pluggable storages</p></li>
+<li><p>Scalable architecture</p></li>
+</ul>
+<p><a class="reference external" href="http://www.zodb.org/">ZODB</a></p>
+</div>
+<div class="section" id="mongodb">
+<h3>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h3>
+<p>Document-Oriented Storage</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>JSON-style documents with dynamic schemas offer simplicity and power.</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Full Index Support</dt><dd><ul class="simple">
+<li><p>Index on any attribute, just like you’re used to.</p></li>
+</ul>
+</dd>
+<dt>Replication &amp; High Availability</dt><dd><ul class="simple">
+<li><p>Mirror across LANs and WANs for scale and peace of mind.</p></li>
+</ul>
+</dd>
+<dt>Auto-Sharding</dt><dd><ul class="simple">
+<li><p>Scale horizontally without compromising functionality.</p></li>
+</ul>
+</dd>
+<dt>Querying</dt><dd><ul class="simple">
+<li><p>Rich, document-based queries.</p></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://www.mongodb.org/">MongoDB Web Site</a></p>
+</div>
+<div class="section" id="other-options-to-consider">
+<h3>Other Options to Consider:<a class="headerlink" href="#other-options-to-consider" title="Permalink to this headline">¶</a></h3>
+<p>Redis: Advanced, Scalable  key-value store.
+( not well supported on Windows :-( )</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://redis.io/">http://redis.io/</a></p></li>
+</ul>
+<p>Riak: High availablity/scalablity (but not so good for small)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://docs.basho.com/riak/latest/dev/taste-of-riak/python/">http://docs.basho.com/riak/latest/dev/taste-of-riak/python/</a></p></li>
+</ul>
+<p>HyperDex: “Next generation key-value store”</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://hyperdex.org/">http://hyperdex.org/</a></p></li>
+</ul>
+<p>Apache Cassandra: A more schema-based NoSQL solution</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://pycassa.github.io/pycassa/">http://pycassa.github.io/pycassa/</a></p></li>
+</ul>
+<p>This is a nice page with a summary:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.fullstackpython.com/no-sql-datastore.html">https://www.fullstackpython.com/no-sql-datastore.html</a></p></li>
+</ul>
+<p>(there are some good links to other resources on that page, too)</p>
+</div>
+</div>
+<div class="section" id="an-example">
+<h2>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
+<p>The following are examples of using some of these systems to store some data.</p>
+<div class="section" id="the-data-model">
+<h3>The Data Model<a class="headerlink" href="#the-data-model" title="Permalink to this headline">¶</a></h3>
+<p>To store your data, you need to have a structure for the data – this is the data model. For this example, we will build an Address Book with a not quite trivial data model.</p>
+<p>I’m a programmer first, and a database guy second (or third or…) so I start with the data model I want in the code.</p>
+<p>There are people:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">last_name</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">middle_name</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">cell_phone</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">email</span>
+</pre></div>
+</div>
+<p>There are households:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">people</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">address</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">phone</span>
+</pre></div>
+</div>
+<p>(similarly businesses)</p>
+<p><a class="reference download internal" download="" href="../_downloads/409972d036b41f742f82ab8275e77818/address_book_model.py"><code class="xref download docutils literal notranslate"><span class="pre">address_book_model.py</span></code></a></p>
+</div>
+<div class="section" id="using-zodb">
+<h3>Using ZODB<a class="headerlink" href="#using-zodb" title="Permalink to this headline">¶</a></h3>
+<p>ZODB stored Python objects.</p>
+<p>To make an object persistent (persistent should be installed with zodb):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">persistent</span>
+
+<span class="k">class</span> <span class="nc">Something</span><span class="p">(</span><span class="n">persistent</span><span class="o">.</span><span class="n">Persistent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a_field</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">another_field</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>When a change is made to the fields, the DB will keep it updated.</p>
+</div>
+<div class="section" id="mutable-attributes">
+<h3>Mutable Attributes<a class="headerlink" href="#mutable-attributes" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Something.this</span> <span class="pre">=</span> <span class="pre">that</span></code> will trigger a DB action</p>
+<p>But:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Something.a_list.append</span></code> will not trigger anything.</p>
+<p>The DB doesn’t know that that the list has been altered.</p>
+<p>Solution:</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">persistent.list</span> <span class="pre">import</span> <span class="pre">PersistentList</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">self.a_list</span> <span class="pre">=</span> <span class="pre">PersistentList()</span></code></p>
+<p>(also <code class="docutils literal notranslate"><span class="pre">PersistantDict()</span></code> )</p>
+<p>(or write getters and setters…)</p>
+<p><code class="docutils literal notranslate"><span class="pre">Examples/nosql/address_book_zodb.py</span></code></p>
+</div>
+<div class="section" id="id2">
+<h3>mongoDB<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Essentially a key-value store, but the values are JSON-like objects.
+(Actually BSON (binary JSON) )</p>
+<dl class="simple">
+<dt>So you can store any object that can look like JSON:</dt><dd><ul class="simple">
+<li><p>dicts</p></li>
+<li><p>lists</p></li>
+<li><p>numbers</p></li>
+<li><p>strings</p></li>
+<li><p>richer than JSON.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="mongodb-and-python">
+<h3>mongoDB and Python<a class="headerlink" href="#mongodb-and-python" title="Permalink to this headline">¶</a></h3>
+<p>mongoDB is written in C++ – can be accessed by various language drivers.</p>
+<p><a class="reference external" href="http://docs.mongodb.org/manual/applications/drivers/">http://docs.mongodb.org/manual/applications/drivers/</a></p>
+<p>For Python: <code class="docutils literal notranslate"><span class="pre">PyMongo</span></code></p>
+<p><a class="reference external" href="http://api.mongodb.org/python/current/tutorial.html">http://api.mongodb.org/python/current/tutorial.html</a></p>
+<p>To install the python api for mongoDB:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pymongo</span></code> - binary wheels available!</p>
+<p>There are also various tools for integrating mongoDB with Frameworks:</p>
+<ul class="simple">
+<li><p>Django MongoDB Engine</p></li>
+<li><p>mongodb_beaker</p></li>
+<li><p>MongoLog: Python logging handler</p></li>
+<li><p>Flask-PyMongo</p></li>
+<li><p>others…</p></li>
+</ul>
+</div>
+<div class="section" id="getting-started-with-mongodb">
+<h3>Getting started with mongoDB<a class="headerlink" href="#getting-started-with-mongodb" title="Permalink to this headline">¶</a></h3>
+<p>The mongoDB (database) is a separate program. Installers here:</p>
+<p><a class="reference external" href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a></p>
+<p><strong>NOTE:</strong> mongo is also available as a service, with a free “sandbox” to try it out:</p>
+<p><a class="reference external" href="https://www.mongodb.com/cloud/atlas">https://www.mongodb.com/cloud/atlas</a></p>
+<div class="section" id="installing-mongo">
+<h4>Installing Mongo<a class="headerlink" href="#installing-mongo" title="Permalink to this headline">¶</a></h4>
+<p>Simple copy and paste install or use homebrew (at least on OS-X)</p>
+<p>Drop the files from <code class="docutils literal notranslate"><span class="pre">bin</span></code> into <code class="docutils literal notranslate"><span class="pre">usr/local/bin</span></code> or similar, or in your home dir somewhere you can find them.</p>
+<ul class="simple">
+<li><p>I put it in a “mongo” dir in my home dir. Then added it to my PATH for now:</p>
+<ul>
+<li><p>Editing <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>, and adding:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding PATH for mongo local install</span>
+<span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;~/mongo/bin:$</span><span class="si">{PATH}</span>
+<span class="n">export</span> <span class="n">PATH</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="anaconda-install">
+<h4>Anaconda Install<a class="headerlink" href="#anaconda-install" title="Permalink to this headline">¶</a></h4>
+<p>If you are using the Anaconda Python distribution (or miniconda) Mongo is available from conda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">mongodb</span> <span class="n">pymongo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="starting-mongo">
+<h4>Starting Mongo<a class="headerlink" href="#starting-mongo" title="Permalink to this headline">¶</a></h4>
+<p>Create a dir for the database:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">mkdir</span> <span class="pre">mongo_data</span></code></p>
+<p>And start it up:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">mongod</span> <span class="pre">--dbpath=mongo_data/</span></code></p>
+<p>It will give you a bunch of startup messages, and then end by indicating which port it is listening on:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">NETWORK</span>  <span class="p">[</span><span class="n">initandlisten</span><span class="p">]</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">27017</span>
+</pre></div>
+</div>
+<p>So you know you can connect to it on port 27017</p>
+</div>
+</div>
+<div class="section" id="creating-a-db">
+<h3>Creating a DB:<a class="headerlink" href="#creating-a-db" title="Permalink to this headline">¶</a></h3>
+<p>Make sure you’ve got the mongo drivers installed:</p>
+<p>pip install pymongo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create the DB</span>
+<span class="kn">from</span> <span class="nn">pymongo</span> <span class="kn">import</span> <span class="n">MongoClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
+<span class="n">store</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">store_name</span> <span class="c1"># creates a Database</span>
+<span class="n">people</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">people</span> <span class="c1"># creates a collection</span>
+</pre></div>
+</div>
+<p>Mongo will link to the given database and collection, or create new ones if they don’t exist.</p>
+<p>Adding some stuff:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">people</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span><span class="s1">&#39;first_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Fred&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;last_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Jones&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pulling-stuff-out">
+<h3>Pulling Stuff Out:<a class="headerlink" href="#pulling-stuff-out" title="Permalink to this headline">¶</a></h3>
+<p>And reading it back:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">people</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;first_name&#39;</span><span class="p">:</span><span class="s2">&quot;Fred&quot;</span><span class="p">})</span>
+<span class="gh">Out[16]:</span>
+<span class="go">  {&#39;_id&#39;: ObjectId(&#39;534dcdcb5c84d28b596ad15e&#39;),</span>
+<span class="go">   &#39;first_name&#39;: &#39;Fred&#39;,</span>
+<span class="go">   &#39;last_name&#39;: &#39;Jones&#39;}</span>
+</pre></div>
+</div>
+<p>Note that it adds an ObjectID for you.</p>
+<p><a class="reference download internal" download="" href="../_downloads/5aa816096a0d060405a1f5d2c6bce87f/address_book_mongo.py"><code class="xref download docutils literal notranslate"><span class="pre">/examples/nosql/address_book_mongo.py</span></code></a></p>
+<p>and</p>
+<p><a class="reference download internal" download="" href="../_downloads/37f2d0abd497b27b3fed8a8b1d89d6fc/test_address_book_mongo.py"><code class="xref download docutils literal notranslate"><span class="pre">/examples/nosql/test_address_book_mongo.py</span></code></a></p>
+<p>(or in the class repo in : <code class="docutils literal notranslate"><span class="pre">examples/nosql</span></code>)</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

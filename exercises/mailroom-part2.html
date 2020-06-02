@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mailroom Part 2 &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exceptions Lab" href="exceptions_lab.html" />
+    <link rel="prev" title="Trigrams – Simple Text Manipulation" href="kata_fourteen.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_lab.html">File Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kata_fourteen.html">Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Mailroom Part 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Mailroom Part 2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/mailroom-part2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mailroom-part-2">
+<span id="exercise-mailroom-part2-dict-files"></span><h1>Mailroom Part 2<a class="headerlink" href="#mailroom-part-2" title="Permalink to this headline">¶</a></h1>
+<p><strong>Incorporate file writing and dictionary use.</strong></p>
+<div class="section" id="use-dicts-where-appropriate">
+<h2>Use dicts where appropriate.<a class="headerlink" href="#use-dicts-where-appropriate" title="Permalink to this headline">¶</a></h2>
+<p>Part 1 of this assignment used these basic data types: numbers, strings, lists and tuples.</p>
+<p>However, using dictionaries, covered in Lesson 4, will let you re-write your program a bit more simply and efficiently.</p>
+<p>Update your mailroom program to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Use dicts where appropriate.</p></li>
+<li><p>See if you can use a dict to switch between the user’s selections.</p></li>
+<li><p>See if you can use a dict to switch between the users selections.
+see <a class="reference internal" href="../modules/DictionaryAsSwitch.html#dict-as-switch"><span class="std std-ref">Using a Dictionary to switch</span></a> for what this means.</p></li>
+<li><p>Convert your main donor data structure to be a dict.</p></li>
+<li><p>Try to use a dict and the <code class="docutils literal notranslate"><span class="pre">.format()</span></code> method to produce the letter as one
+big template, rather than building up a big string that produces the letter in parts.</p></li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">d</span>
+<span class="gh">Out[3]: </span><span class="go">{&#39;first_name&#39;: &#39;Chris&#39;, &#39;last_name&#39;: &#39;Barker&#39;}</span>
+
+
+<span class="gp">In [5]: </span><span class="s2">&quot;My name is </span><span class="si">{first_name}</span><span class="s2"> </span><span class="si">{last_name}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
+<span class="gh">Out[5]: </span><span class="go">&#39;My name is Chris Barker&#39;</span>
+</pre></div>
+</div>
+<p>Don’t worry too much about the <code class="docutils literal notranslate"><span class="pre">**</span></code>. We’ll get into the details later, but for now it means, more or less, “pass this whole dict in as a bunch of keyword arguments.”</p>
+</div>
+<div class="section" id="update-mailroom-with-file-writing">
+<h2>Update mailroom with file writing.<a class="headerlink" href="#update-mailroom-with-file-writing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal: Write a full set of letters to all donors to individual files on disk.</strong></p>
+<p>In the first version of mailroom, you generated a letter to a donor who had just made a new donation, and printed it to the screen.</p>
+<p>In this version of your program, add a function (and a menu item to invoke it), that goes through all the donors in your donor data structure, generates a thank you letter for each donor, and writes each letter to disk as a text file.</p>
+<p>Your main menu may look something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Choose</span> <span class="n">an</span> <span class="n">action</span><span class="p">:</span>
+
+<span class="mi">1</span> <span class="o">-</span> <span class="n">Send</span> <span class="n">a</span> <span class="n">Thank</span> <span class="n">You</span> <span class="n">to</span> <span class="n">a</span> <span class="n">single</span> <span class="n">donor</span><span class="o">.</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">Report</span><span class="o">.</span>
+<span class="mi">3</span> <span class="o">-</span> <span class="n">Send</span> <span class="n">letters</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">donors</span><span class="o">.</span>
+<span class="mi">4</span> <span class="o">-</span> <span class="n">Quit</span>
+</pre></div>
+</div>
+<p>The letters should each get a unique file name – you can keep it really simple and just use the donor’s name or add a date timestamp for additional uniqueness.</p>
+<p>You want to avoid specifying a hardcoded file path when creating the files, for example don’t to this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/home/users/bob/dev/mailroom/thank_you.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Doing so will prevent other users from running the program as it will fail to find your path. Instead, you can create files in the current working directory or you can use a temporary directory.
+To identify a temporary directory you can use a handy function like <a class="reference external" href="https://docs.python.org/3/library/tempfile.html#tempfile.gettempdir/">tempfile.gettempdir()</a> which is also OS agnostic (meaning it can handle temp directory differences between different operating systems).</p>
+<p>After running the “send letters to everyone” option, you should see some new files in the directory. There should be a file for each donor in the database, in this case 4.</p>
+<p>After choosing action (3) above, using my example database, I get these files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jeff_Bezos</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Mark_Zuckerberg</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Paul_Allen</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">William_Gates_III</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>(If you want to get really fancy, ask the user for a directory name to write to!)</p>
+<p>An example file content looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Dear Jeff Bezos,
+
+        Thank you for your very kind donation of $877.33.
+
+        It will be put to very good use.
+
+                       Sincerely,
+                          -The Team
+</pre></div>
+</div>
+<p>Feel free to enhance your letter template with some more information about past generosity, etc….</p>
+<p>The idea is to require you to structure your code so that you can write the same letter to the screen or to disk (and thus anywhere else) and also exercise a bit of file writing. Remember to review the <a class="reference external" href="http://www.diveintopython3.net/files.html#with">with</a> statement as it is the preferred method when working with files.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exceptions_lab.html" class="btn btn-neutral float-right" title="Exceptions Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="kata_fourteen.html" class="btn btn-neutral float-left" title="Trigrams – Simple Text Manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

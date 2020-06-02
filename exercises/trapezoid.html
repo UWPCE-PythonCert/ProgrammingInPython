@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trapezoidal Rule &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Mailroom – as a Python Package" href="mailroom-pkg.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="roman.html">Roman/Arabic Numeral Converter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rot13.html">ROT13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lambda_magic.html">lambda and keyword Magic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sparse_array.html">Sparse Array Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Trapezoidal Rule</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Trapezoidal rule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-task">The task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-solution">The Solution:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tests">tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computational-accuracy">Computational Accuracy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stage-two">Stage Two:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passing-arguments-through">Passing arguments through:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#currying">Currying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#partial">partial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extra-credit">Extra credit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-bit-about-math-symbology">A bit about math symbology</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Trapezoidal Rule</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/trapezoid.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trapezoidal-rule">
+<span id="exercise-trapezoidal-rule"></span><h1>Trapezoidal Rule<a class="headerlink" href="#trapezoidal-rule" title="Permalink to this headline">¶</a></h1>
+<p><strong>Passing functions around</strong></p>
+<p>Goal:</p>
+<p>Making use of functions as objects – functions that act on functions.</p>
+<div class="section" id="id1">
+<h2>Trapezoidal rule<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The “trapezoidal rule”:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoidal_rule">https://en.wikipedia.org/wiki/Trapezoidal_rule</a></p>
+<p>Is one of the easiest “quadrature” methods.</p>
+<p>Otherwise known as computing a definite integral, or, simply:</p>
+<p>Computing the area under a curve.</p>
+</div>
+<div class="section" id="the-task">
+<h2>The task<a class="headerlink" href="#the-task" title="Permalink to this headline">¶</a></h2>
+<p>Your task is to write a <code class="docutils literal notranslate"><span class="pre">trapz()</span></code> function that will compute the area under an arbitrary function, using the trapezoidal rule.</p>
+<p>The function will take another function as an argument, as well as the start and end points to compute, and return the area under the curve.</p>
+</div>
+<div class="section" id="example">
+<h2>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;a very simple straight horizontal line at y = 5&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="mi">5</span>
+
+<span class="n">area</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">area</span>
+<span class="mi">50</span>
+</pre></div>
+</div>
+<p>About the simplest “curve” you can have is a horizontal straight line, in this case, at y = 5. The area under that line from 0 to 10 is a rectangle that is 10 wide and 5 high, so with an area of 50.</p>
+<p>Of course in this case, it’s easiest to simply multiply the height times the width, but we want a function that will work for <strong>Any</strong> curve.</p>
+<p>HINT: this simple example could be a good test case!</p>
+</div>
+<div class="section" id="the-solution">
+<h2>The Solution:<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h2>
+<p>Your function definition should look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapz</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the area under the curve defined by</span>
+<span class="sd">    y = fun(x), for x between a and b</span>
+
+<span class="sd">    :param fun: the function to evaluate</span>
+<span class="sd">    :type fun: a function that takes a single parameter</span>
+
+<span class="sd">    :param a: the start point for the integration</span>
+<span class="sd">    :type a: a numeric value</span>
+
+<span class="sd">    :param b: the end point for the integration</span>
+<span class="sd">    :type b: a numeric value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>In the function, you want to compute the following equation:</p>
+<div class="math notranslate nohighlight">
+\[area = \frac{b-a}{2N}(f(x_0) + 2f(x_1) + 2f(x_2) + \dotsb + 2f(x_{N-1}) + f(x_N))\]</div>
+<p>So you will need to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>create a list of x values from a to b (maybe 100 or so values to start)</p></li>
+<li><p>compute the function for each of those values and double them</p></li>
+<li><p>add them all up</p></li>
+<li><p>multiply by the half of the difference between a and b divided by the number of steps.</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the first and last values are not doubled, so it may be more efficient to rearrange it like this:</p>
+<div class="math notranslate nohighlight">
+\[area = \frac{b-a}{N} \left( \frac{f(x_0) + f(x_{N})}{2} + \sum_{i=1}^{N-1} f(x_i) \right)\]</div>
+<p><strong>NOTE:</strong> for those of you confused by that weird big greek letter (no it’s a name for a fraternity…) – see: <a class="reference internal" href="#sum-explained"><span class="std std-ref">A bit about math symbology</span></a></p>
+<p>Can you use comprehensions for this?</p>
+<p>NOTE: <code class="docutils literal notranslate"><span class="pre">range()</span></code> only works for integers – how can you deal with that?</p>
+<p>Once you have that, it should work for any function that can be evaluated between a and b.</p>
+<p>Try it for some built-in math functions, like <code class="docutils literal notranslate"><span class="pre">math.sin</span></code></p>
+</div>
+<div class="section" id="tests">
+<h2>tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<p>Do this using test-drive development.</p>
+<p>A few examples of analytical solutions you can use for tests:</p>
+<p>A simple horizontal line – see above.</p>
+<p>A sloped straight line:</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b  y = mx + B = \frac{1}{2} m (b^2-a^2) + B (b-a)\]</div>
+<p>The quadratic:</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b  y = Ax^2 + Bx + C = \frac{A}{3} (b^3-a^3) + \frac{B}{2} (b^2-a^2) + C (b-a)\]</div>
+<p>The sine function:</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b \sin(x) = \cos(a) - \cos(b)\]</div>
+</div>
+<div class="section" id="computational-accuracy">
+<h2>Computational Accuracy<a class="headerlink" href="#computational-accuracy" title="Permalink to this headline">¶</a></h2>
+<p>In the case of the linear functions, the result should theoretically be exact. But with the vagaries of floating point math may not be.</p>
+<p>And for non-linear functions, the result will certainly not be exact.</p>
+<p>So you want to check if the answer is <em>close</em> to what you expect.</p>
+<p>In py3.5+ – there is an <code class="docutils literal notranslate"><span class="pre">isclose()</span></code> function (PEP485)</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0485/">https://www.python.org/dev/peps/pep-0485/</a></p>
+</div>
+<div class="section" id="stage-two">
+<h2>Stage Two:<a class="headerlink" href="#stage-two" title="Permalink to this headline">¶</a></h2>
+<p>Some functions need extra parameters to do their thing. But the above will only handle a single parameter. For example, a quadratic function:</p>
+<div class="math notranslate nohighlight">
+\[y = A x^2 + Bx + C\]</div>
+<p>Requires values for A, B, and C in order to compute y from an given x.</p>
+<p>You could write a specialized version of this function for each A, B, and C:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quad1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>But then you need to write a new function for any value of these parameters you might need.</p>
+<p>Instead, you can pass in A, B and C each time:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quadratic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">C</span>
+</pre></div>
+</div>
+<p>Nice and general purpose.</p>
+<p>But how would we compute the area under this function?</p>
+<p>The function we wrote above only passes x in to the function it is integrating.</p>
+</div>
+<div class="section" id="passing-arguments-through">
+<h2>Passing arguments through:<a class="headerlink" href="#passing-arguments-through" title="Permalink to this headline">¶</a></h2>
+<p>Update your trapz() function so that you can give it a function that takes arbitrary extra arguments, either positional or keyword, after the x.</p>
+<p>So you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trapz</span><span class="p">(</span><span class="n">quadratic</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trapz</span><span class="p">(</span><span class="n">quadratic</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coef</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">trapz</span><span class="p">(</span><span class="n">quadratic</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">**</span><span class="n">coef</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> Make sure this will work with ANY function, with <strong>ANY</strong> additional positional or keyword arguments – not just this particular function.</p>
+<p>This is pretty conceptually challenging – but it’s very little code!</p>
+<p>If you are totally lost – look at the lecture notes from previous classes – how can you both accept and pass arbitrary arguments to/from a function?</p>
+<p>You want your trapz function to take ANY function that can take ANY arbitrary extra arguments – not just the quadratic function, and not just <code class="docutils literal notranslate"><span class="pre">A,B,</span> <span class="pre">and</span> <span class="pre">C</span></code>. So good to test with another example.</p>
+<p>The generalized sine function is:</p>
+<div class="math notranslate nohighlight">
+\[A \sin(\omega t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is the amplitude, and <span class="math notranslate nohighlight">\(\omega\)</span> is the frequency of the function. In this case, the area under the curve from a to b is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{A}{\omega} \left( \cos(\omega a) - \cos(\omega b) \right)\]</div>
+<p>The test code has a test for this one, too.</p>
+</div>
+<div class="section" id="currying">
+<h2>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h2>
+<p>Another way to solve the above problem is to use the original <code class="docutils literal notranslate"><span class="pre">trapz</span></code>, and create a custom version of the quadratic() function instead.</p>
+<p>Write a function that takes <code class="docutils literal notranslate"><span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">and</span> <span class="pre">C</span></code> as arguments, and returns a function that evaluates the quadratic for those particular coefficients.</p>
+<p>Try passing the results of this into your <code class="docutils literal notranslate"><span class="pre">trapz()</span></code> and see if you get the same answer.</p>
+</div>
+<div class="section" id="partial">
+<h2>partial<a class="headerlink" href="#partial" title="Permalink to this headline">¶</a></h2>
+<p>Do the above with <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> as well.</p>
+</div>
+<div class="section" id="extra-credit">
+<h2>Extra credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
+<p>This isn’t really the point of the exercise, but see if you can make it dynamically accurate.</p>
+<p>How accurate it is depends on how small the chunks are that you break the function up into.</p>
+<p>See if you can think of a way to dynamically determine how small a step you should use.</p>
+<p>This is one for the math and computational programming geeks!</p>
+</div>
+<div class="section" id="a-bit-about-math-symbology">
+<span id="sum-explained"></span><h2>A bit about math symbology<a class="headerlink" href="#a-bit-about-math-symbology" title="Permalink to this headline">¶</a></h2>
+<p>Those of you without a lot of math background may be confused by the symbols. So here’s a quick intro to the “Summation Symbol” (Greek Capital sigma)</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=a}^{b} x_i\]</div>
+<p>Is shorthand for “add up a bunch of values, with varying i from a to b”. where each x is a different value each time. Translating this into code you get:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">a_list_of_numbers</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>or, in more compact python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">an</span> <span class="n">iterable_of_numbers</span>
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>So the full expression used above:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{N-1} fun(x_i)\]</div>
+<p>Can be written as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_of_x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="mailroom-pkg.html" class="btn btn-neutral float-left" title="Mailroom – as a Python Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Threaded Web Scraper &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Threaded Web Scraper</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/threaded_downloader.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="threaded-web-scraper">
+<span id="exercise-downloader"></span><h1>Threaded Web Scraper<a class="headerlink" href="#threaded-web-scraper" title="Permalink to this headline">¶</a></h1>
+<p>If you have a lot of web sites (or web services) to hit at once, you may find that you’re waiting a long time for each request to return.</p>
+<p>In that case, your computer isn’t doing much, and it could be waiting on multiple requests all at once.</p>
+<p>In the examples, we had a news site scraper that used asyncio to asynchronously gather a bunch of data.</p>
+<p>That approach worked well. But it was only about 100 or so simultaneous requests. Async works great for that many, but when it really shines is when you have thousands of (mostly sleeping) connections.</p>
+<p>Another option that works well for tens to hundreds of simultaneous  connections is threading. Threading works well for this sort of thing as well, because the GIL isn’t a problem – the GIL is released when the system is waiting for a connection to return</p>
+<p>So your job is to write a version of the newsAPI scraper that uses threads, instead.</p>
+<p>Does is run faster or slower than the async version?</p>
+<p>Did you find it easier or harder to write / understand the code?</p>
+<div class="section" id="a-queue">
+<h2>A Queue?<a class="headerlink" href="#a-queue" title="Permalink to this headline">¶</a></h2>
+<p>You will need a way to launch a bunch of threads at once, but probably not one for each request you want to make – that could be a lot of threads! In this case, 100 or so threads would probably work OK, but if you want the code to be extensible to larger numbers, you may want to pre-define a maximum number of threads in a thread pool.</p>
+<p>Then you’ll want to use a job Queue – and then launch a handful of threads to process those jobs.</p>
+<p>Experiment a bit – how many threads give you maximum performance?</p>
+</div>
+<div class="section" id="hints">
+<h2>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="making-requests">
+<h3>Making requests<a class="headerlink" href="#making-requests" title="Permalink to this headline">¶</a></h3>
+<p>Python has a built-in client http lib (urllib). But almost everyone uses the “requests” package:</p>
+<p><a class="reference external" href="http://docs.python-requests.org/">Requests: HTTP for Humans</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install requests
+</pre></div>
+</div>
+<p>Should do it.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

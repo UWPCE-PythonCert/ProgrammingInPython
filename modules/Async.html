@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Asychronous Programming &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Asychronous Programming</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Async.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asychronous-programming">
+<span id="async"></span><h1>Asychronous Programming<a class="headerlink" href="#asychronous-programming" title="Permalink to this headline">¶</a></h1>
+<p><strong>Async:</strong> Not knowing what is happening when…</p>
+<div class="section" id="asynchronous-programming">
+<h2>Asynchronous Programming<a class="headerlink" href="#asynchronous-programming" title="Permalink to this headline">¶</a></h2>
+<p>Another way to achieve concurrency</p>
+<p>Approaches:</p>
+<ul class="simple">
+<li><p>Event Loops</p></li>
+<li><p>Callbacks</p></li>
+<li><p>Coroutines</p></li>
+</ul>
+<div class="section" id="why-async">
+<h3>Why Async?<a class="headerlink" href="#why-async" title="Permalink to this headline">¶</a></h3>
+<p>This is a pretty good overview of why you might want to use async:</p>
+<p><a class="reference external" href="https://hackernoon.com/asyncio-for-the-working-python-developer-5c468e6e2e8e#.dlhcuy23h">https://hackernoon.com/asyncio-for-the-working-python-developer-5c468e6e2e8e#.dlhcuy23h</a></p>
+<p>In: “A Web Crawler With asyncio Coroutines”, Guido himself writes:</p>
+<blockquote>
+<div><p>Many networked programs spend their time not computing, but holding open many connections that are slow, or have infrequent events. These programs present a very different challenge: to wait for a huge number of network events efficiently. A contemporary approach to this problem is asynchronous I/O, or “async”.</p>
+</div></blockquote>
+<p><a class="reference external" href="http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html">http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html</a></p>
+<div class="section" id="my-take">
+<h4>My take:<a class="headerlink" href="#my-take" title="Permalink to this headline">¶</a></h4>
+<p>Async is the good approach to support many connections that are spending a lot of time waiting, and doing short tasks when they do have something to do.</p>
+<p><strong>NOTE:</strong> the backbone of the web is HTTP – which is a “stateless” protocol. That is, each request is independent (state is “faked” with sessions via cookies). So “classic” web apps are NOT keeping many connections alive, there may be many clients at once, but each request is still independent. And often there is substantial work to be done with each one. A multi-threaded or multi-processes web server works fine for this.</p>
+</div>
+</div>
+<div class="section" id="single-page-apps-and-websockets">
+<h3>Single Page Apps and WebSockets<a class="headerlink" href="#single-page-apps-and-websockets" title="Permalink to this headline">¶</a></h3>
+<p><strong>“Single Page Apps”</strong></p>
+<blockquote>
+<div><p>A single-page application (SPA) is a web application … providing a user experience similar to that of a desktop application. … <em>Interaction with the single page application often involves dynamic communication with the web server behind the scenes.</em></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Single-page_application">https://en.wikipedia.org/wiki/Single-page_application</a></p>
+</div></blockquote>
+<p>Communication with the web service can be regular old http (AJAX), or in modern implementations:</p>
+<p><strong>WebSocket</strong>:</p>
+<blockquote>
+<div><p>WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/WebSocket">https://en.wikipedia.org/wiki/WebSocket</a></p>
+</div></blockquote>
+<p>WebSocket gives the advantage of “pushing” – the server can push information to the client, rather than the client having to poll the server to see if anything needs to be updated.</p>
+<p>Either HTTP or WebSocket can generate many small requests to the server, which async is good for, but WebSocket pretty much requires an async server if you want it to scale well, as each active client is keeping a connection open.</p>
+<p>Also: often a web service is depending on other web services to do its task. Kind of nice if your web server can do other things while waiting on a third-party service.</p>
+</div>
+<div class="section" id="client-side-http">
+<h3>Client-side HTTP<a class="headerlink" href="#client-side-http" title="Permalink to this headline">¶</a></h3>
+<p>Another nice use for async is client side HTTP:</p>
+<p>When you make an http request, there is often a substantial lag time between making the request and getting the response.</p>
+<p>The server receives the request, and it may have to do a fair bit of processing before it can return something – and it takes time for the response to travel over the wire.</p>
+<p>With “regular” requests – the program is halted while it’s waiting for the server to do its thing. (“Blocking” – see below)</p>
+<p>With async, the program can do other things while the request is waiting for the server to respond.</p>
+</div>
+<div class="section" id="blocking">
+<h3>Blocking<a class="headerlink" href="#blocking" title="Permalink to this headline">¶</a></h3>
+<p>A “Blocking” call means a function call that does not return until it is complete. That is, an ordinary old function call:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">call_a_func</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The program will stop there and wait until the function returns before moving on. Nothing else can happen. Usually this is fine, the program may not be able to do anything else until it gets the result of that function anyway.</p>
+<p>But what if:</p>
+<ul class="simple">
+<li><p>That function will take a while?</p></li>
+<li><p>And it’s mostly just waiting for the network or database, or….</p></li>
+</ul>
+<p>Maybe your application needs to be responsive to user input, or you want it to do other work while that function is doing its thing. Especially if it’s mostly just waiting for a response to return. How do you deal with that?</p>
+</div>
+<div class="section" id="event-loops">
+<h3>Event Loops<a class="headerlink" href="#event-loops" title="Permalink to this headline">¶</a></h3>
+<p>Asynchronous programming is not new – it is the key component of traditional desktop Graphical User Interface Programs. The GUI version is often referred to as “event-driven” development:</p>
+<p>You write “event handlers” that respond to particular events in the GUI: moving the mouse, clicking on a button, etc.</p>
+<p>The trick is that you don’t know in what order anything might happen – there are multiple GUI objects on the screen at a given time, and users could click on any of them in any order.</p>
+<p>This is all handled by an “event loop”, essentially code like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+   <span class="n">evt</span> <span class="o">=</span> <span class="n">event_queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+   <span class="k">if</span> <span class="n">evt</span><span class="p">:</span>
+       <span class="n">evt</span><span class="o">.</span><span class="n">call_handler</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>That’s it – it is an infinite loop that continually looks to see if there are any events to handle, and if there are, it calls the event handler for that event. Meanwhile, the system is putting events on the event queue as they occur: someone moving the mouse, typing in a control, etc.</p>
+<p>It’s important that event handlers run quickly – if they take a long time to run, then the GUI is “locked up”, or not responsive to user input.</p>
+<p>If the program does need to do some work that takes time, it needs to do that work in another thread or processes, and then put an event on the event queue when it is done.</p>
+<p>For some examples of this, see:</p>
+<p><a class="reference external" href="https://www.blog.pythonlibrary.org/2013/06/27/wxpython-how-to-communicate-with-your-gui-via-sockets/">How To Communicate With Your GUI Via Sockets</a></p>
+</div>
+<div class="section" id="callbacks">
+<h3>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this headline">¶</a></h3>
+<p>Callbacks are a way to tell a non-blocking function what to do when they are done. This is a common way for systems to handle non-blocking operations. For instance, in Javascript, http requests are non-blocking. The request function call will return right away.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;http://www.google.com&#39;</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+        <span class="p">});</span>
+</pre></div>
+</div>
+<p>What this means is:</p>
+<p>Make a request to Google, and when the request is complete, call the function with three parameters: <code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">response</span></code>, and <code class="docutils literal notranslate"><span class="pre">body</span></code>. This function is defined inline, and simply passes the body to the console log. But it could do anything.</p>
+<p>That function is put on the event queue when the request is done, and will be called when the other events on the queue are processed.</p>
+<p>Contrast with the “normal” python request library:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://www.google.com&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The difference here is that the program will wait for <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code> call to return, and that won’t happen until the request is complete. If you are making a lot of requests and they take a while, that is a lot of time sitting around waiting for the server when your computer isn’t doing anything.</p>
+<p>Note that javascript began as a way to automate stuff on web pages – it lets you attach actions to various events in the browser: clicking button or what have you. The “callback” approach is natural for this. And once that structure was there, it made sense to keep it when making requests directly from code, that is doing: <em>Asychronous Javascript and XML</em> – i.e. AJAX. That’s why callback-based async is “built in” to Javascript.</p>
+<p>Async programming usually (always?) involves an event loop to schedule operations.</p>
+<p>But callbacks are only one way to communicate with the event loop.</p>
+</div>
+<div class="section" id="coroutines">
+<h3>Coroutines<a class="headerlink" href="#coroutines" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Coroutines are computer program components that generalize subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. Coroutines are well-suited for implementing more familiar program components such as cooperative tasks, exceptions, event loops, iterators, infinite lists and pipes.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Coroutine">https://en.wikipedia.org/wiki/Coroutine</a></p>
+<blockquote>
+<div><p>Coroutines are functions that can hold state, and varies between invocations; there can be multiple instances of a given coroutine at once.</p>
+</div></blockquote>
+<p>This may sound a bit familiar from generators – a generator function can hold state when it yields, and there can be multiple instances of the same generator function at once.</p>
+<p>In fact, you can use generators and yield to make coroutines, and that was done in Python before version 3.5 added new features to directly support coroutines.</p>
+<p><strong>Warning:</strong> This is really hard stuff to wrap your head around!</p>
+<img alt="../_images/coroutines_plot.png" src="../_images/coroutines_plot.png" />
+<p>(from: <a class="reference external" href="http://www.dabeaz.com/coroutines/Coroutines.pdf">http://www.dabeaz.com/coroutines/Coroutines.pdf</a> – which is a pretty good talk to read if you want to understand this stuff)</p>
+</div>
+<div class="section" id="async-await">
+<h3><code class="docutils literal notranslate"><span class="pre">async</span></code> / <code class="docutils literal notranslate"><span class="pre">await</span></code><a class="headerlink" href="#async-await" title="Permalink to this headline">¶</a></h3>
+<p>In Python 3.5, the <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> keywords were added to make coroutines “native” and more clear.</p>
+<p><strong>NOTE:</strong> <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> are still pretty new to Python. So if you look for tutorials, blog posts, etc. about asynchronous programming, they mostly either use or refer to the “old” way to do it (Including David Beazley’s talk above). In these notes, I am ONLY talking about the new way. I hope that’s less confusing. But it can be confusing to read older materials.</p>
+<p><strong>NOTE2:</strong> In addition to older documentation, the <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> package in the standard library pre-dates <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> – so it supports the older style as well as the new style – another source of confusion.
+<a class="reference external" href="https://github.com/python-trio/trio">The Trio project</a> is worth a look for a cleaner API.</p>
+</div>
+<div class="section" id="using-async-await">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">async/await</span></code><a class="headerlink" href="#using-async-await" title="Permalink to this headline">¶</a></h3>
+<p>You define a coroutine with the <code class="docutils literal notranslate"><span class="pre">async</span></code> keyword:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">ping_server</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
+     <span class="k">pass</span>
+</pre></div>
+</div>
+<p>When you call <code class="docutils literal notranslate"><span class="pre">ping_server()</span></code>, it doesn’t run the code. What it does is return a coroutine, all set up and ready to go.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">cr</span> <span class="o">=</span> <span class="n">ping_server</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="gp">In [13]: </span><span class="n">cr</span>
+<span class="gh">Out[13]: </span><span class="go">&lt;coroutine object ping_server at 0x104d75620&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="running-a-coroutine">
+<h4>Running a Coroutine<a class="headerlink" href="#running-a-coroutine" title="Permalink to this headline">¶</a></h4>
+<p>So how do you actually <em>run</em> the code in a coroutine?</p>
+<p><strong>await</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">a_coroutine</span></code></p>
+<p>It’s kind of like yield (from generators), but instead it returns the next value from the coroutine, and <em>pauses execution</em> so other things can run.</p>
+<p><code class="docutils literal notranslate"><span class="pre">await</span></code> suspends the execution (letting other code run) until the object called returns.</p>
+<p>When you call await on an object, it needs to be an “awaitable” object: an object that defines an <code class="docutils literal notranslate"><span class="pre">__await__()</span></code> method which returns either an iterator which is not a coroutine itself, or a coroutine – which are considered awaitable objects.</p>
+</div>
+<div class="section" id="scheduling-it-to-run">
+<h4>Scheduling it to run<a class="headerlink" href="#scheduling-it-to-run" title="Permalink to this headline">¶</a></h4>
+<p>Schedule it with</p>
+<p><code class="docutils literal notranslate"><span class="pre">asyncio.ensure_future()</span></code></p>
+<p>or</p>
+<p><code class="docutils literal notranslate"><span class="pre">event_loop.create_task()</span></code></p>
+</div>
+</div>
+<div class="section" id="think-of-async-await-as-an-api-for-asynchronous-programming">
+<h3>Think of <code class="docutils literal notranslate"><span class="pre">async/await</span></code> as an API for asynchronous programming<a class="headerlink" href="#think-of-async-await-as-an-api-for-asynchronous-programming" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">async/await</span></code> is really an API for asynchronous programming: People shouldn’t think that <code class="docutils literal notranslate"><span class="pre">async/await</span></code> as synonymous with asyncio, but instead think that asyncio is a framework that can utilize the <code class="docutils literal notranslate"><span class="pre">async/await</span></code> API for asynchronous programming. In fact, this view is supported by the fact that there are other async frameworks that use async/await – like the Trio package mentioned above.</p>
+</div>
+<div class="section" id="future-objects">
+<h3>Future objects<a class="headerlink" href="#future-objects" title="Permalink to this headline">¶</a></h3>
+<p>A Future object encapsulates the asynchronous execution of a callable – it “holds” the code to be run later.</p>
+<p>It also contains methods like:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">cancel()</span></code>:</dt><dd><p>Cancel the future and schedule callbacks.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">done()</span></code>:</dt><dd><p>Return True if the future is done.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">result()</span></code>:</dt><dd><p>Return the result this future represents.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">add_done_callback(fn)</span></code>:</dt><dd><p>Add a callback to be run when the future becomes done.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">set_result(result)</span></code>:</dt><dd><p>Mark the future done and set its result.</p>
+</dd>
+</dl>
+<p>A coroutine isn’t a future, but they can be wrapped in one by the event loop.</p>
+<p>For the most part, you don’t need to work directly with futures.</p>
+<p><strong>NOTE:</strong> there is also the <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> module, which provides “future” objects that work with threads or processes, rather than an async event loop.</p>
+</div>
+<div class="section" id="the-event-loop">
+<h3>The Event Loop<a class="headerlink" href="#the-event-loop" title="Permalink to this headline">¶</a></h3>
+<p>The whole point of this to to pass events along to an event loop. So you can’t really do anything without one.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> package provides an event loop:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> event loop can do a lot:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Register, execute, and cancel delayed calls (asynchronous functions)</p></li>
+<li><p>Create client and server transports for communication</p></li>
+<li><p>Create subprocesses and transports for communication with another program</p></li>
+<li><p>Delegate function calls to a pool of threads</p></li>
+</ul>
+</div></blockquote>
+<p>But the simple option is to use it to run coroutines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">say_something</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This was run by the loop&#39;</span><span class="p">)</span>
+
+<span class="c1"># getting an event loop</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="c1"># run it:</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">say_something</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">asyncio.get_event_loop()</span></code> will create an event loop in the main thread if one doesn’t exist – and return the existing loop if one does exist. So you can use it to get the already existing, and maybe running, loop from anywhere.</p>
+<p>This is not a very interesting example – after all, the coroutine only does one thing and exits out, so the loop simply runs one event and is done.</p>
+<p>Let’s make that a tiny bit more interesting with multiple events:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">say_lots</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This was run by the loop:&#39;</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># getting an event loop</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="c1"># run it:</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">say_lots</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done with loop&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../_downloads/55ad87a5810d2526f7a268685e2c593d/ultra_simple.py"><code class="xref download docutils literal notranslate"><span class="pre">ultra_simple.py</span></code></a></p>
+<p>Still not very interesting – technically async, but with only one coroutine, not much to it.</p>
+<p><strong>NOTE:</strong> The event loop requires some setup, and it’s not very happy when you stop and try to restart it. So you may have issues if you run this kind of code from iPython – each time you run it, you’re still in the same Python process, so the event loop is whatever state it was left by the previous code. If you get any errors, simply restart iPython, or just run the scripts by themselves:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python ultra_simple.py
+</pre></div>
+</div>
+<p>So let’s see an even more interesting example:</p>
+<p><a class="reference download internal" download="" href="../_downloads/759e77431169ef645ab0af9da6dd5990/async_timer.py"><code class="xref download docutils literal notranslate"><span class="pre">async_time.py</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># using &quot;async&quot; makes this a coroutine:</span>
+<span class="c1"># its code can be run by the event loop</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">display_date</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="mf">10.0</span>  <span class="c1"># we want it to run for 10 seconds.</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># keep doing this until break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;instance: </span><span class="si">{}</span><span class="s2"> Time: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="n">end_time</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;instance: </span><span class="si">{}</span><span class="s2"> is all done&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+            <span class="k">break</span>
+        <span class="c1"># pause for a random amount of time</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">shutdown</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shutdown called&quot;</span><span class="p">)</span>
+    <span class="c1"># you can access the event loop this way:</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+
+<span class="c1"># You register &quot;futures&quot; on the loop this way:</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">display_date</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">display_date</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+<span class="c1"># or add tasks to the loop like this:</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">display_date</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">display_date</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># this will shut the event loop down in 15 seconds</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">call_later</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">shutdown</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;about to run loop&quot;</span><span class="p">)</span>
+<span class="c1"># this is a blocking call</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop exited&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="calling-a-regular-function">
+<h3>Calling a regular function<a class="headerlink" href="#calling-a-regular-function" title="Permalink to this headline">¶</a></h3>
+<p>The usual way to use the event loop is to schedule “awaitable” tasks – i.e. coroutines.</p>
+<p>But sometimes you need to call a regular old function.</p>
+<p>This is more like the traditional “callback” style:</p>
+<p>You can do that with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">event_loop.call_soon(callback,</span> <span class="pre">*args)</span></code></p>
+<p>This will put an event on the event loop, and call the function (callable) passed in, passing on any extra arguments as keyword arguments. It will run “soon”</p>
+<p>Similarly, you can schedule a callable to be run some number of seconds in the future:</p>
+<p><code class="docutils literal notranslate"><span class="pre">event_loop.call_later(delay,</span> <span class="pre">callback,</span> <span class="pre">*args)</span></code></p>
+<p>Or at some specified time:</p>
+<p><code class="docutils literal notranslate"><span class="pre">event_loop.call_at(when,</span> <span class="pre">callback,</span> <span class="pre">*args)</span></code></p>
+<p>Absolute time corresponds to the event loop’s time() method: <code class="docutils literal notranslate"><span class="pre">event_loop.time()</span></code></p>
+<p>If you need to put an event on the loop from a separate thread, you can use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">event_loop.call_soon_threadsafe(callback,</span> <span class="pre">*args)</span></code></p>
+</div>
+<div class="section" id="giving-up-control">
+<h3>Giving up control<a class="headerlink" href="#giving-up-control" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">await</span></code> passes control back to the event loop – cooperative multitasking!</p>
+<p>Usually, you actually need to wait for a task of some sort. but if not, and you still need to give up control, you can use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">asyncio.sleep(0)</span></code></p>
+<p>You can, of course, pause for a period of time (greater than zero), but other than demos, I’m not sure why you’d want to do that.</p>
+</div>
+<div class="section" id="running-blocking-code">
+<h3>Running Blocking Code<a class="headerlink" href="#running-blocking-code" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes you really do need to run “blocking” code – maybe a long computation, or reading a big file, or…..</p>
+<p>In that case, if you don’t want your app locked up – you need to put it in a separate thread (or process). Use:</p>
+<p>result = await loop.run_in_executor(Executor, function)</p>
+<p>This will run the function in the specified Executor:</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Executor">https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Executor</a></p>
+<p>If Executor is None – the default is used.</p>
+<p><a class="reference download internal" download="" href="../_downloads/5fcc922e232dba94d872d8bb3693f766/async_executor.py"><code class="xref download docutils literal notranslate"><span class="pre">async_executor.py</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">small_task</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Just something to give us little tasks that run at random intervals</span>
+<span class="sd">    These will go on forever</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># keep doing this until break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;task: </span><span class="si">{}</span><span class="s2"> run&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+        <span class="c1"># pause for a random amount of time between 0 and 2 seconds</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">slow_task</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># keep going forever</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;running the slow task- blocking!&quot;</span><span class="p">)</span>
+        <span class="c1"># This will block for 2-10 seconds!</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">slow_function</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="c1"># uncomment to put it on a different thread:</span>
+        <span class="c1"># result = await loop.run_in_executor(None,</span>
+        <span class="c1">#                                     slow_function,</span>
+        <span class="c1">#                                     random.random() * 8 + 2)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slow function done: result&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># to release the loop</span>
+
+
+<span class="k">def</span> <span class="nf">slow_function</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    this is a fake function that takes a long time, and blocks</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slow task complete&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">duration</span>
+
+
+<span class="c1"># get a loop going:</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+<span class="c1"># or add tasks to the loop like this:</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">small_task</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">small_task</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">small_task</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">small_task</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Add the slow one</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">slow_task</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;about to run loop&quot;</span><span class="p">)</span>
+<span class="c1"># this is a blocking call</span>
+<span class="c1"># we will need to hit ^C to stop it...</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop exited&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-a-bunch-of-tasks">
+<h3>Running a bunch of tasks<a class="headerlink" href="#running-a-bunch-of-tasks" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes you have a bunch of individual tasks to complete, but it does not matter in what order they are done.</p>
+<p><code class="docutils literal notranslate"><span class="pre">asyncio.gather()</span></code> collects a bunch of individual coroutines (or futures) together, runs them all (in parallel), and puts the results in a list.</p>
+<p>Remember that they are now run in arbitrary order.</p>
+<p><a class="reference download internal" download="" href="../_downloads/5191f18c29e0304aa9ecf3a3c24d288a/gather.py"><code class="xref download docutils literal notranslate"><span class="pre">gather.py</span></code></a></p>
+</div>
+</div>
+<div class="section" id="doing-real-work-with-async">
+<h2>Doing real work with async<a class="headerlink" href="#doing-real-work-with-async" title="Permalink to this headline">¶</a></h2>
+<p>So what kinds of real things can you do with asynchronous programming?</p>
+<p><code class="docutils literal notranslate"><span class="pre">asyncio</span></code> provides the core tools to write asynchronous programs:</p>
+<ul class="simple">
+<li><p>An event loop with a lot of features</p></li>
+<li><p>Asynchronous versions of core network protocols: i.e. sockets.</p></li>
+<li><p>file watching</p></li>
+<li><p>…</p></li>
+</ul>
+<p>But chances are, if you want to do something real, you’ll use a library..</p>
+<div class="section" id="web-servers-and-clients">
+<h3>Web servers and clients<a class="headerlink" href="#web-servers-and-clients" title="Permalink to this headline">¶</a></h3>
+<p>There have been a few async frameworks around for Python for a while:</p>
+<p>The granddaddy of them all:</p>
+<p>Twisted <a class="reference external" href="https://twistedmatrix.com/trac/">https://twistedmatrix.com/trac/</a></p>
+<p>Relative Newcomer:</p>
+<p>Tornado:
+<a class="reference external" href="http://www.tornadoweb.org/en/stable/">http://www.tornadoweb.org/en/stable/</a></p>
+<p>Using the latest and greatest:</p>
+<p>Once the asyncio package was added to the standard lib the tools are there to build “proper” http servers, etc:</p>
+<p><code class="docutils literal notranslate"><span class="pre">aiohttp</span></code> is an http server (and client) built on top of <code class="docutils literal notranslate"><span class="pre">asyncio</span></code>:</p>
+<p><a class="reference external" href="http://aiohttp.readthedocs.io/">http://aiohttp.readthedocs.io/</a></p>
+<p>(Twisted, Tornado, and the others have their own implementation of much
+of what is in asyncio, as they existed before asyncio existed)</p>
+<p>As it’s the most “modern” implementation – we will use it for examples in the rest of this class:</p>
+</div>
+<div class="section" id="aiohttp">
+<h3><code class="docutils literal notranslate"><span class="pre">aiohttp</span></code><a class="headerlink" href="#aiohttp" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Supports both Client and HTTP Server.</p></li>
+<li><p>Supports both Server WebSockets and Client WebSockets out-of-the-box.</p></li>
+<li><p>Web-server has Middlewares, Signals and pluggable routing.</p></li>
+</ul>
+<p>Installing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install aiohttp
+</pre></div>
+</div>
+</div>
+<div class="section" id="an-async-client-example">
+<h3>An async client example:<a class="headerlink" href="#an-async-client-example" title="Permalink to this headline">¶</a></h3>
+<p>If you need to make a lot of requests to collect data, or whatever, it’s likely your code is taking a lot of time to wait for the server to return. If it’s a slow server, it could be much more time waiting than doing real work.</p>
+<p>This is where async shines!</p>
+<p>This example borrowed from:</p>
+<p><a class="reference external" href="http://terriblecode.com/blog/asynchronous-http-requests-in-python/">Asynchronous HTTP Requests in Python</a></p>
+<p>It’s a really nice example.</p>
+<p>The goal is to collect statistics for various NBA players. It turns out the NBA has an API for accessing statistics:</p>
+<p><a class="reference external" href="http://stats.nba.com/">http://stats.nba.com/</a></p>
+<p>It’s kinda slow, but has a lot of great data – if you’re into that kind of thing.</p>
+<p>Turns out that it’s a picky API – and I can’t get the async version to work – maybe the server gets upset when you hit it too hard?</p>
+<p>Can you get it to work?</p>
+<p>Synchronous version:
+<a class="reference download internal" download="" href="../_downloads/f29a8bf1520fee10243ea5036e514e2b/nba_stats_sync.py"><code class="xref download docutils literal notranslate"><span class="pre">nba_stats_sync.py</span></code></a></p>
+<p>And the Asynchronous version:
+<a class="reference download internal" download="" href="../_downloads/642914b2ed03ec925362d45ac03ce421/nba_stats_async.py"><code class="xref download docutils literal notranslate"><span class="pre">nba_stats_async.py</span></code></a></p>
+<div class="section" id="one-that-works">
+<h4>One that works:<a class="headerlink" href="#one-that-works" title="Permalink to this headline">¶</a></h4>
+<p>Here is a similar example that works:</p>
+<p>This is a “classic” regular old synchronous version:</p>
+<p><a class="reference download internal" download="" href="../_downloads/cfd6afe51bc5be67deffa8b0c595753c/get_news_sync.py"><code class="xref download docutils literal notranslate"><span class="pre">get_news_sync.py</span></code></a></p>
+<p>and here is an async version</p>
+<p><a class="reference download internal" download="" href="../_downloads/d935f1a96a5b841a5ec3d6d4124e1601/get_news_async.py"><code class="xref download docutils literal notranslate"><span class="pre">get_news_async.py</span></code></a></p>
+<p>Let’s take a look.</p>
+<p>TODO: Look at async example in multi-threading server example.</p>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>The Asyncio Cheat Sheet: This is a pretty helpful, how to do it guide.</p>
+<p><a class="reference external" href="http://cheat.readthedocs.io/en/latest/python/asyncio.html">http://cheat.readthedocs.io/en/latest/python/asyncio.html</a></p>
+<p>David Beazley: Concurrency from the ground up.</p>
+<p>He writes a full async client server from scratch before your eyes –
+this guy can write code faster than most of us can read it…</p>
+<p><a class="reference external" href="https://youtu.be/MCs5OvhV9S4">https://youtu.be/MCs5OvhV9S4</a></p>
+<p>David Beazley: asyncio:</p>
+<p><a class="reference external" href="https://youtu.be/ZzfHjytDceU">https://youtu.be/ZzfHjytDceU</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=lYe8W04ERnY">https://www.youtube.com/watch?v=lYe8W04ERnY</a></p>
+<p>And David Beazley’s “Curio” package – an async package designed primarily for learning, rather than production use.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

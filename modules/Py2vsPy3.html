@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python 2 versus Python 3 &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intro to Git" href="Git.html" />
+    <link rel="prev" title="IPython Introduction" href="IPythonIntroduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Class_introduction.html">Introduction to the in-class version of the program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Python 2 versus Python 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Git.html">Intro to Git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Python 2 versus Python 3</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Py2vsPy3.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-2-versus-python-3">
+<span id="py2-vs-py3"></span><h1>Python 2 versus Python 3<a class="headerlink" href="#python-2-versus-python-3" title="Permalink to this headline">¶</a></h1>
+<p>Much of the example code you’ll find online is Python2, rather than Python3</p>
+<p>For the most part, they are the same – so you can use those examples to learn from.</p>
+<p>There are a lot of subtle differences that you don’t need to concern yourself with just yet.</p>
+<p>But a couple that you’ll need to know right off the bat:</p>
+<div class="section" id="print">
+<h2>print()<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h2>
+<p>In Python2, <code class="docutils literal notranslate"><span class="pre">print</span></code> is a “statement”, rather than a function. That means it didn’t require parentheses around what you want printed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="n">something</span><span class="p">,</span> <span class="n">something_else</span>
+</pre></div>
+</div>
+<p>This made it a bit less flexible and powerful.</p>
+<p>But – if you try to use it that way in Python3, you’ll get an error:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="nb">print</span> <span class="s2">&quot;this&quot;</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-15-70c8add5d16e&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span> <span class="s2">&quot;this&quot;</span>
+               <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">Missing</span> <span class="n">parentheses</span> <span class="ow">in</span> <span class="n">call</span> <span class="n">to</span> <span class="s1">&#39;print&#39;</span>
+</pre></div>
+</div>
+<p>So – if you get this error, simply add the parentheses:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this&quot;</span><span class="p">)</span>
+<span class="go">this</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="division">
+<h2>Division<a class="headerlink" href="#division" title="Permalink to this headline">¶</a></h2>
+<p>In python 3, the division operator is “smart” when you divide integers:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gh">Out[17]: </span><span class="go">0.5</span>
+</pre></div>
+</div>
+<p>However in Python2, integer division, will give you an integer result:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="gh">Out[1]: </span><span class="go">0</span>
+</pre></div>
+</div>
+<p>In both versions, you can get “integer division” if you want it with a double slash:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="mi">1</span><span class="o">//</span><span class="mi">2</span>
+<span class="gh">Out[1]: </span><span class="go">0</span>
+</pre></div>
+</div>
+<p>And in Python2, you can get the behavior of Python3 with “true division”:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+
+<span class="gp">In [3]: </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="gh">Out[3]: </span><span class="go">0.5</span>
+</pre></div>
+</div>
+<p>For the most part, you just need to be a bit careful with the rare cases where Python2 code counts on integer division.</p>
+</div>
+<div class="section" id="iterators-vs-lists">
+<h2>Iterators vs Lists<a class="headerlink" href="#iterators-vs-lists" title="Permalink to this headline">¶</a></h2>
+<p>In Python2, a number of functions returned a full list of the contents. But most of the time, you didn’t need a list – you only needed a way to loop through all the items returned. Such an object is called an “iterable” – more about that later in the class. But for now, if you get an error like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;dict_keys&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">indexing</span>
+</pre></div>
+</div>
+<p>Then you likely got an iterator, rather than a “proper” list.  You can fix this by making a list out of it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">an_iterator</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>the list constructor will make a list out of any iterable.  So you can now index it, etc.</p>
+</div>
+<div class="section" id="other-python2-python3-differences">
+<h2>Other Python2 / Python3 differences<a class="headerlink" href="#other-python2-python3-differences" title="Permalink to this headline">¶</a></h2>
+<p>The most drastic difference (improvement!) is better Unicode support, and better bytes / Unicode separation.</p>
+<p>Most of the other differences are essentially implementation details, like getting iterators instead of sequences – we’ll talk about that more when it comes up in a later lesson.</p>
+<p>There are also a few syntax differences with more advanced topics: Exceptions, <code class="docutils literal notranslate"><span class="pre">super()</span></code>, etc.</p>
+<p>We’ll talk about all that when we cover those topics as well.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Git.html" class="btn btn-neutral float-right" title="Intro to Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="IPythonIntroduction.html" class="btn btn-neutral float-left" title="IPython Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

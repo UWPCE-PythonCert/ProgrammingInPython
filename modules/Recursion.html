@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recursion &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Boolean Expressions" href="Booleans.html" />
+    <link rel="prev" title="More on Functions" href="Functions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="BasicPython.html">Basic Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Functions.html">More on Functions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Recursion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Recursion</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Recursion.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="recursion">
+<h1>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h1>
+<p>You’ve seen functions that call other functions.</p>
+<p>If a function calls <em>itself</em>, we call that <strong>recursion</strong></p>
+<p>Like with other functions, a call within a call establishes a <em>call stack</em></p>
+<p>With recursion, if you are not careful, this stack can get <em>very</em> deep.</p>
+<p>Python has a maximum limit to how much it can recurse. This is intended to
+save your machine from running out of RAM.</p>
+<p>Recursion is especially useful for a particular set of problems.</p>
+<p>For example, take the case of the <em>factorial</em> function.</p>
+<p>In mathematics, the <em>factorial</em> of an integer is the result of multiplying that
+integer by every integer smaller than it down to 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>5! == 5 * 4 * 3 * 2 * 1
+</pre></div>
+</div>
+<p>We can use a recursive function nicely to model this mathematical function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1! = 1
+2! = 2 * 1  =  2 * 1!
+3! = 3 * 2 * 1 = 3 * 2!
+</pre></div>
+</div>
+<p>So we have a pattern here – each value can be defined in terms of the previous value.</p>
+<p>So generically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1! = 1
+n! = n * (n-1)!
+</pre></div>
+</div>
+<p>How would we put that in code? Pretty straightforward translation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That was pretty easy – what happens when we run it?</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RecursionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-2-3fd9b1939623&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-1-5ff805d50ea6&gt;</span> in <span class="ni">factorial</span><span class="nt">(n)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="o">...</span> <span class="n">last</span> <span class="mi">1</span> <span class="n">frames</span> <span class="n">repeated</span><span class="p">,</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">frame</span> <span class="n">below</span> <span class="o">...</span>
+
+<span class="nn">&lt;ipython-input-1-5ff805d50ea6&gt;</span> in <span class="ni">factorial</span><span class="nt">(n)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">RecursionError</span>: maximum recursion depth exceeded
+</pre></div>
+</div>
+<p>OOPS! that didn’t work – why not? Let’s add a print…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;factorial called with&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And call it:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">factorial called with 3</span>
+<span class="go">factorial called with 2</span>
+<span class="go">factorial called with 1</span>
+<span class="go">factorial called with 0</span>
+<span class="go">factorial called with -1</span>
+<span class="go">factorial called with -2</span>
+<span class="go">factorial called with -3</span>
+<span class="go">factorial called with -4</span>
+<span class="go">factorial called with -5</span>
+<span class="go">...</span>
+<span class="go">&lt;ipython-input-3-54c2cb2bf478&gt; in factorial(n)</span>
+<span class="go">      1 def factorial(n):</span>
+<span class="go">      2     print(&quot;factorial called with&quot;, n)</span>
+<span class="go">----&gt; 3     return n * factorial(n-1)</span>
+
+<span class="go">RecursionError: maximum recursion depth exceeded while calling a Python object</span>
+</pre></div>
+</div>
+<p>Now it’s clear what’s going on – each time you call the function, it calls itself with a value one less – but then it just keeps going into the deep negative numbers, and only stops because Python reaches its recursion limit.</p>
+<p>This makes clear a core requirement of recursive functions:</p>
+<blockquote>
+<div><p><strong>Recursive functions must have a termination criteria!</strong></p>
+</div></blockquote>
+<p>That is, there must be a case (or more than one) for which they return a direct value. What should that be for factorial? Well, it’s part of the definition that 1! == 1 – so let’s put that in our function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;factorial called with&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and try that:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">factorial called with 3</span>
+<span class="go">factorial called with 2</span>
+<span class="go">factorial called with 1</span>
+<span class="gh">Out[7]: </span><span class="go">6</span>
+</pre></div>
+</div>
+<p>Much better!  Try it out now with various values, and maybe without the print:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gh">Out[14]: </span><span class="go">1</span>
+
+<span class="gp">In [15]: </span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gh">Out[15]: </span><span class="go">2</span>
+
+<span class="gp">In [16]: </span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gh">Out[16]: </span><span class="go">6</span>
+
+<span class="gp">In [17]: </span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gh">Out[17]: </span><span class="go">24</span>
+</pre></div>
+</div>
+<p>Looking good!</p>
+<p>Exercise for the reader: What happens if you pass in a negative number?
+Think about it first, before you try it. Hint – it won’t work!
+How would you change your code to make it more robust?</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Whenever you have a function that can be defined in terms of itself, you have a use case for recursion.  It can make for nice compact, clear code.</p></li>
+<li><p>Python will create a new “stack frame” for each call to the function – so each call is kept separate, with separate local variables.</p></li>
+</ul>
+<p>But:</p>
+<ul class="simple">
+<li><p>Python has a limited recursion depth – so it can’t be used for “big” problems.</p></li>
+<li><p>You do need to make sure the calls will terminate.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Booleans.html" class="btn btn-neutral float-right" title="Boolean Expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Functions.html" class="btn btn-neutral float-left" title="More on Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

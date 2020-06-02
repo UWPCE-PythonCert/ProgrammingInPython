@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File Exercise &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Trigrams – Simple Text Manipulation" href="kata_fourteen.html" />
+    <link rel="prev" title="Dictionary and Set Lab" href="dict_lab.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">File Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kata_fourteen.html">Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mailroom-part2.html">Mailroom Part 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>File Exercise</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/file_lab.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-exercise">
+<span id="exercise-file-lab"></span><h1>File Exercise<a class="headerlink" href="#file-exercise" title="Permalink to this headline">¶</a></h1>
+<p>A bit of practice with files</p>
+<div class="section" id="goal">
+<h2>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<p>Get a little bit of practice with handling files and parsing simple text.</p>
+</div>
+<div class="section" id="paths-and-file-processing">
+<h2>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Write a program which prints the full path for all files in the current
+directory, one per line. Use either the <code class="docutils literal notranslate"><span class="pre">os</span></code> module or <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>.</p></li>
+<li><p>Write a program which copies a file from a source, to a destination
+(without using shutil, or the OS copy command (you are essentially writing a simple version of the OS copy command)).</p>
+<ul>
+<li><p>This should work for any kind of file, so you need to open
+the files in binary mode: <code class="docutils literal notranslate"><span class="pre">open(filename,</span> <span class="pre">'rb')</span></code> (or <code class="docutils literal notranslate"><span class="pre">'wb'</span></code> for
+writing). Note that for binary files, you can’t use <code class="docutils literal notranslate"><span class="pre">readline()</span></code> –
+lines don’t have any meaning for binary files.</p></li>
+<li><p>Test it with both text and binary files (maybe a jpeg or something of your choosing).</p></li>
+<li><p>Advanced: make it work for any size file: i.e. don’t read the entire
+contents of the file into memory at once.</p></li>
+<li><p>This should only be a few lines of code :-)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="file-reading-and-parsing">
+<h2>File reading and parsing<a class="headerlink" href="#file-reading-and-parsing" title="Permalink to this headline">¶</a></h2>
+<p>Download this text file:</p>
+<p><a class="reference download internal" download="" href="../_downloads/f011030f96079534d2ec0a0739f4a16e/students.txt"><code class="xref download docutils literal notranslate"><span class="pre">students.txt</span></code></a></p>
+<p>In it, you will find a list of names and what programming languages they have used in the past. This may be similar to a list generated at the beginning of this class.</p>
+<p>Write a little script that reads that file and generates a list of all the languages that have been used.</p>
+<p>What might be the best data structure to use to keep track of bunch of values (the languages) without duplication?</p>
+<div class="section" id="the-file-format">
+<h3>The file format:<a class="headerlink" href="#the-file-format" title="Permalink to this headline">¶</a></h3>
+<p>The first line of the file is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Name:</span> <span class="pre">Nickname,</span> <span class="pre">languages</span></code></p>
+<p>And each line looks something like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Jagger,</span> <span class="pre">Michael:</span> <span class="pre">Mick,</span> <span class="pre">shell,</span> <span class="pre">python</span></code></p>
+<p>So a colon after the name, then the nickname, and then one or more languages.</p>
+<p>However, like real data files, the file is NOT well-formed. Only some lines have nicknames, and other small differences, so you will need to write some code to make sure you get it all correct.</p>
+<p>How can you tell the difference between a nickname and a language?</p>
+<p>Extra challenge: keep track of how many students specified each language.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="kata_fourteen.html" class="btn btn-neutral float-right" title="Trigrams – Simple Text Manipulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dict_lab.html" class="btn btn-neutral float-left" title="Dictionary and Set Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

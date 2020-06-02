@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mailroom Tutorial &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dictionary and Set Lab" href="dict_lab.html" />
+    <link rel="prev" title="Mailroom Part 1" href="mailroom-part1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="slicing.html">Slicing Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="list_lab.html">List Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mailroom-part1.html">Mailroom Part 1</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Mailroom Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Mailroom Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/mailroom_tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mailroom-tutorial">
+<span id="exercise-mailroom-part1-tutorial"></span><h1>Mailroom Tutorial<a class="headerlink" href="#mailroom-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="controlling-main-program-flow">
+<h2>Controlling Main Program Flow<a class="headerlink" href="#controlling-main-program-flow" title="Permalink to this headline">¶</a></h2>
+<p>One of the key components of the mailroom program is managing program flow and interacting with the user. Ideally main flow code should be cleanly separate from your feature code.</p>
+<p>The best way to manage the program flow is to use a <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> loop, which means you will keep asking the user for input until user selects a feature or exits.</p>
+<p>There are several ways to write your main program flow. Let’s consider these two options:</p>
+<p>Option 1:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
+    <span class="c1"># do things</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">do_something</span><span class="p">()</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Option 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_something</span><span class="p">()</span>
+    <span class="c1"># do things</span>
+    <span class="n">main</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">do_something</span><span class="p">()</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Can you see the advantages of one example over the other?</p>
+<p>In the first one, <code class="docutils literal notranslate"><span class="pre">do_something</span></code> is not aware of how the main works and as you add more features they shouldn’t manage the main either.
+The call stack will also keep getting deeper and deeper, which can make error stack traces hard to debug.</p>
+<p>Another advantage is simpler code logic, and simpler code logic means less bugs!</p>
+<p>Let’s look at a simple program to utilize the <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> loop and how we can handle user response:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>  <span class="c1"># imports go at the top of the file</span>
+
+
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Apples&#39;</span><span class="p">,</span> <span class="s1">&#39;Oranges&#39;</span><span class="p">,</span> <span class="s1">&#39;Pears&#39;</span><span class="p">]</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&quot;Welcome to the fruit stand!&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Please choose from below options:&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;1 - View fruits&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;2 - Add a fruit&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;3 - Remove a fruit&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;4 - Exit&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;&gt;&gt;&gt; &quot;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">view_fruits</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fruits</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">add_fruit</span><span class="p">():</span>
+    <span class="n">new_fruit</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Name of the fruit to add?&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+    <span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_fruit</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">remove_fruit</span><span class="p">():</span>
+    <span class="n">purge_fruit</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Name of the fruit to remove?&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">purge_fruit</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This fruit does not exist!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">purge_fruit</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">exit_program</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bye!&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>  <span class="c1"># exit the interactive script</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>  <span class="c1"># continuously collect user selection</span>
+        <span class="c1"># now redirect to feature functions based on the user selection</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">view_fruits</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">add_fruit</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+            <span class="n">remove_fruit</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
+            <span class="n">exit_program</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not a valid option!&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># don&#39;t forget this block to guard against your code running automatically if this module is imported</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="choosing-a-data-structure">
+<h2>Choosing A Data Structure<a class="headerlink" href="#choosing-a-data-structure" title="Permalink to this headline">¶</a></h2>
+<p>So far in this course, we have learned about strings, tuples, and lists. We will apply these data structures to hold our mailroom donor information.
+Choosing the right data structure is critical and our donor data structure will change in Parts 2 and 3 of this assignment as we learn about additional structures.</p>
+<p>What goes into this decision to use a specific data structure? Here are a couple of things to consider.</p>
+<ul class="simple">
+<li><p>Efficiency: We often need to look up data; are you able to efficiently look up the data you need?</p></li>
+<li><p>Ease of use: Is the code straightforward and simple for basic operations?</p></li>
+<li><p>Features: Does the code do everything you need to do for your requirements?</p></li>
+</ul>
+<p>Let’s consider each data structure.</p>
+<p>A simple string would probably be able to do what we need feature-wise but the code to implement these features would be quite complex and not very efficient.</p>
+<p>A tuple would be an issue when adding donors since it is an immutable data structure.</p>
+<p>A list would satisfy all of the needed features with a fairly simple code to implement. It makes the most sense to use a list for the main data structure. Actually, we can use a combination of both tuples and a list.</p>
+<p>Here is a potential data structure to consider:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">donor_db</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;William Gates, III&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">653772.32</span><span class="p">,</span> <span class="mf">12.17</span><span class="p">]),</span>
+            <span class="p">(</span><span class="s2">&quot;Jeff Bezos&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">877.33</span><span class="p">]),</span>
+            <span class="p">(</span><span class="s2">&quot;Paul Allen&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">663.23</span><span class="p">,</span> <span class="mf">43.87</span><span class="p">,</span> <span class="mf">1.32</span><span class="p">]),</span>
+            <span class="p">(</span><span class="s2">&quot;Mark Zuckerberg&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">1663.23</span><span class="p">,</span> <span class="mf">4300.87</span><span class="p">,</span> <span class="mf">10432.0</span><span class="p">]),</span>
+            <span class="p">]</span>
+</pre></div>
+</div>
+<p>Why choose tuples for the inner donor record? Well, another part of using the right data structure is to reduce bugs; you are setting clear expectations that a single donor entry only contains two items.</p>
+</div>
+<div class="section" id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<p>Python makes sorting fairly easy and has utilities for sorting simple lists as well as more complex structures like lists of tuples as above.</p>
+<p>Let’s start with a structure that represents student records: student name and age.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">39</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Jimmy&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function to do the sorting and either sort by name or age. There are actually several ways to accomplish that, we will look at some of them.</p>
+<p>The first option is to use optional <code class="docutils literal notranslate"><span class="pre">key</span></code> param, which accepts a function object - it can be any custom function we define as long as input and output are correctly implemented.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">sort_key</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
+<span class="go">        return student[1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sort_key</span><span class="p">)</span>
+<span class="go">[(&#39;Joe&#39;, 26), (&#39;Bob&#39;, 39), (&#39;Jimmy&#39;, 40)]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sort_key</span></code> function takes in a single parameter that represents the item in the list, in our case the student record, you then need to return which field should be used for sort comparison. We are using field at index 1, that’s the age.</p>
+<p>Another option is to use a <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> function from <code class="docutils literal notranslate"><span class="pre">operator</span></code> module, it accepts a parameter for list item index value, similar to our <code class="docutils literal notranslate"><span class="pre">sort_key</span></code> function:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">[(&#39;Joe&#39;, 26), (&#39;Bob&#39;, 39), (&#39;Jimmy&#39;, 40)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">[(&#39;Bob&#39;, 39), (&#39;Jimmy&#39;, 40), (&#39;Joe&#39;, 26)]</span>
+</pre></div>
+</div>
+<p>Using second option makes the most sense in simple cases like above since we’re not doing anything complicated and simply need to sort on the index. If our student record also included the last name:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Bob Mac&#39;</span><span class="p">,</span> <span class="mi">39</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Joe Acer&#39;</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Jimmy Lenovo&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Then the custom function becomes really handy to sort on the last name:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">sort_key</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
+<span class="go">        return student[0].split(&quot; &quot;)[1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sort_key</span><span class="p">)</span>
+<span class="go">[(&#39;Joe Acer&#39;, 26), (&#39;Jimmy Lenovo&#39;, 40), (&#39;Bob Mac&#39;, 39)]</span>
+</pre></div>
+</div>
+<p>Note: you might see a lot of examples online using the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> statement, it is valid and can be used but isn’t preferred because the syntax isn’t elegant or very readable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dict_lab.html" class="btn btn-neutral float-right" title="Dictionary and Set Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mailroom-part1.html" class="btn btn-neutral float-left" title="Mailroom Part 1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

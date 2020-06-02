@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IPython Introduction &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python 2 versus Python 3" href="Py2vsPy3.html" />
+    <link rel="prev" title="Introduction to your Programming Environment" href="EnvironmentOverview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Class_introduction.html">Introduction to the in-class version of the program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">IPython Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Git.html">Intro to Git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>IPython Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/IPythonIntroduction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ipython-introduction">
+<h1>IPython Introduction<a class="headerlink" href="#ipython-introduction" title="Permalink to this headline">¶</a></h1>
+<p>You have installed <a class="reference external" href="http://ipython.org">IPython</a>.</p>
+<p>IPython is an advanced Python interpreter that offers enhancements.</p>
+<p>You can read more about it in the <a class="reference external" href="http://ipython.org/ipython-doc/stable/index.html">official documentation</a>.</p>
+<p>Specifically, you’ll want to pay attention to the information about</p>
+<p><a class="reference external" href="http://ipython.org/ipython-doc/stable/interactive/index.html">Using IPython for Interactive Work</a>.</p>
+<div class="section" id="the-very-basics-of-ipython">
+<h2>The very basics of IPython<a class="headerlink" href="#the-very-basics-of-ipython" title="Permalink to this headline">¶</a></h2>
+<p>IPython can do a lot for you, but for starters, here are the key pieces
+you’ll want to know:</p>
+<p>Start it up</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ipython
+Python <span class="m">3</span>.5.0 <span class="o">(</span>v3.5.0:374f501f4567, Sep <span class="m">12</span> <span class="m">2015</span>, <span class="m">11</span>:00:19<span class="o">)</span>
+Type <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+
+IPython <span class="m">4</span>.0.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython<span class="s1">&#39;s features.</span>
+<span class="s1">%quickref -&gt; Quick reference.</span>
+<span class="s1">help      -&gt; Python&#39;</span>s own <span class="nb">help</span> system.
+object?   -&gt; Details about <span class="s1">&#39;object&#39;</span>, use <span class="s1">&#39;object??&#39;</span> <span class="k">for</span> extra details.
+</pre></div>
+</div>
+<p>This is the stuff I use every day:</p>
+<ul class="simple">
+<li><p>command line recall:</p>
+<ul>
+<li><p>hit the “up arrow” key</p></li>
+<li><p>if you have typed a bit, it will find the last command that starts the same way.</p></li>
+</ul>
+</li>
+<li><p>basic shell commands:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code>, <code class="docutils literal notranslate"><span class="pre">cd</span></code>, <code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></li>
+</ul>
+</li>
+<li><p>any shell command:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">the_shell_command</span></code></p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>pasting from the clipboard:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">%paste</span></code> (this keeps whitespace cleaner for you)</p></li>
+</ul>
+</li>
+<li><p>getting help:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">something?</span></code></p></li>
+</ul>
+</li>
+<li><p>tab completion:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">something.&lt;tab&gt;</span></code></p></li>
+</ul>
+</li>
+<li><p>running a python file:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">the_name_of_the_file.py</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>That’s it – you can get a lot done with those.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Py2vsPy3.html" class="btn btn-neutral float-right" title="Python 2 versus Python 3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="EnvironmentOverview.html" class="btn btn-neutral float-left" title="Introduction to your Programming Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

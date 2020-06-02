@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sparse Array Exercise &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A Couple Handy Context Managers" href="context-managers-exercise.html" />
+    <link rel="prev" title="lambda and keyword Magic" href="lambda_magic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="roman.html">Roman/Arabic Numeral Converter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rot13.html">ROT13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lambda_magic.html">lambda and keyword Magic</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sparse Array Exercise</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sparse-array">Sparse Array</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trapezoid.html">Trapezoidal Rule</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Sparse Array Exercise</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/sparse_array.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sparse-array-exercise">
+<span id="exercise-sparse-array"></span><h1>Sparse Array Exercise<a class="headerlink" href="#sparse-array-exercise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sparse-array">
+<h2>Sparse Array<a class="headerlink" href="#sparse-array" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Goal:</p>
+</div></blockquote>
+<p>Learn how to emulate a built-in class.</p>
+<div class="section" id="id1">
+<h3>Sparse Array:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Oftentimes, at least in computation programming, we have large arrays of data that hold mostly zeros.</p>
+<p>These are referred to as “sparse” as the information in them is widely scattered, or sparse.</p>
+<p>Since they are mostly zeros, it can be memory and computationally efficient to store only the value that are non-zero.</p>
+<p>But you want it to look like a regular array in user code.</p>
+<p>In the real world, these are usually 2 dimensional arrays. But to keep it a bit simpler, we’ll make a 1 dimensional sparse array in this class.</p>
+<p>(feel free to make it 2d for an extra challenge!).</p>
+</div>
+<div class="section" id="a-sparse-array-class">
+<h3>A Sparse array class<a class="headerlink" href="#a-sparse-array-class" title="Permalink to this headline">¶</a></h3>
+<p>A sparse array class should present to the user the same interface as a regular list.</p>
+<p>Some ideas of how to do that:</p>
+<ul class="simple">
+<li><p>Internally, it can store the values in a dict, with the index as the keys, so that only the indexes with non-zero values will be stored.</p></li>
+<li><p>It should take a sequence of values as an initializer:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sa</span> <span class="o">=</span> <span class="n">SparseArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>you should be able to tell how long it is:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will give its “virtual” length –  with the zeros</p>
+<ul class="simple">
+<li><p>It should support getting and setting particular elements via indexing:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sa</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">sa</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># the zero won&#39;t get stored!</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">sa</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="c1"># it should get a zero if not set</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>It should support deleting an element by index:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">sa</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>It should raise an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> if you try to access an index beyond the end.</p></li>
+<li><p>it should have an append() method.</p></li>
+<li><p>Can you make it support slicing?</p></li>
+<li><p>How else can you  make it like a list?</p></li>
+</ul>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">my_array</span> <span class="o">=</span> <span class="n">SparseArray</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>
+<span class="gp">In [11]: </span><span class="n">my_array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="gh">Out[11]: </span><span class="go">2</span>
+<span class="gp">In [12]: </span><span class="n">my_array</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[12]: </span><span class="go">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="context-managers-exercise.html" class="btn btn-neutral float-right" title="A Couple Handy Context Managers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lambda_magic.html" class="btn btn-neutral float-left" title="lambda and keyword Magic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

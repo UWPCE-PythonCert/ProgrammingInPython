@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>git Workflow &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Submitting your work to gitHub" href="Submitting_to_github.html" />
+    <link rel="prev" title="Intro to Git" href="Git.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Class_introduction.html">Introduction to the in-class version of the program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Git.html">Intro to Git</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">git Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>git Workflow</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/GitWorkflow.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="git-workflow">
+<span id="id1"></span><h1>git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this headline">¶</a></h1>
+<p>Git is a very flexible system that can be used in a lot of different ways to manage code development. This page describes the workflow we are using for this class – about as simple a workflow as you can have with git.</p>
+<p>We start with an overview of the usual process. This overview may be all you need for future work, once you have created your home directory within the students directory.</p>
+<p>The instructions following the overview are very explicit for those new to git and the command line.</p>
+<div class="section" id="the-usual-process">
+<h2>The usual process<a class="headerlink" href="#the-usual-process" title="Permalink to this headline">¶</a></h2>
+<p>This is the usual series of steps you will want to go through when you do a new project / assignment.</p>
+<p>First make sure you are on the command line “in” your copy of the class repo.</p>
+<p>Remember that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> is your friend – when in doubt, run that command to see what’s going on in your repo.</p>
+<ol class="arabic">
+<li><p>Make sure you are on the correct branch – though if you never branch, you’ll only need to do this once:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p>
+</li>
+<li><p>Get any changes from class repository – good to do this whenever you start on something new</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></code></p>
+</li>
+<li><p>If there are changes merged in from upstream, you want to push them to your repository on GitHub.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span></code></p>
+</li>
+<li><p>Make sure you are in your student directory, do some work – create new files, edit then, etc. Verify you are happy with changes. Check the status of your repo:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">status</span></code></p>
+<blockquote>
+<div><p>Make sure you add any new files:</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">the_name_of_new_file</span></code></p>
+<p>you may want to do something like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">*.py</span></code> if there are multiple files to add.</p>
+</li>
+<li><p>Commit the all the changes – make sure to add a good commit message.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'my</span> <span class="pre">message</span> <span class="pre">here'</span></code></p>
+</li>
+<li><p>Push your changes to your remote github account.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span></code></p>
+</li>
+<li><p>If your are ready to submit your work, make a pull request on the gitHub website.</p></li>
+</ol>
+<p>Note that when you are working, you may want to do steps 2-6 far more often than step 7. (Don’t go too crazy here, we don’t want you to wait until the end of the quarter to get to step 7. ;-))</p>
+<p>Now put that to work to get you set up for class:</p>
+</div>
+<div class="section" id="required-initial-setup">
+<h2>Required Initial Setup<a class="headerlink" href="#required-initial-setup" title="Permalink to this headline">¶</a></h2>
+<p>The first step in getting ready for the class is to create an individual directory for yourself inside the class repository, initiated with a README file. This step is necessary to ensure you have everything setup correctly and understand the process for future assignment submissions. Your instructor can review the workflow and give you early feedback before you start working on your first assignment submission.</p>
+<p>When you start a new class project or exercise, you should create a folder within this folder for that particular project (ex. lesson1). You should only ever add things inside your OWN directory – don’t add or change anything anywhere else.</p>
+<p>Note that when you start doing projects on your own (outside of classwork), you will want to create a whole new repository for each project.</p>
+<div class="section" id="create-your-own-working-directory">
+<h3>Create Your Own Working Directory<a class="headerlink" href="#create-your-own-working-directory" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the students directory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">students</span></code></p>
+<p>Then create a directory for yourself. You can use your first name, your gitHub handle (username), or any nickname you like – just make sure your instructor knows who you are so you can get credit for your work.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">mkdir</span> <span class="pre">marie_curie</span></code></p>
+<p>Switch into that dir:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">marie_curie</span></code></p>
+</div>
+<div class="section" id="adding-a-new-file">
+<h3>Adding a new file<a class="headerlink" href="#adding-a-new-file" title="Permalink to this headline">¶</a></h3>
+<p>Note that git does not track directories – you do not have to add a new dir to git – when you add a new file in that dir, git will track where it is.</p>
+<p>Now you can do your coding. For this example, that is simply adding a readme file. You can do that with your text editor, or directly on the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">rst</span>
+<span class="n">Python</span> <span class="n">code</span> <span class="k">for</span> <span class="n">UWPCE</span><span class="o">-</span><span class="n">PythonCert</span> <span class="n">class</span><span class="p">,</span> <span class="n">written</span> <span class="n">by</span> <span class="n">Marie</span> <span class="n">Curie</span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">D</span>
+</pre></div>
+</div>
+<p>Now tell git to track that new file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">README.rst</span></code></p>
+<p>Once you are done coding, always a good idea to look at what you have done.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">status</span></code></p>
+<p>Carefully observe new files or files that you have changed to ensure no other files are being committed outside of your student directory.</p>
+</div>
+<div class="section" id="committing-your-changes">
+<h3>Committing your changes<a class="headerlink" href="#committing-your-changes" title="Permalink to this headline">¶</a></h3>
+<p>Commit the changes with a summary of what you have done:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">'added</span> <span class="pre">a</span> <span class="pre">readme</span> <span class="pre">file'</span></code></p>
+<p>Push your changes to your repo on gitHub:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></p>
+<p>“origin” is the default name given by git referring to the server you cloned (in this case your github repository)</p>
+<p>“master” is the branch that you are currently pushing to that server.</p>
+<p>Since these are the default, you can usually simply do:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p>
+</div>
+<div class="section" id="make-a-pr">
+<h3>Make a PR<a class="headerlink" href="#make-a-pr" title="Permalink to this headline">¶</a></h3>
+<p>In high level overview, pull request provides a view to see the difference between a source branch (your fork) and a target branch (the main class repo), this view is used for code reviews and to provide feedback to the author. Keep in mind that this view is not static, meaning any subsequent commits to the source branch will show in this diff view.</p>
+<p>Now go onto GitHub, and make your first pull request (PR)!</p>
+<p>Here is some gitHub help for that:</p>
+<p><a class="reference external" href="https://help.github.com/articles/creating-a-pull-request-from-a-fork/">https://help.github.com/articles/creating-a-pull-request-from-a-fork/</a></p>
+<p>You’ve pushed your own changes to that fork, and then issued pull requests to have that work merged back to the main class repo in (UWPCE-PythonCert-ClassRepos). An instructor will look at your code, make comments and approve your pull request if your work is satisfactory.</p>
+<p>Do that now with just the README file, so we can get the class repo all set up, and so that both you and your instructors know you have your gitHub repo all set up correctly.</p>
+</div>
+</div>
+<div class="section" id="starting-a-new-exercise">
+<h2>Starting a new Exercise<a class="headerlink" href="#starting-a-new-exercise" title="Permalink to this headline">¶</a></h2>
+<p>Once you have created your directory, and are starting a new project, the process will look very much the same. This example is for marie_curie working on her mailroom exercise:</p>
+<p>Make sure you are “in” your copy of the class repo on your machine:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">students/marie_curie</span></code></p>
+<p>Regardless of what you are working on, first make sure you don’t have anything in your repository that you forgot to commit:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">status</span></code></p>
+<p>Note that when git status tells you that ‘Your branch is up-to-date with ‘origin/master’,  that does NOT mean that you are up-to-date with stuff that has been pushed to the github repository, only, confusingly, with what your local machine currently knows about.</p>
+<p>So, your next step is to make sure you have any changes that other people have made recently to the <em>remote</em> repository.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></code></p>
+<p>“upstream” is the name we gave to the repository as it sits in the UWPCE github site. If you get an error message, check with the <a class="reference internal" href="Git.html#git"><span class="std std-ref">Intro to Git</span></a> documentation to make sure you set up the upstream shortcut correctly.</p>
+<p>“master” is the branch that you are currently pulling from that server, for the purpose of this class, we will always use master.</p>
+<p>If there are changes upstream that you did not have, it is a good idea to go ahead and push these changes to your github account right away so they don’t confuse things:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span></code></p>
+<p>Now you can begin your work:</p>
+<p>create a dir to do the Exercise in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">mkdir</span> <span class="pre">mailroom</span></code></p>
+<p>(remember to make sure you are creating this new dir in <em>your own working directory</em>)</p>
+<p>Create your new python file(s) in that new directory. Then add it to git before you start writing any real code – just to make sure you don’t forget:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">mailroom.py</span></code></p>
+<p>Then as you work, each time you get to a good saving point, make a commit:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">&quot;added</span> <span class="pre">the</span> <span class="pre">donation</span> <span class="pre">listing</span> <span class="pre">feature&quot;</span></code></p>
+<p>And when you are done, push it to gitHub:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">push</span></code></p>
+<p>If you are ready for an instructor to review it, go to your repo on the gitHub website and make a pull request.</p>
+</div>
+<div class="section" id="final-thoughts">
+<h2>Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permalink to this headline">¶</a></h2>
+<p>We are using gitHub to submit and review your work because it provides a nice interface for code review. But more importantly, because the git revision control system, and the gitHub collaborative code development platform are industry standard tools for developing code.</p>
+<p>Learning git is a great skill – we are only requiring the very basics for this class, but do take the opportunity to explore git a bit more – making branches, reverting to older versions, etc.</p>
+<p>Also – by doing it this way, you are getting an automatic back up of your work. Each time you “push”, a copy of your work is getting backed up on gitHub. And you can also use it to coordinate your work among multiple computers – you can have as many clones of your repo on gitHub as you like – say one on a computer at work, and one at home. If you push a change from one computer, then running:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">pull</span></code></p>
+<p>on the other will bring that change down.  This makes it really easy to do your classwork (or any work) in multiple places.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Submitting_to_github.html" class="btn btn-neutral float-right" title="Submitting your work to gitHub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Git.html" class="btn btn-neutral float-left" title="Intro to Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

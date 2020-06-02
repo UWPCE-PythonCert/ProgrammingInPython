@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Tutorial &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Python Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-tutorial">
+<h1>Python Tutorial<a class="headerlink" href="#python-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This is a tutorial to get you started. Not a lot of explanation,
+but enough to get you going with writing basic python code.</p>
+<p>This tutorial uses exclusively Python3.</p>
+<p>You may want to also check out some other tutorial options:</p>
+<ul class="simple">
+<li><p><strong>Jessica McKeller’s beginning tutorial</strong> (Video)
+<a class="reference external" href="https://www.youtube.com/watch?v=MirG-vJOg04">https://www.youtube.com/watch?v=MirG-vJOg04</a></p></li>
+<li><p><strong>The Python Tutorial</strong>
+(<a class="reference external" href="https://docs.python.org/3/tutorial/">https://docs.python.org/3/tutorial/</a>): This is the
+official tutorial from the Python website. No more authoritative source is
+available.</p></li>
+<li><p><strong>Code Academy Python Track</strong>
+(<a class="reference external" href="http://www.codecademy.com/tracks/python">http://www.codecademy.com/tracks/python</a>): Often
+cited as a great resource, this site offers an entertaining and engaging
+approach and in-browser work.</p></li>
+<li><p><strong>Learn Python the Hard Way</strong>
+(<a class="reference external" href="http://learnpythonthehardway.org/book/">http://learnpythonthehardway.org/book/</a>): Solid and gradual.
+This course offers a great foundation for folks who have never
+programmed in any language before. It is, however, only Python2,
+and pretty opinionated about that. But for the most part, you can
+simply add paretheses to <code class="docutils literal notranslate"><span class="pre">print()</span></code> and you can get pretty far.</p></li>
+</ul>
+<div class="section" id="running-your-code">
+<h2>Running Your Code<a class="headerlink" href="#running-your-code" title="Permalink to this headline">¶</a></h2>
+<p>There are a number of ways to run python code:</p>
+<ul class="simple">
+<li><p>At the interpreter, often referred to as a REPL (Read, Evaluate, Print Loop)</p></li>
+<li><p>At an enhanced interpreter such as iPython</p></li>
+<li><p>In a browser-based interactive system such as the Jupyter Notebook</p></li>
+<li><p>From an IDE, such as IDLE or PyCharm</p></li>
+<li><p>Calling python from the command line to run a file.</p></li>
+</ul>
+<p>While working with an interactive interpreter can be an excellent way to explore Python (and I highly recommend it), For this tutorial, to get you used to “real” production development, you will write, edit, and save your code in a programmer’s text editor, and run it from the command line.</p>
+<div class="section" id="a-programmer-s-text-editor">
+<h3>A Programmer’s Text Editor<a class="headerlink" href="#a-programmer-s-text-editor" title="Permalink to this headline">¶</a></h3>
+<p>See These notes for getting set up with an editor and Python itself: <span class="xref std std-ref">setting_up_dev_environment</span></p>
+</div>
+<div class="section" id="the-python-interpreter">
+<h3>The Python Interpreter<a class="headerlink" href="#the-python-interpreter" title="Permalink to this headline">¶</a></h3>
+<p>Python is a “byte compiled, interpreted” language. What this means to you is that you need a Python interpreter to run your Python code. It also means that that is all you need – write some code, and run it with Python. That’s it.</p>
+<p>There are a few Python interpreters (or run-times) available:</p>
+<ul class="simple">
+<li><p>cPython</p></li>
+<li><p>PyPy</p></li>
+<li><p>Jython</p></li>
+<li><p>Iron Python</p></li>
+<li><p>MicroPython</p></li>
+</ul>
+<p>These each have their own special uses for interaction the the Java VM or CLR, or running on micro controllers. But most production Python is run with the cPython interpreter, and most people mean cPython when they say “Python”.</p>
+<p>[link to setting up your environment here]</p>
+<p>For this tutorial, you will need cPython version 3.7, installed and running so that when you type “python” at your command line, it starts up:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MacBook-Pro:~ Chris$ python
+Python <span class="m">3</span>.7.4 <span class="o">(</span>v3.6.2:5fd33b5926, Jul <span class="m">16</span> <span class="m">2017</span>, <span class="m">20</span>:11:06<span class="o">)</span>
+<span class="o">[</span>GCC <span class="m">4</span>.2.1 <span class="o">(</span>Apple Inc. build <span class="m">5666</span><span class="o">)</span> <span class="o">(</span>dot <span class="m">3</span><span class="o">)]</span> on darwin
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Your result may be slightly different, but it should say Python 3.7. <em>something</em> there at the top, and give you the command prompt (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>) at the end.</p>
+<p>You can get out of it by typing ctrl+D (on OS-X and Linux) or ctrl+Z (On Windows), or typing <code class="docutils literal notranslate"><span class="pre">exit()</span></code> and then &lt;return&gt;.</p>
+</div>
+<div class="section" id="your-first-program">
+<h3>Your first “program”<a class="headerlink" href="#your-first-program" title="Permalink to this headline">¶</a></h3>
+<p>Create your first program by typing this into your text editor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this worked!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Type it exactly as above, with no extra space at the beginning, and no other characters.</p>
+<p>Save the file as “first.py”. Make sure to save it somewhere that makes sense, maybe a directory you create for this purpose, called “tutorial”.</p>
+<p>Start up the command line (“Terminal” on OS-X, “Command Prompt” on Windows), and “Navigate” to the directory where you just saved that file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tutorial</span>
+</pre></div>
+</div>
+<p>Now run your little program, by typing <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">first.py</span></code> and hitting &lt;return&gt;. You should get something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MacBook-Pro:tutorial Chris$ python first.py
+this worked!
+MacBook-Pro:tutorial Chris$
+</pre></div>
+</div>
+<p>If this is <em>NOT</em> what you got then something went wrong. Some things to check:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Did you save the file?</p></li>
+<li><p>Is your command prompt “in” the same directory as the file?
+- you can check this by typing <code class="docutils literal notranslate"><span class="pre">ls</span></code> on *nix, and <code class="docutils literal notranslate"><span class="pre">dir</span></code> on Windows, to see what files are in the dir that the command prompt is in.</p></li>
+<li><p>Did you type <em>exactly</em> the same line as above?</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="what-did-you-just-do">
+<h4>What did you just do?<a class="headerlink" href="#what-did-you-just-do" title="Permalink to this headline">¶</a></h4>
+<p>The “python” command starts up the python interpreter. If you “pass in” a file name, by typing the name of the file after “python”, then the interpreter will read that file and run any code that is in it.</p>
+<p>In this case, python ran the one line of code you put in that file, which told it to print the text: “this worked!” – and that is what it did.</p>
+</div>
+</div>
+<div class="section" id="the-print-function">
+<h3>The print function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">¶</a></h3>
+<p>you can display just about anything in Python with the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. Simply type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">what</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>examples:</p>
+<blockquote>
+<div><p>print(45)
+print(“this is a bit of text”)</p>
+</div></blockquote>
+<p>you can print more than one thing by separating them with commas, inside the parenthesis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the value of pi is:&quot;</span><span class="p">,</span> <span class="mf">3.1459</span><span class="p">,</span> <span class="s2">&quot;to four decimal places&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text-in-python">
+<h3>Text in Python<a class="headerlink" href="#text-in-python" title="Permalink to this headline">¶</a></h3>
+<p>Text in python is supported by the “str” datatype, which is short for “string”. The text datatype is often referred to as “strings” in computer science because it is a series, or string of characters.</p>
+<p>In Python3, strings can be any length, and contain any character (in virtually any language). This is because they support “Unicode” which is a system for representing all the characters of virtually all the languages used on earth.</p>
+<p>There are many complications to full support of Unicode, but for the most part, in Python it “just works”. Any text you can put in your text editor should work fine.</p>
+<p>To create a str, you simply type what you want surrounded by either double or single quotes (the apostrophe).</p>
+<p>Type this in a new file, called <code class="docutils literal notranslate"><span class="pre">strings.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is a basic string&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is exactly the same string&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You want to use double quotes if there&#39;s an apostrophe, like this: &#39; in the string&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You can use single quotes if you want to &quot;quote&quot; a word&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>run the file, and you should get something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MacBook-Pro:tutorial Chris$ python strings.py
+This is a basic string
+This is exactly the same string
+You want to use double quotes if there&#39;s an apostrophe, like this: &#39; in the string
+You can use single quotes if you want to &quot;quote&quot; a word
+</pre></div>
+</div>
+</div>
+<div class="section" id="numbers-in-python">
+<h3>Numbers in Python<a class="headerlink" href="#numbers-in-python" title="Permalink to this headline">¶</a></h3>
+<p>Python supports two types of numbers: integers (int) – or “whole numbers”, with no fractional part:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="o">-</span><span class="mi">345</span><span class="p">,</span> <span class="mi">23473948</span>
+</pre></div>
+</div>
+<p>integers can be negative or positive and as large as you want:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mi">12345678987654321234567890987654321234567898765</span><span class="p">)</span>
+<span class="go">12345678987654321234567890987654321234567898765</span>
+</pre></div>
+</div>
+<p>“real numbers” are called “floating point” (float) numbers. They are internally stored as binary, but you write them as regular decimal (base 10) numbers:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.2459</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.21</span>
+</pre></div>
+</div>
+<p>Note tht while the integer`3` and the float <cite>3.0</cite> have the same value, they are different types of numbers. But for the most part, Python will convert from integer to floating point numbers for you, so this distiction is rarely important.</p>
+</div>
+<div class="section" id="math">
+<h3>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
+<p>Being a computer language, Python, of course, supports the regular math functions. Type the following into a file named math.py and run it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;twelve divided by 5 is:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;twelve divided by 5 is:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">//</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What is the difference between <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">/</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">//</span> <span class="pre">5</span></code> ? Run your this code and find out.</p>
+</div>
+<div class="section" id="order-of-operations">
+<h3>Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this headline">¶</a></h3>
+<p>Python follows the standard rules of “operator precedence” from algebra – which operations are performed first when there are a bunch in a row:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Order_of_operations">https://en.wikipedia.org/wiki/Order_of_operations</a></p>
+<p>Add this to the <code class="docutils literal notranslate"><span class="pre">math.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>run the file, and see if you get the answer you expect. The result should be 5.0, not 6.0.</p>
+<p>That is because multiplication and division are a higher priority than addition, so Python divided 4 by 2 to get 2.0, and then added 3 + 2.0 to get 5.0.</p>
+<p>Always keep that in mind when you do math expressions in Python. If you want to change the order of operations, you can group them with parentheses. Add this to the <code class="docutils literal notranslate"><span class="pre">math.py</span></code> file and run it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Python will always evaluate what is in parentheses first.</p>
+</div>
+<div class="section" id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<p>Directly printing things is not all that useful – though Python does make a good calculator!</p>
+<p>To do anything more complicated, you need to store values to be used later. We do this by “assigning” them to a “variable”, essentially givng them a name. Save the follwing in a <code class="docutils literal notranslate"><span class="pre">variables.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the value of z is&quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The equals sign: <code class="docutils literal notranslate"><span class="pre">=</span></code> is the “assignment operator”. It assigns a value to a name, and then when you use the name in the future, Python will replace it with the value it is assigned to when it is used.</p>
+<p>Names can (and generally should) be long and descriptive, and can contain letters, numbers (but not at the beginning) and only a few symbols, like the underscore character:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rectangle_width</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">rectangle_height</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">rectangle_area</span> <span class="o">=</span> <span class="n">rectangle_width</span> <span class="o">*</span> <span class="n">rectangle_height</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>Try running this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this&quot;</span><span class="p">)</span>
+<span class="c1"># print (&quot;that&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the other&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What does it print?</p>
+<p>“that” didn’t print because the “#” symbol (the hash) tells python not to run any code after it on that line.</p>
+<p>How about this?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;that&quot;</span><span class="p">)</span>  <span class="n">I</span> <span class="n">think</span> <span class="n">we</span> <span class="n">need</span> <span class="n">this</span> <span class="n">line</span> <span class="n">too</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the other&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And this?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here we are printing useless stuff:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;that&quot;</span><span class="p">)</span>  <span class="c1"># I think we need this line too</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the other&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>comments can come after running code on a line as well. USing the hash to “comment out” parts of code is used in two ways:</p>
+<ol class="arabic simple">
+<li><p>To add a little extra description to some code, to explain what it doing.</p></li>
+<li><p>To temporarily disable some code</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

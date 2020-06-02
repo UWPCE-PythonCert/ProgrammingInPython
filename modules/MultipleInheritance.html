@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multiple Inheritance &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Object Oriented vs Functional Programming" href="OO_vs_functional.html" />
+    <link rel="prev" title="Special Methods &amp; Protocols" href="SpecialMethodsAndProtocols.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Multiple Inheritance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Multiple Inheritance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/MultipleInheritance.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multiple-inheritance">
+<span id="id1"></span><h1>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="inheriting-from-more-than-one-class">
+<h2>Inheriting from more than one class.<a class="headerlink" href="#inheriting-from-more-than-one-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-mechanics-of-multiple-inheritance">
+<h3>The mechanics of multiple inheritance<a class="headerlink" href="#the-mechanics-of-multiple-inheritance" title="Permalink to this headline">¶</a></h3>
+<p>Simply provide more than one parent:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Combined</span><span class="p">(</span><span class="n">Parent1</span><span class="p">,</span> <span class="n">Parent2</span><span class="p">,</span> <span class="n">Parent3</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">something</span><span class="p">,</span> <span class="n">something</span> <span class="k">else</span><span class="p">):</span>
+        <span class="c1"># some custom initialization here.</span>
+        <span class="n">Parent1</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">......</span><span class="p">)</span>
+        <span class="n">Parent2</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">......</span><span class="p">)</span>
+        <span class="n">Parent3</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">......</span><span class="p">)</span>
+        <span class="c1"># possibly more custom initialization</span>
+</pre></div>
+</div>
+<p>Calls to the parent class <code class="docutils literal notranslate"><span class="pre">__init__</span></code>  are optional and case dependent. (and maybe you can use <code class="docutils literal notranslate"><span class="pre">super()</span></code>…stay tuned)</p>
+<p>The Combined class now has ALL the attributes and methods of the multiple parent classes. You can bring a lot of functionality into a class that way.</p>
+</div>
+<div class="section" id="purpose">
+<h3>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<p>What was the purpose behind inheritance?</p>
+<p><em>Code reuse</em></p>
+<p>What is the purpose behind multiple inheritance?</p>
+<p><em>Code reuse</em></p>
+<p>What wasn’t the purpose of inheritance?</p>
+<p><em>Building massive class hierarchies for their own sake</em></p>
+<p>What isn’t the purpose of multiple inheritance?</p>
+<p><em>Building massive class hierarchies for their own sake</em></p>
+</div>
+<div class="section" id="mix-ins">
+<h3>Mix-ins<a class="headerlink" href="#mix-ins" title="Permalink to this headline">¶</a></h3>
+<p>Why would you want to do this?</p>
+<p>Hierarchies are not always simple:</p>
+<ul class="simple">
+<li><p>Animal</p>
+<ul>
+<li><p>Mammal</p>
+<ul>
+<li><p>give_birth()</p></li>
+</ul>
+</li>
+<li><p>Bird</p>
+<ul>
+<li><p>lay_eggs()</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Where do you put a Platypus or Spiny Anteater?</p>
+<p><a class="reference external" href="http://www.ucmp.berkeley.edu/mammal/monotreme.html">Egg Laying Mammals</a></p>
+<p>“mix-ins” can solve this problem. A mix-in is a class that can’t do anything by itself, but rather, provides functionality that can be mixed into other classes.</p>
+<p>In the above contrived example, we could put “give_birth” (and associated methods) in a BirthGiver mixin, and lay_eggs in an EggLayer mixin, and then make our mammals, birds and platypi from them:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Platypus</span><span class="p">(</span><span class="n">Animal</span><span class="p">,</span> <span class="n">EggLayer</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">,</span> <span class="n">BirthGiver</span><span class="p">):</span>
+   <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">Duck</span><span class="p">(</span><span class="n">Animal</span><span class="p">,</span> <span class="n">EggLayer</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p>But this is pretty darn contrived … where do you use these for real?</p>
+<p>Here is a nice discussion:</p>
+<p><a class="reference external" href="https://andrewbrookins.com/technology/mixins-in-python-and-ruby-compared/">mixins in Python …</a></p>
+<p>(Ignore the second part about Ruby…)</p>
+<div class="section" id="real-world-example-the-wxpython-floatcanvas">
+<h4>Real World Example: The wxPython FloatCanvas:<a class="headerlink" href="#real-world-example-the-wxpython-floatcanvas" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://github.com/wxWidgets/Phoenix/blob/master/wx/lib/floatcanvas/FCObjects.py">https://github.com/wxWidgets/Phoenix/blob/master/wx/lib/floatcanvas/FCObjects.py</a></p>
+<p>I had read about mixins quite a while ago, and I thought they were pretty cool. But I couldn’t imagine where I might actually use them.</p>
+<p>Then I set out to write FloatCanvas  – a scalable, pan-able, object-persistent drawing canvas for the wxPython toolkit.</p>
+<p>What I discovered is that the draw objects were not in a clean hierarchy – some objects had a line (like a poly line), some had just a fill (like a dot), some had a fill and outline (polygon), some were defined by a single point (a dot again), some by a bunch of points (polygon), etc….</p>
+<p>In order to not write a lot of repeated code – remember, “classes are for code re-use”, I put all the individual bits of functionality into mixin classes, and then simply put them together in different ways.</p>
+<p>Once the system was set up, all you needed to write was a <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and a draw method to make a whole new graphic object.</p>
+<p>Take a look at the code –quite a bit in the <code class="docutils literal notranslate"><span class="pre">DrawObject</span></code> base class, then a bunch of <code class="docutils literal notranslate"><span class="pre">*Mixin</span></code> classes that define specific functionality.</p>
+<p>Now look at the real DrawObject classes, e.g. Line and Polygon. Not much code there:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Polygon</span><span class="p">(</span><span class="n">PointsObjectMixin</span><span class="p">,</span> <span class="n">LineAndFillMixin</span><span class="p">,</span> <span class="n">DrawObject</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">_Draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>and:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Line</span><span class="p">(</span><span class="n">PointsObjectMixin</span><span class="p">,</span> <span class="n">LineOnlyMixin</span><span class="p">,</span> <span class="n">DrawObject</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">_Draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>There is some real code in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and <code class="docutils literal notranslate"><span class="pre">_Draw</span></code> – but those are still the only two methods that need to be defined to make a fully functional drawobject.</p>
+<p>FloatCanvas has a lot of complications with handling mouse events, and managing pens and brushes, and what have you, so a very trimmed down version, using the Python Imaging Library, is here to check out and modify:</p>
+<p><a class="reference download internal" download="" href="../_downloads/5e1282999f1e4220e04f86c1639afa54/object_canvas.py"><code class="xref download docutils literal notranslate"><span class="pre">object_canvas.py</span></code></a></p>
+<p>and</p>
+<p><a class="reference download internal" download="" href="../_downloads/191e6a93916b7b7c0c37980e4702ef1a/test_object_canvas.py"><code class="xref download docutils literal notranslate"><span class="pre">test_object_canvas.py</span></code></a></p>
+<p>This code requires the Python Imaging Library to do the rendering.  You can get it by installing the “pillow” package from PyPi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pillow</span>
+</pre></div>
+</div>
+<p>Can you add other types of <code class="docutils literal notranslate"><span class="pre">DrawObjects</span></code> ? Maybe a polygon or ??</p>
+</div>
+</div>
+</div>
+<div class="section" id="python-s-multiple-inheritance-model">
+<h2>Python’s Multiple Inheritance Model<a class="headerlink" href="#python-s-multiple-inheritance-model" title="Permalink to this headline">¶</a></h2>
+<p>Cooperative Multiple Inheritance</p>
+<p>Emphasis on cooperative!</p>
+<ul class="simple">
+<li><p>Play by the rules and everybody benefits (parents, descendants).</p></li>
+<li><p>Play by the rules and nobody gets hurt (yourself, mostly).</p></li>
+<li><p>We’re all adults here.</p></li>
+</ul>
+<p>What could go wrong?</p>
+<div class="section" id="the-diamond-problem">
+<h3>The Diamond Problem<a class="headerlink" href="#the-diamond-problem" title="Permalink to this headline">¶</a></h3>
+<p>In Python, everything is descended from ‘object’.  Thus, the moment you invoke multiple inheritance you have the diamond problem.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem">https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem</a></p>
+<p>Here is a toy Python example:</p>
+<p><a class="reference download internal" download="" href="../_downloads/edc82bdb8cb562b0b64c990a7e50fd15/diamond.py"><code class="xref download docutils literal notranslate"><span class="pre">diamond.py</span></code></a></p>
+<p>Take a look at that code – run it, and notice that class <code class="docutils literal notranslate"><span class="pre">A</span></code>’s method gets run twice. Make sure you know why it is doing what it is doing.</p>
+</div>
+<div class="section" id="super">
+<h3><code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#super" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">super()</span></code> can help.</p>
+<p><code class="docutils literal notranslate"><span class="pre">super()</span></code>: use it to call a superclass method, rather than explicitly calling the unbound method on the superclass.</p>
+<p>instead of:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">B</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">argw</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>You can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mro-method-resolution-order">
+<h3>MRO: Method Resolution Order<a class="headerlink" href="#mro-method-resolution-order" title="Permalink to this headline">¶</a></h3>
+<p>How does python decide which method to call, when multiple superclasses may have the <em>same</em> method ?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Combined</span><span class="p">(</span><span class="n">Super1</span><span class="p">,</span> <span class="n">Super2</span><span class="p">,</span> <span class="n">Super3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Attributes are located bottom-to-top, left-to-right</p>
+<ul class="simple">
+<li><p>Is it an instance attribute ?</p></li>
+<li><p>Is it a class attribute ?</p></li>
+<li><p>Is it a superclass attribute ?</p>
+<ul>
+<li><p>Is it an attribute of the left-most superclass?</p></li>
+<li><p>Is it an attribute of the next superclass?</p></li>
+<li><p>and so on up the hierarchy…</p></li>
+</ul>
+</li>
+<li><p>Is it a super-superclass attribute ?</p></li>
+<li><p>… also left to right …</p></li>
+</ul>
+<p><a class="reference external" href="http://python-history.blogspot.com/2010/06/method-resolution-order.html">http://python-history.blogspot.com/2010/06/method-resolution-order.html</a></p>
+</div>
+<div class="section" id="super-s-superpowers">
+<h3>Super’s Superpowers<a class="headerlink" href="#super-s-superpowers" title="Permalink to this headline">¶</a></h3>
+<p>The above system is clear when the hierarchy is simple – but when you have the “diamond problem” – or even more compexity, we need somethign smarter. Enter <code class="docutils literal notranslate"><span class="pre">super()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">super</span></code> works out – dynamically at runtime – which classes are in the delegation order.</p>
+<p>Do not be afraid.  And be very afraid.</p>
+</div>
+<div class="section" id="what-does-super-do">
+<h3>What does super() do?<a class="headerlink" href="#what-does-super-do" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChildB</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">next_class</span> <span class="ow">in</span> <span class="n">mro</span><span class="p">[</span><span class="n">mro</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ChildB</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]:</span> <span class="c1"># slice to end</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">next_class</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">):</span>
+                <span class="n">next_class</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+                <span class="k">break</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods">http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">super</span></code> returns a “proxy object” that delegates method calls.</p>
+<p>It’s not returning the object itself – but you can call methods on it as though it were a class object.</p>
+<p>It runs through the method resolution order (MRO) to find the method
+you call.</p>
+<p>Key point: the MRO is determined <em>at run time</em></p>
+<p><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#super">https://docs.python.org/3.6/library/functions.html#super</a></p>
+<p>But it’s not as simple as finding and calling the first superclass method it finds: <code class="docutils literal notranslate"><span class="pre">super()</span></code> will call all the sibling superclass methods:</p>
+<p>Here is an example of a class that inherits from three superclasses:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Since you have called __init__ on the <code class="docutils literal notranslate"><span class="pre">super()</span></code> object, this is essentially the same as calling all three super class <code class="docutils literal notranslate"><span class="pre">__init__</span></code> methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="n">C</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+       <span class="n">B</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+       <span class="n">A</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Keep in mind that <code class="docutils literal notranslate"><span class="pre">super()</span></code> can be used for any method, not just <code class="docutils literal notranslate"><span class="pre">__init__</span></code> – while you usually <em>do</em> want to initiallize all the superclasses, you may not want to call the same method on every superclass if it’s a more specialized method.</p>
+<p>But if you do, it’s kind of handy.</p>
+</div>
+</div>
+<div class="section" id="using-super">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#using-super" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-rules">
+<h3>The rules:<a class="headerlink" href="#the-rules" title="Permalink to this headline">¶</a></h3>
+<p>Raymond Hettinger’s rules for <code class="docutils literal notranslate"><span class="pre">super()</span></code></p>
+<ol class="arabic simple">
+<li><p>The method being called by super() needs to exist</p></li>
+<li><p>The caller and callee need to have a matching argument signature</p></li>
+<li><p>Every occurrence of the method needs to use super()</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>Is pretty obvious :-)</p></li>
+<li><p>We’ll get into in a moment</p></li>
+<li><p>This is a tricky one – you just need to remember it. What it means is that, for instance, if you are using super() to call <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in the superclass(es), then all the superclasses <code class="docutils literal notranslate"><span class="pre">__init__</span></code> methods must ALSO call it:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="o">...</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Failure to do that will cause odd errors!</p>
+<p>This is a bit weird – it means that if you have a method that may get called with a super call, it needs to use super itself, EVEN if it doesn’t need to call the superclass’ method!</p>
+<p>See the example later for this…</p>
+</div>
+<div class="section" id="matching-argument-signature">
+<h3>Matching Argument Signature<a class="headerlink" href="#matching-argument-signature" title="Permalink to this headline">¶</a></h3>
+<p>Remember that super does not only delegate to your superclass, it delegates to any class in the MRO.</p>
+<p>Therefore you must be prepared to call any other class’s method in the hierarchy and be prepared to be called from any other class’s method.</p>
+<p>The general rule is to pass all arguments you received on to the super function.</p>
+<p>That means that all the methods with the same name need to be able to accept the same arguments. In some cases, that’s straightforward – they are all the same. But sometimes it gets tricky.</p>
+<p>Remember that if you write a function that takes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">fun(self,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code></p>
+<p>It can accept ANY arguments. But if you find yourself needing to do that – maybe super isn’t the right thing to use??</p>
+<p>But a really common case, particularly for an <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, is for it to take a bunch of keyword arguments. And a subclass may take one or two more, and then want to pass the rest on. So a common pattern is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Subclass</span><span class="p">(</span><span class="n">Superclass</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra_arg1</span><span class="p">,</span> <span class="n">extra_arg2</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now your subclass doesn’t really need to think about all the arguments the superclass can take.</p>
+</div>
+<div class="section" id="two-seminal-articles">
+<h3>Two seminal articles<a class="headerlink" href="#two-seminal-articles" title="Permalink to this headline">¶</a></h3>
+<p>“Super Considered Harmful” – James Knight</p>
+<p><a class="reference external" href="https://fuhm.net/super-harmful/">https://fuhm.net/super-harmful/</a></p>
+<p>“Super() considered super!”  –  Raymond Hettinger</p>
+<p><a class="reference external" href="http://rhettinger.wordpress.com/2011/05/26/super-considered-super/">http://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
+<p><a class="reference external" href="https://youtu.be/EiOglTERPEo">https://youtu.be/EiOglTERPEo</a></p>
+<p>Both perspectives worth your consideration. In fact, they aren’t that different…</p>
+<p>Both actually say similar things:</p>
+<ul class="simple">
+<li><p>The method being called by super() needs to exist</p></li>
+<li><p>Every occurrence of the method needs to use super():</p>
+<ul>
+<li><p>Use it consistently, and document that you use it, as it is part
+of the external interface for your class, like it or not.</p></li>
+</ul>
+</li>
+</ul>
+<p>If you follow these rules, then it really can be <em>super</em></p>
+</div>
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>First, let’s look at the diamond problem again – this time using super:</p>
+<p><a class="reference download internal" download="" href="../_downloads/6fc7890d9fea2c802c990aeac9070f85/diamond_super.py"><code class="xref download docutils literal notranslate"><span class="pre">diamond_super.py</span></code></a></p>
+<p>in this case, we are using <code class="docutils literal notranslate"><span class="pre">super()</span></code>, rather than specifically calling the methods of the superclasses:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">do_your_stuff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">do_your_stuff</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;doing D&#39;s stuff&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And when we run it, we see that calling <code class="docutils literal notranslate"><span class="pre">super().do_your_stuff()</span></code> once in D results in the method being called on all the superclasses, with no duplication:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calling</span> <span class="n">D</span><span class="s1">&#39;s method</span>
+<span class="n">doing</span> <span class="n">A</span><span class="s1">&#39;s stuff</span>
+<span class="n">doing</span> <span class="n">C</span><span class="s1">&#39;s stuff</span>
+<span class="n">doing</span> <span class="sa">B</span><span class="s1">&#39;s stuff</span>
+<span class="n">doing</span> <span class="n">D</span><span class="s1">&#39;s stuff</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="some-more-experiments-with-super">
+<h3>Some more experiments with <code class="docutils literal notranslate"><span class="pre">super</span></code><a class="headerlink" href="#some-more-experiments-with-super" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">super</span></code> takes a while to wrap your head around – try running the code in:</p>
+<p><a class="reference download internal" download="" href="../_downloads/c0f1640b9673725156d0b85a27003d5a/super_test.py"><code class="xref download docutils literal notranslate"><span class="pre">super_test.py</span></code></a></p>
+<p>See if you can follow all that!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="OO_vs_functional.html" class="btn btn-neutral float-right" title="Object Oriented vs Functional Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SpecialMethodsAndProtocols.html" class="btn btn-neutral float-left" title="Special Methods &amp; Protocols" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

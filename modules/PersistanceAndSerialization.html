@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Persistence and Serialization &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Unicode in Python" href="Unicode.html" />
+    <link rel="prev" title="Packages and Packaging" href="Packaging.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Persistence and Serialization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Serialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#persistence">Persistence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-specific-formats">Python Specific Formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interchange-formats">Interchange Formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#csv">CSV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json">JSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xml">XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#databases">DataBases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lab-extras">LAB Extras:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-options">Other Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Persistence and Serialization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/PersistanceAndSerialization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="persistence-and-serialization">
+<span id="serialization"></span><h1>Persistence and Serialization<a class="headerlink" href="#persistence-and-serialization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Persistence and Serialization are closely related.</p>
+<p><em>Serialization</em> means taking a potentially complex data structure and converting it into a single string of bytes.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Serialization">https://en.wikipedia.org/wiki/Serialization</a></p>
+<p><em>Persistence</em> is storing data in a way that it will persist beyond the run-time of your program.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Persistence_(computer_science)">Persistance on Wikipedia</a></p>
+<p>They are closely related, because most forms of persistent storage – simple text files, databases, etc., require that it be turned into a simple string of bytes first. After all, at the end of the day, everything done with computers is ultimately a serial string of bytes.</p>
+<p>Serialization is also very useful for transmitting information between systems – over the network, etc.</p>
+</div>
+<div class="section" id="id1">
+<h2>Serialization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>This module is less about concepts.</p>
+<p>More about learning to use a given module.</p>
+<p>So less talk, more coding.</p>
+<p>This material is focused on methods available in the Python standard library.</p>
+<p>There are third party packages with more options as well.</p>
+</div>
+<div class="section" id="persistence">
+<h2>Persistence<a class="headerlink" href="#persistence" title="Permalink to this headline">¶</a></h2>
+<p>Persistence is saving your python data structure(s) to disk – so they
+will persist once the python process is finished.</p>
+<p>Any serial form can provide persistence (by dumping/loading it to/from
+a file), but not all persistence mechanisms are serial (i.e RDBMS, etc.)</p>
+<p><a class="reference external" href="http://wiki.python.org/moin/PersistenceTools">http://wiki.python.org/moin/PersistenceTools</a></p>
+</div>
+<div class="section" id="python-specific-formats">
+<h2>Python Specific Formats<a class="headerlink" href="#python-specific-formats" title="Permalink to this headline">¶</a></h2>
+<p>These are formats specific to python – convenient to use, but not useful for interchange with other systems.</p>
+<div class="section" id="python-literals">
+<h3>Python Literals<a class="headerlink" href="#python-literals" title="Permalink to this headline">¶</a></h3>
+<p>Putting plain old python literals in your file</p>
+<p>Gives a nice, human-editable form for config files, etc.</p>
+<p>Don’t use for untrusted sources!!!</p>
+<p>Good for basic python types.</p>
+<p>(can work for your own classes, too – if you write a good <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> )</p>
+<p>In theory, <code class="docutils literal notranslate"><span class="pre">repr()</span></code> always gives a form that can be re-constructed.</p>
+<p>Often the <code class="docutils literal notranslate"><span class="pre">str()</span></code> form works too.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pprint</span></code>  (pretty print) module can make it easier to read:</p>
+<p><a class="reference external" href="https://docs.python.org/3.5/library/pprint.html">https://docs.python.org/3.5/library/pprint.html</a></p>
+<div class="section" id="python-literal-example">
+<h4>Python Literal Example<a class="headerlink" href="#python-literal-example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># a list of dicts</span>
+<span class="go">data = [{&#39;this&#39;:5, &#39;that&#39;:4}, {&#39;spam&#39;:7, &#39;eggs&#39;:3.4}]</span>
+<span class="gp">In [51]: </span><span class="n">s</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># save a string version:</span>
+<span class="gp">In [52]: </span><span class="n">data2</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># re-construct with eval:</span>
+<span class="gp">In [53]: </span><span class="n">data2</span> <span class="o">==</span> <span class="n">data</span> <span class="c1"># they are equal</span>
+<span class="gh">Out[53]: </span><span class="go">True</span>
+<span class="gp">In [54]: </span><span class="n">data</span> <span class="ow">is</span> <span class="n">data2</span> <span class="c1"># but not the same object</span>
+<span class="gh">Out[54]: </span><span class="go">False</span>
+</pre></div>
+</div>
+<p>You can save the string to a file and even use <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
+<p>In fact, using a python file and importing it is a great way to handle configuration for your app – very powerful and flexible.</p>
+<p>NOTE: <code class="docutils literal notranslate"><span class="pre">eval()</span></code> is <strong>DANGEROUS</strong>:</p>
+<p>Not so bad if you know where your data is coming from, but <code class="docutils literal notranslate"><span class="pre">eval()</span></code> will run any code it gets, even:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;cd /; rm -rf *&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You really don’t want that run on your machine!</p>
+<p>The alternative:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ast.literal_eval</span></code> is safer than eval:</p>
+<p><a class="reference external" href="https://docs.python.org/3.5/library/ast.html#ast-helpers">https://docs.python.org/3.5/library/ast.html#ast-helpers</a></p>
+</div></blockquote>
+<p>It will only evaluate literals.</p>
+</div>
+</div>
+<div class="section" id="pretty-print">
+<h3>pretty print<a class="headerlink" href="#pretty-print" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [68]: </span><span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;this&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;that&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;eggs&#39;</span><span class="p">:</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s1">&#39;spam&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span>
+<span class="go">         {&#39;foo&#39;: 86, &#39;bar&#39;: 4.5}, {&#39;fun&#39;: 43, &#39;baz&#39;: 6.5}]</span>
+<span class="gp">In [69]: </span><span class="kn">import</span> <span class="nn">pprint</span>
+<span class="gp">In [71]: </span><span class="nb">repr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gh">Out[71]: </span><span class="go">&quot;[{&#39;this&#39;: 5, &#39;that&#39;: 4}, {&#39;eggs&#39;: 3.4, &#39;spam&#39;: 7}, {&#39;foo&#39;: 86, &#39;bar&#39;: 4.5}, {&#39;fun&#39;: 43, &#39;baz&#39;: 6.5}]&quot;</span>
+<span class="gp">In [72]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">In [73]: </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">[{&#39;that&#39;: 4, &#39;this&#39;: 5},</span>
+<span class="go"> {&#39;eggs&#39;: 3.4, &#39;spam&#39;: 7},</span>
+<span class="go"> {&#39;bar&#39;: 4.5, &#39;foo&#39;: 86},</span>
+<span class="go"> {&#39;baz&#39;: 6.5, &#39;fun&#39;: 43}]</span>
+</pre></div>
+</div>
+<p>This is a nice option if you want the saved form to be human readable / editable.</p>
+</div>
+<div class="section" id="pickle">
+<h3>Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h3>
+<p>Pickle is a custom binary format for python objects.</p>
+<p>You can essentially dump any python object to disk (or string, or socket, or…</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [87]: </span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="gp">In [83]: </span><span class="n">data</span>
+<span class="gh">Out[83]:</span>
+<span class="go">[{&#39;that&#39;: 4, &#39;this&#39;: 5},</span>
+<span class="go"> {&#39;eggs&#39;: 3.4, &#39;spam&#39;: 7},</span>
+<span class="go"> {&#39;bar&#39;: 4.5, &#39;foo&#39;: 86},</span>
+<span class="go"> {&#39;baz&#39;: 6.5, &#39;fun&#39;: 43}]</span>
+<span class="gp">In [84]: </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+<span class="gp">In [85]: </span><span class="n">data2</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+<span class="gp">In [86]: </span><span class="n">data2</span> <span class="o">==</span> <span class="n">data</span>
+<span class="gh">Out[86]: </span><span class="go">True</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.python.org/3.5/library/pickle.html">https://docs.python.org/3.5/library/pickle.html</a></p>
+<p><strong>Warning</strong></p>
+<p>The pickle module is <strong>not secure</strong> against erroneous or maliciously constructed data. Never unpickle data received from an untrusted or unauthenticated source.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pickle</span></code> is cool because it can serialize virtually ANY object – including your self-defined classes.</p>
+<p>But to do this, it must run essentially arbitrary code – so <strong>not safe</strong>.</p>
+<p>Do not use it for receiving data from an external source.</p>
+<p>But you probably won’t want to do that anyway – pickle is python-specific, not very useful for data interchange.</p>
+</div>
+<div class="section" id="shelve">
+<h3>Shelve<a class="headerlink" href="#shelve" title="Permalink to this headline">¶</a></h3>
+<p>A “shelf” is a persistent, dictionary-like object.</p>
+<p>(It’s also a place you can put a jar of pickles…)</p>
+<p>The values (not the keys!) can be essentially arbitrary Python objects (anything picklable)</p>
+<p><strong>NOTE:</strong> it will not reflect changes in mutable objects without re-writing them to the db. (or use <code class="docutils literal notranslate"><span class="pre">writeback=True</span></code>)</p>
+<p>If less that 100s of MB – just use a dict and pickle it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">shelve</span></code>  presents a <code class="docutils literal notranslate"><span class="pre">dict</span></code>  interface:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">shelve</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>   <span class="c1"># store data at key</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>   <span class="c1"># retrieve a COPY of data at key</span>
+<span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>      <span class="c1"># delete data stored at key</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>   <span class="c1"># true if the key exists</span>
+<span class="n">d</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>       <span class="c1"># close it</span>
+</pre></div>
+</div>
+<p>(it uses pickle under the hood – same security issues)</p>
+<p><a class="reference external" href="https://docs.python.org/3.5/library/shelve.html">https://docs.python.org/3.5/library/shelve.html</a></p>
+</div>
+<div class="section" id="lab">
+<h3>LAB<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h3>
+<p>Here are two datasets embedded in Python:</p>
+<p><a class="reference download internal" download="" href="../_downloads/d9849d58494eee24e51aa7f951726589/add_book_data.py"><code class="xref download docutils literal notranslate"><span class="pre">add_book_data.py</span></code></a>
+and
+<a class="reference download internal" download="" href="../_downloads/b6f2b0de6e9f2a34d292dff24f62c8e4/add_book_data_flat.py"><code class="xref download docutils literal notranslate"><span class="pre">add_book_data_flat.py</span></code></a></p>
+<p>They can be loaded with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">add_book_data</span> <span class="kn">import</span> <span class="n">AddressBook</span>
+</pre></div>
+</div>
+<p>They have address book data – one with a nested dict, one “flat”. Use the nested version for this exercise.</p>
+<ul class="simple">
+<li><p>Write a module that saves the data as python literals in a file</p>
+<ul>
+<li><p>and reads it back in</p></li>
+</ul>
+</li>
+<li><p>Write a module that saves the data as a pickle in a file</p>
+<ul>
+<li><p>and reads it back in</p></li>
+</ul>
+</li>
+<li><p>Write a module that saves the data in a shelve</p>
+<ul>
+<li><p>and accesses it one by one.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Write some tests to make sure its working!</strong></p>
+</div>
+</div>
+<div class="section" id="interchange-formats">
+<h2>Interchange Formats<a class="headerlink" href="#interchange-formats" title="Permalink to this headline">¶</a></h2>
+<p>These are formats suitable for interchanging data with other systems – written in arbitrary other languages.</p>
+<p>In other words: standard formats.</p>
+<div class="section" id="ini">
+<h3>INI<a class="headerlink" href="#ini" title="Permalink to this headline">¶</a></h3>
+<p>INI files</p>
+<p>(the old Windows config files)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Section1</span><span class="p">]</span>
+<span class="nb">int</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="nb">bool</span> <span class="o">=</span> <span class="n">true</span>
+<span class="nb">float</span> <span class="o">=</span> <span class="mf">3.1415</span>
+<span class="p">[</span><span class="n">Section2</span><span class="p">]</span>
+<span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Good for configuration data, etc.</p>
+<div class="section" id="configparser">
+<h4>ConfigParser<a class="headerlink" href="#configparser" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">configparser</span></code> module provides tools for working with INI files:</p>
+<p>Writing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">configparser</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_section</span><span class="p">(</span><span class="s1">&#39;Section1&#39;</span><span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;Section1&#39;</span><span class="p">,</span> <span class="s1">&#39;an_integer&#39;</span><span class="p">,</span> <span class="s1">&#39;15&#39;</span><span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;Section1&#39;</span><span class="p">,</span> <span class="s1">&#39;a_boolean&#39;</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;Section1&#39;</span><span class="p">,</span> <span class="s1">&#39;a_float&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415&#39;</span><span class="p">)</span>
+<span class="c1"># Writing our configuration file to &#39;example.cfg&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.cfg&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note: all keys and values are strings</p>
+</div>
+</div>
+<div class="section" id="reading-ini-files">
+<h3>Reading <code class="docutils literal notranslate"><span class="pre">ini</span></code>  files:<a class="headerlink" href="#reading-ini-files" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;example.cfg&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">()</span>
+<span class="go">[&#39;Section1&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Section1&#39;</span><span class="p">,</span> <span class="s1">&#39;a_float&#39;</span><span class="p">)</span>
+<span class="go">&#39;3.1415&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="s1">&#39;Section1&#39;</span><span class="p">)</span>
+<span class="go">[(&#39;an_integer&#39;, &#39;15&#39;), (&#39;a_boolean&#39;, &#39;true&#39;), (&#39;a_float&#39;, &#39;3.1415&#39;)]</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.python.org/3/library/configparser.html">https://docs.python.org/3/library/configparser.html</a></p>
+</div>
+</div>
+<div class="section" id="csv">
+<h2>CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h2>
+<p>CSV (Comma Separated Values) format is the most common import and export format for spreadsheets and databases.</p>
+<p>No real standard – the Python csv package more or less follows MS Excel “standard” (with other “dialects” available)</p>
+<p>Can use delimiters other than commas… (I like tabs better)</p>
+<p>Most useful for simple tabular data</p>
+<div class="section" id="the-csv-module">
+<h3>The CSV module<a class="headerlink" href="#the-csv-module" title="Permalink to this headline">¶</a></h3>
+<p>Reading <code class="docutils literal notranslate"><span class="pre">CSV</span></code>  files:</p>
+<p>(uses: <a class="reference download internal" download="" href="../_downloads/ef41bf7ef60c6bf0bcaea1137d086b26/eggs.csv"><code class="xref download docutils literal notranslate"><span class="pre">eggs.csv</span></code></a>)</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="gp">In [17]: </span><span class="n">spam_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;eggs.csv&#39;</span><span class="p">),</span>
+<span class="go">                                  skipinitialspace=True)</span>
+<span class="gp">In [19]: </span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">spam_reader</span><span class="p">:</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="go">[&#39;Spam&#39;, &#39; Spam&#39;, &#39; Spam&#39;, &#39; Spam&#39;, &#39; Spam&#39;, &#39; Baked Beans&#39;]</span>
+<span class="go">[&#39;Spam&#39;, &#39; Lovely Spam&#39;, &#39; Wonderful Spam&#39;]</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">csv</span></code>  module takes care of string quoting, etc. for you.</p>
+<ul class="simple">
+<li><p>This is a pretty big deal – that can be a real pain!</p></li>
+</ul>
+<p>NOTE: <code class="docutils literal notranslate"><span class="pre">skipinitialspace</span></code> is False by default, which can mess up
+interpreting quotes correctly.</p>
+<p>Writing <code class="docutils literal notranslate"><span class="pre">CSV</span></code> files:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;eggs2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">spam_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span>
+<span class="go">                                 quoting=csv.QUOTE_MINIMAL)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">spam_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Spam&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Baked Beans&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">spam_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Spam&#39;</span><span class="p">,</span> <span class="s1">&#39;Lovely Spam&#39;</span><span class="p">,</span> <span class="s1">&#39;Wonderful Spam&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">spam_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Spam&#39;</span><span class="p">,</span> <span class="s1">&#39;Spam, Wonderful spam..&#39;</span><span class="p">,</span> <span class="s1">&#39;Very-Wonderful Spam&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">csv</span></code> module takes care of string quoting, etc. for you.</p>
+<p>You can set the <code class="docutils literal notranslate"><span class="pre">quoting</span></code> attribute on the dialect object to control that.</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/csv.html">https://docs.python.org/3/library/csv.html</a></p>
+</div>
+</div>
+<div class="section" id="json">
+<h2>JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
+<p>JSON (JavaScript Object Notation) is a subset of JavaScript syntax used as a lightweight data interchange format.</p>
+<p><strong>LOTS</strong> of systems can read JSON – notably browsers…</p>
+<p>Python module has an interface similar to <code class="docutils literal notranslate"><span class="pre">pickle</span></code></p>
+<p>Can handle the standard Python data types</p>
+<p>Specializable encoding/decoding for other types – but I wouldn’t do that!</p>
+<p>Commonly used for configuration files, etc.</p>
+<div class="section" id="python-json-module">
+<h3>Python json module<a class="headerlink" href="#python-json-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [93]: </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="gp">In [94]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gh">Out[95]: </span><span class="go">&#39;[{&quot;this&quot;: 5, &quot;that&quot;: 4}, {&quot;eggs&quot;: 3.4, &quot;spam&quot;: 7},</span>
+<span class="go">           {&quot;foo&quot;: 86, &quot;bar&quot;: 4.5}, {&quot;fun&quot;: 43, &quot;baz&quot;: 6.5}]&#39;</span>
+<span class="gp">In [96]: </span><span class="n">data2</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gh">Out[97]:</span>
+<span class="go">[{u&#39;that&#39;: 4, u&#39;this&#39;: 5},</span>
+<span class="go"> {u&#39;eggs&#39;: 3.4, u&#39;spam&#39;: 7},</span>
+<span class="go">...</span>
+<span class="gp">In [98]: </span><span class="n">data2</span> <span class="o">==</span> <span class="n">data</span>
+<span class="gh">Out[98]: </span><span class="go">True # they are the same</span>
+</pre></div>
+</div>
+<p>(also <code class="docutils literal notranslate"><span class="pre">json.dump()</span> <span class="pre">and</span> <span class="pre">json.load()</span></code> for files)</p>
+<p><strong>NOTE:</strong> JSON is less “rich” than python – no tuples, no distinction between integers and floats, no comments! And keys can only be strings.</p>
+<p><a class="reference external" href="http://www.json.org/">http://www.json.org/</a></p>
+<p><a class="reference external" href="https://docs.python.org/3/library/json.html">https://docs.python.org/3/library/json.html</a></p>
+</div>
+<div class="section" id="id2">
+<h3>LAB<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Use the same addressbook data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># load with:</span>
+<span class="kn">from</span> <span class="nn">add_book_data</span> <span class="kn">import</span> <span class="n">AddressBook</span>
+</pre></div>
+</div>
+<ul>
+<li><p>Write a module that saves the data as an INI file</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>and reads it back in</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Write a module that saves the data as a CSV file</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>and reads it back in</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>( you’ll need the “flat” version for this…)</p>
+<ul>
+<li><p>Write a module that saves the data in JSON</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>and reads it back in</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="xml">
+<h2>XML<a class="headerlink" href="#xml" title="Permalink to this headline">¶</a></h2>
+<p>XML is a standardized version of SGML, designed for use as a data storage / interchange format.</p>
+<p>NOTE: HTML is also SGML, and modern versions conform to the XML standard.</p>
+<div class="section" id="xml-in-the-python-std-lib">
+<h3>XML in the python std lib<a class="headerlink" href="#xml-in-the-python-std-lib" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">xml.dom</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">xml.sax</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">xml.parsers.expat</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">xml.etree</span></code></p>
+<p><a class="reference external" href="https://docs.python.org/3/library/xml.html">https://docs.python.org/3/library/xml.html</a></p>
+</div>
+<div class="section" id="elementtree">
+<h3>elementtree<a class="headerlink" href="#elementtree" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">elementtree</span></code> is the simplest tool – maps pretty directly to XML.</p>
+<p>The Element type is a flexible container object, designed to store hierarchical data structures in memory.</p>
+<p>Essentially an in-memory XML – can be read from/written to XML</p>
+<p>an <code class="docutils literal notranslate"><span class="pre">ElementTree</span></code>  is an entire XML doc</p>
+<p>an <code class="docutils literal notranslate"><span class="pre">Element</span></code>  is a node in that tree</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html">https://docs.python.org/3/library/xml.etree.elementtree.html</a></p>
+<ul>
+<li><p>Write a module that saves the data in XML</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>and reads it back in</p></li>
+<li><p>this gets ugly!</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>(NEED a good example here!)</p>
+</div>
+</div>
+<div class="section" id="databases">
+<h2>DataBases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h2>
+<p>A database is a system for storing and retrieving data – usually in a filesystem.</p>
+<p>We usually think RDBMS and SQL – but there are simpler systems.</p>
+<div class="section" id="dbm">
+<h3>dbm<a class="headerlink" href="#dbm" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">dbm</span></code>  is a generic interface to variants of the DBM database</p>
+<p>Suitable for storing data that fits well into a python dict with strings as both keys and values</p>
+<p>Note: dbm will use the dbm system that works on your system – this may be different on different systems – so the db files may NOT be compatible! <code class="docutils literal notranslate"><span class="pre">whichdb</span></code>  will try to figure it out, but it’s not guaranteed</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/dbm.html">https://docs.python.org/3/library/dbm.html</a></p>
+<p><strong>NOTE:</strong> dbm is getting pretty old fashioned – e.g. it doesn’t handle Unicode</p>
+<p>It’s here for completeness, but there are probably better options!</p>
+</div>
+<div class="section" id="the-dbm-module">
+<h3>the <code class="docutils literal notranslate"><span class="pre">dbm</span></code> module<a class="headerlink" href="#the-dbm-module" title="Permalink to this headline">¶</a></h3>
+<p>Writing data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating a dbm file:</span>
+<span class="kn">import</span> <span class="nn">dbm</span>
+<span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>flag options are:</p>
+<ul class="simple">
+<li><p>‘r’ – Open existing database for reading only (default)</p></li>
+<li><p>‘w’ – Open existing database for reading and writing</p></li>
+<li><p>‘c’ – Open database for reading and writing, creating it if it doesn’t exist</p></li>
+<li><p>‘n’ – Always create a new, empty database, open for reading and writing</p></li>
+</ul>
+<p><strong>caution</strong> – these are different than the file open modes!</p>
+<p><code class="docutils literal notranslate"><span class="pre">dbm</span></code>  provides a dict-like interface:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dbm</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dbm&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bruce&quot;</span>
+<span class="n">db</span><span class="p">[</span><span class="s2">&quot;second&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;micheal&quot;</span>
+<span class="n">db</span><span class="p">[</span><span class="s2">&quot;third&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fred&quot;</span>
+<span class="n">db</span><span class="p">[</span><span class="s2">&quot;second&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;john&quot;</span> <span class="c1">#overwrite</span>
+<span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># read it:</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dbm&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">db</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>(a lot like <code class="docutils literal notranslate"><span class="pre">shelve</span></code>, though theoretically compatible with other systems)</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/dbm.html">https://docs.python.org/3/library/dbm.html</a></p>
+</div>
+<div class="section" id="sqlite">
+<h3>sqlite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h3>
+<p><strong>SQLite:</strong></p>
+<p>a C library providing a lightweight disk-based single-file database</p>
+<p>Nonstandard variant of the SQL query language</p>
+<p>Very broadly used as as an embedded databases for storing application-specific data etc.</p>
+<p>Firefox plug-in:</p>
+<p><a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/">https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/</a></p>
+</div>
+<div class="section" id="python-sqlite-module">
+<h3>python sqlite module<a class="headerlink" href="#python-sqlite-module" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>  Python module wraps C lib – provides standard DB-API interface</p>
+<p>Allows (and requires) SQL queries</p>
+<p>Can provide high performance, flexible, portable storage for your app</p>
+<div class="section" id="example">
+<h4>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="c1"># open a connection to a db file:</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span>
+<span class="c1"># or build one in-memory</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;:memory:&#39;</span><span class="p">)</span>
+<span class="c1"># create a cursor</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="execute-sql-with-the-cursor">
+<h4>Execute SQL with the cursor:<a class="headerlink" href="#execute-sql-with-the-cursor" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create table</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&#39;CREATE TABLE stocks (date text, trans text, symbol text, qty real, price real)&#39;&quot;</span><span class="p">)</span>
+<span class="c1"># Insert a row of data</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO stocks VALUES (&#39;2006-01-05&#39;,&#39;BUY&#39;,&#39;RHAT&#39;,100,35.14)&quot;</span><span class="p">)</span>
+<span class="c1"># Save (commit) the changes</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># Close the cursor if we are done with it</span>
+<span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code>  creates a cursor that can be iterated:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM stocks ORDER BY price&#39;</span><span class="p">):</span>
+<span class="go">        print row</span>
+<span class="go">(&#39;2006-01-05&#39;, &#39;BUY&#39;, &#39;RHAT&#39;, 100, 35.14)</span>
+<span class="go">(&#39;2006-03-28&#39;, &#39;BUY&#39;, &#39;IBM&#39;, 1000, 45.0)</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>Or you can get the rows one by one or in a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Good idea to use the DB-API’s parameter substitution:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">symbol</span><span class="p">,)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM stocks WHERE symbol=?&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="c1"># Larger example that inserts many records at a time</span>
+<span class="n">purchases</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;2006-03-28&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;IBM&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">45.00</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;2006-04-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;MSFT&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">72.00</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;2006-04-06&#39;</span><span class="p">,</span> <span class="s1">&#39;SELL&#39;</span><span class="p">,</span> <span class="s1">&#39;IBM&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mf">53.00</span><span class="p">),</span>
+            <span class="p">]</span>
+<span class="n">c</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;INSERT INTO stocks VALUES (?,?,?,?,?)&#39;</span><span class="p">,</span> <span class="n">purchases</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.python.org/3/library/sqlite3.html">https://docs.python.org/3/library/sqlite3.html</a></p>
+<p><a class="reference external" href="http://xkcd.com/327/">http://xkcd.com/327/</a></p>
+</div>
+</div>
+<div class="section" id="db-api">
+<h3>DB-API<a class="headerlink" href="#db-api" title="Permalink to this headline">¶</a></h3>
+<p>The DB-API spec (PEP 249) is a specification for interaction between Python and Relational Databases.</p>
+<p>Support for a large number of third-party Database drivers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>MySQL</p></li>
+<li><p>PostgreSQL</p></li>
+<li><p>Oracle</p></li>
+<li><p>MSSQL (?)</p></li>
+<li><p>…</p></li>
+</ul>
+</div></blockquote>
+<p><a class="reference external" href="http://www.python.org/dev/peps/pep-0249">http://www.python.org/dev/peps/pep-0249</a>}</p>
+</div>
+</div>
+<div class="section" id="lab-extras">
+<h2>LAB Extras:<a class="headerlink" href="#lab-extras" title="Permalink to this headline">¶</a></h2>
+<p>A few more things you could do:</p>
+<ul class="simple">
+<li><p>Use pickle to save/reload a custom class of yours
+(the Circle class from the first quarter?)</p></li>
+<li><p>Try writing a json writer for a non-standard data type:
+A custom class, or a more complex built-in?</p></li>
+</ul>
+</div>
+<div class="section" id="other-options">
+<h2>Other Options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h2>
+<p>There are a lot of other possibilities outside the standard lib.</p>
+<div class="section" id="object-relation-mappers">
+<h3>Object-Relation Mappers<a class="headerlink" href="#object-relation-mappers" title="Permalink to this headline">¶</a></h3>
+<p>Systems for mapping Python objects to tables</p>
+<p>Saves you writing that glue code (and the SQL)</p>
+<p>Usually deal with mapping to variety of back-ends:</p>
+<ul class="simple">
+<li><p>test with SQLite, deploy with PostgreSQL</p></li>
+</ul>
+<p>SQL Alchemy</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.sqlalchemy.org/">http://www.sqlalchemy.org/</a></p></li>
+</ul>
+<p>Django ORM</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/dev/topics/db/">https://docs.djangoproject.com/en/dev/topics/db/</a></p></li>
+</ul>
+</div>
+<div class="section" id="object-databases">
+<h3>Object Databases<a class="headerlink" href="#object-databases" title="Permalink to this headline">¶</a></h3>
+<p>(we’ll be talking more about this in another class: <a class="reference internal" href="NoSQL.html#nosql"><span class="std std-ref">No SQL Databases</span></a>)</p>
+<p>Directly store and retrieve Python Objects.</p>
+<p>Kind of like <code class="docutils literal notranslate"><span class="pre">shelve</span></code>, but more flexible, and give you searching, etc.</p>
+<p>ZODB: (<a class="reference external" href="http://www.zodb.org/">http://www.zodb.org/</a>)</p>
+</div>
+<div class="section" id="nosql">
+<h3>NoSQL<a class="headerlink" href="#nosql" title="Permalink to this headline">¶</a></h3>
+<p>Map-Reduce, etc.</p>
+<p>– Big deal for “Big Data”: Amazon, Google, etc.</p>
+<p>Document-Oriented Storage</p>
+<ul class="simple">
+<li><p>MongoDB (BSON interface, JSON documents)</p></li>
+<li><p>CouchDB (Apache):</p>
+<ul>
+<li><p>JSON documents</p></li>
+<li><p>Javascript querying (MapReduce)</p></li>
+<li><p>HTTP API</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>LAB<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Load data with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">add_book_data</span> <span class="kn">import</span> <span class="n">AddressBook</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Write a module that saves the data in a dbm database</p>
+<ul>
+<li><p>and reads it back in</p></li>
+</ul>
+</li>
+<li><p>Write a module that saves the data in an SQLite database</p>
+<ul>
+<li><p>and reads it back in</p></li>
+<li><p>helps to know SQL here…</p></li>
+</ul>
+</li>
+</ul>
+<p>Optional:</p>
+<ul class="simple">
+<li><p>Do the same with a ORM of your choice.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Unicode.html" class="btn btn-neutral float-right" title="Unicode in Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Packaging.html" class="btn btn-neutral float-left" title="Packages and Packaging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

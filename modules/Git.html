@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Intro to Git &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="git Workflow" href="GitWorkflow.html" />
+    <link rel="prev" title="Python 2 versus Python 3" href="Py2vsPy3.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Class_introduction.html">Introduction to the in-class version of the program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Intro to Git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Intro to Git</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Git.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="intro-to-git">
+<span id="git"></span><h1>Intro to Git<a class="headerlink" href="#intro-to-git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-git">
+<h2>What is Git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h2>
+<p>A “version control system”</p>
+</div>
+<div class="section" id="why-version-control">
+<h2>Why Version Control?<a class="headerlink" href="#why-version-control" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="http://phdcomics.com/comics/archive/phd101212s.gif" src="http://phdcomics.com/comics/archive/phd101212s.gif" />
+<p class="caption"><span class="caption-text">“Piled Higher and Deeper” by Jorge Cham: www.phdcomics.com</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>A history of everything everyone does to ‘your’ code</p>
+<p>A graph of “states” in which the code has existed</p>
+<p>That last one is a bit tricky, and is not necessary to understand right out of the gate. When you are ready, you can look at this supplement to gain a better understanding:</p>
+<p><span class="xref std std-ref">git_overview</span></p>
+<p>There are other versioning systems, such as Mercurial and Subversion (and commercial offerings), but Git is the most popular.</p>
+<p>It is incredibly important to learn and understand version control to work as a developer today, so we have incorporated Git into our work flow for submitting students’ work in this class.</p>
+</div>
+<div class="section" id="setting-up-git">
+<h2>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">¶</a></h2>
+<p>You should have git installed on your machine and accessible from the command line. If you don’t have git working on the command line, revisit the appropriate instructions for your platform here: <span class="xref std std-ref">installing_python</span>.</p>
+<p>Once git is installed and working, there is a little bit of setup for git that you should only have to do once:</p>
+<div class="section" id="letting-git-know-your-identity">
+<h3>Letting git know your identity<a class="headerlink" href="#letting-git-know-your-identity" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Marie Curie&quot;</span>
+$ git config --global user.email <span class="s2">&quot;marie@radioactive.com&quot;</span>
+</pre></div>
+</div>
+<p>(using your email and name, of course)</p>
+</div>
+<div class="section" id="editor">
+<h3>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>git needs an editor occasionally</p></li>
+<li><p>default is VI, which is not very intuitive to non-Unix Geeks</p></li>
+<li><p>Nano is simple, easy solution for Macs and Linux</p></li>
+<li><p>Nano no longer available for windows, use Sublime Text or Notepad++ or Atom</p></li>
+</ul>
+<p>For windows users: <span class="xref std std-ref">install_nano_win</span></p>
+<p>Once you have chosen/installed an editor, configure git to use it:</p>
+<p>(full notes here: <a class="reference external" href="https://help.github.com/articles/associating-text-editors-with-git/">GitHub help on Editors</a>)</p>
+<p><strong>nano:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;nano</span> <span class="pre">-w&quot;</span></code></p>
+<p><strong>Sublime Text (mac):</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;subl</span> <span class="pre">-n</span> <span class="pre">-w&quot;</span></code></p>
+<p><strong>Sublime Text(win):</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files/sublime</span> <span class="pre">text</span> <span class="pre">2/sublime_text.exe'</span> <span class="pre">-w&quot;</span></code></p>
+<p><strong>Notepad++ (Win):</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin&quot;</span></code></p>
+<p><strong>Atom:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;atom</span> <span class="pre">--wait&quot;</span></code></p>
+</div>
+</div>
+<div class="section" id="repositories">
+<h2>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h2>
+<p>A repository is just a collection of files that ‘belong together’.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">git</span></code> is a <em>distributed</em> versioning system, there is no <strong>primary</strong>
+repository that serves as the one to rule them all. This simply means that all repositories on each users machine should look the same.</p>
+<p>However, to keep things sane, there is generally one “central” repository chosen that users check with for changes. For us this is the one hosted on GitHub in the UWPCE-PythonCert-ClassRepos organization.</p>
+</div>
+<div class="section" id="working-with-remotes">
+<h2>Working with Remotes<a class="headerlink" href="#working-with-remotes" title="Permalink to this headline">¶</a></h2>
+<p>With git, you work with <em>local</em> repositories and the <em>remotes</em> that they are connected to.</p>
+<p>Git uses shortcuts to address <em>remotes</em>. When you <em>clone</em> a repository from its remote location to your local machine, you get an <em>origin</em> shortcut for free:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote -v
+origin  https://github.com/UWPCE-PythonCert-ClassRepos/ExampleRepo.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/UWPCE-PythonCert-ClassRepos/ExampleRepo.git <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+<p>This shows that the local repo on my machine <em>originated</em> from one in
+the UWPCE-PythonCert-ClassRepos GitHub account (it shows up twice, because there is a shortcut for both <code class="docutils literal notranslate"><span class="pre">fetch</span></code> from and <code class="docutils literal notranslate"><span class="pre">push</span></code> to this remote).</p>
+</div>
+<div class="section" id="github-forks">
+<h2>GitHub forks<a class="headerlink" href="#github-forks" title="Permalink to this headline">¶</a></h2>
+<p>You can work on any project you wish to that has a public repository on GitHub. However, since you won’t have permission to edit most projects directly, there is such a thing as <em>forking</em> a project.</p>
+<p>When you <em>fork</em> a repository, you make a copy of that repository in your own (GitHub) account.</p>
+<p>When you have made changes that you believe the rest of the community will want to adopt, you make a <em>pull request</em> to the original project. The maintainer(s) of that project than have the option of accepting your changes, in which case your changes will become part of that project.</p>
+<p>This is how we will be working in this class. When you are ready to submit an assignment, you will make a <em>pull request</em> to main class repo, and your instructors can review it.</p>
+<p>The class repositories are on <em>GitHub</em> in the <em>UWPCE-PythonCert-ClassRepos</em> organization:</p>
+<div class="figure align-default">
+<a class="center reference internal image-reference" href="../_images/remotes_start.png"><img alt="../_images/remotes_start.png" class="center" src="../_images/remotes_start.png" style="width: 50%;" /></a>
+</div>
+<p><a class="reference external" href="https://github.com/UWPCE-PythonCert-ClassRepos">https://github.com/UWPCE-PythonCert-ClassRepos</a></p>
+<p>Each class will have a repository created specifically for it, called something like: “Wi2018-Online”.</p>
+<p>In examples below it is called YourClassRepoNameHere, so replace that in your head with the name of your class’ repository.</p>
+<p>This class repository will include examples and relevant materials (and some exercise solutions) will be added throughout the class.</p>
+<p>There will be a folder called students at the top level, and everyone will create their own directory within it.</p>
+<p>Note that you can use any name you want for your personal working directory – it can be your first name, you full name, or maybe your gitHub handle if you want to remain anonymous. Just make sure you let your instructors know what name you’ve used so that they can credit you for your work.</p>
+<p>Everyone will commit to this repository, and everyone will have access to everyone’s code.</p>
+<p>This will make it easier to collaborate. Weirdly enough, collaborating is important for developing code, both for class and in the <em>real world</em>.</p>
+</div>
+<div class="section" id="setting-up-your-fork-of-the-class-repository">
+<h2>Setting up Your Fork of the Class Repository<a class="headerlink" href="#setting-up-your-fork-of-the-class-repository" title="Permalink to this headline">¶</a></h2>
+<p>The first thing we have to do is on the GitHub website. You will create a fork of the class repository from the <code class="docutils literal notranslate"><span class="pre">UWPCE-PythonCert-ClassRepos</span></code> account on GitHub into your personal account.</p>
+<p>Before you can do that, you need to create a GitHub account, if you don’t have one already.  Your gitHub id will be associated with this class’ public repo, so it is up to you if you want to use your real name for your gitHub account, or an alias to maintain your privacy.</p>
+<p>Once you are logged in to your gitHub account, go to the appropriate class repository here:</p>
+<p><a class="reference external" href="https://github.com/UWPCE-PythonCert-ClassRepos">https://github.com/UWPCE-PythonCert-ClassRepos</a></p>
+<p>Make sure you find the right repo for YOUR class!</p>
+<p>Once in the repo for your class, click on the “fork” button in the upper right of the page to create a fork in your gitHub account. You will now have a copy of the class repo, and can then set up your personal machine to connect to that copy.</p>
+<div class="figure align-default">
+<a class="center reference internal image-reference" href="../_images/remotes_fork.png"><img alt="../_images/remotes_fork.png" class="center" src="../_images/remotes_fork.png" style="width: 50%;" /></a>
+</div>
+<p>Yoy should now have a copy of the class repository in your account on the GitHub website.</p>
+<p>The next step is to make a <em>clone</em> of your fork on your own computer, which means that <strong>your fork</strong> in GitHub is the <em>origin</em>:</p>
+<div class="figure align-default">
+<a class="center reference internal image-reference" href="../_images/remotes_clone.png"><img alt="../_images/remotes_clone.png" class="center" src="../_images/remotes_clone.png" style="width: 50%;" /></a>
+</div>
+<p>Begin in a directory on your computer where you want to keep your cloned version of the class repository.
+This can live anywhere on your file system but this outer directory should not be tracked in git.</p>
+<p>From that directory, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/your_github_id/YourClassRepoNameHere
+</pre></div>
+</div>
+<p>Be sure to replace “YourClassRepoNameHere” with the name of your class repository (you can get the url by going to the class repo on gitHub and clicking “clone or download”).</p>
+<p>This will download the repository from your GitHub account into the local directory that you ran the git <em>clone</em> command from.</p>
+<div class="section" id="adding-a-remote">
+<h3>Adding a remote<a class="headerlink" href="#adding-a-remote" title="Permalink to this headline">¶</a></h3>
+<p>Since you are working on a repository that you do not own, you will need to make a git shortcut to the original repository, so that you can get changes made by other contributors (i.e. the instructors and other students) before you start working.</p>
+<p>You can add <em>remotes</em> at will, to connect your <em>local</em> repository to other copies of it in different remote locations.</p>
+<p>This allows you to grab changes made to the repository in these other
+locations.</p>
+<p>For this class, you will add an <em>upstream</em> remote to our local copy that points to the original copy of the material in the
+<code class="docutils literal notranslate"><span class="pre">UWPCE-PythonCert-ClassRepos</span></code> account, and we will call it, appropriately, “upstream”.
+Change directories into your local version of the class repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> YourClassRepoNameHere
+</pre></div>
+</div>
+<p>and run (remembering to use the name of your class):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/UWPCE-PythonCert-ClassRepos/YourClassRepoNameHere
+</pre></div>
+</div>
+<p>You can get that full url by going to GitHub, finding the repo, and copying the “clone” url. then you can type the command, and simply paste the url.</p>
+<p>Your local setup should now look something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote -v
+origin  https://github.com/your_github_id/YourClassRepoNameHere <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/your_github_id/YourClassRepoNameHere <span class="o">(</span>push<span class="o">)</span>
+upstream    https://github.com/UWPCE-PythonCert-ClassRepos/YourClassRepoNameHere <span class="o">(</span>fetch<span class="o">)</span>
+upstream    https://github.com/UWPCE-PythonCert-ClassRepos/YourClassRepoNameHere <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+<p>This should leave you in a situation that looks like this:</p>
+<div class="figure align-default">
+<a class="center reference internal image-reference" href="../_images/remotes_upstream.png"><img alt="../_images/remotes_upstream.png" class="center" src="../_images/remotes_upstream.png" style="width: 50%;" /></a>
+</div>
+<p>To get the updates from your new remote, you’ll need first to fetch everything:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git fetch --all
+Fetching origin
+Fetching upstream
+...
+</pre></div>
+</div>
+<p>Then you can see the branches you have locally available:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch -a
+* master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/master
+  remotes/upstream/master
+</pre></div>
+</div>
+<p>Finally, you can fetch and then merge changes from the upstream master.</p>
+<p>Start by making sure you are on your own master branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+</pre></div>
+</div>
+<p>This is <strong>really really</strong> important. Take the time to ensure you are where you think you are, in other words, that your origin is your own GitHub repository and that you are working on master from that remote.
+You can use <cite>git remote -v</cite> and <cite>git branch -a</cite> to verify.</p>
+<p>Now, fetch the upstream master branch and merge it into your master.
+You can do this in one step with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git pull upstream master
+Updating 3239de7..9ddbdbb
+Fast-forward
+ Examples/README.rst              <span class="p">|</span>  <span class="m">4</span> ++++
+...
+ create mode <span class="m">100644</span> Examples/README.rst
+...
+</pre></div>
+</div>
+<p>Now all the changes from <em>upstream</em> are present in your local clone.
+You should do this pull every time you start to work on code.</p>
+<p>In order to preserve the changes made by others in your fork on GitHub, you’ll have to push:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+Your branch is ahead of <span class="s1">&#39;origin/master&#39;</span> by <span class="m">10</span> commits.
+  <span class="o">(</span>use <span class="s2">&quot;git push&quot;</span> to publish your <span class="nb">local</span> commits<span class="o">)</span>
+$ git push origin master
+Counting objects: <span class="m">44</span>, <span class="k">done</span>.
+...
+$
+</pre></div>
+</div>
+<p>(A simple <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> will usually do the right thing)</p>
+<p>You are now set up to work with this repository, and the next steps will be similar every time you work on code.</p>
+<p>Go now to this page: <a class="reference internal" href="GitWorkflow.html#git-workflow"><span class="std std-ref">git Workflow</span></a>, where you will learn what to do each time you have work to submit for review.</p>
+</div>
+<div class="section" id="privacy-note">
+<h3>Privacy Note:<a class="headerlink" href="#privacy-note" title="Permalink to this headline">¶</a></h3>
+<p>Because of the way we have set up the class, you will be able
+to see all work submitted to us from everyone in the class in
+the students directory on your machine. This is not a bad thing.
+And the files tend to be small.</p>
+<p>We encourage sharing of knowledge in this class. Helping your
+fellow students will also help you to better understand. Share
+your code, and get used to giving / receiving feedback on how to
+improve your code, if you are not already.</p>
+<p>However, you are free to use any name you like for your working directory – it does not have to be your real name, if you want to keep your privacy.</p>
+</div>
+</div>
+<div class="section" id="structure-of-multiple-git-repos">
+<h2>Structure of multiple git repos<a class="headerlink" href="#structure-of-multiple-git-repos" title="Permalink to this headline">¶</a></h2>
+<p>Each repository will have a directory called <code class="docutils literal notranslate"><span class="pre">.git</span></code> that is normally
+not seen. This directory is how git keeps track of everything. Leave it alone. :)</p>
+<p>Please do not set up a git repository inside another git repository, this can lead to heartache.</p>
+<p>Absolutely, do NOT set up a git repository in your home root directory.
+This will put everything in your home directory up on GitHub, and you do not want that.</p>
+<p>Setting up new repositories can be confusing because when you clone a git repository it creates the directory that will be the repository, but when you are creating a new repository, you need to first be <strong>IN</strong> the directory in which you want the repository to be rooted. Please ask if this does not make sense.</p>
+<p>It’s also important to note that you do not run the <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">init</span></code> command at any point in the process of cloning and configuring your local copy of a remote repo. The <code class="docutils literal notranslate"><span class="pre">init</span></code> git command is used to initialize a git repository on your local machine and is not necessary in our case because the cloned repository has already been initialized.</p>
+<p>Additional Resources:</p>
+<p>git tutorial:
+<a class="reference external" href="https://try.github.io/levels/1/challenges/1">https://try.github.io/levels/1/challenges/1</a></p>
+<p>basic git commands:
+<a class="reference external" href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GitWorkflow.html" class="btn btn-neutral float-right" title="git Workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Py2vsPy3.html" class="btn btn-neutral float-left" title="Python 2 versus Python 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

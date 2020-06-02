@@ -1,0 +1,1169 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Sequences &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Iteration" href="Iteration.html" />
+    <link rel="prev" title="Boolean Expressions" href="Booleans.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Booleans.html">Boolean Expressions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Python Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Iteration.html">Iteration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Strings.html">Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Python Sequences</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Sequences.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-sequences">
+<span id="sequences"></span><h1>Python Sequences<a class="headerlink" href="#python-sequences" title="Permalink to this headline">¶</a></h1>
+<p>Ordered collections of objects</p>
+<div class="section" id="what-is-a-sequence">
+<h2>What is a Sequence?<a class="headerlink" href="#what-is-a-sequence" title="Permalink to this headline">¶</a></h2>
+<p>A sequence is an ordered collection of objects.</p>
+<p>They are analogous to what are often called “arrays” or “lists” in other programming languages.</p>
+<p>But in Python, there are number of types that all fit this description, each with special customization. But any object that has the behavior expected of a sequence can be treated the same way in Python:</p>
+<p>Remember Duck Typing?</p>
+<p>If it looks like a duck and quacks like a duck…</p>
+<p>OR: If it looks and acts like a sequence – it <strong>is</strong> a sequence.</p>
+<p>Technically, if it satisfies the “Sequence Protocol”, it is a sequence.</p>
+<p>Python is all about these protocols – we will see more of them.</p>
+<div class="section" id="the-sequence-protocol">
+<h3>The Sequence Protocol<a class="headerlink" href="#the-sequence-protocol" title="Permalink to this headline">¶</a></h3>
+<p>A <em>sequence</em> can be considered as anything that supports <em>at least</em> these operations:</p>
+<ul class="simple">
+<li><p>Indexing</p></li>
+<li><p>Slicing</p></li>
+<li><p>Membership</p></li>
+<li><p>Concatenation</p></li>
+<li><p>Length</p></li>
+<li><p>Iteration</p></li>
+</ul>
+<p>I’ll get into all of those as we go along.</p>
+</div>
+<div class="section" id="sequence-types">
+<h3>Sequence Types<a class="headerlink" href="#sequence-types" title="Permalink to this headline">¶</a></h3>
+<p>There are eight built in types in Python that are <em>sequences</em>:</p>
+<ul class="simple">
+<li><p>string</p></li>
+<li><p>list</p></li>
+<li><p>tuple</p></li>
+<li><p>bytes</p></li>
+<li><p>bytearray</p></li>
+<li><p>buffer</p></li>
+<li><p>array.array</p></li>
+<li><p>range object (almost)</p></li>
+</ul>
+<p>For this lesson, you won’t see much beyond strings, lists, and tuples –
+the rest are pretty special purpose.</p>
+<p>But what we learn in this lesson applies to all sequences (with minor caveats).</p>
+<p>I’ll use lists, strings and tuples in the examples.</p>
+<p>So let’s take a look at the key parts of the sequence protocol:</p>
+</div>
+</div>
+<div class="section" id="indexing">
+<h2>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
+<p>Items in a sequence may be looked up by <em>index</em> using the indexing
+operator: <code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
+<p>Indexing in Python always starts at zero.</p>
+<p>Here is an example with a string – a string is a sequence of characters.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [98]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;this is a string&quot;</span>
+<span class="gp">In [99]: </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gh">Out[99]: </span><span class="go">&#39;t&#39;</span>
+<span class="gp">In [100]: </span><span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="gh">Out[100]: </span><span class="go">&#39;i&#39;</span>
+</pre></div>
+</div>
+<p>Note that the first character is indexed with zero – I sometimes call that the “zeroth” item in the sequence.</p>
+<p>Zero indexing may seem odd at first (if you are not already a programming geek), but it turns out to make a lot of things easier. More on that later.</p>
+<p>You can use negative indexes to count from the end:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+
+<span class="gp">In [3]: </span><span class="n">a_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gh">Out[3]: </span><span class="go">55</span>
+
+<span class="gp">In [4]: </span><span class="n">a_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[4]: </span><span class="go">23</span>
+
+<span class="gp">In [5]: </span><span class="n">a_list</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="gh">Out[5]: </span><span class="go">56</span>
+</pre></div>
+</div>
+<p>Indexing beyond the end of a sequence causes an IndexError:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">a_list</span>
+<span class="gh">Out[6]: </span><span class="go">[34, 56, 19, 23, 55]</span>
+
+<span class="gp">In [7]: </span><span class="n">a_list</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-7-c1f9ac3b6fee&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a_list</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+<p>Pretty straight forward so far…</p>
+<div class="section" id="slicing">
+<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h3>
+<p>Slicing is a real “power tool” of Python – it can allow very short code.</p>
+<p>Slicing a sequence creates a new sequence with a range of objects from the
+original sequence.</p>
+<p>It also uses the indexing operator (<code class="docutils literal notranslate"><span class="pre">[]</span></code>), but with a twist.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sequence[start:finish]</span></code> returns all <cite>sequence[i]</cite> for which <cite>start &lt;= i &lt; finish</cite></p>
+<p>That’s a fancy way to say that it’s all the items from start to finish – including start, but NOT including finish.</p>
+<p>This also may be a bit unintuitive – but it’s very practical.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [121]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a bunch of words&quot;</span>
+<span class="gp">In [122]: </span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[122]: </span><span class="go">&#39;b&#39;</span>
+<span class="gp">In [123]: </span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="gh">Out[123]: </span><span class="go">&#39;h&#39;</span>
+<span class="gp">In [124]: </span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="gh">Out[124]: </span><span class="go">&#39;bunc&#39;</span>
+<span class="gp">In [125]: </span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>
+<span class="gh">Out[125]: </span><span class="go">&#39;bunch&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="helpful-hint">
+<h3>Helpful Hint<a class="headerlink" href="#helpful-hint" title="Permalink to this headline">¶</a></h3>
+<p>It can really help if you think about slicing this way:</p>
+<p>(write this out!)</p>
+<p>Think of the indexes as pointing to the spaces between the items:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">a</span>       <span class="n">b</span>   <span class="n">u</span>   <span class="n">n</span>   <span class="n">c</span>   <span class="n">h</span>       <span class="n">o</span>   <span class="n">f</span>       <span class="n">w</span>   <span class="n">o</span>   <span class="n">r</span>   <span class="n">d</span>   <span class="n">s</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span>   <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span>  <span class="mi">10</span>  <span class="mi">11</span>  <span class="mi">12</span>  <span class="mi">13</span>  <span class="mi">14</span>  <span class="mi">15</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Slicing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Python has some other slicing shortcuts…</p>
+<p>You do not have to provide both <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">finish</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a bunch of words&quot;</span>
+<span class="gp">In [7]: </span><span class="n">s</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="gh">Out[7]: </span><span class="go">&#39;a bun&#39;</span>
+<span class="gp">In [8]: </span><span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+<span class="gh">Out[8]: </span><span class="go">&#39;ch of words&#39;</span>
+</pre></div>
+</div>
+<p>Either <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">len(s)</span></code> will be assumed, respectively.</p>
+<p>You can combine this with the negative index to get the end of a sequence:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;this_could_be_a_filename.txt&#39;</span>
+<span class="gp">In [5]: </span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="gh">Out[5]: </span><span class="go">&#39;this_could_be_a_filename&#39;</span>
+<span class="gp">In [6]: </span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
+<span class="gh">Out[6]: </span><span class="go">&#39;.txt&#39;</span>
+</pre></div>
+</div>
+<p><strong>That</strong> is a real-world example I use all the time.</p>
+</div>
+<div class="section" id="why-start-from-zero">
+<h3>Why start from zero?<a class="headerlink" href="#why-start-from-zero" title="Permalink to this headline">¶</a></h3>
+<p>Python indexing feels ‘weird’ to some folks – particularly those that don’t come with a background in the C family of languages.</p>
+<p>Why is the “first” item indexed with <strong>zero</strong>?</p>
+<p>Why is the last item in the slice <strong>not</strong> included?</p>
+<p><em>Because</em> these lead to some nifty properties:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="p">])</span> <span class="o">==</span> <span class="n">b</span><span class="o">-</span><span class="n">a</span>
+
+<span class="n">seq</span><span class="p">[:</span><span class="n">b</span><span class="p">]</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="n">b</span><span class="p">:]</span> <span class="o">==</span> <span class="n">seq</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">[:</span><span class="n">b</span><span class="p">])</span> <span class="o">==</span> <span class="n">b</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="n">b</span><span class="p">:])</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>There are very many fewer “off by one” errors as a result.</p>
+</div>
+<div class="section" id="more-on-slicing">
+<h3>More on Slicing<a class="headerlink" href="#more-on-slicing" title="Permalink to this headline">¶</a></h3>
+<p>Slicing takes a third argument: <code class="docutils literal notranslate"><span class="pre">step</span></code> which controls which items are
+returned:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">a_tuple</span>
+<span class="gh">Out[18]: </span><span class="go">(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)</span>
+
+<span class="gp">In [19]: </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+<span class="gh">Out[19]: </span><span class="go">(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)</span>
+
+<span class="gp">In [20]: </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[20]: </span><span class="go">(0, 2, 4, 6, 8, 10, 12, 14)</span>
+
+<span class="gp">In [21]: </span><span class="n">a_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="gh">Out[21]: </span><span class="go">(0, 3, 6, 9, 12)</span>
+
+<span class="gp">In [22]: </span><span class="n">a_tuple</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gh">Out[22]: </span><span class="go">(19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)</span>
+</pre></div>
+</div>
+<p>Very cool – a negative step reverses the results!</p>
+</div>
+<div class="section" id="slicing-vs-indexing">
+<h3>Slicing vs. Indexing<a class="headerlink" href="#slicing-vs-indexing" title="Permalink to this headline">¶</a></h3>
+<p>Though they share an operator, slicing and indexing have a few important
+differences:</p>
+<ul class="simple">
+<li><p>Indexing will always return one single object (a scalar), whereas slicing will return a sequence of objects.</p></li>
+</ul>
+<p>So if you start with, say, a list of numbers, indexing will return a single number.  Slicing, on the other hand, will return list of numbers – even if that list only has one number in it – or zero!</p>
+<p>Note that strings are a bit of an exception – there is no character type in Python – so a single character is a string – a sequence of length-1.</p>
+<ul class="simple">
+<li><p>Indexing past the end of a sequence will raise an error, slicing will not:</p></li>
+</ul>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [129]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a bunch of words&quot;</span>
+<span class="gp">In [130]: </span><span class="n">s</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span>
+<span class="go">----&gt; 1 s[17]</span>
+<span class="go">IndexError: string index out of range</span>
+<span class="gp">In [131]: </span><span class="n">s</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="gh">Out[131]: </span><span class="go">&#39; words&#39;</span>
+<span class="gp">In [132]: </span><span class="n">s</span><span class="p">[</span><span class="mi">20</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>
+<span class="gh">Out[132]: </span><span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>(try it yourself….)</p>
+</div>
+</div>
+<div class="section" id="membership">
+<h2>Membership<a class="headerlink" href="#membership" title="Permalink to this headline">¶</a></h2>
+<p>All sequences support the <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> membership operators:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">In [16]: </span><span class="mi">5</span> <span class="ow">in</span> <span class="n">s</span>
+<span class="gh">Out[16]: </span><span class="go">True</span>
+<span class="gp">In [17]: </span><span class="mi">42</span> <span class="ow">in</span> <span class="n">s</span>
+<span class="gh">Out[17]: </span><span class="go">False</span>
+<span class="gp">In [18]: </span><span class="mi">42</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">s</span>
+<span class="gh">Out[18]: </span><span class="go">True</span>
+</pre></div>
+</div>
+<p>For strings, the membership operations are like <code class="docutils literal notranslate"><span class="pre">substring</span></code> operations in
+other languages:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;This is a long string&quot;</span>
+<span class="gp">In [21]: </span><span class="s2">&quot;long&quot;</span> <span class="ow">in</span> <span class="n">s</span>
+<span class="gh">Out[21]: </span><span class="go">True</span>
+</pre></div>
+</div>
+<p>This does not work for sub-sequences of other types (can you think of why?):</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">In [23]: </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">in</span> <span class="n">s</span>
+<span class="gh">Out[23]: </span><span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="concatenation">
+<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">*</span></code> on sequences will <em>concatenate</em> them:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="gp">In [19]: </span><span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="gp">In [20]: </span><span class="n">l1</span> <span class="o">+</span> <span class="n">l2</span>
+<span class="gh">Out[20]: </span><span class="go">[1, 2, 3, 4, 5, 6, 7, 8]</span>
+<span class="gp">In [21]: </span><span class="p">(</span><span class="n">l1</span><span class="o">+</span><span class="n">l2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="gh">Out[21]: </span><span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]</span>
+</pre></div>
+</div>
+<div class="section" id="multiplying-and-slicing">
+<h3>Multiplying and Slicing<a class="headerlink" href="#multiplying-and-slicing" title="Permalink to this headline">¶</a></h3>
+<p>You can apply this concatenation to slices as well, leading to some nicely
+concise code:</p>
+<p>from CodingBat: Warmup-1 – front3</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">front3</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="o">+</span><span class="nb">str</span><span class="o">+</span><span class="nb">str</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="nb">str</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="nb">str</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This non-pythonic solution can also be expressed like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">front3</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="length">
+<h2>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h2>
+<p>All sequences have a length.  You can get it with the <code class="docutils literal notranslate"><span class="pre">len</span></code> builtin:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;how long is this, anyway?&quot;</span>
+<span class="gp">In [37]: </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gh">Out[37]: </span><span class="go">25</span>
+</pre></div>
+</div>
+<p>Remember: Sequences are 0-indexed, so the last index is <code class="docutils literal notranslate"><span class="pre">len(s)-1</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [38]: </span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">In [39]: </span><span class="n">s</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
+<span class="gt">------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-39-5a33b9d3e525&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
+<span class="ne">IndexError</span>: string index out of range
+</pre></div>
+</div>
+<p>Better to use <code class="docutils literal notranslate"><span class="pre">s[-1]</span></code></p>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<p>There are a bunch more operations supported by most sequences.
+Min and Max
+———–</p>
+<p>All sequences also support the <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> builtins:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [42]: </span><span class="n">all_letters</span> <span class="o">=</span> <span class="s2">&quot;thequickbrownfoxjumpedoverthelazydog&quot;</span>
+
+<span class="gp">In [43]: </span><span class="nb">min</span><span class="p">(</span><span class="n">all_letters</span><span class="p">)</span>
+<span class="gh">Out[43]: </span><span class="go">&#39;a&#39;</span>
+
+<span class="gp">In [44]: </span><span class="nb">max</span><span class="p">(</span><span class="n">all_letters</span><span class="p">)</span>
+<span class="gh">Out[44]: </span><span class="go">&#39;z&#39;</span>
+</pre></div>
+</div>
+<p>Why are those the answers you get? (hint: <code class="docutils literal notranslate"><span class="pre">ord('a')</span></code>)</p>
+<p>Of course this works with numbers, too!</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+
+<span class="gp">In [2]: </span><span class="nb">min</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="gh">Out[2]: </span><span class="go">2</span>
+
+<span class="gp">In [3]: </span><span class="nb">max</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">8</span>
+</pre></div>
+</div>
+<div class="section" id="index">
+<h3>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<p>All sequences also support the <code class="docutils literal notranslate"><span class="pre">index</span></code> method, which returns the index of the first occurrence of an item in the sequence:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [46]: </span><span class="n">all_letters</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="gh">Out[46]: </span><span class="go">21</span>
+</pre></div>
+</div>
+<p>This causes a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if the item is not in the sequence:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [47]: </span><span class="n">all_letters</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-47-2db728a46f78&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_letters</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: substring not found
+</pre></div>
+</div>
+</div>
+<div class="section" id="count">
+<h3>Count<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h3>
+<p>A sequence can also be queried for the number of times a particular item
+appears:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [52]: </span><span class="n">all_letters</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="gh">Out[52]: </span><span class="go">4</span>
+<span class="gp">In [53]: </span><span class="n">all_letters</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;the&#39;</span><span class="p">)</span>
+<span class="gh">Out[53]: </span><span class="go">2</span>
+</pre></div>
+</div>
+<p>This does not raise an error if the item you seek is not present:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [54]: </span><span class="n">all_letters</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="gh">Out[54]: </span><span class="go">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="iteration">
+<h2>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h2>
+<p>All sequences are “iterables”.</p>
+<p>You can iterate over a sequence with <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+    <span class="n">do_something</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which is what we mean when we say a sequence is an “iterable”.</p>
+<p>There are some complexities about that – but more on that in another lesson.</p>
+</div>
+<div class="section" id="lists-tuples">
+<h2>Lists, Tuples…<a class="headerlink" href="#lists-tuples" title="Permalink to this headline">¶</a></h2>
+<p>The <em>primary</em> sequence types.</p>
+<div class="section" id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<p>Lists can be constructed using list literals (<code class="docutils literal notranslate"><span class="pre">[]</span></code>):</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="p">[]</span>
+<span class="gh">Out[1]: </span><span class="go">[]</span>
+<span class="gp">In [2]: </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gh">Out[2]: </span><span class="go">[1, 2, 3]</span>
+<span class="gp">In [3]: </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mf">7.34</span><span class="p">]</span>
+<span class="gh">Out[3]: </span><span class="go">[1, &#39;a&#39;, 7.34]</span>
+</pre></div>
+</div>
+<p>Or by using the <code class="docutils literal notranslate"><span class="pre">list</span></code> type object as a constructor:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="nb">list</span><span class="p">()</span>
+<span class="gh">Out[6]: </span><span class="go">[]</span>
+<span class="gp">In [7]: </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="gh">Out[7]: </span><span class="go">[0, 1, 2, 3]</span>
+<span class="gp">In [8]: </span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="gh">Out[8]: </span><span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+</pre></div>
+</div>
+<p>It will take any “iterable” (which means any sequence automatically – remember that all sequences are iterable?)</p>
+</div>
+<div class="section" id="list-elements">
+<h3>List Elements<a class="headerlink" href="#list-elements" title="Permalink to this headline">¶</a></h3>
+<p>The elements contained in a list need not be of a single type.</p>
+<p>Lists are <em>heterogenous</em>, <em>ordered</em> collections.</p>
+<p>Each element in a list is a value, and can be in multiple lists and have
+multiple names (or no name):</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Brian&#39;</span>
+<span class="gp">In [10]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="p">]</span>
+<span class="gp">In [11]: </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">name</span><span class="p">]</span>
+<span class="gp">In [12]: </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[12]: </span><span class="go">&#39;Brian&#39;</span>
+<span class="gp">In [13]: </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[13]: </span><span class="go">&#39;Brian&#39;</span>
+<span class="gp">In [14]: </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">is</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gh">Out[14]: </span><span class="go">True</span>
+</pre></div>
+</div>
+<p>Notice that even with a “literal” – the elements don’t need to be literals as well – they can be names.</p>
+<p>They can even be function calls:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">   ...: </span>    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="gp">   ...:</span>
+
+<span class="gp">In [5]: </span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">fun</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+
+<span class="gp">In [6]: </span><span class="n">l</span>
+<span class="gh">Out[6]: </span><span class="go">[3, &#39;four&#39;, 6, 18]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuples">
+<h3>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h3>
+<p>Tuples can be constructed using tuple literals (<code class="docutils literal notranslate"><span class="pre">()</span></code>):</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="p">()</span>
+<span class="gh">Out[15]: </span><span class="go">()</span>
+<span class="gp">In [16]: </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gh">Out[16]: </span><span class="go">(1, 2)</span>
+<span class="gp">In [17]: </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mf">7.65</span><span class="p">)</span>
+<span class="gh">Out[17]: </span><span class="go">(1, &#39;a&#39;, 7.65)</span>
+<span class="gp">In [18]: </span><span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="gh">Out[18]: </span><span class="go">(1,)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuples-and-commas">
+<h3>Tuples and Commas…<a class="headerlink" href="#tuples-and-commas" title="Permalink to this headline">¶</a></h3>
+<p>Tuples don’t NEED parentheses…</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [161]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">In [162]: </span><span class="n">t</span>
+<span class="gh">Out[162]: </span><span class="go">(1, 2, 3)</span>
+<span class="gp">In [163]: </span><span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+<span class="gp">In [164]: </span><span class="n">t</span>
+<span class="gh">Out[164]: </span><span class="go">(1, 2, 3)</span>
+<span class="gp">In [165]: </span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gh">Out[165]: </span><span class="go">tuple</span>
+</pre></div>
+</div>
+<p>But they <em>do</em> need commas…!</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [156]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="gp">In [157]: </span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gh">Out[157]: </span><span class="go">int</span>
+<span class="gp">In [158]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="p">)</span>
+<span class="gp">In [160]: </span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gh">Out[160]: </span><span class="go">tuple</span>
+</pre></div>
+</div>
+<p>This is a Python “gotcha” – some folks on my team recently had a weird bug that two of them could not figure out. They were getting a type error – something like:</p>
+<p>TypeError: unsupported operand type(s) for /: ‘tuple’ and ‘float’</p>
+<p>which made no sense – there were no tuples involved – in this case, the value was being pulled from a list – and it WAS a float. They even put type checking code in there, and it was, indeed, a float.</p>
+<p>After poking at the code a bit, I suddenly spotted an extra comma – BINGO! that was it.</p>
+<p>The code was more involved, and thus harder to see, but it was pretty much like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+</pre></div>
+</div>
+<p>then a bit further down, x was used:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">5289811</span><span class="n">a13ac</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">/</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="ow">and</span> <span class="s1">&#39;float&#39;</span>
+</pre></div>
+</div>
+<p>Would you have seen that?</p>
+</div>
+<div class="section" id="converting-something-to-a-tuple">
+<h3>Converting something to a Tuple<a class="headerlink" href="#converting-something-to-a-tuple" title="Permalink to this headline">¶</a></h3>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> type object to convert any iterable (sequence) into a tuple:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="nb">tuple</span><span class="p">()</span>
+<span class="gh">Out[20]: </span><span class="go">()</span>
+<span class="gp">In [21]: </span><span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="gh">Out[21]: </span><span class="go">(0, 1, 2, 3)</span>
+<span class="gp">In [22]: </span><span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;garbanzo&#39;</span><span class="p">)</span>
+<span class="gh">Out[22]: </span><span class="go">(&#39;g&#39;, &#39;a&#39;, &#39;r&#39;, &#39;b&#39;, &#39;a&#39;, &#39;n&#39;, &#39;z&#39;, &#39;o&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple-elements">
+<h3>Tuple Elements<a class="headerlink" href="#tuple-elements" title="Permalink to this headline">¶</a></h3>
+<p>The elements contained in a tuple need not be of a single type.</p>
+<p>Tuples are <em>heterogenous</em>, <em>ordered</em> collections.</p>
+<p>Each element in a tuple is a value, and can be in multiple tuples and have
+multiple names (or no name):</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Brian&#39;</span>
+<span class="gp">In [24]: </span><span class="n">other</span> <span class="o">=</span> <span class="n">name</span>
+<span class="gp">In [25]: </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="gp">In [26]: </span><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+<span class="gp">In [27]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="gp">   ....:</span>
+<span class="go">False False True</span>
+</pre></div>
+</div>
+<p>Look familiar from lists??</p>
+</div>
+<div class="section" id="lists-vs-tuples">
+<h3>Lists vs. Tuples<a class="headerlink" href="#lists-vs-tuples" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>So why have both?</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="mutability">
+<h2>Mutability<a class="headerlink" href="#mutability" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/transmogrifier.jpg"><img alt="Presto change-o" class="align-center" src="../_images/transmogrifier.jpg" style="width: 35%;" /></a>
+<p>image from flickr by <a class="reference external" href="https://www.flickr.com/photos/illuminaut/3595530403">illuminaut</a>, (CC by-nc-sa)</p>
+</div>
+<div class="section" id="mutability-in-python">
+<h2>Mutability in Python<a class="headerlink" href="#mutability-in-python" title="Permalink to this headline">¶</a></h2>
+<p>All objects in Python fall into one of two camps:</p>
+<ul class="simple">
+<li><p>Mutable</p></li>
+<li><p>Immutable</p></li>
+</ul>
+<p>Objects which are mutable may be <em>changed in place</em>.</p>
+<p>Objects which are immutable may not be changed.</p>
+<p>Ever.</p>
+<div class="section" id="the-types-we-know">
+<h3>The Types We Know<a class="headerlink" href="#the-types-we-know" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Immutable</p></th>
+<th class="head"><p>Mutable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>String</p></td>
+<td><p>List</p></td>
+</tr>
+<tr class="row-odd"><td><p>Integer</p></td>
+<td><p>Dictionary</p></td>
+</tr>
+<tr class="row-even"><td><p>Float</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Tuple</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This may make it look like the Mutables are rare – but in fact, most “container types”, and most custom objects are mutable.</p>
+<p>Immutable types are the exception</p>
+</div>
+<div class="section" id="lists-are-mutable">
+<h3>Lists Are Mutable<a class="headerlink" href="#lists-are-mutable" title="Permalink to this headline">¶</a></h3>
+<p>Try this out:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]</span>
+<span class="gp">In [29]: </span><span class="n">food</span>
+<span class="gh">Out[29]: </span><span class="go">[&#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;]</span>
+<span class="gp">In [30]: </span><span class="n">food</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;raspberries&#39;</span>
+<span class="gp">In [31]: </span><span class="n">food</span>
+<span class="gh">Out[31]: </span><span class="go">[&#39;spam&#39;, &#39;raspberries&#39;, &#39;ham&#39;]</span>
+</pre></div>
+</div>
+<p>We repeat the exercise with a Tuple:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [32]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">)</span>
+<span class="gp">In [33]: </span><span class="n">food</span>
+<span class="gh">Out[33]: </span><span class="go">(&#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;)</span>
+<span class="gp">In [34]: </span><span class="n">food</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;raspberries&#39;</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-34-0c3401794933&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">food</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;raspberries&#39;</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+<div class="section" id="watch-out-when-name-binding">
+<h3>Watch Out when name binding<a class="headerlink" href="#watch-out-when-name-binding" title="Permalink to this headline">¶</a></h3>
+<p>This property means you need to be aware of what you are doing with your lists:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="n">original</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">In [37]: </span><span class="n">altered</span> <span class="o">=</span> <span class="n">original</span>
+<span class="gp">In [38]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">original</span><span class="p">)):</span>
+<span class="gp">   ....: </span>    <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+<span class="gp">   ....: </span>        <span class="n">altered</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="gp">   ....:</span>
+</pre></div>
+</div>
+<p>Perhaps we want to check to see if altered has been updated, as a flag for
+whatever condition caused it to be updated.</p>
+<p>What is the result of this code?</p>
+</div>
+<div class="section" id="perhaps-not-what-you-expect">
+<h3>Perhaps Not What You Expect<a class="headerlink" href="#perhaps-not-what-you-expect" title="Permalink to this headline">¶</a></h3>
+<p>Our <code class="docutils literal notranslate"><span class="pre">altered</span></code> list has been updated as we’d expect:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [39]: </span><span class="n">altered</span>
+<span class="gh">Out[39]: </span><span class="go">[2, 3, 4]</span>
+</pre></div>
+</div>
+<p>But so has the <code class="docutils literal notranslate"><span class="pre">original</span></code> list:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [40]: </span><span class="n">original</span>
+<span class="gh">Out[40]: </span><span class="go">[2, 3, 4]</span>
+</pre></div>
+</div>
+<p>Why?</p>
+<p>Let’s look at that code again.</p>
+<p>What does the line: <code class="docutils literal notranslate"><span class="pre">altered</span> <span class="pre">=</span> <span class="pre">original</span></code> do?</p>
+<p>It binds the name: “altered” to the same object that “original” is bound to.</p>
+<p>That is, there is only one list, even though it is referred to by two names. So when you mutate (or change) that list from <em>either</em> name, the changes show up when you refer to it by the other name.</p>
+</div>
+<div class="section" id="other-gotchas">
+<h3>Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permalink to this headline">¶</a></h3>
+<p>Easy container setup, or deadly trap?</p>
+<p>(note: you can nest lists to make a 2D-ish array)</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[]</span> <span class="p">]</span> <span class="o">*</span> <span class="mi">5</span>
+
+<span class="gp">In [14]: </span><span class="n">bins</span>
+<span class="gh">Out[14]: </span><span class="go">[[], [], [], [], []]</span>
+
+<span class="gp">In [15]: </span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;rough&#39;</span><span class="p">,</span> <span class="s1">&#39;sad&#39;</span><span class="p">,</span> <span class="s1">&#39;goof&#39;</span><span class="p">]</span>
+
+<span class="gp">In [16]: </span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+<span class="gp">   ....: </span>    <span class="n">bins</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="gp">   ....:</span>
+</pre></div>
+</div>
+<p>So, what is going to be in <code class="docutils literal notranslate"><span class="pre">bins</span></code> now?</p>
+</div>
+<div class="section" id="there-is-only-one-bin">
+<h3>There is only <strong>One</strong> bin<a class="headerlink" href="#there-is-only-one-bin" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [65]: </span><span class="n">bins</span>
+<span class="gh">Out[65]:</span>
+<span class="go">[[&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
+<span class="go"> [&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
+<span class="go"> [&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
+<span class="go"> [&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
+<span class="go"> [&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;]]</span>
+</pre></div>
+</div>
+<p>We multiplied a sequence containing a single <em>mutable</em> object.</p>
+<p>We got a list containing five references to a single <em>mutable</em> object.</p>
+</div>
+<div class="section" id="mutable-default-argument">
+<h3>Mutable Default Argument<a class="headerlink" href="#mutable-default-argument" title="Permalink to this headline">¶</a></h3>
+<p>Watch out especially for passing mutable objects as default values for function parameters:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [71]: </span><span class="k">def</span> <span class="nf">accumulator</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">ac_list</span><span class="o">=</span><span class="p">[]):</span>
+<span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+<span class="gp">   ....: </span>        <span class="n">ac_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">return</span> <span class="n">ac_list</span>
+<span class="gp">   ....:</span>
+<span class="gp">In [72]: </span><span class="n">accumulator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gh">Out[72]: </span><span class="go">[0, 1, 2, 3, 4]</span>
+<span class="gp">In [73]: </span><span class="n">accumulator</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="gh">Out[73]: </span><span class="go">[0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+<p>What is going on here???</p>
+<p>It turns out that that code: <code class="docutils literal notranslate"><span class="pre">ac_list=[]</span></code> is evaluated <em>when the function is defined</em> – <strong>not</strong> when the function is called.</p>
+<p>So the name “ac_list” in the local scope of that function always refers to the same list. So every time the function is called, more is added to that same list.</p>
+<p>The moral of the story here is:</p>
+<p><strong>Do not use mutable objects for default arguments!</strong></p>
+<p>It turns out that this early evaluation can be useful – but for now, just remember not to use mutables as default arguments.</p>
+<p>By the way –this is how you <em>should</em> write that code:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="k">def</span> <span class="nf">accumulator</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">ac_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="go">    ...:     if ac_list is None:</span>
+<span class="go">    ...:         ac_list = []</span>
+<span class="go">    ...:     for i in range(count):</span>
+<span class="go">    ...:         ac_list.append(i)</span>
+<span class="go">    ...:     return ac_list</span>
+
+<span class="gp">In [22]: </span><span class="n">accumulator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gh">Out[22]: </span><span class="go">[0, 1, 2, 3, 4]</span>
+
+<span class="gp">In [23]: </span><span class="n">accumulator</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="gh">Out[23]: </span><span class="go">[0, 1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+<p>This will ensure that a new list will be created if one is not passed-in.</p>
+</div>
+</div>
+<div class="section" id="mutable-sequence-methods">
+<h2>Mutable Sequence Methods<a class="headerlink" href="#mutable-sequence-methods" title="Permalink to this headline">¶</a></h2>
+<p>In addition to all the methods supported by sequences we’ve seen above, mutable sequences (the List), have a number of other methods that are used to change it in place.</p>
+<p>You can find all these in the Standard Library Documentation:</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq-mutable">https://docs.python.org/3/library/stdtypes.html#typesseq-mutable</a></p>
+<div class="section" id="assignment">
+<h3>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h3>
+<p>You’ve already seen changing a single element of a list by assignment.</p>
+<p>Pretty much the same as “arrays” in most languages:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [100]: </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">In [101]: </span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">In [102]: </span><span class="n">my_list</span>
+<span class="gh">Out[102]: </span><span class="go">[1, 2, 10]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="growing-the-list">
+<h3>Growing the List<a class="headerlink" href="#growing-the-list" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">.append()</span></code>, <code class="docutils literal notranslate"><span class="pre">.insert()</span></code>, <code class="docutils literal notranslate"><span class="pre">.extend()</span></code></p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [74]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]</span>
+<span class="gp">In [75]: </span><span class="n">food</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;sushi&#39;</span><span class="p">)</span>
+<span class="gp">In [76]: </span><span class="n">food</span>
+<span class="gh">Out[76]: </span><span class="go">[&#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;]</span>
+<span class="gp">In [77]: </span><span class="n">food</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;beans&#39;</span><span class="p">)</span>
+<span class="gp">In [78]: </span><span class="n">food</span>
+<span class="gh">Out[78]: </span><span class="go">[&#39;beans&#39;, &#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;]</span>
+<span class="gp">In [79]: </span><span class="n">food</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;bread&#39;</span><span class="p">,</span> <span class="s1">&#39;water&#39;</span><span class="p">])</span>
+<span class="gp">In [80]: </span><span class="n">food</span>
+<span class="gh">Out[80]: </span><span class="go">[&#39;beans&#39;, &#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;, &#39;bread&#39;, &#39;water&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-on-extend">
+<h3>More on Extend<a class="headerlink" href="#more-on-extend" title="Permalink to this headline">¶</a></h3>
+<p>You can pass any sequence to <code class="docutils literal notranslate"><span class="pre">.extend()</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [85]: </span><span class="n">food</span>
+<span class="gh">Out[85]: </span><span class="go">[&#39;beans&#39;, &#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;, &#39;bread&#39;, &#39;water&#39;]</span>
+<span class="gp">In [86]: </span><span class="n">food</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s1">&#39;spaghetti&#39;</span><span class="p">)</span>
+<span class="gp">In [87]: </span><span class="n">food</span>
+<span class="gh">Out[87]:</span>
+<span class="go">[&#39;beans&#39;, &#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;, &#39;bread&#39;, &#39;water&#39;,</span>
+<span class="go"> &#39;s&#39;, &#39;p&#39;, &#39;a&#39;, &#39;g&#39;, &#39;h&#39;, &#39;e&#39;, &#39;t&#39;, &#39;t&#39;, &#39;i&#39;]</span>
+</pre></div>
+</div>
+<p>So be careful – a string is a single object –but also a sequence of characters.</p>
+</div>
+<div class="section" id="shrinking-the-list">
+<h3>Shrinking the List<a class="headerlink" href="#shrinking-the-list" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">.pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">.remove()</span></code></p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [203]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">,</span> <span class="s1">&#39;toast&#39;</span><span class="p">]</span>
+<span class="gp">In [204]: </span><span class="n">food</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="gh">Out[204]: </span><span class="go">&#39;toast&#39;</span>
+<span class="gp">In [205]: </span><span class="n">food</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gh">Out[205]: </span><span class="go">&#39;spam&#39;</span>
+<span class="gp">In [206]: </span><span class="n">food</span>
+<span class="gh">Out[206]: </span><span class="go">[&#39;eggs&#39;, &#39;ham&#39;]</span>
+<span class="gp">In [207]: </span><span class="n">food</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;ham&#39;</span><span class="p">)</span>
+<span class="gp">In [208]: </span><span class="n">food</span>
+<span class="gh">Out[208]: </span><span class="go">[&#39;eggs&#39;]</span>
+</pre></div>
+</div>
+<p>You can also delete <em>slices</em> of a list with the <code class="docutils literal notranslate"><span class="pre">del</span></code> keyword:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [92]: </span><span class="n">nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">In [93]: </span><span class="n">nums</span>
+<span class="gh">Out[93]: </span><span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span class="gp">In [94]: </span><span class="k">del</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">In [95]: </span><span class="n">nums</span>
+<span class="gh">Out[95]: </span><span class="go">[0, 2, 4, 6, 7, 8, 9]</span>
+<span class="gp">In [96]: </span><span class="k">del</span> <span class="n">nums</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+<span class="gp">In [97]: </span><span class="n">nums</span>
+<span class="gh">Out[97]: </span><span class="go">[0, 2, 4, 6]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="copying-lists">
+<h3>Copying Lists<a class="headerlink" href="#copying-lists" title="Permalink to this headline">¶</a></h3>
+<p>You can make copies of part of a list using <em>slicing</em>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [227]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">,</span> <span class="s1">&#39;sushi&#39;</span><span class="p">]</span>
+<span class="gp">In [228]: </span><span class="n">some_food</span> <span class="o">=</span> <span class="n">food</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">In [229]: </span><span class="n">some_food</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;bacon&#39;</span>
+<span class="gp">In [230]: </span><span class="n">food</span>
+<span class="gh">Out[230]: </span><span class="go">[&#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;]</span>
+<span class="gp">In [231]: </span><span class="n">some_food</span>
+<span class="gh">Out[231]: </span><span class="go">[&#39;eggs&#39;, &#39;bacon&#39;]</span>
+</pre></div>
+</div>
+<p>If you provide <em>no</em> arguments to the slice, it makes a copy of the entire list:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [232]: </span><span class="n">food</span>
+<span class="gh">Out[232]: </span><span class="go">[&#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;]</span>
+<span class="gp">In [233]: </span><span class="n">food2</span> <span class="o">=</span> <span class="n">food</span><span class="p">[:]</span>
+<span class="gp">In [234]: </span><span class="n">food</span> <span class="ow">is</span> <span class="n">food2</span>
+<span class="gh">Out[234]: </span><span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shallow-copies">
+<h3>Shallow Copies<a class="headerlink" href="#shallow-copies" title="Permalink to this headline">¶</a></h3>
+<p>The copy of a list made this way is a <em>shallow copy</em>.</p>
+<p>The list is itself a new object, but the objects it contains are not.</p>
+<p><em>Mutable</em> objects in the list can be mutated in both copies:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [249]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]]</span>
+<span class="gp">In [251]: </span><span class="n">food_copy</span> <span class="o">=</span> <span class="n">food</span><span class="p">[:]</span>
+<span class="gp">In [252]: </span><span class="n">food</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="gh">Out[252]: </span><span class="go">&#39;ham&#39;</span>
+<span class="gp">In [253]: </span><span class="n">food</span>
+<span class="gh">Out[253]: </span><span class="go">[&#39;spam&#39;, [&#39;eggs&#39;]]</span>
+<span class="gp">In [256]: </span><span class="n">food</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gh">Out[256]: </span><span class="go">&#39;spam&#39;</span>
+<span class="gp">In [257]: </span><span class="n">food</span>
+<span class="gh">Out[257]: </span><span class="go">[[&#39;eggs&#39;]]</span>
+<span class="gp">In [258]: </span><span class="n">food_copy</span>
+<span class="gh">Out[258]: </span><span class="go">[&#39;spam&#39;, [&#39;eggs&#39;]]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="copies-can-solve-problems">
+<h3>Copies can solve problems<a class="headerlink" href="#copies-can-solve-problems" title="Permalink to this headline">¶</a></h3>
+<p>Consider this common pattern:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">somelist</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">should_be_removed</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">somelist</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This looks benign enough, but changing a list while you are iterating over it can be the cause of some pernicious bugs.</p>
+</div>
+<div class="section" id="the-problem">
+<h3>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h3>
+<p>For example:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="gp">In [28]: </span><span class="n">l</span>
+<span class="gh">Out[28]: </span><span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span class="gp">In [29]: </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+<span class="gp">   ....: </span>    <span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="gp">   ....:</span>
+<span class="gp">In [30]: </span><span class="n">l</span>
+<span class="gh">Out[30]: </span><span class="go">[1, 3, 5, 7, 9]</span>
+</pre></div>
+</div>
+<p>Was that what you expected?</p>
+</div>
+<div class="section" id="the-solution">
+<h3>The Solution<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h3>
+<p>Iterate over a copy, and mutate the original:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="gp">In [34]: </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">l</span><span class="p">[:]:</span>
+<span class="gp">   ....: </span>    <span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="gp">   ....:</span>
+<span class="gp">In [35]: </span><span class="n">l</span>
+<span class="gh">Out[35]: </span><span class="go">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="miscellaneous-list-methods">
+<h2>Miscellaneous List Methods<a class="headerlink" href="#miscellaneous-list-methods" title="Permalink to this headline">¶</a></h2>
+<p>These methods change a list in place and are not available on immutable sequence types.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.reverse()</span></code></p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [129]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]</span>
+<span class="gp">In [130]: </span><span class="n">food</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">In [131]: </span><span class="n">food</span>
+<span class="gh">Out[131]: </span><span class="go">[&#39;ham&#39;, &#39;eggs&#39;, &#39;spam&#39;]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.sort()</span></code></p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [132]: </span><span class="n">food</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">In [133]: </span><span class="n">food</span>
+<span class="gh">Out[133]: </span><span class="go">[&#39;eggs&#39;, &#39;ham&#39;, &#39;spam&#39;]</span>
+</pre></div>
+</div>
+<p>Because these methods mutate the list in place, they have a return value of <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="section" id="custom-sorting">
+<h3>Custom Sorting<a class="headerlink" href="#custom-sorting" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">.sort()</span></code> can take an optional <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter.</p>
+<p>It should be a function that takes one parameter (list items one at a time) and returns something that can be used for sorting:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [137]: </span><span class="k">def</span> <span class="nf">third_letter</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="gp">   .....: </span>    <span class="k">return</span> <span class="n">string</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">   .....:</span>
+<span class="gp">In [138]: </span><span class="n">food</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">third_letter</span><span class="p">)</span>
+<span class="gp">In [139]: </span><span class="n">food</span>
+<span class="gh">Out[139]: </span><span class="go">[&#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;]</span>
+</pre></div>
+</div>
+<p>You end up with the list sorted by the third letter in each element.</p>
+</div>
+<div class="section" id="list-performance">
+<h3>List Performance<a class="headerlink" href="#list-performance" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>indexing is fast and constant time: O(1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">l</span></code> is proportional to n: O(n)</p></li>
+<li><p>visiting all is proportional to n: O(n)</p></li>
+<li><p>operating on the end of list is fast and constant time: O(1)</p>
+<ul>
+<li><p>append(), pop()</p></li>
+</ul>
+</li>
+<li><p>operating on the front (or middle) of the list depends on n: O(n)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop(0)</span></code>, <code class="docutils literal notranslate"><span class="pre">insert(0,</span> <span class="pre">v)</span></code></p></li>
+<li><p>But, reversing is fast. <code class="docutils literal notranslate"><span class="pre">Also,</span> <span class="pre">collections.deque</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>What the heck does this O() thing mean?  That is known as “big O” notation for time complexity.  What it does is provide an indication of how much more time an operation will take depending on how many items the operation is acting on.</p>
+<p>Check out the Python wiki entry on Time Complexity for more info:</p>
+<p><a class="reference external" href="http://wiki.python.org/moin/TimeComplexity">http://wiki.python.org/moin/TimeComplexity</a></p>
+</div>
+</div>
+<div class="section" id="choosing-lists-or-tuples">
+<h2>Choosing Lists or Tuples<a class="headerlink" href="#choosing-lists-or-tuples" title="Permalink to this headline">¶</a></h2>
+<p>Here are a few guidelines on when to choose a list or a tuple:</p>
+<ul class="simple">
+<li><p>If it needs to be mutable: list</p></li>
+<li><p>If it needs to be immutable: tuple</p>
+<ul>
+<li><p>provides safety when passing to a function (and as a key in a dict)</p></li>
+</ul>
+</li>
+</ul>
+<p>Otherwise … taste and convention.</p>
+<div class="section" id="convention">
+<h3>Convention<a class="headerlink" href="#convention" title="Permalink to this headline">¶</a></h3>
+<p>Lists are homogeneous collections:
+– they alway contain values of the same type
+– they simplify iterating, sorting, etc</p>
+<p>Tuples are mixed types:
+– they group multiple values into one logical thing
+– they are similar to simple C structs.</p>
+</div>
+<div class="section" id="other-considerations">
+<h3>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Do you need to do the same operation to each element?</p>
+<ul>
+<li><p>list</p></li>
+</ul>
+</li>
+<li><p>Is there a small collection of values which make a single logical item?</p>
+<ul>
+<li><p>tuple</p></li>
+</ul>
+</li>
+<li><p>Do you want to document that these values won’t change?</p>
+<ul>
+<li><p>tuple</p></li>
+</ul>
+</li>
+<li><p>Do you want to build it iteratively?</p>
+<ul>
+<li><p>list</p></li>
+</ul>
+</li>
+<li><p>Do you need to transform, filter, etc?</p>
+<ul>
+<li><p>list</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="more-documentation">
+<h3>More Documentation<a class="headerlink" href="#more-documentation" title="Permalink to this headline">¶</a></h3>
+<p>For more information, read the list docs:</p>
+<p><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#mutable-sequence-types">https://docs.python.org/3.6/library/stdtypes.html#mutable-sequence-types</a></p>
+<p>(actually any mutable sequence….)</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Iteration.html" class="btn btn-neutral float-right" title="Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Booleans.html" class="btn btn-neutral float-left" title="Boolean Expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

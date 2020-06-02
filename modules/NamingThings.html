@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Style and Naming &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code Structure, Modules, and Namespaces" href="Modules.html" />
+    <link rel="prev" title="Using a Dictionary to switch" href="DictionaryAsSwitch.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Style and Naming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Style and Naming</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/NamingThings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="style-and-naming">
+<span id="id1"></span><h1>Style and Naming<a class="headerlink" href="#style-and-naming" title="Permalink to this headline">¶</a></h1>
+<p><strong>Style matters!</strong></p>
+<div class="section" id="pep-8-reminder">
+<h2>PEP 8 reminder<a class="headerlink" href="#pep-8-reminder" title="Permalink to this headline">¶</a></h2>
+<p>PEP 8 (Python Enhancement Proposal 8):
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p>
+<p>Is the “official” style guide for Python code.</p>
+<p>Strictly speaking, you only need to follow it for code in the standard library.</p>
+<p>But style matters – consistent style makes your code easier to read and understand.</p>
+<p>And everyone in the community has accepted PEP as <em>the</em> Python style guide.</p>
+<p>So <strong>follow PEP 8</strong></p>
+<p><strong>Exception:</strong> if you have a company style guide – follow that instead.</p>
+<p>Try the “pycodestyle” module on your code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install pycodestyle
+$ pycodestyle my_python_file
+</pre></div>
+</div>
+<p>Try it now – really!</p>
+<p>Note that ideally you have a linter installed in your editor that yells at you if you violate PEP8 – no need to run <code class="docutils literal notranslate"><span class="pre">pycodestyle</span></code> if it’s already in your editor.</p>
+<p>See: <span class="xref std std-ref">editor_for_python</span> for suggestions on editors and configuration.</p>
+</div>
+<div class="section" id="naming-things">
+<h2>Naming things…<a class="headerlink" href="#naming-things" title="Permalink to this headline">¶</a></h2>
+<p>It matters what names you give your variables.</p>
+<p>Python has rules about what it <em>allows</em>.</p>
+<p>PEP8 has rules for style: capitalization, and underscores and all that.</p>
+<p>But you still get to decide within those rules.</p>
+<p>So use names that make sense to the reader.</p>
+</div>
+<div class="section" id="naming-guidelines">
+<h2>Naming Guidelines<a class="headerlink" href="#naming-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Whenever possible, use strong, unambiguous names that relate to a concept in the business area applicable for your program.
+For example, <code class="docutils literal notranslate"><span class="pre">cargo_weight</span></code> is probably better than <code class="docutils literal notranslate"><span class="pre">item_weight</span></code>, <code class="docutils literal notranslate"><span class="pre">current_fund_price</span></code> is better than <code class="docutils literal notranslate"><span class="pre">value</span></code>. But all of those are better than <code class="docutils literal notranslate"><span class="pre">item</span></code>, or <code class="docutils literal notranslate"><span class="pre">x</span></code>, or …</p>
+<p>Only use single-letter names for things with limited scope: indexes and the like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_sequence</span><span class="p">):</span>
+    <span class="n">do_something</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But <strong>don’t</strong> use a name like “item”, when there is a meaning to what the item is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">all_the_names</span><span class="p">:</span>
+    <span class="n">do_something_with</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use plurals for collections of things:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And then singular for a single item in that collection:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Do</strong> re-use names when the use is essentially the same, and you don’t need the old one:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="o">....</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-about-hungarian-notation">
+<h2>What about Hungarian Notation?<a class="headerlink" href="#what-about-hungarian-notation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Hungarian_notation">Hungarian Notation</a>
+is a naming system where the data type is part of the name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">strFirstName</span> <span class="o">=</span> <span class="s2">&quot;Chris&quot;</span>
+
+<span class="n">listDonations</span> <span class="o">=</span> <span class="p">[</span><span class="mf">400.0</span><span class="p">,</span> <span class="mf">125.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">]</span>
+
+<span class="n">int_num_days</span> <span class="o">=</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<p>This method is not recommended nor widely used in the Python community.</p>
+<p>One reason is Python’s dynamic typing – it really isn’t important what type a value is, but rather, what it means.
+And you may end up refactoring the code to use a different type, and then do you want to have to rename everything?
+Or worse, the type in the name no longer matches the actual type in the code – and that’s really bad.  I have seen code like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">strNumber</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many would you like?&quot;</span><span class="p">)</span>
+<span class="n">strNumber</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">strNumber</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">strNumber</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>So you have a name used for a string, then it gets converted to an integer, and the data type no longer matches the name.  Wouldn’t you be better off if that had never been named with the type in the first place?</p>
+<p>While widely used in some circles, it is generally considered bad style in the Python community – so:</p>
+<blockquote>
+<div><p><strong>Do not use Hungarian Notation</strong></p>
+</div></blockquote>
+</div>
+<div class="section" id="more-about-naming-things">
+<h2>More About Naming Things<a class="headerlink" href="#more-about-naming-things" title="Permalink to this headline">¶</a></h2>
+<p>Here’s a nice talk about naming:</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=hZ7hgYKKnF0">Jack Diederich: Name things Once</a></p>
+<p>One note about that talk – Jack is mostly encouraging people to not use names that are too long and unnecessarily specific.
+However, with beginners, it’s often tempting to use names that are too <em>short</em> and <em>non-specific</em>, like “x” and “item” – so you need to strike a balance.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Modules.html" class="btn btn-neutral float-right" title="Code Structure, Modules, and Namespaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DictionaryAsSwitch.html" class="btn btn-neutral float-left" title="Using a Dictionary to switch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Argument Passing &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A bit more on mutability (and copies)" href="MoreOnMutability.html" />
+    <link rel="prev" title="Unit Testing" href="Testing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Testing.html">Unit Testing</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Advanced Argument Passing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Advanced Argument Passing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/AdvancedArgumentPassing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-argument-passing">
+<span id="id1"></span><h1>Advanced Argument Passing<a class="headerlink" href="#advanced-argument-passing" title="Permalink to this headline">¶</a></h1>
+<p>This is a very, very nifty Python feature – it really lets you write dynamic programs.</p>
+<div class="section" id="keyword-arguments">
+<h2>Keyword arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h2>
+<p>When defining a function, you can specify only what you need – in any order</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [151]: </span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="go">        print(x,y,z)</span>
+<span class="gp">   .....:</span>
+<span class="gp">In [152]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">1 2 3</span>
+<span class="gp">In [153]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">1 0 3</span>
+<span class="gp">In [154]: </span><span class="n">fun</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">0 2 3</span>
+</pre></div>
+</div>
+<div class="section" id="a-common-idiom">
+<h3>A Common Idiom:<a class="headerlink" href="#a-common-idiom" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="can-set-defaults-to-variables">
+<h3>Can set defaults to variables<a class="headerlink" href="#can-set-defaults-to-variables" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [156]: </span><span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gp">In [157]: </span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y</span><span class="p">):</span>
+<span class="go">    print(&quot;x is:&quot;, x)</span>
+<span class="gp">   .....:</span>
+<span class="gp">In [158]: </span><span class="n">fun</span><span class="p">()</span>
+<span class="go">x is: 4</span>
+</pre></div>
+</div>
+<p>Defaults are evaluated when the function is defined</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [156]: </span><span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gp">In [157]: </span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y</span><span class="p">):</span>
+<span class="go">    print(&quot;x is:&quot;, x)</span>
+<span class="gp">   .....:</span>
+<span class="gp">In [158]: </span><span class="n">fun</span><span class="p">()</span>
+<span class="go">x is: 4</span>
+<span class="gp">In [159]: </span><span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="gp">In [160]: </span><span class="n">fun</span><span class="p">()</span>
+<span class="go">x is: 4</span>
+</pre></div>
+</div>
+<p>This is a <strong>very</strong> important point.</p>
+</div>
+<div class="section" id="function-arguments-in-variables">
+<h3>Function arguments in variables<a class="headerlink" href="#function-arguments-in-variables" title="Permalink to this headline">¶</a></h3>
+<p>When a function is called, its arguments are really just:</p>
+<ul class="simple">
+<li><p>a tuple (positional arguments)</p></li>
+<li><p>a dict (keyword arguments)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;position: </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2"> -- shape: </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+
+<span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">}</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">size</span><span class="p">)</span>
+<span class="n">position</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="o">--</span> <span class="n">shape</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-parameters-in-variables">
+<h3>Function parameters in variables<a class="headerlink" href="#function-parameters-in-variables" title="Permalink to this headline">¶</a></h3>
+<p>You can also pull the parameters out in the function as a tuple and a dict:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go">def f(*args, **kwargs):</span>
+<span class="go">    print(&quot;the positional arguments are:&quot;, args)</span>
+<span class="go">    print(&quot;the keyword arguments are:&quot;, kwargs)</span>
+
+<span class="gp">In [389]: </span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">this</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">that</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">the positional arguments are: (2, 3)</span>
+<span class="go">the keyword arguments are: {&#39;this&#39;: 5, &#39;that&#39;: 7}</span>
+</pre></div>
+</div>
+<p>This can be very powerful…</p>
+</div>
+<div class="section" id="passing-a-dict-to-str-format">
+<h3>Passing a dict to str.format()<a class="headerlink" href="#passing-a-dict-to-str-format" title="Permalink to this headline">¶</a></h3>
+<p>Now that you know that keyword args are really a dict,
+you know how this nifty trick works:</p>
+<p>The string <code class="docutils literal notranslate"><span class="pre">format()</span></code> method takes keyword arguments:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="s2">&quot;My name is </span><span class="si">{first}</span><span class="s2"> </span><span class="si">{last}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="s2">&quot;Barker&quot;</span><span class="p">,</span> <span class="n">first</span><span class="o">=</span><span class="s2">&quot;Chris&quot;</span><span class="p">)</span>
+<span class="gh">Out[24]: </span><span class="go">&#39;My name is Chris Barker&#39;</span>
+</pre></div>
+</div>
+<p>Build a dict of the keys and values:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;last&quot;</span><span class="p">:</span><span class="s2">&quot;Barker&quot;</span><span class="p">,</span> <span class="s2">&quot;first&quot;</span><span class="p">:</span><span class="s2">&quot;Chris&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>And pass to <code class="docutils literal notranslate"><span class="pre">format()</span></code> with <code class="docutils literal notranslate"><span class="pre">**</span></code></p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [26]: </span><span class="s2">&quot;My name is </span><span class="si">{first}</span><span class="s2"> </span><span class="si">{last}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
+<span class="gh">Out[26]: </span><span class="go">&#39;My name is Chris Barker&#39;</span>
+</pre></div>
+</div>
+<p>Kinda handy for the dict lab, eh?</p>
+<p>This:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is from </span><span class="si">{}</span><span class="s2">, and he likes &quot;</span>
+      <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> cake, </span><span class="si">{}</span><span class="s2"> fruit, </span><span class="si">{}</span><span class="s2"> salad, &quot;</span>
+      <span class="s2">&quot;and </span><span class="si">{}</span><span class="s2"> pasta.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">food_prefs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                             <span class="n">food_prefs</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">],</span>
+                             <span class="n">food_prefs</span><span class="p">[</span><span class="s2">&quot;cake&quot;</span><span class="p">],</span>
+                             <span class="n">food_prefs</span><span class="p">[</span><span class="s2">&quot;fruit&quot;</span><span class="p">],</span>
+                             <span class="n">food_prefs</span><span class="p">[</span><span class="s2">&quot;salad&quot;</span><span class="p">],</span>
+                             <span class="n">food_prefs</span><span class="p">[</span><span class="s2">&quot;pasta&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Becomes:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{name}</span><span class="s2"> is from </span><span class="si">{city}</span><span class="s2">, and he likes &quot;</span>
+      <span class="s2">&quot;</span><span class="si">{cake}</span><span class="s2"> cake, </span><span class="si">{fruit}</span><span class="s2"> fruit, </span><span class="si">{salad}</span><span class="s2"> salad, &quot;</span>
+      <span class="s2">&quot;and </span><span class="si">{pasta}</span><span class="s2"> pasta.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">food_prefs</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note that this is particularity useful when the same value is used in multiple places in the format string.</p>
+</div>
+</div>
+<div class="section" id="keyword-only-arguments">
+<span id="id2"></span><h2>Keyword Only Arguments<a class="headerlink" href="#keyword-only-arguments" title="Permalink to this headline">¶</a></h2>
+<p>The usual function signature looks something like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun</span> <span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="n">key2</span><span class="o">=</span><span class="s1">&#39;that&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="n">key1</span><span class="p">,</span> <span class="n">key2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case, we have two positional parameters and two keyword parameters.</p>
+<p>But all four can be passed as either positional or keyword arguments:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">1 2 3 4</span>
+
+<span class="gp">In [22]: </span><span class="n">fun</span><span class="p">(</span><span class="n">pos1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pos2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">key2</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">1 2 3 4</span>
+</pre></div>
+</div>
+<p>or out of order:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="n">fun</span><span class="p">(</span><span class="n">key1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pos2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pos1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">key2</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">3 2 1 4</span>
+</pre></div>
+</div>
+<p>And the positional arguments are all required:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-24-5ef8442810a5&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fun</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: fun() missing 1 required positional argument: &#39;pos2&#39;
+</pre></div>
+</div>
+<p><strong>But:</strong>  Notice that you can either have a required argument with no keyword, or an optional argument with a keyword (and a default). And keyword arguments can also be passed as positional arguments.</p>
+<p>This was considered less than ideal – with some APIs, you want to require a keyword be used – and you may have a required argument that you want users to pass as a keyword (rather than positional) argument.</p>
+<p>In Python 3 – “keyword only” arguments were added:</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-3102/">https://www.python.org/dev/peps/pep-3102/</a></p>
+<p>So you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun</span> <span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="s1">&#39;this&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="n">key1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now the user can only provide a value for key1 as a keyword argument. If they pass a third positional argument, it’ll be an error:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [26]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-26-057c5c08ae41&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: fun() takes 2 positional arguments but 3 were given
+</pre></div>
+</div>
+<p>So Python will not just move that third argument along for you. You need to use the keyword:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [29]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">1 2 3</span>
+</pre></div>
+</div>
+<p>But you can still let it be the default:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">1 2 this</span>
+</pre></div>
+</div>
+<p>However, with keyword only arguments you can make it required by providing no default:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">key1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="n">key1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [32]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-32-0dfacfcc443e&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: fun() missing 1 required keyword-only argument: &#39;key1&#39;
+</pre></div>
+</div>
+<p>So you HAVE to provide it, and you HAVE to provide it as a keyword argument.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [34]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="s1">&#39;that&#39;</span><span class="p">)</span>
+<span class="go">1 2 that</span>
+</pre></div>
+</div>
+<div class="section" id="what-about-args">
+<h3>What about <code class="docutils literal notranslate"><span class="pre">*args</span></code>?<a class="headerlink" href="#what-about-args" title="Permalink to this headline">¶</a></h3>
+<p>Asside from allowing keyword-only paramters with or without defaults, a key addition is that you can now have variable numbers of positional arguments, without them getting confused with the keyword arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun</span> <span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="s1">&#39;this&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">key1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">1 2 () this</span>
+
+<span class="gp">In [37]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">1 2 (3,) this</span>
+</pre></div>
+</div>
+<p>Notice how the third argument did NOT get assigned to key1?</p>
+<p>And you can pass any number in:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [39]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="s1">&#39;that&#39;</span><span class="p">)</span>
+<span class="go">1 2 (3, 4, 5, 6, 7) that</span>
+</pre></div>
+</div>
+<p>This is actually the primary motivation for the PEP – it makes a cleaner separation of positional and keyword arguments.</p>
+<p>So for ALL the features in one function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun</span> <span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">key1</span><span class="o">=</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">key1</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [42]: </span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="n">this</span><span class="o">=</span><span class="s1">&#39;that&#39;</span><span class="p">,</span> <span class="n">fred</span><span class="o">=</span><span class="s1">&#39;bob&#39;</span><span class="p">)</span>
+<span class="go">1 2 (3, 4) this {&#39;this&#39;: &#39;that&#39;, &#39;fred&#39;: &#39;bob&#39;}</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [44]: </span><span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="gp">In [45]: </span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;this&#39;</span><span class="p">:</span><span class="s1">&#39;that&#39;</span><span class="p">,</span> <span class="s1">&#39;fred&#39;</span><span class="p">:</span><span class="s1">&#39;bob&#39;</span><span class="p">}</span>
+
+<span class="gp">In [46]: </span><span class="n">fun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="go">1 2 (3, 4) this {&#39;this&#39;: &#39;that&#39;, &#39;fred&#39;: &#39;bob&#39;}</span>
+</pre></div>
+</div>
+<p>Lots of Flexibility!!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="MoreOnMutability.html" class="btn btn-neutral float-right" title="A bit more on mutability (and copies)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Testing.html" class="btn btn-neutral float-left" title="Unit Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

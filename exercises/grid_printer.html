@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Grid Printer Exercise &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fizz Buzz Exercise" href="fizz_buzz.html" />
+    <link rel="prev" title="Python Pushups" href="python_pushups.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Grid Printer Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fizz_buzz.html">Fizz Buzz Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fib_and_lucas.html">Fibonacci Series Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Grid Printer Exercise</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/grid_printer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="grid-printer-exercise">
+<span id="exercise-grid-printer"></span><h1>Grid Printer Exercise<a class="headerlink" href="#grid-printer-exercise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="printing-a-grid">
+<h2>Printing a Grid<a class="headerlink" href="#printing-a-grid" title="Permalink to this headline">¶</a></h2>
+<p>(adapted from Downey, “Think Python”, ex. 3.5)</p>
+<div class="section" id="goal">
+<h3>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<p>Write a function that draws a grid like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hints">
+<h3>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
+<p>A couple features to get you started…</p>
+</div>
+<div class="section" id="printing">
+<h3>printing<a class="headerlink" href="#printing" title="Permalink to this headline">¶</a></h3>
+<p>To print more than one value on a line, you can pass multiple names into the print function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you don’t want a newline after something is printed, you tell Python what you want the print to end with like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output of these statements is <code class="docutils literal notranslate"><span class="pre">'+</span> <span class="pre">-'</span></code>.</p>
+<p>(that end parameter defaults to a newline…)</p>
+</div>
+<div class="section" id="no-arguments">
+<h3>no arguments<a class="headerlink" href="#no-arguments" title="Permalink to this headline">¶</a></h3>
+<p>A print function with no arguments ends the current line and goes to the next line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>simply prints and empty line.</p>
+</div>
+<div class="section" id="simple-string-manipulation">
+<h3>Simple string manipulation:<a class="headerlink" href="#simple-string-manipulation" title="Permalink to this headline">¶</a></h3>
+<p>You can put two strings together with the plus operator:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="s2">&quot;this&quot;</span> <span class="o">+</span> <span class="s2">&quot;that&quot;</span>
+<span class="gh">Out[20]: </span><span class="go">&#39;thisthat</span>
+</pre></div>
+</div>
+<p>This is called concatenation.</p>
+<p>Concatenation is particularly useful if the strings have been assigned names:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">plus</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span>
+
+<span class="gp">In [22]: </span><span class="n">minus</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+
+<span class="gp">In [23]: </span><span class="n">plus</span> <span class="o">+</span> <span class="n">minus</span> <span class="o">+</span> <span class="n">plus</span>
+<span class="gh">Out[23]: </span><span class="go">&#39;+-+&#39;</span>
+</pre></div>
+</div>
+<p>Note that you can link any number of operations together in an expression.</p>
+</div>
+<div class="section" id="multiplication-of-strings">
+<h3>Multiplication of strings<a class="headerlink" href="#multiplication-of-strings" title="Permalink to this headline">¶</a></h3>
+<p>You can also multiply strings:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="s1">&#39;+&#39;</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="gh">Out[24]: </span><span class="go">&#39;++++++++++&#39;</span>
+</pre></div>
+</div>
+<p>And combine that with plus in a complex expression:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [29]: </span><span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;Chris&#39;</span>
+
+<span class="gp">In [30]: </span><span class="n">last_name</span> <span class="o">=</span> <span class="s1">&#39;Barker&#39;</span>
+
+<span class="gp">In [31]: </span><span class="mi">5</span> <span class="o">*</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="n">first_name</span> <span class="o">+</span><span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="s1">&#39;*&#39;</span>
+<span class="gh">Out[31]: </span><span class="go">&#39;*****Chris Barker*****&#39;</span>
+</pre></div>
+</div>
+<p>Note that there are better ways to build up complex strings – we’ll get to that later.</p>
+<p>Now you’ve got what you need to print that grid…</p>
+<p>** give it a try! **</p>
+</div>
+</div>
+<div class="section" id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h2>
+<p>Making it more general.</p>
+<div class="section" id="make-it-a-function">
+<h3>Make it a function<a class="headerlink" href="#make-it-a-function" title="Permalink to this headline">¶</a></h3>
+<p>One of the points of writing functions is so you can write code that does similar things, but customized by the values of input parameters. So what if we want to be able to print that grid at an arbitrary size?</p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">print_grid(n)</span></code> that takes one integer argument and prints a grid just like before, <em>BUT</em> the size of the grid is given by the argument.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">print_grid(9)</span></code> prints the grid at the top of this page.</p>
+<p><code class="docutils literal notranslate"><span class="pre">print_grid(3)</span></code> would print a smaller grid:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">+</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print_grid(15)</span></code> prints a larger grid:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+</pre></div>
+</div>
+<p>This problem is underspecified.  Do something reasonable.</p>
+</div>
+</div>
+<div class="section" id="part-3">
+<h2>Part 3:<a class="headerlink" href="#part-3" title="Permalink to this headline">¶</a></h2>
+<p>Even more general…</p>
+<div class="section" id="a-function-with-two-parameters">
+<h3>A function with two parameters<a class="headerlink" href="#a-function-with-two-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Write a function that draws a similar grid with a specified number of rows and columns, and with each cell a given size.</p>
+<p>For example,  <code class="docutils literal notranslate"><span class="pre">print_grid2(3,4)</span></code> results in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>         <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+</pre></div>
+</div>
+<p>(three rows, three columns, and each grid cell four “units” in size)</p>
+<p>What to do about rounding? – you decide.</p>
+<p>Another example: <code class="docutils literal notranslate"><span class="pre">print_grid2(5,3)</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>
+<span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">+</span>
+</pre></div>
+</div>
+<p>Have fun!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fizz_buzz.html" class="btn btn-neutral float-right" title="Fizz Buzz Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python_pushups.html" class="btn btn-neutral float-left" title="Python Pushups" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction To Unit Testing &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="args and kwargs LAB" href="args_kwargs_lab.html" />
+    <link rel="prev" title="Mailroom Part 3" href="mailroom-part3.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Introduction To Unit Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mailroom-part4.html">Mailroom Part 4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Introduction To Unit Testing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/unit_testing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-unit-testing">
+<span id="exercise-unit-testing"></span><h1>Introduction To Unit Testing<a class="headerlink" href="#introduction-to-unit-testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>In order to do unit testing, you need a framework in which to write and run your tests.
+Earlier in this class, you’ve been adding “asserts” to your modules – perhaps in the <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> block.  These are, in fact, a kind of unit test.
+But as you build larger systems, you’ll want a more structured way to write and run your tests.</p>
+<p>We will use the pytest testing system for this class.</p>
+<p>If you have not already done so – install pytest like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install pytest
+</pre></div>
+</div>
+<p>Once this is complete, you should have a <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command you can run
+at the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">pytest</span>
+<span class="o">=============================</span> <span class="nb">test</span> session <span class="nv">starts</span> <span class="o">==============================</span>
+platform darwin -- Python <span class="m">3</span>.7.0, pytest-3.10.1, py-1.5.4, pluggy-0.7.1
+rootdir: /Users/Chris/temp/DrMartins, inifile:
+plugins: cov-2.6.0
+collected <span class="m">0</span> <span class="nv">items</span>
+
+<span class="o">=========================</span> no tests ran in <span class="m">0</span>.01 <span class="nv">seconds</span> <span class="o">=========================</span>
+</pre></div>
+</div>
+<p>If you already HAVE some tests – you may see something different!</p>
+</div>
+<div class="section" id="test-driven-development">
+<h2>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h2>
+<p>Download these files, and save them in your own students directory in the class repo:</p>
+<p><a class="reference download internal" download="" href="../_downloads/566a212d55865ad8b5ed1c32fec3eeaa/test_walnut_party.py"><code class="xref download docutils literal notranslate"><span class="pre">test_walnut_party.py</span></code></a></p>
+<p>and:</p>
+<p><a class="reference download internal" download="" href="../_downloads/fe04dbef6fce465a689cbba3e35d4c6b/walnut_party.py"><code class="xref download docutils literal notranslate"><span class="pre">walnut_party.py</span></code></a></p>
+<p>(This is the adapted from the codingbat site: <a class="reference external" href="http://codingbat.com/prob/p195669">http://codingbat.com/prob/p195669</a>)</p>
+<p>In the directory where you put the files, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest test_walnut_party.py
+</pre></div>
+</div>
+<p>You will get a LOT of test failures!</p>
+<p>What you’ve done here is the first step in what is called:</p>
+<blockquote>
+<div><p><strong>Test Driven Development</strong></p>
+</div></blockquote>
+<p>A bunch of tests exist, but the code to make them pass does not yet exist.</p>
+<p>The red you see in the terminal when we run our tests is a goad to us to write the code that fixes these tests.</p>
+<p>The tests all failed  because currently <code class="docutils literal notranslate"><span class="pre">walnut_party()</span></code> looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walnut_party</span><span class="p">(</span><span class="n">walnuts</span><span class="p">,</span> <span class="n">is_weekend</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>A totally do nothing function.</p>
+</div>
+<div class="section" id="making-tests-pass">
+<h2>Making tests pass<a class="headerlink" href="#making-tests-pass" title="Permalink to this headline">¶</a></h2>
+<p>Open:</p>
+<p><code class="docutils literal notranslate"><span class="pre">test_walnut_party.py</span></code></p>
+<p>and:</p>
+<p><code class="docutils literal notranslate"><span class="pre">walnut_party.py</span></code></p>
+<p>In your editor.</p>
+<p>Now edit the function in <code class="docutils literal notranslate"><span class="pre">walnut_party.py</span></code>, and each time you make a change, run the tests again. Continue until all the tests pass.</p>
+<p>When the tests pass – you are done! That’s the beauty of test-driven development.</p>
+</div>
+<div class="section" id="doing-your-own">
+<h2>Doing your own:<a class="headerlink" href="#doing-your-own" title="Permalink to this headline">¶</a></h2>
+<p>Pick another example from codingbat:</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://codingbat.com</span></code></p>
+<p>Do a bit of test-driven development on it:</p>
+<ul class="simple">
+<li><p>Run something on the web site.</p></li>
+<li><p>Write a few tests using the examples from the site.</p></li>
+<li><p>Then write the function, and fix it ‘till it passes the tests.</p></li>
+</ul>
+<p>These tests should be in a file named <code class="docutils literal notranslate"><span class="pre">test_something.py</span></code> – I usually name the test file the same as the module it tests,
+with <code class="docutils literal notranslate"><span class="pre">test_</span></code> prepended.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Technically, you can name your test files anything you want. But there are two reasons to use standard naming conventions.
+One is that it is clear to anyone looking at the code what is and isn’t a test module. The other is that pytest, and other testing systems, use <a class="reference external" href="https://docs.pytest.org/en/latest/goodpractices.html#test-discovery">naming conventions</a> to find your test files.
+If you name your test files: <code class="docutils literal notranslate"><span class="pre">test_something.py</span></code> then pytest will find them for you. And if you use the name of the module being tested:
+<code class="docutils literal notranslate"><span class="pre">test_name_of_tested_module.py</span></code> then it will be clear which test files belong to which modules.</p>
+</div>
+<p>Do at least two of these to get the hang of the process.</p>
+<p>Also – once you have the tests passing, look at your solution – is there a way it could be refactored to be cleaner?</p>
+<p>Give it a shot – you’ll know if it still works if the tests still pass!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="args_kwargs_lab.html" class="btn btn-neutral float-right" title="args and kwargs LAB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mailroom-part3.html" class="btn btn-neutral float-left" title="Mailroom Part 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

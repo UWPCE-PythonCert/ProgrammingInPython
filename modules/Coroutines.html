@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Notes on Coroutines &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Notes on Coroutines</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Coroutines.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="notes-on-coroutines">
+<span id="coroutines"></span><h1>Notes on Coroutines<a class="headerlink" href="#notes-on-coroutines" title="Permalink to this headline">¶</a></h1>
+<p>Coroutines are a key feature required to do “proper” async programming in Python.</p>
+<p>In practical use, coroutines are used in the context of an async framework that
+provides handy utilities, and most importantly, an event loop to actually run the code.</p>
+<p>But it’s helpful to play around a bit with coroutines on their own, to get a better understanding of what they really are, and how they work.</p>
+<div class="section" id="what-is-a-coroutine">
+<h2>What is a coroutine?<a class="headerlink" href="#what-is-a-coroutine" title="Permalink to this headline">¶</a></h2>
+<p>Coroutines are functions that can hold state, and varies between invocations;
+there can be multiple instances of a given coroutine at once.</p>
+<p>This may sound a bit familiar from generators – a generator function can hold
+state when it yields, and there can be multiple instances of the same generator
+function at once.</p>
+<p>The differnce is that coroutines, in addition to holding state, can also return
+control flow back to the system while they are holding that state.</p>
+<p>Hopefully this will make a bit more sense after we’ve experimented a bit.</p>
+</div>
+<div class="section" id="coroutines-by-themselves">
+<h2>Coroutines By Themselves<a class="headerlink" href="#coroutines-by-themselves" title="Permalink to this headline">¶</a></h2>
+<p>Coroutines are really only useful when controlled by an event loop.  And for the most part, you are going to use an event loop provided by an async framework, like the <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> package.</p>
+<p>But it can be instructive to know about what is going on directly with coroutines, so we’ll experiment a bit here:</p>
+<p>We can make a coroutine with the <code class="docutils literal notranslate"><span class="pre">async</span></code> keyword:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">corout</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;running corout&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This, of course is a coroutine that does nothing really, but print a message. But let’s run it and see what happens:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">corout</span><span class="p">()</span>
+<span class="gh">Out[28]: </span><span class="go">&lt;coroutine object corout at 0x1063ef6d0&gt;</span>
+</pre></div>
+</div>
+<p>Hmm – nothing. The print statement didn’t happen. But what we got back is a “coroutine object”. So calling a coroutine function doesn’t run the code in the function, but rather creates a coroutine object and returns that. In fact, you can make any number of coroutine objects with the same “async def” function.  Why is that?</p>
+<p>Recall from the definition of coroutines: “… that can hold state”. So you want to be able to create multiple instances of a coroutine, so each one can hold diffreent state.</p>
+<p>So how do we actually run the code in the coroutine instance? First, we need to save it in a variable so we can refer to it, and then we can call its <code class="docutils literal notranslate"><span class="pre">send</span></code> method.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">cr</span> <span class="o">=</span> <span class="n">corout</span><span class="p">()</span>
+
+<span class="gp">In [34]: </span><span class="nb">type</span><span class="p">(</span><span class="n">cr</span><span class="p">)</span>
+<span class="gh">Out[34]: </span><span class="go">coroutine</span>
+
+<span class="gp">In [35]: </span><span class="n">cr</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">running corout</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-35-72be8e65d115&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cr</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="ne">StopIteration</span>:
+</pre></div>
+</div>
+<p>So calling <code class="docutils literal notranslate"><span class="pre">send</span></code> ran the print statement, and then raise a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception.  This is looking a lot like a generator, isn’t it?</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="k">def</span> <span class="nf">genfunction</span><span class="p">():</span>
+<span class="go">    ...:     print(&quot;in the generator&quot;)</span>
+<span class="go">    ...:     yield None</span>
+<span class="go">    ...:</span>
+
+<span class="gp">In [37]: </span><span class="n">g</span> <span class="o">=</span> <span class="n">genfunction</span><span class="p">()</span>
+
+<span class="gp">In [38]: </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">in the generator</span>
+
+<span class="gp">In [39]: </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-39-5f315c5de15b&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+
+<span class="ne">StopIteration</span>:
+</pre></div>
+</div>
+<p>And indeed, they have a lot on common – in fact, before Python3.5, when the <code class="docutils literal notranslate"><span class="pre">async</span></code> keyword was added, you used generators to make coroutines.</p>
+<p>But if a coroutine raises <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> right away, what’s the point? Well, recall that the point of a coroutine (and asnyc in general), is to be able to return control to the system, while you wait for something else to happen. And thus the “await” keyword. So a coroutine isn’t useful unless it uses <code class="docutils literal notranslate"><span class="pre">await</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">an_awaitable</span></code> suspends the coroutine until something is done, then returns the “awaitable“‘s result.</p>
+<p>hmm – we have a trick here – we need an “awaitable” object – how do we get one of those? Well, a coroutine is awaitable, so let’s make the simplest one of those:</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

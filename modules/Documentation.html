@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Documentation &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exception Handling" href="Exceptions.html" />
+    <link rel="prev" title="Code Structure, Modules, and Namespaces" href="Modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Documentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="documentation">
+<span id="id1"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<p>It’s often helpful to leave information in your code about what you were
+thinking when you wrote it.</p>
+<p>This can help reduce the number of <a class="reference external" href="http://www.osnews.com/story/19266/WTFs_m">WTFs per minute</a> when reading it later.</p>
+<p>There are two approaches to this in Python:</p>
+<ul class="simple">
+<li><p>Comments</p></li>
+<li><p>Docstrings</p></li>
+</ul>
+<p>Comments in Python are much the same as any other programing language.</p>
+<p>Docstrings are more unusual.</p>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Comments go inline in the body of your code, to explain reasoning:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">frobnaglers</span> <span class="o">&gt;</span> <span class="n">whozits</span><span class="p">):</span>
+    <span class="c1"># borangas are shermed to ensure frobnagler population</span>
+    <span class="c1"># does not grow out of control</span>
+    <span class="n">sherm_the_boranga</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can use them to mark places you want to revisit later:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">partygoer</span> <span class="ow">in</span> <span class="n">partygoers</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">balloon</span> <span class="ow">in</span> <span class="n">balloons</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">cupcake</span> <span class="ow">in</span> <span class="n">cupcakes</span><span class="p">:</span>
+            <span class="c1"># TODO: Reduce time complexity here.  It&#39;s killing us</span>
+            <span class="c1">#  for large parties.</span>
+            <span class="n">resolve_party_favor</span><span class="p">(</span><span class="n">partygoer</span><span class="p">,</span> <span class="n">balloon</span><span class="p">,</span> <span class="n">cupcake</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comments-about-comments">
+<h2>Comments about Comments<a class="headerlink" href="#comments-about-comments" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Be judicious in your use of comments.</p></li>
+<li><p>Use them when you need to.</p></li>
+<li><p>Make them useful.</p></li>
+<li><p>Do not use them merely to restate what the code is / should be doing. Make the code self explanatory!</p></li>
+</ul>
+</div></blockquote>
+<p>This is not useful:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sponge</span> <span class="ow">in</span> <span class="n">sponges</span><span class="p">:</span>
+    <span class="c1"># apply soap to each sponge</span>
+    <span class="n">worker</span><span class="o">.</span><span class="n">apply_soap</span><span class="p">(</span><span class="n">sponge</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note: Nothing special about Python here – basic good programing practice.  Note that you will need a lot fewer comments if you choose your names well!</p>
+</div>
+<div class="section" id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
+<p>In Python, “docstrings” are used to provide in-line documentation in a number of places.</p>
+<p>The first place we will see is in the definition of functions.</p>
+<p>As you know, to define a function you use the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword.</p>
+<p>If a “string literal” is the first thing in the function block following the
+header, it is a “docstring”:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">kwarg1</span><span class="o">=</span><span class="s1">&#39;banana&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a value resulting from a complex calculation.&quot;&quot;&quot;</span>
+    <span class="c1"># code block here</span>
+</pre></div>
+</div>
+<p>You can then read this in an interpreter as the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> attribute of the
+function object. Docstrings can also be read and processed by documentation systems and IDEs like iPython.</p>
+<div class="section" id="a-function-docstring-should">
+<h3>A Function Docstring Should:<a class="headerlink" href="#a-function-docstring-should" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Be a complete sentence in the form of a command describing what the function
+does.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Return</span> <span class="pre">a</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">values</span> <span class="pre">based</span> <span class="pre">on</span> <span class="pre">blah</span> <span class="pre">blah&quot;&quot;&quot;</span></code> is a good docstring</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Returns</span> <span class="pre">a</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">values</span> <span class="pre">based</span> <span class="pre">on</span> <span class="pre">blah</span> <span class="pre">blah&quot;&quot;&quot;</span></code> is <em>not</em> as good..</p></li>
+</ul>
+</li>
+<li><p>Have a useful single line.</p>
+<ul>
+<li><p>If more description is needed, make the first line a complete sentence and
+add more lines below for enhancement.</p></li>
+</ul>
+</li>
+<li><p>Be enclosed with triple-quotes.</p>
+<ul>
+<li><p>This allows for easy expansion if required at a later date.</p></li>
+<li><p>Always close on the same line if the docstring is only one line.</p></li>
+</ul>
+</li>
+</ul>
+<p>For any functions that are less than trivial, and particulalry if they take multiple parameters, the parameters should be described in the docstring:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complex_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">kwarg1</span><span class="o">=</span><span class="s1">&#39;banana&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a value resulting from a complex calculation.</span>
+
+<span class="sd">    :param arg1: The first very important parameter. And a bit about</span>
+<span class="sd">                 what it means.</span>
+<span class="sd">    :param arg2: The second very important parameter. And now some</span>
+<span class="sd">                 description of how this is used</span>
+<span class="sd">    :param kwarg1=&#39;banana&#39;: An optional parameter. Some text describing</span>
+<span class="sd">                            what it means and why you might specify it.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># The actual code here</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">:param</span> <span class="pre">arg1:</span></code> notation is “restructured text” – very handy if you want your docstrings to be able to be automatically processed by documentation systems such as <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a></p>
+</div>
+<div class="section" id="the-docstring-pep">
+<h3>The docstring PEP<a class="headerlink" href="#the-docstring-pep" title="Permalink to this headline">¶</a></h3>
+<p>For the full “official” recomendations about docstrings, see <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0257/">PEP 257: Docstring Conventions</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Exceptions.html" class="btn btn-neutral float-right" title="Exception Handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Modules.html" class="btn btn-neutral float-left" title="Code Structure, Modules, and Namespaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

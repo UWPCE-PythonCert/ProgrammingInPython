@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mailroom Part 4 &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OO Intro - Report Class" href="oo_intro.html" />
+    <link rel="prev" title="args and kwargs LAB" href="args_kwargs_lab.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="unit_testing.html">Introduction To Unit Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Mailroom Part 4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>Mailroom Part 4</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/mailroom-part4.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mailroom-part-4">
+<span id="exercise-mailroom-part4-testing"></span><h1>Mailroom Part 4<a class="headerlink" href="#mailroom-part-4" title="Permalink to this headline">¶</a></h1>
+<p><strong>Add a full suite of unit tests.</strong></p>
+<p>“Full suite” means all the code is tested. In practice, it’s very hard to test the user interaction, but you can test everything else. Therefore you should make sure that there is as little logic and untested code in the user interaction portion of the program as possible.</p>
+<p>This is a big step; you may find that your code is hard to test. If that’s the case, it’s a good sign that you <em>should</em> refactor your code.</p>
+<p>I like to say: “If it’s hard to test, it’s not well structured.”</p>
+<p>Put in the tests <strong>before</strong> you make the other changes below. That’s much of the point of tests. You can know that you haven’t broken anything when you refactor!</p>
+<div class="section" id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Here are some suggestions on what should be refactored in your mailroom code.</p>
+<p>As mentioned above, testing user interaction code is harder (code with <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> functions) then testing the rest of your code. Testing user interaction code requires more advanced unit testing methodologies that will be revisited in future courses. Therefore, you should refactor your code so that the user interaction code contains as little business logic as possible. It should only interact with the user either by asking them for input or by responding to their request to print out data. Separating business logic from user interaction code is a good practice in general and we will come back to this concept in later lessons.</p>
+<p>The refactor in this lesson will allow you to unit test functions with business logic.</p>
+<p>We will go over the components that should be refactored so that you are able to unit test your mailroom. After the refactor, your code should improve and be better modularized. If that’s not the case then maybe you should revisit your refactor approach.</p>
+<p>For unit testing framework you should use <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a>; it has a simple interface and rich features.</p>
+<p>Your code should have 3 main features so far:</p>
+<ul class="simple">
+<li><p>Send a thank you (adds a new donor or updates existing donor info)</p></li>
+<li><p>Create a report</p></li>
+<li><p>Send letters (creates files)</p></li>
+</ul>
+<div class="section" id="send-thank-you">
+<h3>Send Thank You<a class="headerlink" href="#send-thank-you" title="Permalink to this headline">¶</a></h3>
+<p>Even though every mailroom implementation will be unique, most likely this function will require a significant refactor for most of you.
+You can break up the code into components that handle user flow and data manipulation logic. Your unit tests should test the data manipulation logic code: generating thank you text, adding or updating donors, and listing donors.</p>
+</div>
+<div class="section" id="create-report">
+<h3>Create Report<a class="headerlink" href="#create-report" title="Permalink to this headline">¶</a></h3>
+<p>This function should only need slight modification. Split up user presentation (<code class="docutils literal notranslate"><span class="pre">print</span></code> function calls) and data logic (actual creating of rows).
+Your data logic function can either return the report string already formatted or return a list of formatted rows that can be joined and printed in the user presentation function.
+Then you can write a unit test for your data logic function.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">display_report</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">get_report</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here you would write a unit test for <code class="docutils literal notranslate"><span class="pre">get_report</span></code> function.</p>
+</div>
+<div class="section" id="send-letters">
+<h3>Send Letters<a class="headerlink" href="#send-letters" title="Permalink to this headline">¶</a></h3>
+<p>This function should require very little or no change to make it unit-testable.
+The unit test can assert that a file is created per donor entry (hint: <code class="docutils literal notranslate"><span class="pre">os.path</span></code> module), and that the file content contains text as expected.</p>
+<p>Note that you should test the file creation separately from testing the file content (that the correct text being generated). That way you don’t need to read each file generated to know it contains correct text. So the function that generates the text should be separate from the function that writes the file.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_letter_text</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get letter text for file content&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, thanks a lot!&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">test_get_letter_text</span><span class="p">():</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="s2">&quot;Frank, thanks a lot!&quot;</span>
+    <span class="k">assert</span> <span class="n">get_letter_text</span><span class="p">(</span><span class="s2">&quot;Frank&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="oo_intro.html" class="btn btn-neutral float-right" title="OO Intro - Report Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="args_kwargs_lab.html" class="btn btn-neutral float-left" title="args and kwargs LAB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

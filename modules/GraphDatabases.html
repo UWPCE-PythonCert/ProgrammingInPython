@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Graph Databases &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Graph Databases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/GraphDatabases.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="graph-databases">
+<span id="id1"></span><h1>Graph Databases<a class="headerlink" href="#graph-databases" title="Permalink to this headline">¶</a></h1>
+<p>In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Graph_database">https://en.wikipedia.org/wiki/Graph_database</a></p>
+<p>For those of you that aren’t familiar with the mathematical concept of  a “graph” – what all this means is that the database itself stores not just the data, but the relationships between the data.</p>
+<p>This is in contrast to RDBMSs, where the data are stored in individual tables, with the relationships between the tables maintained via primary and foreign keys, and the actual relationships determined on the fly by searching multiple tables during “join” queries. RDBMSs are well optimized for these kinds of queries, but Graph Databases can be much more efficient for data retrieval when the records have complex relationships.</p>
+<p>I find it a bit ironic that “relational” databases, aren’t directly storing the relationships :-)</p>
+<p>The wikipedia page has a pretty good description / example of how that works.</p>
+<p>There are a number of commercial and open source Graph databases out there, and more than a few have Python drivers.</p>
+<div class="section" id="neo4j">
+<h2>neo4j<a class="headerlink" href="#neo4j" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://neo4j.com/">neo4j</a> is perhaps the most <a class="reference external" href="https://db-engines.com/en/ranking/graph+dbms">popular</a> graph database as of this writing, and it comes with a Python driver and good documentation, so we’ll use that one for examples.</p>
+<p>Here is a nice Python based tutorial about graph databases and neo4j:</p>
+<p><a class="reference external" href="https://medium.com/labcodes/graph-databases-talking-about-your-data-relationships-with-python-b438c689dc89">Talking About your Data Relationships</a></p>
+<p>And <a class="reference external" href="https://neo4j.com/developer/python/">here are the docs</a> for the python driver.</p>
+<p>And the Python API documentation: <a class="reference external" href="https://neo4j.com/docs/api/python-driver/current/">python-driver API</a></p>
+<p>There are a lot of other great docs and tutorial on the neo4j web site – well worth checking out if you want to really learn how to use it.</p>
+<p>And here is the “official” <a class="reference download internal" download="" href="../_downloads/1cf25777c3ecfb8cba104487ed28d1d1/neo4j-developer-manual-3.3-python.pdf"><code class="xref download docutils literal notranslate"><span class="pre">neo4j</span> <span class="pre">developer</span> <span class="pre">manual:</span> <span class="pre">Python</span></code></a></p>
+</div>
+<div class="section" id="neo4j-example">
+<h2>neo4j example<a class="headerlink" href="#neo4j-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>When we use databases, we introduce additional setup that we must perform before we can create and access our data. These setup activities can get really complex, and in reality, when developing software professionally, we may find that the setup is performed by someone other than a developer – that’s what sys admins are for :-).</p>
+<p>To allow us to focus on Python development we are going to use the simplest way possible to get a database running, that will work whether you use Linux, MacOS or Windows.</p>
+<p>Here, we’ll talk you through the steps to get Neo4j working.</p>
+<p>What are we going to do?</p>
+<ul class="simple">
+<li><p>First we’ll sign up for a free, online Neo4j account.</p></li>
+<li><p>Then, we’ll configure the online database so we can start developing.</p></li>
+<li><p>Next, we’ll make sure we have secure access to our database.</p></li>
+<li><p>Final step is to install the requisite Python modules.</p></li>
+</ul>
+<p>At that point, Python development can commence!</p>
+<p>Let’s get started.</p>
+<div class="section" id="graphendb">
+<h4>GraphenDB<a class="headerlink" href="#graphendb" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://www.graphenedb.com/">GraphenDB</a> is a hosting service for neo4j databases. They provide free “sandbox” accounts for small databases you can use to test and learn how to use it.</p>
+<p>The getting started guide is here: <a class="reference external" href="https://docs.graphenedb.com/docs/getting-started">Getting Started</a></p>
+</div>
+<div class="section" id="getting-an-account">
+<h4>Getting an account:<a class="headerlink" href="#getting-an-account" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://www.graphenedb.com/">https://www.graphenedb.com/</a></p></li>
+<li><p>Click on the “Sign up” button in the upper right to get signed up for an account.</p></li>
+<li><p>Once you have created an account, you need to create a database. You can create a small (but not that small!) “Hobby” database for free.</p></li>
+<li><p>Once you create the database, it will create a username (the name of the database you gave it) and generated password. Be sure to record your user name and password.</p></li>
+</ol>
+<p>Note that when your database is set up, you also get connection strings for both “bolt” and http REST interfaces. Originally designed for neo4j, Bolt is a highly efficient, lightweight client-server protocol designed for database applications.</p>
+<p><a class="reference external" href="https://boltprotocol.org/">https://boltprotocol.org/</a></p>
+</div>
+<div class="section" id="managing-your-password">
+<h4>Managing your password:<a class="headerlink" href="#managing-your-password" title="Permalink to this headline">¶</a></h4>
+<p>We always have to sign on to our network database, using our user name and password. That means these credentials must be accessible to our Python program. But we must make sure that our password is secure. If we check code containing the password in to github, it will give access to anyone who reads our repo. With many online services, that will incur costs for which we would be responsible.</p>
+<p>But don’t worry, we can guard against that easily. Here’s how:</p>
+<p>First, edit your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file and add the following 2 lines at the end of the file, exactly as shown:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># secrets</span>
+<span class="o">.</span><span class="n">config</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>This will ensure that you don’t accidentally add your password to git.</p>
+<p>NOTE: this still puts your password in plain text on your computer! So not really secure for really critical use!</p>
+<p>Now, in the parent directory of your local project, make a new directory called <code class="docutils literal notranslate"><span class="pre">.config</span></code>. Note the leading period.</p>
+<p>In the newly create <code class="docutils literal notranslate"><span class="pre">.config</span></code> directory create a new file called <code class="docutils literal notranslate"><span class="pre">config</span></code>. Note no leading period.</p>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">config</span></code> file using your preferred editor, creating lines as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">configuration</span><span class="p">]</span>
+
+<span class="n">neo4juser</span> <span class="o">=</span>
+<span class="n">neo4jpw</span> <span class="o">=</span>
+</pre></div>
+</div>
+<p>At the end of the lines, enter a space after the =, and then the user name and password created in step 4. above. Your config file will look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">configuration</span><span class="p">]</span>
+
+<span class="n">neo4juser</span> <span class="o">=</span> <span class="n">example1</span>
+<span class="n">neo4jpw</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">wJRVveeeg9LL</span><span class="o">.</span><span class="n">CyWKF4RbGf2SWTKp</span>
+</pre></div>
+</div>
+<p>Save that config file</p>
+<p>Your user name and password are now safely stored where Python can access them. The <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> change will prevent the <code class="docutils literal notranslate"><span class="pre">.config</span></code> files from being accidentally pushed to github.</p>
+<p>So now we need to setup access to Neo4j from Python. To do that we need to install the neo4j driver, which wires up Python to Neo4j.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install neo4j-driver
+</pre></div>
+</div>
+<p>Now, we are ready to start using our database!</p>
+</div>
+</div>
+<div class="section" id="cypher">
+<h3>Cypher<a class="headerlink" href="#cypher" title="Permalink to this headline">¶</a></h3>
+<p>Neo4j uses a query language called Cypher. It plays the same role as SQL for RDBMSs – and the official driver uses it to “talk” to the database.</p>
+<p><a class="reference external" href="https://neo4j.com/developer/cypher-query-language/">https://neo4j.com/developer/cypher-query-language/</a></p>
+<p>And here is a nice introduction:</p>
+<p><a class="reference external" href="https://www.airpair.com/neo4j/posts/getting-started-with-neo4j-and-cypher">https://www.airpair.com/neo4j/posts/getting-started-with-neo4j-and-cypher</a></p>
+<div class="section" id="quick-test">
+<h4>Quick test<a class="headerlink" href="#quick-test" title="Permalink to this headline">¶</a></h4>
+<p>You can find example code in the class repo in:</p>
+<p>IntroPython-2017/examples/nosql/neo4j</p>
+<p>We are going to play with the code to get a feel for neo4j.</p>
+</div>
+</div>
+</div>
+<div class="section" id="other-interfaces-for-neo4j">
+<h2>Other interfaces for neo4j<a class="headerlink" href="#other-interfaces-for-neo4j" title="Permalink to this headline">¶</a></h2>
+<p>neo4j-client is the default Python interface developed by the neo4j team. There are other options:</p>
+<div class="section" id="neomodel">
+<h3>neomodel<a class="headerlink" href="#neomodel" title="Permalink to this headline">¶</a></h3>
+<p>Is a Django ORM-like Object Mapper for neo4j</p>
+<p><a class="reference external" href="http://neomodel.readthedocs.io/en/latest/">http://neomodel.readthedocs.io/en/latest/</a></p>
+</div>
+<div class="section" id="py2neo">
+<h3>Py2neo<a class="headerlink" href="#py2neo" title="Permalink to this headline">¶</a></h3>
+<p>Py2neo is a client library and toolkit for working with Neo4j from within Python applications and from the command line. The core library has no external dependencies and has been carefully designed to be easy and intuitive to use.</p>
+<p>It “speaks” the bolt protocol directly.</p>
+<p><a class="reference external" href="http://py2neo.org/v3/">http://py2neo.org/v3/</a></p>
+</div>
+</div>
+<div class="section" id="a-bit-more-about-graphs">
+<h2>A bit more about Graphs<a class="headerlink" href="#a-bit-more-about-graphs" title="Permalink to this headline">¶</a></h2>
+<p>Graph data structures can be very useful for certain catagories of problems:</p>
+<p>If you Google something like: “applications of graph data structure in computer science” you will get a lot of pages to explore, like this one:</p>
+<p><a class="reference external" href="http://www.cs.cmu.edu/afs/cs/academic/class/15210-s14/www/lectures/graphs.pdf">http://www.cs.cmu.edu/afs/cs/academic/class/15210-s14/www/lectures/graphs.pdf</a></p>
+<p>I encourage you to read up about them.</p>
+<p>If you do find a use-case, or simply want to explore the topic experimentally with Python, the main package for working with graphs in python is <cite>networkx</cite>:</p>
+<p><a class="reference external" href="https://networkx.github.io/">https://networkx.github.io/</a></p>
+<p>It provides a pretty fully featured set of graph data structures, and the common algorithms for manipulating and exploring them.</p>
+<p>There is even a package for storing networkx graphs in neo4j:</p>
+<p><a class="reference external" href="https://neonx.readthedocs.io">https://neonx.readthedocs.io</a></p>
+<p>So you can store your graph in the neo4j database, and work with it with networkx. This may even give you a nicer, more pythonic interface to neo4j.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

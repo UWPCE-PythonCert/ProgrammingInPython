@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mailroom - Functional &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Mailroom - Functional</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/mailroom-fp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mailroom-functional">
+<span id="exercise-mailroom-fp"></span><h1>Mailroom - Functional<a class="headerlink" href="#mailroom-functional" title="Permalink to this headline">¶</a></h1>
+<p>Making Mailroom Functional</p>
+<p>or: Adding a few functional features :-)</p>
+<div class="section" id="a-new-approach">
+<h2>A new approach<a class="headerlink" href="#a-new-approach" title="Permalink to this headline">¶</a></h2>
+<p>It was reasonable to build the simple MailRoom program using a single module, a simple data structure, and functions that manipulate that data structure. It was reasonable to refactor Mailroom around classes when it started to become unwieldy with all of the features we wanted to add to it.</p>
+<p>Due to the success of Mailroom and the good PR it has generated with all its thank you letters, the donations are pouring in.  This has raised the attention of wealthy philanthropists who are willing to contribute matching funds.  Our problem now is to expand Mailroom so that it can run projections and account for matching funds offered by philanthropists.  Management is tremendously happy with us and has offered to support our expansion of Mailroom toward a distributed architecture capable of running calculations on matching funds across the donor database in parallel.</p>
+<p>This is a good candidate for a functional programming approach.</p>
+</div>
+<div class="section" id="updating-the-code">
+<h2>Updating the code<a class="headerlink" href="#updating-the-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="preparation">
+<h3>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h3>
+<p>Mailroom is our longest running exercise.  At this point you may have several versions of the program in separate files or indeed many versions of the program within the same python source file with some sections commented in and others commented out.</p>
+<p>In terms of Mailroom’s developmental chronology the original exercise added features over the course of several weeks.  A major branch likely occurred when refactoring around object orientation.  Another major branch may be occurring here as we investigate functional programming concepts.  Is it starting to feel disorganized and a little out of control?  Welcome to the world of real software development.</p>
+<p>If you are familiar with git as we have been using it so far, it may be a good time to “branch out” (pun intended), and start using git’s branching features.</p>
+<p>On the other hand, if git is still painful for you, feel free to simply make a copy of your currently working mailroom code (and tests) in a new directory.</p>
+<p>IF you want to try branching, there are some notes here: <span class="xref std std-ref">git_branching</span></p>
+</div>
+<div class="section" id="making-new-files">
+<h3>Making new files<a class="headerlink" href="#making-new-files" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t want to mess around with branching:</p>
+<p>You will need to come up with a good naming convention for your source files.  You could consider separate source file names all within the same directory like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mailroom/mailroom.py
+mailroom/mailroom_oo.py
+mailroom/mailroom_fp.py
+</pre></div>
+</div>
+<p>Or separate directories for each of your versions like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mailroom/mailroom.py
+mailroom_oo/mailroom.py
+mailroom_fp/mailroom.py
+</pre></div>
+</div>
+<p>Regardless of how you decide to manage names and track versions you may also need to decide where to start on this exercise.  Should you start from your most recent version which likely involves classes or do you back out to an earlier version before we studied object orientation?  Another option is to start again from scratch.  The choice is yours.</p>
+</div>
+<div class="section" id="map-filter-reduce">
+<h3>Map, Filter, Reduce<a class="headerlink" href="#map-filter-reduce" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Add a new feature to Mailroom using <code class="docutils literal notranslate"><span class="pre">map</span></code> so that each donation on record can be doubled, tripled or indeed multiplied by any arbitrary factor based on the whims of philanthropists who would like to support our cause.</p></li>
+</ol>
+<blockquote>
+<div><p>This will require a new function (or method in your donor database class) called <code class="docutils literal notranslate"><span class="pre">challenge(factor)</span></code> that takes a multiplier <code class="docutils literal notranslate"><span class="pre">(factor)</span></code>, and multiplies all the donations of all the donors by the factor.  The function returns a NEW donor database, with the new data.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Add a new feature to Mailroom using filter so that donations either above or below a specified dollar amount are included in the map operations of #1 above.</p></li>
+</ol>
+<blockquote>
+<div><p>You can do this by adding <code class="docutils literal notranslate"><span class="pre">min_donation</span></code> <code class="docutils literal notranslate"><span class="pre">and</span> <span class="pre">max_donation</span></code> optional keyword parameters to your <code class="docutils literal notranslate"><span class="pre">challenge</span></code> function. You’ll want to filter the donations before passing them to map.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Refactor the new features outlined in #1 and #2 above such that they can be used to run projections.  Imagine the following scenario.  You are an account manager out in the field meeting with philanthropists and talking with them about the many ways they might structure their matching contributions.  You would like a feature that could show them, based on past contributions, what their total contribution would become under different scenarios.  For instance, based on donations in the current database, show them (a) what their total contribution would come to in dollars if they were to double contributions under $100.  And then (b) show them what their total contribution would come to if they were to triple contributions over $50.</p></li>
+</ol>
+<blockquote>
+<div><p>This may require another option in your menu-driven interface.</p>
+</div></blockquote>
+<p>Use <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and either <code class="docutils literal notranslate"><span class="pre">sum</span></code> or <code class="docutils literal notranslate"><span class="pre">reduce</span></code> to accomplish the goals above.</p>
+</div>
+<div class="section" id="distributed-processing">
+<h3>Distributed Processing<a class="headerlink" href="#distributed-processing" title="Permalink to this headline">¶</a></h3>
+<p>Map, filter and reduce lend themselves to parallel, distributed programming.  Indeed algorithms that lend themselves gracefully to map/filter solutions tend to lend themselves equally well to parallel processing.  We have a name for it: <a class="reference external" href="https://en.wikipedia.org/wiki/Map_(parallel_pattern)">embarrassingly parallel</a>.</p>
+<p>Our next expansion of Mailroom stands on the shoulders of the work you did with map, filter and reduce.  We are going to take advantage of the embarrassingly parallel property of map/filter algorithms to run map operations in parallel.</p>
+<p>We have many avenues open to us in terms of setting up the back-end infrastructure for this exercise.  In lieu of a supercomputer cluster, which we could “easily” spin up on any of several cloud computing services, we are going to use <a class="reference external" href="https://ipyparallel.readthedocs.io/en/latest/">IPython Parallel</a>.  Note that we could spin up IPython Parallel across a cluster of machines, but for the purposes of this exercise running it locally will suffice.</p>
+<p>To get started follow the instructions in this <a class="reference internal" href="../modules/IPythonParallel.html#ipyparallel-quickstart"><span class="std std-ref">IPython Parallel Quickstart</span></a>.</p>
+<p>Look now at the code you created for the map, filter, reduce exercise above.  Focus on the map operations.  Your task is to replace the map operations using one of IPython Parallel’s <a class="reference external" href="http://ipyparallel.readthedocs.io/en/6.0.2/multiengine.html?highlight=apply_sync#calling-python-functions">apply</a> functions.  For this exercise <code class="docutils literal notranslate"><span class="pre">apply_sync()</span></code> may be your most straightforward option.  For our purposes Python’s built-in <code class="docutils literal notranslate"><span class="pre">map</span></code> and IPyParallel’s <code class="docutils literal notranslate"><span class="pre">apply</span></code> are conceptually identical: they both apply a function to all the elements of a data structure.</p>
+</div>
+<div class="section" id="closures">
+<h3>Closures<a class="headerlink" href="#closures" title="Permalink to this headline">¶</a></h3>
+<p><strong>Do this only after you learn about closures next class!</strong></p>
+<p>Closures are another functional programming strategy.  They allow you to create functions according to parameters that are known only at runtime and not beforehand.</p>
+<p>Your task now is to replace the functions that you have been passing to <code class="docutils literal notranslate"><span class="pre">map()</span></code> or <code class="docutils literal notranslate"><span class="pre">apply()</span></code> with a closure.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>String Formatting Exercise &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mailroom Part 1" href="mailroom-part1.html" />
+    <link rel="prev" title="List Lab" href="list_lab.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Exercises</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="slicing.html">Slicing Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="list_lab.html">List Lab</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">String Formatting Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mailroom-part1.html">Mailroom Part 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-catch-up">Lesson 10: Catch up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-exercises">Assorted Additional Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercises</a> &raquo;</li>
+        
+      <li>String Formatting Exercise</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exercises/string_formatting.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="string-formatting-exercise">
+<span id="exercise-string-formatting"></span><h1>String Formatting Exercise<a class="headerlink" href="#string-formatting-exercise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<p>In this exercise we will reinforce the important concepts of string formatting, so that these start to become second nature!</p>
+</div>
+<div class="section" id="procedure">
+<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<p>Create a new file called <code class="docutils literal notranslate"><span class="pre">strformat_lab.py</span></code> in your student dir in the class repo.</p>
+<p>When the empty script is available and runnable, complete the following four tasks.</p>
+<div class="section" id="task-one">
+<h3>Task One<a class="headerlink" href="#task-one" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Write a format string that will take the following four element tuple:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">2,</span> <span class="pre">123.4567,</span> <span class="pre">10000,</span> <span class="pre">12345.67)</span></code></p>
+<p>and produce:</p>
+<p><code class="docutils literal notranslate"><span class="pre">'file_002</span> <span class="pre">:</span>&#160;&#160; <span class="pre">123.46,</span> <span class="pre">1.00e+04,</span> <span class="pre">1.23e+04'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+<p>Let’s look at each of the four tuple elements in turn:</p>
+<ol class="arabic simple">
+<li><p>The first element is used to generate a filename that can help with file sorting. The idea behind the “file_002” is that if you have a bunch of files that you want to name with numbers that can be sorted, you need to “pad” the numbers with zeros to get the right sort order.</p></li>
+</ol>
+<p>To illustrate this further let’s look at an example:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">fnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;file1&#39;</span><span class="p">,</span> <span class="s1">&#39;file2&#39;</span><span class="p">,</span> <span class="s1">&#39;file10&#39;</span><span class="p">,</span> <span class="s1">&#39;file11&#39;</span><span class="p">]</span>
+<span class="gp">In [11]: </span><span class="n">fnames</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">In [12]: </span><span class="n">fnames</span>
+<span class="gh">Out[12]: </span><span class="go">[&#39;file1&#39;, &#39;file10&#39;, &#39;file11&#39;, &#39;file2&#39;]</span>
+</pre></div>
+</div>
+<p>That is probably not what you wanted. However:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">fnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;file001&#39;</span><span class="p">,</span> <span class="s1">&#39;file002&#39;</span><span class="p">,</span> <span class="s1">&#39;file010&#39;</span><span class="p">,</span> <span class="s1">&#39;file011&#39;</span><span class="p">]</span>
+<span class="gp">In [3]: </span><span class="nb">sorted</span><span class="p">(</span><span class="n">fnames</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">[&#39;file001&#39;, &#39;file002&#39;, &#39;file010&#39;, &#39;file011&#39;]</span>
+</pre></div>
+</div>
+<p>That works!</p>
+<p>So you need to find a string formatting operator that will “pad” the number with zeros for you.</p>
+<ol class="arabic simple" start="2">
+<li><p>The second element is a floating point number. You should display it with 2 decimal places shown.</p></li>
+<li><p>The third value is an integer, but could be any number. You should display it in scientific notation, with 2 decimal places shown.</p></li>
+<li><p>The fourth value is a float with a lot of digits – display it in scientific notation with 3 significant figures.</p></li>
+</ol>
+</div>
+<div class="section" id="task-two">
+<h3>Task Two<a class="headerlink" href="#task-two" title="Permalink to this headline">¶</a></h3>
+<p>Using your results from Task One, repeat the exercise, but this time using an alternate type of format string (hint: think about alternative ways to use .format() (keywords anyone?), and also consider f-strings if you’ve not used them already).</p>
+</div>
+<div class="section" id="task-three">
+<h3>Task Three<a class="headerlink" href="#task-three" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="dynamically-building-up-format-strings">
+<h3>Dynamically Building up format strings<a class="headerlink" href="#dynamically-building-up-format-strings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Rewrite:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;the</span> <span class="pre">3</span> <span class="pre">numbers</span> <span class="pre">are:</span> <span class="pre">{:d},</span> <span class="pre">{:d},</span> <span class="pre">{:d}&quot;.format(1,2,3)</span></code></p>
+<p>to take an arbitrary number of values.</p>
+<p>Hint: You can pass in a tuple of values to a function with a <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [52]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="gp">In [53]: </span><span class="s2">&quot;the 3 numbers are: </span><span class="si">{:d}</span><span class="s2">, </span><span class="si">{:d}</span><span class="s2">, </span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="gh">Out[53]: </span><span class="go">&#39;the 3 numbers are: 1, 2, 3&#39;</span>
+</pre></div>
+</div>
+<p>The idea here is that you may have a tuple of three numbers, but might also have 4 or 5 or 2 or….</p>
+<p>so you can dynamically build up the format string to accommodate the length of the tuple.</p>
+<p>The string object has the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method, so you can call it with a string that is bound to a name, not just a string literal. For example:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">form_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:d}</span><span class="s2">, </span><span class="si">{:d}</span><span class="s2">&quot;</span>
+
+<span class="gp">In [17]: </span><span class="n">nums</span> <span class="o">=</span> <span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">56</span><span class="p">)</span>
+
+<span class="gp">In [18]: </span><span class="n">fstring</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span>
+<span class="gh">Out[18]: </span><span class="go">&#39;34, 56&#39;</span>
+</pre></div>
+</div>
+<p>So in the example above, how would you make a form_string that was the right length for an arbitrary tuple?</p>
+<p>Put your code in a function that will return the final string like so:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="n">formatter</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="gh">Out[20]: </span><span class="go">&#39;the 3 numbers are: 2, 3, 5&#39;</span>
+
+<span class="gp">In [21]: </span><span class="n">formatter</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="gh">Out[21]: </span><span class="go">&#39;the 5 numbers are: 2, 3, 5, 7, 9&#39;</span>
+</pre></div>
+</div>
+<p>It will look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">formatter</span><span class="p">(</span><span class="n">in_tuple</span><span class="p">):</span>
+    <span class="n">do_something_here_to_make_a_format_string</span>
+
+    <span class="k">return</span> <span class="n">form_string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">in_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="task-four">
+<h3>Task Four<a class="headerlink" href="#task-four" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Given a 5 element tuple:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">4,</span> <span class="pre">30,</span> <span class="pre">2017,</span> <span class="pre">2,</span> <span class="pre">27)</span></code></p>
+<p>use string formating to print:</p>
+<p><code class="docutils literal notranslate"><span class="pre">'02</span> <span class="pre">27</span> <span class="pre">2017</span> <span class="pre">04</span> <span class="pre">30'</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+<p>Hint: use index numbers to specify positions.</p>
+</div>
+<div class="section" id="task-five">
+<h3>Task Five<a class="headerlink" href="#task-five" title="Permalink to this headline">¶</a></h3>
+<p>f-strings are new to Python (version 3.6), but are very powerful and efficient. This means they are worth understanding and using. And this is made easier than it might be because they use the same, familiar formatting language that is conventionally used in Python (in .format()).</p>
+<p>So in this exercise we are going to specifically use f-strings.</p>
+<p>Here’s the simplest example, to show how you can use available variables in a f-string:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Andy&#39;</span>
+<span class="gp">In [3]: </span><span class="sa">f</span><span class="s1">&#39;Your name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="gh">Out[3]: </span><span class="go">&#39;Your name is Andy&#39;</span>
+</pre></div>
+</div>
+<p>In addition to referencing variables in the local scope, f-strings can evaluate simple expressions in line like so:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="sa">f</span><span class="s2">&quot;Your name is </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gh">Out[5]: </span><span class="go">&#39;Your name is ANDY&#39;</span>
+
+<span class="gp">In [6]: </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;andy&quot;</span>
+
+<span class="gp">In [7]: </span><span class="sa">f</span><span class="s2">&quot;Your name is </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gh">Out[7]: </span><span class="go">&#39;Your name is ANDY&#39;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="gp">In [9]: </span><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="gp">In [10]: </span><span class="sa">f</span><span class="s2">&quot;The sum is: </span><span class="si">{</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="gh">Out[10]: </span><span class="go">&#39;The sum is: 15&#39;</span>
+</pre></div>
+</div>
+<ul>
+<li><p>Here’s a task for you: Given the following four element list:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">['oranges',</span> <span class="pre">1.3,</span> <span class="pre">'lemons',</span> <span class="pre">1.1]</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Write an f-string that will display:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">weight</span> <span class="pre">of</span> <span class="pre">an</span> <span class="pre">orange</span> <span class="pre">is</span> <span class="pre">1.3</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">weight</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">lemon</span> <span class="pre">is</span> <span class="pre">1.1</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Now see if you can change the f-string so that it displays the names of the fruit in upper case, and the weight 20% higher (that is 1.2 times higher).</p></li>
+</ul>
+</div>
+<div class="section" id="task-six">
+<h3>Task Six<a class="headerlink" href="#task-six" title="Permalink to this headline">¶</a></h3>
+<p>Often it’s convenient to display data in columns. String formatting helps to make this straightforward.</p>
+<p>Suppose you’d like to display something like:</p>
+<blockquote>
+<div><p>‘First               $99.01    Second              $88.09  ‘</p>
+</div></blockquote>
+<p>One way to do that is:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;</span><span class="si">{:20}{:10}{:20}{:8}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;$99.01&#39;</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="s1">&#39;$88.09&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this simple example everything aligns nicely. But that will not be the case when the numbers to the left of the decimal place vary.
+Then you will need to use alignment specifiers. Do some research on this using the links below. Then:</p>
+<ul class="simple">
+<li><p>Write some Python code to print a table of several rows, each with a name, an age and a cost. Make sure some of the costs are in the hundreds and thousands to test your alignment specifiers.</p></li>
+<li><p>And for an extra task, given a tuple with 10 consecutive numbers, can you work how to quickly print the tuple in columns that are 5 charaters wide? It can be done on one short line!</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="resources-on-string-formatting">
+<h2>Resources on string formatting<a class="headerlink" href="#resources-on-string-formatting" title="Permalink to this headline">¶</a></h2>
+<p>The official reference docs:</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">https://docs.python.org/3/library/string.html#format-string-syntax</a></p>
+<p>And a more human-readable intro:</p>
+<p><a class="reference external" href="https://pyformat.info/">https://pyformat.info/</a></p>
+<p>A nice “Cookbook”:</p>
+<p><a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/">https://mkaz.blog/code/python-string-format-cookbook/</a></p>
+</div>
+<div class="section" id="submitting-your-work">
+<h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<p>Put the file in your student directory in a new subdirectory named for this lesson, and add it to your clone early.</p>
+<p>Make frequent commits with good, clear messages about what you’re doing and why.</p>
+<p>When you’re done and ready for the instructors to review your work, push your changes to your gitHub fork and then go to the gitHub website and make a pull request.</p>
+<p>Copy the gitHub link to the pull request, and use the +Submit Assignment link located in the top right corner to submit the URL here.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mailroom-part1.html" class="btn btn-neutral float-right" title="Mailroom Part 1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="list_lab.html" class="btn btn-neutral float-left" title="List Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Object Orientation Overview &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Classes" href="PythonClasses.html" />
+    <link rel="prev" title="A bit more on mutability (and copies)" href="MoreOnMutability.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Object Orientation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>Object Orientation Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/ObjectOrientationOverview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="object-orientation-overview">
+<span id="id1"></span><h1>Object Orientation Overview<a class="headerlink" href="#object-orientation-overview" title="Permalink to this headline">¶</a></h1>
+<p>In the Beginning there was the GOTO.</p>
+<p>… and in fact, there wasn’t even that.</p>
+<div class="section" id="programming-paradigms">
+<h2>Programming Paradigms<a class="headerlink" href="#programming-paradigms" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Programming_paradigm">https://en.wikipedia.org/wiki/Programming_paradigm</a></p>
+<div class="section" id="software-design">
+<h3>Software Design<a class="headerlink" href="#software-design" title="Permalink to this headline">¶</a></h3>
+<p>Good software design is about code re-use, clean separation of concerns,
+refactorability, testability, etc…</p>
+<dl class="simple">
+<dt>OO can help with all that, but:</dt><dd><ul class="simple">
+<li><p>It doesn’t guarantee it.</p></li>
+<li><p>It can get in the way.</p></li>
+</ul>
+</dd>
+</dl>
+<p>What is Object Oriented Programming?</p>
+<div class="line-block">
+<div class="line">“Objects can be thought of as wrapping their data
+within a set of functions designed to ensure that
+the data are used appropriately, and to assist in
+that use”</div>
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Object-oriented_programming">http://en.wikipedia.org/wiki/Object-oriented_programming</a></p></li>
+</ul>
+<p><strong>Even simpler:</strong></p>
+<p>“Objects are data and the functions that act on them in one place.”</p>
+<p>This is the core of “encapsulation”</p>
+</div>
+<div class="section" id="the-dominant-model">
+<h3>The Dominant Model<a class="headerlink" href="#the-dominant-model" title="Permalink to this headline">¶</a></h3>
+<p>OO is the dominant model for the past couple decades, but it is not the only model, and languages such as Python increasingly mix and blend models (such as  Procedural, Object Oriented, Functional).  In Python, it is best to choose the approach that best solves your problem.</p>
+</div>
+<div class="section" id="object-oriented-concepts">
+<h3>Object Oriented Concepts<a class="headerlink" href="#object-oriented-concepts" title="Permalink to this headline">¶</a></h3>
+<p>These are all terms you will hear when talking about Object Oriented Programming:</p>
+<dl class="simple">
+<dt>Class</dt><dd><p>A category of objects: particular data and behavior: for example, a “circle” (same as a “type” in Python).</p>
+</dd>
+<dt>Instance</dt><dd><p>A particular object of a class: a specific circle.</p>
+</dd>
+<dt>Object</dt><dd><p>The general case of an instance – really any value (in Python anyway). This term is a bit overloaded – it also is the generic term for any class. So a class is a particular kind of object.</p>
+</dd>
+<dt>Attribute</dt><dd><p>Something that belongs to an object (or class): generally thought of
+as a simple value, variable, or single object, as opposed to a …</p>
+</dd>
+<dt>Method</dt><dd><p>A function that belongs to a class. In Python, functions <em>are</em> semantically the same as any other type – so all methods are “attributes”, but not all attributes are methods. Methods are the functions, or more strictly speaking: the ‘callable’ attributes.</p>
+</dd>
+<dt>Encapsulation</dt><dd><p>The approach where the details of the structure are “hidden” in a class – the user of the class does not need to know how the data is stored (and may not be able to know…)</p>
+</dd>
+<dt>Data Protection</dt><dd><p>This is the concept that classes can hide data from outside access (sometimes called “private” attributes. Python does not strictly support data protection.</p>
+</dd>
+<dt>Class vs. Instance Attributes</dt><dd><p>Attributes can be attached to a class – that is, shared by all instances of that class, or they can be attached to only that instance.</p>
+</dd>
+<dt>Subclassing</dt><dd><p>Subclassing is making a special version of a class. It is a class itself, but it gets (“inherits”) all the attributes and methods of its “parent” class. This makes it easy to re-use code.</p>
+</dd>
+<dt>Overriding methods</dt><dd><p>When subclassing, the subclass inherits the methods of its parent class. But it can replace them as well, which is called overriding a method.</p>
+</dd>
+<dt>Operator Overloading</dt><dd><p>Python (and most languages) have operators, like <cite>+</cite>, <cite>-</cite>. <cite>*</cite>, etc. Overloading an operator is a way to define what that operator means to a new class that is not originally part of the language.</p>
+</dd>
+<dt>Polymorphism</dt><dd><p>Allowing instances of multiple classes to be used in the same way. Literally means “having many forms”. This simply happens with Python’s “Duck Typing” – An object with a given method can have that method called on it. But in statically typed languages, this is a big deal.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="python-and-oo">
+<h3>Python and OO<a class="headerlink" href="#python-and-oo" title="Permalink to this headline">¶</a></h3>
+<p>Is Python a “True” Object-Oriented Language?</p>
+<p>What are its strengths and weaknesses vis-a-vis OO?</p>
+<p>But it does not support <em>full</em> encapsulation, i.e., it does not require classes, and classes don’t have “private” attributes.</p>
+<p><strong>but …</strong></p>
+<p>Folks can’t even agree on what OO “really” means.</p>
+<p>See: <a class="reference external" href="http://ontheturingtest.blogspot.com/2013/11/the-quarks-of-objected-orientation-la.html">The Quarks of Object-Oriented Development</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Deborah J. Armstrong</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="object-oriented-design">
+<h3>Object Oriented Design<a class="headerlink" href="#object-oriented-design" title="Permalink to this headline">¶</a></h3>
+<p>There are many books (and web sites, and blog posts, and …) about “Object Oriented Design”, which is an approach to designing your program by starting with the “nouns” (objects) the program needs to manipulate.</p>
+<p>This may be a good approach for a “pure” OO language, but with Python it tends to lead to verbose, poorly performing code.</p>
+<p>So my recommendation is to think in terms of what makes sense for your project:</p>
+<p class="centered">
+<strong><strong>There is no single best paradigm for software design</strong></strong></p></div>
+<div class="section" id="python-s-roots">
+<h3>Python’s roots<a class="headerlink" href="#python-s-roots" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">C</div>
+<div class="line">C with Classes (aka C++)</div>
+<div class="line">Modula2</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="you-can-do-oo-in-c">
+<h3>You can do OO in C<a class="headerlink" href="#you-can-do-oo-in-c" title="Permalink to this headline">¶</a></h3>
+<p>Which today is not considered an OO Language. See the GTK+ project.</p>
+<p>So OO is really a design approach – putting the data together with the functions that manipulate that data. It isn’t defined by language features.</p>
+<p>That being said: OO languages give you some handy tools to make it easier
+(and safer):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Polymorphism (duck typing gives you this)</p></li>
+<li><p>Inheritance</p></li>
+</ul>
+</div></blockquote>
+<p>are the big ones.</p>
+</div>
+<div class="section" id="you-will-need-to-understand-oo">
+<h3>You will need to understand OO<a class="headerlink" href="#you-will-need-to-understand-oo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It’s a good idea for a lot of problems.</p></li>
+<li><p>You’ll need to work with OO packages.</p></li>
+</ul>
+<p>(Much of the standard library is object oriented).</p>
+</div>
+<div class="section" id="if-not-oo-design-then-what">
+<h3>If not OO Design, then what?<a class="headerlink" href="#if-not-oo-design-then-what" title="Permalink to this headline">¶</a></h3>
+<p>I like to take an incremental design approach:</p>
+<p>You start with your specification – what your program has to <strong>do</strong></p>
+<p>Then you start to create the data structures you need and the functions you need to manipulate that data.</p>
+<p>If you find yourself needing more than one function that is manipulating the same data – you may need a class.</p>
+<p>It’s almost that simple :-)</p>
+<p>You may also find that you need multiple “things” that have slightly different properties or behavior – that is a case for subclassing.</p>
+<p>As you learn what is possible, this will all start to make more sense.</p>
+<p>So time to move on to how to actually <strong>do</strong> OO in Python!</p>
+<p>Here’s how to do it in Python: <a class="reference internal" href="PythonClasses.html#python-classes"><span class="std std-ref">Python Classes</span></a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PythonClasses.html" class="btn btn-neutral float-right" title="Python Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="MoreOnMutability.html" class="btn btn-neutral float-left" title="A bit more on mutability (and copies)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

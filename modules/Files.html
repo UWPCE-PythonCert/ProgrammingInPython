@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File Reading and Writing &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using a Dictionary to switch" href="DictionaryAsSwitch.html" />
+    <link rel="prev" title="Dictionaries and Sets" href="DictsAndSets.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-3-booleans-sequences-iteration-and-strings">Lesson 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">File Reading and Writing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Topic Notes</a> &raquo;</li>
+        
+      <li>File Reading and Writing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Files.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-reading-and-writing">
+<span id="files"></span><h1>File Reading and Writing<a class="headerlink" href="#file-reading-and-writing" title="Permalink to this headline">¶</a></h1>
+<p>Saving and loading data.</p>
+<div class="section" id="id1">
+<h2>Files<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="text-files">
+<h3>Text Files<a class="headerlink" href="#text-files" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">)</span>
+<span class="n">secret_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">secret_data</span></code> is a string</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Python 3, files are opened by default in text mode, and the default encoding is UTF-8. This means that in the usual case, you get a proper Unicode string to work with, as UTF-8 is the most common encoding for text. Also, it is ASCII compatible, so ASCII Files with “just work”. IF “Unicode” and “ASCII” mean nothing to you – don’t worry about it, just know that things will usually work for text, even non-English text. And if you get odd characters or an <code class="docutils literal notranslate"><span class="pre">EncodingError</span></code>, then your file is not UTF-8, and it’s time to Google “Python Unicode”. (more info here: <a class="reference internal" href="Unicode.html#unicode"><span class="std std-ref">Unicode in Python</span></a>)</p>
+</div>
+</div>
+<div class="section" id="binary-files">
+<h3>Binary Files<a class="headerlink" href="#binary-files" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="n">secret_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">secret_data</span></code> is a byte string (with arbitrary bytes in it – well, not arbitrary – whatever is in the file!)</p>
+<p>(See the <code class="docutils literal notranslate"><span class="pre">struct</span></code>  module to unpack binary data )</p>
+</div>
+<div class="section" id="file-opening-modes">
+<h3>File Opening Modes<a class="headerlink" href="#file-opening-modes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">mode</span><span class="p">])</span>
+<span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span>
+<span class="s1">&#39;rb&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span>
+<span class="s1">&#39;r+&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span>
+<span class="s1">&#39;r+b&#39;</span><span class="p">,</span> <span class="s1">&#39;w+b&#39;</span><span class="p">,</span> <span class="s1">&#39;a+b&#39;</span>
+</pre></div>
+</div>
+<p>These follow the Unix conventions, and aren’t all that well documented
+in the Python docs. But these BSD docs make it pretty clear:</p>
+<p><a class="reference external" href="http://www.manpagez.com/man/3/fopen/">http://www.manpagez.com/man/3/fopen/</a></p>
+<p><strong>Gotcha</strong> – ‘w’ modes always clear the file if it already exists!</p>
+</div>
+<div class="section" id="text-file-notes">
+<h3>Text File Notes<a class="headerlink" href="#text-file-notes" title="Permalink to this headline">¶</a></h3>
+<p>Text is default:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Newlines are translated: <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">\n</span></code></p></li>
+<li><p>– reading and writing!</p></li>
+<li><p>Use *nix-style in your code: <code class="docutils literal notranslate"><span class="pre">\n</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>Gotcha:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>no difference between text and binary on *nix</p></li>
+<li><p>but this is not true on Windows, and will cause an error.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="file-reading">
+<h3>File Reading<a class="headerlink" href="#file-reading" title="Permalink to this headline">¶</a></h3>
+<p>Reading part of a file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">header_size</span> <span class="o">=</span> <span class="mi">4096</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">)</span>
+<span class="n">secret_header</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">header_size</span><span class="p">)</span>
+<span class="n">secret_rest</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="common-idioms">
+<h3>Common Idioms<a class="headerlink" href="#common-idioms" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(The file object is an iterable that iterates through the lines in a text file.)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">do_something_with_line</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We will learn more about the keyword <code class="docutils literal notranslate"><span class="pre">with</span></code> later (it creates a “context manager”), but for now, just understand the syntax and the advantage over simply opening the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;workfile&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">read_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">closed</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+<p>You use <code class="docutils literal notranslate"><span class="pre">with</span></code> to open the file, and assign it a name (<code class="docutils literal notranslate"><span class="pre">f</span></code> in this case).
+The file remains open while in the <code class="docutils literal notranslate"><span class="pre">with</span></code> block.
+At the end of the <code class="docutils literal notranslate"><span class="pre">with</span></code> block, the file is unconditionally closed, even if an Exception is raised.  You code will (mostly) work without it, but it’s a good habit to get into to always use <code class="docutils literal notranslate"><span class="pre">with</span></code> to open a file.</p>
+</div>
+<div class="section" id="file-writing">
+<h3>File Writing<a class="headerlink" href="#file-writing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this is line: </span><span class="si">%i</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">i</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+       <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this is line: </span><span class="si">%i</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-methods">
+<h3>File Methods<a class="headerlink" href="#file-methods" title="Permalink to this headline">¶</a></h3>
+<p>Commonly Used Methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>  <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>   <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="c1"># for binary files, mostly</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stringio">
+<h3><code class="docutils literal notranslate"><span class="pre">StringIO</span></code><a class="headerlink" href="#stringio" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">StringIO</span></code> method is a “file like” object that stores the content in memory.
+That is, it has all the methods of a file, and behaves the same way, but never writes anything to disk.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">io</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;some stuff&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="mi">10</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="mi">0</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="s1">&#39;some stuff&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="s1">&#39;some stuff&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(This can be handy for testing file handling code…)</p>
+</div>
+</div>
+<div class="section" id="paths-and-directories">
+<h2>Paths and Directories<a class="headerlink" href="#paths-and-directories" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="paths">
+<h3>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h3>
+<p>Paths are generally handled with simple strings.</p>
+<p>Relative paths:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;secret.txt&#39;</span>
+<span class="s1">&#39;./secret.txt&#39;</span>
+</pre></div>
+</div>
+<p>Absolute paths:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;/home/chris/secret.txt&#39;</span>
+</pre></div>
+</div>
+<p>Either works with <code class="docutils literal notranslate"><span class="pre">open()</span></code> , etc.</p>
+<p>Relative paths are relative to the current working directory, which is only relevant to command-line programs.</p>
+</div>
+<div class="section" id="os-module">
+<h3><code class="docutils literal notranslate"><span class="pre">os</span></code> module<a class="headerlink" href="#os-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="os-path-module">
+<h3><code class="docutils literal notranslate"><span class="pre">os.path</span></code> module<a class="headerlink" href="#os-path-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(all platform independent)</p>
+</div>
+<div class="section" id="directories">
+<h3>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(Note the <code class="docutils literal notranslate"><span class="pre">shutil</span></code>  module provides higher level operations.)</p>
+</div>
+<div class="section" id="pathlib">
+<h3>pathlib<a class="headerlink" href="#pathlib" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pathlib</span></code> is a package for handling paths in an OO way:</p>
+<p><a class="reference external" href="http://pathlib.readthedocs.org/en/pep428/">http://pathlib.readthedocs.org/en/pep428/</a></p>
+<p>All the stuff in os.path and more:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="kn">import</span> <span class="nn">pathlib</span>
+
+<span class="gp">In [15]: </span><span class="n">pth</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
+
+<span class="gp">In [16]: </span><span class="n">pth</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
+<span class="gh">Out[16]: </span><span class="go">True</span>
+
+<span class="gp">In [17]: </span><span class="n">pth</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+<span class="gh">Out[17]: </span><span class="go">PosixPath(&#39;/Users/Chris/PythonStuff/UWPCE/Fall2018-PY210A/examples/Session02&#39;)</span>
+
+<span class="gp">In [18]: </span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">pth</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+<span class="go">    ...:     print(f)</span>
+<span class="go">    ...:</span>
+<span class="go">    ...:</span>
+</pre></div>
+</div>
+<p>And it has a really nifty way to join paths, by overloading the “division” operator:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [49]: </span><span class="n">p</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>  <span class="c1"># create a path to the user home dir.</span>
+
+<span class="gp">In [50]: </span><span class="n">p</span>
+<span class="gh">Out[50]: </span><span class="go">PosixPath(&#39;/Users/Chris&#39;)</span>
+
+<span class="gp">In [51]: </span><span class="n">p</span> <span class="o">/</span> <span class="s2">&quot;a_dir&quot;</span> <span class="o">/</span> <span class="s2">&quot;one_more&quot;</span> <span class="o">/</span> <span class="s2">&quot;a_filename&quot;</span>
+<span class="gh">Out[51]: </span><span class="go">PosixPath(&#39;/Users/Chris/a_dir/one_more/a_filename&#39;)</span>
+</pre></div>
+</div>
+<p>Kinda slick, eh?</p>
+<p>For the full docs:</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/pathlib.html">https://docs.python.org/3/library/pathlib.html</a></p>
+</div>
+<div class="section" id="the-path-protocol">
+<h3>The Path Protocol<a class="headerlink" href="#the-path-protocol" title="Permalink to this headline">¶</a></h3>
+<p>As of Python 3.6, there is now a protocol for making arbitrary objects act like paths:</p>
+<p>Read about it in PEP 519:</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0519/">https://www.python.org/dev/peps/pep-0519/</a></p>
+<p>This was added because most built-in file handling modules, as well as any number of third party packages that needed a path, worked only with string paths.</p>
+<p>Even after <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> was added to the standard library, you couldn’t pass a <code class="docutils literal notranslate"><span class="pre">Path</span></code> object in where a path was needed –even the most common ones like <code class="docutils literal notranslate"><span class="pre">open()</span></code>.</p>
+<p>So you could use the nifty path manipulation stuff, but still needed to call <code class="docutils literal notranslate"><span class="pre">str</span></code> on it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="n">a_filename</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rather than add explicit support for <code class="docutils literal notranslate"><span class="pre">Path</span></code> objects, a new protocol was defined, and most of the standard library was updated to support the new protocol.</p>
+<p>This way, third party path libraries could be used with the standard library as well.</p>
+</div>
+<div class="section" id="what-this-means-to-you">
+<h3>What this means to you<a class="headerlink" href="#what-this-means-to-you" title="Permalink to this headline">¶</a></h3>
+<p>Unless you are writing a path manipulation library, or a library that deals with paths other than with the stdlib packages (like <code class="docutils literal notranslate"><span class="pre">open()</span></code>), all you need to know is that you can use <code class="docutils literal notranslate"><span class="pre">Path</span></code> objects most places you need a path.</p>
+<p>I expect we will see expanded use of pathlib as python 3.6 and 3.7 becomes widely used.</p>
+</div>
+</div>
+<div class="section" id="some-added-notes">
+<h2>Some added notes:<a class="headerlink" href="#some-added-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-files-and-with">
+<h3>Using files and “with”<a class="headerlink" href="#using-files-and-with" title="Permalink to this headline">¶</a></h3>
+<p>Sorry for the confusion, but I’ll be more clear now.</p>
+<p>When working with files, unless you have a good reason not to, use <code class="docutils literal notranslate"><span class="pre">with</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">the_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">something</span><span class="p">)</span>
+    <span class="n">do_some_more</span><span class="o">...</span>
+<span class="c1"># now done with out file -- it will be closed, regardless of errors, etc.</span>
+<span class="n">do_other_stuff</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">with</span></code> invokes a context manager – which can be confusing, but for now, just follow this pattern – it really is more robust.</p>
+<p>And you can even do two at once:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Binary files<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Python can open files in one of two modes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Text</p></li>
+<li><p>Binary</p></li>
+</ul>
+</div></blockquote>
+<p>This is just what you’d think – if the file contains text, you want text mode. If the file contains arbitrary binary data, you want binary mode.</p>
+<p>All data in all files is binary – that’s how computers work. So in Python3, “text” actually means Unicode – which is a particular system for matching characters to binary data.</p>
+<p>But this too is complicated – there are multiple ways that binary data can be mapped to Unicode text, known as “encodings”. In Python, text files are by default opened with the “utf-8” encoding. These days, that mostly “just works”.</p>
+<p>But if you read a binary file as text, then Python will try to interpret the bytes as utf-8 encoded text – and this will likely fail:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;a_photo.jpg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UnicodeDecodeError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-13-5c699bc20e80&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;PassportPhoto.JPG&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nn">/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/codecs.py</span> in <span class="ni">decode</span><span class="nt">(self, input, final)</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="c1"># decode input (taking the buffer into account)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">+</span> <span class="nb">input</span>
+<span class="ne">--&gt; </span><span class="mi">321</span>         <span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">consumed</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer_decode</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span> <span class="n">final</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="c1"># keep undecoded input until the next call</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span>         <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">consumed</span><span class="p">:]</span>
+
+<span class="ne">UnicodeDecodeError</span>: &#39;utf-8&#39; codec can&#39;t decode byte 0xff in position 0: invalid start byte
+</pre></div>
+</div>
+<p>In Python2, it’s less likely that you’ll get an error like this – it doesn’t try to decode the file as it’s read – even for text files – so it’s a bit tricky and more error prone.</p>
+<p><strong>NOTE:</strong> If you want to actually DO anything with a binary file, other than passing it around, then you’ll need to know a lot about how the details of what the bytes in the file mean – and most likely, you’ll use a library for that – like an image processing library for the jpeg example above.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DictionaryAsSwitch.html" class="btn btn-neutral float-right" title="Using a Dictionary to switch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DictsAndSets.html" class="btn btn-neutral float-left" title="Dictionaries and Sets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
