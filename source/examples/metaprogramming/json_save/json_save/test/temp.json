@@ -1,0 +1,21 @@
+{
+    "__obj_type": "ClassWithList",
+    "x": 34,
+    "lst": [
+        {
+            "__obj_type": "SimpleClass",
+            "a": 3,
+            "b": 4.5
+        },
+        {
+            "__obj_type": "SimpleClass",
+            "a": 100,
+            "b": 5.2
+        },
+        {
+            "__obj_type": "SimpleClass",
+            "a": 34,
+            "b": 89.1
+        }
+    ]
+}

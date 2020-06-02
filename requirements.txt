@@ -1,2 +1,5 @@
 sphinx
 sphinx-rtd-theme
+ipython  # for ipython code highlighting
+
+

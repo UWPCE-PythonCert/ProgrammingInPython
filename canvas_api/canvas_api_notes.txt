@@ -1,0 +1,18 @@
+Canvas API notes:
+
+A few notes / links on how to work with Canvas via programming.
+
+
+
+How to embed arbitrary html:
+
+https://community.canvaslms.com/thread/3792
+
+API intro / tutorial:
+
+https://community.canvaslms.com/docs/DOC-14390-canvas-apis-getting-started-the-practical-ins-and-outs-gotchas-tips-and-tricks
+
+Python Module for working with Canvas:
+
+https://github.com/ucfopen/canvasapi
+
