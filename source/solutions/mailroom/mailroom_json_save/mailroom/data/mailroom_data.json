@@ -1,0 +1,45 @@
+{
+    "__obj_type": "DonorDB",
+    "donor_data": {
+        "william gates iii": {
+            "__obj_type": "Donor",
+            "name": "William Gates III",
+            "donations": [
+                653772.32,
+                12.17
+            ]
+        },
+        "jeff bezos": {
+            "__obj_type": "Donor",
+            "name": "Jeff Bezos",
+            "donations": [
+                877.33
+            ]
+        },
+        "paul allen": {
+            "__obj_type": "Donor",
+            "name": "Paul Allen",
+            "donations": [
+                663.23,
+                43.87,
+                1.32
+            ]
+        },
+        "mark zuckerberg": {
+            "__obj_type": "Donor",
+            "name": "Mark Zuckerberg",
+            "donations": [
+                1663.23,
+                4300.87,
+                10432.0
+            ]
+        },
+        "a name": {
+            "__obj_type": "Donor",
+            "name": "A name",
+            "donations": [
+                5000.0
+            ]
+        }
+    }
+}

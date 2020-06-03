@@ -106,95 +106,16 @@ Lesson 9: Multiple Inheritance
 
 
 Lesson 10: Catch up
--------------------------------------------------
+-------------------
 
 It's now time to catch up on everything you haven't quite finished.
 In particular, you should finish object oriented mailroom that is fully complete and unit tested.
 
 
-.. Py220: Advanced Python
-.. ======================
+Extra Exercises
+----------------
 
-.. Lesson 1: Functional Programming 2
-.. ----------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-
-.. Lesson 2: Functional Programming 3
-.. ----------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-
-.. Lesson 3: Advanced Language Constructs
-.. --------------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     context-managers-exercise.rst
-..     mailroom-decorator.rst
-
-
-.. Lesson 4: MetaProgramming
-.. -------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     mailroom-meta.rst
-
-
-.. Lesson 5: Logging and Debugging
-.. -------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-
-.. Lesson 6: Advanced Testing
-.. --------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     mailroom-mock.rst
-
-.. Lesson 7: Relational Databases
-.. ------------------------------
-
-
-.. Lesson 8: Non-Relational Databases
-.. ----------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-
-.. Lesson 9: Concurrency & Async Programming
-.. -----------------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     threaded_downloader.rst
-
-
-.. Lesson 10: Profiling and Performance
-.. ------------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-
-
-Assorted Additional Exercises
-=============================
-
-These aren't required for any particular lesson -- but could be a good learning experience!
+The following are not required, but can be useful learning tools. Feel free to try them out!
 
 .. toctree::
     :maxdepth: 1
@@ -212,6 +133,26 @@ These aren't required for any particular lesson -- but could be a good learning 
     mailroom-pkg.rst
 
     trapezoid.rst
+
+    context-managers-exercise.rst
+
+    mailroom-decorator.rst
+
+    mailroom-meta.rst
+
+
+    mailroom-mock.rst
+
+    threaded_downloader.rst
+
+Assorted Additional Exercises
+=============================
+
+These aren't required for any particular lesson -- but could be a good learning experience!
+
+.. toctree::
+    :maxdepth: 1
+
 
 
 

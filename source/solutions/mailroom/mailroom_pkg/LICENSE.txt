@@ -1,0 +1,9 @@
+License
+-------
+
+These materials copyright Christopher Barker, Joseph Sheedy Maria McKinley, and Rick Riehle
+
+Licensed under the Creative Commons Attribution-ShareAlike 4.0 International Public License.
+
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+

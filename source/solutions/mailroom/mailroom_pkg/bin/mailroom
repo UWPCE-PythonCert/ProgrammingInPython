@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+"""
+Top level script for command line interface to mailroom package.
+
+The idea is to have no real code here -- it simply calls the code
+in the cli module in the pacakge.
+"""
+
+import mailroom.cli
+
+if __name__ == "__main__":
+
+    mailroom.cli.main()
