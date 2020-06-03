@@ -1,13 +1,11 @@
-#########
-Exercises
-#########
+#####################
+Python 210: Exercises
+#####################
 
 These are the exercises associated with each Lesson:
 
 See the Canvas or EdX instance for your class for the full lesson descriptions.
 
-Py210: Introduction to Python
-=============================
 
 Lesson 1: Introductions and Setting up your Environment
 -------------------------------------------------------
@@ -109,7 +107,7 @@ Lesson 10: Catch up
 -------------------
 
 It's now time to catch up on everything you haven't quite finished.
-In particular, you should finish object oriented mailroom that is fully complete and unit tested.
+In particular, you should finish an object oriented mailroom that is fully complete and unit tested.
 
 
 Extra Exercises

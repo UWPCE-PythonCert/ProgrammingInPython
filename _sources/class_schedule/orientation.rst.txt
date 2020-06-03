@@ -6,14 +6,9 @@ Orientation
 
 Getting your system set up for the class.
 
-Pre-class prep
-==============
 
-Just bring your laptop -- setup with admin permissions so you can install software.
-
-
-In-class Activities
-===================
+Activities
+==========
 
 Install Python:
 ---------------
@@ -29,7 +24,7 @@ Make sure you can run Python code:
 
 :ref:`how_to_run_a_python_file`
 
-Post-class Activites
-====================
+When Done
+=========
 
-Finish getting your environment set up -- make sure you ar ready to go!
+Make sure you are ready to go!
