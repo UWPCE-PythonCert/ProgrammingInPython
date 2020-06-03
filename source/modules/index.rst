@@ -1,7 +1,7 @@
 
-###########
-Topic Notes
-###########
+##########################################
+Py210: Introduction to Python: Topic Notes
+##########################################
 
 These are assorted notes about particular python topics used in the Python certificate program.
 
@@ -9,8 +9,6 @@ Arranged in order of the lessons:
 
 See the Canvas or EdX instance for your class for the full lesson descriptions.
 
-Py210: Introduction to Python
-=============================
 
 Lesson 1: Introductions and Setting up your Environment
 -------------------------------------------------------
@@ -39,7 +37,7 @@ Lesson 2: Basic Python and Functions
     Recursion
 
 Lesson 3: Booleans, Sequences, Iteration, and Strings
-------------------------------------------------------
+-----------------------------------------------------
 
 .. toctree::
     :maxdepth: 1
