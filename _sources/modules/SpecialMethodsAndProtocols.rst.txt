@@ -402,7 +402,7 @@ Write a class for a quadratic equation.
     my_quad(0)
 
 Here's one way to do that:
-:download:`quadratic.py <../solutions/quadratic/quadratic.py>`
+:download:`quadratic.py <../examples/quadratic/quadratic.py>`
 
 Protocols in Summary
 --------------------
@@ -413,7 +413,7 @@ Look up the special methods you need and define them (and only the ones you need
 
 There's more to read about the details of implementing these methods:
 
-* https://docs.python.org/3.6/reference/datamodel.html#special-method-names
+* https://docs.python.org/3.8/reference/datamodel.html#special-method-names
 
 
 References

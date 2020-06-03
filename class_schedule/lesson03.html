@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Session 3: Booleans, Sequences, Iteration, and Strings &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Session 4: Dictionaries, Sets, and File Handling" href="lesson04.html" />
+    <link rel="prev" title="Session 2: Basic Python and Functions" href="lesson02.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 210 Class Schedule</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#orientation">Orientation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="orientation.html">Orientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson01.html">Lesson 1: Intro to the class and Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson02.html">Session 2: Basic Python and Functions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Session 3: Booleans, Sequences, Iteration, and Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pre-class-prep">Pre-class prep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#in-class-activities">In-class Activities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-class-activites">Post-class Activites</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Python 210 Class Schedule</a> &raquo;</li>
+        
+      <li>Session 3: Booleans, Sequences, Iteration, and Strings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/class_schedule/lesson03.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="session-3-booleans-sequences-iteration-and-strings">
+<span id="session-1-03"></span><h1>Session 3: Booleans, Sequences, Iteration, and Strings<a class="headerlink" href="#session-3-booleans-sequences-iteration-and-strings" title="Permalink to this headline">¶</a></h1>
+<p><strong>Booleans, Sequences, Iteration, and Strings</strong></p>
+<div class="section" id="pre-class-prep">
+<h2>Pre-class prep<a class="headerlink" href="#pre-class-prep" title="Permalink to this headline">¶</a></h2>
+<p>Read: <a class="reference internal" href="../modules/Booleans.html#booleans"><span class="std std-ref">Boolean Expressions</span></a></p>
+<p>Read: <a class="reference internal" href="../modules/Sequences.html#sequences"><span class="std std-ref">Python Sequences</span></a></p>
+<p>Read: <a class="reference internal" href="../modules/Iteration.html#iteration"><span class="std std-ref">Iteration</span></a></p>
+<p>Read: <a class="reference internal" href="../modules/Strings.html#strings"><span class="std std-ref">Strings</span></a></p>
+<div class="section" id="supplemental-reading">
+<h3>Supplemental Reading:<a class="headerlink" href="#supplemental-reading" title="Permalink to this headline">¶</a></h3>
+<p>Think Python, chapters 7 – 10 (11, 12)</p>
+<p>(<a class="reference external" href="http://greenteapress.com/thinkpython/html/thinkpython008.html">http://greenteapress.com/thinkpython/html/thinkpython008.html</a>)</p>
+<p>Dive Into Python: chapters 3, 4</p>
+<p>(<a class="reference external" href="http://www.diveintopython3.net/strings.html">http://www.diveintopython3.net/strings.html</a>)</p>
+</div>
+</div>
+<div class="section" id="in-class-activities">
+<h2>In-class Activities<a class="headerlink" href="#in-class-activities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="working-with-booleans-conditional-expressions-etc">
+<h3>Working with Booleans, Conditional Expressions, etc<a class="headerlink" href="#working-with-booleans-conditional-expressions-etc" title="Permalink to this headline">¶</a></h3>
+<p>Re-write a couple CodingBat exercises, returning the direct boolean results, and/or using ternary expressions.</p>
+</div>
+<div class="section" id="variable-scope">
+<h3>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h3>
+<p>Experiment with <code class="docutils literal notranslate"><span class="pre">locals</span></code> by adding this statement one of the functions we wrote last week (or any other function you wrote):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sequences-exercises">
+<h3>Sequences Exercises<a class="headerlink" href="#sequences-exercises" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../exercises/slicing.html#exercise-slicing"><span class="std std-ref">Slicing Lab</span></a></p>
+<p><a class="reference internal" href="../exercises/list_lab.html#exercise-list-lab"><span class="std std-ref">List Lab</span></a></p>
+</div>
+<div class="section" id="string-exercises">
+<h3>String Exercises<a class="headerlink" href="#string-exercises" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../exercises/string_formatting.html#exercise-string-formatting"><span class="std std-ref">String Formatting Exercise</span></a></p>
+<p>(optional) <a class="reference internal" href="../exercises/rot13.html#exercise-rot13"><span class="std std-ref">ROT13</span></a></p>
+</div>
+<div class="section" id="mailroom-exercises">
+<h3>Mailroom Exercises<a class="headerlink" href="#mailroom-exercises" title="Permalink to this headline">¶</a></h3>
+<p>You’ve now got the basics of the language down – enough to write the first full “program”:</p>
+<p><a class="reference internal" href="../exercises/mailroom-part1.html#exercise-mailroom-part1"><span class="std std-ref">Mailroom Part 1</span></a></p>
+</div>
+</div>
+<div class="section" id="post-class-activites">
+<h2>Post-class Activites<a class="headerlink" href="#post-class-activites" title="Permalink to this headline">¶</a></h2>
+<p>Finish the mailroom project.</p>
+<p>And the other exercises</p>
+<p>Look at the next session for reading, etc:</p>
+<p><a class="reference internal" href="lesson04.html#session-1-04"><span class="std std-ref">Session 4: Dictionaries, Sets, and File Handling</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lesson04.html" class="btn btn-neutral float-right" title="Session 4: Dictionaries, Sets, and File Handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lesson02.html" class="btn btn-neutral float-left" title="Session 2: Basic Python and Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

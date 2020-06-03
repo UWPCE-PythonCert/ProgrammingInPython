@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making your text Editor work with git on Windows &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Turning Sublime Text Into a Lightweight Python IDE" href="sublime_as_ide.html" />
+    <link rel="prev" title="Setting up Python via a Linux VM" href="vagrant.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installing Python and core tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_for_mac.html">Setting up OS-X for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_for_windows.html">Setting up Windows for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_for_linux.html">Setting Up Linux for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html">Setting up Python via a Linux VM</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Making your text Editor work with git on Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notepad">Notepad:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sublime-text">Sublime Text:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Notepad++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nano">Nano</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-a-development-environment-for-python">Setting Up A Development Environment For Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Installing Python and core tools</a> &raquo;</li>
+        
+      <li>Making your text Editor work with git on Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/dev_environment/git_editor_windows.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="making-your-text-editor-work-with-git-on-windows">
+<span id="install-nano-win"></span><h1>Making your text Editor work with git on Windows<a class="headerlink" href="#making-your-text-editor-work-with-git-on-windows" title="Permalink to this headline">¶</a></h1>
+<p>By default, git will dump you into the “vim” editor when you make a commit.</p>
+<p>“vim” is a venerable old Unix tool that no one but Unix geeks can make any sense of.</p>
+<p>So you are likely to want to use something else.</p>
+<p>git can be configured to use any editor you like.</p>
+<p>Here are some options:</p>
+<div class="section" id="notepad">
+<h2>Notepad:<a class="headerlink" href="#notepad" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/github/GitPad/">https://github.com/github/GitPad/</a></p>
+</div>
+<div class="section" id="sublime-text">
+<h2>Sublime Text:<a class="headerlink" href="#sublime-text" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://stackoverflow.com/questions/32282847/opening-sublime-text-from-windows-git-bash">http://stackoverflow.com/questions/32282847/opening-sublime-text-from-windows-git-bash</a></p>
+</div>
+<div class="section" id="id1">
+<h2>Notepad++<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://danlimerick.wordpress.com/2011/06/12/git-for-windows-tip-setting-an-editor/">https://danlimerick.wordpress.com/2011/06/12/git-for-windows-tip-setting-an-editor/</a></p>
+</div>
+<div class="section" id="nano">
+<h2>Nano<a class="headerlink" href="#nano" title="Permalink to this headline">¶</a></h2>
+<p>This was a nice way to go – but unfortunately, there no longer seems to be a Windows binary available for nano.</p>
+<p>For all Windows installations, download the WinNT/9x binary from here:</p>
+<p><a class="reference external" href="http://www.nano-editor.org/download.php">http://www.nano-editor.org/download.php</a></p>
+<p>Unzip the file and move the files into the git bin directory: C:Program FilesGitbin</p>
+<p>That’s it! You should now be able to use nano from git bash:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nano test.txt
+</pre></div>
+</div>
+<p>Command shortcuts are helpfully written in the editor!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sublime_as_ide.html" class="btn btn-neutral float-right" title="Turning Sublime Text Into a Lightweight Python IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="vagrant.html" class="btn btn-neutral float-left" title="Setting up Python via a Linux VM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

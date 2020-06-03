@@ -54,6 +54,6 @@ Example calling code
     to the input, 5... i.e. the nth function in the list adds n to the input.
 
 
-See the test code in :download:`test_lambda.py <../solutions/lambda/test_lambda.py>`
+See the test code in :download:`test_lambda.py <../solutions/extras/lambda/test_lambda.py>`
 
 

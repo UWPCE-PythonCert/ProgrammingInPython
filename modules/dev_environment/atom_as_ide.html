@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Turning Atom Into a Lightweight Python IDE &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using Visual Studio Code as a lightweight Python IDE" href="vsc_as_ide.html" />
+    <link rel="prev" title="Turning Sublime Text Into a Lightweight Python IDE" href="sublime_as_ide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installing Python and core tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_for_mac.html">Setting up OS-X for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_for_windows.html">Setting up Windows for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_for_linux.html">Setting Up Linux for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html">Setting up Python via a Linux VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_editor_windows.html">Making your text Editor work with git on Windows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#setting-up-a-development-environment-for-python">Setting Up A Development Environment For Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#minimal-setup">Minimal Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#your-development-environment">Your Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#the-command-line-cli">The Command Line (cli)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#the-python-interpreter">The Python Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#the-editor">The Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#version-control-system">Version Control System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#am-i-ready-to-go">Am I ready to go?</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#specific-documentation">Specific Documentation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sublime_as_ide.html">Turning Sublime Text Into a Lightweight Python IDE</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Turning Atom Into a Lightweight Python IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vsc_as_ide.html">Using Visual Studio Code as a lightweight Python IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command_line.html">Command line basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shell.html">Shell Customizations for Python Development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipython.html">iPython Interpreter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="windows_bash.html">Using Windows Bash for Python Development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_overview.html">git Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="feature_branching.html">Feature Branching</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_hints.html">git Hints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="virtualenv.html">Working with Virtualenv</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Installing Python and core tools</a> &raquo;</li>
+        
+      <li>Turning Atom Into a Lightweight Python IDE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/dev_environment/atom_as_ide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="turning-atom-into-a-lightweight-python-ide">
+<span id="atom-as-ide"></span><h1>Turning Atom Into a Lightweight Python IDE<a class="headerlink" href="#turning-atom-into-a-lightweight-python-ide" title="Permalink to this headline">¶</a></h1>
+<p>Atom is the self-proclaimed “hackable text editor for the 21st Century.” It has a nice modern interface, and is highly customizable yet can also be used productively with minimal setup and configuration.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Any IDE should ease your development experience by providing the following:</p>
+<ul class="simple">
+<li><p>It should provide excellent, configurable syntax colorization.</p></li>
+<li><p>It should allow for robust tab completion.</p></li>
+<li><p>It should offer the ability to jump to the definition of symbols in other files.</p></li>
+<li><p>It should perform automatic code linting to help avoid silly mistakes.</p></li>
+<li><p>It should be able to interact with a Python interpreter such that when debugging, the editor will follow along with the debugger.</p></li>
+</ul>
+<p>Atom does all this and more, but some functionality requires you to select and install packages.</p>
+</div>
+<div class="section" id="which-version">
+<h2>Which Version?<a class="headerlink" href="#which-version" title="Permalink to this headline">¶</a></h2>
+<p>The latest version is the best version. Atom is regularly maintained, so the latest
+version will have the latest bug fixes and updates.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Go to the Atom <a class="reference external" href="https://atom.io/">website</a>.</p>
+<p>On the main page, click the big red button to download the installer, then run the installer.</p>
+<p>If it is not offering the correct platform: on the main page, below the big red button, click Other Platforms and find the installer for your operating system.</p>
+<p>If you already have Atom installed, but want to check for a newer version, go to
+<code class="docutils literal notranslate"><span class="pre">Help</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Check</span> <span class="pre">for</span> <span class="pre">Update</span></code>.</p>
+</div>
+<div class="section" id="basic-settings">
+<h2>Basic Settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline">¶</a></h2>
+<p>Atom can be used out of the box with no setup as a text editor. It automatically
+recognizes file types and helpfully highlights text accordingly. To use in this manner,
+write your Python files in Atom, then run them in your Python command prompt.</p>
+</div>
+<div class="section" id="extending-the-editor">
+<h2>Extending the Editor<a class="headerlink" href="#extending-the-editor" title="Permalink to this headline">¶</a></h2>
+<p>When you first open Atom, a Welcome Guide appears. This provides some quick and helpful information on
+how to open projects, install packages, and customize your themes and styling.</p>
+<p>Atom has great <a class="reference external" href="https://atom.io/docs">documentation</a> on how to hack and configure it. Read the Flight <a class="reference external" href="http://flight-manual.atom.io/">Manual</a> for tons of information on
+everything you can do. You can also watch a Getting Started <a class="reference external" href="https://www.youtube.com/watch?v=U5POoGSrtGg">video</a>.</p>
+<p>Atom has a configuration file which you can modify called config.cson.
+Access it via <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Config...</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;*&quot;</span><span class="p">:</span>
+  <span class="n">core</span><span class="p">:</span>
+    <span class="n">themes</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;atom-dark-ui&quot;</span>
+      <span class="s2">&quot;solarized-light-syntax&quot;</span>
+    <span class="p">]</span>
+  <span class="n">editor</span><span class="p">:</span>
+    <span class="n">fontSize</span><span class="p">:</span> <span class="mi">19</span>
+  <span class="s2">&quot;exception-reporting&quot;</span><span class="p">:</span>
+    <span class="n">userId</span><span class="p">:</span> <span class="s2">&quot;6e2a9c3f-7ddb-7deb-b5f7-b58f2f87ac0d&quot;</span>
+  <span class="s2">&quot;tree-view&quot;</span><span class="p">:</span>
+    <span class="n">hideVcsIgnoredFiles</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Here you can quickly change the theme or font size. Some packages will require you to add configs
+or make adjustments here. Read the documentation carefully when installing packages.</p>
+<p>In general, you can extend Atom by installing packages, and then accessing their functionality from the Packages
+drop-down menu. Access the Install Packages page from the Welcome Guide page. If the Welcome Guide is not open,
+you can open it via <code class="docutils literal notranslate"><span class="pre">Help</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Welcome</span> <span class="pre">Guide</span></code>.</p>
+<p>Keyboard shortcuts are specified in the packages menus if available.</p>
+<p>The Useful Packages presented below are only a few options of many.</p>
+</div>
+<div class="section" id="useful-packages">
+<h2>Useful Packages<a class="headerlink" href="#useful-packages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="running-scripts">
+<h3>Running Scripts<a class="headerlink" href="#running-scripts" title="Permalink to this headline">¶</a></h3>
+<p>To run scripts within Atom, you will need to install the <a class="reference external" href="https://atom.io/packages/script">Script</a> package. The Script package supports a ton of languages,
+including Python!</p>
+</div>
+<div class="section" id="autocompletion">
+<h3>Autocompletion<a class="headerlink" href="#autocompletion" title="Permalink to this headline">¶</a></h3>
+<p>By default, Atom knows which Python packages you have imported, variables you have created
+and so on. <a class="reference external" href="http://flight-manual.atom.io/using-atom/sections/autocomplete/">Autocomplete</a> ships with Atom and requires no setup.</p>
+</div>
+<div class="section" id="code-linting">
+<h3>Code Linting<a class="headerlink" href="#code-linting" title="Permalink to this headline">¶</a></h3>
+<p>To get code linting functionality in Atom, you will need to install a linting package
+of which there are many to choose from. <a class="reference external" href="https://atom.io/packages/linter-pylint">linter-pylint</a> works well, and requires minimal
+setup.</p>
+</div>
+<div class="section" id="white-space-management">
+<h3>White Space Management<a class="headerlink" href="#white-space-management" title="Permalink to this headline">¶</a></h3>
+<p>Atom knows when you are writing Python and helps you out by dealing with spaces and tabs
+in the same way. When in a Python file, if you type 4 spaces, then hit delete, you are
+taken back a tab.</p>
+<p>The <a class="reference external" href="https://atom.io/packages/whitespace">Whitespace</a> package ships with Atom and requires no setup. Under the <code class="docutils literal notranslate"><span class="pre">Packages</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Whitespace</span></code> menu,
+you will find tools to turn all tabs into spaces, all spaces into tabs, among other whitespace-related options.</p>
+</div>
+<div class="section" id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
+<p>To use a Python debugger in Atom, you will need to install the <a class="reference external" href="https://atom.io/packages/python-debugger">python-debugger</a> package. Once installed, turn on the
+debugger by going to <code class="docutils literal notranslate"><span class="pre">Packages</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">python-debugger</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Toggle</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vsc_as_ide.html" class="btn btn-neutral float-right" title="Using Visual Studio Code as a lightweight Python IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sublime_as_ide.html" class="btn btn-neutral float-left" title="Turning Sublime Text Into a Lightweight Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setting up Windows for Python &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Setting Up Linux for Python" href="python_for_linux.html" />
+    <link rel="prev" title="Setting up OS-X for Python" href="python_for_mac.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installing Python and core tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_for_mac.html">Setting up OS-X for Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up Windows for Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-tools">Getting The Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#terminal">Terminal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git">git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pip">pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-pip">Using pip:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ipython">iPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-it-out">Testing it out</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_for_linux.html">Setting Up Linux for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html">Setting up Python via a Linux VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_editor_windows.html">Making your text Editor work with git on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-a-development-environment-for-python">Setting Up A Development Environment For Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Installing Python and core tools</a> &raquo;</li>
+        
+      <li>Setting up Windows for Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/dev_environment/python_for_windows.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setting-up-windows-for-python">
+<span id="python-for-windows"></span><h1>Setting up Windows for Python<a class="headerlink" href="#setting-up-windows-for-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-the-tools">
+<h2>Getting The Tools<a class="headerlink" href="#getting-the-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>There are a number of Python distributions available – many designed for easier support of scientific programming:</p>
+<ul class="simple">
+<li><p>Anaconda</p></li>
+<li><p>Enthought Canopy</p></li>
+<li><p>Python(x,y)</p></li>
+<li><p>etc….</p></li>
+</ul>
+<p>But for basic use, the installer from python.org is the way to go, and that is what we will be using in this program.</p>
+<p><a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+<p>You want the installer for Python 3.7 – probably 64 bit, though if you have a 32 bit system, you can get that.</p>
+<p>There is essentially no difference for the purposes of this course.</p>
+<p>Double click and install.</p>
+<p>Ensure that the Install launcher for all users (recommended) and the Add Python 3.7 to PATH checkboxes at the bottom are checked.</p>
+<p><strong>Add Python 3.7 to PATH step is important!</strong> If this is not checked then when you try to run your python code it won’t be able to find the executable.</p>
+<p>See: <a class="reference external" href="https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/python.html">Installing Python on Windows</a></p>
+</div>
+<div class="section" id="terminal">
+<span id="git-bash"></span><h3>Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
+<p>If you are confident in your use of the “DOS Box” or “powershell”, command lines, feel free to use one of those. However, your life may be easier if you install “Git Bash”, as then you can follow unix-style terminal instructions exactly, and do not have to translate. Also, your instructors are more experienced with Bash.</p>
+<p>From now on, if you hear the terms “bash”, “shell” or “terminal”, or “command line” know that this is the application that is being referred to. We will use those terms interchangeably to mean ANY command line.</p>
+<p>When you install Git Bash, you are installing git (and a git gui) as well, thus killing two birds with one stone!</p>
+<p><a class="reference external" href="https://git-for-windows.github.io/">https://git-for-windows.github.io/</a></p>
+<p>Select the download button on the page and launch downloaded executable, then follow the prompts. On “Choosing default editor used by Git” step it is best to select Notepad++ (which you need to have installed first) unless you are comfortable with non-graphical editors like vim.
+You can go through the rest of the prompts using default values. Once you are done, a terminal window should pop up - try out some commands like <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">help</span></code>.</p>
+<p>You can use this git with the DOS box or Powershell as well.</p>
+<p>This is also a good bet for running Python – If you use the Git Bash shell, you can use the same commands as Linux and OS-X users. Regardless of which shell you choose, you will need to add Python to your environment. It is possible that this was done during the installation of Python. If you type ‘which python’ into your terminal, and get back the answer ‘/c/python37/python’, then you are good to go, otherwise (which shouldn’t happen if you checked the “Add Python 3.7 to PATH” checkbox when you installed Python above), follow the instructions here:</p>
+<p><a class="reference external" href="http://www.computerhope.com/issues/ch000549.htm">http://www.computerhope.com/issues/ch000549.htm</a></p>
+<p>You will want to add:</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Users\YourUserName\AppData\Local\Programs\Python\Python37</span></code></p>
+<p>and</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Users\YourUserName\AppData\Local\Programs\Python\Python37\Scripts</span></code></p>
+<p>to <code class="docutils literal notranslate"><span class="pre">PATH</span></code></p>
+<p>Here are steps for updating path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
+<span class="n">touch</span> <span class="o">.</span><span class="n">bash_profile</span>
+</pre></div>
+</div>
+<p>You can edit this file using Notepad, locate this file in File Explorer in This PC &gt; Local Disk &gt; Users &gt; YourUsername</p>
+<p>Add to the file (file should be empty):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PATH=$PATH:/C/Users/YourUserName/AppData/Local/Programs/Python/Python37:/C/Users/YourUserName/AppData/Local/Programs/Python/Scripts
+</pre></div>
+</div>
+<p>Note: your python executable may be located in a different path, to check the path you need to start windows shell (<code class="docutils literal notranslate"><span class="pre">cmd</span></code>) and type <code class="docutils literal notranslate"><span class="pre">where</span> <span class="pre">python</span></code> - this command will output where python is currently installed.</p>
+<p>Save the file and start a new gitbash shell.</p>
+<p>Once you have done that, you should be able to type <code class="docutils literal notranslate"><span class="pre">python</span></code> at the command prompt, and get something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.7</span><span class="o">.</span><span class="mi">0</span> <span class="p">(</span><span class="n">v3</span><span class="o">.</span><span class="mf">6.2</span><span class="p">:</span><span class="mi">5</span><span class="n">fd33b5926</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">16</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">06</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">4.2</span><span class="o">.</span><span class="mi">1</span> <span class="p">(</span><span class="n">Windows</span> <span class="n">build</span> <span class="mi">7584</span><span class="p">)</span> <span class="p">(</span><span class="n">dot</span> <span class="mi">3</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win64</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>This is the Python interpreter.</p>
+<p>Type <code class="docutils literal notranslate"><span class="pre">ctrl+Z</span></code> to get out (or <code class="docutils literal notranslate"><span class="pre">exit()</span></code>)</p>
+<p>Note: if you have trouble running <code class="docutils literal notranslate"><span class="pre">python</span></code> command in your gitbash (it hangs), try running this instead: <code class="docutils literal notranslate"><span class="pre">winpty</span> <span class="pre">python</span></code>. To avoid having to type <code class="docutils literal notranslate"><span class="pre">winpty</span> <span class="pre">python</span></code> all the time, it’s strongly recommended that you create an alias like below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;alias python=&#39;winpty python&#39;&quot; &gt;&gt; ~/.bash_profile
+</pre></div>
+</div>
+<p>You will need to close the current bash window and restart a new one to get this alias. Then from now on, you can just type <code class="docutils literal notranslate"><span class="pre">python</span></code> and it should work on git bash (no more hanging) as well.</p>
+</div>
+<div class="section" id="git">
+<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<p>If you installed Git Bash, you will already have git, both usable in the terminal and as a gui, and can safely skip this section. If not, you still need a git client. You can use the above link and install git (it will install the bash shell as well, of course, but you can use your shell of choice instead).</p>
+<p>There is also TortoiseGit:</p>
+<p><a class="reference external" href="https://code.google.com/p/tortoisegit/">https://code.google.com/p/tortoisegit/</a></p>
+<p>Which integrates git with the file manager. Feel free to use this if you already have an understanding of how git works, but for the purposes of learning, it may be better to use a command line client (git Bash above).</p>
+</div>
+<div class="section" id="pip">
+<h3>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> is the Python package installer. It is updated faster than Python itself, so once you have Python you want to get the latest version of pip working:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m ensurepip --upgrade
+</pre></div>
+</div>
+<p>It should download and install the latest <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>You can now use pip to install other packages.</p>
+<p>The first thing you may want to do is update pip itself:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-pip">
+<h3>Using pip:<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
+<p>To use pip to install a package, you invoke it with this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">the_name_of_the_package</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">python</span></code> is the command you use to invoke the Python you want to use .</p>
+<p><strong>NOTE:</strong> You will frequently see advice to use pip like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install something_or_other
+</pre></div>
+</div>
+<p>Which often works, but also can invoke the <em>wrong</em> version of pip. The above command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m pip install something_or_other
+</pre></div>
+</div>
+<p>calls Python, and tells it to run the <code class="docutils literal notranslate"><span class="pre">pip</span></code> module. It is exactly the same as calling pip directly, except that you are assured that you are getting the version of pip connected the version of Python that you are running.</p>
+</div>
+<div class="section" id="ipython">
+<h3>iPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h3>
+<p>One extra package we are going to use from the beginning in the program is <code class="docutils literal notranslate"><span class="pre">iPython</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m pip install ipython
+</pre></div>
+</div>
+<p>(It will install a LOT)</p>
+<p>You should now be able to run <code class="docutils literal notranslate"><span class="pre">iPython</span></code> from the git bash shell or “DOS Box” or PowerShell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ipython
+Python 3.7.0 (v3.6.2:5fd33b5926, Jul 16 2017, 20:11:06)
+Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
+IPython 6.1.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
+(or from the DOS box or PowerShell prompt)
+</pre></div>
+</div>
+<p>We will use this in class as our default Python interpreter.</p>
+</div>
+<div class="section" id="testing-it-out">
+<h3>Testing it out<a class="headerlink" href="#testing-it-out" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>To be ready for the program, you need to have:</dt><dd><ul class="simple">
+<li><p>python</p></li>
+<li><p>pip</p></li>
+<li><p>iPython</p></li>
+<li><p>git</p></li>
+</ul>
+</dd>
+</dl>
+<p>All available from the command line.</p>
+<p>To try it out, you should be able to run all of these commands, and get something like the following results:</p>
+<p>(recall that you can get out of the python or iPython command lines with <code class="docutils literal notranslate"><span class="pre">ctrl+Z</span></code> (if that doesn’t work, try <code class="docutils literal notranslate"><span class="pre">ctrl+D</span></code> – the *nix version))</p>
+<p>For Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hosun@DESKTOP-GJT06Q0 MINGW64 ~
+$ python
+Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; ^Z
+</pre></div>
+</div>
+<p>For iPython:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hosun@DESKTOP-GJT06Q0 MINGW64 ~
+$ ipython
+Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)]
+Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
+IPython 6.5.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
+
+In [1]:
+Do you really want to exit ([y]/n)? y
+</pre></div>
+</div>
+<p>For pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hosun@DESKTOP-GJT06Q0 MINGW64 ~
+$ python -m pip --version
+pip 18.0 from C:\Python37\lib\site-packages\pip (python 3.7)
+</pre></div>
+</div>
+<p>For git:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hosun@DESKTOP-GJT06Q0 MINGW64 ~
+$ git --version
+git version 2.18.3.windows.1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_for_linux.html" class="btn btn-neutral float-right" title="Setting Up Linux for Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python_for_mac.html" class="btn btn-neutral float-left" title="Setting up OS-X for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Feature Branching &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="git Hints" href="git_hints.html" />
+    <link rel="prev" title="git Overview" href="git_overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installing Python and core tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_for_mac.html">Setting up OS-X for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_for_windows.html">Setting up Windows for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_for_linux.html">Setting Up Linux for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant.html">Setting up Python via a Linux VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_editor_windows.html">Making your text Editor work with git on Windows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#setting-up-a-development-environment-for-python">Setting Up A Development Environment For Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#minimal-setup">Minimal Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#your-development-environment">Your Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#the-command-line-cli">The Command Line (cli)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#the-python-interpreter">The Python Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#the-editor">The Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#version-control-system">Version Control System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#am-i-ready-to-go">Am I ready to go?</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#specific-documentation">Specific Documentation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sublime_as_ide.html">Turning Sublime Text Into a Lightweight Python IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="atom_as_ide.html">Turning Atom Into a Lightweight Python IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vsc_as_ide.html">Using Visual Studio Code as a lightweight Python IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command_line.html">Command line basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shell.html">Shell Customizations for Python Development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipython.html">iPython Interpreter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="windows_bash.html">Using Windows Bash for Python Development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_overview.html">git Overview</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Feature Branching</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git_hints.html">git Hints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="virtualenv.html">Working with Virtualenv</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Installing Python and core tools</a> &raquo;</li>
+        
+      <li>Feature Branching</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/dev_environment/feature_branching.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="feature-branching">
+<h1>Feature Branching<a class="headerlink" href="#feature-branching" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-use-feature-branches">
+<h2>Why use Feature Branches?<a class="headerlink" href="#why-use-feature-branches" title="Permalink to this headline">¶</a></h2>
+<p>The idea is to give a clear, highly focused purpose to each branch,
+which is why we call them feature branches. They represent specific
+feature being added or in our case a single assignment.</p>
+<p>When using feature branches you isolate your code from everything else,
+and Pull Request becomes easier to review as they only contain one
+thing. This also mean that you can work on multiple features (multiple
+assignments) at the same time without effecting each other and being
+able to have two separate clean PRs along side.</p>
+<p>Keep in mind that in a more professional setting the “master” branch
+represents production code and will be the cleanest most stable branch.</p>
+<p>Below is what’s called “Network Graph” of git activity. This displays
+best what happens with feature branches.</p>
+<p>The black line represents master, the green represents my 1st feature
+branch that got merged into master (you can see arrow goes to black
+line), then I created second feature branch called “test2” (blue line)
+and that also got merged into master.</p>
+<p>So feature branches get branched off the main branch (master) at some
+point in time, then you do some isolated work, then merge it back into
+main branch. No commits to master will affect your work in your feature
+branch while you’re in it.</p>
+<a class="reference internal image-reference" href="../../_images/feature_branching_img1.png"><img alt="../../_images/feature_branching_img1.png" src="../../_images/feature_branching_img1.png" style="width: 643.5px; height: 321.0px;" /></a>
+</div>
+<div class="section" id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="feature-assignment-branch">
+<h3>1. Feature / Assignment Branch<a class="headerlink" href="#feature-assignment-branch" title="Permalink to this headline">¶</a></h3>
+<p>Below explains the process for creating your feature branch. You can
+either use the command line or the UI.</p>
+<div class="section" id="creating-feature-branch-via-command-line">
+<h4>Creating feature branch via Command Line<a class="headerlink" href="#creating-feature-branch-via-command-line" title="Permalink to this headline">¶</a></h4>
+<p>First make sure you’re on master and make sure you have the latest
+changes</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master
+
+git pull
+</pre></div>
+</div>
+<p>Next you will create a new branch (-b flag) based of master</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b &lt;new_feature_branch_name&gt;
+</pre></div>
+</div>
+<p>Here is the full example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+
+Already on <span class="s1">&#39;master&#39;</span>
+
+Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
+
+$ git pull
+
+$ git checkout -b lesson1/assignment1
+
+Switched to a new branch <span class="s1">&#39;lesson1/assignment1&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch
+  branch_name1
+  another_branch
+* lesson1/assignment1 &lt;------- The asterisk here indicates your current branch
+  master
+</pre></div>
+</div>
+<p>That’s it. You are now on an isolated feature branch, do your work and
+make commits to this branch. There should be no difference.. when you’re
+ready to push your changes you would now push to your feature branch
+instead of master:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin &lt;new_feature_branch_name&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-feature-branch-via-github-ui">
+<h4>Creating feature branch via GitHub UI<a class="headerlink" href="#creating-feature-branch-via-github-ui" title="Permalink to this headline">¶</a></h4>
+<p>Navigate to your forked GitHub repo and identify Branch dropdown:</p>
+<a class="reference internal image-reference" href="../../_images/feature_branching_img2.png"><img alt="../../_images/feature_branching_img2.png" src="../../_images/feature_branching_img2.png" style="width: 335.0px; height: 281.0px;" /></a>
+<p>Initially you should only see master branch listed. Within that dropdown
+type the name of the new feature branch, for this example we will call
+it <code class="docutils literal notranslate"><span class="pre">lesson1/assignment1</span></code></p>
+<a class="reference internal image-reference" href="../../_images/feature_branching_img3.png"><img alt="../../_images/feature_branching_img3.png" src="../../_images/feature_branching_img3.png" style="width: 347.0px; height: 249.0px;" /></a>
+<p>Once you start typing the name of the branch, and if it does not
+currently exist, you will get a prompt to create new branch. Click into
+highlighted area (colors may differ based on browser or theme) and now
+you have a new branch!</p>
+<p>Go into command line and check out this new branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git pull
+
+$ git checkout lesson1/assignment1
+
+Switched to branch <span class="s1">&#39;lesson1/assignment1&#39;</span>
+
+$ git branch
+
+feature_branch
+
+* lesson1/assignment1 &lt;------- asterisk here indicates your current branch
+
+master
+
+$
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="when-feature-work-is-complete">
+<h3>2. When Feature Work is Complete<a class="headerlink" href="#when-feature-work-is-complete" title="Permalink to this headline">¶</a></h3>
+<p>When you’re done working on your feature branch it is time to create a
+Pull Request to get your changes into master branch (both main class
+repo and fork)</p>
+<div class="section" id="create-pr-into-main-repo">
+<h4>Create PR into main repo<a class="headerlink" href="#create-pr-into-main-repo" title="Permalink to this headline">¶</a></h4>
+<p>In GitHub UI navigate to Pull Requests and select New pull request
+button, you should now see options for source/target and branches</p>
+<a class="reference internal image-reference" href="../../_images/feature_branching_img4.png"><img alt="../../_images/feature_branching_img4.png" src="../../_images/feature_branching_img4.png" style="width: 1118.0px; height: 309.0px;" /></a>
+<p>In the far right dropdown you will want to select your feature branch.
+Create the PR.</p>
+</div>
+<div class="section" id="merge-your-feature-branch-into-your-forked-master-branch">
+<h4>Merge your feature branch into <em>your forked</em> master branch<a class="headerlink" href="#merge-your-feature-branch-into-your-forked-master-branch" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="command-line">
+<h5>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h5>
+<p>note that you can always verify you are in your forked version by
+running the command below which should show URL of origin</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote show origin
+</pre></div>
+</div>
+<p>Now check out master and make sure it is up to date</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master
+
+git pull
+</pre></div>
+</div>
+<p>Next merge your feature branch (in our example <code class="docutils literal notranslate"><span class="pre">lesson1/assignment1</span></code>
+into master</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge --no-ff lesson1/assignment1
+</pre></div>
+</div>
+<p>Next you will be prompted to commit with pre-populated commit message,
+then save and close.</p>
+<p>Finish up with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin master
+</pre></div>
+</div>
+</div>
+<div class="section" id="github-ui">
+<h5>GitHub UI<a class="headerlink" href="#github-ui" title="Permalink to this headline">¶</a></h5>
+<p>If you’re not comfortable with command line, it is very easy to do in
+the GitHub UI!</p>
+<p>Navigate to Pull Requests again, and press New Pull request button, you
+will now select your fork on the far left with master branch, and your
+feature branch on the far right.</p>
+<a class="reference internal image-reference" href="../../_images/feature_branching_img5.png"><img alt="../../_images/feature_branching_img5.png" src="../../_images/feature_branching_img5.png" style="width: 534.0px; height: 214.0px;" /></a>
+<p>Create your pull request, then merge it and delete feature branch.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extensive-explanation-of-feature-branching">
+<h2>Extensive Explanation of Feature Branching<a class="headerlink" href="#extensive-explanation-of-feature-branching" title="Permalink to this headline">¶</a></h2>
+<p>It has been said that git is not a Revision Control System, but rather, a tool you can use to make a Revision Control System. What this means is that git provides a huge number of features for managing your source code, but you still need to decide how to use it for your particular project. This is often referred to as the git “workflow”. The “feature-branch” workflow is one such approach to managing a project.</p>
+<p>Here are a couple nice references that explain the feature branching workflow:</p>
+<p><a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow</a></p>
+<p><a class="reference external" href="https://blog.landscape.io/use-feature-branches-for-everything.html">https://blog.landscape.io/use-feature-branches-for-everything.html</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="git_hints.html" class="btn btn-neutral float-right" title="git Hints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="git_overview.html" class="btn btn-neutral float-left" title="git Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -25,6 +25,8 @@ Lesson 1: Introductions and Setting up your Environment
     Git
     GitWorkflow
     Submitting_to_github
+    HowToRunAPythonFile
+    learning
 
 Lesson 2: Basic Python and Functions
 ------------------------------------
@@ -120,101 +122,10 @@ Lesson 10: Introduction to Functional Programming
     MapFilterReduce
     IPythonParallel
 
+Extras
+------
 
-.. Py220: Advanced Python
-.. ======================
-
-.. Lesson 1: Functional Programming 2
-.. ----------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     Lambda
-..     IteratorsAndGenerators
-
-.. Lesson 2: Functional Programming 3
-.. ----------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     Closures
-
-.. Lesson 3: Advanced Language Constructs
-.. --------------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     Decorators
-..     ContextManagers
-..     Recursion
-
-.. Lesson 4: MetaProgramming
-.. -------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     MetaProgramming
-
-.. Lesson 5: Logging and Debugging
-.. -------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     Logging
-..     Debugging
-
-.. Lesson 6: Advanced Testing
-.. --------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     Testing_advanced
-
-.. Lesson 7: Relational Databases
-.. ------------------------------
-
-.. `Andy Miles' slides <https://gitpitch.com/milesak60/rdbms-slides#/>`_
-
-.. `Example code on gitHub <https://github.com/milesak60/RDBMS-example>`_
-
-
-.. Lesson 8: Non-Relational Databases
-.. ----------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     NoSQL
-..     GraphDatabases
-
-.. Lesson 9: Concurrency & Async Programming
-.. -----------------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     Concurrency
-..     ThreadingMultiprocessing
-..     Coroutines
-..     Async
-
-.. Lesson 10: Profiling and Performance
-.. ------------------------------------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     Profiling
-
-
-Assorted Additional Topics
-==========================
+The following are some extra advanced topics that might be of interest
 
 .. toctree::
     :maxdepth: 1
@@ -225,3 +136,40 @@ Assorted Additional Topics
     PersistanceAndSerialization
     Unicode
 
+    Lambda
+    IteratorsAndGenerators
+
+    Closures
+
+    Decorators
+    ContextManagers
+    Recursion
+
+
+    MetaProgramming
+
+    Logging
+    Debugging
+
+
+    Testing_advanced
+
+
+
+    NoSQL
+    GraphDatabases
+
+
+    Concurrency
+    ThreadingMultiprocessing
+    Coroutines
+    Async
+
+    Profiling
+
+.. Lesson 7: Relational Databases
+.. ------------------------------
+
+.. `Andy Miles' slides <https://gitpitch.com/milesak60/rdbms-slides#/>`_
+
+.. `Example code on gitHub <https://github.com/milesak60/RDBMS-example>`_

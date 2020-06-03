@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="IPython Introduction" href="IPythonIntroduction.html" />
-    <link rel="prev" title="Introduction to the in-class version of the program" href="Class_introduction.html" /> 
+    <link rel="prev" title="Topic Notes" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,7 +81,11 @@
               
             
             
-              <ul class="current">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Topic Notes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#py210-introduction-to-python">Py210: Introduction to Python</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html#lesson-1-introductions-and-setting-up-your-environment">Lesson 1: Introductions and Setting up your Environment</a><ul class="current">
@@ -92,6 +96,8 @@
 <li class="toctree-l4"><a class="reference internal" href="Git.html">Intro to Git</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning.html">Useful Python Learning Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#lesson-2-basic-python-and-functions">Lesson 2: Basic Python and Functions</a></li>
@@ -103,9 +109,9 @@
 <li class="toctree-l3"><a class="reference internal" href="index.html#lesson-8-properties-and-magic-methods">Lesson 8: Properties and Magic Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#lesson-10-introduction-to-functional-programming">Lesson 10: Introduction to Functional Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#extras">Extras</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#assorted-additional-topics">Assorted Additional Topics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
@@ -193,7 +199,7 @@
 </li>
 <li><p>A Python interpreter</p>
 <ul>
-<li><p>We use “cPython” version 3.6 or greater for this class.</p></li>
+<li><p>We use “cPython” version 3.8 or greater for this class.</p></li>
 </ul>
 </li>
 <li><p>A way to edit your code.</p>
@@ -211,13 +217,13 @@
 <p>Having some facility on the command line is important for a software developer.</p>
 <p>We won’t cover this much in class, so if you are not comfortable,
 please bone up on your own.</p>
-<p>We have some resources here: <a class="reference external" href="http://uwpce-pythoncert.github.io/PythonResources/DevEnvironment/command_line.html">PythonResources–command line</a></p>
+<p>We have some resources here: <a class="reference internal" href="dev_environment/command_line.html#command-line-basics"><span class="std std-ref">Command line basics</span></a></p>
 <p><strong>Windows:</strong></p>
 <p>Most of the demos in class, etc., will be done using the “bash” command line shell on OS-X or Linux.</p>
 <p>Windows provides the “DOS” command line, which is OK, but pretty old and limited, or “Power Shell,” a more modern, powerful, flexible command shell.</p>
 <p>If you are comfortable with either of these, go for it.</p>
-<p>If not, you can use the “git Bash” shell, which is much like the bash shell on OS-X and Linux. Or, on Windows 10, look into the “bash shell for Windows,” otherwise known as the “Windows Subsystem for Linux.” More info is available here:
-<a class="reference external" href="http://uwpce-pythoncert.github.io/PythonResources/DevEnvironment/windows_bash.html">PythonResources–Windows Bash</a></p>
+<p>If not, you can use the “git Bash” shell, which is much like the bash shell on OS-X and Linux. Or, on Windows 10, look into the “bash shell for Windows,” otherwise known as the “Windows Subsystem for Linux.” More info is available here:</p>
+<p><a class="reference internal" href="dev_environment/windows_bash.html#windows-bash"><span class="std std-ref">Using Windows Bash for Python Development</span></a></p>
 </div>
 <div class="section" id="accessing-the-command-line">
 <h3>Accessing the Command Line<a class="headerlink" href="#accessing-the-command-line" title="Permalink to this headline">¶</a></h3>
@@ -232,7 +238,7 @@ Most modern UIs provide a way to start up a teminal from the file manager:</p>
 <h4>OS-X<a class="headerlink" href="#os-x" title="Permalink to this headline">¶</a></h4>
 <p>On The Mac, you can add a “New Terminal at Folder” right-click menu item by:</p>
 <blockquote>
-<div><p>Head into System Preferences and select Keyboard &gt; Shortcuts &gt; Services. Find “New Terminal at Folder” in the settings and click the box. Now, when you’re in Finder, just right-click a folder and you’re shown the open to open Terminal. When you do, it’ll start right in the folder you’re in.</p>
+<div><p>Head into System Preferences and select Keyboard =&gt; Shortcuts =&gt; Services. Find “New Terminal at Folder” in the settings and click the box. Now, when you’re in Finder, just right-click a folder and you’re shown the open to open Terminal. When you do, it’ll start right in the folder you’re in.</p>
 </div></blockquote>
 <p><a class="reference external" href="https://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514">Launch an OS-X Terminal Window</a></p>
 </div>
@@ -255,15 +261,15 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 <p>That last thing you see, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> is the “Python prompt”.</p>
 <p>This is where you can type code.</p>
 <p>Notice that when it starts up, it tells you the version info. If the <code class="docutils literal notranslate"><span class="pre">python3</span></code> command did not work for you, or you got a version that is older than Python 3.6.4, you will need to install a new Python. Follow one of these:</p>
-<p><span class="xref std std-ref">python_for_mac</span></p>
-<p><span class="xref std std-ref">python_for_windows</span></p>
-<p><span class="xref std std-ref">python_for_linux</span></p>
+<p><a class="reference internal" href="dev_environment/python_for_mac.html#python-for-mac"><span class="std std-ref">Setting up OS-X for Python</span></a></p>
+<p><a class="reference internal" href="dev_environment/python_for_windows.html#python-for-windows"><span class="std std-ref">Setting up Windows for Python</span></a></p>
+<p><a class="reference internal" href="dev_environment/python_for_linux.html#python-for-linux"><span class="std std-ref">Setting Up Linux for Python</span></a></p>
 <p>Note that you can use the interpreter to run a Python script as well:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 the name_of_the_file.py
 </pre></div>
 </div>
 <p>More on that here:</p>
-<p><span class="xref std std-ref">how_to_run_a_python_file</span></p>
+<p><a class="reference internal" href="HowToRunAPythonFile.html#how-to-run-a-python-file"><span class="std std-ref">How to run a python file</span></a></p>
 <div class="section" id="other-interpreters">
 <h4>Other interpreters<a class="headerlink" href="#other-interpreters" title="Permalink to this headline">¶</a></h4>
 <p>In addition to the built-in interpreter, there are several more advanced
@@ -299,12 +305,12 @@ characters hidden behind the scenes.</p>
 <div class="section" id="sublimetext">
 <h4>SublimeText:<a class="headerlink" href="#sublimetext" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="http://www.sublimetext.com/">Sublime Text</a></p>
-<p><span class="xref std std-ref">sublime_as_ide</span></p>
+<p><a class="reference internal" href="dev_environment/sublime_as_ide.html#sublime-as-ide"><span class="std std-ref">Turning Sublime Text Into a Lightweight Python IDE</span></a></p>
 </div>
 <div class="section" id="atom">
 <h4>Atom<a class="headerlink" href="#atom" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="https://atom.io/">Atom</a></p>
-<p><span class="xref std std-ref">atom_as_ide</span></p>
+<p><a class="reference internal" href="dev_environment/atom_as_ide.html#atom-as-ide"><span class="std std-ref">Turning Atom Into a Lightweight Python IDE</span></a></p>
 <p>And, of course, vim or Emacs on Linux, if you are familiar with those.</p>
 </div>
 </div>
@@ -351,12 +357,12 @@ You are running python3.6 -- all good!
 </pre></div>
 </div>
 <p>(Version 3.6 or 3.7 is fine)</p>
-<p>If you can’t figure out how to run it, see: <span class="xref std std-ref">how_to_run_a_python_file</span></p>
+<p>If you can’t figure out how to run it, see: <a class="reference internal" href="HowToRunAPythonFile.html#how-to-run-a-python-file"><span class="std std-ref">How to run a python file</span></a></p>
 <p>If you can run, it but don’t get that nice “all good” message, then you either do not have Python installed, or you have the wrong version.</p>
 <p>Go to one of:</p>
-<p><span class="xref std std-ref">python_for_mac</span></p>
-<p><span class="xref std std-ref">python_for_windows</span></p>
-<p><span class="xref std std-ref">python_for_linux</span></p>
+<p><a class="reference internal" href="dev_environment/python_for_mac.html#python-for-mac"><span class="std std-ref">Setting up OS-X for Python</span></a></p>
+<p><a class="reference internal" href="dev_environment/python_for_windows.html#python-for-windows"><span class="std std-ref">Setting up Windows for Python</span></a></p>
+<p><a class="reference internal" href="dev_environment/python_for_linux.html#python-for-linux"><span class="std std-ref">Setting Up Linux for Python</span></a></p>
 <p>And try again.</p>
 </div>
 <div class="section" id="ipython">
@@ -392,7 +398,7 @@ git version <span class="m">2</span>.15.2 <span class="o">(</span>Apple Git-101.
 <div class="section" id="other-helpful-hints">
 <h2>Other Helpful Hints<a class="headerlink" href="#other-helpful-hints" title="Permalink to this headline">¶</a></h2>
 <p>There are a number of other assorted helpful materials here:</p>
-<p><span class="xref std std-ref">supplemental_materials</span></p>
+<p><a class="reference internal" href="dev_environment/index.html#installing-python"><span class="std std-ref">Installing Python and core tools</span></a></p>
 </div>
 </div>
 
@@ -407,7 +413,7 @@ git version <span class="m">2</span>.15.2 <span class="o">(</span>Apple Git-101.
         <a href="IPythonIntroduction.html" class="btn btn-neutral float-right" title="IPython Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Class_introduction.html" class="btn btn-neutral float-left" title="Introduction to the in-class version of the program" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Topic Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

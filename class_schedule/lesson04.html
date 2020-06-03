@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Session 4: Dictionaries, Sets, and File Handling &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Session 5: Exceptions and Comprehensions" href="lesson05.html" />
+    <link rel="prev" title="Session 3: Booleans, Sequences, Iteration, and Strings" href="lesson03.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 210 Class Schedule</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#orientation">Orientation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="orientation.html">Orientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson01.html">Lesson 1: Intro to the class and Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson02.html">Session 2: Basic Python and Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Session 4: Dictionaries, Sets, and File Handling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pre-class-prep">Pre-class prep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#in-class-activities">In-class Activities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-class-activities">Post-class Activities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Python 210 Class Schedule</a> &raquo;</li>
+        
+      <li>Session 4: Dictionaries, Sets, and File Handling</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/class_schedule/lesson04.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="session-4-dictionaries-sets-and-file-handling">
+<span id="session-1-04"></span><h1>Session 4: Dictionaries, Sets, and File Handling<a class="headerlink" href="#session-4-dictionaries-sets-and-file-handling" title="Permalink to this headline">¶</a></h1>
+<p>Dictionaries, Sets, and File Handling</p>
+<div class="section" id="pre-class-prep">
+<h2>Pre-class prep<a class="headerlink" href="#pre-class-prep" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="read">
+<h3>Read:<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../modules/DictsAndSets.html#dicts-and-sets"><span class="std std-ref">Dictionaries and Sets</span></a></p>
+<p><a class="reference internal" href="../modules/Files.html#files"><span class="std std-ref">File Reading and Writing</span></a></p>
+</div>
+<div class="section" id="recommended-reading">
+<h3>Recommended Reading:<a class="headerlink" href="#recommended-reading" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Think Python: Chapters 11, 13, 14</p></li>
+<li><p>Dive Into Python3: Sections 2.6, 2.7, 4, 11</p></li>
+</ul>
+<p><a class="reference external" href="http://www.diveintopython3.net/native-datatypes.html#dictionaries">http://www.diveintopython3.net/native-datatypes.html#dictionaries</a></p>
+</div>
+</div>
+<div class="section" id="in-class-activities">
+<h2>In-class Activities<a class="headerlink" href="#in-class-activities" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p>Review last sessions labs:
+- slicing
+- string formatting</p></li>
+<li><p>Review  looping: <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Review mailroom</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="exercises">
+<h3>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../exercises/dict_lab.html#exercise-dict-lab"><span class="std std-ref">Dictionary and Set Lab</span></a></p></li>
+<li><p><a class="reference internal" href="../exercises/file_lab.html#exercise-file-lab"><span class="std std-ref">File Exercise</span></a></p></li>
+<li><p>Update mailroom with dicts and files:  <a class="reference internal" href="../exercises/mailroom-part2.html#exercise-mailroom-part2-dict-files"><span class="std std-ref">Mailroom Part 2</span></a></p></li>
+<li><p><a class="reference internal" href="../exercises/kata_fourteen.html#exercise-trigrams"><span class="std std-ref">Trigrams – Simple Text Manipulation</span></a></p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="post-class-activities">
+<h2>Post-class Activities<a class="headerlink" href="#post-class-activities" title="Permalink to this headline">¶</a></h2>
+<p>Finish the exercises</p>
+<p>Look at the next session for reading, etc:</p>
+<p><a class="reference internal" href="lesson05.html#session-1-05"><span class="std std-ref">Session 5: Exceptions and Comprehensions</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lesson05.html" class="btn btn-neutral float-right" title="Session 5: Exceptions and Comprehensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lesson03.html" class="btn btn-neutral float-left" title="Session 3: Booleans, Sequences, Iteration, and Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
