@@ -31,7 +31,7 @@ point in time, then you do some isolated work, then merge it back into
 main branch. No commits to master will affect your work in your feature
 branch while you're in it.
 
-.. image:: feature_branching_img1.png
+.. image:: images/feature_branching_img1.png
   :scale: 75
 
 
@@ -102,14 +102,14 @@ Creating feature branch via GitHub UI
 
 Navigate to your forked GitHub repo and identify Branch dropdown:
 
-.. image:: feature_branching_img2.png
+.. image:: images/feature_branching_img2.png
     :scale: 50
 
 Initially you should only see master branch listed. Within that dropdown
 type the name of the new feature branch, for this example we will call
 it ``lesson1/assignment1``
 
-.. image:: feature_branching_img3.png
+.. image:: images/feature_branching_img3.png
     :scale: 50
 
 Once you start typing the name of the branch, and if it does not
@@ -150,7 +150,7 @@ Create PR into main repo
 In GitHub UI navigate to Pull Requests and select New pull request
 button, you should now see options for source/target and branches
 
-.. image:: feature_branching_img4.png
+.. image:: images/feature_branching_img4.png
       :scale: 50
 
 In the far right dropdown you will want to select your feature branch.
@@ -203,7 +203,7 @@ Navigate to Pull Requests again, and press New Pull request button, you
 will now select your fork on the far left with master branch, and your
 feature branch on the far right.
 
-.. image:: feature_branching_img5.png
+.. image:: images/feature_branching_img5.png
       :scale: 50
 
 Create your pull request, then merge it and delete feature branch.

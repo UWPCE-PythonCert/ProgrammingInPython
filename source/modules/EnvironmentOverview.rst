@@ -23,7 +23,7 @@ There are three basic elements to your environment when working with Python for 
 
 * A Python interpreter
 
-  - We use "cPython" version 3.6 or greater for this class.
+  - We use "cPython" version 3.8 or greater for this class.
 
 * A way to edit your code.
 
@@ -45,7 +45,7 @@ Having some facility on the command line is important for a software developer.
 We won't cover this much in class, so if you are not comfortable,
 please bone up on your own.
 
-We have some resources here: `PythonResources--command line <http://uwpce-pythoncert.github.io/PythonResources/DevEnvironment/command_line.html>`_
+We have some resources here: :ref:`command_line_basics`
 
 **Windows:**
 
@@ -56,7 +56,8 @@ Windows provides the "DOS" command line, which is OK, but pretty old and limited
 If you are comfortable with either of these, go for it.
 
 If not, you can use the "git Bash" shell, which is much like the bash shell on OS-X and Linux. Or, on Windows 10, look into the "bash shell for Windows," otherwise known as the "Windows Subsystem for Linux." More info is available here:
-`PythonResources--Windows Bash  <http://uwpce-pythoncert.github.io/PythonResources/DevEnvironment/windows_bash.html>`_
+
+:ref:`windows_bash`
 
 Accessing the Command Line
 --------------------------
@@ -77,7 +78,7 @@ OS-X
 On The Mac, you can add a "New Terminal at Folder" right-click menu item by:
 
 
-   Head into System Preferences and select Keyboard > Shortcuts > Services. Find "New Terminal at Folder" in the settings and click the box. Now, when you're in Finder, just right-click a folder and you're shown the open to open Terminal. When you do, it'll start right in the folder you're in.
+   Head into System Preferences and select Keyboard => Shortcuts => Services. Find "New Terminal at Folder" in the settings and click the box. Now, when you're in Finder, just right-click a folder and you're shown the open to open Terminal. When you do, it'll start right in the folder you're in.
 
 `Launch an OS-X Terminal Window <https://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514>`_
 
@@ -303,6 +304,6 @@ Other Helpful Hints
 
 There are a number of other assorted helpful materials here:
 
-:ref:`supplemental_materials`
+:ref:`installing_python`
 
 
