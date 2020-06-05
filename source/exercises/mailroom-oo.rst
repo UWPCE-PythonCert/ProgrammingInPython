@@ -114,9 +114,9 @@ The main data structure in your class can be a dictionary with a key as donor na
 
 this design allows you to quickly look up donor by their name and get a donor object instance to work with.
 
-Another option is to simply use a list of donor objects.
+Another option is to simply use a list of donor objects. You get to choose which you think is more appropriate.
 
-Remember that you should use `self.donors` attribute any time you want to work with data about a single donor, most of your methods in this class will utilize it in some way. This is really want classes are desined for.
+Remember that you should use `self.donors` attribute any time you want to work with data about a single donor, most of your methods in this class will utilize it in some way. This is really what classes are desined for.
 
 **Examples:**
 
