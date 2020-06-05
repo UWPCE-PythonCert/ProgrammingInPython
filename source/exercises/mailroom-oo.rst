@@ -250,6 +250,3 @@ In case you are bored -- what features can you add?
 * Fancier reporting
 
 * The sky's the limit
-
-
-
