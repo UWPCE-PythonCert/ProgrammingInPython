@@ -4,7 +4,7 @@ Python 210 Class Schedule
 #########################
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
     orientation
     lesson01
