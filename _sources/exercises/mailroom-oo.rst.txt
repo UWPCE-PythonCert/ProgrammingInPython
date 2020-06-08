@@ -41,7 +41,7 @@ The Program
 See: :ref:`exercise_mailroom_part1` to remind yourself what the program needs to do.
 
 
-Suggestions
+Guidelines
 -----------
 
 One of the hardest parts of OO design (particularly in Python) is to know how "low" to go with the classes and data structures. In particular, you might have a bit of data collected together (say, a donor's name and donation history). This can be a simple tuple with a few items in it; a dict with those same data available as ``key:value`` pairs; or a class, with class attributes (and, possibly, methods).
@@ -103,12 +103,30 @@ In short: if the functionality involves more than one donor -- it belongs in thi
 
 Note that the ``DonorCollection`` class should be holding, and working with, ``Donor`` objects -- it should NOT work directly with a list of donations, etc.
 
+The main data structure in your class can be a dictionary with a key as donor name and value as donor object:
+
+
+.. code-block:: python
+    class DonorCollection:
+        def __init__(self, *donors):
+            self.donors = {obj.name: obj for obj in donors}
+
+
+this design allows you to quickly look up donor by their name and get a donor object instance to work with.
+
+Another option is to simply use a list of donor objects. You get to choose which you think is more appropriate.
+
+Remember that you should use `self.donors` attribute any time you want to work with data about a single donor, most of your methods in this class will utilize it in some way. This is really what classes are desined for.
+
 **Examples:**
 
 Generating a thank you letter to a donor only requires knowledge of that one donor -- so that code belongs in the ``Donor`` class.
 
 Generating a report about all the donors requires knowledge of all the donors, so that code belongs in the ``DonorCollection`` class.
 
+Hint:
+You've previously sorted simple data structures like list and dictionaries, but here we're dealing with objects - not to worry that is a really simple thing to do with python!
+You can use `operator.attrgetter` with a sorted function (review python docs for usage documentation).
 
 Command Line Interface
 .......................
@@ -232,6 +250,3 @@ In case you are bored -- what features can you add?
 * Fancier reporting
 
 * The sky's the limit
-
-
-
