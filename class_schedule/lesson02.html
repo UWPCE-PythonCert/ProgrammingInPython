@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Session 2: Basic Python and Functions &mdash; Python 210 6.0 documentation</title>
+  <title>Lesson 2: Basic Python and Functions &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Session 3: Booleans, Sequences, Iteration, and Strings" href="lesson03.html" />
-    <link rel="prev" title="Python 2 versus Python 3" href="../modules/Py2vsPy3.html" /> 
+    <link rel="next" title="More on Functions" href="../modules/Functions.html" />
+    <link rel="prev" title="Useful Python Learning Resources" href="../modules/learning.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,32 +83,42 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 210 Class Schedule</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#orientation">Orientation</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="orientation.html">Orientation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson01.html">Lesson 1: Intro to the class and Python</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Session 2: Basic Python and Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pre-class-prep">Pre-class prep</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#in-class-activities">In-class Activities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#post-class-activities">Post-class Activities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1: Setting up Your Environment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 2: Basic Python and Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#readings">Readings:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/BasicPython.html">Basic Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Functions.html">More on Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Recursion.html">Recursion</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/fizz_buzz.html">Fizz Buzz Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/fib_and_lucas.html">Fibonacci Series Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-basics">Python Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supplimental-reading">Supplimental Reading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git">git</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Py210: Introduction to Python: Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
 </ul>
 
             
@@ -156,7 +166,7 @@
         
           <li><a href="index.html">Python 210 Class Schedule</a> &raquo;</li>
         
-      <li>Session 2: Basic Python and Functions</li>
+      <li>Lesson 2: Basic Python and Functions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,16 +185,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="session-2-basic-python-and-functions">
-<span id="session-1-02"></span><h1>Session 2: Basic Python and Functions<a class="headerlink" href="#session-2-basic-python-and-functions" title="Permalink to this headline">¶</a></h1>
-<p><strong>Basic Python and Functions</strong></p>
-<div class="section" id="pre-class-prep">
-<h2>Pre-class prep<a class="headerlink" href="#pre-class-prep" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dev-environment">
-<h3>Dev environment<a class="headerlink" href="#dev-environment" title="Permalink to this headline">¶</a></h3>
-<p>Make sure you know how to create a python file, save it, edit it, run it, etc.</p>
-<p>Also make sure you are comfortable “playing” with python in the iPython command line.</p>
-<p>If you are uncomfortable with the command line, brush up on that: <a class="reference external" href="https://learnpythonthehardway.org/python3/appendixa.html">This:</a> is a good tutorial.</p>
+  <div class="section" id="lesson-2-basic-python-and-functions">
+<span id="lesson-02"></span><h1>Lesson 2: Basic Python and Functions<a class="headerlink" href="#lesson-2-basic-python-and-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings">
+<h2>Readings:<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/BasicPython.html">Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Functions.html">More on Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Recursion.html">Recursion</a></li>
+</ul>
+</div>
+<p>Read: <a class="reference internal" href="../modules/Documentation.html#documentation"><span class="std std-ref">Documentation</span></a></p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">Fizz Buzz Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">Fibonacci Series Exercise</a></li>
+</ul>
 </div>
 <div class="section" id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
@@ -223,22 +244,6 @@ but if you feel lost, and/or want to know more, these are some good resources:</
 <p><a class="reference external" href="https://try.github.io/">https://try.github.io/</a></p>
 </div>
 </div>
-<div class="section" id="in-class-activities">
-<h2>In-class Activities<a class="headerlink" href="#in-class-activities" title="Permalink to this headline">¶</a></h2>
-<p>Review <a class="reference internal" href="../exercises/python_pushups.html#python-pushups"><span class="std std-ref">Python Pushups</span></a></p>
-<div class="section" id="exercises">
-<h3>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="../exercises/grid_printer.html#exercise-grid-printer"><span class="std std-ref">Grid Printer Exercise</span></a></p>
-<p><a class="reference internal" href="../exercises/fizz_buzz.html#exercise-fizz-buzz"><span class="std std-ref">Fizz Buzz Exercise</span></a></p>
-<p><a class="reference internal" href="../exercises/fib_and_lucas.html#exercise-fibonacci"><span class="std std-ref">Fibonacci Series Exercise</span></a></p>
-</div>
-</div>
-<div class="section" id="post-class-activities">
-<h2>Post-class Activities<a class="headerlink" href="#post-class-activities" title="Permalink to this headline">¶</a></h2>
-<p>Finish the Exercises</p>
-<p>Look at the next session for reading, etc:</p>
-<p><a class="reference internal" href="lesson03.html#session-1-03"><span class="std std-ref">Session 3: Booleans, Sequences, Iteration, and Strings</span></a></p>
-</div>
 </div>
 
 
@@ -249,10 +254,10 @@ but if you feel lost, and/or want to know more, these are some good resources:</
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lesson03.html" class="btn btn-neutral float-right" title="Session 3: Booleans, Sequences, Iteration, and Strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/Functions.html" class="btn btn-neutral float-right" title="More on Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Py2vsPy3.html" class="btn btn-neutral float-left" title="Python 2 versus Python 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/learning.html" class="btn btn-neutral float-left" title="Useful Python Learning Resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -68,33 +68,38 @@ least, make sure it does Python indentation and syntax coloring well.
 :ref:`setting_up_dev_environment`
 
 
-In-class Activities
-===================
+Readings:
+=========
 
 .. toctree::
     :maxdepth: 1
 
     ../modules/Class_introduction
-
-    ../modules/Git
-
+    ../modules/EnvironmentOverview
+    ../modules/IPythonIntroduction
     ../modules/BasicPython
-
     ../modules/Py2vsPy3
+    ../modules/Git
+    ../modules/GitWorkflow
+    ../modules/Submitting_to_github
+    ../modules/HowToRunAPythonFile
+    ../modules/learning
 
 
-A few exercises: :ref:`python_pushups`
+Exercises:
+==========
 
+.. toctree::
+    :maxdepth: 1
+    ../exercises/ python_pushups.rst
 
-Post-class Activities
-=====================
+Finish Setting up your dev environment
+--------------------------------------
 
-Read the rest of Basic Python Syntax intro, if we didn't have time in class:
-:ref:`basic_python_syntax`
+Make sure you know how to create a python file, save it, edit it, run it, etc.
 
-Finish the Python Pushups exercises: :ref:`python_pushups`
+Also make sure you are comfortable "playing" with python in the iPython command line.
 
-Finish getting your environment set up.
-
-Do the prep for next class: :ref:`session_1_02`
+If you are uncomfortable with the command line, brush up on that:
+`This: <https://learnpythonthehardway.org/python3/appendixa.html>`_ is a good tutorial.
 
