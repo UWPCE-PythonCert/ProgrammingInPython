@@ -7,16 +7,36 @@ Session 3: Booleans, Sequences, Iteration, and Strings
 **Booleans, Sequences, Iteration, and Strings**
 
 
-Pre-class prep
-==============
+Readings:
+=========
 
-Read: :ref:`booleans`
+.. toctree::
+    :maxdepth: 1
 
-Read: :ref:`sequences`
+    ../modules/Booleans
+    ../modules/Sequences
+    ../modules/Iteration
+    ../modules/Strings
 
-Read: :ref:`iteration`
+Exercises:
+==========
 
-Read: :ref:`strings`
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/slicing.rst
+    ../exercises/list_lab.rst
+    ../exercises/string_formatting.rst
+    ../exercises/mailroom-part1.rst
+    ../exercises/mailroom_tutorial.rst
+
+Optional
+--------
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/rot13.rst
 
 
 Supplemental Reading:
@@ -29,55 +49,3 @@ Think Python, chapters 7 -- 10 (11, 12)
 Dive Into Python: chapters 3, 4
 
 (http://www.diveintopython3.net/strings.html)
-
-
-In-class Activities
-===================
-
-Working with Booleans, Conditional Expressions, etc
----------------------------------------------------
-
-Re-write a couple CodingBat exercises, returning the direct boolean results, and/or using ternary expressions.
-
-Variable Scope
---------------
-
-Experiment with ``locals`` by adding this statement one of the functions we wrote last week (or any other function you wrote):
-
-.. code-block:: python
-
-    print(locals())
-
-
-Sequences Exercises
--------------------
-
-:ref:`exercise_slicing`
-
-:ref:`exercise_list_lab`
-
-
-String Exercises
-----------------
-:ref:`exercise_string_formatting`
-
-(optional) :ref:`exercise_rot13`
-
-Mailroom Exercises
-------------------
-
-You've now got the basics of the language down -- enough to write the first full "program":
-
-:ref:`exercise_mailroom_part1`
-
-
-Post-class Activites
-====================
-
-Finish the mailroom project.
-
-And the other exercises
-
-Look at the next session for reading, etc:
-
-:ref:`session_1_04`

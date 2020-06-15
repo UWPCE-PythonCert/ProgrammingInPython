@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Session 4: Dictionaries, Sets, and File Handling" href="lesson04.html" />
-    <link rel="prev" title="Session 2: Basic Python and Functions" href="lesson02.html" /> 
+    <link rel="next" title="Boolean Expressions" href="../modules/Booleans.html" />
+    <link rel="prev" title="Fibonacci Series Exercise" href="../exercises/fib_and_lucas.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,32 +83,43 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 210 Class Schedule</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#orientation">Orientation</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="orientation.html">Orientation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson01.html">Lesson 1: Intro to the class and Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson02.html">Session 2: Basic Python and Functions</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Session 3: Booleans, Sequences, Iteration, and Strings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pre-class-prep">Pre-class prep</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#in-class-activities">In-class Activities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#post-class-activites">Post-class Activites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1: Setting up Your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session 3: Booleans, Sequences, Iteration, and Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#readings">Readings:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Booleans.html">Boolean Expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Sequences.html">Python Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Iteration.html">Iteration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Strings.html">Strings</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/mailroom-part1.html">Mailroom Part 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/mailroom_tutorial.html">Mailroom Tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional">Optional</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supplemental-reading">Supplemental Reading:</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Py210: Introduction to Python: Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
 </ul>
 
             
@@ -178,12 +189,36 @@
   <div class="section" id="session-3-booleans-sequences-iteration-and-strings">
 <span id="session-1-03"></span><h1>Session 3: Booleans, Sequences, Iteration, and Strings<a class="headerlink" href="#session-3-booleans-sequences-iteration-and-strings" title="Permalink to this headline">¶</a></h1>
 <p><strong>Booleans, Sequences, Iteration, and Strings</strong></p>
-<div class="section" id="pre-class-prep">
-<h2>Pre-class prep<a class="headerlink" href="#pre-class-prep" title="Permalink to this headline">¶</a></h2>
-<p>Read: <a class="reference internal" href="../modules/Booleans.html#booleans"><span class="std std-ref">Boolean Expressions</span></a></p>
-<p>Read: <a class="reference internal" href="../modules/Sequences.html#sequences"><span class="std std-ref">Python Sequences</span></a></p>
-<p>Read: <a class="reference internal" href="../modules/Iteration.html#iteration"><span class="std std-ref">Iteration</span></a></p>
-<p>Read: <a class="reference internal" href="../modules/Strings.html#strings"><span class="std std-ref">Strings</span></a></p>
+<div class="section" id="readings">
+<h2>Readings:<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Booleans.html">Boolean Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Sequences.html">Python Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Iteration.html">Iteration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Strings.html">Strings</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-part1.html">Mailroom Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+</div>
+<div class="section" id="optional">
+<h3>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
+</ul>
+</div>
+</div>
 <div class="section" id="supplemental-reading">
 <h3>Supplemental Reading:<a class="headerlink" href="#supplemental-reading" title="Permalink to this headline">¶</a></h3>
 <p>Think Python, chapters 7 – 10 (11, 12)</p>
@@ -191,42 +226,6 @@
 <p>Dive Into Python: chapters 3, 4</p>
 <p>(<a class="reference external" href="http://www.diveintopython3.net/strings.html">http://www.diveintopython3.net/strings.html</a>)</p>
 </div>
-</div>
-<div class="section" id="in-class-activities">
-<h2>In-class Activities<a class="headerlink" href="#in-class-activities" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="working-with-booleans-conditional-expressions-etc">
-<h3>Working with Booleans, Conditional Expressions, etc<a class="headerlink" href="#working-with-booleans-conditional-expressions-etc" title="Permalink to this headline">¶</a></h3>
-<p>Re-write a couple CodingBat exercises, returning the direct boolean results, and/or using ternary expressions.</p>
-</div>
-<div class="section" id="variable-scope">
-<h3>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h3>
-<p>Experiment with <code class="docutils literal notranslate"><span class="pre">locals</span></code> by adding this statement one of the functions we wrote last week (or any other function you wrote):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sequences-exercises">
-<h3>Sequences Exercises<a class="headerlink" href="#sequences-exercises" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="../exercises/slicing.html#exercise-slicing"><span class="std std-ref">Slicing Lab</span></a></p>
-<p><a class="reference internal" href="../exercises/list_lab.html#exercise-list-lab"><span class="std std-ref">List Lab</span></a></p>
-</div>
-<div class="section" id="string-exercises">
-<h3>String Exercises<a class="headerlink" href="#string-exercises" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="../exercises/string_formatting.html#exercise-string-formatting"><span class="std std-ref">String Formatting Exercise</span></a></p>
-<p>(optional) <a class="reference internal" href="../exercises/rot13.html#exercise-rot13"><span class="std std-ref">ROT13</span></a></p>
-</div>
-<div class="section" id="mailroom-exercises">
-<h3>Mailroom Exercises<a class="headerlink" href="#mailroom-exercises" title="Permalink to this headline">¶</a></h3>
-<p>You’ve now got the basics of the language down – enough to write the first full “program”:</p>
-<p><a class="reference internal" href="../exercises/mailroom-part1.html#exercise-mailroom-part1"><span class="std std-ref">Mailroom Part 1</span></a></p>
-</div>
-</div>
-<div class="section" id="post-class-activites">
-<h2>Post-class Activites<a class="headerlink" href="#post-class-activites" title="Permalink to this headline">¶</a></h2>
-<p>Finish the mailroom project.</p>
-<p>And the other exercises</p>
-<p>Look at the next session for reading, etc:</p>
-<p><a class="reference internal" href="lesson04.html#session-1-04"><span class="std std-ref">Session 4: Dictionaries, Sets, and File Handling</span></a></p>
 </div>
 </div>
 
@@ -238,10 +237,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lesson04.html" class="btn btn-neutral float-right" title="Session 4: Dictionaries, Sets, and File Handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/Booleans.html" class="btn btn-neutral float-right" title="Boolean Expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lesson02.html" class="btn btn-neutral float-left" title="Session 2: Basic Python and Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/fib_and_lucas.html" class="btn btn-neutral float-left" title="Fibonacci Series Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

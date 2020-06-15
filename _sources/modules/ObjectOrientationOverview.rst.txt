@@ -21,7 +21,9 @@ Good software design is about code re-use, clean separation of concerns,
 refactorability, testability, etc...
 
 OO can help with all that, but:
+
   * It doesn't guarantee it.
+
   * It can get in the way.
 
 What is Object Oriented Programming?
@@ -106,8 +108,7 @@ But it does not support *full* encapsulation, i.e., it does not require classes,
 Folks can't even agree on what OO "really" means.
 
 See: `The Quarks of Object-Oriented Development <http://ontheturingtest.blogspot.com/2013/11/the-quarks-of-objected-orientation-la.html>`_
-
-  - Deborah J. Armstrong
+(Deborah J. Armstrong)
 
 Object Oriented Design
 ----------------------

@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Working with GitHub Classroom &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python 210
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Py210: Introduction to Python: Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Working with GitHub Classroom</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/SubmittingCode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="working-with-github-classroom">
+<h1>Working with GitHub Classroom<a class="headerlink" href="#working-with-github-classroom" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-github-classroom">
+<h2>Why GitHub Classroom?<a class="headerlink" href="#why-github-classroom" title="Permalink to this headline">¶</a></h2>
+<p>A software development project is all about continuous improvement:</p>
+<ol class="arabic simple">
+<li><p>An opportunity is identified.</p></li>
+<li><p>Some initial code is written to address that opportunity.</p></li>
+<li><p>Feedback is provided for that code.</p></li>
+<li><p>The code is modified to create that feedback.</p></li>
+<li><p>A final version of the code is released.</p></li>
+</ol>
+<p>Steps 3-4 will be repeated multiple times until the development team (which could even be a single developer) deems it is ready for release.</p>
+<p>In this course, you will not only learn about Python but also about the development process that most Python projects go through. GitHub Classroom allows for the steps indicated above to be completed in an academic environment.</p>
+</div>
+<div class="section" id="initial-setup">
+<h2>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
+<p>You will need an account on GitHub to participate in this course.
+If you don’t have already have a GitHub account or if you would prefer to use create a new one for this course, make sure you setup a new account on <a class="reference external" href="https://github.com/">GitHub</a>. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates.</p>
+<p>You will need to have git setup on the computer you will use for developing your code for this course.
+You can find instructions for setting up git (and the rest of your development environment) here:
+<a href="#id1"><span class="problematic" id="id2">:ref:`installing_python`_</span></a></p>
+<p>Once you have all the tools set up, you will need to create a folder (directory) within your development system for keeping your work.
+This is the folder where all your assignment repositories will reside.
+Open Git Bash (if using Git for Windows) or a terminal (Linux and Mac OS), go to the folder (using the <cite>cd</cite> command) you have created for this class and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>This will setup your folder to house git repositories.</p>
+</div>
+<div class="section" id="accepting-an-assignment">
+<h2>Accepting an assignment<a class="headerlink" href="#accepting-an-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Each assignment page will contain a section named “Accepting your Assignment”. Click on the corresponding link, which will take you to GitHub Classroom to accept the corresponding assignment.</p>
+<div class="section" id="some-things-to-consider">
+<h3>Some things to consider:<a class="headerlink" href="#some-things-to-consider" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>You will need to accept each assignment separately.</p></li>
+<li><p>Accepting an assignment will trigger the creation of a private repository for you to work on your assignment.</p></li>
+<li><p>This repository is only assigned to you.</p></li>
+<li><p>Any work you do there will not affect the work of your classmates.</p></li>
+<li><p>The name of the new repository will include your GitHub user name at the end.</p></li>
+</ul>
+<p>Once your repository has been created, go to its link and clone it on your development system, under the folder you selected for this purpose (here (Links to an external site.) is GitHub’s official guide on how to clone a repository).</p>
+</div>
+</div>
+<div class="section" id="before-you-start-working-on-your-assignment">
+<h2>Before you start working on your assignment<a class="headerlink" href="#before-you-start-working-on-your-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Once your repository is setup, it’s good to get familiar with your repository view.
+You should see a tab there called “Pull Requests”: they indicate code changes that are desired to be pulled into a main repository;
+by default you should see one already there called “Feedback”. Go ahead and click on it, and take a look at Files Changed tab - as of now it should show “No changes to show”. As you start committing your code you will see your changes there.</p>
+</div>
+<div class="section" id="committing-your-code">
+<h2>Committing your code<a class="headerlink" href="#committing-your-code" title="Permalink to this headline">¶</a></h2>
+<p>A “commit” is snapshot of your code (and any other files included in your project).
+You are encouraged to make frequent commits, as this will make it easier for you to restore your code to an earlier state if things go wrong.</p>
+<div class="section" id="to-create-a-new-commit">
+<h3>To create a new commit:<a class="headerlink" href="#to-create-a-new-commit" title="Permalink to this headline">¶</a></h3>
+<p>Type the following to add all files and subdirectories in the folder to your commit (note the command includes a dot, make sure you  include it as well):
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.</p>
+<p>Commit your code by typing the following:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Commit</span> <span class="pre">message&quot;</span></code></p>
+<p>Note that the commit message should be replaced with something descriptive of what that commit includes (“added new functionality”, “fixed floating point error”, “ready for review”, etc.) that will later help you remember what that particular commit was about.</p>
+</div>
+</div>
+<div class="section" id="pushing-your-code">
+<h2>Pushing your code<a class="headerlink" href="#pushing-your-code" title="Permalink to this headline">¶</a></h2>
+<p>“Pushing” refers to the process of synchronizing the commits you have made on your development system with your GitHub repository.
+This is an important process, since it is needed before you can submit your code for review.
+Also, it makes a copy of your code in your GitHub account that you can later use to restore it if your local development system fails.</p>
+<p>You can push your code immediately after every commit or do it once a day (in which case, several commits will be included in a single push). To do it, simply type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<p>The first time you push your code to a repository, GitHub will ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).</p>
+</div>
+<div class="section" id="asking-coding-questions">
+<h2>Asking Coding Questions<a class="headerlink" href="#asking-coding-questions" title="Permalink to this headline">¶</a></h2>
+<p>While working on your code, you might run into a situation in which you would like one of the instructors to look at it and provide some feedback before actually reviewing and grading it.
+In order to do that, go to “Feedback” pull request and write a comment about your question or issue. You should make sure to tag your instructor in your comment, to assure that they ar noticfied of your comment. This is done by writing <cite>&#64;the_instrudtors_github_handle</cite>, e.g. <cite>&#64;natasha-aleksandrova</cite>.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@natasha</span><span class="o">-</span><span class="n">aleksandrova</span><span class="p">:</span> <span class="n">I</span> <span class="n">need</span> <span class="n">some</span> <span class="n">help</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>When you submit a comment with a tag, the instructor will be notified by GitHub and will be able to review your question.</p>
+</div>
+<div class="section" id="submitting-your-assignment">
+<h2>Submitting your assignment<a class="headerlink" href="#submitting-your-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Once your assignment is ready for review, copy the link of your Feedback pull request and submit it in the submission form. Here is an example of a submission link (yours will look a little different but will end with <cite>/pull/1</cite>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">UWPCE</span><span class="o">-</span><span class="n">Py210</span><span class="o">-</span><span class="n">SelfPaced</span><span class="o">-</span><span class="mi">2021</span><span class="o">/</span><span class="n">lesson</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="n">fizzbuzz</span><span class="o">-</span><span class="n">exercise</span><span class="o">-</span><span class="n">uw</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="n">student</span><span class="o">-</span><span class="n">natasha</span><span class="o">/</span><span class="n">pull</span><span class="o">/</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>As per UW’s requirements, you also need to submit a zip file with your code on EdX or Canvas. Note that only the code included in your pull request will be reviewed.</p>
+</div>
+<div class="section" id="resubmitting-your-assignment">
+<h2>9. Resubmitting your assignment<a class="headerlink" href="#resubmitting-your-assignment" title="Permalink to this headline">¶</a></h2>
+<p>On occasion, your instructor will provide feedback on elements in your assignment that need to be modified in order to get the full grade for the assignment. In those cases, follow the process outlined in the Asking Coding Questions section above. Let us know that you would like another review for grade adjustment and make sure to tag your instructor.</p>
+<p>Happy coding!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

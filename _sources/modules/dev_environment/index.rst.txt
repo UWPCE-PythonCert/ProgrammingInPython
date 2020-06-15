@@ -91,7 +91,7 @@ In order to be productive in this program, you need to be able to do the followi
 
 * Install new packages with pip
 
-* Use the git source code management system (with gitHub)
+* Use the git source code management system (with GitHub)
 
 If you are not set up and comfortable with doing all that, read and follow these instructions:
 
@@ -346,7 +346,7 @@ git
 
 git (https://en.wikipedia.org/wiki/Git) is an open-source version control system that has become an industry standard -- very widely used in both commercial and open-source development.
 
-We will be using git and the web service gitHub for collaboration in this program.
+We will be using git and the web service GitHub for collaboration in this program.
 
 Make sure you are set up to use git on your machine. If you have using a command line client, you should be able to type::
 
@@ -354,7 +354,7 @@ Make sure you are set up to use git on your machine. If you have using a command
 
 and get something like this as a response::
 
-  git version 2.11.0 (Apple Git-81)
+  git version 2.17.2 (Apple Git-81)
 
 Am I ready to go?
 =================

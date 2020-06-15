@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce" href="lesson10.html" />
-    <link rel="prev" title="Session 8: Properties and Magic methods" href="lesson08.html" /> 
+    <link rel="next" title="Multiple Inheritance" href="../modules/MultipleInheritance.html" />
+    <link rel="prev" title="Sparse Array Exercise" href="../exercises/sparse_array.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,32 +83,35 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 210 Class Schedule</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#orientation">Orientation</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="orientation.html">Orientation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson01.html">Lesson 1: Intro to the class and Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson02.html">Session 2: Basic Python and Functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Session 9: Static and class methods: multiple inheritance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pre-class-prep">Pre-class prep</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#in-class-activities">In-class Activities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#post-class-activities">Post-class Activities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1: Setting up Your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session 9: Static and class methods: multiple inheritance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#readings">Readings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supplemental-readings">Supplemental Readings</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/mailroom-oo.html">Mailroom - Object Oriented</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Py210: Introduction to Python: Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
 </ul>
 
             
@@ -177,17 +180,15 @@
             
   <div class="section" id="session-9-static-and-class-methods-multiple-inheritance">
 <span id="session-1-09"></span><h1>Session 9: Static and class methods: multiple inheritance<a class="headerlink" href="#session-9-static-and-class-methods-multiple-inheritance" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="pre-class-prep">
-<h2>Pre-class prep<a class="headerlink" href="#pre-class-prep" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="reading">
-<h3>Reading:<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference internal" href="../modules/StaticAndClassMethods.html#static-and-class-methods"><span class="std std-ref">Static and Class Methods</span></a></p></li>
-<li><p><a class="reference internal" href="../modules/MultipleInheritance.html#multiple-inheritance"><span class="std std-ref">Multiple Inheritance</span></a></p></li>
+<div class="section" id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
 </ul>
 </div>
-<div class="section" id="supplemental-reading">
-<h3>Supplemental Reading:<a class="headerlink" href="#supplemental-reading" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="supplemental-readings">
+<h3>Supplemental Readings<a class="headerlink" href="#supplemental-readings" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="multiple-inheritance-and-the-diamond-problem">
 <h4>Multiple Inheritance and the Diamond Problem<a class="headerlink" href="#multiple-inheritance-and-the-diamond-problem" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Multiple_inheritance">https://en.wikipedia.org/wiki/Multiple_inheritance</a></p>
@@ -201,21 +202,13 @@
 </div>
 </div>
 </div>
-<div class="section" id="in-class-activities">
-<h2>In-class Activities<a class="headerlink" href="#in-class-activities" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
-<p>Finish up the Circle Exercise</p>
-<p><a class="reference internal" href="../exercises/circle_class.html#exercise-circle-class"><span class="std std-ref">Circle Class Exercise</span></a></p>
-<p>Make an Object Oriented mailroom!</p>
-<p><a class="reference internal" href="../exercises/mailroom-oo.html#exercise-mailroom-oo"><span class="std std-ref">Mailroom - Object Oriented</span></a></p>
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-oo.html">Mailroom - Object Oriented</a></li>
+</ul>
 </div>
-</div>
-<div class="section" id="post-class-activities">
-<h2>Post-class Activities<a class="headerlink" href="#post-class-activities" title="Permalink to this headline">¶</a></h2>
-<p>Finish the exercises</p>
-<p>Look at the next session for reading, etc:</p>
-<p><a class="reference internal" href="lesson10.html#session-1-10"><span class="std std-ref">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</span></a></p>
 </div>
 </div>
 
@@ -227,10 +220,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lesson10.html" class="btn btn-neutral float-right" title="Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/MultipleInheritance.html" class="btn btn-neutral float-right" title="Multiple Inheritance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lesson08.html" class="btn btn-neutral float-left" title="Session 8: Properties and Magic methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/sparse_array.html" class="btn btn-neutral float-left" title="Sparse Array Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

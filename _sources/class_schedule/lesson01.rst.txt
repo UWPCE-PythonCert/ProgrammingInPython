@@ -30,8 +30,7 @@ After completing this lesson, students will be able to:
 Suggested Workflow
 ==================
 
-* Submit Lesson 1 Exercise:
-  * Install Python and Core Tools (graded)
+* Submit Exercise: :ref:`Install Python and Core Tools (graded) <installing_python>`
 
 * Do the Readings for this week
 
@@ -44,8 +43,8 @@ At the End of the Lesson
 
 What material in this lesson do you still feel unclear about? Please use ??? to describe any concepts or ideas you've struggled with this week. Your instructor will address concepts that seem problematic for several students. You may also want to address issues raised by other students or ask for their help.
 
-Pre-class prep
-==============
+Pre-class Preparation
+---------------------
 
 Get your Environment set up!
 
@@ -60,10 +59,10 @@ If you were able to attend the pre-class orientation, you should be all set. if 
 Make sure you have the basics of command line usage down:
 
 Work through the supplemental tutorials on setting up your
-Command Line (::ref:`shell_customization`) for good development support.
+Command Line (:ref:`shell_customization`) for good development support.
 
-Make sure you've got your editor set up productively -- at the very very
-least, make sure it does Python indentation and syntax coloring well.
+Make sure you've got your editor set up productively --
+at the very very least, make sure it does Python indentation and syntax coloring well.
 
 :ref:`setting_up_dev_environment`
 
@@ -80,10 +79,10 @@ Readings:
     ../modules/BasicPython
     ../modules/Py2vsPy3
     ../modules/Git
+    ../modules/SubmittingCodeGithubClassroom
     ../modules/GitWorkflow
-    ../modules/Submitting_to_github
     ../modules/HowToRunAPythonFile
-    ../modules/learning
+    ../modules/Learning
 
 
 Exercises:
@@ -91,7 +90,8 @@ Exercises:
 
 .. toctree::
     :maxdepth: 1
-    ../exercises/ python_pushups.rst
+
+    ../exercises/python_pushups.rst
 
 Finish Setting up your dev environment
 --------------------------------------

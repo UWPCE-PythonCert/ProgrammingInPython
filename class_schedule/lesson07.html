@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Session 8: Properties and Magic methods" href="lesson08.html" />
-    <link rel="prev" title="Session 6: Testing and Advanced Argument Passing" href="lesson06.html" /> 
+    <link rel="next" title="Object Orientation Overview" href="../modules/ObjectOrientationOverview.html" />
+    <link rel="prev" title="Mailroom Part 4" href="../exercises/mailroom-part4.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,32 +83,40 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 210 Class Schedule</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#orientation">Orientation</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="orientation.html">Orientation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson01.html">Lesson 1: Intro to the class and Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson02.html">Session 2: Basic Python and Functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Session 7: Object Oriented Programing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pre-class-prep">Pre-class prep</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#in-class-activities">In-class Activities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#post-class-activities">Post-class Activities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1: Setting up Your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session 7: Object Oriented Programing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#readings">Readings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/PythonClasses.html">Python Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supplemental-reading">Supplemental reading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#some-videos-to-watch">Some Videos to watch:</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
 </ul>
 </li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Py210: Introduction to Python: Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
 </ul>
 
             
@@ -178,26 +186,31 @@
   <div class="section" id="session-7-object-oriented-programing">
 <span id="session-1-07"></span><h1>Session 7: Object Oriented Programing<a class="headerlink" href="#session-7-object-oriented-programing" title="Permalink to this headline">¶</a></h1>
 <p>Object Oriented Programing: classes, instance and class attributes, subclassing and inheritance.</p>
-<div class="section" id="pre-class-prep">
-<h2>Pre-class prep<a class="headerlink" href="#pre-class-prep" title="Permalink to this headline">¶</a></h2>
-<p><strong>Read:</strong></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../modules/ObjectOrientationOverview.html#object-orientation-overview"><span class="std std-ref">Object Orientation Overview</span></a></p></li>
-<li><p><a class="reference internal" href="../modules/PythonClasses.html#python-classes"><span class="std std-ref">Python Classes</span></a></p></li>
-<li><p><a class="reference internal" href="../modules/SubclassingAndInheritance.html#subclassing-inheritance"><span class="std std-ref">Subclassing and Inheritance</span></a></p></li>
+<div class="section" id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/PythonClasses.html">Python Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
 </ul>
+</div>
 <div class="section" id="supplemental-reading">
 <h3>Supplemental reading<a class="headerlink" href="#supplemental-reading" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Dive into Python3: 7.2 – 7.3</dt><dd><p><a class="reference external" href="http://www.diveintopython3.net/iterators.html#defining-classes">http://www.diveintopython3.net/iterators.html#defining-classes</a></p>
-</dd>
-</dl>
+<ul>
+<li><p>Dive into Python3: 7.2 – 7.3</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.diveintopython3.net/iterators.html#defining-classes">http://www.diveintopython3.net/iterators.html#defining-classes</a></p></li>
+</ul>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt>Think Python: 15 – 18</dt><dd><p><a class="reference external" href="http://www.greenteapress.com/thinkpython/html/thinkpython016.html">http://www.greenteapress.com/thinkpython/html/thinkpython016.html</a></p>
-</dd>
-</dl>
+<li><p>Think Python: 15 – 18</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.greenteapress.com/thinkpython/html/thinkpython016.html">http://www.greenteapress.com/thinkpython/html/thinkpython016.html</a></p></li>
+</ul>
+</div></blockquote>
 </li>
 </ul>
 </div>
@@ -224,21 +237,15 @@
 </div>
 </div>
 </div>
-<div class="section" id="in-class-activities">
-<h2>In-class Activities<a class="headerlink" href="#in-class-activities" title="Permalink to this headline">¶</a></h2>
-<p>review mailman with testing</p>
 <div class="section" id="exercises">
-<h3>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
-<p>OO and classes are a big confusing topic when you are new to it.</p>
-<p>So we’re going to learn hands-on by doing this exercise:</p>
-<p><a class="reference internal" href="../exercises/html_renderer.html#exercise-html-renderer"><span class="std std-ref">HTML Renderer Exercise</span></a></p>
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
+</ul>
 </div>
-</div>
-<div class="section" id="post-class-activities">
-<h2>Post-class Activities<a class="headerlink" href="#post-class-activities" title="Permalink to this headline">¶</a></h2>
-<p>Finish the HTML render Exercise through step 3.</p>
-<p>Look at the next session for reading, etc:</p>
-<p><a class="reference internal" href="lesson08.html#session-1-08"><span class="std std-ref">Session 8: Properties and Magic methods</span></a></p>
 </div>
 </div>
 
@@ -250,10 +257,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lesson08.html" class="btn btn-neutral float-right" title="Session 8: Properties and Magic methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/ObjectOrientationOverview.html" class="btn btn-neutral float-right" title="Object Orientation Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lesson06.html" class="btn btn-neutral float-left" title="Session 6: Testing and Advanced Argument Passing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/mailroom-part4.html" class="btn btn-neutral float-left" title="Mailroom Part 4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -54,7 +54,8 @@ Read: :ref:`more_on_functions`
 
 Read: :ref:`documentation`
 
-Supplimental Reading
+
+Supplemental Reading
 --------------------
 
 If that is too fast, then here are some good options for another look:
@@ -69,9 +70,7 @@ If that is too fast, then here are some good options for another look:
 
 **GOAL**
 
-You should be comfortable with working with variables, numbers, strings,
-and basic functions before we start class next week.
-
+You should be comfortable with working with variables, numbers, strings, and basic functions before the next class.
 
 git
 ---

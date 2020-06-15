@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installing Python and core tools" href="../modules/dev_environment/index.html" />
-    <link rel="prev" title="Session 9: Static and class methods: multiple inheritance" href="lesson09.html" /> 
+    <link rel="next" title="Object Oriented vs Functional Programming" href="../modules/OO_vs_functional.html" />
+    <link rel="prev" title="Mailroom - Object Oriented" href="../exercises/mailroom-oo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,22 +83,25 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 210 Class Schedule</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#orientation">Orientation</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="orientation.html">Orientation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson01.html">Lesson 1: Intro to the class and Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson02.html">Session 2: Basic Python and Functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pre-class-prep">Pre-class prep</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#in-class-activities">In-class Activities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1: Setting up Your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson04.html">Session 4: Dictionaries, Sets, and File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reading">Reading:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -106,8 +109,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Topic Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Py210: Introduction to Python: Topic Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
 </ul>
 
             
@@ -177,27 +180,21 @@
   <div class="section" id="session-10-intro-to-functional-programming-lambda-and-map-filter-reduce">
 <span id="session-1-10"></span><h1>Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce<a class="headerlink" href="#session-10-intro-to-functional-programming-lambda-and-map-filter-reduce" title="Permalink to this headline">¶</a></h1>
 <p>Functional Programming</p>
-<p>Topics:</p>
-<ul class="simple">
-<li><p>Object Objected Programming vs Functional Programming</p></li>
-<li><p>Functions as First Class Objects</p></li>
-<li><p>Map/Filter/Reduce</p></li>
-</ul>
-<div class="section" id="pre-class-prep">
-<h2>Pre-class prep<a class="headerlink" href="#pre-class-prep" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="reading">
-<h3>Reading<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="../modules/OO_vs_functional.html#oo-vs-functional"><span class="std std-ref">Object Oriented vs Functional Programming</span></a></p>
-<p><a class="reference internal" href="../modules/Lambda.html#anonymous-functions"><span class="std std-ref">Anonymous Functions: Lambda</span></a></p>
-<p><a class="reference internal" href="../modules/MapFilterReduce.html#map-filter-reduce"><span class="std std-ref">Map Filter and Reduce</span></a></p>
+<h2>Reading:<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+</ul>
 </div>
 </div>
-<div class="section" id="in-class-activities">
-<h2>In-class Activities<a class="headerlink" href="#in-class-activities" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="../exercises/mailroom-fp.html#exercise-mailroom-fp"><span class="std std-ref">Mailroom - Functional</span></a></p>
-</div>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>It’s now time to catch up on everything you haven’t quite finished.
+In particular, you should finish an object oriented mailroom that is fully complete and unit tested.</p>
 </div>
 </div>
 
@@ -209,10 +206,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../modules/dev_environment/index.html" class="btn btn-neutral float-right" title="Installing Python and core tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/OO_vs_functional.html" class="btn btn-neutral float-right" title="Object Oriented vs Functional Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lesson09.html" class="btn btn-neutral float-left" title="Session 9: Static and class methods: multiple inheritance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/mailroom-oo.html" class="btn btn-neutral float-left" title="Mailroom - Object Oriented" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
