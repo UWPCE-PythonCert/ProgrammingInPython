@@ -6,26 +6,27 @@ Session 7: Object Oriented Programing
 
 Object Oriented Programing: classes, instance and class attributes, subclassing and inheritance.
 
-Pre-class prep
-==============
 
-**Read:**
+Readings
+========
 
-* :ref:`object_orientation_overview`
+.. toctree::
+    :maxdepth: 1
 
-* :ref:`python_classes`
-
-* :ref:`subclassing_inheritance`
-
+    ../modules/ObjectOrientationOverview
+    ../modules/PythonClasses
+    ../modules/SubclassingAndInheritance
 
 Supplemental reading
 --------------------
 
 * Dive into Python3: 7.2 -- 7.3
-   http://www.diveintopython3.net/iterators.html#defining-classes
+
+   - http://www.diveintopython3.net/iterators.html#defining-classes
 
 * Think Python: 15 -- 18
-   http://www.greenteapress.com/thinkpython/html/thinkpython016.html
+
+   - http://www.greenteapress.com/thinkpython/html/thinkpython016.html
 
 Some Videos to watch:
 ---------------------
@@ -49,9 +50,7 @@ The most salient points from that video are as follows:
 
 * **Bear in mind that the subclass is in charge**
 
-
 Note that the previous talk and this one were back to back at PyCon -- but despite their contradictory titles -- they have similar messages.
-
 
 Stop Writing Classes
 ....................
@@ -64,27 +63,12 @@ http://pyvideo.org/video/880/stop-writing-classes
 -- you don't need a class"
 
 
-In-class Activities
-===================
-
-review mailman with testing
-
 Exercises:
-----------
+==========
 
-OO and classes are a big confusing topic when you are new to it.
+.. toctree::
+    :maxdepth: 1
 
-So we're going to learn hands-on by doing this exercise:
-
-:ref:`exercise_html_renderer`
-
-
-Post-class Activities
-=====================
-
-Finish the HTML render Exercise through step 3.
-
-Look at the next session for reading, etc:
-
-:ref:`session_1_08`
-
+    ../exercises/oo_intro.rst
+    ../exercises/html_renderer.rst
+    ../exercises/html_renderer_tutorial.rst

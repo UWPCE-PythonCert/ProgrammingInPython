@@ -2,9 +2,12 @@
 
 .. _submitting_to_gitHub:
 
-##############################
-Submitting your work to gitHub
-##############################
+
+**NOTE:** This is the "old" way -- it has been replaced with gitHUb classroom. But there may be some helpful hints here that should be included in the new docs.
+
+####################################
+Submitting your work to gitHub (old)
+####################################
 
 In this program, we are using the gitHub source code management system to manage each student's code, as well as examples and solutions.
 

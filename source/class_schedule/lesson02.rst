@@ -1,22 +1,33 @@
-.. _session_1_02:
+.. _lesson_02:
 
-#####################################
-Session 2: Basic Python and Functions
-#####################################
+####################################
+Lesson 2: Basic Python and Functions
+####################################
 
-**Basic Python and Functions**
 
-Pre-class prep
-==============
+Readings:
+=========
 
-Dev environment
----------------
 
-Make sure you know how to create a python file, save it, edit it, run it, etc.
+.. toctree::
+    :maxdepth: 1
 
-Also make sure you are comfortable "playing" with python in the iPython command line.
+    ../modules/BasicPython
+    ../modules/Functions
+    ../modules/Recursion
 
-If you are uncomfortable with the command line, brush up on that: `This: <https://learnpythonthehardway.org/python3/appendixa.html>`_ is a good tutorial.
+Read: :ref:`documentation`
+
+Exercises:
+==========
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/grid_printer.rst
+    ../exercises/fizz_buzz.rst
+    ../exercises/fib_and_lucas.rst
+
 
 Python
 ------
@@ -43,7 +54,8 @@ Read: :ref:`more_on_functions`
 
 Read: :ref:`documentation`
 
-Supplimental Reading
+
+Supplemental Reading
 --------------------
 
 If that is too fast, then here are some good options for another look:
@@ -58,9 +70,7 @@ If that is too fast, then here are some good options for another look:
 
 **GOAL**
 
-You should be comfortable with working with variables, numbers, strings,
-and basic functions before we start class next week.
-
+You should be comfortable with working with variables, numbers, strings, and basic functions before the next class.
 
 git
 ---
@@ -73,31 +83,3 @@ http://rogerdudler.github.io/git-guide/
 or
 
 https://try.github.io/
-
-
-In-class Activities
-===================
-
-
-Review :ref:`python_pushups`
-
-Exercises:
-----------
-
-:ref:`exercise_grid_printer`
-
-:ref:`exercise_fizz_buzz`
-
-:ref:`exercise_fibonacci`
-
-
-Post-class Activities
-=====================
-
-
-Finish the Exercises
-
-Look at the next session for reading, etc:
-
-:ref:`session_1_03`
-

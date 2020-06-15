@@ -23,8 +23,9 @@ Lesson 1: Introductions and Setting up your Environment
     Git
     GitWorkflow
     Submitting_to_github
+    SubmittingCodeGithubClassroom
     HowToRunAPythonFile
-    learning
+    Learning
 
 Lesson 2: Basic Python and Functions
 ------------------------------------

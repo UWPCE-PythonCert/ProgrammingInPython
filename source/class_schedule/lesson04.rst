@@ -6,19 +6,18 @@ Session 4: Dictionaries, Sets, and File Handling
 
 Dictionaries, Sets, and File Handling
 
-Pre-class prep
-==============
+Readings
+========
 
-Read:
------
+.. toctree::
+    :maxdepth: 1
 
-:ref:`dicts_and_sets`
+    ../modules/DictsAndSets
+    ../modules/Files
+    ../modules/DictionaryAsSwitch
 
-:ref:`files`
-
-
-Recommended Reading:
----------------------
+Recommended Additional Reading
+------------------------------
 
 * Think Python: Chapters 11, 13, 14
 
@@ -27,38 +26,14 @@ Recommended Reading:
 http://www.diveintopython3.net/native-datatypes.html#dictionaries
 
 
-In-class Activities
-===================
-
- * Review last sessions labs:
-   - slicing
-   - string formatting
-
- * Review  looping: ``for`` and ``while``
-
-    - ``break`` and ``continue``
-
-    - ``else``
-
- * Review mailroom
 
 Exercises:
-----------
+==========
 
- * :ref:`exercise_dict_lab`
+.. toctree::
+    :maxdepth: 1
 
- * :ref:`exercise_file_lab`
-
- * Update mailroom with dicts and files:  :ref:`exercise_mailroom_part2_dict_files`
-
- * :ref:`exercise_trigrams`
-
-
-Post-class Activities
-=====================
-
-Finish the exercises
-
-Look at the next session for reading, etc:
-
-:ref:`session_1_05`
+    ../exercises/dict_lab.rst
+    ../exercises/file_lab.rst
+    ../exercises/mailroom-part2.rst
+    ../exercises/kata_fourteen.rst

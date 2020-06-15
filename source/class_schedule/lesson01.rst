@@ -30,8 +30,7 @@ After completing this lesson, students will be able to:
 Suggested Workflow
 ==================
 
-* Submit Lesson 1 Exercise:
-  * Install Python and Core Tools (graded)
+* Submit Exercise: :ref:`Install Python and Core Tools (graded) <installing_python>`
 
 * Do the Readings for this week
 
@@ -44,8 +43,8 @@ At the End of the Lesson
 
 What material in this lesson do you still feel unclear about? Please use ??? to describe any concepts or ideas you've struggled with this week. Your instructor will address concepts that seem problematic for several students. You may also want to address issues raised by other students or ask for their help.
 
-Pre-class prep
-==============
+Pre-class Preparation
+---------------------
 
 Get your Environment set up!
 
@@ -60,41 +59,47 @@ If you were able to attend the pre-class orientation, you should be all set. if 
 Make sure you have the basics of command line usage down:
 
 Work through the supplemental tutorials on setting up your
-Command Line (::ref:`shell_customization`) for good development support.
+Command Line (:ref:`shell_customization`) for good development support.
 
-Make sure you've got your editor set up productively -- at the very very
-least, make sure it does Python indentation and syntax coloring well.
+Make sure you've got your editor set up productively --
+at the very very least, make sure it does Python indentation and syntax coloring well.
 
 :ref:`setting_up_dev_environment`
 
 
-In-class Activities
-===================
+Readings:
+=========
 
 .. toctree::
     :maxdepth: 1
 
     ../modules/Class_introduction
-
-    ../modules/Git
-
+    ../modules/EnvironmentOverview
+    ../modules/IPythonIntroduction
     ../modules/BasicPython
-
     ../modules/Py2vsPy3
+    ../modules/Git
+    ../modules/SubmittingCodeGithubClassroom
+    ../modules/GitWorkflow
+    ../modules/HowToRunAPythonFile
+    ../modules/Learning
 
 
-A few exercises: :ref:`python_pushups`
+Exercises:
+==========
 
+.. toctree::
+    :maxdepth: 1
 
-Post-class Activities
-=====================
+    ../exercises/python_pushups.rst
 
-Read the rest of Basic Python Syntax intro, if we didn't have time in class:
-:ref:`basic_python_syntax`
+Finish Setting up your dev environment
+--------------------------------------
 
-Finish the Python Pushups exercises: :ref:`python_pushups`
+Make sure you know how to create a python file, save it, edit it, run it, etc.
 
-Finish getting your environment set up.
+Also make sure you are comfortable "playing" with python in the iPython command line.
 
-Do the prep for next class: :ref:`session_1_02`
+If you are uncomfortable with the command line, brush up on that:
+`This: <https://learnpythonthehardway.org/python3/appendixa.html>`_ is a good tutorial.
 
