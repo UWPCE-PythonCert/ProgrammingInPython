@@ -1,10 +1,9 @@
 .. _session_1_04:
 
-################################################
-Session 4: Dictionaries, Sets, and File Handling
-################################################
+##############################################
+Session 4: Unit Testing, Dictionaries and Sets
+##############################################
 
-Dictionaries, Sets, and File Handling
 
 Readings
 ========
@@ -12,8 +11,9 @@ Readings
 .. toctree::
     :maxdepth: 1
 
+    ../modules/Testing
+    ../modules/TestDrivenDevelopment
     ../modules/DictsAndSets
-    ../modules/Files
     ../modules/DictionaryAsSwitch
 
 Recommended Additional Reading
@@ -33,7 +33,7 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
+    ../exercises/unit_testing.rst
     ../exercises/dict_lab.rst
-    ../exercises/file_lab.rst
     ../exercises/mailroom-part2.rst
     ../exercises/kata_fourteen.rst

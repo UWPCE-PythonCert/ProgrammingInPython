@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Session 4: Dictionaries, Sets, and File Handling &mdash; Python 210 6.0 documentation</title>
+  <title>Session 4: Unit Testing, Dictionaries and Sets &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dictionaries and Sets" href="../modules/DictsAndSets.html" />
+    <link rel="next" title="Unit Testing" href="../modules/Testing.html" />
     <link rel="prev" title="ROT13" href="../exercises/rot13.html" /> 
 </head>
 
@@ -87,25 +87,26 @@
 <li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1: Setting up Your Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2: Basic Python and Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Session 4: Dictionaries, Sets, and File Handling</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session 4: Unit Testing, Dictionaries and Sets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#readings">Readings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/Testing.html">Unit Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../modules/Files.html">File Reading and Writing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#recommended-additional-reading">Recommended Additional Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exercises/unit_testing.html">Introduction To Unit Testing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../exercises/mailroom-part2.html">Mailroom Part 2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../exercises/kata_fourteen.html">Trigrams – Simple Text Manipulation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Session 5: Exceptions and Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lesson06.html">Session 6: Testing and Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Lession 5: File Handling, Exceptions and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson06.html">Session 6: Advanced Argument Passing and Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson07.html">Session 7: Object Oriented Programing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson08.html">Session 8: Properties and Magic methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
@@ -164,7 +165,7 @@
         
           <li><a href="index.html">Python 210 Class Schedule</a> &raquo;</li>
         
-      <li>Session 4: Dictionaries, Sets, and File Handling</li>
+      <li>Session 4: Unit Testing, Dictionaries and Sets</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -183,15 +184,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="session-4-dictionaries-sets-and-file-handling">
-<span id="session-1-04"></span><h1>Session 4: Dictionaries, Sets, and File Handling<a class="headerlink" href="#session-4-dictionaries-sets-and-file-handling" title="Permalink to this headline">¶</a></h1>
-<p>Dictionaries, Sets, and File Handling</p>
+  <div class="section" id="session-4-unit-testing-dictionaries-and-sets">
+<span id="session-1-04"></span><h1>Session 4: Unit Testing, Dictionaries and Sets<a class="headerlink" href="#session-4-unit-testing-dictionaries-and-sets" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="readings">
 <h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Testing.html">Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Files.html">File Reading and Writing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
 </ul>
 </div>
@@ -208,8 +209,8 @@
 <h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing.html">Introduction To Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-part2.html">Mailroom Part 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exercises/kata_fourteen.html">Trigrams – Simple Text Manipulation</a></li>
 </ul>
@@ -225,7 +226,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../modules/DictsAndSets.html" class="btn btn-neutral float-right" title="Dictionaries and Sets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/Testing.html" class="btn btn-neutral float-right" title="Unit Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../exercises/rot13.html" class="btn btn-neutral float-left" title="ROT13" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
