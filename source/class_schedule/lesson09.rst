@@ -5,17 +5,15 @@ Session 9: Static and class methods: multiple inheritance
 #########################################################
 
 
-Pre-class prep
-==============
+Readings
+========
 
-Reading:
---------
+.. toctree::
+    :maxdepth: 1
 
-* :ref:`static_and_class_methods`
+    ../modules/MultipleInheritance
 
-* :ref:`multiple_inheritance`
-
-Supplemental Reading:
+Supplemental Readings
 ---------------------
 
 Multiple Inheritance and the Diamond Problem
@@ -35,29 +33,10 @@ https://www.python.org/download/releases/2.3/mro/
 http://python-history.blogspot.com/2010/06/method-resolution-order.html
 
 
+Exercises:
+==========
 
-In-class Activities
-===================
+.. toctree::
+    :maxdepth: 1
 
-Exercises
----------
-
-Finish up the Circle Exercise
-
-:ref:`exercise_circle_class`
-
-Make an Object Oriented mailroom!
-
-:ref:`exercise_mailroom_oo`
-
-Post-class Activities
-=====================
-
-Finish the exercises
-
-Look at the next session for reading, etc:
-
-:ref:`session_1_10`
-
-
-
+    ../exercises/mailroom-oo.rst

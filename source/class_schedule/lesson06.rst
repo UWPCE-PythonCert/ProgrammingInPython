@@ -1,10 +1,10 @@
 .. _session_1_06:
 
 ################################################
-Session 6: Testing and Advanced Argument Passing
+Session 6: Advanced Argument Passing and Modules
 ################################################
 
-Unit Testing and Advanced Argument Passing
+Advanced Argument Passing
 
 Readings
 ========
@@ -12,10 +12,9 @@ Readings
 .. toctree::
     :maxdepth: 1
 
-
-    ../modules/Testing
     ../modules/AdvancedArgumentPassing
     ../modules/MoreOnMutability
+    ../modules/Modules
 
 Supplemental Reading
 --------------------
@@ -31,7 +30,6 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    ../exercises/unit_testing.rst
     ../exercises/args_kwargs_lab.rst
     ../exercises/mailroom-part4.rst
 

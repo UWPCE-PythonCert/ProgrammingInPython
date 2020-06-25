@@ -1,10 +1,8 @@
 .. _session_1_05:
 
-########################################
-Session 5: Exceptions and Comprehensions
-########################################
-
-Exceptions and Comprehensions
+#######################################################
+Lession 5: File Handling, Exceptions and Comprehensions
+#######################################################
 
 
 Readings
@@ -13,8 +11,8 @@ Readings
 .. toctree::
     :maxdepth: 1
 
+    ../modules/Files
     ../modules/NamingThings
-    ../modules/Modules
     ../modules/Documentation
     ../modules/Exceptions
     ../modules/Comprehensions
@@ -26,6 +24,7 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
+    ../exercises/file_lab.rst
     ../exercises/exceptions_lab.rst
     ../exercises/except_exercise.rst
     ../exercises/comprehensions_lab.rst

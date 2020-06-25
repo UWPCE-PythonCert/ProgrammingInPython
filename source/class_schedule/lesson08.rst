@@ -6,17 +6,18 @@ Session 8: Properties and Magic methods
 
 More OO: Properties and Magic methods.
 
-Pre-class prep
-==============
-
 Readings
---------
+========
 
-**Read:**
+.. toctree::
+    :maxdepth: 1
 
-* :ref:`properties`
+    ../modules/Properties
+    ../modules/StaticAndClassMethods
+    ../modules/SpecialMethodsAndProtocols
 
-* :ref:`special_methods`
+Supplemental Readings
+---------------------
 
 About Python's "magic methods":
 
@@ -30,30 +31,21 @@ A Good Book (dead trees version only):
 
   (Dusty is a local boy and co-founder of PuPPy)
 
-And:
 
+Exercises:
+==========
 
+.. toctree::
+    :maxdepth: 1
 
-In-class Activities
-===================
+    ../exercises/circle_class.rst
 
-Exercises
----------
-
-Finish (or make more progress on...) html_render.
-
-:ref:`exercise_circle_class`
-
-Optional: :ref:`exercise_sparse_array`
+Optional Exercise:
+------------------
 
 This one is challenging -- if you have got html_render and circle class done, then by all means -- it's a great exercise.  but if you are still struggling with html_render -- get that done first.
 
+.. toctree::
+    :maxdepth: 1
 
-Post-class Activities
-=====================
-
-Finish the exercises
-
-Look at the next session for reading, etc:
-
-:ref:`session_1_09`
+    ../exercises/sparse_array.rst

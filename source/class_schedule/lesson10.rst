@@ -6,33 +6,22 @@ Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce
 
 Functional Programming
 
-Topics:
+Reading:
+========
 
-* Object Objected Programming vs Functional Programming
-* Functions as First Class Objects
-* Map/Filter/Reduce
+.. toctree::
+    :maxdepth: 1
 
+    ../modules/OO_vs_functional
+    ../modules/Lambda
+    ../modules/MapFilterReduce
+    ../modules/IPythonParallel
 
-Pre-class prep
-==============
-
-
-Reading
--------
-
-:ref:`oo_vs_functional`
-
-:ref:`anonymous_functions`
-
-:ref:`map_filter_reduce`
-
-
-In-class Activities
-===================
 
 Exercises
----------
+=========
 
-.. :ref:`exercise_trapezoidal_rule`
+It's now time to catch up on everything you haven't quite finished.
+In particular, you should finish an object oriented mailroom that is fully complete and unit tested.
 
-:ref:`exercise_mailroom_fp`
+
