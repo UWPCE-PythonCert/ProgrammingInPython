@@ -1,5 +1,5 @@
 
-.. _unit_testing:
+.. _test_driven_development:
 
 #######################
 Test Driven Development
@@ -12,21 +12,20 @@ Test Driven Development
 
 "Test Driven Development" (TDD) is a development strategy that integrates the development of unit tests with the code itself. In particular, you write the tests *before* you write the code, which seems pretty backward, but it has some real strengths.
 
-We'll demostrate this technique with an example.
-
-Unit testing - Dive Into Python 3
+We'll demonstrate this technique with an example.
  
-The Following is adapted from Mark PIlgram's excelent "Dive into Python"
+The Following is adapted from Mark Pilgrim's excellent "Dive into Python":
 
 https://diveintopython3.problemsolving.io/
 
-The primary difference is that this version uses the simpler pytest testing framework, rather than `unittest`.
+The primary difference is that this version uses the simpler pytest testing framework, rather than `unittest`, which is discussed in:
+:ref:`unit_testing`
 
 Unit Testing
 ============
 
-   | ❝ Certitude is not the test of certainty. We have been cocksure of
-     many things that were not so. ❞
+   | "Certitude is not the test of certainty. We have been cocksure of
+     many things that were not so."
    | — `Oliver Wendell Holmes,
      Jr. <http://en.wikiquote.org/wiki/Oliver_Wendell_Holmes,_Jr.>`__
 
@@ -36,19 +35,45 @@ Unit Testing
 
 Kids today. So spoiled by these fast computers and fancy “dynamic”
 languages. Write first, ship second, debug third (if ever). In my day,
-we had discipline. Discipline, I say! We had to write programs by
+we had discipline. **Discipline, I say!** We had to write programs by
 *hand*, on *paper*, and feed them to the computer on *punchcards*. And
 we *liked it!*
 
-In this chapter, you’re going to write and debug a set of utility
-functions to convert to and from Roman numerals. You saw the mechanics
-of constructing and validating Roman numerals in `“Case study: roman
-numerals” <regular-expressions.html#romannumerals>`__. Now step back and
-consider what it would take to expand that into a two-way utility.
+In this module, you’re going to write and debug a set of utility
+functions to convert to and from Roman numerals.
 
-`The rules for Roman
-numerals <regular-expressions.html#romannumerals>`__ lead to a number of
-interesting observations:
+You’ve most likely seen Roman numerals, even if you didn’t recognize them. You may have seen them in copyrights of old movies and television shows (“Copyright MCMXLVI” instead of “Copyright 1946”), or on the dedication walls of libraries or universities (“established MDCCCLXXXVIII” instead of “established 1888”). You may also have seen them in outlines and bibliographical references. It’s a system of representing numbers that really does date back to the ancient Roman empire (hence the name).
+
+
+The Rules for Roman Numerals
+----------------------------
+
+In Roman numerals, there are seven characters that are repeated and combined in various ways to represent numbers.
+
+|    I = 1
+|    V = 5
+|    X = 10
+|    L = 50
+|    C = 100
+|    D = 500
+|    M = 1000
+
+The following are some general rules for constructing Roman numerals:
+
+* Sometimes characters are additive. I is 1, II is 2, and III is 3. VI is 6 (literally, “5 and 1”), VII is 7, and VIII is 8.
+
+
+* The tens characters (I, X, C, and M) can be repeated up to three times. At 4, you need to subtract from the next highest fives character. You can't represent 4 as IIII; instead, it is represented as IV (“1 less than 5”). 40 is written as XL (“10 less than 50”), 41 as XLI, 42 as XLII, 43 as XLIII, and then 44 as XLIV (“10 less than 50, then 1 less than 5”).
+
+
+* Sometimes characters are ... the opposite of additive. By putting certain characters before others, you subtract from the final value. For example, at 9, you need to subtract from the next highest tens character: 8 is VIII, but 9 is IX (“1 less than 10”), not VIIII (since the I character can not be repeated four times). 90 is XC, 900 is CM.
+
+* The fives characters can not be repeated. 10 is always represented as X, never as VV. 100 is always C, never LL.
+
+* Roman numerals are read left to right, so the order of characters matters very much. DC is 600; CD is a completely different number (400, “100 less than 500”). CI is 101; IC is not even a valid Roman numeral (because you can't subtract 1 directly from 100; you would need to write it as XCIX, “10 less than 100, then 1 less than 10”).
+
+
+The rules for Roman numerals lead to a number of interesting observations:
 
 #. There is only one correct way to represent a particular number as a
    Roman numeral.
@@ -59,7 +84,7 @@ interesting observations:
    numerals, specifically ``1`` through ``3999``. The Romans did have
    several ways of expressing larger numbers, for instance by having a
    bar over a numeral to represent that its normal value should be
-   multiplied by ``1000``. For the purposes of this chapter, let’s
+   multiplied by ``1000``. For the purposes of this exercise, let’s
    stipulate that Roman numerals go from ``1`` to ``3999``.
 #. There is no way to represent 0 in Roman numerals.
 #. There is no way to represent negative numbers in Roman numerals.
@@ -69,7 +94,7 @@ interesting observations:
 Let’s start mapping out what a ``roman.py`` module should do. It will
 have two main functions, ``to_roman()`` and ``from_roman()``. The
 ``to_roman()`` function should take an integer from ``1`` to ``3999``
-and return the Roman numeral representation as a string…
+and return the Roman numeral representation as a string ...
 
 Stop right there. Now let’s do something a little unexpected: write a
 test case that checks whether the ``to_roman()`` function does what you
@@ -79,15 +104,25 @@ code that you haven’t written yet.
 This is called *test-driven development*, or TDD. The set of two
 conversion functions — ``to_roman()``, and later ``from_roman()`` — can
 be written and tested as a unit, separate from any larger program that
-imports them. Python has a framework for unit testing, the
-appropriately-named ``unittest`` module.
+uses them.
+
+Technically, you can write unit tests with plain Python -- recall the ``assert`` statement that you have already used to write simple tests. But it is very helpful to use a framework to make it easier to write and run your tests. In this program, we use the `pytest` package: it is both very easy to get started with, and provides a lot of powerful features to aide in testing complex systems.
+
+.. note:: `pytest` does not come with Python out of the box. But it is easily installable via `pip` (or conda, if you are using conda)::
+
+              $ python -m pip install pytest
+
+          Once installed, you should have the pytest command available in your terminal.
+
+FIXME: Maybe add a small page on installing and using pytest?
 
 Unit testing is an important part of an overall testing-centric
 development strategy. If you write unit tests, it is important to write
 them early and to keep them updated as code and requirements change.
 Many people advocate writing tests before they write the code they’re
-testing, and that’s the style I’m going to demonstrate in this chapter.
-But unit tests are beneficial no matter when you write them.
+testing, and that’s the style I’m going to demonstrate here.
+
+But unit tests are beneficial, even critical, no matter when you write them.
 
 -  Before writing code, writing unit tests forces you to detail your
    requirements in a useful fashion.
@@ -107,269 +142,389 @@ But unit tests are beneficial no matter when you write them.
    nobody goes off too far into developing code that doesn’t play well
    with others.)
 
-⁂
-
-.. _romantest1:
-
 A Single Question
 -----------------
 
-Every test is an island.
+.. centered:: Every Test is an Island.
 
 A test case answers a single question about the code it is testing. A
 test case should be able to...
 
--  ...run completely by itself, without any human input. Unit testing is
-   about automation.
--  ...determine by itself whether the function it is testing has passed
-   or failed, without a human interpreting the results.
--  ...run in isolation, separate from any other test cases (even if they
-   test the same functions). Each test case is an island.
+- run completely by itself, without any human input. Unit testing is
+  about automation.
+- determine by itself whether the function it is testing has passed
+  or failed, without a human interpreting the results.
+- run in isolation, separate from any other test cases (even if they
+  test the same functions). Each test case is an island.
 
 Given that, let’s build a test case for the first requirement:
 
-#. The ``to_roman()`` function should return the Roman numeral
+1. The ``to_roman()`` function should return the Roman numeral
    representation for all integers ``1`` to ``3999``.
 
-It is not immediately obvious how this code does… well, *anything*. It
-defines a class which has no ``__init__()`` method. The class *does*
-have another method, but it is never called. The entire script has a
-``__main__`` block, but it doesn’t reference the class or its method.
-But it does do something, I promise.
+Let's take a look at
+:download:`roman.py <../examples/test_driven_development/roman.py>`.
 
-[`download ``romantest1.py`` <examples/romantest1.py>`__]
+.. code-block:: python
+    :linenos:
 
-.. code:: pp
+    """
+    roman.py
 
-   import roman1
-   import unittest
+    A Roman numeral to Arabic numeral (and back!) converter
 
-   class KnownValues(unittest.TestCase):               ①
-       known_values = ( (1, 'I'),
-                        (2, 'II'),
-                        (3, 'III'),
-                        (4, 'IV'),
-                        (5, 'V'),
-                        (6, 'VI'),
-                        (7, 'VII'),
-                        (8, 'VIII'),
-                        (9, 'IX'),
-                        (10, 'X'),
-                        (50, 'L'),
-                        (100, 'C'),
-                        (500, 'D'),
-                        (1000, 'M'),
-                        (31, 'XXXI'),
-                        (148, 'CXLVIII'),
-                        (294, 'CCXCIV'),
-                        (312, 'CCCXII'),
-                        (421, 'CDXXI'),
-                        (528, 'DXXVIII'),
-                        (621, 'DCXXI'),
-                        (782, 'DCCLXXXII'),
-                        (870, 'DCCCLXX'),
-                        (941, 'CMXLI'),
-                        (1043, 'MXLIII'),
-                        (1110, 'MCX'),
-                        (1226, 'MCCXXVI'),
-                        (1301, 'MCCCI'),
-                        (1485, 'MCDLXXXV'),
-                        (1509, 'MDIX'),
-                        (1607, 'MDCVII'),
-                        (1754, 'MDCCLIV'),
-                        (1832, 'MDCCCXXXII'),
-                        (1993, 'MCMXCIII'),
-                        (2074, 'MMLXXIV'),
-                        (2152, 'MMCLII'),
-                        (2212, 'MMCCXII'),
-                        (2343, 'MMCCCXLIII'),
-                        (2499, 'MMCDXCIX'),
-                        (2574, 'MMDLXXIV'),
-                        (2646, 'MMDCXLVI'),
-                        (2723, 'MMDCCXXIII'),
-                        (2892, 'MMDCCCXCII'),
-                        (2975, 'MMCMLXXV'),
-                        (3051, 'MMMLI'),
-                        (3185, 'MMMCLXXXV'),
-                        (3250, 'MMMCCL'),
-                        (3313, 'MMMCCCXIII'),
-                        (3408, 'MMMCDVIII'),
-                        (3501, 'MMMDI'),
-                        (3610, 'MMMDCX'),
-                        (3743, 'MMMDCCXLIII'),
-                        (3844, 'MMMDCCCXLIV'),
-                        (3888, 'MMMDCCCLXXXVIII'),
-                        (3940, 'MMMCMXL'),
-                        (3999, 'MMMCMXCIX'))           ②
+    complete with tests
 
-       def test_to_roman_known_values(self):           ③
-           '''to_roman should give known result with known input'''
-           for integer, numeral in self.known_values:
-               result = roman1.to_roman(integer)       ④
-               self.assertEqual(numeral, result)       ⑤
+    tests are expected to be able to be run with the pytest system
+    """
 
-   if __name__ == '__main__':
-       unittest.main()
+        ## Tests for roman numeral conversion
 
-#. To write a test case, first subclass the ``TestCase`` class of the
-   ``unittest`` module. This class provides many useful methods which
-   you can use in your test case to test specific conditions.
-#. This is a tuple of integer/numeral pairs that I verified manually. It
-   includes the lowest ten numbers, the highest number, every number
-   that translates to a single-character Roman numeral, and a random
-   sampling of other valid numbers. You don’t need to test every
-   possible input, but you should try to test all the obvious edge
-   cases.
-#. Every individual test is its own method. A test method takes no
-   parameters, returns no value, and must have a name beginning with the
-   four letters ``test``. If a test method exits normally without
-   raising an exception, the test is considered passed; if the method
-   raises an exception, the test is considered failed.
-#. Here you call the actual ``to_roman()`` function. (Well, the function
-   hasn’t been written yet, but once it is, this is the line that will
-   call it.) Notice that you have now defined the API for the
-   ``to_roman()`` function: it must take an integer (the number to
-   convert) and return a string (the Roman numeral representation). If
-   the API is different than that, this test is considered failed. Also
-   notice that you are not trapping any exceptions when you call
-   ``to_roman()``. This is intentional. ``to_roman()`` shouldn’t raise
-   an exception when you call it with valid input, and these input
-   values are all valid. If ``to_roman()`` raises an exception, this
-   test is considered failed.
-#. Assuming the ``to_roman()`` function was defined correctly, called
-   correctly, completed successfully, and returned a value, the last
-   step is to check whether it returned the *right* value. This is a
-   common question, and the ``TestCase`` class provides a method,
-   ``assertEqual``, to check whether two values are equal. If the result
-   returned from ``to_roman()`` (``result``) does not match the known
-   value you were expecting (``numeral``), ``assertEqual`` will raise an
-   exception and the test will fail. If the two values are equal,
-   ``assertEqual`` will do nothing. If every value returned from
-   ``to_roman()`` matches the known value you expect, ``assertEqual``
-   never raises an exception, so ``test_to_roman_known_values``
-   eventually exits normally, which means ``to_roman()`` has passed this
-   test.
+        KNOWN_VALUES = ( (1, 'I'),
+                         (2, 'II'),
+                         (3, 'III'),
+                         (4, 'IV'),
+                         (5, 'V'),
+                         (6, 'VI'),
+                         (7, 'VII'),
+                         (8, 'VIII'),
+                         (9, 'IX'),
+                         (10, 'X'),
+                         (50, 'L'),
+                         (100, 'C'),
+                         (500, 'D'),
+                         (1000, 'M'),
+                         (31, 'XXXI'),
+                         (148, 'CXLVIII'),
+                         (294, 'CCXCIV'),
+                         (312, 'CCCXII'),
+                         (421, 'CDXXI'),
+                         (528, 'DXXVIII'),
+                         (621, 'DCXXI'),
+                         (782, 'DCCLXXXII'),
+                         (870, 'DCCCLXX'),
+                         (941, 'CMXLI'),
+                         (1043, 'MXLIII'),
+                         (1110, 'MCX'),
+                         (1226, 'MCCXXVI'),
+                         (1301, 'MCCCI'),
+                         (1485, 'MCDLXXXV'),
+                         (1509, 'MDIX'),
+                         (1607, 'MDCVII'),
+                         (1754, 'MDCCLIV'),
+                         (1832, 'MDCCCXXXII'),
+                         (1993, 'MCMXCIII'),
+                         (2074, 'MMLXXIV'),
+                         (2152, 'MMCLII'),
+                         (2212, 'MMCCXII'),
+                         (2343, 'MMCCCXLIII'),
+                         (2499, 'MMCDXCIX'),
+                         (2574, 'MMDLXXIV'),
+                         (2646, 'MMDCXLVI'),
+                         (2723, 'MMDCCXXIII'),
+                         (2892, 'MMDCCCXCII'),
+                         (2975, 'MMCMLXXV'),
+                         (3051, 'MMMLI'),
+                         (3185, 'MMMCLXXXV'),
+                         (3250, 'MMMCCL'),
+                         (3313, 'MMMCCCXIII'),
+                         (3408, 'MMMCDVIII'),
+                         (3501, 'MMMDI'),
+                         (3610, 'MMMDCX'),
+                         (3743, 'MMMDCCXLIII'),
+                         (3844, 'MMMDCCCXLIV'),
+                         (3888, 'MMMDCCCLXXXVIII'),
+                         (3940, 'MMMCMXL'),
+                         (3999, 'MMMCMXCIX'),
+                         )
+
+
+    def test_to_roman_known_values():
+        """
+        to_roman should give known result with known input
+        """
+        for integer, numeral in KNOWN_VALUES:
+            result = to_roman(integer)
+            assert numeral == result
+
+
+It is not immediately obvious how this code does ... well, *anything*.
+It defines a big data structure full of examples and a single function.
+
+The entire script has no ``__main__`` block, so even that one function won't run. But it does do something, I promise.
+
+`KNOWN_VALUES` is a big tuple of integer/numeral pairs that were verified manually. It includes the lowest ten numbers, the highest number, every number
+that translates to a single-character Roman numeral, and a random sampling of other valid numbers.
+You don’t need to test every possible input, but you should try to test all the obvious edge cases.
+
+.. note:: This is a major challenge of unit testing -- how to catch all the edge cases, without over testing every little thing.
+
+`pytest` makes it really simple to write a test case: simply define a function named ``test_anything``. pytest will identify any function with: "``test_``"" at the start of the name as a test function.
+
+* Every individual test is its own function. A test function takes no parameters, returns no value, and must have a name beginning with the five letters ``test_``.
+  If a test function exits normally without a failing assertion or other exception, the test is considered passed; if the function raises a failed assertion, failed.
+
+In the ``test_to_roman_known_values`` function, you call the actual ``to_roman()`` function. (Well, the function hasn’t been written yet, but once it is, this is the line that will call it).
+Notice that you have now defined the API for the ``to_roman()`` function: it must take an integer (the number to convert) and return a string (the Roman numeral representation). If the API is different than that, this test is considered failed.
+
+.. Also notice that you are not trapping any exceptions when you call ``to_roman()``. This is intentional. ``to_roman()`` shouldn’t raise
+..    an exception when you call it with valid input, and these input
+..    values are all valid. If ``to_roman()`` raises an exception, this
+..    test is considered failed.
+
+Assuming the ``to_roman()`` function was defined correctly, called
+correctly, completed successfully, and returned a value, the last
+step is to check whether it returned the *right* value. This is
+accomplished with a simple assertion that the returned value is
+equal to the known correct value:
+
+.. code-block:: python
+
+    assert numeral == result
+
+If the assertion fails, the test fails.
+
+Note that in this case, we are looping through all the known values, testing each one in the loop. If any of the known values fails, the test will fail, and end the test function -- the rest of the values will not be tested.
+
+If every value returned from ``to_roman()`` matches the known value you expect, the assert will never fail, and ``test_to_roman_known_values``
+eventually exits normally, which means ``to_roman()`` has passed this
+test.
+
 
 Write a test that fails, then code until it passes.
+...................................................
 
 Once you have a test case, you can start coding the ``to_roman()``
 function. First, you should stub it out as an empty function and make
 sure the tests fail. If the tests succeed before you’ve written any
-code, your tests aren’t testing your code at all! Unit testing is a
+code, your tests aren’t testing your code at all! TDD is a
 dance: tests lead, code follows. Write a test that fails, then code
 until it passes.
 
-.. code:: pp
+For a small system like this, we can put the code and the tests in the same file. But as you build larger systems, it is customary to put the tests in a separate file -- more on that later.
+
+You can actually try your tests out before even writing any code!
+
+To run tests with pytest, you pass in the test file on the command line:
+
+.. code-block::
+
+    $ pytest roman.py
+    =========================== test session starts ===========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 1 item
+
+    roman.py F                                                          [100%]
+
+    ================================ FAILURES =================================
+    _______________________ test_to_roman_known_values ________________________
+
+        def test_to_roman_known_values():
+            """
+            to_roman should give known result with known input
+            """
+            for integer, numeral in KNOWN_VALUES:
+    >           result = to_roman(integer)
+    E           NameError: name 'to_roman' is not defined
+
+    roman.py:75: NameError
+    ========================= short test summary info =========================
+    FAILED roman.py::test_to_roman_known_values - NameError: name 'to_roman'...
+    ============================ 1 failed in 0.15s ============================
+
+There's a lot going on here! pytest has found your test function, set itself up, and run the tests it finds (in this case only the one).
+Then it runs the test (which in this case fails), and reports the failure(s).
+Along with the fact that it fails, it tells you why it failed (a ``NameError``) where it failed (line 75 of the file), and shows you the code before the test failure.
+This may seem like a lot of information for such a simple case, but it can be invaluable in a more complex system.
+
+We got a name error, because there is no ``to_roman`` function defined in the file. So let's add that now:
+
+(:download:`roman1.py <../examples/test_driven_development/roman1.py>`)
+
+.. code-block:: python
 
    # roman1.py
 
    def to_roman(n):
-       '''convert integer to Roman numeral'''
-       pass                                   ①
+       '''convert an integer to Roman numeral'''
+       pass
 
-#. At this stage, you want to define the API of the ``to_roman()``
-   function, but you don’t want to code it yet. (Your test needs to fail
-   first.) To stub it out, use the Python reserved word ``pass``, which
-   does precisely nothing.
+At this stage, you want to define the API of the ``to_roman()`` function, but you don’t want to code it yet (your tests need to fail first).
+To stub it out, use the Python reserved word ``pass``, which does precisely nothing.
 
-Execute ``romantest1.py`` on the command line to run the test. If you
-call it with the ``-v`` command-line option, it will give more verbose
-output so you can see exactly what’s going on as each test case runs.
-With any luck, your output should look like this:
+now run pytest again, with the function defined:
 
-.. code:: screen
+.. code-block::
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest1.py -v
-   test_to_roman_known_values (__main__.KnownValues)                      ①
-   to_roman should give known result with known input ... FAIL            ②
+    $ pytest roman1.py
+    =========================== test session starts ===========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 1 item
 
-   ======================================================================
-   FAIL: to_roman should give known result with known input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest1.py", line 73, in test_to_roman_known_values
-       self.assertEqual(numeral, result)
-   AssertionError: 'I' != None                                            ③
+    roman1.py F                                                         [100%]
 
-   ----------------------------------------------------------------------
-   Ran 1 test in 0.016s                                                   ④
+    ================================ FAILURES =================================
+    _______________________ test_to_roman_known_values ________________________
 
-   FAILED (failures=1)                                                    ⑤
+        def test_to_roman_known_values():
+            """
+            to_roman should give known result with known input
+            """
+            for integer, numeral in KNOWN_VALUES:
+                result = to_roman(integer)
+    >           assert numeral == result
+    E           AssertionError: assert 'I' == None
 
-#. Running the script runs ``unittest.main()``, which runs each test
-   case. Each test case is a method within a class in ``romantest.py``.
-   There is no required organization of these test classes; they can
-   each contain a single test method, or you can have one class that
-   contains multiple test methods. The only requirement is that each
-   test class must inherit from ``unittest.TestCase``.
-#. For each test case, the ``unittest`` module will print out the
-   ``docstring`` of the method and whether that test passed or failed.
-   As expected, this test case fails.
-#. For each failed test case, ``unittest`` displays the trace
-   information showing exactly what happened. In this case, the call to
-   ``assertEqual()`` raised an ``AssertionError`` because it was
-   expecting ``to_roman(1)`` to return ``'I'``, but it didn’t. (Since
-   there was no explicit return statement, the function returned
-   ``None``, the Python null value.)
-#. After the detail of each test, ``unittest`` displays a summary of how
-   many tests were performed and how long it took.
-#. Overall, the test run failed because at least one test case did not
-   pass. When a test case doesn’t pass, ``unittest`` distinguishes
-   between failures and errors. A failure is a call to an ``assertXYZ``
-   method, like ``assertEqual`` or ``assertRaises``, that fails because
-   the asserted condition is not true or the expected exception was not
-   raised. An error is any other sort of exception raised in the code
-   you’re testing or the unit test case itself.
+    roman1.py:84: AssertionError
+    ========================= short test summary info =========================
+    FAILED roman1.py::test_to_roman_known_values - AssertionError: assert 'I...
+    ============================ 1 failed in 0.15s ============================
+
+Again, pytest has found the test, run it, and again it failed.
+But this time, it failed with an AssertionError -- one of the known values did not equal what was expected.
+In addition to the line number where the failure occurred, pytest tells you exactly what the values being compared were.
+In this case, 'I' does not equal ``None`` -- obviously not. But why did you get a ``None`` there? because Python returns None when a function does not explicitly return another value. In this case, the only content in the function is ``pass``, so ``None`` was returned implicitly.
+
+
+Overall, the test run failed because at least one test case did not pass.
+When a test case doesn’t pass, pytest distinguishes between failures and errors.
+A failure is a failed assertion that fails because the asserted condition is not true.
+An error is any other sort of exception raised in the code you’re testing or the test code itself.
 
 *Now*, finally, you can write the ``to_roman()`` function.
 
-[`download ``roman1.py`` <examples/roman1.py>`__]
+:download:`roman2.py <../examples/roman2.py>`
 
-.. code:: pp
+.. code-block:: python
+    :linenos:
 
-   roman_numeral_map = (('M',  1000),
-                        ('CM', 900),
-                        ('D',  500),
-                        ('CD', 400),
-                        ('C',  100),
-                        ('XC', 90),
-                        ('L',  50),
-                        ('XL', 40),
-                        ('X',  10),
-                        ('IX', 9),
-                        ('V',  5),
-                        ('IV', 4),
-                        ('I',  1))                 ①
+    """
+    roman.py
 
-   def to_roman(n):
-       '''convert integer to Roman numeral'''
-       result = ''
-       for numeral, integer in roman_numeral_map:
-           while n >= integer:                     ②
+    A Roman numeral to arabic numeral (and back!) converter
+
+    complete with tests
+
+    tests are expected to be able to be run with the pytest system
+    """
+
+    roman_numeral_map = (('M',  1000),
+                         ('CM', 900),
+                         ('D',  500),
+                         ('CD', 400),
+                         ('C',  100),
+                         ('XC', 90),
+                         ('L',  50),
+                         ('XL', 40),
+                         ('X',  10),
+                         ('IX', 9),
+                         ('V',  5),
+                         ('IV', 4),
+                         ('I',  1))
+
+
+    def to_roman(n):
+        '''convert integer to Roman numeral'''
+        result = ''
+        for numeral, integer in roman_numeral_map:
+           while n >= integer:
                result += numeral
                n -= integer
-       return result
+        return result
 
-#. ``roman_numeral_map`` is a tuple of tuples which defines three
-   things: the character representations of the most basic Roman
-   numerals; the order of the Roman numerals (in descending value order,
-   from ``M`` all the way down to ``I``); the value of each Roman
-   numeral. Each inner tuple is a pair of ``(numeral, value)``. It’s not
-   just single-character Roman numerals; it also defines two-character
-   pairs like ``CM`` (“one hundred less than one thousand”). This makes
-   the ``to_roman()`` function code simpler.
-#. Here’s where the rich data structure of ``roman_numeral_map`` pays
-   off, because you don’t need any special logic to handle the
-   subtraction rule. To convert to Roman numerals, simply iterate
-   through ``roman_numeral_map`` looking for the largest integer value
-   less than or equal to the input. Once found, add the Roman numeral
-   representation to the end of the output, subtract the corresponding
-   integer value from the input, lather, rinse, repeat.
+
+    ## Tests for roman numeral conversion
+
+    KNOWN_VALUES = ( (1, 'I'),
+                     (2, 'II'),
+                     (3, 'III'),
+                     (4, 'IV'),
+                     (5, 'V'),
+                     (6, 'VI'),
+                     (7, 'VII'),
+                     (8, 'VIII'),
+                     (9, 'IX'),
+                     (10, 'X'),
+                     (50, 'L'),
+                     (100, 'C'),
+                     (500, 'D'),
+                     (1000, 'M'),
+                     (31, 'XXXI'),
+                     (148, 'CXLVIII'),
+                     (294, 'CCXCIV'),
+                     (312, 'CCCXII'),
+                     (421, 'CDXXI'),
+                     (528, 'DXXVIII'),
+                     (621, 'DCXXI'),
+                     (782, 'DCCLXXXII'),
+                     (870, 'DCCCLXX'),
+                     (941, 'CMXLI'),
+                     (1043, 'MXLIII'),
+                     (1110, 'MCX'),
+                     (1226, 'MCCXXVI'),
+                     (1301, 'MCCCI'),
+                     (1485, 'MCDLXXXV'),
+                     (1509, 'MDIX'),
+                     (1607, 'MDCVII'),
+                     (1754, 'MDCCLIV'),
+                     (1832, 'MDCCCXXXII'),
+                     (1993, 'MCMXCIII'),
+                     (2074, 'MMLXXIV'),
+                     (2152, 'MMCLII'),
+                     (2212, 'MMCCXII'),
+                     (2343, 'MMCCCXLIII'),
+                     (2499, 'MMCDXCIX'),
+                     (2574, 'MMDLXXIV'),
+                     (2646, 'MMDCXLVI'),
+                     (2723, 'MMDCCXXIII'),
+                     (2892, 'MMDCCCXCII'),
+                     (2975, 'MMCMLXXV'),
+                     (3051, 'MMMLI'),
+                     (3185, 'MMMCLXXXV'),
+                     (3250, 'MMMCCL'),
+                     (3313, 'MMMCCCXIII'),
+                     (3408, 'MMMCDVIII'),
+                     (3501, 'MMMDI'),
+                     (3610, 'MMMDCX'),
+                     (3743, 'MMMDCCXLIII'),
+                     (3844, 'MMMDCCCXLIV'),
+                     (3888, 'MMMDCCCLXXXVIII'),
+                     (3940, 'MMMCMXL'),
+                     (3999, 'MMMCMXCIX'),
+                     )
+
+
+    def test_to_roman_known_values():
+        """
+        to_roman should give known result with known input
+        """
+        for integer, numeral in KNOWN_VALUES:
+            result = to_roman(integer)
+            assert numeral == result
+
+``roman_numeral_map`` is a tuple of tuples which defines three
+things: the character representations of the most basic Roman
+numerals; the order of the Roman numerals (in descending value order,
+from ``M`` all the way down to ``I``); the value of each Roman
+numeral. Each inner tuple is a pair of ``(numeral, value)``. It’s not
+just single-character Roman numerals; it also defines two-character
+pairs like ``CM`` (“one hundred less than one thousand”). This makes
+the ``to_roman()`` function code simpler.
+
+Here’s where the rich data structure of ``roman_numeral_map`` pays
+off, because you don’t need any special logic to handle the
+subtraction rule. To convert to Roman numerals, simply iterate
+through ``roman_numeral_map`` looking for the largest integer value
+less than or equal to the input. Once found, add the Roman numeral
+representation to the end of the output, subtract the corresponding
+integer value from the input, lather, rinse, repeat.
 
 If you’re still not clear how the ``to_roman()`` function works, add a
 ``print()`` call to the end of the ``while`` loop:
 
-.. code:: nd
+.. code-block:: python
 
    while n >= integer:
        result += numeral
@@ -378,7 +533,7 @@ If you’re still not clear how the ``to_roman()`` function works, add a
 
 With the debug ``print()`` statements, the output looks like this:
 
-.. code:: nd
+.. code-block:: python
 
    >>> import roman1
    >>> roman1.to_roman(1424)
@@ -392,7 +547,7 @@ With the debug ``print()`` statements, the output looks like this:
 So the ``to_roman()`` function appears to work, at least in this manual
 spot check. But will it pass the test case you wrote?
 
-.. code:: nd
+.. code-block::
 
    you@localhost:~/diveintopython3/examples$ python3 romantest1.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -427,14 +582,14 @@ It is not enough to test that functions succeed when given good input;
 you must also test that they fail when given bad input. And not just any
 sort of failure; they must fail in the way you expect.
 
-.. code:: screen
+.. code-block::
 
    >>> import roman1
    >>> roman1.to_roman(4000)
    'MMMM'
    >>> roman1.to_roman(5000)
    'MMMMM'
-   >>> roman1.to_roman(9000)  ①
+   >>> roman1.to_roman(9000)
    'MMMMMMMMM'
 
 #. That’s definitely not what you wanted — that’s not even a valid Roman
@@ -453,9 +608,9 @@ requirement?” How’s this for starters:
 
 What would that test look like?
 
-[`download ``romantest2.py`` <examples/romantest2.py>`__]
+[`download ``romantest2.py`` <../examples/romantest2.py>`__]
 
-.. code:: pp
+.. code-block::
 
    import unittest, roman2
    class ToRomanBadInput(unittest.TestCase):                                 ①
@@ -496,7 +651,7 @@ object <your-first-python-program.html#everythingisanobject>`__?
 
 So what happens when you run the test suite with this new test?
 
-.. code:: screen
+.. code-block::
 
    you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -538,7 +693,7 @@ So what happens when you run the test suite with this new test?
 To solve this problem, you need to define the ``OutOfRangeError``
 exception in ``roman2.py``.
 
-.. code:: pp
+.. code-block::
 
    class OutOfRangeError(ValueError):  ①
        pass                            ②
@@ -554,7 +709,7 @@ exception in ``roman2.py``.
 
 Now run the test suite again.
 
-.. code:: screen
+.. code-block::
 
    you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -588,7 +743,7 @@ Now you can write the code to make this test pass.
 
 [`download ``roman2.py`` <examples/roman2.py>`__]
 
-.. code:: pp
+.. code-block::
 
    def to_roman(n):
        '''convert integer to Roman numeral'''
@@ -611,7 +766,7 @@ Now you can write the code to make this test pass.
 
 Does this make the test pass? Let’s find out.
 
-.. code:: screen
+.. code-block::
 
    you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -642,7 +797,7 @@ that are too small. As `we noted in our functional
 requirements <#divingin>`__, Roman numerals cannot express 0 or negative
 numbers.
 
-.. code:: nd
+.. code-block:: python
 
    >>> import roman2
    >>> roman2.to_roman(0)
@@ -654,7 +809,7 @@ Well *that’s* not good. Let’s add tests for each of these conditions.
 
 [`download ``romantest3.py`` <examples/romantest3.py>`__]
 
-.. code:: pp
+.. code-block::
 
    class ToRomanBadInput(unittest.TestCase):
        def test_too_large(self):
@@ -684,7 +839,7 @@ Well *that’s* not good. Let’s add tests for each of these conditions.
 
 Now check that the tests fail:
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest3.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -722,7 +877,7 @@ code and see what we can do to make them pass.
 
 [`download ``roman3.py`` <examples/roman3.py>`__]
 
-.. code:: pp
+.. code-block::
 
    def to_roman(n):
        '''convert integer to Roman numeral'''
@@ -749,7 +904,7 @@ I could show you a whole series of unrelated examples to show that the
 multiple-comparisons-at-once shortcut works, but instead I’ll just run
 the unit tests and prove it.
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest3.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -776,7 +931,7 @@ And One More Thing…
 There was one more `functional requirement <#divingin>`__ for converting
 numbers to Roman numerals: dealing with non-integers.
 
-.. code:: screen
+.. code-block::
 
    >>> import roman3
    >>> roman3.to_roman(0.5)  ①
@@ -791,7 +946,7 @@ numbers to Roman numerals: dealing with non-integers.
 Testing for non-integers is not difficult. First, define a
 ``NotIntegerError`` exception.
 
-.. code:: nd
+.. code-block:: python
 
    # roman4.py
    class OutOfRangeError(ValueError): pass
@@ -800,7 +955,7 @@ Testing for non-integers is not difficult. First, define a
 Next, write a test case that checks for the ``NotIntegerError``
 exception.
 
-.. code:: nd
+.. code-block:: python
 
    class ToRomanBadInput(unittest.TestCase):
        .
@@ -812,7 +967,7 @@ exception.
 
 Now check that the test fails properly.
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest4.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -841,7 +996,7 @@ Now check that the test fails properly.
 
 Write the code that makes the test pass.
 
-.. code:: pp
+.. code-block::
 
    def to_roman(n):
        '''convert integer to Roman numeral'''
@@ -864,7 +1019,7 @@ Write the code that makes the test pass.
 
 Finally, check that the code does indeed make the test pass.
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest4.py -v
    test_to_roman_known_values (__main__.KnownValues)
@@ -911,7 +1066,7 @@ But first, the tests. We’ll need a “known values” test to spot-check for
 accuracy. Our test suite already contains `a mapping of known
 values <#romantest1>`__; let’s reuse that.
 
-.. code:: nd
+.. code-block:: python
 
        def test_from_roman_known_values(self):
            '''from_roman should give known result with known input'''
@@ -927,7 +1082,7 @@ specially-formated strings to integers. In theory, we should be able to
 string, then passing that string to the ``from_roman()`` function to get
 an integer, and end up with the same number.
 
-.. code:: nd
+.. code-block:: python
 
    n = from_roman(to_roman(n)) for all values of n
 
@@ -937,7 +1092,7 @@ express this symmetry in a test case that runs through all the values
 ``1..3999``, calls ``to_roman()``, calls ``from_roman()``, and checks
 that the output is the same as the original input.
 
-.. code:: nd
+.. code-block:: python
 
    class RoundtripCheck(unittest.TestCase):
        def test_roundtrip(self):
@@ -950,7 +1105,7 @@ that the output is the same as the original input.
 These new tests won’t even fail yet. We haven’t defined a
 ``from_roman()`` function at all, so they’ll just raise errors.
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest5.py
    E.E....
@@ -979,7 +1134,7 @@ These new tests won’t even fail yet. We haven’t defined a
 
 A quick stub function will solve that problem.
 
-.. code:: nd
+.. code-block:: python
 
    # roman5.py
    def from_roman(s):
@@ -991,7 +1146,7 @@ Python. In fact, some programmers swear by it. “Don’t stub; document!”)
 
 Now the test cases will actually fail.
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest5.py
    F.F....
@@ -1020,7 +1175,7 @@ Now the test cases will actually fail.
 
 Now it’s time to write the ``from_roman()`` function.
 
-.. code:: pp
+.. code-block::
 
    def from_roman(s):
        """convert Roman numeral to integer"""
@@ -1053,7 +1208,7 @@ statement to the end of the ``while`` loop:
                index += len(numeral)
                print('found', numeral, 'of length', len(numeral), ', adding', integer)
 
-.. code:: nd
+.. code-block:: python
 
    >>> import roman5
    >>> roman5.from_roman('MCMLXXII')
@@ -1068,7 +1223,7 @@ statement to the end of the ``while`` loop:
 
 Time to re-run the tests.
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest5.py
    .......
@@ -1145,7 +1300,7 @@ Thus, one useful test would be to ensure that the ``from_roman()``
 function should fail when you pass it a string with too many repeated
 numerals. How many is “too many” depends on the numeral.
 
-.. code:: nd
+.. code-block:: python
 
    class FromRomanBadInput(unittest.TestCase):
        def test_too_many_repeated_numerals(self):
@@ -1156,7 +1311,7 @@ numerals. How many is “too many” depends on the numeral.
 Another useful test would be to check that certain patterns aren’t
 repeated. For example, ``IX`` is ``9``, but ``IXIX`` is never valid.
 
-.. code:: nd
+.. code-block:: python
 
        def test_repeated_pairs(self):
            '''from_roman should fail with repeated pairs of numerals'''
@@ -1169,7 +1324,7 @@ never valid, because the numeral for ``50`` can never come before the
 numeral for ``100``. This test includes a randomly chosen set of invalid
 antecedents: ``I`` before ``M``, ``V`` before ``X``, and so on.
 
-.. code:: nd
+.. code-block:: python
 
        def test_malformed_antecedents(self):
            '''from_roman should fail with malformed antecedents'''
@@ -1180,7 +1335,7 @@ antecedents: ``I`` before ``M``, ``V`` before ``X``, and so on.
 Each of these tests relies the ``from_roman()`` function raising a new
 exception, ``InvalidRomanNumeralError``, which we haven’t defined yet.
 
-.. code:: nd
+.. code-block:: python
 
    # roman6.py
    class InvalidRomanNumeralError(ValueError): pass
@@ -1189,7 +1344,7 @@ All three of these tests should fail, since the ``from_roman()``
 function doesn’t currently have any validity checking. (If they don’t
 fail now, then what the heck are they testing?)
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest6.py
    FFF.......
@@ -1229,7 +1384,7 @@ Good deal. Now, all we need to do is add the `regular expression to test
 for valid Roman numerals <regular-expressions.html#romannumerals>`__
 into the ``from_roman()`` function.
 
-.. code:: nd
+.. code-block:: python
 
    roman_numeral_pattern = re.compile('''
        ^                   # beginning of string
@@ -1258,7 +1413,7 @@ into the ``from_roman()`` function.
 
 And re-run the tests…
 
-.. code:: nd
+.. code-block:: python
 
    you@localhost:~/diveintopython3/examples$ python3 romantest7.py
    ..........

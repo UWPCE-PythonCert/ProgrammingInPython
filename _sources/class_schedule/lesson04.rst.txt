@@ -1,8 +1,8 @@
 .. _session_1_04:
 
-##############################################
-Session 4: Unit Testing, Dictionaries and Sets
-##############################################
+#################################################
+Session 4: Dictionaries and Sets and Unit Testing
+#################################################
 
 
 Readings
@@ -11,10 +11,10 @@ Readings
 .. toctree::
     :maxdepth: 1
 
-    ../modules/Testing
-    ../modules/TestDrivenDevelopment
     ../modules/DictsAndSets
     ../modules/DictionaryAsSwitch
+    ../modules/Testing
+    ../modules/TestDrivenDevelopment
 
 Recommended Additional Reading
 ------------------------------
