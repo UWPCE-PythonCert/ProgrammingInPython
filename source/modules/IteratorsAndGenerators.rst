@@ -11,6 +11,9 @@ Iterators and Generators
 A note about Python History
 ---------------------------
 
+Python 2
+.........
+
 Python used to be all about sequences -- a good chunk of anything you did
 was stored in a sequence, or involved manipulating a sequence.
 
@@ -24,7 +27,7 @@ was stored in a sequence, or involved manipulating a sequence.
 - ``zip()``
 - ...
 
-In python2 -- those are all sequences.
+In python2 -- those are all sequences. (in the case of zip and dict methods, they return actual lists)
 
 But it turns out that the most common operation for sequences is to iterate through them:
 
@@ -50,10 +53,10 @@ But why make a full copy of all the keys, when all you want to do is:
     for k in dict.keys():
         do_something_with(k)
 
-Even worse: ``dict.items()`` created a full list of ``(key,value)`` tuples.
+Even worse: ``dict.items()`` created a full list of ``(key, value)`` tuples.
 -- a complete copy of all the data in the dict.
 
-Even worse: ``enumerate(dict.items())`` created a whole list of
+Even worse still: ``enumerate(dict.items())`` created a whole list of
 ``(index, (key, value))`` tuples -- lots of copies of everything.
 
 Enter ``iter*``
@@ -65,27 +68,25 @@ Python2 then introduced "iterable" versions of a number of functions and methods
 ``dict.iterkeys()``
 ``dict.itervalues()``
 
-So you could now iterate through that stuff without copying anything.
+So you could now iterate through that stuff without copying anything. Nice performance benefits, but a somewhat ugly interface.
 
-**Python3**
+Python3
+.......
 
-Python3 embraces iterables -- now everything that could be an iterator
-is already an iterator -- no unnecessary copies.
+Python3 embraces iterables -- now everything that could be an iterable without making a copy is done that way -- no unnecessary copies.
 
-An iterator is an iterable that has been made more efficient by
-removing as much from memory as possible.
-
-You have to make a list out of them explicitly if you really want it:
+If you DO need an actual sequence (becasue you want to do something with it other than iterate over it), you have to make a list out of them explicitly:
 
 ``list(dict.keys())``
 
 Then there is an entire module: ``itertools`` that provides nifty ways
 to iterate through stuff.
 
-We will visit this again soon.
+That will be covered elsewhere.
 
-So while I used to say that python was all about sequences
--- it is now all about iterables.
+So while I used to say that python was "all about sequences", I know say:
+
+    "Python is all about iterables
 
 
 Iterators and Iterables

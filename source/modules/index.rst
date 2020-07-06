@@ -1,17 +1,13 @@
 
-##########################################
-Py210: Introduction to Python: Topic Notes
-##########################################
+######################
+Introduction to Python
+######################
 
 These are assorted notes about particular python topics used in the Python certificate program.
 
-Arranged in order of the lessons:
 
-See the Canvas or EdX instance for your class for the full lesson descriptions.
-
-
-Lesson 1: Introductions and Setting up your Environment
--------------------------------------------------------
+Setting up your Environment
+---------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -27,40 +23,106 @@ Lesson 1: Introductions and Setting up your Environment
     HowToRunAPythonFile
     Learning
 
-Lesson 2: Basic Python and Functions
-------------------------------------
+Exercise:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/python_pushups.rst
+
+
+Basic Python
+------------
 
 .. toctree::
     :maxdepth: 1
 
     BasicPython
     Functions
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/grid_printer.rst
+    ../exercises/fizz_buzz.rst
+
+Recursion
+---------
+
+.. toctree::
+    :maxdepth: 1
+
     Recursion
 
-Lesson 3: Booleans, Sequences, Iteration, and Strings
------------------------------------------------------
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/fib_and_lucas.rst
+
+
+Booleans
+--------
 
 .. toctree::
     :maxdepth: 1
 
     Booleans
+
+Sequences and Iteration
+-----------------------
+
+.. toctree::
+    :maxdepth: 1
+
     Sequences
     Iteration
+
+Basic Text Handling
+-------------------
+
+.. toctree::
+    :maxdepth: 1
+
     Strings
 
-Lesson 4: Dictionaries, Sets, and Files
----------------------------------------
+Exception Handling
+------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Exceptions
+
+Unit Testing
+------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Testing
+    TestDrivenDevelopment
+
+Dictionaries and Sets
+---------------------
 
 .. toctree::
     :maxdepth: 1
 
     DictsAndSets
-    Files
     DictionaryAsSwitch
 
 
-Lesson 5: Exceptions, Modules, and Comprehensions
--------------------------------------------------
+Files
+-----
+
+.. toctree::
+    :maxdepth: 1
+
+    Files
+
+Modules and Packages
+--------------------
 
 .. toctree::
     :maxdepth: 1
@@ -68,22 +130,30 @@ Lesson 5: Exceptions, Modules, and Comprehensions
     NamingThings
     Modules
     Documentation
-    Exceptions
-    Comprehensions
-    CollectionsModule
+    Packaging
 
-Lesson 6: Unit Testing and Advanced Argument Passing
-----------------------------------------------------
+
+Comprehensions
+--------------
 
 .. toctree::
     :maxdepth: 1
 
-    Testing
+    Comprehensions
+    CollectionsModule
+
+
+Advanced Argument Passing
+-------------------------
+
+.. toctree::
+    :maxdepth: 1
+
     AdvancedArgumentPassing
     MoreOnMutability
 
-Lesson 7: Intro to Object Oriented Programing
----------------------------------------------
+Intro to Object Oriented Programing
+-----------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -92,8 +162,9 @@ Lesson 7: Intro to Object Oriented Programing
     PythonClasses
     SubclassingAndInheritance
 
-Lesson 8: Properties and Magic Methods
---------------------------------------
+
+Properties and Magic Methods
+----------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -102,16 +173,26 @@ Lesson 8: Properties and Magic Methods
     StaticAndClassMethods
     SpecialMethodsAndProtocols
 
-Lesson 9: Multiple Inheritance
-------------------------------
+
+Subclassing
+-----------
+
+.. toctree::
+    :maxdepth: 1
+
+    SubclassingAndInheritance
+
+
+Multiple Inheritance
+--------------------
 
 .. toctree::
     :maxdepth: 1
 
     MultipleInheritance
 
-Lesson 10: Introduction to Functional Programming
--------------------------------------------------
+Introduction to Functional Programming
+--------------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -121,17 +202,25 @@ Lesson 10: Introduction to Functional Programming
     MapFilterReduce
     IPythonParallel
 
+Advanced Testing
+----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    Testing_advanced
+
+
 Extras
 ------
 
-The following are some extra advanced topics that might be of interest
+The following are some extra topics that might be of interest
 
 .. toctree::
     :maxdepth: 1
 
     Pep8
     CodeReviews
-    Packaging
     PersistanceAndSerialization
     Unicode
 
@@ -149,10 +238,6 @@ The following are some extra advanced topics that might be of interest
 
     Logging
     Debugging
-
-
-    Testing_advanced
-
 
 
     NoSQL

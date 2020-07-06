@@ -649,7 +649,7 @@ Now look at the body of that function; what the heck is that ``with`` statement?
 
 CAUTION: you are now using a utility from the ``pytest`` package, so you need to make sure to import pytest first:
 
-..code-block:: python
+.. code-block:: ipython
 
     In [18]: ! pytest roman3.py
     ========================= test session starts =========================
@@ -690,7 +690,7 @@ Now you can write the code to make this test pass.
 
 :download:`roman4.py <../examples/test_driven_development/roman4.py>`.
 
-.. code-block::
+.. code-block:: python
 
     def to_roman(n):
         '''convert integer to Roman numeral'''
@@ -704,12 +704,12 @@ Now you can write the code to make this test pass.
                 n -= integer
         return result
 
-#. This is straightforward: if the given input (``n``) is greater than
-   ``3999``, raise an ``ValueError`` exception. The unit test does
-   not check the human-readable string that accompanies the exception,
-   although you could write another test that did check it (but watch
-   out for internationalization issues for strings that vary by the
-   user’s language or environment).
+This is straightforward: if the given input (``n``) is greater than
+ ``3999``, raise an ``ValueError`` exception. The unit test does
+ not check the human-readable string that accompanies the exception,
+ although you could write another test that did check it (but watch
+ out for internationalization issues for strings that vary by the
+ user’s language or environment).
 
 Does this make the test pass? Let’s find out.
 
@@ -737,7 +737,7 @@ More Halting, More Fire
 
 Along with testing numbers that are too large, you need to test numbers
 that are too small.
-As `we noted in our functional requirements, Roman numerals cannot express 0 or negative numbers.
+As we noted in our functional requirements, Roman numerals cannot express 0 or negative numbers.
 
 .. code-block:: ipython
 
@@ -777,7 +777,7 @@ the test is considered failed.
 
 Now check that the tests fail:
 
-.. code-block:: python
+.. code-block:: ipython
 
     In [24]: ! pytest roman5.py
     ========================= test session starts =========================
@@ -844,7 +844,7 @@ I could show you a whole series of unrelated examples to show that the
 multiple-comparisons-at-once shortcut works, but instead I’ll just run
 the unit tests and prove it.
 
-.. code-block:: python
+.. code-block:: ipython
 
     In [26]: ! pytest roman6.py
     ========================= test session starts =========================
@@ -910,7 +910,7 @@ Why a ``ValueError``? because it's the value that matters, not the type. It's OK
 
 Now check that the test fails properly.
 
-.. code-block:: python
+.. code-block:: ipython
 
     In [36]: ! pytest roman7.py
     ========================= test session starts =========================
@@ -961,7 +961,7 @@ So now write the code that makes the test pass.
 
 ``int(n) != n`` is checking that when you convert the value to an integer, it doesn't change. We need to do that, because simply checking if you can convert to an integer isn't enough -- when a float is converted to an integer, the fractional part is truncated:
 
-.. code-block:: python
+.. code-block:: ipython
 
     In [37]: int(1.00001)
     Out[37]: 1
@@ -978,7 +978,7 @@ if the result of converting to an integer is equal to the original, than it had 
 
 Finally, check that the code does indeed make the test pass.
 
-.. code-block:: python
+.. code-block:: ipython
 
     In [44]: ! pytest roman8.py
     ========================= test session starts =========================
@@ -1054,7 +1054,7 @@ that the output is the same as the original input.
 These new tests won’t even fail properly yet. We haven’t defined a
 ``from_roman()`` function at all, so they’ll just raise errors.
 
-.. code-block:: python
+.. code-block:: ipython
 
     In [48]: ! pytest roman9.py
     ========================= test session starts =========================
@@ -1313,7 +1313,7 @@ All three of these tests should fail, since the ``from_roman()``
 function doesn’t currently have any validity checking. (If they don’t
 fail now, then what the heck are they testing?)
 
-.. code-block:: python
+.. code-block::
 
    you@localhost:~/diveintopython3/examples$ python3 romantest6.py
    FFF.......
@@ -1382,7 +1382,7 @@ into the ``from_roman()`` function.
 
 And re-run the tests…
 
-.. code-block:: python
+.. code-block::
 
    you@localhost:~/diveintopython3/examples$ python3 romantest7.py
    ..........
@@ -1396,4 +1396,6 @@ which is printed by the ``unittest`` module when all the tests pass.
 
 `☜ <advanced-iterators.html>`__ `☞ <refactoring.html>`__
 
-© 2001–11 `Mark Pilgrim <about.html>`__
+© 2001–11 `Mark Pilgrim`, 2020 `Christopher Barker`
+
+

@@ -91,7 +91,7 @@ So calling ``send`` ran the print statement, and then raise a ``StopIteration`` 
 
     StopIteration:
 
-And indeed, they have a lot on common -- in fact, before Python3.5, when the ``async`` keyword was added, you used generators to make coroutines.
+And indeed, they have a lot on common -- in fact, before Python3.5, when the ``async`` keyword was added, you used generator functions to make coroutines.
 
 But if a coroutine raises ``StopIteration`` right away, what's the point? Well, recall that the point of a coroutine (and asnyc in general), is to be able to return control to the system, while you wait for something else to happen. And thus the "await" keyword. So a coroutine isn't useful unless it uses ``await``
 
