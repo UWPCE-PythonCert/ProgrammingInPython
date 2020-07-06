@@ -108,7 +108,7 @@ uses them.
 
 Technically, you can write unit tests with plain Python -- recall the ``assert`` statement that you have already used to write simple tests. But it is very helpful to use a framework to make it easier to write and run your tests. In this program, we use the `pytest` package: it is both very easy to get started with, and provides a lot of powerful features to aide in testing complex systems.
 
-.. note:: `pytest` does not come with Python out of the box. But it is easily installable via `pip` (or conda, if you are using conda)::
+.. note:: ``pytest`` does not come with Python out of the box. But it is easily installable via `pip` (or conda, if you are using conda)::
 
               $ python -m pip install pytest
 
@@ -145,16 +145,16 @@ But unit tests are beneficial, even critical, no matter when you write them.
 A Single Question
 -----------------
 
-.. centered:: Every Test is an Island.
+.. centered:: **Every Test is an Island**
 
 A test case answers a single question about the code it is testing. A
 test case should be able to...
 
-- run completely by itself, without any human input. Unit testing is
+- Run completely by itself, without any human input. Unit testing is
   about automation.
-- determine by itself whether the function it is testing has passed
+- Determine by itself whether the function it is testing has passed
   or failed, without a human interpreting the results.
-- run in isolation, separate from any other test cases (even if they
+- Run in isolation, separate from any other test cases (even if they
   test the same functions). Each test case is an island.
 
 Given that, let’s build a test case for the first requirement:
@@ -338,7 +338,7 @@ Then it runs the test (which in this case fails), and reports the failure(s).
 Along with the fact that it fails, it tells you why it failed (a ``NameError``) where it failed (line 75 of the file), and shows you the code before the test failure.
 This may seem like a lot of information for such a simple case, but it can be invaluable in a more complex system.
 
-We got a name error, because there is no ``to_roman`` function defined in the file. So let's add that now:
+We got a NameError, because there is no ``to_roman`` function defined in the file. So let's add that now:
 
 (:download:`roman1.py <../examples/test_driven_development/roman1.py>`)
 
@@ -353,7 +353,7 @@ We got a name error, because there is no ``to_roman`` function defined in the fi
 At this stage, you want to define the API of the ``to_roman()`` function, but you don’t want to code it yet (your tests need to fail first).
 To stub it out, use the Python reserved word ``pass``, which does precisely nothing.
 
-now run pytest again, with the function defined:
+Now run pytest again, with the function defined:
 
 .. code-block::
 
@@ -383,9 +383,15 @@ now run pytest again, with the function defined:
     ============================ 1 failed in 0.15s ============================
 
 Again, pytest has found the test, run it, and again it failed.
-But this time, it failed with an AssertionError -- one of the known values did not equal what was expected.
+But this time, it failed with an ``AssertionError`` -- one of the known values did not equal what was expected.
 In addition to the line number where the failure occurred, pytest tells you exactly what the values being compared were.
 In this case, 'I' does not equal ``None`` -- obviously not. But why did you get a ``None`` there? because Python returns None when a function does not explicitly return another value. In this case, the only content in the function is ``pass``, so ``None`` was returned implicitly.
+
+.. note:: It may seem silly, and a waste of time, to go through this process when you *know* that it will fail: you haven't written the code yet!
+          But this is, in fact a useful process.
+          You have learned that your test is running and that it really does fail when the function does nothing.
+          This may seem trivial, and, of course, experienced practitioners don't *always* run tests against a do-nothing function.
+          But when a system gets large, with many hundreds of tests, it's easy for things to get lost -- it really is useful to know for sure that your tests are working before you start to rely on them.
 
 
 Overall, the test run failed because at least one test case did not pass.
@@ -395,7 +401,7 @@ An error is any other sort of exception raised in the code you’re testing or t
 
 *Now*, finally, you can write the ``to_roman()`` function.
 
-:download:`roman2.py <../examples/roman2.py>`
+:download:`roman2.py <../examples/test_driven_development/roman2.py>`
 
 .. code-block:: python
     :linenos:
@@ -526,52 +532,51 @@ If you’re still not clear how the ``to_roman()`` function works, add a
 
 .. code-block:: python
 
-   while n >= integer:
-       result += numeral
-       n -= integer
-       print('subtracting {0} from input, adding {1} to output'.format(integer, numeral))
+    while n >= integer:
+        result += numeral
+        n -= integer
+        print(f'subtracting {integer} from input, adding {numeral} to output')
 
 With the debug ``print()`` statements, the output looks like this:
 
-.. code-block:: python
+.. code-block:: ipython
 
-   >>> import roman1
-   >>> roman1.to_roman(1424)
-   subtracting 1000 from input, adding M to output
-   subtracting 400 from input, adding CD to output
-   subtracting 10 from input, adding X to output
-   subtracting 10 from input, adding X to output
-   subtracting 4 from input, adding IV to output
-   'MCDXXIV'
+    In [3]: run roman2.py
+
+    In [4]: to_roman(1424)
+    subtracting 1000 from input, adding M to output
+    subtracting 400 from input, adding CD to output
+    subtracting 10 from input, adding X to output
+    subtracting 10 from input, adding X to output
+    subtracting 4 from input, adding IV to output
+    Out[4]: 'MCDXXIV'
 
 So the ``to_roman()`` function appears to work, at least in this manual
 spot check. But will it pass the test case you wrote?
 
 .. code-block::
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest1.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok               ①
+    In [7]: ! pytest roman2.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 1 item
 
-   ----------------------------------------------------------------------
-   Ran 1 test in 0.016s
+    roman2.py .                                                     [100%]
 
-   OK
+    ========================== 1 passed in 0.01s ==========================
 
-#. Hooray! The ``to_roman()`` function passes the “known values” test
-   case. It’s not comprehensive, but it does put the function through
-   its paces with a variety of inputs, including inputs that produce
-   every single-character Roman numeral, the largest possible input
-   (``3999``), and the input that produces the longest possible Roman
-   numeral (``3888``). At this point, you can be reasonably confident
-   that the function works for any good input value you could throw at
-   it.
+
+Hooray! The ``to_roman()`` function passes the “known values” test case. It’s not comprehensive, but it does put the function through
+its paces with a variety of inputs, including inputs that produce
+every single-character Roman numeral, the largest possible input
+(``3999``), and the input that produces the longest possible Roman
+numeral (``3888``). At this point, you can be reasonably confident
+that the function works for any good input value you could throw at
+it.
 
 “Good” input? Hmm. What about bad input?
 
-⁂
-
-.. _romantest2:
 
 “Halt And Catch Fire”
 ---------------------
@@ -582,23 +587,28 @@ It is not enough to test that functions succeed when given good input;
 you must also test that they fail when given bad input. And not just any
 sort of failure; they must fail in the way you expect.
 
-.. code-block::
+.. code-block:: ipython
 
-   >>> import roman1
-   >>> roman1.to_roman(4000)
-   'MMMM'
-   >>> roman1.to_roman(5000)
-   'MMMMM'
-   >>> roman1.to_roman(9000)
-   'MMMMMMMMM'
+  In [10]: to_roman(3000)
+  Out[10]: 'MMM'
 
-#. That’s definitely not what you wanted — that’s not even a valid Roman
-   numeral! In fact, each of these numbers is outside the range of
-   acceptable input, but the function returns a bogus value anyway.
-   Silently returning bad values is *baaaaaaad*; if a program is going
-   to fail, it is far better if it fails quickly and noisily. “Halt and
-   catch fire,” as the saying goes. The Pythonic way to halt and catch
-   fire is to raise an exception.
+  In [11]: to_roman(4000)
+  Out[11]: 'MMMM'
+
+  In [12]: to_roman(5000)
+  Out[12]: 'MMMMM'
+
+  In [13]: to_roman(9000)
+  Out[13]: 'MMMMMMMMM'
+
+That’s definitely *not* what you wanted — that’s not even a valid Roman
+numeral!
+In fact, after 3000, each of these numbers is outside the range of
+acceptable input, but the function returns a bogus value anyway.
+Silently returning bad values is *baaaaaaad*; if a program is going
+to fail, it is far better if it fails quickly and noisily. “Halt and
+catch fire,” as the saying goes. In Python, the way to halt and catch
+fire is to raise an exception.
 
 The question to ask yourself is, “How can I express this as a testable
 requirement?” How’s this for starters:
@@ -608,87 +618,80 @@ requirement?” How’s this for starters:
 
 What would that test look like?
 
-[`download ``romantest2.py`` <../examples/romantest2.py>`__]
+:download:`roman.py <../examples/test_driven_development/roman3.py>`.
 
-.. code-block::
+.. code-block:: python
 
-   import unittest, roman2
-   class ToRomanBadInput(unittest.TestCase):                                 ①
-       def test_too_large(self):                                             ②
-           '''to_roman should fail with large input'''
-           self.assertRaises(roman2.OutOfRangeError, roman2.to_roman, 4000)  ③
+    import pytest
 
-#. Like the previous test case, you create a class that inherits from
-   ``unittest.TestCase``. You can have more than one test per class (as
-   you’ll see later in this chapter), but I chose to create a new class
-   here because this test is something different than the last one.
-   We’ll keep all the good input tests together in one class, and all
-   the bad input tests together in another.
-#. Like the previous test case, the test itself is a method of the
-   class, with a name starting with ``test``.
-#. The ``unittest.TestCase`` class provides the ``assertRaises`` method,
-   which takes the following arguments: the exception you’re expecting,
-   the function you’re testing, and the arguments you’re passing to that
-   function. (If the function you’re testing takes more than one
-   argument, pass them all to ``assertRaises``, in order, and it will
-   pass them right along to the function you’re testing.)
+    def test_too_large():
+        """
+        to_roman should raise an OutOfRangeError when passed
+        values over 3999
+        """
+        with pytest.raises(OutOfRangeError):
+            to_roman(4000)
 
-Pay close attention to this last line of code. Instead of calling
-``to_roman()`` directly and manually checking that it raises a
-particular exception (by wrapping it in `a ``try...except``
-block <your-first-python-program.html#exceptions>`__), the
-``assertRaises`` method has encapsulated all of that for us. All you do
-is tell it what exception you’re expecting (``roman2.OutOfRangeError``),
-the function (``to_roman()``), and the function’s arguments (``4000``).
-The ``assertRaises`` method takes care of calling ``to_roman()`` and
-checking that it raises ``roman2.OutOfRangeError``.
 
-Also note that you’re passing the ``to_roman()`` function itself as an
-argument; you’re not calling it, and you’re not passing the name of it
-as a string. Have I mentioned recently how handy it is that `everything
-in Python is an
-object <your-first-python-program.html#everythingisanobject>`__?
+Like the previous test case, the test itself is a function with a name starting with ``test_``. Pytest will know that it's a test due to the name.
+
+The test function has a docstring, letting us know what it is testing.
+
+Now look at the body of that function; what the heck is that ``with`` statement? ``with`` is how we invoke a "context manager" -- the code indented after the ``with`` in run in the "context" created, in this case, by the ``pytest.raises`` function. What ``pytest.raises`` does is check to make sure that the Exception specified is raised by the following code. So in this case, if ``to_roman(4000)`` raises an ``OutOfRangeError``, the test will pass, and if it does not raise an Exception, or raises a different Exception, the test will fail.
+
+.. note:: Context managers are a powerful and sometimes complex feature
+          of Python. They will be covered later in detail, but for now, you only need to know that the code inside the with block runs in a special way controlled by what follows the ``with`` statement, including exception handling.
+          You will see ``with`` when working with files (:ref:`files`), and you can read more about it in: :ref:`context_managers`_
 
 So what happens when you run the test suite with this new test?
 
-.. code-block::
+.. code-block:: ipython
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok
-   test_too_large (__main__.ToRomanBadInput)
-   to_roman should fail with large input ... ERROR                         ①
+In [15]: ! pytest roman3.py
+========================= test session starts =========================
+platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+collected 2 items
 
-   ======================================================================
-   ERROR: to_roman should fail with large input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest2.py", line 78, in test_too_large
-       self.assertRaises(roman2.OutOfRangeError, roman2.to_roman, 4000)
-   AttributeError: 'module' object has no attribute 'OutOfRangeError'      ②
+roman3.py .F                                                    [100%]
 
-   ----------------------------------------------------------------------
-   Ran 2 tests in 0.000s
+============================== FAILURES ===============================
+___________________________ test_too_large ____________________________
 
-   FAILED (errors=1)
+    def test_too_large():
+        """
+        to_roman should raise an OutOfRangeError when passed
+        values over 3999
+        """
+>       with pytest.raises(OutOfRangeError):
+E       NameError: name 'OutOfRangeError' is not defined
 
-#. You should have expected this to fail (since you haven’t written any
-   code to pass it yet), but... it didn’t actually “fail,” it had an
-   “error” instead. This is a subtle but important distinction. A unit
-   test actually has *three* return values: pass, fail, and error. Pass,
-   of course, means that the test passed — the code did what you
-   expected. “Fail” is what the previous test case did (until you wrote
-   code to make it pass) — it executed the code but the result was not
-   what you expected. “Error” means that the code didn’t even execute
-   properly.
-#. Why didn’t the code execute properly? The traceback tells all. The
-   module you’re testing doesn’t have an exception called
-   ``OutOfRangeError``. Remember, you passed this exception to the
-   ``assertRaises()`` method, because it’s the exception you want the
-   function to raise given an out-of-range input. But the exception
-   doesn’t exist, so the call to the ``assertRaises()`` method failed.
-   It never got a chance to test the ``to_roman()`` function; it didn’t
-   get that far.
+roman3.py:114: NameError
+======================= short test summary info =======================
+FAILED roman3.py::test_too_large - NameError: name 'OutOfRangeError'...
+===================== 1 failed, 1 passed in 0.08s =====================
+
+
+You should have expected this to fail (since you haven’t written any
+code to pass it yet), but... it didn’t actually “fail,” it had an
+“error” instead. This is a subtle but important distinction. A unit
+test actually has *three* return values: pass, fail, and error. Pass,
+of course, means that the test passed — the code did what you
+expected. “Fail” is what the previous test case did (until you wrote
+code to make it pass) — it executed the code but the result was not
+what you expected. “Error” means that the code didn’t even execute
+properly.
+
+Why didn’t the code execute properly? The traceback tells all. The
+module you’re testing doesn’t have an exception called
+``OutOfRangeError``. Remember, you passed this exception to the
+``assertRaises()`` method, because it’s the exception you want the
+function to raise given an out-of-range input. But the exception
+doesn’t exist, so the call to the ``assertRaises()`` method failed.
+It never got a chance to test the ``to_roman()`` function; it didn’t
+get that far.
+
+
 
 To solve this problem, you need to define the ``OutOfRangeError``
 exception in ``roman2.py``.
