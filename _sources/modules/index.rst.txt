@@ -78,6 +78,15 @@ Sequences and Iteration
     Sequences
     Iteration
 
+Exercises
+.........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/slicing.rst
+    ../exercises/list_lab.rst
+
 Basic Text Handling
 -------------------
 
@@ -85,6 +94,13 @@ Basic Text Handling
     :maxdepth: 1
 
     Strings
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/string_formatting.rst
+    ../exercises/mailroom-part1.rst
+    ../exercises/mailroom_tutorial.rst
 
 Exception Handling
 ------------------
