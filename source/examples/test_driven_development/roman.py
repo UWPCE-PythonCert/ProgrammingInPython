@@ -72,7 +72,7 @@ def test_to_roman_known_values():
     to_roman should give known result with known input
     """
     for integer, numeral in KNOWN_VALUES:
-        result = roman1.to_roman(integer)
+        result = to_roman(integer)
         assert numeral == result
 
 
