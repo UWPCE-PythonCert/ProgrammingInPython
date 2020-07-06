@@ -1,6 +1,6 @@
-#####################
-Python 210: Exercises
-#####################
+#############
+All Exercises
+#############
 
 These are the exercises associated with each Lesson:
 
@@ -138,18 +138,9 @@ The following are not required, but can be useful learning tools. Feel free to t
 
     mailroom-meta.rst
 
-
     mailroom-mock.rst
 
     threaded_downloader.rst
-
-Assorted Additional Exercises
-=============================
-
-These aren't required for any particular lesson -- but could be a good learning experience!
-
-.. toctree::
-    :maxdepth: 1
 
 
 

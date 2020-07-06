@@ -13,24 +13,29 @@ This site holds many of the materials for the
 
 This site can be thought of as the textbook for Programming in Python: the first course in the program. It contains notes about the topics covered in the classes, programming exercises, supplemental materials about setting up a development environment, and assorted references about Python-related topics.
 
-Course Program
-==============
-.. toctree::
-    :maxdepth: 2
-
-    ./class_schedule/index
 
 
-
-Individual Modules and Exercises
-================================
+Course Materials
+================
 
 .. toctree::
     :maxdepth: 2
 
     modules/dev_environment/index
+
     modules/index
+
     exercises/index
+
+
+10 Lesson Course Program
+========================
+
+.. toctree::
+    :maxdepth: 2
+
+    ./class_schedule/index
+
 
 
 ..    :caption: Contents:

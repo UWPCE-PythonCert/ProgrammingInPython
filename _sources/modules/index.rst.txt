@@ -1,13 +1,9 @@
 
-##########################################
-Py210: Introduction to Python: Topic Notes
-##########################################
+######################
+Introduction to Python
+######################
 
 These are assorted notes about particular python topics used in the Python certificate program.
-
-Arranged in order of the lessons:
-
-See the Canvas or EdX instance for your class for the full lesson descriptions.
 
 
 Setting up your Environment
@@ -27,6 +23,15 @@ Setting up your Environment
     HowToRunAPythonFile
     Learning
 
+Exercise:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/python_pushups.rst
+
+
 Basic Python
 ------------
 
@@ -35,16 +40,25 @@ Basic Python
 
     BasicPython
     Functions
-    Recursion
 
-Functions
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/grid_printer.rst
+    ../exercises/fizz_buzz.rst
+
+Recursion
 ---------
 
 .. toctree::
     :maxdepth: 1
 
-    Functions
     Recursion
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/fib_and_lucas.rst
 
 
 Booleans
@@ -200,7 +214,7 @@ Advanced Testing
 Extras
 ------
 
-The following are some extra advanced topics that might be of interest
+The following are some extra topics that might be of interest
 
 .. toctree::
     :maxdepth: 1
