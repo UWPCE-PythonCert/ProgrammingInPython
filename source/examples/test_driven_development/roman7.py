@@ -26,13 +26,15 @@ roman_numeral_map = (('M',  1000),
 
 
 def to_roman(n):
-    '''convert integer to Roman numeral'''
+    """convert integer to Roman numeral"""
+    if not (0 < n < 4000):
+        raise ValueError("number out of range (must be 1..3999)")
+
     result = ''
     for numeral, integer in roman_numeral_map:
         while n >= integer:
             result += numeral
             n -= integer
-            # print(f'subtracting {integer} from input, adding {numeral} to output')
     return result
 
 
@@ -115,3 +117,24 @@ def test_too_large():
         to_roman(4000)
 
 
+def test_zero():
+    """to_roman should raise an ValueError with 0 input"""
+    with pytest.raises(ValueError):
+        to_roman(0)
+
+
+def test_negative():
+    """to_roman should raise an ValueError with negative input"""
+    with pytest.raises(ValueError):
+        to_roman(-1)
+
+
+def test_non_integer():
+    """to_roman should raise an ValueError with non-integer input"""
+    with pytest.raises(ValueError):
+        to_roman(0.5)
+
+
+def test_float_with_integer_value():
+    """to_roman should work for floats with integer values"""
+    assert to_roman(3.0) == "III"

@@ -1,6 +1,8 @@
 
 .. _test_driven_development:
 
+FIXME: change the path from my personal to something generic
+
 #######################
 Test Driven Development
 #######################
@@ -388,7 +390,7 @@ In addition to the line number where the failure occurred, pytest tells you exac
 In this case, 'I' does not equal ``None`` -- obviously not. But why did you get a ``None`` there? because Python returns None when a function does not explicitly return another value. In this case, the only content in the function is ``pass``, so ``None`` was returned implicitly.
 
 .. note:: It may seem silly, and a waste of time, to go through this process when you *know* that it will fail: you haven't written the code yet!
-          But this is, in fact a useful process.
+          But this is, in fact, a useful process.
           You have learned that your test is running and that it really does fail when the function does nothing.
           This may seem trivial, and, of course, experienced practitioners don't *always* run tests against a do-nothing function.
           But when a system gets large, with many hundreds of tests, it's easy for things to get lost -- it really is useful to know for sure that your tests are working before you start to rely on them.
@@ -613,10 +615,12 @@ fire is to raise an exception.
 The question to ask yourself is, “How can I express this as a testable
 requirement?” How’s this for starters:
 
-   The ``to_roman()`` function should raise an ``OutOfRangeError`` when
+   The ``to_roman()`` function should raise an ``ValueError`` when
    given an integer greater than ``3999``.
 
-What would that test look like?
+Why a ValueError? I think it's a good idea to use one of the standard built-in exceptions is there is one that fits your use case. In this case, it is the *value* of the argument that is the problem -- it is too large. So a ``ValueError`` is appropriate.
+
+So how do we test for an exception? What would that test look like?
 
 :download:`roman.py <../examples/test_driven_development/roman3.py>`.
 
@@ -626,142 +630,82 @@ What would that test look like?
 
     def test_too_large():
         """
-        to_roman should raise an OutOfRangeError when passed
+        to_roman should raise an ValueError when passed
         values over 3999
         """
-        with pytest.raises(OutOfRangeError):
+        with pytest.raises(ValueError):
             to_roman(4000)
 
 
-Like the previous test case, the test itself is a function with a name starting with ``test_``. Pytest will know that it's a test due to the name.
+Like the previous test case, the test itself is a function with a name starting with ``test_``. pytest will know that it's a test due to the name.
 
 The test function has a docstring, letting us know what it is testing.
 
-Now look at the body of that function; what the heck is that ``with`` statement? ``with`` is how we invoke a "context manager" -- the code indented after the ``with`` in run in the "context" created, in this case, by the ``pytest.raises`` function. What ``pytest.raises`` does is check to make sure that the Exception specified is raised by the following code. So in this case, if ``to_roman(4000)`` raises an ``OutOfRangeError``, the test will pass, and if it does not raise an Exception, or raises a different Exception, the test will fail.
+Now look at the body of that function; what the heck is that ``with`` statement? ``with`` is how we invoke a "context manager" -- the code indented after the ``with`` is run in the "context" created, in this case, by the ``pytest.raises`` function. What ``pytest.raises`` does is check to make sure that the Exception specified is raised by the following code. So in this example, if ``to_roman(4000)`` raises an ``ValueError``, the test will pass, and if it does not raise an Exception, or raises a different Exception, the test will fail.
 
 .. note:: Context managers are a powerful and sometimes complex feature
           of Python. They will be covered later in detail, but for now, you only need to know that the code inside the with block runs in a special way controlled by what follows the ``with`` statement, including exception handling.
-          You will see ``with`` when working with files (:ref:`files`), and you can read more about it in: :ref:`context_managers`_
+          You will see ``with`` when working with files (:ref:`files`), and you can read more about it in: :ref:`context_managers`
 
-So what happens when you run the test suite with this new test?
+CAUTION: you are now using a utility from the ``pytest`` package, so you need to make sure to import pytest first:
 
-.. code-block:: ipython
+..code-block:: python
 
-In [15]: ! pytest roman3.py
-========================= test session starts =========================
-platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
-rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
-collected 2 items
+    In [18]: ! pytest roman3.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 2 items
 
-roman3.py .F                                                    [100%]
+    roman3.py .F                                                    [100%]
 
-============================== FAILURES ===============================
-___________________________ test_too_large ____________________________
+    ============================== FAILURES ===============================
+    ___________________________ test_too_large ____________________________
 
-    def test_too_large():
-        """
-        to_roman should raise an OutOfRangeError when passed
-        values over 3999
-        """
->       with pytest.raises(OutOfRangeError):
-E       NameError: name 'OutOfRangeError' is not defined
+        def test_too_large():
+            """
+            to_roman should raise an ValueError when passed
+            values over 3999
+            """
+            with pytest.raises(ValueError):
+    >           to_roman(4000)
+    E           Failed: DID NOT RAISE <class 'ValueError'>
 
-roman3.py:114: NameError
-======================= short test summary info =======================
-FAILED roman3.py::test_too_large - NameError: name 'OutOfRangeError'...
-===================== 1 failed, 1 passed in 0.08s =====================
-
-
-You should have expected this to fail (since you haven’t written any
-code to pass it yet), but... it didn’t actually “fail,” it had an
-“error” instead. This is a subtle but important distinction. A unit
-test actually has *three* return values: pass, fail, and error. Pass,
-of course, means that the test passed — the code did what you
-expected. “Fail” is what the previous test case did (until you wrote
-code to make it pass) — it executed the code but the result was not
-what you expected. “Error” means that the code didn’t even execute
-properly.
-
-Why didn’t the code execute properly? The traceback tells all. The
-module you’re testing doesn’t have an exception called
-``OutOfRangeError``. Remember, you passed this exception to the
-``assertRaises()`` method, because it’s the exception you want the
-function to raise given an out-of-range input. But the exception
-doesn’t exist, so the call to the ``assertRaises()`` method failed.
-It never got a chance to test the ``to_roman()`` function; it didn’t
-get that far.
+    roman3.py:115: Failed
+    ======================= short test summary info =======================
+    FAILED roman3.py::test_too_large - Failed: DID NOT RAISE <class 'Val...
+    ===================== 1 failed, 1 passed in 0.08s =====================
 
 
+You should have expected this to fail since you haven’t written any
+code to pass it yet. Did it fail in the way you expected?
 
-To solve this problem, you need to define the ``OutOfRangeError``
-exception in ``roman2.py``.
+Yes! ``pytest.raises`` did its job -- a ``ValueError`` was not raised, and the test failed.
 
-.. code-block::
-
-   class OutOfRangeError(ValueError):  ①
-       pass                            ②
-
-#. Exceptions are classes. An “out of range” error is a kind of value
-   error — the argument value is out of its acceptable range. So this
-   exception inherits from the built-in ``ValueError`` exception. This
-   is not strictly necessary (it could just inherit from the base
-   ``Exception`` class), but it feels right.
-#. Exceptions don’t actually do anything, but you need at least one line
-   of code to make a class. Calling ``pass`` does precisely nothing, but
-   it’s a line of Python code, so that makes it a class.
-
-Now run the test suite again.
-
-.. code-block::
-
-   you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok
-   test_too_large (__main__.ToRomanBadInput)
-   to_roman should fail with large input ... FAIL                          ①
-
-   ======================================================================
-   FAIL: to_roman should fail with large input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest2.py", line 78, in test_too_large
-       self.assertRaises(roman2.OutOfRangeError, roman2.to_roman, 4000)
-   AssertionError: OutOfRangeError not raised by to_roman                 ②
-
-   ----------------------------------------------------------------------
-   Ran 2 tests in 0.016s
-
-   FAILED (failures=1)
-
-#. The new test is still not passing, but it’s not returning an error
-   either. Instead, the test is failing. That’s progress! It means the
-   call to the ``assertRaises()`` method succeeded this time, and the
-   unit test framework actually tested the ``to_roman()`` function.
-#. Of course, the ``to_roman()`` function isn’t raising the
-   ``OutOfRangeError`` exception you just defined, because you haven’t
-   told it to do that yet. That’s excellent news! It means this is a
-   valid test case — it fails before you write the code to make it pass.
+Of course, the ``to_roman()`` function isn’t raising the
+``ValueError`` because you haven’t told it to do that yet.
+That’s excellent news! It means this is a valid test case — it fails before you write the code to make it pass.
 
 Now you can write the code to make this test pass.
 
-[`download ``roman2.py`` <examples/roman2.py>`__]
+:download:`roman4.py <../examples/test_driven_development/roman4.py>`.
 
 .. code-block::
 
-   def to_roman(n):
-       '''convert integer to Roman numeral'''
-       if n > 3999:
-           raise OutOfRangeError('number out of range (must be less than 4000)')  ①
+    def to_roman(n):
+        '''convert integer to Roman numeral'''
+        if n > 3999:
+            raise ValueError("number out of range (must be less than 4000)")
 
-       result = ''
-       for numeral, integer in roman_numeral_map:
-           while n >= integer:
-               result += numeral
-               n -= integer
-       return result
+        result = ''
+        for numeral, integer in roman_numeral_map:
+            while n >= integer:
+                result += numeral
+                n -= integer
+        return result
 
 #. This is straightforward: if the given input (``n``) is greater than
-   ``3999``, raise an ``OutOfRangeError`` exception. The unit test does
+   ``3999``, raise an ``ValueError`` exception. The unit test does
    not check the human-readable string that accompanies the exception,
    although you could write another test that did check it (but watch
    out for internationalization issues for strings that vary by the
@@ -769,139 +713,132 @@ Now you can write the code to make this test pass.
 
 Does this make the test pass? Let’s find out.
 
-.. code-block::
+.. code-block:: ipython
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok
-   test_too_large (__main__.ToRomanBadInput)
-   to_roman should fail with large input ... ok                            ①
+    In [19]: ! pytest roman4.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 2 items
 
-   ----------------------------------------------------------------------
-   Ran 2 tests in 0.000s
+    roman4.py ..                                                    [100%]
 
-   OK
+    ========================== 2 passed in 0.01s ==========================
 
-#. Hooray! Both tests pass. Because you worked iteratively, bouncing
-   back and forth between testing and coding, you can be sure that the
-   two lines of code you just wrote were the cause of that one test
-   going from “fail” to “pass.” That kind of confidence doesn’t come
-   cheap, but it will pay for itself over the lifetime of your code.
+Hooray! Both tests pass. Because you worked iteratively, bouncing
+back and forth between testing and coding, you can be sure that the
+two lines of code you just wrote were the cause of that one test
+going from “fail” to “pass.” That kind of confidence doesn’t come
+cheap, but it will pay for itself over the lifetime of your code.
 
-⁂
-
-.. _romantest3:
 
 More Halting, More Fire
 -----------------------
 
 Along with testing numbers that are too large, you need to test numbers
-that are too small. As `we noted in our functional
-requirements <#divingin>`__, Roman numerals cannot express 0 or negative
-numbers.
+that are too small.
+As `we noted in our functional requirements, Roman numerals cannot express 0 or negative numbers.
 
-.. code-block:: python
+.. code-block:: ipython
 
-   >>> import roman2
-   >>> roman2.to_roman(0)
-   ''
-   >>> roman2.to_roman(-1)
-   ''
+    In [20]: run roman4.py
+
+    In [21]: to_roman(-1)
+    Out[21]: ''
+
+    In [22]: to_roman(0)
+    Out[22]: ''
 
 Well *that’s* not good. Let’s add tests for each of these conditions.
 
-[`download ``romantest3.py`` <examples/romantest3.py>`__]
+:download:`roman5.py <../examples/test_driven_development/roman5.py>`.
 
-.. code-block::
+.. code-block:: python
 
-   class ToRomanBadInput(unittest.TestCase):
-       def test_too_large(self):
-           '''to_roman should fail with large input'''
-           self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, 4000)  ①
+    def test_zero():
+        """to_roman should raise an ValueError with 0 input"""
+        with pytest.raises(ValueError):
+            to_roman(0)
 
-       def test_zero(self):
-           '''to_roman should fail with 0 input'''
-           self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, 0)     ②
 
-       def test_negative(self):
-           '''to_roman should fail with negative input'''
-           self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, -1)    ③
+    def test_negative():
+        """to_roman should raise an ValueError with negative input"""
+        with pytest.raises(ValueError):
+            to_roman(-1)
 
-#. The ``test_too_large()`` method has not changed since the previous
-   step. I’m including it here to show where the new code fits.
-#. Here’s a new test: the ``test_zero()`` method. Like the
-   ``test_too_large()`` method, it tells the ``assertRaises()`` method
-   defined in ``unittest.TestCase`` to call our ``to_roman()`` function
-   with a parameter of 0, and check that it raises the appropriate
-   exception, ``OutOfRangeError``.
-#. The ``test_negative()`` method is almost identical, except it passes
-   ``-1`` to the ``to_roman()`` function. If either of these new tests
-   does *not* raise an ``OutOfRangeError`` (either because the function
-   returns an actual value, or because it raises some other exception),
-   the test is considered failed.
+The first new test is the ``test_zero()`` function. Like the
+``test_too_large()`` function, it it uses the ``pytest.raises`` context manager to call our ``to_roman()`` function with a parameter of 0, and check that it raises the appropriate exception: ``ValueError``.
+
+The ``test_negative()`` method is almost identical, except it passes
+``-1`` to the ``to_roman()`` function. If either of these new tests
+does *not* raise an ``ValueError`` (either because the function
+returns an actual value, or because it raises some other exception),
+the test is considered failed.
 
 Now check that the tests fail:
 
 .. code-block:: python
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest3.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok
-   test_negative (__main__.ToRomanBadInput)
-   to_roman should fail with negative input ... FAIL
-   test_too_large (__main__.ToRomanBadInput)
-   to_roman should fail with large input ... ok
-   test_zero (__main__.ToRomanBadInput)
-   to_roman should fail with 0 input ... FAIL
+    In [24]: ! pytest roman5.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 4 items
 
-   ======================================================================
-   FAIL: to_roman should fail with negative input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest3.py", line 86, in test_negative
-       self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, -1)
-   AssertionError: OutOfRangeError not raised by to_roman
+    roman5.py ..FF                                                  [100%]
 
-   ======================================================================
-   FAIL: to_roman should fail with 0 input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest3.py", line 82, in test_zero
-       self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, 0)
-   AssertionError: OutOfRangeError not raised by to_roman
+    ============================== FAILURES ===============================
+    ______________________________ test_zero ______________________________
 
-   ----------------------------------------------------------------------
-   Ran 4 tests in 0.000s
+        def test_zero():
+            """to_roman should raise an ValueError with 0 input"""
+            with pytest.raises(ValueError):
+    >           to_roman(0)
+    E           Failed: DID NOT RAISE <class 'ValueError'>
 
-   FAILED (failures=2)
+    roman5.py:123: Failed
+    ____________________________ test_negative ____________________________
+
+        def test_negative():
+            """to_roman should raise an ValueError with negative input"""
+            with pytest.raises(ValueError):
+    >           to_roman(-1)
+    E           Failed: DID NOT RAISE <class 'ValueError'>
+
+    roman5.py:129: Failed
+    ======================= short test summary info =======================
+    FAILED roman5.py::test_zero - Failed: DID NOT RAISE <class 'ValueErr...
+    FAILED roman5.py::test_negative - Failed: DID NOT RAISE <class 'Valu...
+    ===================== 2 failed, 2 passed in 0.09s =====================
 
 Excellent. Both tests failed, as expected. Now let’s switch over to the
 code and see what we can do to make them pass.
 
-[`download ``roman3.py`` <examples/roman3.py>`__]
+:download:`roman6.py <../examples/test_driven_development/roman6.py>`.
 
 .. code-block::
 
-   def to_roman(n):
-       '''convert integer to Roman numeral'''
-       if not (0 < n < 4000):                                              ①
-           raise OutOfRangeError('number out of range (must be 1..3999)')  ②
+    def to_roman(n):
+        """convert integer to Roman numeral"""
+        if not (0 < n < 4000):
+            raise ValueError("number out of range (must be 1..3999)")
 
-       result = ''
-       for numeral, integer in roman_numeral_map:
-           while n >= integer:
-               result += numeral
-               n -= integer
-       return result
+        result = ''
+        for numeral, integer in roman_numeral_map:
+            while n >= integer:
+                result += numeral
+                n -= integer
+        return result
 
-#. This is a nice Pythonic shortcut: multiple comparisons at once. This
-   is equivalent to ``if not ((0 < n) and (n < 4000))``, but it’s much
-   easier to read. This one line of code should catch inputs that are
-   too large, negative, or zero.
-#. If you change your conditions, make sure to update your
-   human-readable error strings to match. The ``unittest`` framework
-   won’t care, but it’ll make it difficult to do manual debugging if
-   your code is throwing incorrectly-described exceptions.
+Note the ``not (0 < n < 4000)`` This is a nice Pythonic shortcut: multiple comparisons at once.
+This is equivalent to ``if not ((0 < n) and (n < 4000))``, but it’s much
+easier to read. This one line of code should catch inputs that are
+too large, negative, or zero.
+
+If you change your conditions, make sure to update your
+human-readable error strings to match.  pytest won’t care,
+but it’ll make it difficult to do manual debugging if
+your code is throwing incorrectly-described exceptions.
 
 I could show you a whole series of unrelated examples to show that the
 multiple-comparisons-at-once shortcut works, but instead I’ll just run
@@ -909,144 +846,154 @@ the unit tests and prove it.
 
 .. code-block:: python
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest3.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok
-   test_negative (__main__.ToRomanBadInput)
-   to_roman should fail with negative input ... ok
-   test_too_large (__main__.ToRomanBadInput)
-   to_roman should fail with large input ... ok
-   test_zero (__main__.ToRomanBadInput)
-   to_roman should fail with 0 input ... ok
+    In [26]: ! pytest roman6.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 4 items
 
-   ----------------------------------------------------------------------
-   Ran 4 tests in 0.016s
+    roman6.py ....                                                  [100%]
 
-   OK
+    ========================== 4 passed in 0.01s ==========================
 
-⁂
+Excellent! The tests all pass -- your code is working! Remember that you still have the "too large" test -- and all the tests of converting numbers. So you know you haven't inadvertently broken anything else.
 
-.. _romantest4:
 
-And One More Thing…
--------------------
+And One More Thing ...
+----------------------
 
-There was one more `functional requirement <#divingin>`__ for converting
-numbers to Roman numerals: dealing with non-integers.
+There was one more functional requirement for converting numbers to Roman numerals: dealing with non-integers.
 
-.. code-block::
+.. code-block:: ipython
 
-   >>> import roman3
-   >>> roman3.to_roman(0.5)  ①
-   ''
-   >>> roman3.to_roman(1.0)  ②
-   'I'
+    In [30]: run roman6.py
 
-#. Oh, that’s bad.
-#. Oh, that’s even worse. Both of these cases should raise an exception.
-   Instead, they give bogus results.
+    In [31]: to_roman(0.5)
+    Out[31]: ''
 
-Testing for non-integers is not difficult. First, define a
-``NotIntegerError`` exception.
+Oh, that’s bad.
 
-.. code-block:: python
+.. code-block:: ipython
 
-   # roman4.py
-   class OutOfRangeError(ValueError): pass
-   class NotIntegerError(ValueError): pass
+    In [32]: to_roman(1.0)
+    Out[32]: 'I'
 
-Next, write a test case that checks for the ``NotIntegerError``
-exception.
+What about that? technically, 1.0 is a float type, not an integer. But it does have an integer value, and Python considers them equal:
+
+.. code-block:: ipython
+
+    In [35]: 1 == 1.0
+    Out[35]: True
+
+So I'd say that we want 1.0 to be convertable, but not 0.5 (or 1.00000001 for that matter)
+
+Testing for non-integers is not difficult. Simply write a test case that checks that a ``ValueError`` is raised if you pass in a non-integer value.
+
+:download:`roman7.py <../examples/test_driven_development/roman7.py>`.
 
 .. code-block:: python
 
-   class ToRomanBadInput(unittest.TestCase):
-       .
-       .
-       .
-       def test_non_integer(self):
-           '''to_roman should fail with non-integer input'''
-           self.assertRaises(roman4.NotIntegerError, roman4.to_roman, 0.5)
+    def test_non_integer():
+        """to_roman should raise an ValueError with non-integer input"""
+        with pytest.raises(ValueError):
+            to_roman(0.5)
+
+And while we are at it, test a float type that happens to be an integer.
+
+.. code-block:: python
+
+def test_float_with_integer_value():
+    """to_roman should work for floats with integer values"""
+    assert to_roman(3.0) == "III"
+
+Why a ``ValueError``? because it's the value that matters, not the type. It's OK to pass in a float type, as long as the value is an integer.
 
 Now check that the test fails properly.
 
 .. code-block:: python
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest4.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok
-   test_negative (__main__.ToRomanBadInput)
-   to_roman should fail with negative input ... ok
-   test_non_integer (__main__.ToRomanBadInput)
-   to_roman should fail with non-integer input ... FAIL
-   test_too_large (__main__.ToRomanBadInput)
-   to_roman should fail with large input ... ok
-   test_zero (__main__.ToRomanBadInput)
-   to_roman should fail with 0 input ... ok
+    In [36]: ! pytest roman7.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 6 items
 
-   ======================================================================
-   FAIL: to_roman should fail with non-integer input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest4.py", line 90, in test_non_integer
-       self.assertRaises(roman4.NotIntegerError, roman4.to_roman, 0.5)
-   AssertionError: NotIntegerError not raised by to_roman
+    roman7.py ....F.                                                [100%]
 
-   ----------------------------------------------------------------------
-   Ran 5 tests in 0.000s
+    ============================== FAILURES ===============================
+    __________________________ test_non_integer ___________________________
 
-   FAILED (failures=1)
+        def test_non_integer():
+            """to_roman should raise an ValueError with non-integer input"""
+            with pytest.raises(ValueError):
+    >           to_roman(0.5)
+    E           Failed: DID NOT RAISE <class 'ValueError'>
 
-Write the code that makes the test pass.
+    roman7.py:135: Failed
+    ======================= short test summary info =======================
+    FAILED roman7.py::test_non_integer - Failed: DID NOT RAISE <class 'V...
+    ===================== 1 failed, 5 passed in 0.10s =====================
+
+Yup -- it failed.
+
+**Hint:** when you add a new test, and see that it fails, also check that there are *more* tests than there were. In this case, 1 failed, and 5 passed. In the previous run, 4 passed -- so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one -- and we want all our tests to be preserved.
+
+So now write the code that makes the test pass.
+
+:download:`roman8.py <../examples/test_driven_development/roman8.py>`.
 
 .. code-block::
 
-   def to_roman(n):
-       '''convert integer to Roman numeral'''
-       if not (0 < n < 4000):
-           raise OutOfRangeError('number out of range (must be 1..3999)')
-       if not isinstance(n, int):                                          ①
-           raise NotIntegerError('non-integers can not be converted')      ②
+    def to_roman(n):
+        """convert integer to Roman numeral"""
+        if not (0 < n < 4000):
+            raise ValueError("number out of range (must be 1..3999)")
 
-       result = ''
-       for numeral, integer in roman_numeral_map:
-           while n >= integer:
-               result += numeral
-               n -= integer
-       return result
+        if int(n) != n:
+            raise ValueError("Only integers can be converted to Roman numerals")
 
-#. The built-in ``isinstance()`` function tests whether a variable is a
-   particular type (or, technically, any descendant type).
-#. If the argument ``n`` is not an ``int``, raise our newly minted
-   ``NotIntegerError`` exception.
+        result = ''
+        for numeral, integer in roman_numeral_map:
+            while n >= integer:
+                result += numeral
+                n -= integer
+        return result
+
+``int(n) != n`` is checking that when you convert the value to an integer, it doesn't change. We need to do that, because simply checking if you can convert to an integer isn't enough -- when a float is converted to an integer, the fractional part is truncated:
+
+.. code-block:: python
+
+    In [37]: int(1.00001)
+    Out[37]: 1
+
+if the result of converting to an integer is equal to the original, than it had an integral value. Note that this will work with all the built numerical types:
+
+.. code-block:: ipython
+
+    In [42]: int(Decimal(3)) == 3
+    Out[42]: True
+
+    In [43]: int(Decimal(3.5)) == 3.5
+    Out[43]: False
 
 Finally, check that the code does indeed make the test pass.
 
 .. code-block:: python
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest4.py -v
-   test_to_roman_known_values (__main__.KnownValues)
-   to_roman should give known result with known input ... ok
-   test_negative (__main__.ToRomanBadInput)
-   to_roman should fail with negative input ... ok
-   test_non_integer (__main__.ToRomanBadInput)
-   to_roman should fail with non-integer input ... ok
-   test_too_large (__main__.ToRomanBadInput)
-   to_roman should fail with large input ... ok
-   test_zero (__main__.ToRomanBadInput)
-   to_roman should fail with 0 input ... ok
+    In [44]: ! pytest roman8.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 6 items
 
-   ----------------------------------------------------------------------
-   Ran 5 tests in 0.000s
+    roman8.py ......                                                [100%]
 
-   OK
+    ========================== 6 passed in 0.02s ==========================
+
 
 The ``to_roman()`` function passes all of its tests, and I can’t think
 of any more tests, so it’s time to move on to ``from_roman()``.
 
-⁂
-
-.. _romantest5:
 
 A Pleasing Symmetry
 -------------------
@@ -1055,27 +1002,25 @@ Converting a string from a Roman numeral to an integer sounds more
 difficult than converting an integer to a Roman numeral. Certainly there
 is the issue of validation. It’s easy to check if an integer is greater
 than 0, but a bit harder to check whether a string is a valid Roman
-numeral. But we already constructed `a regular expression to check for
-Roman numerals <regular-expressions.html#romannumerals>`__, so that part
-is done.
+numeral. But we can at least make sure that correct Roman numerals convert correctly.
 
-That leaves the problem of converting the string itself. As we’ll see in
+So we have the problem of converting the string itself. As we’ll see in
 a minute, thanks to the rich data structure we defined to map individual
 Roman numerals to integer values, the nitty-gritty of the
 ``from_roman()`` function is as straightforward as the ``to_roman()``
 function.
 
 But first, the tests. We’ll need a “known values” test to spot-check for
-accuracy. Our test suite already contains `a mapping of known
-values <#romantest1>`__; let’s reuse that.
+accuracy. Our test suite already contains a mapping of known
+values: let’s reuse that.
 
 .. code-block:: python
 
-       def test_from_roman_known_values(self):
-           '''from_roman should give known result with known input'''
-           for integer, numeral in self.known_values:
-               result = roman5.from_roman(numeral)
-               self.assertEqual(integer, result)
+    def test_from_roman_known_values():
+        """from_roman should give known result with known input"""
+        for integer, numeral in KNOWN_VALUES:
+            result = from_roman(numeral)
+            assert integer == result
 
 There’s a pleasing symmetry here. The ``to_roman()`` and
 ``from_roman()`` functions are inverses of each other. The first
@@ -1097,147 +1042,171 @@ that the output is the same as the original input.
 
 .. code-block:: python
 
-   class RoundtripCheck(unittest.TestCase):
-       def test_roundtrip(self):
-           '''from_roman(to_roman(n))==n for all n'''
-           for integer in range(1, 4000):
-               numeral = roman5.to_roman(integer)
-               result = roman5.from_roman(numeral)
-               self.assertEqual(integer, result)
 
-These new tests won’t even fail yet. We haven’t defined a
+    def test_roundtrip():
+        '''from_roman(to_roman(n))==n for all n'''
+        for integer in range(1, 4000):
+            numeral = to_roman(integer)
+            result = from_roman(numeral)
+            assert integer == result
+
+
+These new tests won’t even fail properly yet. We haven’t defined a
 ``from_roman()`` function at all, so they’ll just raise errors.
 
 .. code-block:: python
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest5.py
-   E.E....
-   ======================================================================
-   ERROR: test_from_roman_known_values (__main__.KnownValues)
-   from_roman should give known result with known input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest5.py", line 78, in test_from_roman_known_values
-       result = roman5.from_roman(numeral)
-   AttributeError: 'module' object has no attribute 'from_roman'
+    In [48]: ! pytest roman9.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 8 items
 
-   ======================================================================
-   ERROR: test_roundtrip (__main__.RoundtripCheck)
-   from_roman(to_roman(n))==n for all n
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest5.py", line 103, in test_roundtrip
-       result = roman5.from_roman(numeral)
-   AttributeError: 'module' object has no attribute 'from_roman'
+    roman9.py ......FF                                              [100%]
 
-   ----------------------------------------------------------------------
-   Ran 7 tests in 0.019s
+    ============================== FAILURES ===============================
+    ____________________ test_from_roman_known_values _____________________
 
-   FAILED (errors=2)
+        def test_from_roman_known_values():
+            """from_roman should give known result with known input"""
+            for integer, numeral in KNOWN_VALUES:
+    >           result = from_roman(numeral)
+    E           NameError: name 'from_roman' is not defined
+
+    roman9.py:152: NameError
+    ___________________________ test_roundtrip ____________________________
+
+        def test_roundtrip():
+            '''from_roman(to_roman(n))==n for all n'''
+            for integer in range(1, 4000):
+                numeral = to_roman(integer)
+    >           result = from_roman(numeral)
+    E           NameError: name 'from_roman' is not defined
+
+    roman9.py:160: NameError
+    ======================= short test summary info =======================
+    FAILED roman9.py::test_from_roman_known_values - NameError: name 'fr...
+    FAILED roman9.py::test_roundtrip - NameError: name 'from_roman' is n...
+    ===================== 2 failed, 6 passed in 0.10s =====================
 
 A quick stub function will solve that problem.
 
 .. code-block:: python
 
-   # roman5.py
+   # roman10.py
    def from_roman(s):
        '''convert Roman numeral to integer'''
 
-(Hey, did you notice that? I defined a function with nothing but a
-`docstring <your-first-python-program.html#docstrings>`__. That’s legal
-Python. In fact, some programmers swear by it. “Don’t stub; document!”)
+Hey, did you notice that? I defined a function with nothing but a docstring. That’s legal Python. In fact, some programmers swear by it. “Don’t stub; document!”
 
-Now the test cases will actually fail.
+Now the test cases will properly fail.
 
-.. code-block:: python
+.. code-block:: ipython
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest5.py
-   F.F....
-   ======================================================================
-   FAIL: test_from_roman_known_values (__main__.KnownValues)
-   from_roman should give known result with known input
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest5.py", line 79, in test_from_roman_known_values
-       self.assertEqual(integer, result)
-   AssertionError: 1 != None
+    In [50]: ! pytest roman10.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 8 items
 
-   ======================================================================
-   FAIL: test_roundtrip (__main__.RoundtripCheck)
-   from_roman(to_roman(n))==n for all n
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest5.py", line 104, in test_roundtrip
-       self.assertEqual(integer, result)
-   AssertionError: 1 != None
+    roman10.py ......FF                                             [100%]
 
-   ----------------------------------------------------------------------
-   Ran 7 tests in 0.002s
+    ============================== FAILURES ===============================
+    ____________________ test_from_roman_known_values _____________________
 
-   FAILED (failures=2)
+        def test_from_roman_known_values():
+            """from_roman should give known result with known input"""
+            for integer, numeral in KNOWN_VALUES:
+                result = from_roman(numeral)
+    >           assert integer == result
+    E           assert 1 == None
+
+    roman10.py:157: AssertionError
+    ___________________________ test_roundtrip ____________________________
+
+        def test_roundtrip():
+            """from_roman(to_roman(n))==n for all n"""
+            for integer in range(1, 4000):
+                numeral = to_roman(integer)
+                result = from_roman(numeral)
+    >           assert integer == result
+    E           assert 1 == None
+
+    roman10.py:165: AssertionError
+    ======================= short test summary info =======================
+    FAILED roman10.py::test_from_roman_known_values - assert 1 == None
+    FAILED roman10.py::test_roundtrip - assert 1 == None
+    ===================== 2 failed, 6 passed in 0.11s =====================
+
 
 Now it’s time to write the ``from_roman()`` function.
 
 .. code-block::
 
-   def from_roman(s):
-       """convert Roman numeral to integer"""
-       result = 0
-       index = 0
-       for numeral, integer in roman_numeral_map:
-           while s[index:index+len(numeral)] == numeral:  ①
-               result += integer
-               index += len(numeral)
-       return result
+    def from_roman(s):
+        """convert Roman numeral to integer"""
+        result = 0
+        index = 0
+        for numeral, integer in roman_numeral_map:
+            while s[index:index + len(numeral)] == numeral:
+                result += integer
+                index += len(numeral)
+        return result
 
-#. The pattern here is the same as the ```to_roman()`` <#romantest1>`__
-   function. You iterate through your Roman numeral data structure (a
-   tuple of tuples), but instead of matching the highest integer values
-   as often as possible, you match the “highest” Roman numeral character
-   strings as often as possible.
+The pattern here is the same as the ```to_roman()`` function.
+You iterate through your Roman numeral data structure (a tuple of tuples),
+but instead of matching the highest integer values as often as possible,
+you match the “highest” Roman numeral character
+strings as often as possible.
 
 If you're not clear how ``from_roman()`` works, add a ``print``
 statement to the end of the ``while`` loop:
 
-::
+.. code-block:: ipython
 
-   def from_roman(s):
-       """convert Roman numeral to integer"""
-       result = 0
-       index = 0
-       for numeral, integer in roman_numeral_map:
-           while s[index:index+len(numeral)] == numeral:
-               result += integer
-               index += len(numeral)
-               print('found', numeral, 'of length', len(numeral), ', adding', integer)
+    def from_roman(s):
+        """convert Roman numeral to integer"""
+        result = 0
+        index = 0
+        for numeral, integer in roman_numeral_map:
+            while s[index:index + len(numeral)] == numeral:
+                result += integer
+                index += len(numeral)
+                print(f'found, {numeral} of length, {len(numeral)} adding {integer}')
+        return result
 
-.. code-block:: python
+.. code-block:: ipython
 
-   >>> import roman5
-   >>> roman5.from_roman('MCMLXXII')
-   found M of length 1, adding 1000
-   found CM of length 2, adding 900
-   found L of length 1, adding 50
-   found X of length 1, adding 10
-   found X of length 1, adding 10
-   found I of length 1, adding 1
-   found I of length 1, adding 1
-   1972
+    In [52]: run roman10.py
+
+    In [53]: from_roman('MCMLXXII')
+    found, M of length, 1 adding 1000
+    found, CM of length, 2 adding 900
+    found, L of length, 1 adding 50
+    found, X of length, 1 adding 10
+    found, X of length, 1 adding 10
+    found, I of length, 1 adding 1
+    found, I of length, 1 adding 1
+    Out[53]: 1972
 
 Time to re-run the tests.
 
-.. code-block:: python
+.. code-block:: ipython
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest5.py
-   .......
-   ----------------------------------------------------------------------
-   Ran 7 tests in 0.060s
+    In [54]: ! pytest roman10.py
+    ========================= test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 8 items
 
-   OK
+    roman10.py ........                                             [100%]
+
+    ========================== 8 passed in 0.38s ==========================
+
 
 Two pieces of exciting news here. The first is that the ``from_roman()``
 function works for good input, at least for all the `known
-values <#romantest1>`__. The second is that the “round trip” test also
+values. The second is that the “round trip” test also
 passed. Combined with the known values tests, you can be reasonably sure
 that both the ``to_roman()`` and ``from_roman()`` functions work
 properly for all possible good values. (This is not guaranteed; it is
@@ -1249,9 +1218,6 @@ integer values for exactly that set of Roman numerals that
 your requirements, this possibility may bother you; if so, write more
 comprehensive test cases until it doesn't bother you.)
 
-⁂
-
-.. _romantest6:
 
 More Bad Input
 --------------

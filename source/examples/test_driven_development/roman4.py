@@ -27,12 +27,14 @@ roman_numeral_map = (('M',  1000),
 
 def to_roman(n):
     '''convert integer to Roman numeral'''
+    if n > 3999:
+        raise ValueError("number out of range (must be less than 4000)")
+
     result = ''
     for numeral, integer in roman_numeral_map:
         while n >= integer:
             result += numeral
             n -= integer
-            # print(f'subtracting {integer} from input, adding {numeral} to output')
     return result
 
 

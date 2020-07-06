@@ -26,17 +26,36 @@ roman_numeral_map = (('M',  1000),
 
 
 def to_roman(n):
-    '''convert integer to Roman numeral'''
+    """convert integer to Roman numeral"""
+    if not (0 < n < 4000):
+        raise ValueError("number out of range (must be 1..3999)")
+
+    if int(n) != n:
+        raise ValueError("Only integers can be converted to Roman numerals")
+
     result = ''
     for numeral, integer in roman_numeral_map:
         while n >= integer:
             result += numeral
             n -= integer
-            # print(f'subtracting {integer} from input, adding {numeral} to output')
     return result
 
 
-## Tests for roman numeral conversion
+def from_roman(s):
+    """convert Roman numeral to integer"""
+    result = 0
+    index = 0
+    for numeral, integer in roman_numeral_map:
+        while s[index:index + len(numeral)] == numeral:
+            result += integer
+            index += len(numeral)
+            print(f'found, {numeral} of length, {len(numeral)} adding {integer}')
+    return result
+
+
+#####################################
+#  Tests for roman numeral conversion
+#####################################
 
 KNOWN_VALUES = ( (1, 'I'),
                  (2, 'II'),
@@ -113,5 +132,47 @@ def test_too_large():
     """
     with pytest.raises(ValueError):
         to_roman(4000)
+
+
+def test_zero():
+    """to_roman should raise an ValueError with 0 input"""
+    with pytest.raises(ValueError):
+        to_roman(0)
+
+
+def test_negative():
+    """to_roman should raise an ValueError with negative input"""
+    with pytest.raises(ValueError):
+        to_roman(-1)
+
+
+def test_non_integer():
+    """to_roman should raise an ValueError with non-integer input"""
+    with pytest.raises(ValueError):
+        to_roman(0.5)
+
+
+def test_float_with_integer_value():
+    """to_roman should work for floats with integer values"""
+    assert to_roman(3.0) == "III"
+
+# ####################
+# Tests for from_roman
+
+
+def test_from_roman_known_values():
+    """from_roman should give known result with known input"""
+    for integer, numeral in KNOWN_VALUES:
+        result = from_roman(numeral)
+        assert integer == result
+
+
+def test_roundtrip():
+    """from_roman(to_roman(n))==n for all n"""
+    for integer in range(1, 4000):
+        numeral = to_roman(integer)
+        result = from_roman(numeral)
+        assert integer == result
+
 
 
