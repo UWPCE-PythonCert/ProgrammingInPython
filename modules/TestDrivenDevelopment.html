@@ -180,8 +180,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="test-driven-development">
-<span id="id1"></span><h1>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h1>
+  <p id="test-driven-development">FIXME: change the path from my personal to something generic</p>
+<div class="section" id="id1">
+<h1>Test Driven Development<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>“Testing” is any strategy for making sure your code behaves as expected. “Unit Testing” is a particular strategy, that:</p>
 <ul class="simple">
 <li><p>is easy to run in an automated fashion.</p></li>
@@ -267,7 +268,7 @@ uses them.</p>
 <p>Technically, you can write unit tests with plain Python – recall the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement that you have already used to write simple tests. But it is very helpful to use a framework to make it easier to write and run your tests. In this program, we use the <cite>pytest</cite> package: it is both very easy to get started with, and provides a lot of powerful features to aide in testing complex systems.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><cite>pytest</cite> does not come with Python out of the box. But it is easily installable via <cite>pip</cite> (or conda, if you are using conda):</p>
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> does not come with Python out of the box. But it is easily installable via <cite>pip</cite> (or conda, if you are using conda):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m pip install pytest
 </pre></div>
 </div>
@@ -303,14 +304,14 @@ with others.)</p></li>
 <div class="section" id="a-single-question">
 <h3>A Single Question<a class="headerlink" href="#a-single-question" title="Permalink to this headline">¶</a></h3>
 <p class="centered">
-<strong>Every Test is an Island.</strong></p><p>A test case answers a single question about the code it is testing. A
+<strong><strong>Every Test is an Island</strong></strong></p><p>A test case answers a single question about the code it is testing. A
 test case should be able to…</p>
 <ul class="simple">
-<li><p>run completely by itself, without any human input. Unit testing is
+<li><p>Run completely by itself, without any human input. Unit testing is
 about automation.</p></li>
-<li><p>determine by itself whether the function it is testing has passed
+<li><p>Determine by itself whether the function it is testing has passed
 or failed, without a human interpreting the results.</p></li>
-<li><p>run in isolation, separate from any other test cases (even if they
+<li><p>Run in isolation, separate from any other test cases (even if they
 test the same functions). Each test case is an island.</p></li>
 </ul>
 <p>Given that, let’s build a test case for the first requirement:</p>
@@ -547,7 +548,7 @@ FAILED roman.py::test_to_roman_known_values - NameError: name &#39;to_roman&#39;
 Then it runs the test (which in this case fails), and reports the failure(s).
 Along with the fact that it fails, it tells you why it failed (a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>) where it failed (line 75 of the file), and shows you the code before the test failure.
 This may seem like a lot of information for such a simple case, but it can be invaluable in a more complex system.</p>
-<p>We got a name error, because there is no <code class="docutils literal notranslate"><span class="pre">to_roman</span></code> function defined in the file. So let’s add that now:</p>
+<p>We got a NameError, because there is no <code class="docutils literal notranslate"><span class="pre">to_roman</span></code> function defined in the file. So let’s add that now:</p>
 <p>(<a class="reference download internal" download="" href="../_downloads/b35b4e5b3f7e45e3318c046aa818ef1e/roman1.py"><code class="xref download docutils literal notranslate"><span class="pre">roman1.py</span></code></a>)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># roman1.py</span>
 
@@ -558,7 +559,7 @@ This may seem like a lot of information for such a simple case, but it can be in
 </div>
 <p>At this stage, you want to define the API of the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function, but you don’t want to code it yet (your tests need to fail first).
 To stub it out, use the Python reserved word <code class="docutils literal notranslate"><span class="pre">pass</span></code>, which does precisely nothing.</p>
-<p>now run pytest again, with the function defined:</p>
+<p>Now run pytest again, with the function defined:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pytest roman1.py
 =========================== test session starts ===========================
 platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
@@ -586,15 +587,23 @@ FAILED roman1.py::test_to_roman_known_values - AssertionError: assert &#39;I...
 </pre></div>
 </div>
 <p>Again, pytest has found the test, run it, and again it failed.
-But this time, it failed with an AssertionError – one of the known values did not equal what was expected.
+But this time, it failed with an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> – one of the known values did not equal what was expected.
 In addition to the line number where the failure occurred, pytest tells you exactly what the values being compared were.
 In this case, ‘I’ does not equal <code class="docutils literal notranslate"><span class="pre">None</span></code> – obviously not. But why did you get a <code class="docutils literal notranslate"><span class="pre">None</span></code> there? because Python returns None when a function does not explicitly return another value. In this case, the only content in the function is <code class="docutils literal notranslate"><span class="pre">pass</span></code>, so <code class="docutils literal notranslate"><span class="pre">None</span></code> was returned implicitly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It may seem silly, and a waste of time, to go through this process when you <em>know</em> that it will fail: you haven’t written the code yet!
+But this is, in fact, a useful process.
+You have learned that your test is running and that it really does fail when the function does nothing.
+This may seem trivial, and, of course, experienced practitioners don’t <em>always</em> run tests against a do-nothing function.
+But when a system gets large, with many hundreds of tests, it’s easy for things to get lost – it really is useful to know for sure that your tests are working before you start to rely on them.</p>
+</div>
 <p>Overall, the test run failed because at least one test case did not pass.
 When a test case doesn’t pass, pytest distinguishes between failures and errors.
 A failure is a failed assertion that fails because the asserted condition is not true.
 An error is any other sort of exception raised in the code you’re testing or the test code itself.</p>
 <p><em>Now</em>, finally, you can write the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function.</p>
-<p><code class="xref download docutils literal notranslate"><span class="pre">roman2.py</span></code></p>
+<p><a class="reference download internal" download="" href="../_downloads/e6660e6524c19ba855050981c2fb67a8/roman2.py"><code class="xref download docutils literal notranslate"><span class="pre">roman2.py</span></code></a></p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
@@ -822,498 +831,413 @@ integer value from the input, lather, rinse, repeat.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">integer</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">+=</span> <span class="n">numeral</span>
     <span class="n">n</span> <span class="o">-=</span> <span class="n">integer</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;subtracting </span><span class="si">{0}</span><span class="s1"> from input, adding </span><span class="si">{1}</span><span class="s1"> to output&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">integer</span><span class="p">,</span> <span class="n">numeral</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;subtracting </span><span class="si">{</span><span class="n">integer</span><span class="si">}</span><span class="s1"> from input, adding </span><span class="si">{</span><span class="n">numeral</span><span class="si">}</span><span class="s1"> to output&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>With the debug <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements, the output looks like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">roman1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">roman1</span><span class="o">.</span><span class="n">to_roman</span><span class="p">(</span><span class="mi">1424</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">run</span> <span class="n">roman2</span><span class="o">.</span><span class="n">py</span>
+
+<span class="gp">In [4]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mi">1424</span><span class="p">)</span>
 <span class="go">subtracting 1000 from input, adding M to output</span>
 <span class="go">subtracting 400 from input, adding CD to output</span>
 <span class="go">subtracting 10 from input, adding X to output</span>
 <span class="go">subtracting 10 from input, adding X to output</span>
 <span class="go">subtracting 4 from input, adding IV to output</span>
-<span class="go">&#39;MCDXXIV&#39;</span>
+<span class="gh">Out[4]: </span><span class="go">&#39;MCDXXIV&#39;</span>
 </pre></div>
 </div>
 <p>So the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function appears to work, at least in this manual
 spot check. But will it pass the test case you wrote?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest1.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok               ①
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>In [7]: ! pytest roman2.py
+========================= test session starts =========================
+platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+collected 1 item
 
-----------------------------------------------------------------------
-Ran 1 test in 0.016s
+roman2.py .                                                     [100%]
 
-OK
+========================== 1 passed in 0.01s ==========================
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Hooray! The <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function passes the “known values” test
-case. It’s not comprehensive, but it does put the function through
+<p>Hooray! The <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function passes the “known values” test case. It’s not comprehensive, but it does put the function through
 its paces with a variety of inputs, including inputs that produce
 every single-character Roman numeral, the largest possible input
 (<code class="docutils literal notranslate"><span class="pre">3999</span></code>), and the input that produces the longest possible Roman
 numeral (<code class="docutils literal notranslate"><span class="pre">3888</span></code>). At this point, you can be reasonably confident
 that the function works for any good input value you could throw at
-it.</p></li>
-</ol>
+it.</p>
 <p>“Good” input? Hmm. What about bad input?</p>
-<p>⁂</p>
 </div>
 </div>
 <div class="section" id="halt-and-catch-fire">
-<span id="romantest2"></span><h3>“Halt And Catch Fire”<a class="headerlink" href="#halt-and-catch-fire" title="Permalink to this headline">¶</a></h3>
+<h3>“Halt And Catch Fire”<a class="headerlink" href="#halt-and-catch-fire" title="Permalink to this headline">¶</a></h3>
 <p>The Pythonic way to halt and catch fire is to raise an exception.</p>
 <p>It is not enough to test that functions succeed when given good input;
 you must also test that they fail when given bad input. And not just any
 sort of failure; they must fail in the way you expect.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">roman1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">roman1</span><span class="o">.</span><span class="n">to_roman</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
-<span class="go">&#39;MMMM&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">roman1</span><span class="o">.</span><span class="n">to_roman</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
-<span class="go">&#39;MMMMM&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">roman1</span><span class="o">.</span><span class="n">to_roman</span><span class="p">(</span><span class="mi">9000</span><span class="p">)</span>
-<span class="go">&#39;MMMMMMMMM&#39;</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+<span class="gh">Out[10]: </span><span class="go">&#39;MMM&#39;</span>
+
+<span class="gp">In [11]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
+<span class="gh">Out[11]: </span><span class="go">&#39;MMMM&#39;</span>
+
+<span class="gp">In [12]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+<span class="gh">Out[12]: </span><span class="go">&#39;MMMMM&#39;</span>
+
+<span class="gp">In [13]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mi">9000</span><span class="p">)</span>
+<span class="gh">Out[13]: </span><span class="go">&#39;MMMMMMMMM&#39;</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>That’s definitely not what you wanted — that’s not even a valid Roman
-numeral! In fact, each of these numbers is outside the range of
+<p>That’s definitely <em>not</em> what you wanted — that’s not even a valid Roman
+numeral!
+In fact, after 3000, each of these numbers is outside the range of
 acceptable input, but the function returns a bogus value anyway.
 Silently returning bad values is <em>baaaaaaad</em>; if a program is going
 to fail, it is far better if it fails quickly and noisily. “Halt and
-catch fire,” as the saying goes. The Pythonic way to halt and catch
-fire is to raise an exception.</p></li>
-</ol>
+catch fire,” as the saying goes. In Python, the way to halt and catch
+fire is to raise an exception.</p>
 <p>The question to ask yourself is, “How can I express this as a testable
 requirement?” How’s this for starters:</p>
 <blockquote>
-<div><p>The <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function should raise an <code class="docutils literal notranslate"><span class="pre">OutOfRangeError</span></code> when
+<div><p>The <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function should raise an <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when
 given an integer greater than <code class="docutils literal notranslate"><span class="pre">3999</span></code>.</p>
 </div></blockquote>
-<p>What would that test look like?</p>
-<p>[<cite>download ``romantest2.py`</cite> &lt;../examples/romantest2.py&gt;`__]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import unittest, roman2
-class ToRomanBadInput(unittest.TestCase):                                 ①
-    def test_too_large(self):                                             ②
-        &#39;&#39;&#39;to_roman should fail with large input&#39;&#39;&#39;
-        self.assertRaises(roman2.OutOfRangeError, roman2.to_roman, 4000)  ③
+<p>Why a ValueError? I think it’s a good idea to use one of the standard built-in exceptions is there is one that fits your use case. In this case, it is the <em>value</em> of the argument that is the problem – it is too large. So a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is appropriate.</p>
+<p>So how do we test for an exception? What would that test look like?</p>
+<p><a class="reference download internal" download="" href="../_downloads/d8605fe860ffdccd0b8273cd07127760/roman3.py"><code class="xref download docutils literal notranslate"><span class="pre">roman.py</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="k">def</span> <span class="nf">test_too_large</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    to_roman should raise an ValueError when passed</span>
+<span class="sd">    values over 3999</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">to_roman</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Like the previous test case, you create a class that inherits from
-<code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code>. You can have more than one test per class (as
-you’ll see later in this chapter), but I chose to create a new class
-here because this test is something different than the last one.
-We’ll keep all the good input tests together in one class, and all
-the bad input tests together in another.</p></li>
-<li><p>Like the previous test case, the test itself is a method of the
-class, with a name starting with <code class="docutils literal notranslate"><span class="pre">test</span></code>.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code> class provides the <code class="docutils literal notranslate"><span class="pre">assertRaises</span></code> method,
-which takes the following arguments: the exception you’re expecting,
-the function you’re testing, and the arguments you’re passing to that
-function. (If the function you’re testing takes more than one
-argument, pass them all to <code class="docutils literal notranslate"><span class="pre">assertRaises</span></code>, in order, and it will
-pass them right along to the function you’re testing.)</p></li>
-</ol>
-<p>Pay close attention to this last line of code. Instead of calling
-<code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> directly and manually checking that it raises a
-particular exception (by wrapping it in <cite>a ``try…except`</cite>
-block &lt;your-first-python-program.html#exceptions&gt;`__), the
-<code class="docutils literal notranslate"><span class="pre">assertRaises</span></code> method has encapsulated all of that for us. All you do
-is tell it what exception you’re expecting (<code class="docutils literal notranslate"><span class="pre">roman2.OutOfRangeError</span></code>),
-the function (<code class="docutils literal notranslate"><span class="pre">to_roman()</span></code>), and the function’s arguments (<code class="docutils literal notranslate"><span class="pre">4000</span></code>).
-The <code class="docutils literal notranslate"><span class="pre">assertRaises</span></code> method takes care of calling <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> and
-checking that it raises <code class="docutils literal notranslate"><span class="pre">roman2.OutOfRangeError</span></code>.</p>
-<p>Also note that you’re passing the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function itself as an
-argument; you’re not calling it, and you’re not passing the name of it
-as a string. Have I mentioned recently how handy it is that <a class="reference external" href="your-first-python-program.html#everythingisanobject">everything
-in Python is an
-object</a>?</p>
-<p>So what happens when you run the test suite with this new test?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok
-test_too_large (__main__.ToRomanBadInput)
-to_roman should fail with large input ... ERROR                         ①
+<p>Like the previous test case, the test itself is a function with a name starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code>. pytest will know that it’s a test due to the name.</p>
+<p>The test function has a docstring, letting us know what it is testing.</p>
+<p>Now look at the body of that function; what the heck is that <code class="docutils literal notranslate"><span class="pre">with</span></code> statement? <code class="docutils literal notranslate"><span class="pre">with</span></code> is how we invoke a “context manager” – the code indented after the <code class="docutils literal notranslate"><span class="pre">with</span></code> is run in the “context” created, in this case, by the <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> function. What <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> does is check to make sure that the Exception specified is raised by the following code. So in this example, if <code class="docutils literal notranslate"><span class="pre">to_roman(4000)</span></code> raises an <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, the test will pass, and if it does not raise an Exception, or raises a different Exception, the test will fail.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Context managers are a powerful and sometimes complex feature
+of Python. They will be covered later in detail, but for now, you only need to know that the code inside the with block runs in a special way controlled by what follows the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement, including exception handling.
+You will see <code class="docutils literal notranslate"><span class="pre">with</span></code> when working with files (<a class="reference internal" href="Files.html#files"><span class="std std-ref">File Reading and Writing</span></a>), and you can read more about it in: <a class="reference internal" href="ContextManagers.html#context-managers"><span class="std std-ref">Context Managers</span></a></p>
+</div>
+<p>CAUTION: you are now using a utility from the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> package, so you need to make sure to import pytest first:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="o">!</span> pytest roman3.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 2 items</span>
 
-======================================================================
-ERROR: to_roman should fail with large input
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest2.py&quot;, line 78, in test_too_large
-    self.assertRaises(roman2.OutOfRangeError, roman2.to_roman, 4000)
-AttributeError: &#39;module&#39; object has no attribute &#39;OutOfRangeError&#39;      ②
+<span class="go">roman3.py .F                                                    [100%]</span>
 
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+<span class="go">============================== FAILURES ===============================</span>
+<span class="go">___________________________ test_too_large ____________________________</span>
 
-FAILED (errors=1)
+<span class="go">    def test_too_large():</span>
+<span class="go">        &quot;&quot;&quot;</span>
+<span class="go">        to_roman should raise an ValueError when passed</span>
+<span class="go">        values over 3999</span>
+<span class="go">        &quot;&quot;&quot;</span>
+<span class="go">        with pytest.raises(ValueError):</span>
+<span class="go">&gt;           to_roman(4000)</span>
+<span class="go">E           Failed: DID NOT RAISE &lt;class &#39;ValueError&#39;&gt;</span>
+
+<span class="go">roman3.py:115: Failed</span>
+<span class="go">======================= short test summary info =======================</span>
+<span class="go">FAILED roman3.py::test_too_large - Failed: DID NOT RAISE &lt;class &#39;Val...</span>
+<span class="go">===================== 1 failed, 1 passed in 0.08s =====================</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>You should have expected this to fail (since you haven’t written any
-code to pass it yet), but… it didn’t actually “fail,” it had an
-“error” instead. This is a subtle but important distinction. A unit
-test actually has <em>three</em> return values: pass, fail, and error. Pass,
-of course, means that the test passed — the code did what you
-expected. “Fail” is what the previous test case did (until you wrote
-code to make it pass) — it executed the code but the result was not
-what you expected. “Error” means that the code didn’t even execute
-properly.</p></li>
-<li><p>Why didn’t the code execute properly? The traceback tells all. The
-module you’re testing doesn’t have an exception called
-<code class="docutils literal notranslate"><span class="pre">OutOfRangeError</span></code>. Remember, you passed this exception to the
-<code class="docutils literal notranslate"><span class="pre">assertRaises()</span></code> method, because it’s the exception you want the
-function to raise given an out-of-range input. But the exception
-doesn’t exist, so the call to the <code class="docutils literal notranslate"><span class="pre">assertRaises()</span></code> method failed.
-It never got a chance to test the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function; it didn’t
-get that far.</p></li>
-</ol>
-<p>To solve this problem, you need to define the <code class="docutils literal notranslate"><span class="pre">OutOfRangeError</span></code>
-exception in <code class="docutils literal notranslate"><span class="pre">roman2.py</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class OutOfRangeError(ValueError):  ①
-    pass                            ②
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>Exceptions are classes. An “out of range” error is a kind of value
-error — the argument value is out of its acceptable range. So this
-exception inherits from the built-in <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> exception. This
-is not strictly necessary (it could just inherit from the base
-<code class="docutils literal notranslate"><span class="pre">Exception</span></code> class), but it feels right.</p></li>
-<li><p>Exceptions don’t actually do anything, but you need at least one line
-of code to make a class. Calling <code class="docutils literal notranslate"><span class="pre">pass</span></code> does precisely nothing, but
-it’s a line of Python code, so that makes it a class.</p></li>
-</ol>
-<p>Now run the test suite again.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok
-test_too_large (__main__.ToRomanBadInput)
-to_roman should fail with large input ... FAIL                          ①
-
-======================================================================
-FAIL: to_roman should fail with large input
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest2.py&quot;, line 78, in test_too_large
-    self.assertRaises(roman2.OutOfRangeError, roman2.to_roman, 4000)
-AssertionError: OutOfRangeError not raised by to_roman                 ②
-
-----------------------------------------------------------------------
-Ran 2 tests in 0.016s
-
-FAILED (failures=1)
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>The new test is still not passing, but it’s not returning an error
-either. Instead, the test is failing. That’s progress! It means the
-call to the <code class="docutils literal notranslate"><span class="pre">assertRaises()</span></code> method succeeded this time, and the
-unit test framework actually tested the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function.</p></li>
-<li><p>Of course, the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function isn’t raising the
-<code class="docutils literal notranslate"><span class="pre">OutOfRangeError</span></code> exception you just defined, because you haven’t
-told it to do that yet. That’s excellent news! It means this is a
-valid test case — it fails before you write the code to make it pass.</p></li>
-</ol>
+<p>You should have expected this to fail since you haven’t written any
+code to pass it yet. Did it fail in the way you expected?</p>
+<p>Yes! <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> did its job – a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> was not raised, and the test failed.</p>
+<p>Of course, the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function isn’t raising the
+<code class="docutils literal notranslate"><span class="pre">ValueError</span></code> because you haven’t told it to do that yet.
+That’s excellent news! It means this is a valid test case — it fails before you write the code to make it pass.</p>
 <p>Now you can write the code to make this test pass.</p>
-<p>[<cite>download ``roman2.py`</cite> &lt;examples/roman2.py&gt;`__]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def to_roman(n):
-    &#39;&#39;&#39;convert integer to Roman numeral&#39;&#39;&#39;
-    if n &gt; 3999:
-        raise OutOfRangeError(&#39;number out of range (must be less than 4000)&#39;)  ①
+<p><a class="reference download internal" download="" href="../_downloads/2ec4e76ed272153e19f609362ec9af0c/roman4.py"><code class="xref download docutils literal notranslate"><span class="pre">roman4.py</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_roman</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;convert integer to Roman numeral&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">3999</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;number out of range (must be less than 4000)&quot;</span><span class="p">)</span>
 
-    result = &#39;&#39;
-    for numeral, integer in roman_numeral_map:
-        while n &gt;= integer:
-            result += numeral
-            n -= integer
-    return result
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">numeral</span><span class="p">,</span> <span class="n">integer</span> <span class="ow">in</span> <span class="n">roman_numeral_map</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">integer</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">numeral</span>
+            <span class="n">n</span> <span class="o">-=</span> <span class="n">integer</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>This is straightforward: if the given input (<code class="docutils literal notranslate"><span class="pre">n</span></code>) is greater than
-<code class="docutils literal notranslate"><span class="pre">3999</span></code>, raise an <code class="docutils literal notranslate"><span class="pre">OutOfRangeError</span></code> exception. The unit test does
+<dl class="simple">
+<dt>This is straightforward: if the given input (<code class="docutils literal notranslate"><span class="pre">n</span></code>) is greater than</dt><dd><p><code class="docutils literal notranslate"><span class="pre">3999</span></code>, raise an <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> exception. The unit test does
 not check the human-readable string that accompanies the exception,
 although you could write another test that did check it (but watch
 out for internationalization issues for strings that vary by the
-user’s language or environment).</p></li>
-</ol>
+user’s language or environment).</p>
+</dd>
+</dl>
 <p>Does this make the test pass? Let’s find out.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest2.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok
-test_too_large (__main__.ToRomanBadInput)
-to_roman should fail with large input ... ok                            ①
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="o">!</span> pytest roman4.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 2 items</span>
 
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+<span class="go">roman4.py ..                                                    [100%]</span>
 
-OK
+<span class="go">========================== 2 passed in 0.01s ==========================</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Hooray! Both tests pass. Because you worked iteratively, bouncing
+<p>Hooray! Both tests pass. Because you worked iteratively, bouncing
 back and forth between testing and coding, you can be sure that the
 two lines of code you just wrote were the cause of that one test
 going from “fail” to “pass.” That kind of confidence doesn’t come
-cheap, but it will pay for itself over the lifetime of your code.</p></li>
-</ol>
-<p>⁂</p>
+cheap, but it will pay for itself over the lifetime of your code.</p>
 </div>
 <div class="section" id="more-halting-more-fire">
-<span id="romantest3"></span><h3>More Halting, More Fire<a class="headerlink" href="#more-halting-more-fire" title="Permalink to this headline">¶</a></h3>
+<h3>More Halting, More Fire<a class="headerlink" href="#more-halting-more-fire" title="Permalink to this headline">¶</a></h3>
 <p>Along with testing numbers that are too large, you need to test numbers
-that are too small. As <a class="reference external" href="#divingin">we noted in our functional
-requirements</a>, Roman numerals cannot express 0 or negative
-numbers.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">roman2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">roman2</span><span class="o">.</span><span class="n">to_roman</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="go">&#39;&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">roman2</span><span class="o">.</span><span class="n">to_roman</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">&#39;&#39;</span>
+that are too small.
+As we noted in our functional requirements, Roman numerals cannot express 0 or negative numbers.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="n">run</span> <span class="n">roman4</span><span class="o">.</span><span class="n">py</span>
+
+<span class="gp">In [21]: </span><span class="n">to_roman</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="gh">Out[21]: </span><span class="go">&#39;&#39;</span>
+
+<span class="gp">In [22]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gh">Out[22]: </span><span class="go">&#39;&#39;</span>
 </pre></div>
 </div>
 <p>Well <em>that’s</em> not good. Let’s add tests for each of these conditions.</p>
-<p>[<cite>download ``romantest3.py`</cite> &lt;examples/romantest3.py&gt;`__]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class ToRomanBadInput(unittest.TestCase):
-    def test_too_large(self):
-        &#39;&#39;&#39;to_roman should fail with large input&#39;&#39;&#39;
-        self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, 4000)  ①
+<p><a class="reference download internal" download="" href="../_downloads/be423580dbf23aa061a5ae35b913c491/roman5.py"><code class="xref download docutils literal notranslate"><span class="pre">roman5.py</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_zero</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;to_roman should raise an ValueError with 0 input&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">to_roman</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-    def test_zero(self):
-        &#39;&#39;&#39;to_roman should fail with 0 input&#39;&#39;&#39;
-        self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, 0)     ②
 
-    def test_negative(self):
-        &#39;&#39;&#39;to_roman should fail with negative input&#39;&#39;&#39;
-        self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, -1)    ③
+<span class="k">def</span> <span class="nf">test_negative</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;to_roman should raise an ValueError with negative input&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">to_roman</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">test_too_large()</span></code> method has not changed since the previous
-step. I’m including it here to show where the new code fits.</p></li>
-<li><p>Here’s a new test: the <code class="docutils literal notranslate"><span class="pre">test_zero()</span></code> method. Like the
-<code class="docutils literal notranslate"><span class="pre">test_too_large()</span></code> method, it tells the <code class="docutils literal notranslate"><span class="pre">assertRaises()</span></code> method
-defined in <code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code> to call our <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function
-with a parameter of 0, and check that it raises the appropriate
-exception, <code class="docutils literal notranslate"><span class="pre">OutOfRangeError</span></code>.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">test_negative()</span></code> method is almost identical, except it passes
+<p>The first new test is the <code class="docutils literal notranslate"><span class="pre">test_zero()</span></code> function. Like the
+<code class="docutils literal notranslate"><span class="pre">test_too_large()</span></code> function, it it uses the <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> context manager to call our <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function with a parameter of 0, and check that it raises the appropriate exception: <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">test_negative()</span></code> method is almost identical, except it passes
 <code class="docutils literal notranslate"><span class="pre">-1</span></code> to the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function. If either of these new tests
-does <em>not</em> raise an <code class="docutils literal notranslate"><span class="pre">OutOfRangeError</span></code> (either because the function
+does <em>not</em> raise an <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> (either because the function
 returns an actual value, or because it raises some other exception),
-the test is considered failed.</p></li>
-</ol>
+the test is considered failed.</p>
 <p>Now check that the tests fail:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest3.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok
-test_negative (__main__.ToRomanBadInput)
-to_roman should fail with negative input ... FAIL
-test_too_large (__main__.ToRomanBadInput)
-to_roman should fail with large input ... ok
-test_zero (__main__.ToRomanBadInput)
-to_roman should fail with 0 input ... FAIL
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="o">!</span> pytest roman5.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 4 items</span>
 
-======================================================================
-FAIL: to_roman should fail with negative input
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest3.py&quot;, line 86, in test_negative
-    self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, -1)
-AssertionError: OutOfRangeError not raised by to_roman
+<span class="go">roman5.py ..FF                                                  [100%]</span>
 
-======================================================================
-FAIL: to_roman should fail with 0 input
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest3.py&quot;, line 82, in test_zero
-    self.assertRaises(roman3.OutOfRangeError, roman3.to_roman, 0)
-AssertionError: OutOfRangeError not raised by to_roman
+<span class="go">============================== FAILURES ===============================</span>
+<span class="go">______________________________ test_zero ______________________________</span>
 
-----------------------------------------------------------------------
-Ran 4 tests in 0.000s
+<span class="go">    def test_zero():</span>
+<span class="go">        &quot;&quot;&quot;to_roman should raise an ValueError with 0 input&quot;&quot;&quot;</span>
+<span class="go">        with pytest.raises(ValueError):</span>
+<span class="go">&gt;           to_roman(0)</span>
+<span class="go">E           Failed: DID NOT RAISE &lt;class &#39;ValueError&#39;&gt;</span>
 
-FAILED (failures=2)
+<span class="go">roman5.py:123: Failed</span>
+<span class="go">____________________________ test_negative ____________________________</span>
+
+<span class="go">    def test_negative():</span>
+<span class="go">        &quot;&quot;&quot;to_roman should raise an ValueError with negative input&quot;&quot;&quot;</span>
+<span class="go">        with pytest.raises(ValueError):</span>
+<span class="go">&gt;           to_roman(-1)</span>
+<span class="go">E           Failed: DID NOT RAISE &lt;class &#39;ValueError&#39;&gt;</span>
+
+<span class="go">roman5.py:129: Failed</span>
+<span class="go">======================= short test summary info =======================</span>
+<span class="go">FAILED roman5.py::test_zero - Failed: DID NOT RAISE &lt;class &#39;ValueErr...</span>
+<span class="go">FAILED roman5.py::test_negative - Failed: DID NOT RAISE &lt;class &#39;Valu...</span>
+<span class="go">===================== 2 failed, 2 passed in 0.09s =====================</span>
 </pre></div>
 </div>
 <p>Excellent. Both tests failed, as expected. Now let’s switch over to the
 code and see what we can do to make them pass.</p>
-<p>[<cite>download ``roman3.py`</cite> &lt;examples/roman3.py&gt;`__]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def to_roman(n):
-    &#39;&#39;&#39;convert integer to Roman numeral&#39;&#39;&#39;
-    if not (0 &lt; n &lt; 4000):                                              ①
-        raise OutOfRangeError(&#39;number out of range (must be 1..3999)&#39;)  ②
+<p><a class="reference download internal" download="" href="../_downloads/02d1f83ac629de4767feac2c7890462a/roman6.py"><code class="xref download docutils literal notranslate"><span class="pre">roman6.py</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_roman</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;convert integer to Roman numeral&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">4000</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;number out of range (must be 1..3999)&quot;</span><span class="p">)</span>
 
-    result = &#39;&#39;
-    for numeral, integer in roman_numeral_map:
-        while n &gt;= integer:
-            result += numeral
-            n -= integer
-    return result
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">numeral</span><span class="p">,</span> <span class="n">integer</span> <span class="ow">in</span> <span class="n">roman_numeral_map</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">integer</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">numeral</span>
+            <span class="n">n</span> <span class="o">-=</span> <span class="n">integer</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>This is a nice Pythonic shortcut: multiple comparisons at once. This
-is equivalent to <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">((0</span> <span class="pre">&lt;</span> <span class="pre">n)</span> <span class="pre">and</span> <span class="pre">(n</span> <span class="pre">&lt;</span> <span class="pre">4000))</span></code>, but it’s much
+<p>Note the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(0</span> <span class="pre">&lt;</span> <span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">4000)</span></code> This is a nice Pythonic shortcut: multiple comparisons at once.
+This is equivalent to <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">((0</span> <span class="pre">&lt;</span> <span class="pre">n)</span> <span class="pre">and</span> <span class="pre">(n</span> <span class="pre">&lt;</span> <span class="pre">4000))</span></code>, but it’s much
 easier to read. This one line of code should catch inputs that are
-too large, negative, or zero.</p></li>
-<li><p>If you change your conditions, make sure to update your
-human-readable error strings to match. The <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework
-won’t care, but it’ll make it difficult to do manual debugging if
-your code is throwing incorrectly-described exceptions.</p></li>
-</ol>
+too large, negative, or zero.</p>
+<p>If you change your conditions, make sure to update your
+human-readable error strings to match.  pytest won’t care,
+but it’ll make it difficult to do manual debugging if
+your code is throwing incorrectly-described exceptions.</p>
 <p>I could show you a whole series of unrelated examples to show that the
 multiple-comparisons-at-once shortcut works, but instead I’ll just run
 the unit tests and prove it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest3.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok
-test_negative (__main__.ToRomanBadInput)
-to_roman should fail with negative input ... ok
-test_too_large (__main__.ToRomanBadInput)
-to_roman should fail with large input ... ok
-test_zero (__main__.ToRomanBadInput)
-to_roman should fail with 0 input ... ok
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [26]: </span><span class="o">!</span> pytest roman6.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 4 items</span>
 
-----------------------------------------------------------------------
-Ran 4 tests in 0.016s
+<span class="go">roman6.py ....                                                  [100%]</span>
 
-OK
+<span class="go">========================== 4 passed in 0.01s ==========================</span>
 </pre></div>
 </div>
-<p>⁂</p>
+<p>Excellent! The tests all pass – your code is working! Remember that you still have the “too large” test – and all the tests of converting numbers. So you know you haven’t inadvertently broken anything else.</p>
 </div>
 <div class="section" id="and-one-more-thing">
-<span id="romantest4"></span><h3>And One More Thing…<a class="headerlink" href="#and-one-more-thing" title="Permalink to this headline">¶</a></h3>
-<p>There was one more <a class="reference external" href="#divingin">functional requirement</a> for converting
-numbers to Roman numerals: dealing with non-integers.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import roman3
-&gt;&gt;&gt; roman3.to_roman(0.5)  ①
-&#39;&#39;
-&gt;&gt;&gt; roman3.to_roman(1.0)  ②
-&#39;I&#39;
+<h3>And One More Thing …<a class="headerlink" href="#and-one-more-thing" title="Permalink to this headline">¶</a></h3>
+<p>There was one more functional requirement for converting numbers to Roman numerals: dealing with non-integers.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">run</span> <span class="n">roman6</span><span class="o">.</span><span class="n">py</span>
+
+<span class="gp">In [31]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="gh">Out[31]: </span><span class="go">&#39;&#39;</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Oh, that’s bad.</p></li>
-<li><p>Oh, that’s even worse. Both of these cases should raise an exception.
-Instead, they give bogus results.</p></li>
-</ol>
-<p>Testing for non-integers is not difficult. First, define a
-<code class="docutils literal notranslate"><span class="pre">NotIntegerError</span></code> exception.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># roman4.py</span>
-<span class="k">class</span> <span class="nc">OutOfRangeError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span> <span class="k">pass</span>
-<span class="k">class</span> <span class="nc">NotIntegerError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span> <span class="k">pass</span>
+<p>Oh, that’s bad.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [32]: </span><span class="n">to_roman</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gh">Out[32]: </span><span class="go">&#39;I&#39;</span>
 </pre></div>
 </div>
-<p>Next, write a test case that checks for the <code class="docutils literal notranslate"><span class="pre">NotIntegerError</span></code>
-exception.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ToRomanBadInput</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="o">.</span>
-    <span class="o">.</span>
-    <span class="o">.</span>
-    <span class="k">def</span> <span class="nf">test_non_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;to_roman should fail with non-integer input&#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">roman4</span><span class="o">.</span><span class="n">NotIntegerError</span><span class="p">,</span> <span class="n">roman4</span><span class="o">.</span><span class="n">to_roman</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<p>What about that? technically, 1.0 is a float type, not an integer. But it does have an integer value, and Python considers them equal:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [35]: </span><span class="mi">1</span> <span class="o">==</span> <span class="mf">1.0</span>
+<span class="gh">Out[35]: </span><span class="go">True</span>
 </pre></div>
 </div>
+<p>So I’d say that we want 1.0 to be convertable, but not 0.5 (or 1.00000001 for that matter)</p>
+<p>Testing for non-integers is not difficult. Simply write a test case that checks that a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised if you pass in a non-integer value.</p>
+<p><a class="reference download internal" download="" href="../_downloads/853dca9f84e1b44a2820836dac5ee1b5/roman7.py"><code class="xref download docutils literal notranslate"><span class="pre">roman7.py</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_non_integer</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;to_roman should raise an ValueError with non-integer input&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">to_roman</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And while we are at it, test a float type that happens to be an integer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>def test_float_with_integer_value():</dt><dd><p>“””to_roman should work for floats with integer values”””
+assert to_roman(3.0) == “III”</p>
+</dd>
+</dl>
+<p>Why a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>? because it’s the value that matters, not the type. It’s OK to pass in a float type, as long as the value is an integer.</p>
 <p>Now check that the test fails properly.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest4.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok
-test_negative (__main__.ToRomanBadInput)
-to_roman should fail with negative input ... ok
-test_non_integer (__main__.ToRomanBadInput)
-to_roman should fail with non-integer input ... FAIL
-test_too_large (__main__.ToRomanBadInput)
-to_roman should fail with large input ... ok
-test_zero (__main__.ToRomanBadInput)
-to_roman should fail with 0 input ... ok
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="o">!</span> pytest roman7.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 6 items</span>
 
-======================================================================
-FAIL: to_roman should fail with non-integer input
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest4.py&quot;, line 90, in test_non_integer
-    self.assertRaises(roman4.NotIntegerError, roman4.to_roman, 0.5)
-AssertionError: NotIntegerError not raised by to_roman
+<span class="go">roman7.py ....F.                                                [100%]</span>
 
-----------------------------------------------------------------------
-Ran 5 tests in 0.000s
+<span class="go">============================== FAILURES ===============================</span>
+<span class="go">__________________________ test_non_integer ___________________________</span>
 
-FAILED (failures=1)
+<span class="go">    def test_non_integer():</span>
+<span class="go">        &quot;&quot;&quot;to_roman should raise an ValueError with non-integer input&quot;&quot;&quot;</span>
+<span class="go">        with pytest.raises(ValueError):</span>
+<span class="go">&gt;           to_roman(0.5)</span>
+<span class="go">E           Failed: DID NOT RAISE &lt;class &#39;ValueError&#39;&gt;</span>
+
+<span class="go">roman7.py:135: Failed</span>
+<span class="go">======================= short test summary info =======================</span>
+<span class="go">FAILED roman7.py::test_non_integer - Failed: DID NOT RAISE &lt;class &#39;V...</span>
+<span class="go">===================== 1 failed, 5 passed in 0.10s =====================</span>
 </pre></div>
 </div>
-<p>Write the code that makes the test pass.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def to_roman(n):
-    &#39;&#39;&#39;convert integer to Roman numeral&#39;&#39;&#39;
-    if not (0 &lt; n &lt; 4000):
-        raise OutOfRangeError(&#39;number out of range (must be 1..3999)&#39;)
-    if not isinstance(n, int):                                          ①
-        raise NotIntegerError(&#39;non-integers can not be converted&#39;)      ②
+<p>Yup – it failed.</p>
+<p><strong>Hint:</strong> when you add a new test, and see that it fails, also check that there are <em>more</em> tests than there were. In this case, 1 failed, and 5 passed. In the previous run, 4 passed – so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one – and we want all our tests to be preserved.</p>
+<p>So now write the code that makes the test pass.</p>
+<p><a class="reference download internal" download="" href="../_downloads/8858d7793ed802b63b5316435b01b522/roman8.py"><code class="xref download docutils literal notranslate"><span class="pre">roman8.py</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_roman</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;convert integer to Roman numeral&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">4000</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;number out of range (must be 1..3999)&quot;</span><span class="p">)</span>
 
-    result = &#39;&#39;
-    for numeral, integer in roman_numeral_map:
-        while n &gt;= integer:
-            result += numeral
-            n -= integer
-    return result
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Only integers can be converted to Roman numerals&quot;</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">numeral</span><span class="p">,</span> <span class="n">integer</span> <span class="ow">in</span> <span class="n">roman_numeral_map</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">integer</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">numeral</span>
+            <span class="n">n</span> <span class="o">-=</span> <span class="n">integer</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>The built-in <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> function tests whether a variable is a
-particular type (or, technically, any descendant type).</p></li>
-<li><p>If the argument <code class="docutils literal notranslate"><span class="pre">n</span></code> is not an <code class="docutils literal notranslate"><span class="pre">int</span></code>, raise our newly minted
-<code class="docutils literal notranslate"><span class="pre">NotIntegerError</span></code> exception.</p></li>
-</ol>
+<p><code class="docutils literal notranslate"><span class="pre">int(n)</span> <span class="pre">!=</span> <span class="pre">n</span></code> is checking that when you convert the value to an integer, it doesn’t change. We need to do that, because simply checking if you can convert to an integer isn’t enough – when a float is converted to an integer, the fractional part is truncated:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [37]: </span><span class="nb">int</span><span class="p">(</span><span class="mf">1.00001</span><span class="p">)</span>
+<span class="gh">Out[37]: </span><span class="go">1</span>
+</pre></div>
+</div>
+<p>if the result of converting to an integer is equal to the original, than it had an integral value. Note that this will work with all the built numerical types:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [42]: </span><span class="nb">int</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="gh">Out[42]: </span><span class="go">True</span>
+
+<span class="gp">In [43]: </span><span class="nb">int</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="mf">3.5</span><span class="p">))</span> <span class="o">==</span> <span class="mf">3.5</span>
+<span class="gh">Out[43]: </span><span class="go">False</span>
+</pre></div>
+</div>
 <p>Finally, check that the code does indeed make the test pass.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest4.py -v
-test_to_roman_known_values (__main__.KnownValues)
-to_roman should give known result with known input ... ok
-test_negative (__main__.ToRomanBadInput)
-to_roman should fail with negative input ... ok
-test_non_integer (__main__.ToRomanBadInput)
-to_roman should fail with non-integer input ... ok
-test_too_large (__main__.ToRomanBadInput)
-to_roman should fail with large input ... ok
-test_zero (__main__.ToRomanBadInput)
-to_roman should fail with 0 input ... ok
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [44]: </span><span class="o">!</span> pytest roman8.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 6 items</span>
 
-----------------------------------------------------------------------
-Ran 5 tests in 0.000s
+<span class="go">roman8.py ......                                                [100%]</span>
 
-OK
+<span class="go">========================== 6 passed in 0.02s ==========================</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function passes all of its tests, and I can’t think
 of any more tests, so it’s time to move on to <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code>.</p>
-<p>⁂</p>
 </div>
 <div class="section" id="a-pleasing-symmetry">
-<span id="romantest5"></span><h3>A Pleasing Symmetry<a class="headerlink" href="#a-pleasing-symmetry" title="Permalink to this headline">¶</a></h3>
+<h3>A Pleasing Symmetry<a class="headerlink" href="#a-pleasing-symmetry" title="Permalink to this headline">¶</a></h3>
 <p>Converting a string from a Roman numeral to an integer sounds more
 difficult than converting an integer to a Roman numeral. Certainly there
 is the issue of validation. It’s easy to check if an integer is greater
 than 0, but a bit harder to check whether a string is a valid Roman
-numeral. But we already constructed <a class="reference external" href="regular-expressions.html#romannumerals">a regular expression to check for
-Roman numerals</a>, so that part
-is done.</p>
-<p>That leaves the problem of converting the string itself. As we’ll see in
+numeral. But we can at least make sure that correct Roman numerals convert correctly.</p>
+<p>So we have the problem of converting the string itself. As we’ll see in
 a minute, thanks to the rich data structure we defined to map individual
 Roman numerals to integer values, the nitty-gritty of the
 <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> function is as straightforward as the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code>
 function.</p>
 <p>But first, the tests. We’ll need a “known values” test to spot-check for
-accuracy. Our test suite already contains <a class="reference external" href="#romantest1">a mapping of known
-values</a>; let’s reuse that.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_from_roman_known_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;from_roman should give known result with known input&#39;&#39;&#39;</span>
-    <span class="k">for</span> <span class="n">integer</span><span class="p">,</span> <span class="n">numeral</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">known_values</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">roman5</span><span class="o">.</span><span class="n">from_roman</span><span class="p">(</span><span class="n">numeral</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">integer</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+accuracy. Our test suite already contains a mapping of known
+values: let’s reuse that.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_from_roman_known_values</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;from_roman should give known result with known input&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">integer</span><span class="p">,</span> <span class="n">numeral</span> <span class="ow">in</span> <span class="n">KNOWN_VALUES</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">from_roman</span><span class="p">(</span><span class="n">numeral</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">integer</span> <span class="o">==</span> <span class="n">result</span>
 </pre></div>
 </div>
 <p>There’s a pleasing symmetry here. The <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> and
@@ -1331,137 +1255,155 @@ that is the valid range of inputs to the <code class="docutils literal notransla
 express this symmetry in a test case that runs through all the values
 <code class="docutils literal notranslate"><span class="pre">1..3999</span></code>, calls <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code>, calls <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code>, and checks
 that the output is the same as the original input.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RoundtripCheck</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_roundtrip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;from_roman(to_roman(n))==n for all n&#39;&#39;&#39;</span>
-        <span class="k">for</span> <span class="n">integer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4000</span><span class="p">):</span>
-            <span class="n">numeral</span> <span class="o">=</span> <span class="n">roman5</span><span class="o">.</span><span class="n">to_roman</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">roman5</span><span class="o">.</span><span class="n">from_roman</span><span class="p">(</span><span class="n">numeral</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">integer</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_roundtrip</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;from_roman(to_roman(n))==n for all n&#39;&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">integer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4000</span><span class="p">):</span>
+        <span class="n">numeral</span> <span class="o">=</span> <span class="n">to_roman</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">from_roman</span><span class="p">(</span><span class="n">numeral</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">integer</span> <span class="o">==</span> <span class="n">result</span>
 </pre></div>
 </div>
-<p>These new tests won’t even fail yet. We haven’t defined a
+<p>These new tests won’t even fail properly yet. We haven’t defined a
 <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> function at all, so they’ll just raise errors.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest5.py
-E.E....
-======================================================================
-ERROR: test_from_roman_known_values (__main__.KnownValues)
-from_roman should give known result with known input
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest5.py&quot;, line 78, in test_from_roman_known_values
-    result = roman5.from_roman(numeral)
-AttributeError: &#39;module&#39; object has no attribute &#39;from_roman&#39;
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [48]: </span><span class="o">!</span> pytest roman9.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 8 items</span>
 
-======================================================================
-ERROR: test_roundtrip (__main__.RoundtripCheck)
-from_roman(to_roman(n))==n for all n
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest5.py&quot;, line 103, in test_roundtrip
-    result = roman5.from_roman(numeral)
-AttributeError: &#39;module&#39; object has no attribute &#39;from_roman&#39;
+<span class="go">roman9.py ......FF                                              [100%]</span>
 
-----------------------------------------------------------------------
-Ran 7 tests in 0.019s
+<span class="go">============================== FAILURES ===============================</span>
+<span class="go">____________________ test_from_roman_known_values _____________________</span>
 
-FAILED (errors=2)
+<span class="go">    def test_from_roman_known_values():</span>
+<span class="go">        &quot;&quot;&quot;from_roman should give known result with known input&quot;&quot;&quot;</span>
+<span class="go">        for integer, numeral in KNOWN_VALUES:</span>
+<span class="go">&gt;           result = from_roman(numeral)</span>
+<span class="go">E           NameError: name &#39;from_roman&#39; is not defined</span>
+
+<span class="go">roman9.py:152: NameError</span>
+<span class="go">___________________________ test_roundtrip ____________________________</span>
+
+<span class="go">    def test_roundtrip():</span>
+<span class="go">        &#39;&#39;&#39;from_roman(to_roman(n))==n for all n&#39;&#39;&#39;</span>
+<span class="go">        for integer in range(1, 4000):</span>
+<span class="go">            numeral = to_roman(integer)</span>
+<span class="go">&gt;           result = from_roman(numeral)</span>
+<span class="go">E           NameError: name &#39;from_roman&#39; is not defined</span>
+
+<span class="go">roman9.py:160: NameError</span>
+<span class="go">======================= short test summary info =======================</span>
+<span class="go">FAILED roman9.py::test_from_roman_known_values - NameError: name &#39;fr...</span>
+<span class="go">FAILED roman9.py::test_roundtrip - NameError: name &#39;from_roman&#39; is n...</span>
+<span class="go">===================== 2 failed, 6 passed in 0.10s =====================</span>
 </pre></div>
 </div>
 <p>A quick stub function will solve that problem.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># roman5.py</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># roman10.py</span>
 <span class="k">def</span> <span class="nf">from_roman</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;convert Roman numeral to integer&#39;&#39;&#39;</span>
 </pre></div>
 </div>
-<p>(Hey, did you notice that? I defined a function with nothing but a
-<a class="reference external" href="your-first-python-program.html#docstrings">docstring</a>. That’s legal
-Python. In fact, some programmers swear by it. “Don’t stub; document!”)</p>
-<p>Now the test cases will actually fail.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest5.py
-F.F....
-======================================================================
-FAIL: test_from_roman_known_values (__main__.KnownValues)
-from_roman should give known result with known input
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest5.py&quot;, line 79, in test_from_roman_known_values
-    self.assertEqual(integer, result)
-AssertionError: 1 != None
+<p>Hey, did you notice that? I defined a function with nothing but a docstring. That’s legal Python. In fact, some programmers swear by it. “Don’t stub; document!”</p>
+<p>Now the test cases will properly fail.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [50]: </span><span class="o">!</span> pytest roman10.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 8 items</span>
 
-======================================================================
-FAIL: test_roundtrip (__main__.RoundtripCheck)
-from_roman(to_roman(n))==n for all n
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;romantest5.py&quot;, line 104, in test_roundtrip
-    self.assertEqual(integer, result)
-AssertionError: 1 != None
+<span class="go">roman10.py ......FF                                             [100%]</span>
 
-----------------------------------------------------------------------
-Ran 7 tests in 0.002s
+<span class="go">============================== FAILURES ===============================</span>
+<span class="go">____________________ test_from_roman_known_values _____________________</span>
 
-FAILED (failures=2)
+<span class="go">    def test_from_roman_known_values():</span>
+<span class="go">        &quot;&quot;&quot;from_roman should give known result with known input&quot;&quot;&quot;</span>
+<span class="go">        for integer, numeral in KNOWN_VALUES:</span>
+<span class="go">            result = from_roman(numeral)</span>
+<span class="go">&gt;           assert integer == result</span>
+<span class="go">E           assert 1 == None</span>
+
+<span class="go">roman10.py:157: AssertionError</span>
+<span class="go">___________________________ test_roundtrip ____________________________</span>
+
+<span class="go">    def test_roundtrip():</span>
+<span class="go">        &quot;&quot;&quot;from_roman(to_roman(n))==n for all n&quot;&quot;&quot;</span>
+<span class="go">        for integer in range(1, 4000):</span>
+<span class="go">            numeral = to_roman(integer)</span>
+<span class="go">            result = from_roman(numeral)</span>
+<span class="go">&gt;           assert integer == result</span>
+<span class="go">E           assert 1 == None</span>
+
+<span class="go">roman10.py:165: AssertionError</span>
+<span class="go">======================= short test summary info =======================</span>
+<span class="go">FAILED roman10.py::test_from_roman_known_values - assert 1 == None</span>
+<span class="go">FAILED roman10.py::test_roundtrip - assert 1 == None</span>
+<span class="go">===================== 2 failed, 6 passed in 0.11s =====================</span>
 </pre></div>
 </div>
 <p>Now it’s time to write the <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> function.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def from_roman(s):
-    &quot;&quot;&quot;convert Roman numeral to integer&quot;&quot;&quot;
-    result = 0
-    index = 0
-    for numeral, integer in roman_numeral_map:
-        while s[index:index+len(numeral)] == numeral:  ①
-            result += integer
-            index += len(numeral)
-    return result
-</pre></div>
-</div>
-<ol class="arabic simple">
-<li><p>The pattern here is the same as the <code class="docutils literal notranslate"><span class="pre">`to_roman()</span></code> &lt;#romantest1&gt;`__
-function. You iterate through your Roman numeral data structure (a
-tuple of tuples), but instead of matching the highest integer values
-as often as possible, you match the “highest” Roman numeral character
-strings as often as possible.</p></li>
-</ol>
-<p>If you’re not clear how <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> works, add a <code class="docutils literal notranslate"><span class="pre">print</span></code>
-statement to the end of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">from_roman</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;convert Roman numeral to integer&quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">numeral</span><span class="p">,</span> <span class="n">integer</span> <span class="ow">in</span> <span class="n">roman_numeral_map</span><span class="p">:</span>
-        <span class="k">while</span> <span class="n">s</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">)]</span> <span class="o">==</span> <span class="n">numeral</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">s</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">)]</span> <span class="o">==</span> <span class="n">numeral</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">+=</span> <span class="n">integer</span>
             <span class="n">index</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="n">numeral</span><span class="p">,</span> <span class="s1">&#39;of length&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">),</span> <span class="s1">&#39;, adding&#39;</span><span class="p">,</span> <span class="n">integer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">roman5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">roman5</span><span class="o">.</span><span class="n">from_roman</span><span class="p">(</span><span class="s1">&#39;MCMLXXII&#39;</span><span class="p">)</span>
-<span class="go">found M of length 1, adding 1000</span>
-<span class="go">found CM of length 2, adding 900</span>
-<span class="go">found L of length 1, adding 50</span>
-<span class="go">found X of length 1, adding 10</span>
-<span class="go">found X of length 1, adding 10</span>
-<span class="go">found I of length 1, adding 1</span>
-<span class="go">found I of length 1, adding 1</span>
-<span class="go">1972</span>
+<p>The pattern here is the same as the <code class="docutils literal notranslate"><span class="pre">`to_roman()</span></code> function.
+You iterate through your Roman numeral data structure (a tuple of tuples),
+but instead of matching the highest integer values as often as possible,
+you match the “highest” Roman numeral character
+strings as often as possible.</p>
+<p>If you’re not clear how <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> works, add a <code class="docutils literal notranslate"><span class="pre">print</span></code>
+statement to the end of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">from_roman</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;convert Roman numeral to integer&quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">numeral</span><span class="p">,</span> <span class="n">integer</span> <span class="ow">in</span> <span class="n">roman_numeral_map</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">s</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">)]</span> <span class="o">==</span> <span class="n">numeral</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">integer</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;found, </span><span class="si">{</span><span class="n">numeral</span><span class="si">}</span><span class="s1"> of length, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">)</span><span class="si">}</span><span class="s1"> adding </span><span class="si">{</span><span class="n">integer</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [52]: </span><span class="n">run</span> <span class="n">roman10</span><span class="o">.</span><span class="n">py</span>
+
+<span class="gp">In [53]: </span><span class="n">from_roman</span><span class="p">(</span><span class="s1">&#39;MCMLXXII&#39;</span><span class="p">)</span>
+<span class="go">found, M of length, 1 adding 1000</span>
+<span class="go">found, CM of length, 2 adding 900</span>
+<span class="go">found, L of length, 1 adding 50</span>
+<span class="go">found, X of length, 1 adding 10</span>
+<span class="go">found, X of length, 1 adding 10</span>
+<span class="go">found, I of length, 1 adding 1</span>
+<span class="go">found, I of length, 1 adding 1</span>
+<span class="gh">Out[53]: </span><span class="go">1972</span>
 </pre></div>
 </div>
 <p>Time to re-run the tests.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest5.py
-.......
-----------------------------------------------------------------------
-Ran 7 tests in 0.060s
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [54]: </span><span class="o">!</span> pytest roman10.py
+<span class="go">========================= test session starts =========================</span>
+<span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1</span>
+<span class="go">rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development</span>
+<span class="go">collected 8 items</span>
 
-OK
+<span class="go">roman10.py ........                                             [100%]</span>
+
+<span class="go">========================== 8 passed in 0.38s ==========================</span>
 </pre></div>
 </div>
 <p>Two pieces of exciting news here. The first is that the <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code>
-function works for good input, at least for all the <a class="reference external" href="#romantest1">known
-values</a>. The second is that the “round trip” test also
+function works for good input, at least for all the <cite>known
+values. The second is that the “round trip” test also
 passed. Combined with the known values tests, you can be reasonably sure
-that both the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> and <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> functions work
+that both the ``to_roman()`</cite> and <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> functions work
 properly for all possible good values. (This is not guaranteed; it is
 theoretically possible that <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> has a bug that produces the
 wrong Roman numeral for some particular set of inputs, <em>and</em> that
@@ -1470,10 +1412,9 @@ integer values for exactly that set of Roman numerals that
 <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> generated incorrectly. Depending on your application and
 your requirements, this possibility may bother you; if so, write more
 comprehensive test cases until it doesn’t bother you.)</p>
-<p>⁂</p>
 </div>
 <div class="section" id="more-bad-input">
-<span id="romantest6"></span><h3>More Bad Input<a class="headerlink" href="#more-bad-input" title="Permalink to this headline">¶</a></h3>
+<h3>More Bad Input<a class="headerlink" href="#more-bad-input" title="Permalink to this headline">¶</a></h3>
 <p>Now that the <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> function works properly with good input,
 it’s time to fit in the last piece of the puzzle: making it work
 properly with bad input. That means finding a way to look at a string
@@ -1555,7 +1496,7 @@ exception, <code class="docutils literal notranslate"><span class="pre">InvalidR
 <p>All three of these tests should fail, since the <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code>
 function doesn’t currently have any validity checking. (If they don’t
 fail now, then what the heck are they testing?)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest6.py
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest6.py
 FFF.......
 ======================================================================
 FAIL: test_malformed_antecedents (__main__.FromRomanBadInput)
@@ -1620,7 +1561,7 @@ into the <code class="docutils literal notranslate"><span class="pre">from_roman
 </pre></div>
 </div>
 <p>And re-run the tests…</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest7.py
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>you@localhost:~/diveintopython3/examples$ python3 romantest7.py
 ..........
 ----------------------------------------------------------------------
 Ran 10 tests in 0.066s
@@ -1631,7 +1572,7 @@ OK
 <p>And the anticlimax award of the year goes to… the word “<code class="docutils literal notranslate"><span class="pre">OK</span></code>”,
 which is printed by the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> module when all the tests pass.</p>
 <p><a class="reference external" href="advanced-iterators.html">☜</a> <a class="reference external" href="refactoring.html">☞</a></p>
-<p>© 2001–11 <a class="reference external" href="about.html">Mark Pilgrim</a></p>
+<p>© 2001–11 <cite>Mark Pilgrim</cite>, 2020 <cite>Christopher Barker</cite></p>
 </div>
 </div>
 </div>
