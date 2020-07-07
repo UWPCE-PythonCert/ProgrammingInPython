@@ -110,7 +110,8 @@ with ``test_`` prepended.
 
 .. note::
   Technically, you can name your test files anything you want. But there are two reasons to use standard naming conventions.
-  One is that it is clear to anyone looking at the code what is and isn't a test module. The other is that pytest, and other testing systems, use `naming conventions <https://docs.pytest.org/en/latest/goodpractices.html#test-discovery>`_ to find your test files.
+  One is that it is clear to anyone looking at the code what is and isn't a test module. The other is that pytest, and other testing systems, use
+  `naming conventions <https://docs.pytest.org/en/latest/goodpractices.html#test-discovery>`_ to find your test files.
   If you name your test files: ``test_something.py`` then pytest will find them for you. And if you use the name of the module being tested:
   ``test_name_of_tested_module.py`` then it will be clear which test files belong to which modules.
 

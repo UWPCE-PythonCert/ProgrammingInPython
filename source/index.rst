@@ -21,8 +21,6 @@ Course Materials
 .. toctree::
     :maxdepth: 2
 
-    modules/dev_environment/index
-
     modules/index
 
     exercises/index

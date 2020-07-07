@@ -4,8 +4,11 @@ from uuid import uuid4
 
 
 class Row:
-    """This class represents a single row with ID, first name, last name and state attributes"""
-    def __init__(self, fname: str, lname: str, state: str):
+    """
+    This class represents a single row
+    with ID, first name, last name and state attributes
+    """
+    def __init__(self, fname, lname, state):
         self.row_id = str(uuid4())  # randomly generated unique ID
         self.fname = fname
         self.lname = lname
@@ -33,13 +36,14 @@ class Report:
         pass
 
     def get_number_of_pages(self) -> int:
-        """Get how many pages the report has; this will be based on limit variable.
+        """
+        Get how many pages the report has; this will be based on limit variable.
         If your limit=4 and rows list has 6 records then there are two pages: page1 has 4 records, page2 has 2 records
         hint: you'll want to round up
         """
         pass
 
-    def get_paged_rows(self, sort_field: str, page: int) -> list:
+    def get_paged_rows(self, sort_field, page):
         """Return a list of rows for a specific page number
         :param sort_field:  field to sort on, "name" or "-name" (descending)
         :param page:        specific page for returning data

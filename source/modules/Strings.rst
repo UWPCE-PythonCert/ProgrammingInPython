@@ -23,12 +23,17 @@ Strings
 
   Full of confidence, the string replies: "Nope, I'm a frayed knot."
 
-A "String" is a computerese word for a piece of text -- a "string" of characters. Why "string"? "String" can be used to mean "(a linear sequence (as of characters, words, proteins, etc.)"
-(`definition of string <http://wordnetweb.princeton.edu/perl/webwn?s=string>`_)
+A "String" is a computerese word for a piece of text -- a "string" of characters.
+
+Why "string"?
+
+"String" can be used to mean "a linear sequence (as of characters, words, proteins, etc.)"
+
+`Definition of string <http://wordnetweb.princeton.edu/perl/webwn?s=string>`_
 
 So a string is a sequence of individual letters or characters.
 
-In Python, each character can be a `Unicode <https://unicode.org/>`_ character -- that is, any character in any language in the world.  Having this built in by default in Python (3) means that you can get very far simply ignoring it -- anything you can type on your computer can be used in strings in Python. If you do need to work with non-English characters, or data encoded in non-utf-8, particularly on Python 2, here are some notes about that: :ref:`unicode`. But for the most part, in Python3 -- strings are text, and text is string, and that's that.
+In Python, each character can be a `Unicode <https://unicode.org/>`_ character -- that is, any character in any language in the world.  Having this built in by default in Python (3) means that you can get very far simply ignoring it -- anything you can type on your computer can be used in strings in Python. If you do need to work with non-English characters, or data encoded in non-utf-8, particularly on Python 2, here are some notes about that: :ref:`unicode`. But for the most part, in Python3 -- strings are text, and text is strings, and that's that. If you know how to type characters (accented, etc.) that are not used in English on your computer, they should "just work".
 
 Creating strings:
 -----------------
@@ -47,11 +52,11 @@ A literal can be delineated with single or double quotes, alone or in triples.
 
     """and this also"""
 
-    '''and even this
-    triple quotes preserve newlines
+    '''and even this.
+    Triple quotes preserve newlines
     so this is three lines'''
 
-You can also use call the string object (``str()``) to "make" a string out of other data types.
+You can also call the string object (``str()``) to "make" a string out of other data types.
 
 .. code-block:: ipython
 
@@ -60,12 +65,13 @@ You can also use call the string object (``str()``) to "make" a string out of ot
 
 Strings can also be read from files or other sources of I/O.
 
+
 String Methods
 ===============
 
 The python string object is very powerful with lots of methods for common text manipulation. "methods" are functions defined on an object itself (more on that when we get to OO programming). But it means that you have many ways to manipulate text built right into the string objects themselves.
 
-Note that strings are "immutable" --they can not be changed once they have been created. So the string methods all return new objects, rather than change the string in place.
+Note that strings are "immutable" -- they can not be changed once they have been created. So the string methods all return new strings, rather than change the string in place. Which is kind of handy if you want to string multiple operations together (pun intended ...).
 
 Here are just a few of the more common string methods:
 
@@ -88,11 +94,11 @@ Splitting and Joining Strings
 
 It may seem odd at first that ``.join()`` is a string method, rather than, say, a method on lists. But in fact, it makes a lot of sense. Lists (and tuples, and other sequences) can hold any type of data -- and "joining" arbitrary data types doesn't make any sense.  Joining is strictly a string activity.
 
-And you need a string so you can join the parts -- therefore, we need a string object in there somewhere anyway.
+And you need a string so you can join the parts with something (e.g. a space, or a comma, or ...) -- therefore, we need a string object in there somewhere anyway.
 
 Lastly, having join() be a string method means that it can join strings in ANY iterable object -- not just lists or other built-in sequence types.
 
-So it does make sense -- but even if doesn't make sense to you, that's the way it is -- so remember that you call ``.join()`` on the string you want to join things with.
+So it does make sense. But even if doesn't make sense to you, that's the way it is -- so remember that you call ``.join()`` on the string you want to join things with, not on the sequence.
 
 So to be clear: if you have a bunch of strings in a sequence and you want to put them together, you create a string with the character (or characters) you want to join them with, and call join() on that object:
 
@@ -115,6 +121,7 @@ Maybe not very common, but you can join with a longer string as well:
     In [5]: " --#-- ".join(["these", "are", "some", "strings"])
     Out[5]: 'these --#-- are --#-- some --#-- strings'
 
+
 Building up a Long String.
 --------------------------
 
@@ -135,7 +142,18 @@ But: strings are immutable -- Python needs to create a new string each time you 
        msg.append(piece)
    " ".join(msg)
 
-appending to lists is efficient -- and so is the ``join()`` method of strings.
+appending to lists is efficient -- and so is the ``join()`` method of strings. In fact the `+=` approach is so inefficient that the `sum()` function explicitly forbids summing strings:
+
+.. code-block:: ipython
+
+    In [2]: sum(stuff_to_join, "")
+    ---------------------------------------------------------------------------
+    TypeError                                 Traceback (most recent call last)
+    <ipython-input-2-1c17e5fa4f59> in <module>
+    ----> 1 sum(stuff_to_join, "")
+
+    TypeError: sum() can't sum strings [use ''.join(seq) instead]
+
 
 Case Switching
 --------------
@@ -182,7 +200,7 @@ Testing for certain classes of characters
 String Literals
 -----------------
 
-Sometimes when you are creating a string, you want to put an non-normal character in there --one that isn't strictly a letter or symbol, such as newlines, etc.
+Sometimes when you are creating a string, you want to put an non-normal character in there -- one that isn't strictly a letter or symbol, such as newlines, etc.
 
 To do that, python support a set of "escape" sequences -- when a character follows a backslash, it gets interpreted as having a particular meaning.
 
@@ -219,7 +237,7 @@ There are times when you want a literal backslash in your string: Windows file p
 
 Add an ``r`` in front of the string literal:
 
-**Escape Sequences Ignored**
+**Escape Sequences Are Ignored**
 
 .. code-block:: ipython
 
@@ -252,18 +270,18 @@ If you put two string literals next to each other in the code, Python will join 
     Out[6]: 'thisthat'
 
 (note: no comma in between!)
-THis may not look useful, but when combined with the fact that Python joins together lines when inside a parentheses, it can be a nice way to make larger string literals:
+This may not look useful, but when combined with the fact that Python joins together lines when inside a parentheses, it can be a nice way to make larger string literals:
 
 .. code-block:: ipython
 
     In [7]: print("This is the first line\n"
        ...:       "And here is another line\n"
-       ...:       "If I don't put in a newline"
-       ...:       "I can get an very long line in, without making the"
+       ...:       "If I don't put in a newline "
+       ...:       "I can get a very long line in, without making the"
        ...:       "line of code too long.")
     This is the first line
     And here is another line
-    If I don't put in a newlineI can get an very long line in, without making the line of code too long.
+    If I don't put in a newline I can get a very long line in, without making the line of code too long.
 
 Ordinal values
 --------------
@@ -274,9 +292,9 @@ Characters in strings are stored as numeric values:
 
 * Unicode "code points" -- 1 - 1,114,111 (!!!)
 
-Unicode supports a LOT of characters -- every character in every language known to man -- and then some :-). The Unicode code poitns for the characters in the ASCII character set are the same as ASCII -- so handy for us English speakers.
+Unicode supports a LOT of characters -- every character in every language known to man -- and then some :-). The Unicode code points for the characters in the ASCII character set are the same as ASCII -- so handy for us English speakers.
 
-To get the value, use ``ord()``:
+To get the code point value, use ``ord()``:
 
 .. code-block:: ipython
 
@@ -292,7 +310,8 @@ To get the character from the code point, use ``chr()``:
        .....:     print(chr(i), end='')
     Chris
 
-For the English language, stick with ASCII, otherwise use, full Unicode: it's easy with Python3
+For the English language, stick with ASCII, otherwise use full Unicode: it's easy with Python3
+
 
 Building Strings from Data
 --------------------------
@@ -332,7 +351,8 @@ This is very similar to C-style string formatting (`sprintf`).
 
 It's still around, and handy --- but ...
 
-The "new" ``format()`` method is more powerful and flexible, so we'll focus on that in this class.  And there is now the newer "f-strings" (see below) which provide a lot of that "quick and dirty" convenience, while using the same formatting codes as ``.format()``
+The "new" ``format()`` method is more powerful and flexible, so we'll focus on that in this class.  And there is now the newer "f-strings" (see below) which provide a lot of that "quick and dirty" convenience, while using the same formatting codes as ``.format()``. So there really isn't a reason to use the "old style" anymore.
+
 
 String Formatting
 -----------------
@@ -458,6 +478,8 @@ All the other ways to do this required a lot more typing:
     In [30]: "My name is %s %s" % (first, last)
     Out[30]: 'My name is Chris Barker'
 
+Even more than the typing, it required keeping the string and the input data in sync when you changed things: maybe adding or removing an interpolated item.
+
 f-string basics
 ---------------
 
@@ -522,12 +544,29 @@ And it has to be an expression, not a statement -- so you can't put a for loop o
 
 You can see how this can be a very powerful and quick way to get things done.
 
-F-string Use
+Formatting codes with f-strings
+-------------------------------
+
+We've seen that f-strings will automatically "stringify" the results of the expression used.
+And that's often what you want.
+But if you do want to control how that is done, you can use all the same formatting codes used with the ``.format()`` method:
+
+
+.. code-block:: ipython
+
+    In [15]: f"One third with 4 digits is: {1/3:.3f}"
+    Out[15]: 'One third with 4 digits is: 0.333'
+
+you put the format specifier after a colon.
+
+
+
+f-string Use
 ------------
 
-F-strings are a fairly new Python feature. They will cause a syntax error in any Python version older than 3.6 -- 3.6 was first released on December 23, 2016 -- only a couple years from this writing.
+f-strings are a fairly new Python feature. They will cause a syntax error in any Python version older than 3.6 -- 3.6 was first released on December 23, 2016 -- only a couple years from this writing.
 
-So there is not much out there in the wild, and I have yet to see it in production code.
+So there is still not much out there in the wild, and it it still rare in production code.
 
 They are not currently used in many of the examples in this course.
 
@@ -540,10 +579,11 @@ To read all about the justification and syntax, read PEP 498:
 
 https://www.python.org/dev/peps/pep-0498/
 
+
 Other resources for f-strings
 -----------------------------
 
-f-strings are quite new, but there are a few introductions out there:
+f-strings have been around a while now, so there are a number of good introductions out there:
 
 A short introduction:
 
@@ -552,6 +592,8 @@ https://cito.github.io/blog/f-strings/
 Another intro:
 
 https://www.pydanny.com/python-f-strings-are-fun.html
+
+http://zetcode.com/python/fstring/
 
 One that gets into the technical details (bytecode! -- for the real geeks):
 

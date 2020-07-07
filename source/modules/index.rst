@@ -12,7 +12,7 @@ Setting up your Environment
 .. toctree::
     :maxdepth: 1
 
-    Class_introduction
+    ./dev_environment/index
     EnvironmentOverview
     IPythonIntroduction
     Py2vsPy3
@@ -22,6 +22,9 @@ Setting up your Environment
     SubmittingCodeGithubClassroom
     HowToRunAPythonFile
     Learning
+
+..     Class_introduction
+
 
 Exercise:
 ..........
@@ -41,6 +44,9 @@ Basic Python
     BasicPython
     Functions
 
+Exercises:
+..........
+
 .. toctree::
     :maxdepth: 1
 
@@ -54,6 +60,9 @@ Recursion
     :maxdepth: 1
 
     Recursion
+
+Exercises:
+..........
 
 .. toctree::
     :maxdepth: 1
@@ -78,6 +87,15 @@ Sequences and Iteration
     Sequences
     Iteration
 
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/slicing.rst
+    ../exercises/list_lab.rst
+
 Basic Text Handling
 -------------------
 
@@ -86,6 +104,17 @@ Basic Text Handling
 
     Strings
 
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/string_formatting.rst
+    ../exercises/rot13.rst
+    ../exercises/mailroom-part1.rst
+    ../exercises/mailroom_tutorial.rst
+
 Exception Handling
 ------------------
 
@@ -93,6 +122,16 @@ Exception Handling
     :maxdepth: 1
 
     Exceptions
+
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/exceptions_lab.rst
+    ../exercises/except_exercise.rst
+
 
 Unit Testing
 ------------
@@ -103,6 +142,15 @@ Unit Testing
     Testing
     TestDrivenDevelopment
 
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/unit_testing.rst
+    ../exercises/mailroom-part4.rst
+
 Dictionaries and Sets
 ---------------------
 
@@ -112,6 +160,14 @@ Dictionaries and Sets
     DictsAndSets
     DictionaryAsSwitch
 
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/dict_lab.rst
+    ../exercises/mailroom-part2.rst
 
 Files
 -----
@@ -120,6 +176,17 @@ Files
     :maxdepth: 1
 
     Files
+
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/file_lab.rst
+    ../exercises/mailroom-part2.rst
+    ../exercises/kata_fourteen.rst
+
 
 Modules and Packages
 --------------------
@@ -132,6 +199,14 @@ Modules and Packages
     Documentation
     Packaging
 
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/mailroom-pkg.rst
+
 
 Comprehensions
 --------------
@@ -141,6 +216,14 @@ Comprehensions
 
     Comprehensions
     CollectionsModule
+
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/comprehensions_lab.rst
 
 
 Advanced Argument Passing
@@ -160,7 +243,15 @@ Intro to Object Oriented Programing
 
     ObjectOrientationOverview
     PythonClasses
-    SubclassingAndInheritance
+
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/oo_intro.rst
+    ../exercises/mailroom-oo.rst
 
 
 Properties and Magic Methods
@@ -173,6 +264,13 @@ Properties and Magic Methods
     StaticAndClassMethods
     SpecialMethodsAndProtocols
 
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/circle_class.rst
 
 Subclassing
 -----------
@@ -183,6 +281,16 @@ Subclassing
     SubclassingAndInheritance
 
 
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    ../exercises/html_renderer.rst
+    ../exercises/html_renderer_tutorial.rst
+
+
 Multiple Inheritance
 --------------------
 
@@ -190,6 +298,7 @@ Multiple Inheritance
     :maxdepth: 1
 
     MultipleInheritance
+
 
 Introduction to Functional Programming
 --------------------------------------

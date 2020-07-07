@@ -106,8 +106,6 @@ Lesson 9: Multiple Inheritance
 Lesson 10: Catch up
 -------------------
 
-It's now time to catch up on everything you haven't quite finished.
-In particular, you should finish an object oriented mailroom that is fully complete and unit tested.
 
 
 Extra Exercises
@@ -117,8 +115,6 @@ The following are not required, but can be useful learning tools. Feel free to t
 
 .. toctree::
     :maxdepth: 1
-
-    roman.rst
 
     rot13.rst
 
