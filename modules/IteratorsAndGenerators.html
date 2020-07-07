@@ -81,15 +81,11 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Py210: Introduction to Python: Topic Notes</a><ul class="current">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
@@ -150,7 +146,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
 </ul>
 
             
@@ -196,7 +195,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Py210: Introduction to Python: Topic Notes</a> &raquo;</li>
+          <li><a href="index.html">Introduction to Python</a> &raquo;</li>
         
       <li>Iterators and Generators</li>
     
@@ -291,7 +290,7 @@ to iterate through stuff.</p>
     <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>An iterable is anything that can be looped over sequentially, so it does not have to be
+<p>An “iterable” is anything that can be looped over sequentially, so it does not have to be
 a “sequence”: list, tuple, etc.  For example, a string is iterable. So is a set.</p>
 <p>An iterator is an iterable that remembers state. All sequences are iterable, but
 not all sequences are iterators. To make a sequence an iterator, you can call it with iter:</p>

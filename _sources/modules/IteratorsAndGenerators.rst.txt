@@ -99,7 +99,7 @@ Iteration is one of the main reasons Python code is so readable:
     for x in just_about_anything:
         do_stuff(x)
 
-An iterable is anything that can be looped over sequentially, so it does not have to be
+An "iterable" is anything that can be looped over sequentially, so it does not have to be
 a "sequence": list, tuple, etc.  For example, a string is iterable. So is a set.
 
 An iterator is an iterable that remembers state. All sequences are iterable, but
