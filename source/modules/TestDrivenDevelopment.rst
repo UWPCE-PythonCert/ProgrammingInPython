@@ -1218,6 +1218,8 @@ integer values for exactly that set of Roman numerals that
 your requirements, this possibility may bother you; if so, write more
 comprehensive test cases until it doesn't bother you.)
 
+.. note:: Comprehensive test coverage is a bit of a fantasy. YOu can make sure that every line of code you write is run at least once during the testing. But you can't make sure that every function is called with *every* possible type and value! So what we can do is anticipate what we think might break our code, and test for that. Some things *will* slip through the cracks -- but here's a hint: when a bug is discovered, the first thing you should do is write a test that exercises that bug -- a test that will fail due to the bug. Then fix it. Since all your other test still pass (they do, don't they?) -- you know the fix hasn't broken anything else. ANd since you have a test for it -- you know you won't accidentally reintroduce that bug.
+
 
 More Bad Input
 --------------
@@ -1232,10 +1234,10 @@ regular expressions. (If you’re not familiar with regular expressions,
 now would be a good time to read `the regular expressions
 chapter <regular-expressions.html>`__.)
 
-As you saw in `Case Study: Roman
-Numerals <regular-expressions.html#romannumerals>`__, there are several
-simple rules for constructing a Roman numeral, using the letters ``M``,
-``D``, ``C``, ``L``, ``X``, ``V``, and ``I``. Let's review the rules:
+As we saw earlier, there are several simple rules for constructing a Roman numeral, using the letters ``M``,
+``D``, ``C``, ``L``, ``X``, ``V``, and ``I``.
+
+Let's review the rules:
 
 -  Sometimes characters are additive. ``I`` is ``1``, ``II`` is ``2``,
    and ``III`` is ``3``. ``VI`` is ``6`` (literally, “\ ``5`` and
@@ -1265,29 +1267,47 @@ simple rules for constructing a Roman numeral, using the letters ``M``,
    it as ``XCIX``, “\ ``10`` less than ``100``, then ``1`` less than
    ``10``\ ”).
 
-Thus, one useful test would be to ensure that the ``from_roman()``
+Roman numerals can only use certain characters, so we should test to make sure there aren't any other characters in the input:
+
+.. code-block:: python
+
+    def test_invalid_character():
+        """
+        Roman numerals can only use these characters:
+
+        M, D, C, L, X, V, I
+
+        This tests that other characters will cause a failure
+        """
+        for s in ['Z', 'XXIIIQ', 'QXXIII', 'XXYIII']:
+            with pytest.raises(ValueError):
+                from_roman(s)
+
+Another useful test would be to ensure that the ``from_roman()``
 function should fail when you pass it a string with too many repeated
 numerals. How many is “too many” depends on the numeral.
 
 .. code-block:: python
 
-   class FromRomanBadInput(unittest.TestCase):
-       def test_too_many_repeated_numerals(self):
-           '''from_roman should fail with too many repeated numerals'''
-           for s in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
-               self.assertRaises(roman6.InvalidRomanNumeralError, roman6.from_roman, s)
+    def test_too_many_repeated_numerals():
+        '''from_roman should fail with too many repeated numerals'''
+        for s in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
+            with pytest.raises(ValueError):
+                from_roman(s)
 
 Another useful test would be to check that certain patterns aren’t
 repeated. For example, ``IX`` is ``9``, but ``IXIX`` is never valid.
 
 .. code-block:: python
 
-       def test_repeated_pairs(self):
-           '''from_roman should fail with repeated pairs of numerals'''
-           for s in ('CMCM', 'CDCD', 'XCXC', 'XLXL', 'IXIX', 'IVIV'):
-               self.assertRaises(roman6.InvalidRomanNumeralError, roman6.from_roman, s)
+    def test_repeated_pairs():
+        '''from_roman should fail with repeated pairs of numerals'''
+        for s in ('CMCM', 'CDCD', 'XCXC', 'XLXL', 'IXIX', 'IVIV'):
+            with pytest.raises(ValueError):
+                from_roman(s)
 
-A third test could check that numerals appear in the correct order, from
+
+A forth test could check that numerals appear in the correct order, from
 highest to lowest value. For example, ``CL`` is ``150``, but ``LC`` is
 never valid, because the numeral for ``50`` can never come before the
 numeral for ``100``. This test includes a randomly chosen set of invalid
@@ -1295,61 +1315,178 @@ antecedents: ``I`` before ``M``, ``V`` before ``X``, and so on.
 
 .. code-block:: python
 
-       def test_malformed_antecedents(self):
-           '''from_roman should fail with malformed antecedents'''
-           for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
-                     'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
-               self.assertRaises(roman6.InvalidRomanNumeralError, roman6.from_roman, s)
+    def test_malformed_antecedents():
+        '''from_roman should fail with malformed antecedents'''
+        for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
+                  'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+            with pytest.raises(ValueError):
+                from_roman(s)
 
-Each of these tests relies the ``from_roman()`` function raising a new
-exception, ``InvalidRomanNumeralError``, which we haven’t defined yet.
 
-.. code-block:: python
-
-   # roman6.py
-   class InvalidRomanNumeralError(ValueError): pass
-
-All three of these tests should fail, since the ``from_roman()``
+All four of these tests should fail, since the ``from_roman()``
 function doesn’t currently have any validity checking. (If they don’t
 fail now, then what the heck are they testing?)
 
 .. code-block::
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest6.py
-   FFF.......
-   ======================================================================
-   FAIL: test_malformed_antecedents (__main__.FromRomanBadInput)
-   from_roman should fail with malformed antecedents
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest6.py", line 113, in test_malformed_antecedents
-       self.assertRaises(roman6.InvalidRomanNumeralError, roman6.from_roman, s)
-   AssertionError: InvalidRomanNumeralError not raised by from_roman
+    In [61]: ! pytest roman11.py
+    ============================ test session starts ============================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 12 items
 
-   ======================================================================
-   FAIL: test_repeated_pairs (__main__.FromRomanBadInput)
-   from_roman should fail with repeated pairs of numerals
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest6.py", line 107, in test_repeated_pairs
-       self.assertRaises(roman6.InvalidRomanNumeralError, roman6.from_roman, s)
-   AssertionError: InvalidRomanNumeralError not raised by from_roman
+    roman11.py ........FFFF                                               [100%]
 
-   ======================================================================
-   FAIL: test_too_many_repeated_numerals (__main__.FromRomanBadInput)
-   from_roman should fail with too many repeated numerals
-   ----------------------------------------------------------------------
-   Traceback (most recent call last):
-     File "romantest6.py", line 102, in test_too_many_repeated_numerals
-       self.assertRaises(roman6.InvalidRomanNumeralError, roman6.from_roman, s)
-   AssertionError: InvalidRomanNumeralError not raised by from_roman
+    ================================= FAILURES ==================================
+    __________________________ test_invalid_character ___________________________
 
-   ----------------------------------------------------------------------
-   Ran 10 tests in 0.058s
+        def test_invalid_character():
+            """
+            Roman numerals can only use these characters:
 
-   FAILED (failures=3)
+            M, D, C, L, X, V, I
 
-Good deal. Now, all we need to do is add the `regular expression to test
+            This tests that other characters will cause a failure
+            """
+            for s in ['Z', 'XXIIIQ', 'QXXIII', 'XXYIII']:
+                with pytest.raises(ValueError):
+    >               from_roman(s)
+    E               Failed: DID NOT RAISE <class 'ValueError'>
+
+    roman11.py:191: Failed
+    ______________________ test_too_many_repeated_numerals ______________________
+
+        def test_too_many_repeated_numerals():
+            '''from_roman should fail with too many repeated numerals'''
+            for s in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
+                with pytest.raises(ValueError):
+    >               from_roman(s)
+    E               Failed: DID NOT RAISE <class 'ValueError'>
+
+    roman11.py:198: Failed
+    ____________________________ test_repeated_pairs ____________________________
+
+        def test_repeated_pairs():
+            '''from_roman should fail with repeated pairs of numerals'''
+            for s in ('CMCM', 'CDCD', 'XCXC', 'XLXL', 'IXIX', 'IVIV'):
+                with pytest.raises(ValueError):
+    >               from_roman(s)
+    E               Failed: DID NOT RAISE <class 'ValueError'>
+
+    roman11.py:205: Failed
+    ________________________ test_malformed_antecedents _________________________
+
+        def test_malformed_antecedents():
+            '''from_roman should fail with malformed antecedents'''
+            for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
+                      'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+                with pytest.raises(ValueError):
+    >               from_roman(s)
+    E               Failed: DID NOT RAISE <class 'ValueError'>
+
+    roman11.py:213: Failed
+    ========================== short test summary info ==========================
+    FAILED roman11.py::test_invalid_character - Failed: DID NOT RAISE <class '...
+    FAILED roman11.py::test_too_many_repeated_numerals - Failed: DID NOT RAISE...
+    FAILED roman11.py::test_repeated_pairs - Failed: DID NOT RAISE <class 'Val...
+    FAILED roman11.py::test_malformed_antecedents - Failed: DID NOT RAISE <cla...
+    ======================== 4 failed, 8 passed in 0.13s ========================
+
+
+Good deal -- yes, we *wanted* four tests to fail.
+
+Now, "all" we need to do is write the code to check if the Roman numeral satisfies all the requirements.
+
+So let's do that one requirement at a time:
+
+.. note: This is actually a great use for "regular expressions". That is a topic all to itself, so we won't do that here. But if you are curious, you can read up on how to use regular expressions in Python to parse Roman Numerals in `Dive into Python 3 <https://diveintopython3.problemsolving.io/regular-expressions.html#romannumerals>`_
+
+**Requirement:** you can only use the letters ``M``,
+``D``, ``C``, ``L``, ``X``, ``V``, and ``I``.
+
+So let's try that:
+
+.. code-block:: Python
+
+    def is_valid_roman_numeral(s):
+        """
+        check if the input is a valid roman numeral
+
+        returns True if it is, False other wise
+        """
+
+        # does it use only valid characters?
+        for c in s:
+            if c not in "MDCLXVI":
+                return False
+
+        return True
+
+
+This is the start of a function to test if a string is a valid Roman numeral. So far, it loops through all the characters in the string, and makes sure they are in the VALID_CHARS string. If not, then it returns False.
+
+It is called in the ``from_roman`` function:
+
+.. code-block:: Python
+
+    def from_roman(s):
+    """convert Roman numeral to integer"""
+    if not is_valid_roman_numeral(s):
+        raise ValueError(f"{s} is not a valid Roman numeral")
+    ...
+
+
+Now that we have that, let's run the tests again:
+
+.. code-block:: ipython
+
+    In [63]: ! pytest roman12.py
+    ============================ test session starts ============================
+
+    ...
+
+    ========================== short test summary info ==========================
+    FAILED roman12.py::test_too_many_repeated_numerals - Failed: DID NOT RAISE...
+    FAILED roman12.py::test_repeated_pairs - Failed: DID NOT RAISE <class 'Val...
+    FAILED roman12.py::test_malformed_antecedents - Failed: DID NOT RAISE <cla...
+    ======================== 3 failed, 9 passed in 0.14s ========================
+
+Only three failures -- progess!
+
+On to the next requirement: each character can only be repeated a certain number of times, so lets check to see if any appear to many times, but adding this to the ``is_valid_roman_numeral()`` function:
+
+.. code-block:: python
+
+    # are any chars repeated too much?
+    for c in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
+        if c in s:
+            return False
+
+And run the tests again:
+
+.. code-block:: ipython
+
+    In [64]: ! pytest roman13.py
+    ============================ test session starts ============================
+
+    ...
+
+    ========================== short test summary info ==========================
+    FAILED roman13.py::test_repeated_pairs - Failed: DID NOT RAISE <class 'Val...
+    FAILED roman13.py::test_malformed_antecedents - Failed: DID NOT RAISE <cla...
+    ======================= 2 failed, 10 passed in 0.14s ========================
+
+Two down, two to go!
+
+Requirement: Sometimes characters are the opposite of additive.
+By putting certain characters before others, you subtract from the final value. But that pattern can't be repeated, so let's check for that:
+
+.. code-block:: python
+
+
+
+
+Now, all we need to do is add the `regular expression to test
 for valid Roman numerals <regular-expressions.html#romannumerals>`__
 into the ``from_roman()`` function.
 
