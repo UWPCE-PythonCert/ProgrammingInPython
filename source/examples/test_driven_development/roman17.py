@@ -97,14 +97,15 @@ def is_valid_roman_numeral(s):
         s = s[2:]
     elif s[:2] == "IV":  # 4
         s = s[2:]
-    elif s[:1] == "V":  # 5
-        s = s[1:]
-    print("looking for the Is")
-    print(f"{s = }")
-    # There can be up to three Is
-    for _ in range(3):
-        if s[:1] == "I":  # 1
+    else:
+        if s[:1] == "V":  # 5
             s = s[1:]
+        print("looking for the Is")
+        print(f"{s = }")
+        # There can be up to three Is
+        for _ in range(3):
+            if s[:1] == "I":  # 1
+                s = s[1:]
     # if there is anything left, it's not a valid Roman numeral
     print("done")
     print(f"{s = }")

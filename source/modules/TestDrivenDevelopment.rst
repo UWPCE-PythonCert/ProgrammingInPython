@@ -1228,11 +1228,7 @@ Now that the ``from_roman()`` function works properly with good input,
 it's time to fit in the last piece of the puzzle: making it work
 properly with bad input. That means finding a way to look at a string
 and determine if it's a valid Roman numeral. This is inherently more
-difficult than `validating numeric input <#romantest3>`__ in the
-``to_roman()`` function, but you have a powerful tool at your disposal:
-regular expressions. (If you’re not familiar with regular expressions,
-now would be a good time to read `the regular expressions
-chapter <regular-expressions.html>`__.)
+difficult than validating numeric input -- but doable. Let's start by reviewing the rules.
 
 As we saw earlier, there are several simple rules for constructing a Roman numeral, using the letters ``M``,
 ``D``, ``C``, ``L``, ``X``, ``V``, and ``I``.
@@ -1281,6 +1277,7 @@ Roman numerals can only use certain characters, so we should test to make sure t
         """
         for s in ['Z', 'XXIIIQ', 'QXXIII', 'XXYIII']:
             with pytest.raises(ValueError):
+                print(f"trying: {s}")
                 from_roman(s)
 
 Another useful test would be to ensure that the ``from_roman()``
@@ -1293,6 +1290,7 @@ numerals. How many is “too many” depends on the numeral.
         '''from_roman should fail with too many repeated numerals'''
         for s in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
             with pytest.raises(ValueError):
+                print(f"trying: {s}")
                 from_roman(s)
 
 Another useful test would be to check that certain patterns aren’t
@@ -1304,6 +1302,7 @@ repeated. For example, ``IX`` is ``9``, but ``IXIX`` is never valid.
         '''from_roman should fail with repeated pairs of numerals'''
         for s in ('CMCM', 'CDCD', 'XCXC', 'XLXL', 'IXIX', 'IVIV'):
             with pytest.raises(ValueError):
+                print(f"trying: {s}")
                 from_roman(s)
 
 
@@ -1399,8 +1398,6 @@ Now, "all" we need to do is write the code to check if the Roman numeral satisfi
 
 So let's do that one requirement at a time:
 
-.. note: This is actually a great use for "regular expressions". That is a topic all to itself, so we won't do that here. But if you are curious, you can read up on how to use regular expressions in Python to parse Roman Numerals in `Dive into Python 3 <https://diveintopython3.problemsolving.io/regular-expressions.html#romannumerals>`_
-
 **Requirement:** you can only use the letters ``M``,
 ``D``, ``C``, ``L``, ``X``, ``V``, and ``I``.
 
@@ -1451,87 +1448,369 @@ Now that we have that, let's run the tests again:
     FAILED roman12.py::test_malformed_antecedents - Failed: DID NOT RAISE <cla...
     ======================== 3 failed, 9 passed in 0.14s ========================
 
-Only three failures -- progess!
+Only three failures -- progress!
 
-On to the next requirement: each character can only be repeated a certain number of times, so lets check to see if any appear to many times, but adding this to the ``is_valid_roman_numeral()`` function:
+There are a number of other requirements -- how can we check all of them?
+One approach is to not check for specific invalid combinations, but rather, to look specifically for the valid stuff.
+
+This can be done by going through it as a human would: left-to-right, looking for what is expected and legal, removing that, and then, if there is anything left at the end, it's not a valid Roman Numeral:
+
+.. note:: This is actually a great use for "regular expressions". That is a topic all to itself, so we won't do that here. But if you are curious, you can read up on how to use regular expressions in Python to parse Roman Numerals in `Dive into Python 3 <https://diveintopython3.problemsolving.io/regular-expressions.html#romannumerals>`_. You will find that it's using the same logic as here in pure Python.
+
+
+:download:`roman.py <../examples/test_driven_development/roman15.py>`.
 
 .. code-block:: python
+    :lineno-start: 44
 
-    # are any chars repeated too much?
-    for c in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
-        if c in s:
+    def is_valid_roman_numeral(s):
+        """
+        parse a Roman numeral as a human would: left to right,
+        looking for valid characters and removing them to determine
+        if this is, indeed, a valid Roman numeral
+        """
+        # first check if uses only valid characters
+        for c in s:
+            if c not in "MDCLXVI":
+                return False
+
+        print("starting to parse")
+        print("the thousands")
+        print(f"{s = }")
+        # first look for the thousands -- up to three Ms
+        for _ in range(3):
+            if s[:1] == "M":
+                s = s[1:]
+        # then look for the hundreds:
+        print("the hundreds")
+        print(f"{s = }")
+        # there can be ony one of CM, CD, or D:
+        if s[:2] == "CM": # 900
+            s = s[2:]
+        elif s[:2] == "CD": # 400
+            s = s[2:]
+        elif s[:1] == "D":  # 500
+            s = s[1:]
+        # there can be from 1 to 3 Cs
+        for _ in range(3):
+            if s[:1] == "C":
+                s = s[1:]
+        # now the tens
+        print("the tens")
+        print(f"{s = }")
+        # There can be one of either XC, XL or L
+        if s[:2] == "XC":  # 90
+            s = s[2:]
+        elif s[:2] == "XL":  # 40
+            s = s[2:]
+        elif s[:1] == "L":  # 50
+            s = s[1:]
+        # there can be up to three Xs
+        for _ in range(3):
+            if s[:1] == "X":
+                s = s[1:]
+        # and the ones
+        print("the ones")
+        print(f"{s = }")
+        # There can be one of IX, IV or V
+        if s[:2] == "IX":  # 9
+            s = s[2:]
+        elif s[:2] == "IV":  # 4
+            s = s[2:]
+        elif s[:1] == "V":  # 5
+            s = s[1:]
+        print("looking for the Is")
+        print(f"{s = }")
+        # There can be up to three Is
+        for _ in range(3):
+            if s[:1] == "I":  # 1
+                s = s[1:]
+        # if there is anything left, it's not a valid Roman numeral
+        print("done")
+        print(f"{s = }")
+        if s:
             return False
+        else:
+            return True
 
-And run the tests again:
+Take a little time to look through that code: it's pretty straightforward, simply going from left to right, and removing whatever is valid at that point. At the end, if there is anything left, it will return False.
+
+So let's see how well that worked:
 
 .. code-block:: ipython
 
-    In [64]: ! pytest roman13.py
-    ============================ test session starts ============================
+    In [8]: ! pytest roman13.py
+    ======================== test session starts =========================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 12 items
+
+    roman13.py ...........F                                        [100%]
+
+    ============================== FAILURES ==============================
+    _____________________ test_malformed_antecedents _____________________
+
+        def test_malformed_antecedents():
+            '''from_roman should fail with malformed antecedents'''
+            for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
+                      'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+                with pytest.raises(ValueError):
+                    print(f"trying: {s}")
+    >               from_roman(s)
+    E               Failed: DID NOT RAISE <class 'ValueError'>
+
+    roman13.py:289: Failed
+    ------------------------ Captured stdout call ------------------------
 
     ...
 
-    ========================== short test summary info ==========================
-    FAILED roman13.py::test_repeated_pairs - Failed: DID NOT RAISE <class 'Val...
-    FAILED roman13.py::test_malformed_antecedents - Failed: DID NOT RAISE <cla...
-    ======================= 2 failed, 10 passed in 0.14s ========================
+Darn, we got a failure! We must have done something wrong. But that's OK, frankly, most of us don't do everything right when we right some code the first time. That's actually one of the key points to TDD -- we thought we'd written the code right, but a test failed -- so we know somethings wrong.
 
-Two down, two to go!
+But what's wrong? Let's look at the error report. It says that from_roman() didn't raise a ``ValueError`` -- but on what value? That test checks for a bunch of bad values.
 
-Requirement: Sometimes characters are the opposite of additive.
-By putting certain characters before others, you subtract from the final value. But that pattern can't be repeated, so let's check for that:
+Notice what pytest did? See that line: "Captured stdout call"?
+pytest has a nifty feature: when it runs tests, it redirects "stdout" -- which is all the stuff that would usually be pronted to console -- the results of print() calls both in the code and the tests itself.
+If the test passes, then it gets thrown away, so as not to cluter up the report.
+But if a test fails, like it did here, then it presents you with all the output that was produced when that test ran.
+
+In this case, we want to look at the output starting from the bottom. See the line at the top of the output::
+
+    trying: MCMC
+
+That's the result of the print call inside the test::
+
+    with pytest.raises(ValueError):
+        print(f"trying: {s}")
+        from_roman(s)
+
+That was the last one tried, so we know that the test failed when trying "MCMC", somewhere in the middle of all the tests. So what's wrong with the code? Well, it's heavily instrumented with print() calls, so we can look at the rest of the output from the failed test, and try to see what's going on.
+
+MCMC not a legal Roman numeral, because there is an C (100) after the first CM (900) you can't have both a 900 and a 100.
+
+So why didn't that get picked up? Looking at the output::
+
+    trying: MCMC
+    starting to parse
+    the thousands
+    s = 'MCMC'
+    the hundreds
+    s = 'CMC'
+
+After parsing the thousands, the first M has been removed -- all good. Now it's trying to parse the hundreds, starting with 'CMC'. But once it gets past the hundreds to the tens, there's nothing left -- the final C was removed::
+
+    the tens
+    s = ''
+
+Why was that? Time to look at the code.
 
 .. code-block:: python
+    :lineno-start: 63
 
+    print("the hundreds")
+    print(f"{s = }")
+    # there can be only one of CM, CD, or D:
+    if s[:2] == "CM": # 900
+        s = s[2:]
+    elif s[:2] == "CD": # 400
+        s = s[2:]
+    elif s[:1] == "D":  # 500
+        s = s[1:]
+    # there can be from 1 to 3 Cs
+    for _ in range(3):
+        if s[:1] == "C":
+            s = s[1:]
+    # now the tens
 
+In this case, it is parsing MCMC -- and the first M has been removed, leaving CMC.
 
-
-Now, all we need to do is add the `regular expression to test
-for valid Roman numerals <regular-expressions.html#romannumerals>`__
-into the ``from_roman()`` function.
+At line 66, the ``"CM"`` (meaning 900) matches, so it is removed, leaving a single C. Then we get to lines 73-75, where it is looking for up to three Cs -- it find one, so that gets removed, leaving an empty string. Ahh! that's the problem! If there was a CM, then there can't also be more Cs. We can fix that by putting that for loop in an ``else`` block:
 
 .. code-block:: python
+    :lineno-start: 62
 
-   roman_numeral_pattern = re.compile('''
-       ^                   # beginning of string
-       M{0,3}              # thousands - 0 to 3 Ms
-       (CM|CD|D?C{0,3})    # hundreds - 900 (CM), 400 (CD), 0-300 (0 to 3 Cs),
-                           #            or 500-800 (D, followed by 0 to 3 Cs)
-       (XC|XL|L?X{0,3})    # tens - 90 (XC), 40 (XL), 0-30 (0 to 3 Xs),
-                           #        or 50-80 (L, followed by 0 to 3 Xs)
-       (IX|IV|V?I{0,3})    # ones - 9 (IX), 4 (IV), 0-3 (0 to 3 Is),
-                           #        or 5-8 (V, followed by 0 to 3 Is)
-       $                   # end of string
-       ''', re.VERBOSE)
+    # then look for the hundreds:
+    print("the hundreds")
+    print(f"{s = }")
+    # there can be only one of CM, CD, or D:
+    if s[:2] == "CM": # 900
+        s = s[2:]
+    elif s[:2] == "CD": # 400
+        s = s[2:]
+    else:
+        if s[:1] == "D":  # 500
+            s = s[1:]
+        # there can be from 1 to 3 Cs
+        for _ in range(3):
+            if s[:1] == "C":
+                s = s[1:]
 
-   def from_roman(s):
-       '''convert Roman numeral to integer'''
-       if not roman_numeral_pattern.search(s):
-           raise InvalidRomanNumeralError('Invalid Roman numeral: {0}'.format(s))
+We put the check for D inside the else as well, as the D is 500, and then you need up to three Cs to make 500, 700, 800. Now to run the tests and see how it works:
 
-       result = 0
-       index = 0
-       for numeral, integer in roman_numeral_map:
-           while s[index : index + len(numeral)] == numeral:
-               result += integer
-               index += len(numeral)
-       return result
+.. code-block:: ipython
 
-And re-run the tests…
+    In [12]: ! pytest roman14.py
+    ============================= test session starts =============================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 12 items
 
-.. code-block::
+    roman14.py ...........F                                                 [100%]
 
-   you@localhost:~/diveintopython3/examples$ python3 romantest7.py
-   ..........
-   ----------------------------------------------------------------------
-   Ran 10 tests in 0.066s
+    ================================== FAILURES ===================================
+    _________________________ test_malformed_antecedents __________________________
 
-   OK
+        def test_malformed_antecedents():
+            '''from_roman should fail with malformed antecedents'''
+            for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
+                      'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+                with pytest.raises(ValueError):
+                    print(f"trying: {s}")
+    >               from_roman(s)
+    E               Failed: DID NOT RAISE <class 'ValueError'>
 
-And the anticlimax award of the year goes to… the word “\ ``OK``\ ”,
-which is printed by the ``unittest`` module when all the tests pass.
+    roman14.py:290: Failed
 
-`☜ <advanced-iterators.html>`__ `☞ <refactoring.html>`__
+
+Still a failure in the same test. But let's look at the end of the output::
+
+    trying: XCX
+    starting to parse
+    the thousands
+    s = 'XCX'
+    the hundreds
+    s = 'XCX'
+    the tens
+    s = 'XCX'
+    the ones
+    s = ''
+    looking for the Is
+    s = ''
+    done
+    s = ''
+
+So this time it failed on XCX -- which makes sense, XC is 90, so you can't have another X (10) after that. Why didn't the code catch that?
+
+.. code-block:: python
+    :lineno-start: 77
+
+    # now the tens
+    print("the tens")
+    print(f"{s = }")
+    # There can be one of either XC, XL or L
+    if s[:2] == "XC":  # 90
+        s = s[2:]
+    elif s[:2] == "XL":  # 40
+        s = s[2:]
+    elif s[:1] == "L":  # 50
+        s = s[1:]
+    # there can be up to three Xs
+    for _ in range(3):
+        if s[:1] == "X":
+            s = s[1:]
+
+This is actually the SAME bug as before, but for the tens -- it is checking for the Xs after XC and XL, which isn't allowed. Moving that into and else block:
+
+
+.. code-block:: ipython
+
+    In [13]: ! pytest roman15.py
+    ============================= test session starts =============================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 12 items
+
+    roman15.py ...........F                                                 [100%]
+
+    ================================== FAILURES ===================================
+    _________________________ test_malformed_antecedents __________________________
+
+        def test_malformed_antecedents():
+            '''from_roman should fail with malformed antecedents'''
+            for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
+                      'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
+                with pytest.raises(ValueError):
+                    print(f"trying: {s}")
+    >               from_roman(s)
+    E               Failed: DID NOT RAISE <class 'ValueError'>
+
+    roman15.py:291: Failed
+    ---------------------------- Captured stdout call -----------------------------
+
+    ...
+
+    trying: IVI
+    starting to parse
+    the thousands
+    s = 'IVI'
+    the hundreds
+    s = 'IVI'
+    the tens
+    s = 'IVI'
+    the ones
+    s = 'IVI'
+    looking for the Is
+    s = 'I'
+    done
+    s = ''
+    =========================== short test summary info ===========================
+    FAILED roman15.py::test_malformed_antecedents - Failed: DID NOT RAISE <class...
+    ======================== 1 failed, 11 passed in 0.82s =========================
+
+
+darn! still failing -- but on IVI this time. I'm seeing a pattern here, same thig, but for the ones, so one, final fix:
+
+.. code-block:: python
+    :lineno-start: 92
+
+    # and the ones
+    print("the ones")
+    print(f"{s = }")
+    # There can be one of IX, IV or V
+    if s[:2] == "IX":  # 9
+        s = s[2:]
+    elif s[:2] == "IV":  # 4
+        s = s[2:]
+    else:
+        if s[:1] == "V":  # 5
+            s = s[1:]
+        print("looking for the Is")
+        print(f"{s = }")
+        # There can be up to three Is
+        for _ in range(3):
+            if s[:1] == "I":  # 1
+                s = s[1:]
+
+OK: cross your fingers -- will *this* version pass?
+
+.. code-block:: ipython
+
+    In [15]: ! pytest roman16.py
+    ============================= test session starts =============================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 12 items
+
+    roman16.py ............                                                 [100%]
+
+    ============================= 12 passed in 0.68s ==============================
+
+Success! And note that it's not showing any of the output -- you only see that when the tests fail.
+
+But don't forget to remove those print statements from your production code!
+
+
+Refactoring
+-----------
+
+So now you've got working code, that is pretty well tested. But is is as good as it can be? Maybe there are some places it can be improved? This is the real power of unit tests -- now that you have well tested code, you can make changes, and if the tests pass, you can be confident that the code still works.
+
+Refactoring options:
+
+
+
+
+
+
 
 © 2001–11 `Mark Pilgrim`, 2020 `Christopher Barker`
 

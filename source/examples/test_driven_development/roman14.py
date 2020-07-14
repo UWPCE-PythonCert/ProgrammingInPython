@@ -43,27 +43,74 @@ def to_roman(n):
 
 def is_valid_roman_numeral(s):
     """
-    check if the input is a valid roman numeral
-
-    returns True if it is, False other wise
+    parse a Roman numeral as a human would: left to right,
+    looking for valid characters and removing them to determine
+    if this is, indeed, a valid Roman numeral
     """
-    # does it use only valid characters?
+    # first check if uses only valid characters
     for c in s:
         if c not in "MDCLXVI":
             return False
 
-    # are any chars repeated too much?
-    for c in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
-        if c in s:
-            return False
-
-    # are any of the subtractive patterns repeated?
-    for pattern in ["IV", "IX", "XC", "CM", "CD"]:
-        if s.count(pattern) > 1:
-            return False
-
-
-    return True
+    print("starting to parse")
+    print("the thousands")
+    print(f"{s = }")
+    # first look for the thousands -- up to three Ms
+    for _ in range(3):
+        if s[:1] == "M":
+            s = s[1:]
+    # then look for the hundreds:
+    print("the hundreds")
+    print(f"{s = }")
+    # there can be only one of CM, CD, or D:
+    if s[:2] == "CM": # 900
+        s = s[2:]
+    elif s[:2] == "CD": # 400
+        s = s[2:]
+    else:
+        if s[:1] == "D":  # 500
+            s = s[1:]
+        # there can be from 1 to 3 Cs
+        for _ in range(3):
+            if s[:1] == "C":
+                s = s[1:]
+    # now the tens
+    print("the tens")
+    print(f"{s = }")
+    # There can be one of either XC, XL or L
+    if s[:2] == "XC":  # 90
+        s = s[2:]
+    elif s[:2] == "XL":  # 40
+        s = s[2:]
+    elif s[:1] == "L":  # 50
+        s = s[1:]
+    # there can be up to three Xs
+    for _ in range(3):
+        if s[:1] == "X":
+            s = s[1:]
+    # and the ones
+    print("the ones")
+    print(f"{s = }")
+    # There can be one of IX, IV or V
+    if s[:2] == "IX":  # 9
+        s = s[2:]
+    elif s[:2] == "IV":  # 4
+        s = s[2:]
+    elif s[:1] == "V":  # 5
+        s = s[1:]
+    print("looking for the Is")
+    print(f"{s = }")
+    # There can be up to three Is
+    for _ in range(3):
+        if s[:1] == "I":  # 1
+            s = s[1:]
+    # if there is anything left, it's not a valid Roman numeral
+    print("done")
+    print(f"{s = }")
+    if s:
+        return False
+    else:
+        return True
 
 
 def from_roman(s):
@@ -222,6 +269,7 @@ def test_too_many_repeated_numerals():
     '''from_roman should fail with too many repeated numerals'''
     for s in ('MMMM', 'DD', 'CCCC', 'LL', 'XXXX', 'VV', 'IIII'):
         with pytest.raises(ValueError):
+            print(f"trying: {s}")
             from_roman(s)
 
 
@@ -229,6 +277,7 @@ def test_repeated_pairs():
     '''from_roman should fail with repeated pairs of numerals'''
     for s in ('CMCM', 'CDCD', 'XCXC', 'XLXL', 'IXIX', 'IVIV'):
         with pytest.raises(ValueError):
+            print(f"trying: {s}")
             from_roman(s)
 
 
@@ -237,6 +286,7 @@ def test_malformed_antecedents():
     for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
               'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
         with pytest.raises(ValueError):
+            print(f"trying: {s}")
             from_roman(s)
 
 
