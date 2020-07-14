@@ -29,6 +29,8 @@ Many languages have a "switch-case" construct::
             return "nothing";
     };
 
+.. Fixme -- use a Ruby example?
+
 How do you say this in Python?
 
 ``if-elif`` chains
