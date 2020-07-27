@@ -682,8 +682,7 @@ code to pass it yet. Did it fail in the way you expected?
 
 Yes! ``pytest.raises`` did its job -- a ``ValueError`` was not raised, and the test failed.
 
-Of course, the ``to_roman()`` function isn’t raising the
-``ValueError`` because you haven’t told it to do that yet.
+Of course, the ``to_roman()`` function isn’t raising the ``ValueError`` because you haven’t told it to do that yet.
 That’s excellent news! It means this is a valid test case — it fails before you write the code to make it pass.
 
 Now you can write the code to make this test pass.
@@ -705,11 +704,10 @@ Now you can write the code to make this test pass.
         return result
 
 This is straightforward: if the given input (``n``) is greater than
- ``3999``, raise an ``ValueError`` exception. The unit test does
- not check the human-readable string that accompanies the exception,
- although you could write another test that did check it (but watch
- out for internationalization issues for strings that vary by the
- user’s language or environment).
+``3999``, raise a ``ValueError`` exception.
+The unit test does not check the human-readable string that accompanies the exception,
+although you could write another test that did check it if you wanted to be sure
+(but watch out for internationalization issues for strings that vary by the user’s language or environment).
 
 Does this make the test pass? Let’s find out.
 
@@ -737,7 +735,7 @@ More Halting, More Fire
 
 Along with testing numbers that are too large, you need to test numbers
 that are too small.
-As we noted in our functional requirements, Roman numerals cannot express 0 or negative numbers.
+As we noted in our functional requirements, Roman numerals cannot express zero or negative numbers.
 
 .. code-block:: ipython
 
@@ -749,7 +747,7 @@ As we noted in our functional requirements, Roman numerals cannot express 0 or n
     In [22]: to_roman(0)
     Out[22]: ''
 
-Well *that’s* not good. Let’s add tests for each of these conditions.
+Well *that’s* not good -- it happily accepted the input and returned an empty string. Now let’s add tests for each of these conditions, to make sure they raise an exception instead of silently giving an non-answer.
 
 :download:`roman5.py <../examples/test_driven_development/roman5.py>`.
 
@@ -769,7 +767,7 @@ Well *that’s* not good. Let’s add tests for each of these conditions.
 The first new test is the ``test_zero()`` function. Like the
 ``test_too_large()`` function, it it uses the ``pytest.raises`` context manager to call our ``to_roman()`` function with a parameter of 0, and check that it raises the appropriate exception: ``ValueError``.
 
-The ``test_negative()`` method is almost identical, except it passes
+The ``test_negative()`` function is almost identical, except it passes
 ``-1`` to the ``to_roman()`` function. If either of these new tests
 does *not* raise an ``ValueError`` (either because the function
 returns an actual value, or because it raises some other exception),
@@ -831,7 +829,7 @@ code and see what we can do to make them pass.
         return result
 
 Note the ``not (0 < n < 4000)`` This is a nice Pythonic shortcut: multiple comparisons at once.
-This is equivalent to ``if not ((0 < n) and (n < 4000))``, but it’s much
+This is equivalent to ``not ((0 < n) and (n < 4000))``, but it’s much
 easier to read. This one line of code should catch inputs that are
 too large, negative, or zero.
 
@@ -885,7 +883,7 @@ What about that? technically, 1.0 is a float type, not an integer. But it does h
     In [35]: 1 == 1.0
     Out[35]: True
 
-So I'd say that we want 1.0 to be convertable, but not 0.5 (or 1.00000001 for that matter)
+So I'd say that we want 1.0 to be convertible, but not 0.5 (or 1.00000001 for that matter)
 
 Testing for non-integers is not difficult. Simply write a test case that checks that a ``ValueError`` is raised if you pass in a non-integer value.
 
@@ -902,11 +900,11 @@ And while we are at it, test a float type that happens to be an integer.
 
 .. code-block:: python
 
-def test_float_with_integer_value():
-    """to_roman should work for floats with integer values"""
-    assert to_roman(3.0) == "III"
+    def test_float_with_integer_value():
+        """to_roman should work for floats with integer values"""
+        assert to_roman(3.0) == "III"
 
-Why a ``ValueError``? because it's the value that matters, not the type. It's OK to pass in a float type, as long as the value is an integer.
+Why a ``ValueError`` rather than a ``TypeError``? because it's the value that matters, not the type. It's OK to pass in a float type, as long as the value is an integer.
 
 Now check that the test fails properly.
 
@@ -936,7 +934,7 @@ Now check that the test fails properly.
 
 Yup -- it failed.
 
-**Hint:** when you add a new test, and see that it fails, also check that there are *more* tests than there were. In this case, 1 failed, and 5 passed. In the previous run, 4 passed -- so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one -- and we want all our tests to be preserved.
+**Hint:** when you add a new test, and see that it fails, also check that there are *more* tests than there were before. In this case, 1 failed, and 5 passed. In the previous run, 4 passed -- so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one -- and we want all our tests to be preserved.
 
 So now write the code that makes the test pass.
 
@@ -966,7 +964,7 @@ So now write the code that makes the test pass.
     In [37]: int(1.00001)
     Out[37]: 1
 
-if the result of converting to an integer is equal to the original, than it had an integral value. Note that this will work with all the built numerical types:
+If the result of converting to an integer is equal to the original, then it had an integral value. Note that this will work with all the built numerical types:
 
 .. code-block:: ipython
 
@@ -1160,7 +1158,7 @@ you match the “highest” Roman numeral character
 strings as often as possible.
 
 If you're not clear how ``from_roman()`` works, add a ``print``
-statement to the end of the ``while`` loop:
+call to the end of the ``while`` loop:
 
 .. code-block:: ipython
 
@@ -1205,8 +1203,8 @@ Time to re-run the tests.
 
 
 Two pieces of exciting news here. The first is that the ``from_roman()``
-function works for good input, at least for all the `known
-values. The second is that the “round trip” test also
+function works for good input, at least for all the *known
+values*. The second is that the “round trip” test also
 passed. Combined with the known values tests, you can be reasonably sure
 that both the ``to_roman()`` and ``from_roman()`` functions work
 properly for all possible good values. (This is not guaranteed; it is
@@ -1218,7 +1216,7 @@ integer values for exactly that set of Roman numerals that
 your requirements, this possibility may bother you; if so, write more
 comprehensive test cases until it doesn't bother you.)
 
-.. note:: Comprehensive test coverage is a bit of a fantasy. YOu can make sure that every line of code you write is run at least once during the testing. But you can't make sure that every function is called with *every* possible type and value! So what we can do is anticipate what we think might break our code, and test for that. Some things *will* slip through the cracks -- but here's a hint: when a bug is discovered, the first thing you should do is write a test that exercises that bug -- a test that will fail due to the bug. Then fix it. Since all your other test still pass (they do, don't they?) -- you know the fix hasn't broken anything else. ANd since you have a test for it -- you know you won't accidentally reintroduce that bug.
+.. note:: Comprehensive test coverage is a bit of a fantasy. You can make sure that every line of code you write is run at least once during the testing (this is known as "coverage"). But you can't make sure that every function is called with *every* possible type and value! So what we can do is anticipate what we think might break our code, and test for that. Some things *will* slip through the cracks -- but here's a hint: when a bug is discovered, the first thing you should do is write a test that exercises that bug -- a test that will fail due to the bug. Then fix it. Since all your other test still pass (they do, don't they?) -- you know the fix hasn't broken anything else. And since you have a test for it -- you know you won't accidentally reintroduce that bug.
 
 
 More Bad Input
@@ -1309,7 +1307,7 @@ repeated. For example, ``IX`` is ``9``, but ``IXIX`` is never valid.
 A forth test could check that numerals appear in the correct order, from
 highest to lowest value. For example, ``CL`` is ``150``, but ``LC`` is
 never valid, because the numeral for ``50`` can never come before the
-numeral for ``100``. This test includes a randomly chosen set of invalid
+numeral for ``100``. This test includes a arbitrarily chosen set of invalid
 antecedents: ``I`` before ``M``, ``V`` before ``X``, and so on.
 
 .. code-block:: python
@@ -1458,7 +1456,7 @@ This can be done by going through it as a human would: left-to-right, looking fo
 .. note:: This is actually a great use for "regular expressions". That is a topic all to itself, so we won't do that here. But if you are curious, you can read up on how to use regular expressions in Python to parse Roman Numerals in `Dive into Python 3 <https://diveintopython3.problemsolving.io/regular-expressions.html#romannumerals>`_. You will find that it's using the same logic as here in pure Python.
 
 
-:download:`roman.py <../examples/test_driven_development/roman15.py>`.
+:download:`roman15.py <../examples/test_driven_development/roman15.py>`.
 
 .. code-block:: python
     :lineno-start: 44
@@ -1564,13 +1562,13 @@ So let's see how well that worked:
 
     ...
 
-Darn, we got a failure! We must have done something wrong. But that's OK, frankly, most of us don't do everything right when we right some code the first time. That's actually one of the key points to TDD -- we thought we'd written the code right, but a test failed -- so we know somethings wrong.
+Darn, we got a failure! We must have done something wrong. But that's OK, frankly, most of us don't do everything right when we right some code the first time. That's actually one of the key points to TDD -- we thought we'd written the code right, but a test failed -- so we know something's wrong.
 
-But what's wrong? Let's look at the error report. It says that from_roman() didn't raise a ``ValueError`` -- but on what value? That test checks for a bunch of bad values.
+But what's wrong? Let's look at the error report. It says that ``from_roman()`` didn't raise a ``ValueError`` -- but on what value? That test checks for a bunch of bad values.
 
 Notice what pytest did? See that line: "Captured stdout call"?
-pytest has a nifty feature: when it runs tests, it redirects "stdout" -- which is all the stuff that would usually be pronted to console -- the results of print() calls both in the code and the tests itself.
-If the test passes, then it gets thrown away, so as not to cluter up the report.
+pytest has a nifty feature: when it runs tests, it redirects "stdout" -- which is all the stuff that would usually be printed to console -- the results of ``print()`` calls both in the code and the test itself.
+If the test passes, then it gets thrown away, so as not to clutter up the report.
 But if a test fails, like it did here, then it presents you with all the output that was produced when that test ran.
 
 In this case, we want to look at the output starting from the bottom. See the line at the top of the output::
@@ -1644,7 +1642,7 @@ At line 66, the ``"CM"`` (meaning 900) matches, so it is removed, leaving a sing
             if s[:1] == "C":
                 s = s[1:]
 
-We put the check for D inside the else as well, as the D is 500, and then you need up to three Cs to make 500, 700, 800. Now to run the tests and see how it works:
+We put the check for D inside the else as well, as the D is 500 and it can't be after the "CM" (900) or "CD" (400). After a D, you need up to three Cs to make 600, 700, 800. Now to run the tests and see how it works:
 
 .. code-block:: ipython
 
@@ -1708,7 +1706,7 @@ So this time it failed on XCX -- which makes sense, XC is 90, so you can't have 
         if s[:1] == "X":
             s = s[1:]
 
-This is actually the SAME bug as before, but for the tens -- it is checking for the Xs after XC and XL, which isn't allowed. Moving that into and else block:
+This is actually the SAME bug as before, but for the tens -- it is checking for the Xs after XC and XL, which isn't allowed. Moving that into an else block:
 
 
 .. code-block:: ipython
@@ -1757,7 +1755,7 @@ This is actually the SAME bug as before, but for the tens -- it is checking for 
     ======================== 1 failed, 11 passed in 0.82s =========================
 
 
-darn! still failing -- but on IVI this time. I'm seeing a pattern here, same thig, but for the ones, so one, final fix:
+darn! still failing -- but on IVI this time. I'm seeing a pattern here, same thig, but for the ones, so one final fix:
 
 .. code-block:: python
     :lineno-start: 92
@@ -1802,13 +1800,38 @@ But don't forget to remove those print statements from your production code!
 Refactoring
 -----------
 
-So now you've got working code, that is pretty well tested. But is is as good as it can be? Maybe there are some places it can be improved? This is the real power of unit tests -- now that you have well tested code, you can make changes, and if the tests pass, you can be confident that the code still works.
+So now you've got working code, that is pretty well tested. But is it as good as it can be? Maybe there are some places it can be improved? This is the real power of unit tests -- now that you have well tested code, you can make changes, and if the tests pass, you can be confident that the code still works.
 
 Refactoring options:
 
+Do we really need to check if there are any invalid charactors explicitly:
 
+.. code-block:: python
 
+    # first check if uses only valid characters
+    for c in s:
+        if c not in "MDCLXVI":
+            return False
 
+Maybe not -- let's remove it and see:
+
+:download:`roman17.py <../examples/test_driven_development/roman17.py>`.
+
+.. code-block:: bash
+
+    $ pytest roman17.py
+    ====================== test session starts =======================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+    collected 12 items
+
+    roman17.py ............                                    [100%]
+
+    ======================= 12 passed in 0.66s =======================
+
+Nice! less code is better code, as long as it still works!
+
+Any other changes you can think of? Go ahead and try them, if the tests still pass, you are good to go!
 
 
 

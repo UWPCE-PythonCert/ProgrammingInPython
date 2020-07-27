@@ -10,19 +10,19 @@ tests are expected to be able to be run with the pytest system
 
 import pytest
 
-roman_numeral_map = (('M',  1000),
+roman_numeral_map = (('M', 1000),
                      ('CM', 900),
-                     ('D',  500),
+                     ('D', 500),
                      ('CD', 400),
-                     ('C',  100),
+                     ('C', 100),
                      ('XC', 90),
-                     ('L',  50),
+                     ('L', 50),
                      ('XL', 40),
-                     ('X',  10),
+                     ('X', 10),
                      ('IX', 9),
-                     ('V',  5),
+                     ('V', 5),
                      ('IV', 4),
-                     ('I',  1))
+                     ('I', 1))
 
 
 def to_roman(n):
@@ -63,9 +63,9 @@ def is_valid_roman_numeral(s):
     print("the hundreds")
     print(f"{s = }")
     # there can be only one of CM, CD, or D:
-    if s[:2] == "CM": # 900
+    if s[:2] == "CM":  # 900
         s = s[2:]
-    elif s[:2] == "CD": # 400
+    elif s[:2] == "CD":  # 400
         s = s[2:]
     else:
         if s[:1] == "D":  # 500
