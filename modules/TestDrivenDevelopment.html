@@ -958,8 +958,7 @@ You will see <code class="docutils literal notranslate"><span class="pre">with</
 <p>You should have expected this to fail since you haven’t written any
 code to pass it yet. Did it fail in the way you expected?</p>
 <p>Yes! <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> did its job – a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> was not raised, and the test failed.</p>
-<p>Of course, the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function isn’t raising the
-<code class="docutils literal notranslate"><span class="pre">ValueError</span></code> because you haven’t told it to do that yet.
+<p>Of course, the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function isn’t raising the <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> because you haven’t told it to do that yet.
 That’s excellent news! It means this is a valid test case — it fails before you write the code to make it pass.</p>
 <p>Now you can write the code to make this test pass.</p>
 <p><a class="reference download internal" download="" href="../_downloads/2ec4e76ed272153e19f609362ec9af0c/roman4.py"><code class="xref download docutils literal notranslate"><span class="pre">roman4.py</span></code></a>.</p>
@@ -976,14 +975,11 @@ That’s excellent news! It means this is a valid test case — it fails befor
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>This is straightforward: if the given input (<code class="docutils literal notranslate"><span class="pre">n</span></code>) is greater than</dt><dd><p><code class="docutils literal notranslate"><span class="pre">3999</span></code>, raise an <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> exception. The unit test does
-not check the human-readable string that accompanies the exception,
-although you could write another test that did check it (but watch
-out for internationalization issues for strings that vary by the
-user’s language or environment).</p>
-</dd>
-</dl>
+<p>This is straightforward: if the given input (<code class="docutils literal notranslate"><span class="pre">n</span></code>) is greater than
+<code class="docutils literal notranslate"><span class="pre">3999</span></code>, raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> exception.
+The unit test does not check the human-readable string that accompanies the exception,
+although you could write another test that did check it if you wanted to be sure
+(but watch out for internationalization issues for strings that vary by the user’s language or environment).</p>
 <p>Does this make the test pass? Let’s find out.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="o">!</span> pytest roman4.py
 <span class="go">========================= test session starts =========================</span>
@@ -1006,7 +1002,7 @@ cheap, but it will pay for itself over the lifetime of your code.</p>
 <h3>More Halting, More Fire<a class="headerlink" href="#more-halting-more-fire" title="Permalink to this headline">¶</a></h3>
 <p>Along with testing numbers that are too large, you need to test numbers
 that are too small.
-As we noted in our functional requirements, Roman numerals cannot express 0 or negative numbers.</p>
+As we noted in our functional requirements, Roman numerals cannot express zero or negative numbers.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="n">run</span> <span class="n">roman4</span><span class="o">.</span><span class="n">py</span>
 
 <span class="gp">In [21]: </span><span class="n">to_roman</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -1016,7 +1012,7 @@ As we noted in our functional requirements, Roman numerals cannot express 0 or n
 <span class="gh">Out[22]: </span><span class="go">&#39;&#39;</span>
 </pre></div>
 </div>
-<p>Well <em>that’s</em> not good. Let’s add tests for each of these conditions.</p>
+<p>Well <em>that’s</em> not good – it happily accepted the input and returned an empty string. Now let’s add tests for each of these conditions, to make sure they raise an exception instead of silently giving an non-answer.</p>
 <p><a class="reference download internal" download="" href="../_downloads/be423580dbf23aa061a5ae35b913c491/roman5.py"><code class="xref download docutils literal notranslate"><span class="pre">roman5.py</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_zero</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;to_roman should raise an ValueError with 0 input&quot;&quot;&quot;</span>
@@ -1032,7 +1028,7 @@ As we noted in our functional requirements, Roman numerals cannot express 0 or n
 </div>
 <p>The first new test is the <code class="docutils literal notranslate"><span class="pre">test_zero()</span></code> function. Like the
 <code class="docutils literal notranslate"><span class="pre">test_too_large()</span></code> function, it it uses the <code class="docutils literal notranslate"><span class="pre">pytest.raises</span></code> context manager to call our <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function with a parameter of 0, and check that it raises the appropriate exception: <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">test_negative()</span></code> method is almost identical, except it passes
+<p>The <code class="docutils literal notranslate"><span class="pre">test_negative()</span></code> function is almost identical, except it passes
 <code class="docutils literal notranslate"><span class="pre">-1</span></code> to the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> function. If either of these new tests
 does <em>not</em> raise an <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> (either because the function
 returns an actual value, or because it raises some other exception),
@@ -1088,7 +1084,7 @@ code and see what we can do to make them pass.</p>
 </pre></div>
 </div>
 <p>Note the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(0</span> <span class="pre">&lt;</span> <span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">4000)</span></code> This is a nice Pythonic shortcut: multiple comparisons at once.
-This is equivalent to <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">((0</span> <span class="pre">&lt;</span> <span class="pre">n)</span> <span class="pre">and</span> <span class="pre">(n</span> <span class="pre">&lt;</span> <span class="pre">4000))</span></code>, but it’s much
+This is equivalent to <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">((0</span> <span class="pre">&lt;</span> <span class="pre">n)</span> <span class="pre">and</span> <span class="pre">(n</span> <span class="pre">&lt;</span> <span class="pre">4000))</span></code>, but it’s much
 easier to read. This one line of code should catch inputs that are
 too large, negative, or zero.</p>
 <p>If you change your conditions, make sure to update your
@@ -1130,7 +1126,7 @@ the unit tests and prove it.</p>
 <span class="gh">Out[35]: </span><span class="go">True</span>
 </pre></div>
 </div>
-<p>So I’d say that we want 1.0 to be convertable, but not 0.5 (or 1.00000001 for that matter)</p>
+<p>So I’d say that we want 1.0 to be convertible, but not 0.5 (or 1.00000001 for that matter)</p>
 <p>Testing for non-integers is not difficult. Simply write a test case that checks that a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised if you pass in a non-integer value.</p>
 <p><a class="reference download internal" download="" href="../_downloads/853dca9f84e1b44a2820836dac5ee1b5/roman7.py"><code class="xref download docutils literal notranslate"><span class="pre">roman7.py</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_non_integer</span><span class="p">():</span>
@@ -1140,15 +1136,12 @@ the unit tests and prove it.</p>
 </pre></div>
 </div>
 <p>And while we are at it, test a float type that happens to be an integer.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_float_with_integer_value</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;to_roman should work for floats with integer values&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">to_roman</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;III&quot;</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>def test_float_with_integer_value():</dt><dd><p>“””to_roman should work for floats with integer values”””
-assert to_roman(3.0) == “III”</p>
-</dd>
-</dl>
-<p>Why a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>? because it’s the value that matters, not the type. It’s OK to pass in a float type, as long as the value is an integer.</p>
+<p>Why a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> rather than a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>? because it’s the value that matters, not the type. It’s OK to pass in a float type, as long as the value is an integer.</p>
 <p>Now check that the test fails properly.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="o">!</span> pytest roman7.py
 <span class="go">========================= test session starts =========================</span>
@@ -1174,7 +1167,7 @@ assert to_roman(3.0) == “III”</p>
 </pre></div>
 </div>
 <p>Yup – it failed.</p>
-<p><strong>Hint:</strong> when you add a new test, and see that it fails, also check that there are <em>more</em> tests than there were. In this case, 1 failed, and 5 passed. In the previous run, 4 passed – so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one – and we want all our tests to be preserved.</p>
+<p><strong>Hint:</strong> when you add a new test, and see that it fails, also check that there are <em>more</em> tests than there were before. In this case, 1 failed, and 5 passed. In the previous run, 4 passed – so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one – and we want all our tests to be preserved.</p>
 <p>So now write the code that makes the test pass.</p>
 <p><a class="reference download internal" download="" href="../_downloads/8858d7793ed802b63b5316435b01b522/roman8.py"><code class="xref download docutils literal notranslate"><span class="pre">roman8.py</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_roman</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1198,7 +1191,7 @@ assert to_roman(3.0) == “III”</p>
 <span class="gh">Out[37]: </span><span class="go">1</span>
 </pre></div>
 </div>
-<p>if the result of converting to an integer is equal to the original, than it had an integral value. Note that this will work with all the built numerical types:</p>
+<p>If the result of converting to an integer is equal to the original, then it had an integral value. Note that this will work with all the built numerical types:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [42]: </span><span class="nb">int</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span>
 <span class="gh">Out[42]: </span><span class="go">True</span>
 
@@ -1364,7 +1357,7 @@ but instead of matching the highest integer values as often as possible,
 you match the “highest” Roman numeral character
 strings as often as possible.</p>
 <p>If you’re not clear how <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> works, add a <code class="docutils literal notranslate"><span class="pre">print</span></code>
-statement to the end of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
+call to the end of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">from_roman</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;convert Roman numeral to integer&quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1403,10 +1396,10 @@ statement to the end of the <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 <p>Two pieces of exciting news here. The first is that the <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code>
-function works for good input, at least for all the <cite>known
-values. The second is that the “round trip” test also
+function works for good input, at least for all the <em>known
+values</em>. The second is that the “round trip” test also
 passed. Combined with the known values tests, you can be reasonably sure
-that both the ``to_roman()`</cite> and <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> functions work
+that both the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> and <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> functions work
 properly for all possible good values. (This is not guaranteed; it is
 theoretically possible that <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> has a bug that produces the
 wrong Roman numeral for some particular set of inputs, <em>and</em> that
@@ -1417,7 +1410,7 @@ your requirements, this possibility may bother you; if so, write more
 comprehensive test cases until it doesn’t bother you.)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Comprehensive test coverage is a bit of a fantasy. YOu can make sure that every line of code you write is run at least once during the testing. But you can’t make sure that every function is called with <em>every</em> possible type and value! So what we can do is anticipate what we think might break our code, and test for that. Some things <em>will</em> slip through the cracks – but here’s a hint: when a bug is discovered, the first thing you should do is write a test that exercises that bug – a test that will fail due to the bug. Then fix it. Since all your other test still pass (they do, don’t they?) – you know the fix hasn’t broken anything else. ANd since you have a test for it – you know you won’t accidentally reintroduce that bug.</p>
+<p>Comprehensive test coverage is a bit of a fantasy. You can make sure that every line of code you write is run at least once during the testing (this is known as “coverage”). But you can’t make sure that every function is called with <em>every</em> possible type and value! So what we can do is anticipate what we think might break our code, and test for that. Some things <em>will</em> slip through the cracks – but here’s a hint: when a bug is discovered, the first thing you should do is write a test that exercises that bug – a test that will fail due to the bug. Then fix it. Since all your other test still pass (they do, don’t they?) – you know the fix hasn’t broken anything else. And since you have a test for it – you know you won’t accidentally reintroduce that bug.</p>
 </div>
 </div>
 <div class="section" id="more-bad-input">
@@ -1498,7 +1491,7 @@ repeated. For example, <code class="docutils literal notranslate"><span class="p
 <p>A forth test could check that numerals appear in the correct order, from
 highest to lowest value. For example, <code class="docutils literal notranslate"><span class="pre">CL</span></code> is <code class="docutils literal notranslate"><span class="pre">150</span></code>, but <code class="docutils literal notranslate"><span class="pre">LC</span></code> is
 never valid, because the numeral for <code class="docutils literal notranslate"><span class="pre">50</span></code> can never come before the
-numeral for <code class="docutils literal notranslate"><span class="pre">100</span></code>. This test includes a randomly chosen set of invalid
+numeral for <code class="docutils literal notranslate"><span class="pre">100</span></code>. This test includes a arbitrarily chosen set of invalid
 antecedents: <code class="docutils literal notranslate"><span class="pre">I</span></code> before <code class="docutils literal notranslate"><span class="pre">M</span></code>, <code class="docutils literal notranslate"><span class="pre">V</span></code> before <code class="docutils literal notranslate"><span class="pre">X</span></code>, and so on.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_malformed_antecedents</span><span class="p">():</span>
     <span class="sd">&#39;&#39;&#39;from_roman should fail with malformed antecedents&#39;&#39;&#39;</span>
@@ -1626,7 +1619,7 @@ One approach is to not check for specific invalid combinations, but rather, to l
 <p class="admonition-title">Note</p>
 <p>This is actually a great use for “regular expressions”. That is a topic all to itself, so we won’t do that here. But if you are curious, you can read up on how to use regular expressions in Python to parse Roman Numerals in <a class="reference external" href="https://diveintopython3.problemsolving.io/regular-expressions.html#romannumerals">Dive into Python 3</a>. You will find that it’s using the same logic as here in pure Python.</p>
 </div>
-<p><a class="reference download internal" download="" href="../_downloads/f75c99b2f6b378ac39cf54257f9ac5fd/roman15.py"><code class="xref download docutils literal notranslate"><span class="pre">roman.py</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/f75c99b2f6b378ac39cf54257f9ac5fd/roman15.py"><code class="xref download docutils literal notranslate"><span class="pre">roman15.py</span></code></a>.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 44
  45
  46
@@ -1794,11 +1787,11 @@ One approach is to not check for specific invalid combinations, but rather, to l
 <span class="go">...</span>
 </pre></div>
 </div>
-<p>Darn, we got a failure! We must have done something wrong. But that’s OK, frankly, most of us don’t do everything right when we right some code the first time. That’s actually one of the key points to TDD – we thought we’d written the code right, but a test failed – so we know somethings wrong.</p>
-<p>But what’s wrong? Let’s look at the error report. It says that from_roman() didn’t raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> – but on what value? That test checks for a bunch of bad values.</p>
+<p>Darn, we got a failure! We must have done something wrong. But that’s OK, frankly, most of us don’t do everything right when we right some code the first time. That’s actually one of the key points to TDD – we thought we’d written the code right, but a test failed – so we know something’s wrong.</p>
+<p>But what’s wrong? Let’s look at the error report. It says that <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> didn’t raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> – but on what value? That test checks for a bunch of bad values.</p>
 <p>Notice what pytest did? See that line: “Captured stdout call”?
-pytest has a nifty feature: when it runs tests, it redirects “stdout” – which is all the stuff that would usually be pronted to console – the results of print() calls both in the code and the tests itself.
-If the test passes, then it gets thrown away, so as not to cluter up the report.
+pytest has a nifty feature: when it runs tests, it redirects “stdout” – which is all the stuff that would usually be printed to console – the results of <code class="docutils literal notranslate"><span class="pre">print()</span></code> calls both in the code and the test itself.
+If the test passes, then it gets thrown away, so as not to clutter up the report.
 But if a test fails, like it did here, then it presents you with all the output that was produced when that test ran.</p>
 <p>In this case, we want to look at the output starting from the bottom. See the line at the top of the output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trying</span><span class="p">:</span> <span class="n">MCMC</span>
@@ -1889,7 +1882,7 @@ But if a test fails, like it did here, then it presents you with all the output 
             <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </pre></div>
 </td></tr></table></div>
-<p>We put the check for D inside the else as well, as the D is 500, and then you need up to three Cs to make 500, 700, 800. Now to run the tests and see how it works:</p>
+<p>We put the check for D inside the else as well, as the D is 500 and it can’t be after the “CM” (900) or “CD” (400). After a D, you need up to three Cs to make 600, 700, 800. Now to run the tests and see how it works:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="o">!</span> pytest roman14.py
 <span class="go">============================= test session starts =============================</span>
 <span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1</span>
@@ -1960,7 +1953,7 @@ But if a test fails, like it did here, then it presents you with all the output 
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </pre></div>
 </td></tr></table></div>
-<p>This is actually the SAME bug as before, but for the tens – it is checking for the Xs after XC and XL, which isn’t allowed. Moving that into and else block:</p>
+<p>This is actually the SAME bug as before, but for the tens – it is checking for the Xs after XC and XL, which isn’t allowed. Moving that into an else block:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="o">!</span> pytest roman15.py
 <span class="go">============================= test session starts =============================</span>
 <span class="go">platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1</span>
@@ -2005,7 +1998,7 @@ But if a test fails, like it did here, then it presents you with all the output 
 <span class="go">======================== 1 failed, 11 passed in 0.82s =========================</span>
 </pre></div>
 </div>
-<p>darn! still failing – but on IVI this time. I’m seeing a pattern here, same thig, but for the ones, so one, final fix:</p>
+<p>darn! still failing – but on IVI this time. I’m seeing a pattern here, same thig, but for the ones, so one final fix:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 92
  93
  94
@@ -2058,8 +2051,30 @@ But if a test fails, like it did here, then it presents you with all the output 
 </div>
 <div class="section" id="refactoring">
 <h3>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h3>
-<p>So now you’ve got working code, that is pretty well tested. But is is as good as it can be? Maybe there are some places it can be improved? This is the real power of unit tests – now that you have well tested code, you can make changes, and if the tests pass, you can be confident that the code still works.</p>
+<p>So now you’ve got working code, that is pretty well tested. But is it as good as it can be? Maybe there are some places it can be improved? This is the real power of unit tests – now that you have well tested code, you can make changes, and if the tests pass, you can be confident that the code still works.</p>
 <p>Refactoring options:</p>
+<p>Do we really need to check if there are any invalid charactors explicitly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># first check if uses only valid characters</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;MDCLXVI&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Maybe not – let’s remove it and see:</p>
+<p><a class="reference download internal" download="" href="../_downloads/3f0c6d7154b2c25aaad1a76a5ad04c19/roman17.py"><code class="xref download docutils literal notranslate"><span class="pre">roman17.py</span></code></a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest roman17.py
+<span class="o">======================</span> <span class="nb">test</span> session <span class="nv">starts</span> <span class="o">=======================</span>
+platform darwin -- Python <span class="m">3</span>.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/examples/test_driven_development
+collected <span class="m">12</span> items
+
+roman17.py ............                                    <span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
+
+<span class="o">=======================</span> <span class="m">12</span> passed in <span class="m">0</span>.66s <span class="o">=======================</span>
+</pre></div>
+</div>
+<p>Nice! less code is better code, as long as it still works!</p>
+<p>Any other changes you can think of? Go ahead and try them, if the tests still pass, you are good to go!</p>
 <p>© 2001–11 <cite>Mark Pilgrim</cite>, 2020 <cite>Christopher Barker</cite></p>
 </div>
 </div>
