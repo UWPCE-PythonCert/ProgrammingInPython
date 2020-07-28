@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Unit Testing &mdash; Python 210 6.0 documentation</title>
+  <title>Testing &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Test Driven Development" href="TestDrivenDevelopment.html" />
-    <link rel="prev" title="Using a Dictionary to switch" href="DictionaryAsSwitch.html" /> 
+    <link rel="prev" title="Exceptions Exercise" href="../exercises/except_exercise.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -47,19 +47,19 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #4b2e83" >
           
 
           
-            <a href="../index.html" class="icon icon-home"> Python 210
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
           
           </a>
 
-          
-            
-            
           
 
           
@@ -81,37 +81,231 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/orientation.html">Orientation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson01.html">Lesson 1: Setting up Your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson02.html">Lesson 2: Basic Python and Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../class_schedule/lesson04.html">Session 4: Dictionaries and Sets and Unit Testing</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../class_schedule/lesson04.html#readings">Readings</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Unit Testing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../class_schedule/lesson04.html#recommended-additional-reading">Recommended Additional Reading</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning.html">Useful Python Learning Resources</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html">More on Functions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">Fizz Buzz Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Recursion.html">Recursion</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">Fibonacci Series Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Booleans.html">Boolean Expressions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-part1.html">Mailroom Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#test-frameworks">Test Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-library-unittest">Standard Library: <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-unittest">Using <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-your-code">Testing Your Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advantages-of-unittest">Advantages of <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disadvantages-of-unittest">Disadvantages of <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-options">Other Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-pytest">Installing <code class="docutils literal notranslate"><span class="pre">pytest</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pre-existing-tests">Pre-existing Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-happening-here">What is Happening Here?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pytest">pytest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pytest-tests">pytest tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#print-and-test-failures"><code class="docutils literal notranslate"><span class="pre">print()</span></code> and test failures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-for-exceptions">Testing for Exceptions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../class_schedule/lesson04.html#exercises">Exercises:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-driven-development">Test Driven Development</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson05.html">Lession 5: File Handling, Exceptions and Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson06.html">Session 6: Advanced Argument Passing and Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson07.html">Session 7: Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson08.html">Session 8: Properties and Magic methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class_schedule/lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing.html">Introduction To Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-part4.html">Mailroom Part 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-part2.html">Mailroom Part 2</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-part2.html">Mailroom Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/kata_fourteen.html">Trigrams – Simple Text Manipulation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom-oo.html">Mailroom - Object Oriented</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/circle_class.html">Circle Class Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">Multiple Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IPythonParallel.html">IPython Parallel Quickstart</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Testing_advanced.html">Testing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion.html">Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#test-frameworks">Test Frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standard-library-unittest">Standard Library: <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-unittest">Using <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-your-code">Testing Your Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advantages-of-unittest">Advantages of <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disadvantages-of-unittest">Disadvantages of <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-options">Other Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-pytest">Installing <code class="docutils literal notranslate"><span class="pre">pytest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pre-existing-tests">Pre-existing Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-happening-here">What is Happening Here?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytest">pytest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytest-tests">pytest tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-driven-development">Test Driven Development</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#extras">Extras</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Py210: Introduction to Python: Topic Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">Python 210: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
 </ul>
 
             
@@ -133,7 +327,7 @@
 
       <div class="wy-nav-content">
         
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
         
           
 
@@ -157,11 +351,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../class_schedule/index.html">Python 210 Class Schedule</a> &raquo;</li>
-        
-          <li><a href="../class_schedule/lesson04.html">Session 4: Dictionaries and Sets and Unit Testing</a> &raquo;</li>
-        
-      <li>Unit Testing</li>
+      <li>Testing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -180,9 +370,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="unit-testing">
-<span id="id1"></span><h1>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h1>
-<p>You’ve already seen a very basic testing strategy.</p>
+  <div class="section" id="testing">
+<span id="unit-testing"></span><h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+<p>This page is a quick overview of testing in Python. It provides some background on testing, and the tools available. Later on, we’ll get to the details of how to actually do it.</p>
+<p>Testing your code is an absolute necessity – you need to have <em>some</em> way to know it’s doing what it should.</p>
+<p>Having your testing done in an automated way is really a good idea.</p>
+<p>You’ve already seen a very basic testing strategy: putting some <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements in the <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> block.</p>
 <p>You’ve written some tests using that strategy.</p>
 <p>These tests were pretty basic, and a bit awkward in places (testing error
 conditions in particular).</p>
@@ -199,20 +392,20 @@ block.</p>
 <li><p>You can’t do anything else when the file is executed without running tests.</p></li>
 </ul>
 <p>This is not optimal.</p>
-<p>Python provides testing systems to help.</p>
+<p>You really want ways to structure your tests, and run your tests, that can be controlled and provide nifty features.</p>
 </div>
 <div class="section" id="standard-library-unittest">
 <h2>Standard Library: <code class="docutils literal notranslate"><span class="pre">unittest</span></code><a class="headerlink" href="#standard-library-unittest" title="Permalink to this headline">¶</a></h2>
-<p>The original testing system in Python.</p>
-<p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">unittest</span></code></p>
-<p>More or less a port of <a class="reference external" href="https://junit.org">JUnit</a> from Java</p>
+<p>Python comes with the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> package that provides a number of nifty features. It was introduced in version 2.1 – so it’s been around a long time.</p>
+<p>It is more or less a port of <a class="reference external" href="https://junit.org">JUnit</a> from Java, which shows – it’s has a style and structure that fit Java more than Python:</p>
 <p>A bit verbose: you have to write classes &amp; methods (And we haven’t covered that yet!)</p>
-<p>But here’s a bit of an introduction, as you will see this in others’ code.</p>
-<p>And seeing how verbose it can be will help you appreciate other options.</p>
+<p>But you will see it used in others’ code, so it’s good to be familiar with it.
+And seeing how verbose it can be will help you appreciate other options.</p>
+<p>So here’s a bit of an introduction – if the class stuff confuses you, don’t worry about it – you don’t need to actually DO this yourself :-)</p>
 </div>
 <div class="section" id="using-unittest">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">unittest</span></code><a class="headerlink" href="#using-unittest" title="Permalink to this headline">¶</a></h2>
-<p>To use <code class="docutils literal notranslate"><span class="pre">unittest</span></code>, you need to write subclasses of the <code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code> class:</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">unittest</span></code>, you need to write subclasses of the <code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code> class (after importing the package, of course):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in test.py</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
 
@@ -229,10 +422,12 @@ module:</p>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">unittest.main()</span></code> is called in the module where there tests are. which means that they can be, but do not have to be, in the same file as your code.</p>
+<p>NOTE: tests can also be run by “test runners” for more features.</p>
 </div>
 <div class="section" id="testing-your-code">
 <h2>Testing Your Code<a class="headerlink" href="#testing-your-code" title="Permalink to this headline">¶</a></h2>
-<p>This way, you can write your code in one file and test it from another:</p>
+<p>You can write your code in one file and test it from another – and for all but the smallest projects, you want to do that.</p>
 <p>in <code class="docutils literal notranslate"><span class="pre">my_mod.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">val1</span> <span class="o">*</span> <span class="n">val2</span>
@@ -254,13 +449,14 @@ module:</p>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>So this is pretty easy, but it’s kind of a lot of code for just one test, yes?</p>
 </div>
 <div class="section" id="advantages-of-unittest">
 <h2>Advantages of <code class="docutils literal notranslate"><span class="pre">unittest</span></code><a class="headerlink" href="#advantages-of-unittest" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">unittest</span></code> module is pretty full featured</p>
 <p>It comes with the standard Python distribution, no installation required.</p>
 <p>It provides a wide variety of assertions for testing all sorts of situations.</p>
-<p>It allows for a setup and tear down workflow both before and after all tests and before and after each test.</p>
+<p>It allows for a setup and tear down work flow both before and after all tests and before and after each test.</p>
 <p>It’s well known and well understood.</p>
 </div>
 <div class="section" id="disadvantages-of-unittest">
@@ -271,30 +467,31 @@ module:</p>
 <li><p>modeled after Java’s <code class="docutils literal notranslate"><span class="pre">JUnit</span></code> and it shows…</p></li>
 </ul>
 </div></blockquote>
-<p>It uses the framework design pattern, so knowing how to use the features means learning what to override.</p>
+<p>It uses the Framework Design Pattern, so knowing how to use the features means learning what to override.</p>
 <p>Needing to override means you have to be cautious.</p>
 <p>Test discovery is both inflexible and brittle.</p>
 <p>And there is no built-in parameterized testing.</p>
 </div>
 <div class="section" id="other-options">
 <h2>Other Options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h2>
-<p>There are several other options for running tests in Python.</p>
+<p>Due to these limitations, folks in the Python community have developed other options for testing in Python:</p>
 <ul class="simple">
 <li><p><strong>Nose2</strong>: <a class="reference external" href="https://github.com/nose-devs/nose2">https://github.com/nose-devs/nose2</a></p></li>
 <li><p><strong>pytest</strong>: <a class="reference external" href="http://pytest.org/latest/">http://pytest.org/latest/</a></p></li>
 <li><p>… (many frameworks supply their own test runners: e.g. django)</p></li>
 </ul>
 <p>Nose was the most common test runner when I first started learning testing, but it has been in maintenance mode for a while. Even the nose2 site recommends that you consider pytest.</p>
-<p>pytest has become the defacto standard test runner for those that want a more “pythonic” test framework.</p>
+<p>pytest has become the defacto standard testing system for those that want a more “pythonic” test framework.</p>
 <p>pytest is very capable and widely used.</p>
 <p>For a great description of the strengths of pytest, see:</p>
 <p><a class="reference external" href="https://blog.daftcode.pl/the-cleaning-hand-of-pytest-28f434f4b684">The Cleaning Hand of Pytest</a></p>
+<p>If you look above, pytest provided every feature of unittest except being in the standard library. And none of the disadvatages. It also can run unittest tests, so if you already have unittest tests, or like some of its features, you can still use pytest.</p>
 <p>So we will use pytest for the rest of this class.</p>
 </div>
 <div class="section" id="installing-pytest">
 <h2>Installing <code class="docutils literal notranslate"><span class="pre">pytest</span></code><a class="headerlink" href="#installing-pytest" title="Permalink to this headline">¶</a></h2>
-<p>The first step is to install the package:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install pytest
+<p>pytest is very easy to install these day:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m pip install pytest
 </pre></div>
 </div>
 <p>Once this is complete, you should have a <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command you can run
@@ -528,7 +725,7 @@ But simple test functions like this will get you very far.</p>
         <a href="TestDrivenDevelopment.html" class="btn btn-neutral float-right" title="Test Driven Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="DictionaryAsSwitch.html" class="btn btn-neutral float-left" title="Using a Dictionary to switch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/except_exercise.html" class="btn btn-neutral float-left" title="Exceptions Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

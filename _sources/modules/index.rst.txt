@@ -1,9 +1,10 @@
 
-######################
-Introduction to Python
-######################
 
-These are assorted notes about particular python topics used in the Python certificate program.
+##################################
+Introduction to Python Topic Notes
+##################################
+
+These are assorted topic notes used in the Python certificate program.
 
 
 Setting up your Environment
@@ -23,18 +24,6 @@ Setting up your Environment
     HowToRunAPythonFile
     Learning
 
-..     Class_introduction
-
-
-Exercise:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/python_pushups.rst
-
-
 Basic Python
 ------------
 
@@ -44,15 +33,6 @@ Basic Python
     BasicPython
     Functions
 
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/grid_printer.rst
-    ../exercises/fizz_buzz.rst
-
 Recursion
 ---------
 
@@ -60,15 +40,6 @@ Recursion
     :maxdepth: 1
 
     Recursion
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/fib_and_lucas.rst
-
 
 Booleans
 --------
@@ -87,33 +58,10 @@ Sequences and Iteration
     Sequences
     Iteration
 
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/slicing.rst
-    ../exercises/list_lab.rst
-
 Basic Text Handling
 -------------------
 
-.. toctree::
-    :maxdepth: 1
-
     Strings
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/string_formatting.rst
-    ../exercises/rot13.rst
-    ../exercises/mailroom-part1.rst
-    ../exercises/mailroom_tutorial.rst
 
 Exception Handling
 ------------------
@@ -122,15 +70,6 @@ Exception Handling
     :maxdepth: 1
 
     Exceptions
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/exceptions_lab.rst
-    ../exercises/except_exercise.rst
 
 
 Unit Testing
@@ -142,14 +81,6 @@ Unit Testing
     Testing
     TestDrivenDevelopment
 
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/unit_testing.rst
-    ../exercises/mailroom-part4.rst
 
 Dictionaries and Sets
 ---------------------
@@ -160,15 +91,6 @@ Dictionaries and Sets
     DictsAndSets
     DictionaryAsSwitch
 
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/dict_lab.rst
-    ../exercises/mailroom-part2.rst
-
 Files
 -----
 
@@ -176,17 +98,6 @@ Files
     :maxdepth: 1
 
     Files
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/file_lab.rst
-    ../exercises/mailroom-part2.rst
-    ../exercises/kata_fourteen.rst
-
 
 Modules and Packages
 --------------------
@@ -199,14 +110,6 @@ Modules and Packages
     Documentation
     Packaging
 
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/mailroom-pkg.rst
-
 
 Comprehensions
 --------------
@@ -216,14 +119,6 @@ Comprehensions
 
     Comprehensions
     CollectionsModule
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/comprehensions_lab.rst
 
 
 Advanced Argument Passing
@@ -235,6 +130,7 @@ Advanced Argument Passing
     AdvancedArgumentPassing
     MoreOnMutability
 
+
 Intro to Object Oriented Programing
 -----------------------------------
 
@@ -243,16 +139,6 @@ Intro to Object Oriented Programing
 
     ObjectOrientationOverview
     PythonClasses
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/oo_intro.rst
-    ../exercises/mailroom-oo.rst
-
 
 Properties and Magic Methods
 ----------------------------
@@ -264,14 +150,6 @@ Properties and Magic Methods
     StaticAndClassMethods
     SpecialMethodsAndProtocols
 
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/circle_class.rst
-
 Subclassing
 -----------
 
@@ -279,16 +157,6 @@ Subclassing
     :maxdepth: 1
 
     SubclassingAndInheritance
-
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    ../exercises/html_renderer.rst
-    ../exercises/html_renderer_tutorial.rst
 
 
 Multiple Inheritance
@@ -340,7 +208,6 @@ The following are some extra topics that might be of interest
 
     Decorators
     ContextManagers
-    Recursion
 
 
     MetaProgramming
@@ -348,10 +215,8 @@ The following are some extra topics that might be of interest
     Logging
     Debugging
 
-
     NoSQL
     GraphDatabases
-
 
     Concurrency
     ThreadingMultiprocessing
@@ -360,9 +225,3 @@ The following are some extra topics that might be of interest
 
     Profiling
 
-.. Lesson 7: Relational Databases
-.. ------------------------------
-
-.. `Andy Miles' slides <https://gitpitch.com/milesak60/rdbms-slides#/>`_
-
-.. `Example code on gitHub <https://github.com/milesak60/RDBMS-example>`_

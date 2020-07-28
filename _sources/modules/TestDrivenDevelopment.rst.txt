@@ -934,7 +934,7 @@ Now check that the test fails properly.
 
 Yup -- it failed.
 
-**Hint:** when you add a new test, and see that it fails, also check that there are *more* tests than there were before. In this case, 1 failed, and 5 passed. In the previous run, 4 passed -- so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one -- and we want all our tests to be preserved.
+.. hint:: when you add a new test, and see that it fails, also check that there are *more* tests than there were before. In this case, 1 failed, and 5 passed. In the previous run, 4 passed -- so you know there are, in fact, two additional tests, one of which passed. Why might there not be? because we all like to copy-and-paste, and then edit. If you forget to rename the test function, it will overwrite the previous one -- and we want all our tests to be preserved.
 
 So now write the code that makes the test pass.
 
@@ -1216,7 +1216,7 @@ integer values for exactly that set of Roman numerals that
 your requirements, this possibility may bother you; if so, write more
 comprehensive test cases until it doesn't bother you.)
 
-.. note:: Comprehensive test coverage is a bit of a fantasy. You can make sure that every line of code you write is run at least once during the testing (this is known as "coverage"). But you can't make sure that every function is called with *every* possible type and value! So what we can do is anticipate what we think might break our code, and test for that. Some things *will* slip through the cracks -- but here's a hint: when a bug is discovered, the first thing you should do is write a test that exercises that bug -- a test that will fail due to the bug. Then fix it. Since all your other test still pass (they do, don't they?) -- you know the fix hasn't broken anything else. And since you have a test for it -- you know you won't accidentally reintroduce that bug.
+.. note:: Comprehensive test coverage is a bit of a fantasy. You can make sure that every line of code you write is run at least once during the testing (this is known as "coverage"). But you can't make sure that every function is called with *every* possible type and value! So what we can do is anticipate what we think might break our code, and test for that. Some things *will* slip through the cracks. When a bug is discovered, the first thing you should do is write a test that exercises that bug -- a test that will fail due to the bug. Then fix it. Since all your other test still pass (they do, don't they?) -- you know the fix hasn't broken anything else. And since you have a test for it -- you know you won't accidentally reintroduce that bug.
 
 
 More Bad Input

@@ -1,11 +1,17 @@
 
 .. _unit_testing:
 
-############
-Unit Testing
-############
+#######
+Testing
+#######
 
-You've already seen a very basic testing strategy.
+This page is a quick overview of testing in Python. It provides some background on testing, and the tools available. Later on, we'll get to the details of how to actually do it.
+
+Testing your code is an absolute necessity -- you need to have *some* way to know it's doing what it should.
+
+Having your testing done in an automated way is really a good idea.
+
+You've already seen a very basic testing strategy: putting some ``assert`` statements in the ``__name__ == "__main__"`` block.
 
 You've written some tests using that strategy.
 
@@ -28,29 +34,28 @@ block.
 
 This is not optimal.
 
-Python provides testing systems to help.
+You really want ways to structure your tests, and run your tests, that can be controlled and provide nifty features.
 
 
 Standard Library: ``unittest``
 ------------------------------
 
-The original testing system in Python.
+Python comes with the ``unittest`` package that provides a number of nifty features. It was introduced in version 2.1 -- so it's been around a long time.
 
-``import unittest``
-
-More or less a port of `JUnit <https://junit.org>`_ from Java
+It is more or less a port of `JUnit <https://junit.org>`_ from Java, which shows -- it's has a style and structure that fit Java more than Python:
 
 A bit verbose: you have to write classes & methods (And we haven't covered that yet!)
 
-But here's a bit of an introduction, as you will see this in others' code.
-
+But you will see it used in others' code, so it's good to be familiar with it.
 And seeing how verbose it can be will help you appreciate other options.
+
+So here's a bit of an introduction -- if the class stuff confuses you, don't worry about it -- you don't need to actually DO this yourself :-)
 
 
 Using ``unittest``
 ------------------
 
-To use ``unittest``, you need to write subclasses of the ``unittest.TestCase`` class:
+To use ``unittest``, you need to write subclasses of the ``unittest.TestCase`` class (after importing the package, of course):
 
 .. code-block:: python
 
@@ -71,11 +76,14 @@ module:
     if __name__ == '__main__':
         unittest.main()
 
+``unittest.main()`` is called in the module where there tests are. which means that they can be, but do not have to be, in the same file as your code.
+
+NOTE: tests can also be run by "test runners" for more features.
 
 Testing Your Code
 -----------------
 
-This way, you can write your code in one file and test it from another:
+You can write your code in one file and test it from another -- and for all but the smallest projects, you want to do that.
 
 in ``my_mod.py``:
 
@@ -102,6 +110,7 @@ in ``test_my_mod.py``:
     if __name__ == '__main__':
         unittest.main()
 
+So this is pretty easy, but it's kind of a lot of code for just one test, yes?
 
 Advantages of ``unittest``
 --------------------------
@@ -112,7 +121,7 @@ It comes with the standard Python distribution, no installation required.
 
 It provides a wide variety of assertions for testing all sorts of situations.
 
-It allows for a setup and tear down workflow both before and after all tests and before and after each test.
+It allows for a setup and tear down work flow both before and after all tests and before and after each test.
 
 It's well known and well understood.
 
@@ -124,7 +133,7 @@ It's Object Oriented, and quite "heavyweight".
 
   - modeled after Java's ``JUnit`` and it shows...
 
-It uses the framework design pattern, so knowing how to use the features means learning what to override.
+It uses the Framework Design Pattern, so knowing how to use the features means learning what to override.
 
 Needing to override means you have to be cautious.
 
@@ -136,7 +145,7 @@ And there is no built-in parameterized testing.
 Other Options
 -------------
 
-There are several other options for running tests in Python.
+Due to these limitations, folks in the Python community have developed other options for testing in Python:
 
 * **Nose2**: https://github.com/nose-devs/nose2
 
@@ -146,7 +155,7 @@ There are several other options for running tests in Python.
 
 Nose was the most common test runner when I first started learning testing, but it has been in maintenance mode for a while. Even the nose2 site recommends that you consider pytest.
 
-pytest has become the defacto standard test runner for those that want a more "pythonic" test framework.
+pytest has become the defacto standard testing system for those that want a more "pythonic" test framework.
 
 pytest is very capable and widely used.
 
@@ -154,16 +163,19 @@ For a great description of the strengths of pytest, see:
 
 `The Cleaning Hand of Pytest <https://blog.daftcode.pl/the-cleaning-hand-of-pytest-28f434f4b684>`_
 
+If you look above, pytest provided every feature of unittest except being in the standard library. And none of the disadvatages. It also can run unittest tests, so if you already have unittest tests, or like some of its features, you can still use pytest.
+
 So we will use pytest for the rest of this class.
+
 
 Installing ``pytest``
 ---------------------
 
-The first step is to install the package:
+pytest is very easy to install these day:
 
 .. code-block:: bash
 
-    $ python3 -m pip install pytest
+    $ python -m pip install pytest
 
 Once this is complete, you should have a ``pytest`` command you can run
 at the command line:
@@ -175,6 +187,7 @@ at the command line:
 If you have any tests in your repository, that command will find and run them (If you have followed the proper naming conventions).
 
     **Do you?**
+
 
 Pre-existing Tests
 ------------------

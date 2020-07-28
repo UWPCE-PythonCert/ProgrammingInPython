@@ -13,6 +13,7 @@ Readings
 
     ../modules/DictsAndSets
     ../modules/DictionaryAsSwitch
+    ../modules/Exceptions
     ../modules/Testing
     ../modules/TestDrivenDevelopment
 
@@ -33,6 +34,8 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
+    ../exercises/exceptions_lab.rst
+    ../exercises/except_exercise.rst
     ../exercises/unit_testing.rst
     ../exercises/dict_lab.rst
     ../exercises/mailroom-part2.rst
