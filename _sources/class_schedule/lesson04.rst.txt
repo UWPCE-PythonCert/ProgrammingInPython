@@ -39,4 +39,6 @@ Exercises:
     ../exercises/unit_testing.rst
     ../exercises/dict_lab.rst
     ../exercises/mailroom-part2.rst
-    ../exercises/kata_fourteen.rst
+    ../exercises/trigrams/trigrams.rst
+
+
