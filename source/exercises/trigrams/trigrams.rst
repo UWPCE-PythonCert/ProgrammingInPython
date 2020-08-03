@@ -4,7 +4,7 @@
 Trigrams -- Simple Text Manipulation
 ====================================
 
-.. rubric:: Kata Fourteen: Tom Swift Under Milk Wood
+.. rubric:: Kata Fourteen: Tom Swift Under the Milk Wood
 
 Adapted from Dave Thomas's work:
 
@@ -140,6 +140,54 @@ This assignment has two parts: the key one is the trigrams exercise itself, but 
 
 I suggest you write the trigrams part first; it's more interesting :-)
 
+Test Driven Development
+-----------------------
+
+You've recently learned about unit testing and Test Driven Development (TDD). That's put that to work on this exercise. Remember that the key to TDD is that you first decide on what you need a piece of your code to do, then you write a test to check that it does that, and only then do you write the actual code itself.
+
+Because you're new to this, we're going to give you some tests to get you started. You'll find them in: :download:`test_trigrams.py <./test_trigrams.py>`, which should be with this assignment.
+
+Running the Tests
+.................
+
+To run the tests, use the ``pytest`` test runner: set your working directory the dir with the test file, and run the ``pytest`` command:
+
+.. code-block:: bash
+
+  $ pytest
+  ======================= test session starts =======================
+  platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+  rootdir: /Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/exercises/trigrams
+  collected 0 items / 1 error
+
+  ============================= ERRORS ==============================
+  ________________ ERROR collecting test_trigrams.py ________________
+  ImportError while importing test module '/Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/exercises/trigrams/test_trigrams.py'.
+  Hint: make sure your test modules/packages have valid Python names.
+  Traceback:
+  test_trigrams.py:17: in <module>
+      import trigrams
+  E   ModuleNotFoundError: No module named 'trigrams'
+  ===================== short test summary info =====================
+  ERROR test_trigrams.py
+  !!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!
+  ======================== 1 error in 0.13s =========================
+
+You should have gotten something like that error: it is indicating that the "trigrams" module does not exist -- which makes sense, as you haven't written in yet. So the first step is the create your code file: name it ``trigrams.py`` and put it in the same directory as the ``test_trigrams.py`` file. It can be empty for now. Now try running pytest again, and it should get farther: you'll have a lot of test failures, but the test should actually run. You should get something like:
+
+.. code-block:: bash
+
+  ...
+  >       tris = trigrams.build_trigram(IWISH)
+  E       AttributeError: module 'trigrams' has no attribute 'build_trigram'
+
+  test_trigrams.py:29: AttributeError
+  ====================== short test summary info =======================
+  FAILED test_trigrams.py::test_trigrams_keys - AttributeError: modul...
+  ========================= 1 failed in 0.15s ==========================
+
+You get an Attribute error, as you haven' defined anything in your ``trigrams.py`` file. But now it's time to actually work on the code!
+
 trigrams
 --------
 
@@ -163,6 +211,13 @@ This produces an (ordered) list of words::
   ['I', 'wish', 'I', 'may', 'I', 'wish', 'I', 'might']
 
 Now you've got some words to play with. Once you think you've got it working, try a bit longer piece of text. But this will do for now, and it's small and simple enough that you can immediately see if your code is working.
+
+You will find that example in the test file, so we can write tests agains it:
+
+.. code-block:: python
+
+  IWISH = ["I", "wish", "I", "may", "I", "wish", "I", "might"]
+
 
 The trigrams structure
 ----------------------

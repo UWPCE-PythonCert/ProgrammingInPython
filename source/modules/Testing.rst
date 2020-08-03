@@ -263,9 +263,13 @@ Read the documentation for more information:
 
 http://pytest.org/latest/getting-started.html#getstarted
 
-It will run ``unittest`` tests for you, so can be used as a test runner.
+Those docs are a bit intimidating, but with pytest, as they say:
 
-But in addition to finding and running tests, it makes writing tests simple, and provides a bunch of nifty utilities to support more complex testing.
+  "the easy stuff is easy, and the hard stuff is possible"
+
+-- and you can get very far with the easy stuff.
+
+In addition to finding and running tests, it makes writing tests simple, and provides a bunch of nifty utilities to support more complex testing.
 
 Now download this file:
 

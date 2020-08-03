@@ -48,7 +48,7 @@ Lesson 4: Dictionaries, Sets, and Files
 
     dict_lab.rst
     file_lab.rst
-    kata_fourteen.rst
+    trigrams/trigrams.rst
     mailroom-part2.rst
 
 
