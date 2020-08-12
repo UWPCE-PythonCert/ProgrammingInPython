@@ -17,25 +17,58 @@ the text -- if so, then update the tests (and add more) to reflect how you want 
 
 # this is expecting a "trigrams.py" file with your code in it.
 
+import random
 import trigrams
 
-IWISH = ["I", "wish", "I", "may", "I", "wish", "I", "might"]
+IWISH = words = "I wish I may I wish I might".split()
 
-
-def test_trigrams_keys():
+def test_trigrams_pairs():
     """
     test that the build_trigram function creates the right pairs of words
     """
     tris = trigrams.build_trigram(IWISH)
 
-    pairs = list(tris.keys())
+    pairs = tris.keys()
 
-    pairs = pairs.sort()
-
+    # using a set here, as the dict_keys object is a set as well
+    # And keys are always unique and hashable
+    # and the order does not matter, so perfect for a set
     assert pairs == {("I", "wish"),
-                    ("wish", "I"),
-                    ("may", "I"),
-                    ("I", "may"),
-                    }
+                     ("wish", "I"),
+                     ("may", "I"),
+                     ("I", "may"),
+                     }
+
+
+def test_trigrams_following_words():
+    """
+    test that the following words are correct
+    """
+    tris = trigrams.build_trigram(IWISH)
+
+    # this will only print if the test fails
+    # but if if does, you can see what's going on to try to fix it.
+    print(tris)
+
+    # a separate assert for each pair:
+    assert tris[("I", "wish")] == ["I", "I"]
+    assert tris[("wish", "I")] == ["may", "might"]
+    assert tris[("may", "I")] == ["wish"]
+    assert tris[("I", "may")] == ["I"]
+
+
+def test_pick_random_pair():
+    test_pairs = {("one", "two"): [],
+                  ("one", "three"): [],
+                  ("four", "five"): [],
+                  ("six", "seven"): [],
+                  ("eight", "nine"): [],
+                  }
+    # set the seed so we'll always get the same one
+    random.seed(1234)
+    pair = trigrams.pick_random_pair(test_pairs)
+
+    assert pair == ('six', 'seven')
+
 
 
