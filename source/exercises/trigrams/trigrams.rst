@@ -212,7 +212,7 @@ This produces an (ordered) list of words::
 
 Now you've got some words to play with. Once you think you've got it working, try a bit longer piece of text. But this will do for now, and it's small and simple enough that you can immediately see if your code is working.
 
-You will find that example in the test file, so we can write tests agains it:
+You will find that example in the test file, so we can write tests against it:
 
 .. code-block:: python
 
@@ -222,25 +222,27 @@ You will find that example in the test file, so we can write tests agains it:
 The trigrams structure
 ----------------------
 
-From above, this is what you need to build up something like this::
+Now we need to think a bit about what we want the trigrams structure to be.
 
-    "I wish" => ["I", "I"]
-    "wish I" => ["may", "might"]
-    "may I"  => ["wish"]
-    "I may"  => ["I"]
+From above, we know that we need to build up something like this::
+
+    "I wish" => "I", "I"
+    "wish I" => "may", "might"
+    "may I"  => "wish"
+    "I may"  => "I"
 
 Hmmm, in a way, that's almost pseudo code. You have a bunch of word pairs, and for each word pair, there are one or more words that follow it.
 
-Those following words look a lot like they are in a list, yes? Perfect, the list structure keeps order, and you can keep adding (appending) new words to it.
+Those following words look a lot like they could be in a list, yes? Perfect, the list structure keeps order, and you can keep adding (appending) new words to it.
 
-Each of those lists of words needs to be mapped to a particular pair. Each pair is unique; it only shows up once (when that same pair is encountered again in the text, you add the follower to the list).
+Each of those lists of words needs to be mapped to a particular pair. Each pair is unique; it only shows up once (when that same pair is encountered again in the text, you add the follower to the list of following words).
 
 That sounds a lot like a dictionary. The keys (word pairs) are unique, and map to a list of following words. (Note that, technically, in python the dictionary is only one implementation of a
 `Mapping <https://docs.python.org/3/glossary.html#term-mapping>`_.)
 
-Now you have a choice of data structures: string or tuple.
+Now you have a choice of data structures for the word pairs, or keys in the dict: a string or a tuple.
 
-String: The keys are a pair of words and can be represented as a string of two words with a space like so:
+**String**: The keys are a pair of words and can be represented as a string of two words with a space like so:
 
 .. code-block:: python
 
@@ -250,7 +252,7 @@ String: The keys are a pair of words and can be represented as a string of two w
                 "I may": ["I"],
                 }
 
-Tuple: But strings are not the only type that you can use as keys in a dict; you can use any *immutable* type. Recall that tuples are immutable (they can't be changed once they have been created). Since each pair of words is, well, a pair, it makes sense to store each pair in a tuple, keeping the individual words separate:
+**Tuple**: But strings are not the only type that you can use as keys in a dictionary; you can use any *immutable* type. Recall that tuples are immutable (they can't be changed once they have been created). Since each pair of words is, well, a pair, it makes sense to store each pair in a tuple, keeping the individual words separate:
 
 .. code-block:: python
 
@@ -260,30 +262,32 @@ Tuple: But strings are not the only type that you can use as keys in a dict; you
                 ("I", "may"): ["I"],
                 }
 
-I like the example that uses tuples better, but either one will work.
+I like the version that uses tuples better, but either one will work. The test code is designed to check for word pairs in tuples. If you want to write your code using space separated strings, you can modify the tests.
 
 Building the Trigrams dict
 ..........................
 
 So you've got a list of words, and you need to build up a dict like one of the above.
 
-It's time to create a python file and start writting some code!
+It's time to create a python file and start writing some code!
+
+Put this in your ``trigrams.py`` file
 
 .. code-block:: python
 
   #!/usr/bin/env python3
 
-  words = "I wish I may I wish I might".split()
-
-
-  def build_trigrams(words):
+  def build_trigram(words):
       """
       build up the trigrams dict from the list of words
 
-      returns a dict with:
-         keys: word pairs
-         values: list of followers
+      :param words: a list of individual words in order
+
+      :returns: a dict with:
+           keys: word pairs in tuples
+           values: list of the words that follow the pain in the key
       """
+
       trigrams = {}
 
       # build up the dict here!
@@ -291,15 +295,11 @@ It's time to create a python file and start writting some code!
       return trigrams
 
 
-  if __name__ == "__main__":
-      trigrams = build_trigrams(words)
-      print(trigrams)
-
 So how do you actually build up that dict? That's kind of the point of the exercise, so I won't tell you that ... but here are some hints:
 
 **Looping through the words**
 
-Obviously you need to loop through all the words, so a ``for`` loop makes sense. However, this is a bit tricky. Usually in Python you loop through all the items in a list, and don't worry about the indices:
+Obviously you need to loop through all the words, so a ``for`` loop makes sense. However, this is a bit tricky. Usually in Python you loop through all the items in a list, and don't worry about the indexes:
 
 .. code-block:: python
 
@@ -331,18 +331,69 @@ For each pair in the text, you need to add it to the dict. But:
 
     ("wish", "I"): ["may", "might"]
 
-Note that the example above suggests the basic logic; it's almost pseudo-code. And that logic will work.  But it turns out that this is a common enough operation that python dicts have a method that lets you do that logic in one step? Can you find it?
+Note that the description above suggests the basic logic; it's almost pseudo-code. And that logic will work.  But it turns out that this is a common enough operation that python dicts have a method that lets you do that logic in one step? Can you find it?
 
 `Python dict Documentation <https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#mapping-types-dict>`_
 
-You should now have code that will return a dict like we noted above::
+As you develop this code, run the tests each time you think you have made some progress::
+
+    $ pytest test_trigrams.py
+
+In that test file, there are two tests of the `trigrams()` function: One that tests that it gets the right word pairs as keys:
+
+.. code-block:: python
+
+  def test_trigrams_pairs():
+      """
+      test that the build_trigram function creates the right pairs of words
+      """
+      tris = trigrams.build_trigram(IWISH)
+
+      pairs = tris.keys()
+
+      # using a set here, as the dict_keys object is a set as well
+      # And keys are always unique and hashable
+      # and the order does not matter, so perfect for a set
+      assert pairs == {("I", "wish"),
+                       ("wish", "I"),
+                       ("may", "I"),
+                       ("I", "may"),
+                       }
+
+and one that tests if the following word lists are correct:
+
+.. code-block:: python
+
+  def test_trigrams_following_words():
+      """
+      test that the following words are correct
+      """
+      tris = trigrams.build_trigram(IWISH)
+
+      # this will only print if the test fails
+      # but if if does, you can see what's going on to try to fix it.
+      print(tris)
+
+      # a separate assert for each pair:
+      assert tris[("I", "wish")] == ["I", "I"]
+      assert tris[("wish", "I")] == ["may", "might"]
+      assert tris[("may", "I")] == ["wish"]
+      assert tris[("I", "may")] == ["I"]
+
+Note that if the first test fails, almost certainly the second will too (the second test explicitly looks for all the same keys). That's OK. It's still good to keep them separate, because the first test could pass while the second one fails -- it's nice to know you've made progress!
+
+If it seems like we have hard-coded a lot of detail in -- you are right. But this is quite deliberate. And it is why we chose such a simple set of words to start out with. If you want read a bit more about this approach, this blogger puts it nicely:
+`Write Explicit Tests <https://amir.rachum.com/blog/2017/01/14/explicit-tests/>`_
+
+If both tests pass, you should now have code that will return a dict like we noted above::
 
    {("I", "wish"): ["I", "I"],
     ("wish", "I"): ["may", "might"],
     ("may", "I"): ["wish"],
     ("I", "may"): ["I"]}
 
-Try it out on a longer bit of text (your choice) before you go any further.
+Try it out on a longer bit of text (your choice) before you go any further. If it doesn't work correctly, make sure to write a test that catches the problem before you fix it!
+
 
 Using the Trigrams dict
 .......................
@@ -361,17 +412,48 @@ This is the fun part. Once you have a mapping of word pairs to following words, 
   # pick a random item from a sequence
   random.choice(a_list)
 
-- You need to start with the first word pair; picking a random key from a dict is actually a bit tricky. Start with this known pair, and once you have the code working, you can figure out a better way to pick a pair to start with.
+This is all pretty tricky to test -- after all, you are selecting random words -- you can't know what the result should be! There are two tactics you can take here. We show a bit of both in the provided tests.
+
+Tactic one is to break you code down into pieces that you *can* test -- everything BUT the random choices.
+
+Tactic two is to take advantage of the random "`seed <https://en.wikipedia.org/wiki/Random_seed>`_". Computers don't really make truly random numbers. What they do is compute a sequence of numbers that are statistically very much like random numbers. But if you start with the same initial value, known as the "seed", then you will get the same sequence of numbers. We can take advantage of this in our tests, as the built in ``random`` module provides a way to `set the seed <https://docs.python.org/3/library/random.html#random.seed>`_
+
+The provided tests use a both of these tactics.
+
+- You need to start with the first word pair; picking a random key from a dict is actually a bit tricky. But we have a test for it:
+
+.. code-block:: python
+
+  def test_pick_random_pair():
+      test_pairs = {("one", "two"): [],
+                    ("one", "three"): [],
+                    ("four", "five"): [],
+                    ("six", "seven"): [],
+                    ("eight", "nine"): [],
+                    }
+      # set the seed so we'll always get the same one
+      random.seed(1234)
+      pair = trigrams.pick_random_pair(test_pairs)
+
+      assert pair == ('six', 'seven')
+
+So you'll need to define a function: ``pick_random_pair()`` that takes your trigram dict as input, and returns a random key.
+
+Note that that particular result is using a particular algorithm -- if you use a different one, you might get a different pair -- but you should get the same one every time, so you can make the test check for that.
+
 
 - As you build up your text, you probably want to build it up in a list, appending one word at a time.  You can join it together at the end with ``" ".join(the_list_of_words)``
 
 - Remember that after adding a word to a pair to make a three-word text, the next pair is the last two words in that three-word text.
 
-- What to do if you end up with a word pair that isn't in the original text?
+- What to do if you end up with a word pair that isn't in the original text? It's unlikely on a long text, but possible.
 
 - How to terminate? Probably have a pre-defined length of text!
 
+
+
 Once you have the basics working, try your code on a longer piece of input text. Then think about making it fancy. Can you make sentences with capitalized first words and punctuation? Anything else to make the text more "real"?
+
 
 Processing the Input Text
 -------------------------
