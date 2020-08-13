@@ -412,13 +412,16 @@ This is the fun part. Once you have a mapping of word pairs to following words, 
   # pick a random item from a sequence
   random.choice(a_list)
 
-This is all pretty tricky to test -- after all, you are selecting random words -- you can't know what the result should be! There are two tactics you can take here. We show a bit of both in the provided tests.
+This is all pretty tricky to test -- after all, you are selecting random words -- you can't know what the result should be! There are two tactics you can take here.
 
 Tactic one is to break you code down into pieces that you *can* test -- everything BUT the random choices.
 
-Tactic two is to take advantage of the random "`seed <https://en.wikipedia.org/wiki/Random_seed>`_". Computers don't really make truly random numbers. What they do is compute a sequence of numbers that are statistically very much like random numbers. But if you start with the same initial value, known as the "seed", then you will get the same sequence of numbers. We can take advantage of this in our tests, as the built in ``random`` module provides a way to `set the seed <https://docs.python.org/3/library/random.html#random.seed>`_
+Tactic two is to set the random seed before each test, to assure the same result.
+The built in ``random`` module `provides a way to set the seed <https://docs.python.org/3/library/random.html#random.seed>`_: the ``random.seed()`` function.
 
-The provided tests use a both of these tactics.
+.. note:: Computers don't really make truly random numbers. What they do is compute a sequence of numbers that are statistically very much like random numbers, known as `"pseudo random numbers" <https://en.wikipedia.org/wiki/Pseudorandom_number_generator>`_. If you start with the same initial value, known as the "seed", then you will get the same sequence of numbers. `Random seed <https://en.wikipedia.org/wiki/Random_seed>`_
+
+The provided tests use both of these tactics.
 
 - You need to start with the first word pair; picking a random key from a dict is actually a bit tricky. But we have a test for it:
 
@@ -434,25 +437,105 @@ The provided tests use a both of these tactics.
       # set the seed so we'll always get the same one
       random.seed(1234)
       pair = trigrams.pick_random_pair(test_pairs)
-
+      print("the pair is:", pair)
       assert pair == ('six', 'seven')
 
 So you'll need to define a function: ``pick_random_pair()`` that takes your trigram dict as input, and returns a random key.
 
-Note that that particular result is using a particular algorithm -- if you use a different one, you might get a different pair -- but you should get the same one every time, so you can make the test check for that.
+Note that the particular result in the test is using a particular algorithm -- if you use a different one, you might get a different pair -- but you should get the same one every time, so you can make the test check for that.
+
+Once you've got the first starting pair, you'll need to make your text,
+so you'll need a data structure to build it up in.  You probably want to build it up in a list, appending one word at a time.  You can join it together at the end with ``" ".join(the_list_of_words)``, which will make a string, separating the words with a space.
+
+Remember that after adding a word to a pair to make a three-word text, the next pair is the last two words in that three-word text.
+
+Here is a test for that step:
+
+.. code-block:: python
+
+  def test_get_last_pair():
+      words = ["this", "that", "the", "other"]
+
+      assert trigrams.get_last_pair(words) == ("the", "other")
+
+write a function: ``get_last_pair()`` that takes a list of words, and returns the last two words as a tuple.
+
+Then you'll need to pick a random word from the "followers" -- the words that followed that pair of words in the original text. There is a test for that, too:
+
+.. code-block:: python
+
+  def test_get_random_follower():
+      """
+      test getting a random word from the trigrams dict
+      """
+      # we only need one entry for this test
+      tri_dict = {("one", "two"): ["four", "five", "six", "seven"]}
+
+      # set the seed so the answer will be consistent
+      random.seed(1234)
+      word = trigrams.get_random_follower(tri_dict, ("one", "two"))
+      print("got word:", word)
+      assert word == "seven"
+
+Again, this sets the random seed so that you will always get the same answer. If your code returns a different word -- change the test to match.
+
+But what if the word pair is not in the dict? It's not that likely in a long text, but it can happen. So make sure that your code handles that situation by making sure it passes this test:
+
+.. code-block:: python
+
+  def test_get_random_follower_not_there():
+      """
+      test what happens when the word pair is not there
+      """
+      # we only need one entry for this test
+      tri_dict = {("one", "two"): ["four", "five", "six", "seven"]}
+
+      # here's a word pair that isn't there
+      # make sure you get something back!
+      word = trigrams.get_random_follower(tri_dict, ("one", "one"))
+      print("got word:", word)
+      assert word  # this asserts that you got a non-empty string
+
+Note that there are a number of options here as to what to do -- but make sure it returns *something*.
+
+Putting it Together
+...................
+
+You now have the pieces you need to make some new text. Let's write a function that will make a single sentence a specified number of words long. The first word should be capitalized, and it should end with a period. Here is the test for that function:
+
+.. code-block:: python
+
+  def test_make_sentence():
+      """
+      test making a trigrams sentence
+
+      as it is supposed to be random, this tests for things other than
+      the actual results.
+
+      NOTE that this test relies on the build_trigram() function, so it
+           will fail if that doesn't work.
+      """
+      # use the already tested build_trigram function to make the dict
+      tri_dict = trigrams.build_trigram(LONGER_TEXT)
 
 
-- As you build up your text, you probably want to build it up in a list, appending one word at a time.  You can join it together at the end with ``" ".join(the_list_of_words)``
+      # make a sentence of 6 words
+      sentence = trigrams.make_sentence(tri_dict, 6)
 
-- Remember that after adding a word to a pair to make a three-word text, the next pair is the last two words in that three-word text.
+      print(sentence)
+      # check that it has 6 words
+      assert len(sentence.split()) == 6
+      # check that the first letter is a capital
+      assert sentence[0] == sentence[0].upper()
+      # check that it ends with a period
+      assert sentence[-1] == "."
+      # check that there is not a space between the period and the last word.
+      assert not sentence[-2].isspace()
 
-- What to do if you end up with a word pair that isn't in the original text? It's unlikely on a long text, but possible.
-
-- How to terminate? Probably have a pre-defined length of text!
+You can now use the previous functions to make a ``make_sentence()`` function that passes these tests.
 
 
-
-Once you have the basics working, try your code on a longer piece of input text. Then think about making it fancy. Can you make sentences with capitalized first words and punctuation? Anything else to make the text more "real"?
+Once you have the basics working, try your code on a longer piece of input text. Then think about making it fancy: put a number of sentences of random length to form a paragraph? Add in some other random punctuation? Anything else to make the text more "real"?
 
 
 Processing the Input Text
@@ -460,9 +543,10 @@ Processing the Input Text
 
 If you get a book from Project Gutenberg (or anywhere else), it will not be "clean." That is, it will have header information, footer information, chapter headings, punctuation, what have you. So you'll need to clean it up somehow to get a simple list of words to use to build your trigrams.
 
-The first part of the process is pretty straightforward; open the file and loop through the lines of text.
+The first part of the process is pretty straightforward; open the file and loop through the lines of text and process them.
 
 You may want to skip the header. How would you do that??
+
 Hint: in a Project Gutenberg e-book, there is a line of text that starts with::
 
   *** START OF THIS PROJECT GUTENBERG EBOOK
@@ -474,27 +558,36 @@ In the loop, you can process a single line of text to break it into words:
 Optional steps to cleaning up the text:
 
  - Strip out punctuation?
-   - If you do this, what about contractions, i.e. the appostrophe in "can't" vs. a single quotation mark -- which are the same character.
+   - If you do this, what about contractions, i.e. the apostrophe in "can't" vs. a single quotation mark -- which are the same character.
 
  - Remove capitalization?
    - If you do this, what about "I"? And proper nouns?
 
 Any other ideas you may have.
 
+Be sure to use TDD as you develop the "clean up" code: write a test for one feature, and then make sure your code passes that test.
+
+Lather, rinse and repeat.
+
 **Hints:**
 
 The ``string`` methods are your friend here.
 
 There are also handy constants in the ``string`` module: ``import string``
+(https://docs.python.org/3/library/string.html)
 
 Check out the ``str.translate()`` method; it can make multiple replacements very fast.
 
 Do get the full trigrams code working first, then play with some of the fancier options.
 
+
 Code Structure
 --------------
 
-Break your code down into a handful of separate functions. This way you can test each on its own, and it's easier to refactor one part without messing with the others.  For instance, your ``__main__`` block might look something like:
+You will have found that following TDD forces you to break your code down into a handful of separate functions, each of which does only one thing. This lets you test each function on its own, and it's easier to refactor one part without messing with the others. Then you can put them all together into a simple program.
+
+
+For instance, your ``__main__`` block might look something like:
 
 .. code-block:: python
 
@@ -512,3 +605,5 @@ Break your code down into a handful of separate functions. This way you can test
       new_text = build_text(word_pairs)
 
       print(new_text)
+
+

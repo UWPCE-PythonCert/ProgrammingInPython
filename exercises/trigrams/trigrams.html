@@ -177,6 +177,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#the-trigrams-structure">The trigrams structure</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#building-the-trigrams-dict">Building the Trigrams dict</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#using-the-trigrams-dict">Using the Trigrams dict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#putting-it-together">Putting it Together</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#processing-the-input-text">Processing the Input Text</a></li>
@@ -670,10 +671,15 @@ So contrary to the usual practice, an index can be helpful here:</p>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This is all pretty tricky to test – after all, you are selecting random words – you can’t know what the result should be! There are two tactics you can take here. We show a bit of both in the provided tests.</p>
+<p>This is all pretty tricky to test – after all, you are selecting random words – you can’t know what the result should be! There are two tactics you can take here.</p>
 <p>Tactic one is to break you code down into pieces that you <em>can</em> test – everything BUT the random choices.</p>
-<p>Tactic two is to take advantage of the random “<a class="reference external" href="https://en.wikipedia.org/wiki/Random_seed">seed</a>”. Computers don’t really make truly random numbers. What they do is compute a sequence of numbers that are statistically very much like random numbers. But if you start with the same initial value, known as the “seed”, then you will get the same sequence of numbers. We can take advantage of this in our tests, as the built in <code class="docutils literal notranslate"><span class="pre">random</span></code> module provides a way to <a class="reference external" href="https://docs.python.org/3/library/random.html#random.seed">set the seed</a></p>
-<p>The provided tests use a both of these tactics.</p>
+<p>Tactic two is to set the random seed before each test, to assure the same result.
+The built in <code class="docutils literal notranslate"><span class="pre">random</span></code> module <a class="reference external" href="https://docs.python.org/3/library/random.html#random.seed">provides a way to set the seed</a>: the <code class="docutils literal notranslate"><span class="pre">random.seed()</span></code> function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Computers don’t really make truly random numbers. What they do is compute a sequence of numbers that are statistically very much like random numbers, known as <a class="reference external" href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">“pseudo random numbers”</a>. If you start with the same initial value, known as the “seed”, then you will get the same sequence of numbers. <a class="reference external" href="https://en.wikipedia.org/wiki/Random_seed">Random seed</a></p>
+</div>
+<p>The provided tests use both of these tactics.</p>
 <ul class="simple">
 <li><p>You need to start with the first word pair; picking a random key from a dict is actually a bit tricky. But we have a test for it:</p></li>
 </ul>
@@ -687,27 +693,97 @@ So contrary to the usual practice, an index can be helpful here:</p>
     <span class="c1"># set the seed so we&#39;ll always get the same one</span>
     <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
     <span class="n">pair</span> <span class="o">=</span> <span class="n">trigrams</span><span class="o">.</span><span class="n">pick_random_pair</span><span class="p">(</span><span class="n">test_pairs</span><span class="p">)</span>
-
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the pair is:&quot;</span><span class="p">,</span> <span class="n">pair</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">pair</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;six&#39;</span><span class="p">,</span> <span class="s1">&#39;seven&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>So you’ll need to define a function: <code class="docutils literal notranslate"><span class="pre">pick_random_pair()</span></code> that takes your trigram dict as input, and returns a random key.</p>
-<p>Note that that particular result is using a particular algorithm – if you use a different one, you might get a different pair – but you should get the same one every time, so you can make the test check for that.</p>
-<ul class="simple">
-<li><p>As you build up your text, you probably want to build it up in a list, appending one word at a time.  You can join it together at the end with <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;.join(the_list_of_words)</span></code></p></li>
-<li><p>Remember that after adding a word to a pair to make a three-word text, the next pair is the last two words in that three-word text.</p></li>
-<li><p>What to do if you end up with a word pair that isn’t in the original text? It’s unlikely on a long text, but possible.</p></li>
-<li><p>How to terminate? Probably have a pre-defined length of text!</p></li>
-</ul>
-<p>Once you have the basics working, try your code on a longer piece of input text. Then think about making it fancy. Can you make sentences with capitalized first words and punctuation? Anything else to make the text more “real”?</p>
+<p>Note that the particular result in the test is using a particular algorithm – if you use a different one, you might get a different pair – but you should get the same one every time, so you can make the test check for that.</p>
+<p>Once you’ve got the first starting pair, you’ll need to make your text,
+so you’ll need a data structure to build it up in.  You probably want to build it up in a list, appending one word at a time.  You can join it together at the end with <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;.join(the_list_of_words)</span></code>, which will make a string, separating the words with a space.</p>
+<p>Remember that after adding a word to a pair to make a three-word text, the next pair is the last two words in that three-word text.</p>
+<p>Here is a test for that step:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_get_last_pair</span><span class="p">():</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;this&quot;</span><span class="p">,</span> <span class="s2">&quot;that&quot;</span><span class="p">,</span> <span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="s2">&quot;other&quot;</span><span class="p">]</span>
+
+    <span class="k">assert</span> <span class="n">trigrams</span><span class="o">.</span><span class="n">get_last_pair</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="s2">&quot;other&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>write a function: <code class="docutils literal notranslate"><span class="pre">get_last_pair()</span></code> that takes a list of words, and returns the last two words as a tuple.</p>
+<p>Then you’ll need to pick a random word from the “followers” – the words that followed that pair of words in the original text. There is a test for that, too:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_get_random_follower</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    test getting a random word from the trigrams dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># we only need one entry for this test</span>
+    <span class="n">tri_dict</span> <span class="o">=</span> <span class="p">{(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">):</span> <span class="p">[</span><span class="s2">&quot;four&quot;</span><span class="p">,</span> <span class="s2">&quot;five&quot;</span><span class="p">,</span> <span class="s2">&quot;six&quot;</span><span class="p">,</span> <span class="s2">&quot;seven&quot;</span><span class="p">]}</span>
+
+    <span class="c1"># set the seed so the answer will be consistent</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">trigrams</span><span class="o">.</span><span class="n">get_random_follower</span><span class="p">(</span><span class="n">tri_dict</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;got word:&quot;</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">word</span> <span class="o">==</span> <span class="s2">&quot;seven&quot;</span>
+</pre></div>
+</div>
+<p>Again, this sets the random seed so that you will always get the same answer. If your code returns a different word – change the test to match.</p>
+<p>But what if the word pair is not in the dict? It’s not that likely in a long text, but it can happen. So make sure that your code handles that situation by making sure it passes this test:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_get_random_follower_not_there</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    test what happens when the word pair is not there</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># we only need one entry for this test</span>
+    <span class="n">tri_dict</span> <span class="o">=</span> <span class="p">{(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">):</span> <span class="p">[</span><span class="s2">&quot;four&quot;</span><span class="p">,</span> <span class="s2">&quot;five&quot;</span><span class="p">,</span> <span class="s2">&quot;six&quot;</span><span class="p">,</span> <span class="s2">&quot;seven&quot;</span><span class="p">]}</span>
+
+    <span class="c1"># here&#39;s a word pair that isn&#39;t there</span>
+    <span class="c1"># make sure you get something back!</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">trigrams</span><span class="o">.</span><span class="n">get_random_follower</span><span class="p">(</span><span class="n">tri_dict</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;one&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;got word:&quot;</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">word</span>  <span class="c1"># this asserts that you got a non-empty string</span>
+</pre></div>
+</div>
+<p>Note that there are a number of options here as to what to do – but make sure it returns <em>something</em>.</p>
+</div>
+<div class="section" id="putting-it-together">
+<h4>Putting it Together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">¶</a></h4>
+<p>You now have the pieces you need to make some new text. Let’s write a function that will make a single sentence a specified number of words long. The first word should be capitalized, and it should end with a period. Here is the test for that function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_make_sentence</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    test making a trigrams sentence</span>
+
+<span class="sd">    as it is supposed to be random, this tests for things other than</span>
+<span class="sd">    the actual results.</span>
+
+<span class="sd">    NOTE that this test relies on the build_trigram() function, so it</span>
+<span class="sd">         will fail if that doesn&#39;t work.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># use the already tested build_trigram function to make the dict</span>
+    <span class="n">tri_dict</span> <span class="o">=</span> <span class="n">trigrams</span><span class="o">.</span><span class="n">build_trigram</span><span class="p">(</span><span class="n">LONGER_TEXT</span><span class="p">)</span>
+
+
+    <span class="c1"># make a sentence of 6 words</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">trigrams</span><span class="o">.</span><span class="n">make_sentence</span><span class="p">(</span><span class="n">tri_dict</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+    <span class="c1"># check that it has 6 words</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="o">==</span> <span class="mi">6</span>
+    <span class="c1"># check that the first letter is a capital</span>
+    <span class="k">assert</span> <span class="n">sentence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sentence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="c1"># check that it ends with a period</span>
+    <span class="k">assert</span> <span class="n">sentence</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.&quot;</span>
+    <span class="c1"># check that there is not a space between the period and the last word.</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">sentence</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can now use the previous functions to make a <code class="docutils literal notranslate"><span class="pre">make_sentence()</span></code> function that passes these tests.</p>
+<p>Once you have the basics working, try your code on a longer piece of input text. Then think about making it fancy: put a number of sentences of random length to form a paragraph? Add in some other random punctuation? Anything else to make the text more “real”?</p>
 </div>
 </div>
 <div class="section" id="processing-the-input-text">
 <h3>Processing the Input Text<a class="headerlink" href="#processing-the-input-text" title="Permalink to this headline">¶</a></h3>
 <p>If you get a book from Project Gutenberg (or anywhere else), it will not be “clean.” That is, it will have header information, footer information, chapter headings, punctuation, what have you. So you’ll need to clean it up somehow to get a simple list of words to use to build your trigrams.</p>
-<p>The first part of the process is pretty straightforward; open the file and loop through the lines of text.</p>
-<p>You may want to skip the header. How would you do that??
-Hint: in a Project Gutenberg e-book, there is a line of text that starts with:</p>
+<p>The first part of the process is pretty straightforward; open the file and loop through the lines of text and process them.</p>
+<p>You may want to skip the header. How would you do that??</p>
+<p>Hint: in a Project Gutenberg e-book, there is a line of text that starts with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">***</span> <span class="n">START</span> <span class="n">OF</span> <span class="n">THIS</span> <span class="n">PROJECT</span> <span class="n">GUTENBERG</span> <span class="n">EBOOK</span>
 </pre></div>
 </div>
@@ -721,21 +797,25 @@ Hint: in a Project Gutenberg e-book, there is a line of text that starts with:</
 <blockquote>
 <div><ul class="simple">
 <li><p>Strip out punctuation?
-- If you do this, what about contractions, i.e. the appostrophe in “can’t” vs. a single quotation mark – which are the same character.</p></li>
+- If you do this, what about contractions, i.e. the apostrophe in “can’t” vs. a single quotation mark – which are the same character.</p></li>
 <li><p>Remove capitalization?
 - If you do this, what about “I”? And proper nouns?</p></li>
 </ul>
 </div></blockquote>
 <p>Any other ideas you may have.</p>
+<p>Be sure to use TDD as you develop the “clean up” code: write a test for one feature, and then make sure your code passes that test.</p>
+<p>Lather, rinse and repeat.</p>
 <p><strong>Hints:</strong></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> methods are your friend here.</p>
-<p>There are also handy constants in the <code class="docutils literal notranslate"><span class="pre">string</span></code> module: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">string</span></code></p>
+<p>There are also handy constants in the <code class="docutils literal notranslate"><span class="pre">string</span></code> module: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">string</span></code>
+(<a class="reference external" href="https://docs.python.org/3/library/string.html">https://docs.python.org/3/library/string.html</a>)</p>
 <p>Check out the <code class="docutils literal notranslate"><span class="pre">str.translate()</span></code> method; it can make multiple replacements very fast.</p>
 <p>Do get the full trigrams code working first, then play with some of the fancier options.</p>
 </div>
 <div class="section" id="code-structure">
 <h3>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h3>
-<p>Break your code down into a handful of separate functions. This way you can test each on its own, and it’s easier to refactor one part without messing with the others.  For instance, your <code class="docutils literal notranslate"><span class="pre">__main__</span></code> block might look something like:</p>
+<p>You will have found that following TDD forces you to break your code down into a handful of separate functions, each of which does only one thing. This lets you test each function on its own, and it’s easier to refactor one part without messing with the others. Then you can put them all together into a simple program.</p>
+<p>For instance, your <code class="docutils literal notranslate"><span class="pre">__main__</span></code> block might look something like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="c1"># get the filename from the command line</span>
     <span class="k">try</span><span class="p">:</span>
