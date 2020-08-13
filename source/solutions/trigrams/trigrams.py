@@ -15,7 +15,7 @@ There is lots of room to make it fancier of you want
 """
 
 import sys
-import random
+from random import randint, choice
 
 
 def make_words(text):
@@ -79,8 +79,15 @@ def read_in_data(infilename):
 
 
 def build_trigram(words):
-    """build a trigram dict from the passed-in list of words"""
+    """
+    build up the trigrams dict from the list of words
 
+    :param words: a list of individual words in order
+
+    :returns: a dict with:
+         keys: word pairs in tuples
+         values: list of the words that follow the pain in the key
+    """
     # Dictionary for trigram results:
     # The keys will be all the word pairs
     # The values will be a list of the words that follow each pair
@@ -104,31 +111,62 @@ def build_trigram(words):
     return word_pairs
 
 
+def pick_random_pair(word_pairs):
+    """
+    return a random key from the word_pairs dict
+    """
+    return choice(list(word_pairs.keys()))
+
+
+def get_last_pair(words):
+    """
+    returns a tuple of the last two words in the list
+    """
+    return tuple(words[-2:])
+
+
+def get_random_follower(tri_dict, pair):
+    try:
+        return choice(tri_dict[pair])
+    except KeyError:  # pair not there
+        # get a new random pair
+        pair = pick_random_pair(tri_dict)
+        return choice(tri_dict[pair])
+
+
+def make_sentence(tri_dict, num_words):
+    """
+    make a sentence from the trigram dict with num_words words
+
+    num_words should be greater than 2
+    """
+    sentence = list(pick_random_pair(tri_dict))
+    for _ in range(num_words - 2):
+        pair = get_last_pair(sentence)
+        sentence.append(get_random_follower(tri_dict, pair))
+
+    # capitalize the first word:
+    sentence[0] = sentence[0].capitalize()
+
+    # Add the period
+    sentence[-1] += "."
+
+    return " ".join(sentence)
+
+
 def build_text(word_pairs):
 
     """
-    Build some new text from the word_pair dict supplied
+    Build a paragraph of new text from the word_pair dict supplied
 
-    A bit of fancy stuff to make them look like sentences..
     """
 
     new_text = []
-    for i in range(10):  # do ten sentences
-        # pick a word pair to start the sentence
-        # need to make dict.keys() a list to randomly select from it
-        sentence = list(random.choice(list(word_pairs.keys())))
-        # now add a random number of additional words to the sentence
-        for j in range(random.randint(2, 10)):
-            pair = tuple(sentence[-2:])  # the next word pair is the last two words
-            sentence.append(random.choice(word_pairs[pair]))
+    for i in range(randint(7, 10)):  # do 7-10 sentences
+        num_words = randint(4, 12)
+        new_text.append(make_sentence(word_pairs, num_words))
 
-        # capitalize the first word:
-        sentence[0] = sentence[0].capitalize()
-
-        # Add the period
-        sentence[-1] += "."
-        new_text.extend(sentence)
-
+    # join the sentences into a paragraph
     new_text = " ".join(new_text)
 
     return new_text
