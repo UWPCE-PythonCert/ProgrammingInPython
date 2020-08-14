@@ -136,14 +136,15 @@ I’ll fire the signal and the fun will commence...
 Developing Your Solution
 ========================
 
-This assignment has two parts: the key one is the trigrams exercise itself, but you also need to do some text processing to get a full book in shape for processing.
+This assignment has two parts: the key one is the trigrams exercise itself, but you also need to do some text processing to get a full book in shape for the building the trigrams.
 
 I suggest you write the trigrams part first; it's more interesting :-)
+
 
 Test Driven Development
 -----------------------
 
-You've recently learned about unit testing and Test Driven Development (TDD). That's put that to work on this exercise. Remember that the key to TDD is that you first decide on what you need a piece of your code to do, then you write a test to check that it does that, and only then do you write the actual code itself.
+You've recently learned about unit testing and Test Driven Development (TDD). Let's put that to work on this exercise. Remember that the key to TDD is that you first decide on what you need a piece of your code to do, then you write a test to check that it does that, and only then do you write the actual code itself.
 
 Because you're new to this, we're going to give you some tests to get you started. You'll find them in: :download:`test_trigrams.py <./test_trigrams.py>`, which should be with this assignment.
 
@@ -173,20 +174,23 @@ To run the tests, use the ``pytest`` test runner: set your working directory the
   !!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!
   ======================== 1 error in 0.13s =========================
 
-You should have gotten something like that error: it is indicating that the "trigrams" module does not exist -- which makes sense, as you haven't written in yet. So the first step is the create your code file: name it ``trigrams.py`` and put it in the same directory as the ``test_trigrams.py`` file. It can be empty for now. Now try running pytest again, and it should get farther: you'll have a lot of test failures, but the test should actually run. You should get something like:
+You should have gotten something like that error: it is indicating that the "trigrams" module does not exist -- which makes sense, as you haven't written it yet. So the first step is to create your code file: name it ``trigrams.py`` and put it in the same directory as the ``test_trigrams.py`` file. It can be empty for now. Now try running pytest again, and it should get farther: you'll have a lot of test failures, but the test should actually run. You should get something like:
 
 .. code-block:: bash
 
-  ...
-  >       tris = trigrams.build_trigram(IWISH)
-  E       AttributeError: module 'trigrams' has no attribute 'build_trigram'
-
-  test_trigrams.py:29: AttributeError
+  test_trigrams.py:130: AttributeError
   ====================== short test summary info =======================
-  FAILED test_trigrams.py::test_trigrams_keys - AttributeError: modul...
-  ========================= 1 failed in 0.15s ==========================
+  FAILED test_trigrams.py::test_trigrams_pairs - AttributeError: modu...
+  FAILED test_trigrams.py::test_trigrams_following_words - AttributeE...
+  FAILED test_trigrams.py::test_pick_random_pair - AttributeError: mo...
+  FAILED test_trigrams.py::test_get_last_pair - AttributeError: modul...
+  FAILED test_trigrams.py::test_get_random_follower - AttributeError:...
+  FAILED test_trigrams.py::test_get_random_follower_not_there - Attri...
+  FAILED test_trigrams.py::test_make_sentence - AttributeError: modul...
+  ========================= 7 failed in 0.18s ==========================
 
-You get an Attribute error, as you haven' defined anything in your ``trigrams.py`` file. But now it's time to actually work on the code!
+
+You get a bunch of AttributeErrors, as you haven't defined anything in your ``trigrams.py`` file. So now it's time to actually work on the code!
 
 trigrams
 --------
@@ -216,7 +220,7 @@ You will find that example in the test file, so we can write tests against it:
 
 .. code-block:: python
 
-  IWISH = ["I", "wish", "I", "may", "I", "wish", "I", "might"]
+  IWISH = "I wish I may I wish I might".split()
 
 
 The trigrams structure
@@ -319,7 +323,7 @@ So contrary to the usual practice, an index can be helpful here:
 
 For each pair in the text, you need to add it to the dict. But:
 
-- ``words[i:i + 2]`` is a list with two words in it. Can that be used as a key in a dict? (Try it.) If not, how can you make a valid key out of it?
+- ``words[i:i + 2]`` is a list with two words in it. Can that be used as a key in a dict? (try it.) If not, how can you make a valid key out of it?
 
 - As you loop through the text, you will collect pairs of words. Each time, a given pair may already be in the dict.
 
@@ -382,7 +386,7 @@ and one that tests if the following word lists are correct:
 
 Note that if the first test fails, almost certainly the second will too (the second test explicitly looks for all the same keys). That's OK. It's still good to keep them separate, because the first test could pass while the second one fails -- it's nice to know you've made progress!
 
-If it seems like we have hard-coded a lot of detail in -- you are right. But this is quite deliberate. And it is why we chose such a simple set of words to start out with. If you want read a bit more about this approach, this blogger puts it nicely:
+If it seems like we have hard-coded a lot of detail into the tests -- you are right. But this is quite deliberate. And it is why we chose such a simple set of words to start out with. If you want to read a bit more about this approach, this blogger puts it nicely:
 `Write Explicit Tests <https://amir.rachum.com/blog/2017/01/14/explicit-tests/>`_
 
 If both tests pass, you should now have code that will return a dict like we noted above::
@@ -400,7 +404,7 @@ Using the Trigrams dict
 
 This is the fun part. Once you have a mapping of word pairs to following words, you can build up some new "fake" text. Re-read the previous sections again to remind yourself of the procedure. Here are a couple of additional hints and questions to consider:
 
-- The ``random`` module <https://docs.python.org/3/library/random.html#module-random> is your friend here:
+- The ``random`` module: https://docs.python.org/3/library/random.html#module-random is your friend here:
 
 .. code-block:: python
 
@@ -412,14 +416,14 @@ This is the fun part. Once you have a mapping of word pairs to following words, 
   # pick a random item from a sequence
   random.choice(a_list)
 
-This is all pretty tricky to test -- after all, you are selecting random words -- you can't know what the result should be! There are two tactics you can take here.
+This is all pretty tricky to test -- after all, you are selecting random words -- you can't know what the result should be! There are two tactics you can take to test code with ``random`` calls in it.
 
 Tactic one is to break you code down into pieces that you *can* test -- everything BUT the random choices.
 
 Tactic two is to set the random seed before each test, to assure the same result.
 The built in ``random`` module `provides a way to set the seed <https://docs.python.org/3/library/random.html#random.seed>`_: the ``random.seed()`` function.
 
-.. note:: Computers don't really make truly random numbers. What they do is compute a sequence of numbers that are statistically very much like random numbers, known as `"pseudo random numbers" <https://en.wikipedia.org/wiki/Pseudorandom_number_generator>`_. If you start with the same initial value, known as the "seed", then you will get the same sequence of numbers. `Random seed <https://en.wikipedia.org/wiki/Random_seed>`_
+.. note:: Computers don't really make truly random numbers. What they do is compute a sequence of numbers that are statistically very much like random numbers, known as `"pseudo random numbers" <https://en.wikipedia.org/wiki/Pseudorandom_number_generator>`_. If you start with the same initial value, known as the "seed", then you will get the same sequence of numbers (`random seed <https://en.wikipedia.org/wiki/Random_seed>`_).
 
 The provided tests use both of these tactics.
 
@@ -442,7 +446,7 @@ The provided tests use both of these tactics.
 
 So you'll need to define a function: ``pick_random_pair()`` that takes your trigram dict as input, and returns a random key.
 
-Note that the particular result in the test is using a particular algorithm -- if you use a different one, you might get a different pair -- but you should get the same one every time, so you can make the test check for that.
+Note that the particular result in the test is using a particular algorithm -- if you use a different one, you might get a different pair -- but since the seed is set, you should get the same one every time the test is run, so you can make the test check for the one your code returns.
 
 Once you've got the first starting pair, you'll need to make your text,
 so you'll need a data structure to build it up in.  You probably want to build it up in a list, appending one word at a time.  You can join it together at the end with ``" ".join(the_list_of_words)``, which will make a string, separating the words with a space.
@@ -532,6 +536,8 @@ You now have the pieces you need to make some new text. Let's write a function t
       # check that there is not a space between the period and the last word.
       assert not sentence[-2].isspace()
 
+Notice that this test did not set the random seed. Rather, it checked for various properties of the results, without checking for specific words. This is a helpful tactic -- have your tests check for what is important about the results, not necessarily the specific results.
+
 You can now use the previous functions to make a ``make_sentence()`` function that passes these tests.
 
 
@@ -551,9 +557,7 @@ Hint: in a Project Gutenberg e-book, there is a line of text that starts with::
 
   *** START OF THIS PROJECT GUTENBERG EBOOK
 
-In the loop, you can process a single line of text to break it into words:
-
- - calling ``.split()``
+In the loop, you can process a single line of text to break it into words by calling ``.split()``.
 
 Optional steps to cleaning up the text:
 
@@ -568,6 +572,9 @@ Any other ideas you may have.
 Be sure to use TDD as you develop the "clean up" code: write a test for one feature, and then make sure your code passes that test.
 
 Lather, rinse and repeat.
+
+There are a number of tests for cleaning up the code commented out in the test file. Feel free to use these as a starting point.
+
 
 **Hints:**
 
@@ -605,5 +612,9 @@ For instance, your ``__main__`` block might look something like:
       new_text = build_text(word_pairs)
 
       print(new_text)
+
+**Have Fun!**
+
+
 
 
