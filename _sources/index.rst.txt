@@ -125,8 +125,8 @@ Exercises:
 
     exercises/string_formatting.rst
     exercises/rot13.rst
-    exercises/mailroom-part1.rst
-    exercises/mailroom_tutorial.rst
+    exercises/mailroom/mailroom.rst
+    exercises/mailroom/mailroom_tutorial.rst
 
 Exception Handling
 ------------------
@@ -144,6 +144,7 @@ Exercises:
 
     exercises/exceptions_lab.rst
     exercises/except_exercise.rst
+    exercises/mailroom/mailroom_with_exeptions.rst
 
 
 Unit Testing
@@ -162,7 +163,8 @@ Exercises:
     :maxdepth: 1
 
     exercises/unit_testing.rst
-    exercises/mailroom-part4.rst
+    exercises/mailroom/mailroom_with_tests.rst
+
 
 Dictionaries and Sets
 ---------------------
@@ -180,7 +182,7 @@ Exercises:
     :maxdepth: 1
 
     exercises/dict_lab.rst
-    exercises/mailroom-part2.rst
+    exercises/mailroom/mailroom_with_dicts.rst
 
 Files
 -----
@@ -197,8 +199,56 @@ Exercises:
     :maxdepth: 1
 
     exercises/file_lab.rst
-    exercises/mailroom-part2.rst
+    exercises/mailroom/mailroom_with_files.rst
     exercises/trigrams/trigrams.rst
+
+
+Comprehensions
+--------------
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/Comprehensions
+    modules/CollectionsModule
+
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/comprehensions_lab
+    exercises/mailroom/mailroom_with_comprehensions.rst
+
+
+Advanced Argument Passing
+-------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/AdvancedArgumentPassing
+    modules/MoreOnMutability
+
+
+Intro to Object Oriented Programing
+-----------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/ObjectOrientationOverview
+    modules/PythonClasses
+
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/oo_intro.rst
+    exercises/mailroom/mailroom-oo.rst
 
 
 Modules and Packages
@@ -218,53 +268,7 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/mailroom-pkg.rst
-
-
-Comprehensions
---------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/Comprehensions
-    modules/CollectionsModule
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/comprehensions_lab.rst
-
-
-Advanced Argument Passing
--------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/AdvancedArgumentPassing
-    modules/MoreOnMutability
-
-Intro to Object Oriented Programing
------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/ObjectOrientationOverview
-    modules/PythonClasses
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/oo_intro.rst
-    exercises/mailroom-oo.rst
+    exercises/mailroom/mailroom-pkg.rst
 
 
 Properties and Magic Methods
@@ -284,6 +288,7 @@ Exercises:
     :maxdepth: 1
 
     exercises/circle_class.rst
+
 
 Subclassing
 -----------

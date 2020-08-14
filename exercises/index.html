@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="lambda and keyword Magic" href="lambda_magic.html" />
+    <link rel="next" title="Mailroom With Exceptions" href="mailroom/mailroom_with_exceptions.html" />
     <link rel="prev" title="Introduction to Python Topic Notes" href="../modules/index.html" /> 
 </head>
 
@@ -127,8 +127,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="string_formatting.html">String Formatting Exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part1.html">Mailroom Part 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom_tutorial.html">Mailroom Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom.html">Mailroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/Exceptions.html">Exception Handling</a></li>
@@ -143,7 +143,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part4.html">Mailroom Part 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
@@ -151,24 +151,15 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part2.html">Mailroom Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/Files.html">File Reading and Writing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part2.html">Mailroom Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-pkg.html">Mailroom – as a Python Package</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/Comprehensions.html">Comprehensions</a></li>
@@ -176,6 +167,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="comprehensions_lab.html">Comprehensions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
@@ -187,7 +179,16 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-oo.html">Mailroom - Object Oriented</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Packaging.html">Packages and Packaging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/Properties.html">Properties</a></li>
@@ -260,28 +261,29 @@
 <li class="toctree-l3"><a class="reference internal" href="slicing.html">Slicing Lab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="list_lab.html">List Lab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-part1.html">Mailroom Part 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom_tutorial.html">Mailroom Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom.html">Mailroom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lesson-4-dictionaries-sets-and-files">Lesson 4: Dictionaries, Sets, and Files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dict_lab.html">Dictionary and Set Lab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="file_lab.html">File Exercise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-part2.html">Mailroom Part 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lesson-5-exceptions-modules-and-comprehensions">Lesson 5: Exceptions, Modules, and Comprehensions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="exceptions_lab.html">Exceptions Lab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-part3.html">Mailroom Part 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lesson-6-unit-testing-and-advanced-argument-passing">Lesson 6: Unit Testing and Advanced Argument Passing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="unit_testing.html">Introduction To Unit Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-part4.html">Mailroom Part 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lesson-7-intro-to-object-oriented-programing">Lesson 7: Intro to Object Oriented Programing</a><ul>
@@ -295,7 +297,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lesson-9-multiple-inheritance">Lesson 9: Multiple Inheritance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-oo.html">Mailroom - Object Oriented</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lesson-10-catch-up">Lesson 10: Catch up</a></li>
@@ -304,12 +306,12 @@
 <li class="toctree-l3"><a class="reference internal" href="lambda_magic.html">lambda and keyword Magic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sparse_array.html">Sparse Array Exercise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="trapezoid.html">Trapezoidal Rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mailroom-mock.html">Mocking Mailroom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom-mock.html">Mocking Mailroom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="threaded_downloader.html">Threaded Web Scraper</a></li>
 </ul>
 </li>
@@ -408,8 +410,8 @@
 <li class="toctree-l1"><a class="reference internal" href="slicing.html">Slicing Lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="list_lab.html">List Lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part1.html">Mailroom Part 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom_tutorial.html">Mailroom Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom.html">Mailroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
 </ul>
 </div>
 </div>
@@ -420,7 +422,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dict_lab.html">Dictionary and Set Lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_lab.html">File Exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part2.html">Mailroom Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
 </ul>
 </div>
 </div>
@@ -430,8 +432,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="exceptions_lab.html">Exceptions Lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part3.html">Mailroom Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
 </ul>
 </div>
 </div>
@@ -441,7 +444,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="unit_testing.html">Introduction To Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-part4.html">Mailroom Part 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
 </ul>
 </div>
 </div>
@@ -467,7 +470,7 @@
 <h2>Lesson 9: Multiple Inheritance<a class="headerlink" href="#lesson-9-multiple-inheritance" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-oo.html">Mailroom - Object Oriented</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
 </ul>
 </div>
 </div>
@@ -483,12 +486,12 @@
 <li class="toctree-l1"><a class="reference internal" href="lambda_magic.html">lambda and keyword Magic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_array.html">Sparse Array Exercise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trapezoid.html">Trapezoidal Rule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-mock.html">Mocking Mailroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom/mailroom-mock.html">Mocking Mailroom</a></li>
 <li class="toctree-l1"><a class="reference internal" href="threaded_downloader.html">Threaded Web Scraper</a></li>
 </ul>
 </div>
@@ -503,7 +506,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lambda_magic.html" class="btn btn-neutral float-right" title="lambda and keyword Magic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-right" title="Mailroom With Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../modules/index.html" class="btn btn-neutral float-left" title="Introduction to Python Topic Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mailroom - Object Oriented &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Style and Naming" href="../../modules/NamingThings.html" />
+    <link rel="prev" title="OO Intro - Report Class" href="../oo_intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #4b2e83" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Git.html">Intro to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Learning.html">Useful Python Learning Resources</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python_pushups.html">Python Pushups</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/BasicPython.html">Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Functions.html">More on Functions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fizz_buzz.html">Fizz Buzz Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fib_and_lucas.html">Fibonacci Series Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">Boolean Expressions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Sequences.html">Python Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Iteration.html">Iteration</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slicing.html">Slicing Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../list_lab.html">List Lab</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Strings.html">Strings</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rot13.html">ROT13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom.html">Mailroom Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Exceptions.html">Exception Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions_lab.html">Exceptions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../except_exercise.html">Exceptions Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../unit_testing.html">Introduction To Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom_with_dicts.html">Mailroom With Dicts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../file_lab.html">File Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CollectionsModule.html">The Collections Module</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../comprehensions_lab.html">Comprehensions Lab</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PythonClasses.html">Python Classes</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mailroom - Object Oriented</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-program">The Program</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#guidelines">Guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modules-and-classes">Modules and Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#donor-class"><code class="docutils literal notranslate"><span class="pre">Donor</span></code> Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#donorcollection-class"><code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command-line-interface">Command Line Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#test-driven-development">Test-Driven Development</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-guidelines">Exercise Guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functionality">Functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extra-ideas">Extra Ideas:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Packaging.html">Packages and Packaging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/StaticAndClassMethods.html">Static and Class Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../circle_class.html">Circle Class Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html_renderer.html">HTML Renderer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing_advanced.html">Testing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Async.html">Asychronous Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Profiling.html">Performance and Profiling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Introduction to Python Topic Notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">All Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Mailroom - Object Oriented</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/exercises/mailroom/mailroom-oo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mailroom-object-oriented">
+<span id="exercise-mailroom-oo"></span><h1>Mailroom - Object Oriented<a class="headerlink" href="#mailroom-object-oriented" title="Permalink to this headline">¶</a></h1>
+<p>Making Mailroom Object Oriented.</p>
+<p><strong>Goal:</strong> Refactor the mailroom program using classes to help organize the code.</p>
+<p>The functionality is the same as the earlier mailroom:</p>
+<p><a class="reference internal" href="mailroom.html#exercise-mailroom-part1"><span class="std std-ref">Mailroom Part 1</span></a></p>
+<p>But this time, we want to use an OO approach to better structure the code to make it more extensible.</p>
+<p>It was quite reasonable to build the simple mailroom program using a
+single module, a simple data structure, and functions that manipulate
+that data structure. In fact, you’ve already done that :-)</p>
+<p>But if one were to expand the program with additional functionality, it
+would start to get a bit unwieldy and hard to maintain. So it’s a pretty good candidate for an object-oriented approach.</p>
+<p>As you design appropriate classes, keep in mind these three guidelines for good code structure:</p>
+<ol class="arabic">
+<li><p>Encapsulation: You have a data structure that holds your data, and functions that manipulate that data; you want data and methods “bundled up” in a neat package so that everything that works with that data structure are within one unit. The rest of the code doesn’t need to know about the data structure you are using.</p></li>
+<li><p>Separation of Concerns: The user-interaction code should be cleanly separated from the data handling code.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_concerns">https://en.wikipedia.org/wiki/Separation_of_concerns</a></p>
+<p>There should be no use of the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function in the classes that hold the data!  Nor any use of <code class="docutils literal notranslate"><span class="pre">print()</span></code> – these are for user interaction, and you want the data handling code to be potentially usable with totally different user interaction – such as a desktop GUI or Web interface.</p>
+</li>
+<li><p>As always: <strong>DRY</strong> (Don’t Repeat Yourself): Anywhere you see repeated code; refactor it!</p></li>
+</ol>
+<div class="section" id="the-program">
+<h2>The Program<a class="headerlink" href="#the-program" title="Permalink to this headline">¶</a></h2>
+<p>See: <a class="reference internal" href="mailroom.html#exercise-mailroom-part1"><span class="std std-ref">Mailroom Part 1</span></a> to remind yourself what the program needs to do.</p>
+<div class="section" id="guidelines">
+<h3>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
+<p>One of the hardest parts of OO design (particularly in Python) is to know how “low” to go with the classes and data structures. In particular, you might have a bit of data collected together (say, a donor’s name and donation history). This can be a simple tuple with a few items in it; a dict with those same data available as <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs; or a class, with class attributes (and, possibly, methods).</p>
+<p>There are no hard and fast rules, but here are some guidelines:</p>
+<p>For this simple problem, simple tuples could work fine. However, in order for the code to be more flexible in the future: for example, if new “fields” were added to the donor object, it’s probably better to use a more structured data type, so you don’t have to worry about changing the order or number of fields.</p>
+<p>So now you have to think about using a dict or class. Again for flexibility, a dict is a bit easier; you can add fields to it very easily. However, with a class, you can build some functionality in there, too. This is where encapsulation comes in. For instance, one thing you might want to do is get the total of all donations a donor has made in the past. If you add a method to compute that (or a property!), then the rest of the code doesn’t need to know how the donations are stored.</p>
+<p>Consider <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> vs <code class="docutils literal notranslate"><span class="pre">data[&quot;name&quot;]</span></code> vs <code class="docutils literal notranslate"><span class="pre">data.name</span></code>. Which one is more readable? Keep in mind that another benefit of using OO for data encapsulation is ability of modern IDEs to provide auto-completion, which reduces the number of bugs and helps to produce code faster.</p>
+<p>Below are more detailed suggestions on breaking down your existing code into multiple modules that will be part of a single mailroom program.</p>
+<div class="section" id="modules-and-classes">
+<h4>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">¶</a></h4>
+<p>You may organize your code to your preference and keep it simple by having all of the code in a single file.</p>
+<p>Optionally, you could organize your code into modules, which helps to keep code organized and re-usable.</p>
+<p>What is a module? A module is a python file with a collection of code that can be imported into other python files.</p>
+<p>Modules can contain functions, classes, and even variables (constants).</p>
+<p>Here is an example file structure for <code class="docutils literal notranslate"><span class="pre">mailroom_oo</span></code> package that contains 3 modules:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>└── mailroom_oo
+   ├── cli_main.py
+   ├── donor_models.py
+   └── test_mailroom_oo.py
+</pre></div>
+</div>
+<p>The module <code class="docutils literal notranslate"><span class="pre">donor_models.py</span></code> can contain the <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> classes.</p>
+<p>The module <code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code> would include all of your user interaction functions and main program flow.</p>
+</div>
+<div class="section" id="donor-class">
+<h4><code class="docutils literal notranslate"><span class="pre">Donor</span></code> Class<a class="headerlink" href="#donor-class" title="Permalink to this headline">¶</a></h4>
+<p><strong>Class responsible for donor data encapsulation</strong></p>
+<p>This class will hold all the information about a <em>single</em> donor, and have attributes, properties, and methods to provide access to the donor-specific information that is needed.
+Any code that only accesses information about a single donor should be part of this class.</p>
+</div>
+<div class="section" id="donorcollection-class">
+<h4><code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> Class<a class="headerlink" href="#donorcollection-class" title="Permalink to this headline">¶</a></h4>
+<p><strong>Class responsible for donor collection data encapsulation</strong></p>
+<p>This class will hold all of the donor objects, as well as methods to add a new donor, search for a given donor, etc. If you want a way to save and re-load your data, this class would hold that method, too.</p>
+<p>Your class for the collection of donors will also hold the code that generates reports about multiple donors.</p>
+<p>In short: if the functionality involves more than one donor – it belongs in this class.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> class should be holding, and working with, <code class="docutils literal notranslate"><span class="pre">Donor</span></code> objects – it should NOT work directly with a list of donations, etc.</p>
+<p>The main data structure in your class can be a dictionary with a key as donor name and value as donor object:</p>
+<p>this design allows you to quickly look up donor by their name and get a donor object instance to work with.</p>
+<p>Another option is to simply use a list of donor objects. You get to choose which you think is more appropriate.</p>
+<p>Remember that you should use <cite>self.donors</cite> attribute any time you want to work with data about a single donor, most of your methods in this class will utilize it in some way. This is really what classes are desined for.</p>
+<p><strong>Examples:</strong></p>
+<p>Generating a thank you letter to a donor only requires knowledge of that one donor – so that code belongs in the <code class="docutils literal notranslate"><span class="pre">Donor</span></code> class.</p>
+<p>Generating a report about all the donors requires knowledge of all the donors, so that code belongs in the <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> class.</p>
+<p>Hint:
+You’ve previously sorted simple data structures like list and dictionaries, but here we’re dealing with objects - not to worry that is a really simple thing to do with python!
+You can use <cite>operator.attrgetter</cite> with a sorted function (review python docs for usage documentation).</p>
+</div>
+<div class="section" id="command-line-interface">
+<h4>Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h4>
+<p><strong>Module responsible for main program flow (CLI - Command Line Interface)</strong></p>
+<p>Let’s call this module <code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code> to represent the entry point for the mailroom program.
+This module will be using the classes we defined: <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code>.
+It will also handle interaction with the user via the <code class="docutils literal notranslate"><span class="pre">input</span></code> function calls that gather user input and to provide the output to the console.</p>
+<p>What should go into this module?</p>
+<p>A set of user-interaction menu functions – to handle each of the modes of the program.</p>
+<p>These will include <code class="docutils literal notranslate"><span class="pre">input()</span></code> function calls to gather user input, and <code class="docutils literal notranslate"><span class="pre">print()</span></code> functions to print results to console.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Console print statements don’t belong in your data classes. So for features such as “send letters,” in which we are simply printing instead of “sending”, the data class methods should return a string, and let the UI code do the printing. This will mean there may be very simple functions in the UI code that simply call a method and print the results – but that does keep flexibility for other ways of handling user interaction.</p>
+</div>
+<p class="rubric">Why is this separation of data and method so important?</p>
+<p>The idea here is that we should be able to fairly easy replace this CLI program with a different type of interface,
+such as a GUI (Graphical User Interface), without having to make any changes to our data classes.
+If that was the case, then you would implement the GUI elements and use your data classes the same way as they are used in CLI.</p>
+</div>
+</div>
+<div class="section" id="test-driven-development">
+<h3>Test-Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h3>
+<p>At this point we have done a great job refactoring the more complex code out of data-holding classes and we are left with simple classes that are more straightforward to unit test. As you build your classes, update the tests you already have to the logic code to the new API. Ideally, update the tests first, then the code.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> classes should now have 100 percent code coverage, which means that every line of code in your <code class="docutils literal notranslate"><span class="pre">donor_models.py</span></code> file will be run at least once when your tests are run.</p>
+<p>For the moment, don’t worry about testing most of the command line interface code. That requires simulating user input, which is an advanced testing topic. But you can (hopefully) see some of the benefits of separating the user-interaction code from the logic code; your logic code is much easier to test with no user-interaction involved.</p>
+<p class="rubric">refactoring non-OO code</p>
+<p>In this case, you already have working code without an OO structure. You should be able to re-use a fair bit of your existing code.
+However, you should still start with the OO structure/design.
+That is, rather than take a non-OO function and try to make it a method of a class, decide what method you need, and what it’s API should be, and then see if you have code you can use to fill in that function.</p>
+<p>You should expect to re-use a lot of the command line interface code, while refactoring most of the logic code.</p>
+<p>If you are not sure at the start what functionality you data classes will need, you can start with the CLI code, and as you find the need for a function, add it to your data classes (after writing a test first, of course).</p>
+</div>
+</div>
+<div class="section" id="exercise-guidelines">
+<h2>Exercise Guidelines<a class="headerlink" href="#exercise-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>OO mailroom is the final project for the class.</p>
+<p>So this is your chance to really do things “right”. Strive to make this code as good, by every definition, as you can.</p>
+<p>With that in mind:</p>
+<div class="section" id="functionality">
+<h3>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The logic is correct – i.e. the program works :-)</p></li>
+<li><p>The logic is robust – you are handling obvious expected errors reasonably:</p>
+<ul>
+<li><p>User inputting a non-number as a donation</p></li>
+<li><p>Trying to make a negative donation</p></li>
+<li><p>User getting capitalization or spacing or ??? wrong with a name.</p>
+<ul>
+<li><p>Maybe add logic where you tell them that the name is not in the DB, and do they want to create it, rather than simply creating a new record for a typo in a donor name.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="rubric">Code structure</p>
+<ul class="simple">
+<li><p>Classes should have clear purpose and encapsulation: only the code within a class should know exactly how the data are stored, for instance.</p></li>
+<li><p>Anything that only needs to know about one donor should be in the <code class="docutils literal notranslate"><span class="pre">Donor</span></code> class</p></li>
+<li><p>Anything that needs to know about the collection should be in a <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> class.</p></li>
+<li><p>Any user interaction should be outside the “logic” code. (Sometimes called the “Model”, or “Business logic”)</p>
+<ul>
+<li><p>You should be able to re-use all the logic code with a different UI – Web App, GUI, etc.</p></li>
+<li><p>There should be no <code class="docutils literal notranslate"><span class="pre">input()</span></code> or <code class="docutils literal notranslate"><span class="pre">print</span></code> functions in the logic code.</p></li>
+<li><p>The logic code should be 100% testable (without mocking input() or any fancy stuff like that)</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric">Testing</p>
+<ul class="simple">
+<li><p>All logic code should be tested.</p></li>
+<li><p>Tests should be isolated to test one thing each</p></li>
+<li><p>Tests should (reasonably) check for handling of weird input.</p></li>
+<li><p>Tests should be isolated – that is, they will work if run by themselves, and in any order.</p>
+<ul>
+<li><p>This means they should not rely on any global state.</p></li>
+<li><p>you’ll probably find this easier with a well structured OO approach – that is, you can test an individual donor functionality without knowing about the rest of the donors.</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric">The “soft” stuff:</p>
+<dl class="simple">
+<dt>Style:</dt><dd><ul class="simple">
+<li><p>conform to PEP8! (or another consistent style)</p></li>
+<li><p>You can use 95 or some other reasonable number for line length</p></li>
+</ul>
+</dd>
+<dt>Docstrings:</dt><dd><p>Functions and classes should all have good docstrings. They can be very short if the function does something simple.</p>
+</dd>
+<dt>Naming:</dt><dd><p>All classes, functions, methods, attributes, variables should have appropriate names: meaningful, but not too detailed.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="extra-ideas">
+<h3>Extra Ideas:<a class="headerlink" href="#extra-ideas" title="Permalink to this headline">¶</a></h3>
+<p>In case you are bored – what features can you add?</p>
+<ul class="simple">
+<li><p>How about an html report using your html_render code?</p></li>
+<li><p>Fancier reporting</p></li>
+<li><p>The sky’s the limit</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../modules/NamingThings.html" class="btn btn-neutral float-right" title="Style and Naming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../oo_intro.html" class="btn btn-neutral float-left" title="OO Intro - Report Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
