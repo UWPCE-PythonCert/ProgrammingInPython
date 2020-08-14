@@ -151,93 +151,93 @@ def test_make_sentence():
 # feel free to adapt the tests to your choices
 
 
-# TEXT_WITH_PUNC = """
-# One night--it was on the twentieth of March, 1888--I was
-# returning from a journey to a patient (for I had now returned to
-# civil practice), when my way led me through Baker Street. As I
-# passed the well-remembered door, which must always be associated
-# in my mind with my wooing, and with the dark incidents of the
-# Study in Scarlet, I was seized with a keen desire to see Holmes
-# again, and to know how he was employing his extraordinary powers.
-# His rooms were brilliantly lit, and, even as I looked up, I saw
-# his tall, spare figure pass twice in a dark silhouette against
-# the blind.
-# """
+TEXT_WITH_PUNC = """
+One night--it was on the twentieth of March, 1888--I was
+returning from a journey to a patient (for I had now returned to
+civil practice), when my way led me through Baker Street. As I
+passed the well-remembered door, which must always be associated
+in my mind with my wooing, and with the dark incidents of the
+Study in Scarlet, I was seized with a keen desire to see Holmes
+again, and to know how he was employing his extraordinary powers.
+His rooms were brilliantly lit, and, even as I looked up, I saw
+his tall, spare figure pass twice in a dark silhouette against
+the blind.
+"""
 
 
-# def test_make_words_simple():
-#     """
-#     make sure the basics work!
-#     """
-#     all_words = trigrams.make_words("A really simple sentence.")
+def test_make_words_simple():
+    """
+    make sure the basics work!
+    """
+    all_words = trigrams.make_words("A really simple sentence.")
 
-#     assert len(all_words) == 4
-
-
-# def test_make_words_commas():
-#     """
-#     all commas should be removed
-#     """
-#     # put them all back together for easier checking
-#     all_words = " ".join(trigrams.make_words(TEXT_WITH_PUNC))
-
-#     assert "," not in all_words
+    assert len(all_words) == 4
 
 
-# def test_make_words_parentheses():
-#     """
-#     all parenthesis should be removed
-#     """
-#     # put them all back together for easier checking
-#     all_words = " ".join(trigrams.make_words(TEXT_WITH_PUNC))
+def test_make_words_commas():
+    """
+    all commas should be removed
+    """
+    # put them all back together for easier checking
+    all_words = " ".join(trigrams.make_words(TEXT_WITH_PUNC))
 
-#     assert "(" not in all_words
-#     assert ")" not in all_words
-
-
-# def test_make_words_dashes():
-#     """
-#     all dashes should be removed
-#     """
-#     # put them all back together for easier checking
-#     all_words = " ".join(trigrams.make_words(TEXT_WITH_PUNC))
-
-#     assert "-" not in all_words
+    assert "," not in all_words
 
 
-# def test_make_words_I():
-#     """
-#     I should be capitalized
-#     """
-#     all_words = trigrams.make_words(TEXT_WITH_PUNC)
+def test_make_words_parentheses():
+    """
+    all parenthesis should be removed
+    """
+    # put them all back together for easier checking
+    all_words = " ".join(trigrams.make_words(TEXT_WITH_PUNC))
 
-#     assert "i" not in all_words
-#     assert "I" in all_words
+    assert "(" not in all_words
+    assert ")" not in all_words
 
 
-# def test_make_words_single_quote():
-#     """
-#     no double quotes
-#     no single quotes by themselves, but preserved when an apostrophe
-#     """
-#     # put them all back together for easier checking
-#     text = """
-#     "Not at all. The 'G' with the small 't' stands for
-#     'Gesellschaft,' which isn't the German for 'Company.'
-#     """
-#     all_words = trigrams.make_words(text)
+def test_make_words_dashes():
+    """
+    all dashes should be removed
+    """
+    # put them all back together for easier checking
+    all_words = " ".join(trigrams.make_words(TEXT_WITH_PUNC))
 
-#     print(all_words)
-#     #  no double quotes
-#     assert '"' not in " ".join(all_words)
-#     # apostophe preserved
-#     assert "isn't" in all_words
+    assert "-" not in all_words
 
-#     # none of the words should start or end with a single quote
-#     for word in all_words:
-#         assert not word.startswith("'")
-#         assert not word.endswith("'")
 
-#     assert False
+def test_make_words_I():
+    """
+    I should be capitalized
+    """
+    all_words = trigrams.make_words(TEXT_WITH_PUNC)
+
+    assert "i" not in all_words
+    assert "I" in all_words
+
+
+def test_make_words_single_quote():
+    """
+    no double quotes
+    no single quotes by themselves, but preserved when an apostrophe
+    """
+    # put them all back together for easier checking
+    text = """
+    "Not at all. The 'G' with the small 't' stands for
+    'Gesellschaft,' which isn't the German for 'Company.'
+    """
+    all_words = trigrams.make_words(text)
+
+    print(all_words)
+    #  no double quotes
+    assert '"' not in " ".join(all_words)
+    # apostophe preserved
+    assert "isn't" in all_words
+
+    # none of the words should start or end with a single quote
+    for word in all_words:
+        assert not word.startswith("'")
+        assert not word.endswith("'")
+
+    assert False
 
 

@@ -48,11 +48,11 @@ def make_words(text):
     # and capitalize "i"
     words2 = []
     for word in words:
-        if word != "'":  # remove quote by itself
-            # "i" by itself should be capitalized
-            words2.append("I" if word == 'i' else word)
-    # could be done with list comprehension too -- next week!
-    # words2 = [("I" if word == 'i' else word) for word in words if word != "'"]
+        word = "" if word == "'" else word  # remove quote by itself
+        word = "I" if word == 'i' else word
+        word = word[1:] if word.startswith("'") else word
+        word = word[:-1] if word.endswith("'") else word
+        words2.append(word)
     return words2
 
 
