@@ -3,7 +3,7 @@
 Mailroom -- as a Python Package
 ===============================
 
-The mailroom program, particularly the Object Oriented version, is a pretty complete system -- if you wanted to make it available for others to test snd run, making a "proper" python package is a great idea.
+The mailroom program, particularly the Object Oriented version, is a pretty complete system -- if you wanted to make it available for others to test and run, making a "proper" python package is a great idea.
 
 Code Structure
 --------------

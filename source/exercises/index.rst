@@ -36,8 +36,8 @@ Lesson 3: Booleans, Sequences, Iteration, and Strings
     slicing.rst
     list_lab.rst
     string_formatting.rst
-    mailroom-part1.rst
-    mailroom_tutorial.rst
+    mailroom/mailroom.rst
+    mailroom/mailroom_tutorial.rst
 
 
 Lesson 4: Dictionaries, Sets, and Files
@@ -49,7 +49,7 @@ Lesson 4: Dictionaries, Sets, and Files
     dict_lab.rst
     file_lab.rst
     trigrams/trigrams.rst
-    mailroom-part2.rst
+    mailroom/mailroom_with_dicts.rst
 
 
 Lesson 5: Exceptions, Modules, and Comprehensions
@@ -60,8 +60,9 @@ Lesson 5: Exceptions, Modules, and Comprehensions
 
     exceptions_lab.rst
     except_exercise.rst
+    mailroom/mailroom_with_exceptions.rst
     comprehensions_lab.rst
-    mailroom-part3.rst
+    mailroom/mailroom_with_comprehensions.rst
 
 
 Lesson 6: Unit Testing and Advanced Argument Passing
@@ -72,7 +73,7 @@ Lesson 6: Unit Testing and Advanced Argument Passing
 
     unit_testing.rst
     args_kwargs_lab.rst
-    mailroom-part4.rst
+    mailroom/mailroom_with_tests.rst
 
 
 Lesson 7: Intro to Object Oriented Programing
@@ -100,7 +101,7 @@ Lesson 9: Multiple Inheritance
 .. toctree::
     :maxdepth: 1
 
-    mailroom-oo.rst
+    mailroom/mailroom-oo.rst
 
 
 Lesson 10: Catch up
@@ -124,17 +125,17 @@ The following are not required, but can be useful learning tools. Feel free to t
 
     context-managers-exercise.rst
 
-    mailroom-pkg.rst
+    mailroom/mailroom-pkg.rst
 
     trapezoid.rst
 
     context-managers-exercise.rst
 
-    mailroom-decorator.rst
+    mailroom/mailroom-decorator.rst
 
-    mailroom-meta.rst
+    mailroom/mailroom-meta.rst
 
-    mailroom-mock.rst
+    mailroom/mailroom-mock.rst
 
     threaded_downloader.rst
 
