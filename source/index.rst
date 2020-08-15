@@ -144,7 +144,7 @@ Exercises:
 
     exercises/exceptions_lab.rst
     exercises/except_exercise.rst
-    exercises/mailroom/mailroom_with_exeptions.rst
+    exercises/mailroom/mailroom_with_exceptions.rst
 
 
 Unit Testing

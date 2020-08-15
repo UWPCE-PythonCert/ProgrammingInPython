@@ -33,7 +33,7 @@ def test_shuffle():
     """
     seq = list(range(10))
     random.shuffle(seq)
-    # seq.sort()  # If you comment this out, it will fail, so you can see output
+    seq.sort()  # If you comment this out, it will fail, so you can see output
     print("seq:", seq)  # only see output if it fails
     assert seq == list(range(10))
 
@@ -44,6 +44,7 @@ def test_shuffle_immutable():
     """
     with pytest.raises(TypeError):
         random.shuffle((1, 2, 3))
+
 
 def test_sample_too_large():
     """
