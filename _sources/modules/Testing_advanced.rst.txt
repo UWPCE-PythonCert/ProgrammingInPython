@@ -2,13 +2,12 @@
 
 .. _advanced_testing:
 
-#######
-Testing
-#######
+################
+Advanced Testing
+################
 
 Testing in Python
 
-UWPCE Python certificate advanced topic.
 
 What is testing?
 ================
@@ -41,14 +40,14 @@ Unit testing
 -  Can separate tests from required resources through fixtures and
    mocking
 -  Automatable
--  Integrates with development process
+-  Integrates with the development process
 
 
 What should be tested?
 ----------------------
 
 The percentage of code which gets run in a test is known as the
-coverage.
+"coverage".
 
 100% coverage is an ideal to strive for. But the decision on when and
 what to test should take into account the volatility of the project.
@@ -58,7 +57,7 @@ they may not be comprehensive! It is very hard to anticipate every weird
 input some code may get.
 
 
-Unit-testing tools
+Unit Testing tools
 ------------------
 
 -  unittest, the test framework that ships with Python. Port of Java jUnit
@@ -73,14 +72,16 @@ Unit-testing tools
 
    https://docs.python.org/dev/library/unittest.mock.html
 
+Note that while mock is in the ``unittest`` package, you do not need to be using ``unittest`` tests to use it.
 
-About Unit-testing
+
+About Unit Testing
 ------------------
 
 1. Tests should be independent.
 2. Tests do not run in order, which shouldn't matter, see point 1.
-3. Test fixtures are available to do any setup/teardown needed for tests.
-4. Test behavior not implementation
+3. Test fixtures are available to do any setup / teardown needed for tests.
+4. Test behavior not implementation dependent.
 5. Mocking is available to fake stuff you may not want to run in your tests.
 
 This all applies regardless of your test framework
@@ -255,7 +256,7 @@ Fixtures: Setting up your tests for success
 Test fixtures are a fixed baseline for tests to run from consistently,
 also known as test context.
 
-Fixtures can be set up fresh before each test, once before each test
+Fixtures can (and should) be set up fresh before each test, once before each test
 case, or before an entire test suite.
 
 
@@ -316,7 +317,7 @@ The ``-s`` tells pytest not to capture stdout -- so we can see print statements.
 The ``-v`` is verbose mode -- so we can see a bit more what is going on.
 
 "Teardown"
-----------
+-----------
 
 If your fixture needs to clean itself up after its done, this is known as
 "teardown"
@@ -365,7 +366,7 @@ Levels of precision of floating point
 
 Python floating point numbers are stored in `IEEE 754 <http://en.wikipedia.org/wiki/IEEE_floating_point>`_ 64-bit double precision format, so 1 bit for the sign, 11 bits for the exponent, and the remaining 52 for the fraction.
 
-So we can count on up to 16 digits of precision in decimal:
+So we can count on up to about 16 digits of precision in decimal:
 
 .. code-block:: ipython
 
@@ -408,8 +409,8 @@ Add a places keyword argument to specify the number of decimal places.
             self.assertAlmostEqual(3*.15, .45, places=7)
 
 
-What is close?
---------------
+What is close enough?
+---------------------
 
 **Warning**
 
@@ -448,7 +449,7 @@ Anyone remember "significant figures" from science classes?
 ``isclose()``
 -------------
 
-Python 3.5 introduced the isclose() function in the math module:
+Python 3.5 introduced the ``isclose()`` function in the ``math`` module:
 
 https://www.python.org/dev/peps/pep-0485/
 
@@ -462,7 +463,7 @@ https://www.python.org/dev/peps/pep-0485/
     In [41]: y
     Out[41]: 1.0000000000001e+22
 
-    In [42]: math.isclose(x,y)
+    In [42]: math.isclose(x, y)
     Out[42]: True
 
 So this works for any magnitude number.
@@ -487,6 +488,7 @@ So this works for any magnitude number.
 
 ``abs_tol`` is required for comparisons to zero -- nothing is
 "relatively close" to zero
+
 
 Using ``isclose()`` with ``unittest``
 -------------------------------------
@@ -531,7 +533,7 @@ But when you use assertTrue::
       self.assertTrue(math.isclose(4 * .15e-30, .45e-30))
   AssertionError: False is not true
 
-Not that helpful -- is it?
+Not that helpful -- is it? I thikn we all already know that False is not true ;-)
 
 ``pytest`` give you nice informative messages when tests fail -- without special asserts.
 
@@ -579,9 +581,9 @@ You can write a separate test for each case:
 
 But talk about tedious!!!
 
-Unfortunately, ``unittest`` does not have a built-in way to solve this
-problem. There is a nifty library called parameterized, which does solve it
-(and they spell parameterize correctly). It works with nose, unittest, and pytest.
+Unfortunately, ``unittest`` does not have a built-in way to solve this problem.
+There is a nifty library called parameterized, which does solve it (and they spell parameterize correctly).
+It works with nose, unittest, and pytest.
 
 https://pypi.python.org/pypi/parameterized
 
@@ -596,13 +598,13 @@ https://pypi.python.org/pypi/parameterized
         assert_equal(math.pow(base, exponent), expected)
 
 
-Lots more examples on their website.
+You will find many more examples on their website.
 
 
 ``pytest.mark.parametrize``
 ---------------------------
 
-Pytest does provide a nifty built-in way to do it:
+With pytest, you don't need a third party library: as it provides a nifty built-in way to do it:
 
 https://docs.pytest.org/en/latest/parametrize.html#parametrize-basics
 
@@ -619,7 +621,8 @@ https://docs.pytest.org/en/latest/parametrize.html#parametrize-basics
 
 I find this very, very, useful.
 
-See :download:`test_calculator_pytest.py </examples/testing/calculator/test_calculator_pytest.py>` in the class repo.
+See :download:`test_calculator_pytest.py </examples/testing/calculator/test_calculator_pytest.py>`
+
 
 Code Coverage
 -------------
@@ -634,14 +637,15 @@ sure it hasn't been tested -- so how do you know it works?
 
 So 100% coverage is a good goal (though harder to achieve than you might think!)
 
-Keep in mind that 100% coverage does **NOT** mean that you code is fully tested -- you have no idea how many corner cases may not have been checked.
+Keep in mind that 100% coverage does **NOT** mean that your code is *fully* tested -- you have no idea how many corner cases may not have been checked.
 
 But it's a good start.
+
 
 The coverage tool
 -----------------
 
-"Coverage.py" is a tool (written by Ned Batchelder) for checking code testing
+``coverage.py`` is a tool (written by Ned Batchelder) for checking code testing
 coverage in python:
 
 https://coverage.readthedocs.io
@@ -664,7 +668,7 @@ This generates a .coverage file. To analyze it on the console:
 
   $ coverage report
 
-Else generate an HTML report in the current directory:
+Or you can generate an HTML report in the current directory:
 
 .. code-block:: bash
 
@@ -701,6 +705,7 @@ option to run:
     coverage run --branch myprog.py
 
 http://nedbatchelder.com/code/coverage/branch.html
+
 
 Using coverage with pytest
 --------------------------
@@ -770,7 +775,7 @@ Well worth checking out -- and you can have Sphinx run your doctests for you.
 My Take:
 --------
 
-doctests are really cool -- but they are more a way to test your documentation, than a way to test your code. Which is pretty cool -- you can have examples in your docs, and know that they are still correct.
+doctests are really cool -- but they are more a way to test your documentation, than a way to test your code. Which is great -- you can have examples in your docs, and know that they are still correct.
 
 
 Test Driven Development (TDD)
@@ -810,11 +815,19 @@ or
 -  Fix any failures in the code
 -  Add doctests to calculator_functions.py
 
-You can find all that in:
+Here are the files you'll need:
 
-``examples/calculator``
+:download:`calculator.py <../examples/testing/calculator/calculator.py>`
 
-In the class repo.
+:download:`calculator_functions.py <../examples/testing/calculator/calculator_functions.py>`
+
+:download:`calculator_test.sh <../examples/testing/calculator/calculator_test.sh>`
+
+:download:`test_calculator_pytest.py <../examples/testing/calculator/test_calculator_pytest.py>`
+
+:download:`calculator_test_suite.py <../examples/testing/calculator/calculator_test_suite.py>`
+
+:download:`test_calculator.py <../examples/testing/calculator/test_calculator.py>`
 
 
 Mocking
@@ -823,8 +836,11 @@ Mocking
 Now we've got the tools to really test
 --------------------------------------
 
-Consider the application in the ``examples/wikidef`` directory. Give the
-command line utility a subject, and it will return a definition.
+Consider the application in:
+
+:download:`wikidef.zip <../examples/wikidef.zip>`
+
+Give the command line utility a subject, and it will return a definition.
 
 .. code-block:: bash
 
@@ -902,6 +918,37 @@ Using patch
 
 There are a number of ways to use ``mock.patch`` -- this is a nice discussion of that: `The Many Flavors of mock.patch <http://treyhunner.com/2014/10/the-many-flavors-of-mock-dot-patch/>`_
 
+
+mocking with pytest
+-------------------
+
+pytest uses the same mock library, but has a little different syntax.
+
+Here is an example of mocking ``input()`` with pytest:
+
+:download:`test_mock_input.py </examples/testing/test_mock_input.py>`
+
+``pytest-mock`` is a utility that makes it easier to mock
+with pytest.
+
+.. code-block:: bash
+
+   $ pip install pytest-mock
+
+Here is a nice blog post about using it:
+
+https://medium.com/@bfortuner/python-unit-testing-with-pytest-and-mock-197499c4623c
+
+Exercise
+........
+
+When ``define.py`` is given the name of a non-existent article, an exception
+is thrown. This exception causes another exception to occur, and the whole thing is not very readable. Why does this happen?
+
+Use what you know about exceptions to throw a better exception, and
+then add a new test that confirms this behavior. Use mock for your test, so you are not hammering Wikipedia.
+
+
 Mocking a builtin
 -----------------
 
@@ -923,33 +970,9 @@ In your test file, you would do this:
         new_mocked_input.return_value = 'blue'
         self.assertEqual(mock_input.get_input(), 'blue')
 
-mocking with pytest
--------------------
-
-pytest uses the same mock library, but has a little different syntax.
-
-Here is an example of mocking ``input()`` with pytest:
-
-:download:`test_mock_input.py </examples/testing/test_mock_input.py>`
-
-`pytest-mock` is a utility that makes it easier to mock
-with pytest.
-
-.. code-block:: bash
-
-   $ pip install pytest-mock
-
-Here is a nice blog post about using it:
-
-https://medium.com/@bfortuner/python-unit-testing-with-pytest-and-mock-197499c4623c
-
-
 Exercise
---------
+........
 
-When define.py is given the name of a non-existent article, an exception
-is thrown. This exception causes another exception to occur, and the whole thing is not very readable. Why does this happen?
+See if you can use mocking of the ``input()`` function to write a full set of tests for the interactive portion of your mailroom program.
 
-Use what you know about exceptions to throw a better exception, and
-then add a new test that confirms this behavior. Use mock for your test, so you are not hammering Wikipedia.
 

@@ -8,9 +8,10 @@ Exceptions are a really nifty Python feature -- really handy!
 
 From the zen:
 
-"Errors should never pass silently."
+.. centered:: "Errors should never pass silently."
 
-"Unless explicitly silenced."
+.. centered:: "Unless explicitly silenced."
+
 
 That's what exception handling is all about.
 
@@ -19,25 +20,36 @@ Exceptions
 
 An "Exception" is an indication that something out of the ordinary (exceptional) happened.
 
-Note that they are NOT called "Errors" -- often they are, but often it's not an indication of an error per se.
+Note that they are NOT called "Errors" -- often they are errors, but an Exception is not an indication of an error per se.
 
-This is why we have exception handling -- because we often know that exceptions will occur, and know how to handle them -- we don't want the program to crash out.
+This is why exception handling exists -- we often know that exceptions will occur, and know how to handle them -- we don't want the program to crash out.
+
+NOTE: if an Exception is raised in a Python program, and it has not been handled, then the program will stop, and report what happened. I'm sure you have seen this many times while working on your code!
+
 
 Handling Exceptions
 -------------------
 
+So far, Exceptions in your code have indicated a bug that you need to fix. But frequently you can anticipate where an Exception might occur, and your code can do something about it -- give a nice message to the user, or try the operation again in a different way -- the options are endless. Doing something after an Exception has occurred is known as "handling" the Exception.
+
 Exceptions are handled with a "try -- except" block.
 
-This provides another branching structure (kind of like if) -- a way for different code to run depending on what happens.
+This provides another branching structure (kind of like if) -- a way for different code to run depending on what happens in a code block.
+
+Here is an example:
 
 .. code-block:: python
 
     try:
-        do_something()
-        f = open('missing.txt')
-        process(f)   # never called if file missing
+        with open('missing.txt') as data_file:
+            process(data_file)   # never called if file missing
     except FileNotFoundError:
         print("Couldn't find missing.txt")
+
+The ``try:`` block is code that you want to "try" to run. In this case, it's opening and processing a file. But if the file isn't there, then a ``FileNotFoundError`` is "raised". When an Exception is raised, no further code is run -- so the ``process()`` function will not be called. Once an exception is raised, Python looks for an ``except`` line. If the raised Exception matches the one in the ``except`` line, then the code in that block is run.
+
+If there is no ``except``, or the Exception doesn't match, then python will keep moving "up the stack", until the Exception is caught. If it is never caught, then the program will terminate.
+
 
 Bare ``except``
 ---------------
@@ -47,9 +59,8 @@ Bare ``except``
 .. code-block:: python
 
     try:
-        do_something()
-        f = open('missing.txt')
-        process(f)   # never called if file missing
+        with open('missing.txt') as data_file:
+            process(data_file)   # never called if file missing
     except:
         print "couldn't find missing.txt"
 
@@ -57,7 +68,7 @@ If you don't specify a particular exception, ``except`` will catch *All* excepti
 
 **Always** capture the *particular* Exception(s) you know how to handle.
 
-Trust me, you can't anticipate everything, and you want the exception to propagate if it is not expected when you wrote the code.
+Trust me, you can't anticipate everything, and you want the exception to propagate if it is not the one expected when you wrote the code.
 
 
 Testing for errors "by hand":
@@ -280,9 +291,20 @@ the ``.__traceback__`` attribute hold the actual traceback object -- all the inf
 Multiple Exceptions
 -------------------
 
-As seen above, you can catch multiple exceptions in an ``except`` statement
+As seen above, you can catch multiple exceptions with a single ``except`` statement by putting them all in a tuple:
 
-If you want to do something completely different with each exception type, you can have multiple ``except`` blocks:
+.. code-block:: python
+
+try:
+    some_code()
+except (Exception1, Exception2, Exception3):
+    handle_them_all
+
+You should do this if the action required is same for all those Exceptions.
+
+
+But if you want to do something different with each exception type, you can have multiple ``except`` blocks:
+
 
 .. code-block:: python
 
@@ -316,6 +338,8 @@ The minimal try block is a ``try``, and one ``except``.
 Raising Exceptions
 -------------------
 
+Many times, Exceptions will be raised by a built in python function, or from some library code that you are using. But there are times when the code you write may not directly handle some particular behavior. In that case, you can raise an exception yourself, and then it can be caught by code higher up the stack. This is done with the ``raise`` statement:
+
 .. code-block:: python
 
     def divide(a,b):
@@ -326,11 +350,11 @@ Raising Exceptions
 
 (OK, this is a stupid example, as that error will be raised for you anyway. But bear with me).
 
-When you call it:
+When you call that function with a zero:
 
 .. code-block:: ipython
 
-    In [515]: divide (12,0)
+    In [515]: divide (12, 0)
     ZeroDivisionError: b can not be zero
 
 Note how you can pass a message to the exception object constructor. It will get printed when the exception is printed. (and it is stored the in the Exception object's ``.args`` attribute)
@@ -341,7 +365,7 @@ Built in Exceptions
 
 You can create your own custom exceptions.
 
-But...
+But for the most part, you can/should use a built in one ...
 
 .. code-block:: python
 
@@ -350,15 +374,13 @@ But...
     len(exp)
     48
 
-For the most part, you can/should use a built in one.
-
 There are 48 built-in Exceptions -- odds are good that there's one that matches your use-case.
 
-Also -- custom exceptions require subclassing -- and we haven't learned that yet :-).
+Also -- custom exceptions require subclassing -- and you haven't learned that yet :-).
 
 
-Choosing an Exception
----------------------
+Choosing an Exception to raise
+------------------------------
 
 Choose the best match you can for the built in Exception you raise.
 
@@ -377,6 +399,7 @@ Nope: the *type* of the input is the problem::
 but should you be checking type anyway? (EAFP)
 
 What I usually do is run some code that's similar that raises a built-in exception, and see what kind it raises, then I use that.
+
 
 Knowing what Exception to catch
 -------------------------------
@@ -404,8 +427,6 @@ Now I know to use::
     except FileNotFoundError:
 
 In the ``try`` block where I am opening the file.
-
-
 
 
 
