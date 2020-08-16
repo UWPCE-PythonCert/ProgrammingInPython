@@ -71,7 +71,7 @@ Lesson 6: Unit Testing and Advanced Argument Passing
 .. toctree::
     :maxdepth: 1
 
-    unit_testing.rst
+    unit_testing/unit_testing.rst
     args_kwargs_lab.rst
     mailroom/mailroom_with_tests.rst
 
@@ -93,7 +93,7 @@ Lesson 8: Properties and Magic Methods
 .. toctree::
     :maxdepth: 1
 
-    circle_class.rst
+    circle/circle_class.rst
 
 Lesson 9: Multiple Inheritance
 ------------------------------

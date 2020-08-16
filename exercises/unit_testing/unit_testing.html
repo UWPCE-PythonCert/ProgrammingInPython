@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction To Unit Testing &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mailroom With Unit Tests" href="../mailroom/mailroom_with_tests.html" />
+    <link rel="prev" title="Test Driven Development" href="../../modules/TestDrivenDevelopment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #4b2e83" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Git.html">Intro to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Learning.html">Useful Python Learning Resources</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python_pushups.html">Python Pushups</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/BasicPython.html">Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Functions.html">More on Functions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fizz_buzz.html">Fizz Buzz Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fib_and_lucas.html">Fibonacci Series Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">Boolean Expressions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Sequences.html">Python Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Iteration.html">Iteration</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slicing.html">Slicing Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../list_lab.html">List Lab</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Strings.html">Strings</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rot13.html">ROT13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom.html">Mailroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Exceptions.html">Exception Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions_lab.html">Exceptions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction To Unit Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-driven-development">Test Driven Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-tests-pass">Making tests pass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doing-your-own">Doing your own:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../file_lab.html">File Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CollectionsModule.html">The Collections Module</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../comprehensions_lab.html">Comprehensions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PythonClasses.html">Python Classes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Packaging.html">Packages and Packaging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/StaticAndClassMethods.html">Static and Class Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../circle/circle_class.html">Circle Class Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html_renderer.html">HTML Renderer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing_advanced.html">Advanced Testing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Async.html">Asychronous Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Profiling.html">Performance and Profiling</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/orientation.html">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson01.html">Lesson 1: Setting up Your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson02.html">Lesson 2: Basic Python and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson03.html">Session 3: Booleans, Sequences, Iteration, and Strings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../class_schedule/lesson04.html">Session 4: Dictionaries and Sets and Unit Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../class_schedule/lesson04.html#readings">Readings</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../class_schedule/lesson04.html#exercises">Exercises:</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../exceptions_lab.html">Exceptions Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Introduction To Unit Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson05.html">Lession 5: File Handling, Exceptions and Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson06.html">Session 6: Advanced Argument Passing and Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson07.html">Session 7: Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson08.html">Session 8: Properties and Magic methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson09.html">Session 9: Static and class methods: multiple inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class_schedule/lesson10.html">Session 10: Intro to Functional Programming: lambda and Map, Filter, Reduce</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Introduction to Python Topic Notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">All Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction To Unit Testing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/exercises/unit_testing/unit_testing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-unit-testing">
+<span id="exercise-unit-testing"></span><h1>Introduction To Unit Testing<a class="headerlink" href="#introduction-to-unit-testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>In order to do unit testing, you need a framework in which to write and run your tests.
+Earlier in this class, you’ve been adding “asserts” to your modules – perhaps in the <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> block.  These are, in fact, a kind of unit test.
+But as you build larger systems, you’ll want a more structured way to write and run your tests.</p>
+<p>We will use the pytest testing system for this class.</p>
+<p>If you have not already done so – install pytest like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install pytest
+</pre></div>
+</div>
+<p>Once this is complete, you should have a <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command you can run
+at the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">pytest</span>
+<span class="o">======================</span> <span class="nb">test</span> session <span class="nv">starts</span> <span class="o">======================</span>
+platform darwin -- Python <span class="m">3</span>.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+rootdir: /Users/chris.barker/Junk/junk
+collected <span class="m">0</span> <span class="nv">items</span>
+
+<span class="o">=====================</span> no tests ran in <span class="m">0</span>.00s <span class="o">=====================</span>
+</pre></div>
+</div>
+<p>If you already HAVE some tests – you may see something different!</p>
+</div>
+<div class="section" id="test-driven-development">
+<h2>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h2>
+<p>Download these files, or find them in the exercise repo:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/8015ec2e0a1cc6ebc8514e78227617fc/test_walnut_party.py"><code class="xref download docutils literal notranslate"><span class="pre">test_walnut_party.py</span></code></a></p>
+<p>and:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/a036bf9efd753b24c68d132695a8ded7/walnut_party.py"><code class="xref download docutils literal notranslate"><span class="pre">walnut_party.py</span></code></a></p>
+<p>(This is the adapted from the codingbat site: <a class="reference external" href="http://codingbat.com/prob/p195669">http://codingbat.com/prob/p195669</a>)</p>
+<p>In the directory where you put the files, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest test_walnut_party.py
+</pre></div>
+</div>
+<p>You will get a LOT of test failures!</p>
+<p>What you’ve done here is the first step in what is called:</p>
+<p class="centered">
+<strong><strong>Test Driven Development (TDD)</strong></strong></p><p>A bunch of tests exist, but the code to make them pass does not yet exist.</p>
+<p>The red you see in the terminal when we run our tests is a goad to us to write the code that fixes these tests.</p>
+<p>The tests all failed  because currently <code class="docutils literal notranslate"><span class="pre">walnut_party()</span></code> looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walnut_party</span><span class="p">(</span><span class="n">walnuts</span><span class="p">,</span> <span class="n">is_weekend</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>A totally do nothing function – of course the tests all fail!</p>
+</div>
+<div class="section" id="making-tests-pass">
+<h2>Making tests pass<a class="headerlink" href="#making-tests-pass" title="Permalink to this headline">¶</a></h2>
+<p>Open:</p>
+<p><code class="docutils literal notranslate"><span class="pre">test_walnut_party.py</span></code></p>
+<p>and:</p>
+<p><code class="docutils literal notranslate"><span class="pre">walnut_party.py</span></code></p>
+<p>In your editor.</p>
+<p>Now edit the function in <code class="docutils literal notranslate"><span class="pre">walnut_party.py</span></code>, and each time you make a change, run the tests again. Continue until all the tests pass.</p>
+<p>When the tests pass – you are done! That’s the beauty of test-driven development.</p>
+</div>
+<div class="section" id="doing-your-own">
+<h2>Doing your own:<a class="headerlink" href="#doing-your-own" title="Permalink to this headline">¶</a></h2>
+<p>Pick another example from codingbat:</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://codingbat.com</span></code></p>
+<p>Do a bit of test-driven development on it:</p>
+<ul class="simple">
+<li><p>Run something on the web site.</p></li>
+<li><p>Write a few tests using the examples from the site.</p></li>
+<li><p>Then write the function, and fix it ‘till it passes the tests.</p></li>
+</ul>
+<p>These tests should be in a file named <code class="docutils literal notranslate"><span class="pre">test_something.py</span></code> – I usually name the test file the same as the module it tests,
+with <code class="docutils literal notranslate"><span class="pre">test_</span></code> prepended.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Technically, you can name your test files anything you want. But there are two reasons to use standard naming conventions.
+One is that it is clear to anyone looking at the code what is and isn’t a test module. The other is that pytest, and other testing systems, use
+<a class="reference external" href="https://docs.pytest.org/en/latest/goodpractices.html#test-discovery">naming conventions</a> to find your test files.
+If you name your test files: <code class="docutils literal notranslate"><span class="pre">test_something.py</span></code> then pytest will find them for you. And if you use the name of the module being tested:
+<code class="docutils literal notranslate"><span class="pre">test_name_of_tested_module.py</span></code> then it will be clear which test files belong to which modules.</p>
+</div>
+<p>Do at least two of these to get the hang of the process.</p>
+<p>Also – once you have the tests passing, look at your solution – is there a way it could be refactored to be cleaner?</p>
+<p>Give it a shot – you’ll know if it still works if the tests still pass!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mailroom/mailroom_with_tests.html" class="btn btn-neutral float-right" title="Mailroom With Unit Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../modules/TestDrivenDevelopment.html" class="btn btn-neutral float-left" title="Test Driven Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Circle Class Exercise &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #4b2e83" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Git.html">Intro to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Learning.html">Useful Python Learning Resources</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python_pushups.html">Python Pushups</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/BasicPython.html">Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Functions.html">More on Functions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fizz_buzz.html">Fizz Buzz Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fib_and_lucas.html">Fibonacci Series Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">Boolean Expressions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Sequences.html">Python Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Iteration.html">Iteration</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slicing.html">Slicing Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../list_lab.html">List Lab</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Strings.html">Strings</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rot13.html">ROT13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom.html">Mailroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Exceptions.html">Exception Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions_lab.html">Exceptions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../file_lab.html">File Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CollectionsModule.html">The Collections Module</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../comprehensions_lab.html">Comprehensions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PythonClasses.html">Python Classes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Packaging.html">Packages and Packaging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/StaticAndClassMethods.html">Static and Class Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html_renderer.html">HTML Renderer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing_advanced.html">Advanced Testing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Async.html">Asychronous Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Profiling.html">Performance and Profiling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Introduction to Python Topic Notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">All Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Circle Class Exercise</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/exercises/circle/circle_class.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="circle-class-exercise">
+<span id="exercise-circle-class"></span><h1>Circle Class Exercise<a class="headerlink" href="#circle-class-exercise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="circle-class">
+<h2>Circle Class<a class="headerlink" href="#circle-class" title="Permalink to this headline">¶</a></h2>
+<p>The ultimate circle….</p>
+<div class="section" id="goal">
+<h3>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<p>The goal is to create a class that represents a simple circle.</p>
+<p>A Circle can be defined by either specifying the radius or the diameter,
+and the user can query the circle for either its radius or diameter.</p>
+<p>Other abilities of a Circle instance:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Compute the circle’s area.</p></li>
+<li><p>Print the circle and get something nice.</p></li>
+<li><p>Be able to add two circles together.</p></li>
+<li><p>Be able to compare two circles to see which is bigger.</p></li>
+<li><p>Be able to compare to see if they are are equal.</p></li>
+<li><p>(follows from above) be able to put them in a list and sort them.</p></li>
+</ul>
+</div></blockquote>
+<p>You will use:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>properties.</p></li>
+<li><p>a bunch of “magic methods”.</p></li>
+<li><p>a classmethod.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="general-instructions">
+<h3>General Instructions:<a class="headerlink" href="#general-instructions" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>For each step, write a couple of unit tests that test the new features.</p></li>
+<li><p>Run these tests (and they will fail the first time)</p></li>
+<li><p>Add the code required for your tests to pass.</p></li>
+</ol>
+</div>
+<div class="section" id="step-1">
+<h3>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<p>Create class called <code class="docutils literal notranslate"><span class="pre">Circle</span></code> – it’s signature should look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">the_radius</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The radius is a required parameter (can’t have a circle without one!)</p>
+<p>The resulting circle should have an attribute for the radius:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">radius</span>
+</pre></div>
+</div>
+<p>So you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+<span class="mi">4</span>
+</pre></div>
+</div>
+<p>Remember: tests first!</p>
+</div>
+<div class="section" id="step-2">
+<h3>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
+<p>Add a “diameter” property, so the user can get the diameter of the circle:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">diameter</span><span class="p">)</span>
+<span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3">
+<h3>Step 3:<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
+<p>Set up the diameter property so that the user can set the diameter of the circle:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">diameter</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span> <span class="n">c</span><span class="o">.</span><span class="n">diameter</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span> <span class="n">c</span><span class="o">.</span><span class="n">radius</span>
+<span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>NOTE</strong> that the radius has changed!</p>
+<p><strong>Important:</strong> Do not store both the radius and the diameter as attributes! If you do that, they could get out of sync. So store only one (the radius), and have the other calculated “on the fly” by the property.</p>
+</div>
+<div class="section" id="step-4">
+<h3>Step 4:<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h3>
+<p>Add an <code class="docutils literal notranslate"><span class="pre">area</span></code> property so the user can get the area of the circle:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+<span class="mf">12.566370</span>
+</pre></div>
+</div>
+<p>(<code class="docutils literal notranslate"><span class="pre">pi</span></code> can be found in the math module).</p>
+<p>The user should not be able to set the area:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="ne">AttributeError</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-5">
+<h3>Step 5:<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h3>
+<p>Add an “alternate constructor” that lets the user create a Circle directly
+with the diameter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="o">.</span><span class="n">from_diameter</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">diameter</span><span class="p">)</span>
+<span class="mi">8</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+<span class="mi">4</span>
+</pre></div>
+</div>
+<p>Hint: This is a good use case for a <code class="docutils literal notranslate"><span class="pre">classmethod</span></code></p>
+</div>
+<div class="section" id="step-6">
+<h3>Step 6:<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h3>
+<p>Every class should have a nice way to print it out…</p>
+<p>Add <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> methods to your Circle class.</p>
+<p>Now you can print it:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="gp">In [3]: </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">Circle with radius: 4.000000</span>
+
+<span class="gp">In [4]: </span><span class="nb">repr</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="gh">Out[4]: </span><span class="go">&#39;Circle(4)&#39;</span>
+
+<span class="gp">In [5]: </span><span class="n">d</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+
+<span class="gp">In [6]: </span><span class="n">d</span>
+<span class="gh">Out[6]: </span><span class="go">Circle(4)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-7">
+<h3>Step 7:<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h3>
+<p>Add some of the numeric protocol to your Circle:</p>
+<p>You should be able to add two circles:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="gp">In [8]: </span><span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="gp">In [9]: </span><span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span>
+<span class="gh">Out[9]: </span><span class="go">Circle(6)</span>
+</pre></div>
+</div>
+<p>and multiply one by a number:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">c2</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="gh">Out[16]: </span><span class="go">Circle(12)</span>
+</pre></div>
+</div>
+<p>(what happens with <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">c2</span></code> ? – can you fix that?)</p>
+</div>
+<div class="section" id="step-8">
+<h3>Step 8:<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h3>
+<p>Add the ability to compare two circles:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">c1</span> <span class="o">&gt;</span> <span class="n">c2</span>
+<span class="gh">Out[10]: </span><span class="go">False</span>
+
+<span class="gp">In [11]: </span><span class="n">c1</span> <span class="o">&lt;</span> <span class="n">c2</span>
+<span class="gh">Out[11]: </span><span class="go">True</span>
+
+<span class="gp">In [12]: </span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span>
+<span class="gh">Out[12]: </span><span class="go">False</span>
+
+<span class="gp">In [13]: </span><span class="n">c3</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="gp">In [14]: </span><span class="n">c2</span> <span class="o">==</span> <span class="n">c3</span>
+<span class="gh">Out[14]: </span><span class="go">True</span>
+</pre></div>
+</div>
+<p>Once the comparing is done,  you should be able to sort a list of circles:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="nb">print</span> <span class="n">circles</span>
+<span class="go">[Circle(6), Circle(7), Circle(8), Circle(4), Circle(0), Circle(2), Circle(3), Circle(5), Circle(9), Circle(1)]</span>
+
+<span class="gp">In [19]: </span><span class="n">circles</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="gp">In [20]: </span><span class="nb">print</span> <span class="n">circles</span>
+<span class="go">[Circle(0), Circle(1), Circle(2), Circle(3), Circle(4), Circle(5), Circle(6), Circle(7), Circle(8), Circle(9)]</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> make sure to write unit tests for all of this! Ideally before writing the code.</p>
+</div>
+<div class="section" id="step-8-optional-features">
+<h3>Step 8: Optional Features:<a class="headerlink" href="#step-8-optional-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>See if you can make “reflected” numerics do the right thing:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_circle</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">a_circle</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>What else makes sense: division?  others?</p></li>
+<li><p>Add the “augmented assignment” operators, where they make sense:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_circle</span> <span class="o">+=</span> <span class="n">another_circle</span>
+
+<span class="n">a_circle</span> <span class="o">*=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Look through all the “magic methods” and see what makes sense for circles.</p></li>
+</ul>
+</div>
+<div class="section" id="step-9-subclassing">
+<h3>Step 9: Subclassing!<a class="headerlink" href="#step-9-subclassing" title="Permalink to this headline">¶</a></h3>
+<p>You’ve got a circle already – what if you needed a Sphere? They have a fair bit in common – both defined by a radius, same relationship of radius to diameter, etc.</p>
+<p>So we can get a pretty useful Sphere class by simply subclassing Circle, and adding and changing a couple things.</p>
+<ul class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">Sphere</span></code> Class that subclasses <code class="docutils literal notranslate"><span class="pre">Circle</span></code>.</p></li>
+<li><p>Override the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> methods to be appropriate for Spheres.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">volume</span></code> property that returns the volume (hint: volume of a sphere is: 4/3 pi r^3).</p></li>
+<li><p>Override the area property so that it either computes the surface area of a sphere (what’s the formula for that???), or have it raise an exception: maybe <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code>.</p></li>
+</ul>
+<p>Make sure to write some tests – maybe ahead of time! –  that confirm that all this works. And the other things like addition, and sorting…</p>
+<p>Check that the <code class="docutils literal notranslate"><span class="pre">Sphere.from_diameter()</span></code> alternate constructor actually creates a Sphere! (you DO NOT have to write a new classmethod for that!) – pretty cool, eh?</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
