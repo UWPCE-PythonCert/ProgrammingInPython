@@ -39,4 +39,4 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    ../exercises/mailroom-oo.rst
+    ../exercises/mailroom/mailroom-oo.rst
