@@ -25,13 +25,13 @@ at the command line:
 .. code-block:: bash
 
     $ pytest
-    ============================= test session starts ==============================
-    platform darwin -- Python 3.7.0, pytest-3.10.1, py-1.5.4, pluggy-0.7.1
-    rootdir: /Users/Chris/temp/DrMartins, inifile:
-    plugins: cov-2.6.0
+    ====================== test session starts ======================
+    platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.8.2, pluggy-0.13.1
+    rootdir: /Users/chris.barker/Junk/junk
     collected 0 items
 
-    ========================= no tests ran in 0.01 seconds =========================
+    ===================== no tests ran in 0.00s =====================
+
 
 If you already HAVE some tests -- you may see something different!
 
@@ -39,13 +39,13 @@ If you already HAVE some tests -- you may see something different!
 Test Driven Development
 -----------------------
 
-Download these files, and save them in your own students directory in the class repo:
+Download these files, or find them in the exercise repo:
 
-:download:`test_walnut_party.py <../examples/testing/test_walnut_party.py>`
+:download:`test_walnut_party.py <unit_testing/test_walnut_party.py>`
 
 and:
 
-:download:`walnut_party.py <../examples/testing/walnut_party.py>`
+:download:`walnut_party.py <unit_testing/walnut_party.py>`
 
 (This is the adapted from the codingbat site: http://codingbat.com/prob/p195669)
 
@@ -59,7 +59,7 @@ You will get a LOT of test failures!
 
 What you've done here is the first step in what is called:
 
-  **Test Driven Development**
+.. centered::  **Test Driven Development (TDD)**
 
 A bunch of tests exist, but the code to make them pass does not yet exist.
 
@@ -72,7 +72,7 @@ The tests all failed  because currently ``walnut_party()`` looks like:
   def walnut_party(walnuts, is_weekend):
       pass
 
-A totally do nothing function.
+A totally do nothing function -- of course the tests all fail!
 
 
 Making tests pass

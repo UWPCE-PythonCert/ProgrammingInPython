@@ -28,5 +28,7 @@ Exercises:
     ../exercises/exceptions_lab.rst
     ../exercises/except_exercise.rst
     ../exercises/comprehensions_lab.rst
-    ../exercises/mailroom-part3.rst
+    ../exercises/mailroom/mailroom_with_exceptions.rst
+    ../exercises/mailroom/mailroom_with_files.rst
+
 
