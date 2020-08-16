@@ -162,7 +162,7 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/unit_testing.rst
+    exercises/unit_testing/unit_testing.rst
     exercises/mailroom/mailroom_with_tests.rst
 
 
@@ -287,7 +287,7 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/circle_class.rst
+    exercises/circle/circle_class.rst
 
 
 Subclassing

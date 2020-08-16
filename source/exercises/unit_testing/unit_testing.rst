@@ -41,11 +41,11 @@ Test Driven Development
 
 Download these files, or find them in the exercise repo:
 
-:download:`test_walnut_party.py <unit_testing/test_walnut_party.py>`
+:download:`test_walnut_party.py <test_walnut_party.py>`
 
 and:
 
-:download:`walnut_party.py <unit_testing/walnut_party.py>`
+:download:`walnut_party.py <walnut_party.py>`
 
 (This is the adapted from the codingbat site: http://codingbat.com/prob/p195669)
 

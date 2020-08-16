@@ -36,7 +36,7 @@ Exercises:
 
     ../exercises/exceptions_lab.rst
     ../exercises/except_exercise.rst
-    ../exercises/unit_testing.rst
+    ../exercises/unit_testing/unit_testing.rst
     ../exercises/dict_lab.rst
     ../exercises/mailroom/mailroom_with_dicts.rst
     ../exercises/trigrams/trigrams.rst
