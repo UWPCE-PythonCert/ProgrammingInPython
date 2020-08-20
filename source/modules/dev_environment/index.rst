@@ -23,81 +23,36 @@ Setting Up A Development Environment For Python
 
 The following is the recommended setup for the UWPCE Python Certificate Program. It is not necessary to have exactly this same setup, but if you choose to use a different setup, we will be less able to support you if you need help.
 
-Minimal Setup
-=============
+Your Development Environment
+============================
 
-Although it is OK to use different tools, there are some requirements to successfully do the work the program requires:
+There are four basic elements to your environment when working with Python:
 
-#. cPython version 3.6.* or 3.7.*
-#. A way to edit Python files (Programmers Text Editor)
-#. A way to run your code -- command line, IDE, etc.
-#. A way to use the "git" source code version control system
+* The Interpreter: cPython version 3.6.* or 3.7.*
+* The Command Line: a way to run your code 
+* The Editor: a real "programmer's text editor"
+* The source code version control system: Git
+
+In addtition, you will need to be able to:
+
+* Run the iPython interactive interpreter
+* Install new packages with pip
 
 You can be successful in the program as long as you have the above. If you don't already have a setup that fulfills those requirements -- read on.
 
 Platforms
 ---------
 
-Python is a very platform independent system, it can run on all major operating systems, including micro controllers even. It is most commonly used in production on Windows, Linux or OS-X systems.
-
-For this program, we feel it is best for students to work in an environment in which they are comfortable, and which they will ultimately use to do production work.
-
-We have included instructions for Windows, Linux and OS-X systems -- any of these are fine.
+Python is a very platform independent system. For this program, we feel it is best for students to work in an environment in which they are comfortable, and which they will ultimately use to do production work. We have included instructions for Windows, Linux and OS-X systems -- any of these are fine.
 
 Python Itself
 -------------
 
 Python is a "byte compiled, interpreted" language. What this means to you is that you need a Python interpreter to run your Python code. It also means that that is all you need -- write some code, and run it with Python. That's it.
 
-There are a number of different Python interpreters (or run-time environments) available:
+There are a number of different Python interpreters (or run-time environments) available. But most production Python is run with the cPython interpreter, and most people mean cPython when they say "Python".
 
-- cPython
-- PyPy
-- Jython
-- Iron Python
-- MicroPython
-
-These each have their own special uses. For example, for interaction with the Java VM or Microsoft CLR, or running on micro controllers. But most production Python is run with the cPython interpreter, and most people mean cPython when they say "Python".
-
-For this program, you will need cPython version 3.6, installed and running so that when you type "python" at your command line, it starts up.
-
-cPython itself is available from a number of sources, or "distributions". We recommend the version available from python.org.
-
-Python is also available as part of the Anaconda data analysis environment, as well as a few other sources. These Python distributions will work fine for this class, but when we get to advanced topics like virtual environments, there are some differences -- and you will be responsible for adapting to these differences.
-
-Your Development Environment
-============================
-
-There are three basic elements to your environment when working with Python:
-
-* The Command Line
-* The Interpreter
-* The Editor
-* The source code version control system
-
-Some folks use an Integrated Development Environment (IDE), which combines some or all of these functions. For this class, we don't recommend using an IDE, because while it can make some things easier, it can also hide things that will be good for you to understand.
-
-Minimal Requirements
---------------------
-
-In order to be productive in this program, you need to be able to do the following:
-
-* Manipulate files and write and save Python code in files.
-  You really, really want a "real" programmer's editor for this.
-
-* Run your code with Python 3.6 or 3.7
-
-* Run the iPython interactive interpreter
-
-* Install new packages with pip
-
-* Use the git source code management system (with GitHub)
-
-If you are not set up and comfortable with doing all that, read and follow these instructions:
-
-:ref:`installing_python`
-
-Then come back and follow the rest of this review.
+For this program, you will need cPython version 3.6, installed and running so that when you type "python" at your command line, it starts up. We recommend the version available from python.org.
 
 The Command Line (cli)
 ======================
@@ -108,17 +63,11 @@ Familiarity with basic use of the command line is a prerequisite for the program
 
 We have some resources here: :ref:`command_line_basics`
 
-We suggest running through the **cli** tutorial at "learn code the hard way":
+.. raw:: html
 
-`Command Line Crash Course <https://learnpythonthehardway.org/book/appendixa.html>`_
-
-Or, for Linux and OS-X users:
-
-`Linux command line for you and me! <https://lym.readthedocs.io/en/latest/>`_
-
-
-Windows:
---------
+<details>
+<summary>Command Line for Windows:</summary>
+         ------------------------
 
 Most of the demos in lessons will be done using the "bash" command line shell on OS-X. This is identical to the bash shell on Linux.
 
@@ -130,6 +79,10 @@ If not, you can use the "git Bash" shell -- which is much like the bash shell
 on OS-X and Linux: :ref:`git_bash`
 
 Or, on Windows 10, look into the "bash shell for Windows" otherwise known as the "Linux subsystem for Windows" - - more info here: :ref:`windows_bash`
+
+.. raw:: html
+
+</details>
 
 OS-X
 ----
