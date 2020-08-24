@@ -40,7 +40,7 @@ Setting up your Environment
 
 
 Exercise:
-..........
+.........
 
 .. toctree::
     :maxdepth: 1
@@ -57,8 +57,7 @@ Basic Python
     modules/BasicPython
     modules/Functions
 
-Exercises:
-..........
+.. rubric:: Exercises:
 
 .. toctree::
     :maxdepth: 1
@@ -231,6 +230,13 @@ Advanced Argument Passing
     modules/AdvancedArgumentPassing
     modules/MoreOnMutability
 
+Exercises:
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/args_kwargs_lab
+
 
 Intro to Object Oriented Programing
 -----------------------------------
@@ -287,8 +293,8 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/circle/circle_class.rst
-
+    exercises/circle/circle_class
+    exercises/sparse_array
 
 Subclassing
 -----------
@@ -329,6 +335,15 @@ Introduction to Functional Programming
     modules/MapFilterReduce
     modules/IPythonParallel
 
+Exercises
+.........
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/trapezoid
+
+
 Advanced Testing
 ----------------
 
@@ -352,14 +367,14 @@ The following are some extra topics that might be of interest
     modules/Unicode
 
     modules/Lambda
+    exercises/lambda_magic
     modules/IteratorsAndGenerators
 
     modules/Closures
 
     modules/Decorators
     modules/ContextManagers
-    modules/Recursion
-
+    exercises/context-managers-exercise.rst
 
     modules/MetaProgramming
 
@@ -372,9 +387,10 @@ The following are some extra topics that might be of interest
 
 
     modules/Concurrency
-    modules/ThreadingMultiprocessing
-    modules/Coroutines
     modules/Async
+    modules/Coroutines
+    modules/ThreadingMultiprocessing
+    exercises/threaded_downloader
 
     modules/Profiling
 
