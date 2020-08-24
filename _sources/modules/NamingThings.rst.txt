@@ -6,12 +6,13 @@
 Style and Naming
 ################
 
-**Style matters!**
+.. centered:: **Style matters!**
 
 PEP 8 reminder
---------------
+==============
 
 PEP 8 (Python Enhancement Proposal 8):
+
 https://www.python.org/dev/peps/pep-0008/
 
 Is the "official" style guide for Python code.
@@ -20,7 +21,7 @@ Strictly speaking, you only need to follow it for code in the standard library.
 
 But style matters -- consistent style makes your code easier to read and understand.
 
-And everyone in the community has accepted PEP as *the* Python style guide.
+And everyone in the community has accepted PEP 8 as *the* Python style guide.
 
 So **follow PEP 8**
 
@@ -37,14 +38,14 @@ Note that ideally you have a linter installed in your editor that yells at you i
 
 See: :ref:`editor_for_python` for suggestions on editors and configuration.
 
-Naming things...
-----------------
+Naming Things...
+================
 
 It matters what names you give your variables.
 
 Python has rules about what it *allows*.
 
-PEP8 has rules for style: capitalization, and underscores and all that.
+PEP 8 has rules for style: capitalization, and underscores and all that.
 
 But you still get to decide within those rules.
 
@@ -123,17 +124,21 @@ So you have a name used for a string, then it gets converted to an integer, and 
 
 While widely used in some circles, it is generally considered bad style in the Python community -- so:
 
- **Do not use Hungarian Notation**
+.. centered:: **Do Not Use Hungarian Notation**
+
 
 More About Naming Things
 ------------------------
 
 Here's a nice talk about naming:
 
-`Jack Diederich: Name things Once <https://www.youtube.com/watch?v=hZ7hgYKKnF0>`_
+`Jack Diederich: Name Things Once <https://www.youtube.com/watch?v=hZ7hgYKKnF0>`_
 
 One note about that talk -- Jack is mostly encouraging people to not use names that are too long and unnecessarily specific.
-However, with beginners, it's often tempting to use names that are too *short* and *non-specific*, like "x" and "item" -- so you need to strike a balance.
+However, with beginners, it's often tempting to use names that are too *short* and *non-specific*, like "x" and "item" -- so you need to strike a balance, but absolutely:
+
+.. centered:: **Use Meaningful Names**
+
 
 
 
