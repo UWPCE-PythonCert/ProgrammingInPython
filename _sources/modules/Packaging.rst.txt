@@ -1160,9 +1160,9 @@ LAB: A Small Example Package
 
   - ``at least one working test``
 
-* If you have some code of your own ready to go -- use that.
 
-* If you don't have any code of your own to package, start with the silly code in:
+
+* Here is a ridiculously simple and useless package to use as an example:
 
 :download:`capitalize.zip <../examples/packaging/capitalize.zip>`
 
