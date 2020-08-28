@@ -6,7 +6,7 @@ Python Classes
 
 "Classes" are the core of Object Oriented Programming.
 
-They provide the tools for encapsulation (keeping the data with the functions) and subclassing and polymorphism.
+They provide the tools for encapsulation (keeping the data with the functions) and subclassing (making custom versions of certain types) and polymorphism (making different classes reusable in the same context).
 
 
 How are classes made in Python?
@@ -25,11 +25,11 @@ The ``class``  statement creates a new type object:
     In [5]: type(C)
     Out[5]: type
 
-A class is a type -- interesting!
+.. note:: A class is a type -- interesting! Remember how everything is an object in Python? well, every object is of a certain type. There are the built-in types that you are used to: integers, strings, lists, .... When you create a new class, you are creating a new type, and it is exactly the same as the built in ones.
 
-It is created when the statement is run -- much like ``def``.
+The class is created when the ``class`` statement is run -- much like ``def`` creates a function object.
 
-So we now have a new type, or class -- it doesn't have any actual functionality, though by default all classes "inherit" from ``object``. In doing so they get some minimal functionality from that:
+So we now have a new type, or class -- it doesn't have any actual functionality yet, though by default all classes "inherit" from ``object``. In doing so they get some minimal functionality from that:
 
 .. code-block:: ipython
 
@@ -103,6 +103,9 @@ About the simplest class you can write that is still useful:
 
 This looks a lot like a "struct" in C -- Python doesn't have structures, so yes, a class with no methods (functions) is essentially a struct.
 
+.. note:: In practice, it is very common to use a simple class like this to store related data, even if there are no functions involved. So common, in fact, that in Python 3.8, a standard library package called ``dataclasses`` was added that generates classes for storing data like this -- without having to write hardly any code. I encourage you to check it out for real use, but for now, we'll build things from scratch so that you can learn how it all works.
+
+
 Basic Structure of a class
 --------------------------
 
@@ -110,19 +113,18 @@ Basic Structure of a class
 
     class Point:
     # everything defined in here is in the class namespace
-
         def __init__(self, x, y):
             self.x = x
             self.y = y
 
-so this class has a method called "__init__" -- which is a Python special method.
+So this class has a method called "__init__" -- which is a Python special method. Almost all classes have an ``__init__`` method
 
 see: :download:`simple_classes.py <../examples/classes/simple_classes.py>`
 
 The Initializer
 ---------------
 
-The ``__init__``  special method is called when a new instance of a class is created.
+The ``__init__``  special method is known as the initializer. It is automatically called when a new instance of a class is created.
 
 You can use it to do any set-up you need:
 
@@ -180,6 +182,8 @@ That's where all the instance-specific data is.
 Class Attributes
 ----------------
 
+In the above example, we assigned two attributes to ``self`` -- these are going to be different for each instance, or copy of this class. But what if you want all the instances of a class to share the same values?
+
 .. code-block:: python
 
     class Point(object):
@@ -216,7 +220,7 @@ class attributes are accessed with ``self``  also.
 So what is the difference?
 
  * class attributes are shared by ALL the instances of the class.
- * each instance has its own copy of each instance attribute.
+ * instance attributes are unique to each instance -- each one has its own copy.
 
 Example:
 
@@ -267,7 +271,9 @@ But if we change ``y``, an instance attribute:
 
 appending to ``c1.y`` did not change ``c2.y`` -- ``y`` in this case is a an *instance* attribute -- each instance has its own version -- changing one will not affect the others.
 
-So when you are deciding where to "put" something, you need to think about whether all instances are the same, or if they each need their own version of the attribute. As a class attribute, you can access it from the class namespace as well, and it will affect all instances of that class:
+So when you are deciding where to "put" something, you need to think about whether all instances need the same thing, or if they each need their own version of the attribute.
+
+As a class attribute, you can access it from the class namespace as well, and it will affect all instances of that class:
 
 .. code-block:: python
 
@@ -281,6 +287,7 @@ So when you are deciding where to "put" something, you need to think about wheth
 
 So here we changed ``x`` on the *class* object, ``C``, and the change showed up in all the instances, ``c1`` and ``c2``.
 
+Instance attributes are far more common than class attributes. After all, the whole point of classes it to have instances with their own data.
 
 Typical methods
 ---------------
@@ -312,9 +319,9 @@ They may or may not return something useful.
 
 .. note::
 
-  It is convent in Python that methods that change the internal state of an object return None, whereas methods that return a new object, or some calculated result without changing the state return that value.
+  It is a convention in Python that methods that change the internal state of an object return ``None``, whereas methods that return a new object, or some calculated result without changing the state return that value.
 
-  You can see examples of this in the python built ins -- methods of lists like ``append`` or ``sort`` return None.
+  You can see examples of this in the python built ins -- methods of lists like ``append`` or ``sort`` return None -- indicating that they have mutated the instance.
 
 
 Gotcha !
@@ -331,7 +338,7 @@ Gotcha !
 
     TypeError: grow() takes at most 2 arguments (3 given)
 
-Huh???? I only gave 2:
+Huh???? I only gave two arguments!
 
 ``self`` is implicitly passed in for you by Python. so it actually *did* get three!
 
@@ -342,7 +349,8 @@ Functions (methods) are First Class Objects
 Note that in Python, functions are first class objects, so a method *is* an attribute.
 
 All the same rules apply about attribute access: note that the methods are defined in the class -- so they are class attributes.
-All the instances share the same methods.
+
+All the instances share the same methods -- there is only one copy of each method.
 
 But each method gets its own namespace when it is actually called, so there is no confusion -- just like when you call a regular function multiple times.
 
@@ -363,21 +371,19 @@ Python makes it very easy to manipulate object's attributes -- you can access th
     In [18]: c.area()
     Out[18]: 12.566370614359172
 
-Note that after I changed the diameter attribute, when I called the ``area()`` method --it used the new diameter. Simple attribute access changed the state of the object.
+Note that after I changed the diameter attribute, when I called the ``area()`` method it used the new diameter. Simple attribute access changed the state of the object.
 
 So you now know how to:
 
  * Define a class
  * Give the class shared (class) attributes
- * Add an initializer to set up it's initial state
+ * Add an initializer to set up its initial state
  * Add methods to manipulate that state.
  * Add methods that return the results of calculations of the current state
 
-You can do a lot with this simple functionality -- but all it's done is put everything together in a neat package -- useful, but the real power of OO comes when you can subclass.  So time to move on:
+You can do a lot with this simple functionality. Frankly, all creating classes like this has done is put everything together in a neat package -- which is very useful, but hasn't given you much new power.
 
-:ref:`subclassing_inheritance`
-
-
+But it's a good idea to get the hang of using classes, and methods, and ``self`` for a bit before moving on to the more powerful feature of subclassing.
 
 
 

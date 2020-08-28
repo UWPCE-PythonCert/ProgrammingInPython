@@ -94,14 +94,13 @@ Operator Overloading
 Polymorphism
   Allowing instances of multiple classes to be used in the same way. Literally means "having many forms". This simply happens with Python's "Duck Typing" -- An object with a given method can have that method called on it. But in statically typed languages, this is a big deal.
 
+
 Python and OO
 -------------
 
-Is Python a "True" Object-Oriented Language?
+Is Python a "True" Object-Oriented Language? There is often debate about this.
 
-What are its strengths and weaknesses vis-a-vis OO?
-
-But it does not support *full* encapsulation, i.e., it does not require classes, and classes don't have "private" attributes.
+It does not support *proper* encapsulation, i.e., it does not require classes, and classes don't have "private" attributes.
 
 **but ...**
 
@@ -109,6 +108,14 @@ Folks can't even agree on what OO "really" means.
 
 See: `The Quarks of Object-Oriented Development <http://ontheturingtest.blogspot.com/2013/11/the-quarks-of-objected-orientation-la.html>`_
 (Deborah J. Armstrong)
+
+
+But Frankly, it's not really an important question -- better is:
+
+What are Python's strengths and weaknesses vis-a-vis OO?
+
+I think Python hits a sweet spot -- it does not constrain you to OO methods, but it does support all the important features for when they are useful.
+
 
 Object Oriented Design
 ----------------------
@@ -121,7 +128,13 @@ So my recommendation is to think in terms of what makes sense for your project:
 
 .. centered:: **There is no single best paradigm for software design**
 
+One of the key guides to use of OO (and program design in general) are the core principles of:
 
+**Separation of Concerns:** If you find yourself writing a collection of functions that all work with the same data structure -- put them in a class together.
+
+**DRY (Don't Repeat Yourself):** If you find yourself repeating code -- see if you can use classes and inheritance to reduce code repetition.
+
+In practice, the best way to get the hang of it is practice -- as you write code, always think of how it might be easier to refactor it.
 
 Python's roots
 --------------
@@ -155,6 +168,7 @@ You will need to understand OO
 - You'll need to work with OO packages.
 
 (Much of the standard library is object oriented).
+
 
 If not OO Design, then what?
 ----------------------------
