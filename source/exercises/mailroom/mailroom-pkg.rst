@@ -3,22 +3,35 @@
 Mailroom -- as a Python Package
 ===============================
 
-The mailroom program, particularly the Object Oriented version, is a pretty complete system -- if you wanted to make it available for others to test and run, making a "proper" python package is a great idea.
+The mailroom program is a small but complete system -- if you wanted to make it available for others to test and run, making a "proper" python package is a great idea. Making a package of it will also make it easier to develop and test, even if you are the only one to use it.
 
 Code Structure
 --------------
 
-Start with an Object Oriented mailroom.
+Start with your existing version of mailroom.
 
 It should already be structured with the "logic" code distinct from the user interface (yes, a command line *is* a user interface). But you may have it all in one file. This isn't *too* bad for such a small program, but as a program grows, you really want to keep things separate, in a well organized package.
 
 The first step is to re-structure your code into separate files:
 
- - one (or more) for the logic code (the Donor and DonorDB classes)
- - one for the user-interface code
+ - one (or more) for the logic code: the code than manipulates the data
+ - one for the user-interface code: the code with the interactive loops and all the "input" and "print" statements
  - one (or more) for tests.
 
-Then you are going to want a top-level script file that does little but import the ui code and run a ``main()`` function.
+You should have all this pretty distinct after having refactored for the unit testing. If not, this is a good time to do it!
+
+In addition to those three, you will want to write a top-level script file (probably called ``mailroom.py``) that does little but import the ui code and run a ``main()`` function. It should look something like this:
+
+.. code-block:: python
+
+    #!/usr/bin/env python
+    from mailman import cli
+
+    if __name__ == "__main__":
+        cli.main()
+
+Yes, that's it! This has the advantage of keeping the top-level script really simple, as it has to get put somewhere else and it can keep the "real" code in the package where it belongs.
+
 
 Making the Package
 ------------------
@@ -30,16 +43,18 @@ Put all these in a python package structure, something like this::
       mailroom\
           __init__.py
           model.py
-          ui
+          cli.py
           tests\
+              __init__.py
               test_model.py
-              test_ui.py
+              test_cli.py
       bin
           mailroom.py
 
-You will need to import the logic code from model.py in the ui code in order to use it. You can wait until you learn about mocking to write the code in test_ui.py
+You will need to import the logic code from model.py in the cli code in order to use it. You can wait until you learn about mocking to write the code in test_cli.py (so you can leave that out)
 
 Now write your ``setup.py`` to support your package.
+
 
 Making the top-level script runnable
 ------------------------------------
@@ -58,7 +73,7 @@ There are a few ways to do this:
 
 http://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files
 
-I personally like the simiplest one with the least magic:
+I personally like the simplest one with the least magic:
 
 `include_package_data=True <http://python-packaging.readthedocs.io/en/latest/non-code-files.html#adding-non-code-files>`_
 
@@ -92,6 +107,8 @@ and run the test from within the package:
 .. code-block:: bash
 
     $ pytest --pyargs mailroom
+
+If you installed in editable mode, then you can update the code and re-run the tests or the script, and it will use the new code right away.
 
 
 

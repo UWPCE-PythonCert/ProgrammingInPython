@@ -202,6 +202,42 @@ Exercises:
     exercises/trigrams/trigrams.rst
 
 
+Modules and Packages
+--------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/NamingThings
+    modules/Modules
+    modules/Documentation
+    modules/Packaging
+
+Exercises:
+..........
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/mailroom/mailroom-pkg.rst
+
+Advanced Argument Passing
+-------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/AdvancedArgumentPassing
+    modules/MoreOnMutability
+
+Exercises:
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/args_kwargs_lab
+
+
 Comprehensions
 --------------
 
@@ -220,22 +256,6 @@ Exercises:
     exercises/comprehensions_lab
     exercises/mailroom/mailroom_with_comprehensions.rst
 
-
-Advanced Argument Passing
--------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/AdvancedArgumentPassing
-    modules/MoreOnMutability
-
-Exercises:
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/args_kwargs_lab
 
 
 Intro to Object Oriented Programing
@@ -257,24 +277,7 @@ Exercises:
     exercises/mailroom/mailroom-oo.rst
 
 
-Modules and Packages
---------------------
 
-.. toctree::
-    :maxdepth: 1
-
-    modules/NamingThings
-    modules/Modules
-    modules/Documentation
-    modules/Packaging
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/mailroom/mailroom-pkg.rst
 
 
 Properties and Magic Methods
