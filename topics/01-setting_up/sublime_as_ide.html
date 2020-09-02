@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.8.1. Turning Sublime Text Into a Lightweight Python IDE &mdash; Python 210 6.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.8.2. Turning Atom Into a Lightweight Python IDE" href="atom_as_ide.html" />
+    <link rel="prev" title="1. Installing Python and core tools" href="python_and_core_tools.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #4b2e83" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Setting up your Environment</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="python_and_core_tools.html">1. Installing Python and core tools</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#minimal-setup">1.1. Minimal Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#your-development-environment">1.2. Your Development Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#the-command-line-cli">1.3. The Command Line (cli)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#the-python-interpreter">1.4. The Python Interpreter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#the-editor">1.5. The Editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#version-control-system">1.6. Version Control System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#am-i-ready-to-go">1.7. Am I ready to go?</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="python_and_core_tools.html#specific-documentation">1.8. Specific Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="setup_details.html">2. Setup Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_setup.html">3. Advanced Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">4. Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources.html">5. Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/dev_environment/index.html">Installing Python and core tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonIntroduction.html">IPython Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Py2vsPy3.html">Python 2 versus Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Git.html">Intro to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GitWorkflow.html">git Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Learning.html">1.1.1. Useful Python Learning Resources</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/python_pushups.html">Python Pushups</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/BasicPython.html">1.1.2. Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Functions.html">1.1.3. More on Functions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">2.1.1. Recursion</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">2.1.2. Boolean Expressions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Sequences.html">Python Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Iteration.html">Iteration</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/slicing.html">Slicing Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/list_lab.html">List Lab</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Strings.html">Strings</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/rot13.html">ROT13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom.html">Mailroom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Exceptions.html">Exception Handling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/exceptions_lab.html">Exceptions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/file_lab.html">File Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Packaging.html">Packages and Packaging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CollectionsModule.html">The Collections Module</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PythonClasses.html">Python Classes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Properties.html">Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/StaticAndClassMethods.html">Static and Class Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/circle/circle_class.html">Circle Class Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/sparse_array.html">Sparse Array Exercise</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/trapezoid.html">Trapezoidal Rule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing_advanced.html">Advanced Testing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Async.html">Asychronous Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Profiling.html">Performance and Profiling</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Introduction to Python Topic Notes</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/index.html">All Exercises</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Python 210</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="index.html">Setting up your Environment</a> &raquo;</li>
+        
+          <li><a href="python_and_core_tools.html"><span class="section-number">1. </span>Installing Python and core tools</a> &raquo;</li>
+        
+      <li><span class="section-number">1.8.1. </span>Turning Sublime Text Into a Lightweight Python IDE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/topics/01-setting_up/sublime_as_ide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="turning-sublime-text-into-a-lightweight-python-ide">
+<span id="sublime-as-ide"></span><h1><span class="section-number">1.8.1. </span>Turning Sublime Text Into a Lightweight Python IDE<a class="headerlink" href="#turning-sublime-text-into-a-lightweight-python-ide" title="Permalink to this headline">¶</a></h1>
+<p>A solid text editor is a developer’s best friend. You use it constantly and it
+becomes like a second pair of hands. The keyboard commands you use daily
+become so ingrained in your muscle memory that you stop thinking about them
+entirely.</p>
+<p>With Sublime Text, it’s possible to turn your text editor into the functional
+equivalent of a Python IDE.  The best part is you don’t have to install an IDE
+to do it.</p>
+<p><a class="reference external" href="http://www.sublimetext.com/">http://www.sublimetext.com/</a></p>
+<div class="section" id="requirements">
+<h2><span class="section-number">1.8.1.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Here are <em>my</em> requirements for an ‘IDE’:</p>
+<ul class="simple">
+<li><p>It should provide excellent, configurable syntax colorization.</p></li>
+<li><p>It should allow for robust tab completion.</p></li>
+<li><p>It should perform automatic code linting to help avoid silly mistakes and conform to good style.</p></li>
+</ul>
+<p>And some more advanced features that you may want later:</p>
+<ul class="simple">
+<li><p>It should offer the ability to jump to the definition of symbols in other
+files.</p></li>
+<li><p>It should be able to interact with a Python interpreter such that when
+debugging, the editor will follow along with the debugger.</p></li>
+</ul>
+</div>
+<div class="section" id="which-version">
+<h2><span class="section-number">1.8.1.2. </span>Which Version?<a class="headerlink" href="#which-version" title="Permalink to this headline">¶</a></h2>
+<p>Use version 3 – it is updated now and again, so make sure to get the latest.</p>
+<p><em>Use Sublime Version 3</em></p>
+</div>
+<div class="section" id="basic-settings">
+<h2><span class="section-number">1.8.1.3. </span>Basic Settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline">¶</a></h2>
+<p>All configuration in Sublime Text is done via <a class="reference external" href="http://www.json.org">JSON</a>. It’s simple to learn. Go and read that link then return here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>JSON is very similar to Python dict and list literals. Though it has its root in Javascript, it is also used in a wide variety of applications,  and is well supported by Python. But a key difference is that it does not allow trailing commas after items in lists – so be careful.</p>
+</div>
+<p>There are a number of <a class="reference external" href="http://www.sublimetext.com/docs/3/settings.html">different levels of configuration</a> in Sublime Text. You will most often work on settings at the user level.</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Preferences</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Settings</span></code></p>
+<p>On a Mac, you can find it under:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Sublime</span> <span class="pre">Text</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Preferences</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Settings</span></code></p>
+<p>Sublime will open up a split window – “default” and “user” – you can look through the default ones to see all the setting you might want to override, and then copy things from default by putting them in the user file.</p>
+<p>The preferences file is simply a JSON text file you edit like any other text file.</p>
+<p>Here’s a reasonable set of preliminary settings (theme, color scheme and font are quite personal, find ones that suit you.):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;auto_indent&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;color_scheme&quot;</span><span class="o">:</span> <span class="s2">&quot;Packages/User/Monokai (Flake8Lint).tmTheme&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;draw_white_space&quot;</span><span class="o">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;font_face&quot;</span><span class="o">:</span> <span class="s2">&quot;inconsolata&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;font_size&quot;</span><span class="o">:</span> <span class="mi">23</span><span class="p">,</span>
+    <span class="s2">&quot;indent_to_bracket&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;rulers&quot;</span><span class="o">:</span>
+    <span class="p">[</span>
+        <span class="mi">79</span><span class="p">,</span>
+        <span class="mi">95</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;theme&quot;</span><span class="o">:</span> <span class="s2">&quot;Adaptive.sublime-theme&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;smart_indent&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;tab_size&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">&quot;translate_tabs_to_spaces&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;use_tab_stops&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;trailing_spaces_modified_lines_only&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;trim_automatic_white_space&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;trim_trailing_white_space_on_save&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;word_wrap&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">&quot;wrap_width&quot;</span><span class="o">:</span> <span class="mi">95</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> Especially important is the setting <code class="docutils literal notranslate"><span class="pre">translate_tabs_to_spaces</span></code>, which ensures that any time you hit a tab key, the single &lt;tab&gt; character is replaced by four &lt;space&gt; characters.  In Python this is <strong>vital</strong>!</p>
+<p>If you do nothing else, add <code class="docutils literal notranslate"><span class="pre">translate_tabs_to_spaces</span></code> to your config!</p>
+</div>
+<div class="section" id="extending-the-editor">
+<h2><span class="section-number">1.8.1.4. </span>Extending the Editor<a class="headerlink" href="#extending-the-editor" title="Permalink to this headline">¶</a></h2>
+<p>Most of the requirements above go beyond basic editor functionality. So we’ll use Plugins.</p>
+<p>Sublime Text comes with a great system for <a class="reference external" href="https://sublime.wbond.net">Package Control</a>.
+It handles installing and uninstalling plugins, and even updates installed plugins for you.
+You can also manually install plugins that haven’t made it to the big-time yet, including <a class="reference external" href="http://docs.sublimetext.info/en/latest/extensibility/plugins.html">ones you write yourself</a>.
+Happily, the plugin system is based on Python!</p>
+<p>To install a plugin using Package Control, open the <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">palette</span></code> with <code class="docutils literal notranslate"><span class="pre">shift-super-P</span></code> (<code class="docutils literal notranslate"><span class="pre">ctrl-shift-P</span></code> on Windows/Linux).
+The <code class="docutils literal notranslate"><span class="pre">super</span></code> key is <code class="docutils literal notranslate"><span class="pre">command</span></code> or <code class="docutils literal notranslate"><span class="pre">⌘</span></code> on OS X.
+When the palette opens, typing <code class="docutils literal notranslate"><span class="pre">install</span></code> will bring up the <code class="docutils literal notranslate"><span class="pre">Package</span> <span class="pre">Control:</span> <span class="pre">Install</span> <span class="pre">Package</span></code> command.
+Hit <code class="docutils literal notranslate"><span class="pre">enter</span></code> to select it.</p>
+<a class="reference internal image-reference" href="../../_images/pc_menu.png"><img alt="The package control command in the command palette." class="align-center" src="../../_images/pc_menu.png" style="width: 600px;" /></a>
+<p>After you select the command, Sublime Text fetches an updated list of packages from the network. It might take a second or two for the list to appear. When it does, start to type the name of the package you want. Sublime Text filters the list and shows you what you want to see. To install a plugin, select it with the mouse, or use arrow keys to navigate the list and hit <code class="docutils literal notranslate"><span class="pre">enter</span></code> when your plugin is highlighted.</p>
+<a class="reference internal image-reference" href="../../_images/plugin_list.png"><img alt="../../_images/plugin_list.png" class="align-center" src="../../_images/plugin_list.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="useful-plugins">
+<h2><span class="section-number">1.8.1.5. </span>Useful Plugins<a class="headerlink" href="#useful-plugins" title="Permalink to this headline">¶</a></h2>
+<p>Here are the plugins I’ve installed to achieve the requirements above.</p>
+<div class="section" id="anaconda">
+<h3><span class="section-number">1.8.1.5.1. </span>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h3>
+<p>There are a bunch of Python-related plugins available. However, Anaconda is a nice package that provides most of the features you want, so plan on using just that one.</p>
+<p>Not to be confused with the scientific Python distribution – the Anaconda sublime plugin is a full featured package to turn Sublime into a pretty full IDE:</p>
+<p><a class="reference external" href="http://damnwidget.github.io/anaconda/">http://damnwidget.github.io/anaconda/</a></p>
+<p>There are nifty instructions on that page.</p>
+<p>By default, Anaconda uses the python interpreter that is in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable. So, the most important configuration option is the python_interpreter option that allows you to use a different Python interpreter, for example, one that resides in a virtual environment, or python3 vs python2.</p>
+<p>If you get the right Python when you type “python” at a raw command line, then you are OK. But if not you may need to re-configure it.</p>
+<p>{“python_interpreter”: “~/.virtualenvs/myproject/bin/python”}</p>
+<blockquote>
+<div><p>Note: for detailed information about how to properly configure Anaconda to get the maximum of it, follow <a class="reference external" href="http://damnwidget.github.io/anaconda/anaconda_settings/">“Configure Anaconda the Right Way”</a>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="a-few-settings-you-ll-want-to-change">
+<h3><span class="section-number">1.8.1.5.2. </span>A few settings you’ll want to change<a class="headerlink" href="#a-few-settings-you-ll-want-to-change" title="Permalink to this headline">¶</a></h3>
+<p>There are a few setting you may want to change:</p>
+<ul>
+<li><p>max line length for the linter: default is 72, which is pretty short these day. I use 95:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;pep8_max_line_length&quot;</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="white-space-management">
+<h3><span class="section-number">1.8.1.5.3. </span>White Space Management<a class="headerlink" href="#white-space-management" title="Permalink to this headline">¶</a></h3>
+<p>One of the issues highlighted by code linters is trailing spaces.  Sublime Text provides a setting that allows you to remove them every time you save a file:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;trim_trailing_whitespace_on_save&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is a useful setting, but be careful if you are working with existing code: removing trailing whitespace by default causes a <em>ton</em> of noise in git commits.</p>
+<p>But if you use it from the start with your code, it will keep it clean from the beginning.</p>
+<p>It is suggested in the above settings.</p>
+</div>
+<div class="section" id="debugging-support">
+<h3><span class="section-number">1.8.1.5.4. </span>Debugging Support<a class="headerlink" href="#debugging-support" title="Permalink to this headline">¶</a></h3>
+<p>You’ll probably want to wait on this until you start using a debugger, but it’s a nifty feature when you get there.</p>
+<p>The final requirement for a reasonable IDE experience is to be able to follow a debugging session in the file where the code exists.</p>
+<p>This: <a class="reference external" href="https://packagecontrol.io/packages/Python%20Debugger">https://packagecontrol.io/packages/Python%20Debugger</a></p>
+<p>Looks promising as a debugger plugin for sublime.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="atom_as_ide.html" class="btn btn-neutral float-right" title="1.8.2. Turning Atom Into a Lightweight Python IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python_and_core_tools.html" class="btn btn-neutral float-left" title="1. Installing Python and core tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
