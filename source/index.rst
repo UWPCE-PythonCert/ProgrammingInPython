@@ -15,6 +15,13 @@ This site can be thought of as the textbook for Programming in Python: the first
 
 Many of these modules can be useful on their own, but each assumes that you know concepts that were introduced earlier in the program, so working them in order can be helpful.
 
+Topics in the Program
+=====================
+
+.. toctree::
+    :maxdepth: 1
+
+    topics/index
 
 The Program
 ===========
