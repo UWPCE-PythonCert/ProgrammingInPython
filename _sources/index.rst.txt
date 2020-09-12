@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-################################
-UWCE Python 210 Course Materials
-################################
+#####################
+Programming in Python
+#####################
 
 This site holds many of the materials for the
 `University of Washington Professional and Continuing Education Python Certificate <https://www.pce.uw.edu/certificates/python-programming>`_
