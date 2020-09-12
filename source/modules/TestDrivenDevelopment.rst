@@ -7,20 +7,21 @@ FIXME: change the path from my personal to something generic
 Test Driven Development
 #######################
 
-"Testing" is any strategy for making sure your code behaves as expected. "Unit Testing" is a particular strategy, that:
+"Testing" is any strategy for making sure your code behaves as expected. "Unit testing" is a particular strategy, that:
 
 * is easy to run in an automated fashion.
 * utilizes isolated tests for each individual function.
+
 
 "Test Driven Development" (TDD) is a development strategy that integrates the development of unit tests with the code itself. In particular, you write the tests *before* you write the code, which seems pretty backward, but it has some real strengths.
 
 We'll demonstrate this technique with an example.
  
-The Following is adapted from Mark Pilgrim's excellent "Dive into Python":
+The following is adapted from Mark Pilgrim's excellent "Dive into Python":
 
 https://diveintopython3.problemsolving.io/
 
-The primary difference is that this version uses the simpler pytest testing framework, rather than `unittest`, which is discussed in:
+The primary difference is that this version uses the simpler pytest testing framework, rather than `unittest`, which is discussed in
 :ref:`unit_testing`
 
 Unit Testing
@@ -108,7 +109,7 @@ conversion functions — ``to_roman()``, and later ``from_roman()`` — can
 be written and tested as a unit, separate from any larger program that
 uses them.
 
-Technically, you can write unit tests with plain Python -- recall the ``assert`` statement that you have already used to write simple tests. But it is very helpful to use a framework to make it easier to write and run your tests. In this program, we use the `pytest` package: it is both very easy to get started with, and provides a lot of powerful features to aide in testing complex systems.
+Technically, you can write unit tests with plain Python -- recall the ``assert`` statement that you have already used to write simple tests. But it is very helpful to use a framework to make it easier to write and run your tests. In this program, we use the `pytest` package: it is both very easy to get started with, and provides a lot of powerful features to aid in testing complex systems.
 
 .. note:: ``pytest`` does not come with Python out of the box. But it is easily installable via `pip` (or conda, if you are using conda)::
 
