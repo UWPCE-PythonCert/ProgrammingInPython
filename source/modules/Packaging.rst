@@ -4,13 +4,13 @@
 Packages and Packaging
 ######################
 
-Packages, modules, imports, oh my!
+Packages, Modules, Imports, Oh My!
 ==================================
 
 Before we get started on making your own package -- let's remind
 ourselves about packages and modules, and importing....
 
-**Modules**
+.. rubric:: Modules
 
 A python "module" is a single namespace, with a collection of values:
 
@@ -22,7 +22,7 @@ A python "module" is a single namespace, with a collection of values:
 A module usually corresponds to a single file: ``something.py``
 
 
-**Packages**
+.. rubric:: Packages
 
 A "package" is essentially a module, except it can have other modules (and indeed other packages) inside it.
 
@@ -100,7 +100,9 @@ But if you do encounter it, it doesn't actually import all the names -- it impor
 ``__all__`` is a list of names that you want ``import *`` to import.
 So the module author can control it, and not accidentally override builtins or bring a lot of extraneous names into your namespace.
 
-But really -- **don't use ``import *``**
+But really,
+
+.. centered::   **Don't Use ``import *``**
 
 
 Relative imports
@@ -116,7 +118,7 @@ https://www.python.org/dev/peps/pep-0328/#guido-s-decision
 
 This gets confusing! There is a good discussion on Stack Overflow here:
 
-http://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time
+`Relative Imports for the Billionth Time <http://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time>`_
 
 Relative imports allow you to refer to other modules relative to where the existing module is in the package hierarchy, rather than in the entire python module namespace. For instance, with the following package structure::
 
@@ -143,7 +145,7 @@ You can do (in ``moduleX.py``):
   from ...package import bar
   from ...sys import path
 
-Similarly to \*nix shells:
+Similarly to command line shells:
 
 "." means "the current package"
 
@@ -151,13 +153,17 @@ Similarly to \*nix shells:
 
 Note that you have to use the ``from`` form of import when using relative imports.
 
-**Caveats:**
+(That's current *package*, not current *module*!)
+
+
+.. rubric:: Caveats:
 
 * you can only use relative imports from within a package
 
 * you can not use relative imports from the interpreter
 
 * you can not use relative imports from a top-level script
+  (if ``__name__`` is set to ``__main__``. So the same python file with relative imports can work if it's imported, but not if it's run as a script)
 
 
 The alternative is to always use absolute imports:
@@ -167,13 +173,13 @@ The alternative is to always use absolute imports:
   from package.subpackage import moduleX
   from package.moduleA import foo
 
-Advantages of relative imports:
+.. rubric::  Advantages of Relative Imports:
 
 * Package does not have to be installed
 
 * You can move things around, and not much has to change
 
-Advantages of absolute imports:
+.. rubric:: Advantages of Absolute Imports
 
 * explicit is better than implicit
 * imports are the same regardless of where you put the package
@@ -182,11 +188,13 @@ Advantages of absolute imports:
 There is debate about which is the "one way to do it" -- a bit unpythonic, but you'll need to make your own decision.
 
 
-sys.modules
------------
+``sys.modules``
+---------------
 
-``sys.modules`` is simply a dictionary that stores all teh already imported modules.
-The keys are the module names, and the values are the module objects themselves:
+``sys.modules`` is simply a dictionary that stores all the already imported modules.
+The keys are the module names, and the values are the module objects themselves.
+
+.. note:: Remember that everything in Python is an object -- including modules. So they can be stored in lists and dict, assigned names, even passed to functions -- just like any other object. They are not often used that way, but they can be.
 
 .. code-block:: ipython
 
@@ -210,7 +218,7 @@ The keys are the module names, and the values are the module objects themselves:
    '__file__',
    '__builtins__']
 
-you can access the module through the ``sys.modules`` dict:
+You can access the module through the ``sys.modules`` dict:
 
 .. code-block:: ipython
 
@@ -255,7 +263,8 @@ Implications of module import process:
 
 * If you change the code in a module while the program is running -- the change will **not** show up, even if re-imported.
 
-  - That's what ``imp.reload()`` is for.
+  - That's what ``importlib.reload()`` is for.
+
 
 The module search path
 ----------------------
@@ -272,16 +281,21 @@ you can manipulate that list to add or remove paths to let python find modules i
 
 Every module has a ``__file__`` name that points to the path it lives in. This lets you add paths relative to where you are, etc.
 
- .. note:: It's usually better to use setuptools' "develop" mode (or ``pip install -e``) instead -- see below.
+ .. note:: It's usually better to use setuptools' "develop" mode (or ``pip install -e``) instead of messing with ``sys.path`` -- see below.
+
+.. rubric:: Gotcha!
+
+One "gotcha" in Python is "name shadowing". The interpreter automatically adds the "current working directory" to ``sys.path``. This means you can start the interpreter and just ``import something`` to work with your code. But if you happen to have a python file, or package, in your current working directory that's the same as an installed package, then it will get imported instead, which can lead to some odd errors. If you are getting confusing errors on import -- check for python modules in your current working directory that may match an installed package!
+
 
 Reloading
 ---------
 
 Once loaded, a module stays loaded.
 
-If you import it again (usually in another module) it will simply load up the versions already there -- rather than re-running the code.
+If you import it again (usually in another module) it will simply use the version already there -- rather than re-running the code.
 
-And you can access all the already loaded modules from ``sys.modules``. sys.modules is a dict with the module names as the keys, and the module objects as the values
+And you can access all the already loaded modules from ``sys.modules``. ``sys.modules`` is a dict with the module names as the keys, and the module objects as the values
 
 .. code-block:: ipython
 
@@ -308,7 +322,7 @@ There's no reason too -- but you could import an already imported module like so
 Python Distributions
 ====================
 
-So far in this class, we've used the Python from python.org. It works great, and supports a lots of packages via pip.
+So far, we've used the Python from python.org. It works great, and supports a lots of packages via pip.
 
 But there are also a few "curated" distributions. These provide python and a package management system for hard-to-build packages.
 
@@ -316,8 +330,7 @@ Widely used by the scipy community:
 
 (lots of hard to build stuff that needs to work together...)
 
-  * Anaconda (https://store.continuum.io/cshop/anaconda/)
-  * Canopy (https://www.enthought.com/products/canopy/)
+  * Anaconda (https://store.continuum.io/cshop/anaconda/) and `miniconda <https://docs.conda.io/en/latest/miniconda.html>`_
   * ActivePython (http://www.activestate.com/activepython)
 
 Anaconda has seen a LOT of growth recently -- it's based on the open-source conda packaging system, and provides both a commercial curated set of packages, and a community-developed collection of packages known as conda-forge:
@@ -465,16 +478,20 @@ Sometimes simpler:
   - Hope the dependencies are available!
   - Set up the compiler
 
-MS now has a compiler just for python2!
+Each version of Python requires a particular version of the MS Compiler:
 
-http://www.microsoft.com/en-us/download/details.aspx?id=44266
 
-.. NOTE: add info on Windows compiler for py3
+`MS compiler versions <https://wiki.python.org/moin/WindowsCompilers#Which_Microsoft_Visual_C.2B-.2B-_compiler_to_use_with_a_specific_Python_version_.3F>`_
+
+You can get the one for recent Pythons
+`here <https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019>`_.
+
 
 OS-X
 ....
 
 Lots of Python versions:
+
   - Apple's built-in (different for each version of OS)
   - python.org builds
   - 32+64 bit Intel (and even PPC still kicking around)
@@ -523,7 +540,7 @@ Or deploying more than one app on one system
 
 http://www.virtualenv.org/en/latest/index.html}
 
-Remember the notes from the beginning of class? :ref:`virtualenv_section`
+You can find some additional notes here: :ref:`virtualenv_section`
 
 **NOTE:** conda also provides a similar isolated environment system.
 
@@ -531,7 +548,9 @@ Remember the notes from the beginning of class? :ref:`virtualenv_section`
 Building Your Own Package
 =========================
 
-The very basics of what you need to know to make your own package.
+The term "package" is overloaded in Python. AS defined above, it means a collection of python modules. But it often is used to refer to not just the modules themselves, but the whole collection, with documentation and tests, bundled up and installable on other systems.
+
+Here are the very basics of what you need to know to make your own package.
 
 
 Why Build a Package?
@@ -582,10 +601,9 @@ But it gets the job done -- and it does it well for the simple cases.
 
 These last three are pretty much the standard now -- very well maintained by:
 
-"The Python Packaging Authority" -- PaPA
+"The Python Packaging Authority" -- `PaPA <https://www.pypa.io/en/latest/>`_
 
-https://www.pypa.io/en/latest/
-
+This all continues to change quickly, see that site for up to date information.
 
 Where do I go to figure this out?
 ---------------------------------
@@ -629,6 +647,9 @@ And one written by the author of the opinionated blog post above:
 https://github.com/ionelmc/cookiecutter-pylibrary
 
 Either are great starting points.
+
+.. note:: One confusion for folks new to this is that a LOT of the documentation (and tools) around packaging for Python assumes that you are writing a package that is generally useful, and you want to share it with others on PyPi. That is partly because all the people developing the tools and writing about them are doing just that. It's also harder to distribute a package properly than to simply make one for internal use, so more tools and docs are needed. But it is still useful to make a package of your code if you aren't going to distribute it, but you don't need to do everything that is recommended. See: `A Package Just for You <http://pythonchb.github.io/PythonTopics/where_to_put_your_code.html>`_ for a really simple way to do the basics.
+
 
 Basic Package Structure:
 ------------------------
@@ -684,20 +705,21 @@ Put it inside the package -- supports ::
 
 Or keep it at the top level.
 
-Some notes on that:
-` Where to put Tests <http://pythonchb.github.io/PythonTopics/where_to_put_tests.html>`_
+Some notes on that: `Where to put Tests <http://pythonchb.github.io/PythonTopics/where_to_put_tests.html>`_
+
 
 The ``setup.py`` File
 ----------------------
 
-Your ``setup.py`` file is what describes your package, and tells the distutils how to package, build and install it
+Your ``setup.py`` file is what describes your package, and tells the distutils how to package, build, and install it
 
-It is python code, so you can add anything custom you need to it
+It is python code, so you can add anything custom you need to it.
 
 But in the simple case, it is essentially declarative.
 
 
 ``http://docs.python.org/3/distutils/``
+
 
 An example:
 ...........
@@ -738,7 +760,7 @@ It's an ``ini`` style file::
 
 simple to read and write.
 
-``command`` is one of the Distutils commands (e.g. build_py, install)
+``command`` is one of the distutils commands (e.g. build, install)
 
 ``option`` is one of the options that command supports.
 
@@ -774,7 +796,7 @@ With a ``setup.py`` script defined, setuptools can do a lot:
 
 or::
 
-   pip install .
+   pip install -e .
 
 
 setuptools
@@ -799,7 +821,7 @@ http://pythonhosted.org//setuptools/
 wheels
 -------
 
-Wheels are a new binary format for packages.
+Wheels are a binary format for packages.
 
 http://wheel.readthedocs.org/en/latest/
 
@@ -831,7 +853,7 @@ manylinux
 
 There are a lot of Linux distributions out there. So for a long time, there were not easily available binary wheels for Linux -- how could you define a standard with all the Linux distros out there?
 
-Enter "manylinux" -- no one thinks you can support all Linux distros, but it was found that you could support many of the common ones, by building on an older version, and restricting system libraries. This approach worked well for Canopy and conda, so PyPi adopted a similar strategy with manylinux:
+Enter "manylinux" -- no one thinks you can support all Linux distros, but it was found that you could support many of the common ones, by building on an older version and restricting system libraries. This approach worked well for Canopy and conda, so PyPi adopted a similar strategy with manylinux:
 
 https://github.com/pypa/manylinux
 
@@ -968,8 +990,8 @@ Put the version in the package __init__
 
 __version__ = "1.2.3"
 
-In the setup.py, you could import the package to get the version number
-... but it's not a safe practice to import your package when installing
+In the setup.py, you could import the package to get the version
+number ... but it's not a safe practice to import your package when installing
 it (or building it, or...)
 
 So: read the ``__version__`` string yourself with code like:
@@ -1008,13 +1030,13 @@ they upgrade.
 
 In short, with a x.y.z version number:
 
-x is the Major version -- it could mean changes in API, major features, etc.
+x is the Major Version -- it could mean changes in API, major features, etc.
 
   - Likely to to be incompatible with previous versions
 
-y is the Minor version -- added features, etc, that are backwards compatible.
+y is the Minor Version -- added features, etc, that are backwards compatible.
 
-z is the "patch" version -- bug fixes, etc. -- should be compatible.
+z is the "Patch" Version -- bug fixes, etc. -- should be fully compatible.
 
 Read all about it:
 
@@ -1124,6 +1146,7 @@ or use "Cookie Cutter":
 
 https://cookiecutter.readthedocs.io/en/latest/
 
+
 LAB: A Small Example Package
 ----------------------------
 
@@ -1137,12 +1160,12 @@ LAB: A Small Example Package
 
   - ``at least one working test``
 
-* If you have some code of your own ready to go -- use that.
 
-* If you don't have any code of your own to package, start with the silly code in:
+
+* Here is a ridiculously simple and useless package to use as an example:
 
 :download:`capitalize.zip <../examples/packaging/capitalize.zip>`
 
-Or go straight to making a package our of your mailroom project.
+Or go straight to making a package of your mailroom project.
 
 

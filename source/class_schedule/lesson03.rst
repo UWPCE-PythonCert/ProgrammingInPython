@@ -27,8 +27,8 @@ Exercises:
     ../exercises/slicing.rst
     ../exercises/list_lab.rst
     ../exercises/string_formatting.rst
-    ../exercises/mailroom-part1.rst
-    ../exercises/mailroom_tutorial.rst
+    ../exercises/mailroom/mailroom.rst
+    ../exercises/mailroom/mailroom_tutorial.rst
 
 Optional
 --------

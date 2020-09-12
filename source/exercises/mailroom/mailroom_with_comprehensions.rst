@@ -1,15 +1,10 @@
-.. _exercise_mailroom_part3_exceptions:
+.. _exercise_mailroom_comprehensions:
 
 
-Mailroom Part 3
-=================
+Mailroom With Comprehensions
+============================
 
-**Improve your mailroom by adding exceptions and comprehensions.**
-
-Exceptions
-----------
-
-Now that you've learned about exception handling, you can update your code to handle errors better, such as when a user inputs bad data.
+**Improve your mailroom by adding (maybe) comprehensions.**
 
 
 Comprehensions
@@ -44,4 +39,16 @@ List comprehensions are designed for a very specific use case:
 *Processing a sequence of items to create another sequence.*
 
 They are not designed to replace all for loops.
+
+So if you have code that looks like:
+
+.. code-block:: python
+
+  new_list = []
+  for item in old_list:
+      new_list.append(do_something_to(item))
+
+Then you have a candidate for a comprehension.
+
+In your version of mailroom -- there may not be any such constructs -- that's OK, don't use a comprehension unless it cleans up your code.
 

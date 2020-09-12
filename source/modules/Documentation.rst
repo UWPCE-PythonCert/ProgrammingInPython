@@ -72,7 +72,7 @@ The first place we will see is in the definition of functions.
 As you know, to define a function you use the ``def`` keyword.
 
 If a "string literal" is the first thing in the function block following the
-header, it is a "docstring":
+``def`` line, it is a "docstring":
 
 .. code-block:: python
 
@@ -80,8 +80,8 @@ header, it is a "docstring":
         """Return a value resulting from a complex calculation."""
         # code block here
 
-You can then read this in an interpreter as the ``__doc__`` attribute of the
-function object. Docstrings can also be read and processed by documentation systems and IDEs like iPython.
+You can then read this in the interpreter as the ``__doc__`` attribute of the
+function object. Docstrings can also be read and processed by documentation systems and IDEs like iPython and Sphinx.
 
 A Function Docstring Should:
 ............................
@@ -101,9 +101,8 @@ A Function Docstring Should:
 * Be enclosed with triple-quotes.
 
   * This allows for easy expansion if required at a later date.
-  * Always close on the same line if the docstring is only one line.
 
-For any functions that are less than trivial, and particulalry if they take multiple parameters, the parameters should be described in the docstring:
+For any functions that are less than trivial, and particularly if they take multiple parameters, the parameters should be described in the docstring:
 
 .. code-block:: python
 
@@ -126,6 +125,6 @@ The ``:param arg1:`` notation is "restructured text" -- very handy if you want y
 The docstring PEP
 .................
 
-For the full "official" recomendations about docstrings, see `PEP 257: Docstring Conventions <http://legacy.python.org/dev/peps/pep-0257/>`_.
+For the full "official" recommendations about docstrings, see `PEP 257: Docstring Conventions <http://legacy.python.org/dev/peps/pep-0257/>`_.
 
 

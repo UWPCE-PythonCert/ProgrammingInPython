@@ -15,6 +15,13 @@ This site can be thought of as the textbook for Programming in Python: the first
 
 Many of these modules can be useful on their own, but each assumes that you know concepts that were introduced earlier in the program, so working them in order can be helpful.
 
+Topics in the Program
+=====================
+
+.. toctree::
+    :maxdepth: 1
+
+    topics/index
 
 The Program
 ===========
@@ -40,7 +47,7 @@ Setting up your Environment
 
 
 Exercise:
-..........
+.........
 
 .. toctree::
     :maxdepth: 1
@@ -57,8 +64,7 @@ Basic Python
     modules/BasicPython
     modules/Functions
 
-Exercises:
-..........
+.. rubric:: Exercises:
 
 .. toctree::
     :maxdepth: 1
@@ -125,8 +131,8 @@ Exercises:
 
     exercises/string_formatting.rst
     exercises/rot13.rst
-    exercises/mailroom-part1.rst
-    exercises/mailroom_tutorial.rst
+    exercises/mailroom/mailroom.rst
+    exercises/mailroom/mailroom_tutorial.rst
 
 Exception Handling
 ------------------
@@ -144,6 +150,7 @@ Exercises:
 
     exercises/exceptions_lab.rst
     exercises/except_exercise.rst
+    exercises/mailroom/mailroom_with_exceptions.rst
 
 
 Unit Testing
@@ -161,8 +168,9 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/unit_testing.rst
-    exercises/mailroom-part4.rst
+    exercises/unit_testing/unit_testing.rst
+    exercises/mailroom/mailroom_with_tests.rst
+
 
 Dictionaries and Sets
 ---------------------
@@ -180,7 +188,7 @@ Exercises:
     :maxdepth: 1
 
     exercises/dict_lab.rst
-    exercises/mailroom-part2.rst
+    exercises/mailroom/mailroom_with_dicts.rst
 
 Files
 -----
@@ -197,8 +205,8 @@ Exercises:
     :maxdepth: 1
 
     exercises/file_lab.rst
-    exercises/mailroom-part2.rst
-    exercises/kata_fourteen.rst
+    exercises/mailroom/mailroom_with_files.rst
+    exercises/trigrams/trigrams.rst
 
 
 Modules and Packages
@@ -218,7 +226,23 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/mailroom-pkg.rst
+    exercises/mailroom/mailroom-pkg.rst
+
+Advanced Argument Passing
+-------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/AdvancedArgumentPassing
+    modules/MoreOnMutability
+
+Exercises:
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/args_kwargs_lab
 
 
 Comprehensions
@@ -236,17 +260,10 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/comprehensions_lab.rst
+    exercises/comprehensions_lab
+    exercises/mailroom/mailroom_with_comprehensions.rst
 
 
-Advanced Argument Passing
--------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/AdvancedArgumentPassing
-    modules/MoreOnMutability
 
 Intro to Object Oriented Programing
 -----------------------------------
@@ -264,7 +281,10 @@ Exercises:
     :maxdepth: 1
 
     exercises/oo_intro.rst
-    exercises/mailroom-oo.rst
+    exercises/mailroom/mailroom-oo.rst
+
+
+
 
 
 Properties and Magic Methods
@@ -283,7 +303,8 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    exercises/circle_class.rst
+    exercises/circle/circle_class
+    exercises/sparse_array
 
 Subclassing
 -----------
@@ -324,6 +345,15 @@ Introduction to Functional Programming
     modules/MapFilterReduce
     modules/IPythonParallel
 
+Exercises
+.........
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/trapezoid
+
+
 Advanced Testing
 ----------------
 
@@ -347,14 +377,14 @@ The following are some extra topics that might be of interest
     modules/Unicode
 
     modules/Lambda
+    exercises/lambda_magic
     modules/IteratorsAndGenerators
 
     modules/Closures
 
     modules/Decorators
     modules/ContextManagers
-    modules/Recursion
-
+    exercises/context-managers-exercise.rst
 
     modules/MetaProgramming
 
@@ -367,9 +397,10 @@ The following are some extra topics that might be of interest
 
 
     modules/Concurrency
-    modules/ThreadingMultiprocessing
-    modules/Coroutines
     modules/Async
+    modules/Coroutines
+    modules/ThreadingMultiprocessing
+    exercises/threaded_downloader
 
     modules/Profiling
 

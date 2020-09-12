@@ -5,7 +5,7 @@ Code Structure, Modules, and Namespaces
 #######################################
 
 
-**How to get what you want when you want it.**
+.. centered:: **How to get what you want when you want it**
 
 
 Code Structure
@@ -57,14 +57,12 @@ An indent *could* be:
 
 If you want anyone to take you seriously as a Python developer:
 
-**Always use four spaces -- really!**
-
-`(PEP 8) <http://legacy.python.org/dev/peps/pep-0008/>`_
+.. centered:: **Always use four spaces -- really!** (`PEP 8 <https://www.python.org/dev/peps/pep-0008/>`_)
 
 .. note::
   If you *do* use tabs (and really, don't do that!) python interprets them as the equivalent of *eight* spaces.  Text editors can display tabs as any number of spaces, and most modern editors default to four -- so this can be *very* confusing! so again:
 
-  **Never mix tabs and spaces in Python code**
+.. centered::  **Never mix tabs and spaces in Python code**
 
 
 Spaces Elsewhere
@@ -86,7 +84,7 @@ But you should strive for proper style. Isn't this easier to read?
     x = (3 * 4) + (12 / func(x, y, z))
 
 
-**Read PEP 8 and install a linter in your editor.**
+.. centered:: **Read** `**PEP 8** <https://www.python.org/dev/peps/pep-0008/>`_ **and install a linter in your editor.**
 
 
 Modules and Packages
@@ -98,10 +96,10 @@ Python is all about *namespaces* -- the "dots"
 
 The "dot" indicates that you are looking for a name in the *namespace* of the given object. It could be:
 
-* a name in a module
-* a module in a package
-* an attribute of an object
-* a method of an object
+* A name in a module
+* A module in a package
+* An attribute of an object
+* A method of an object
 
 The only way to know is to know what type of object the name refers to.  But in all cases, it is looking up a name in the namespace of the object.
 
@@ -120,15 +118,69 @@ So you can think of the files you write that end in ``.py`` as modules.
 
 When a module is imported, the code in that file is run, and any names defined in that file are now available in the module namespace.
 
+For a really simple example, if you have the following in the ``trivial.py`` file:
+
+.. code-block:: python
+   :linenos:
+
+    x = 1
+    y = 2
+
+    def do_nothing(a, b, c):
+        print("do_nothing was called with:", a, b, c)
+
+    print("at the end of the trivial module")
+
+What do you think happens when you import that module? What will get printed?
+
+What names will be defined in that module?
+
+How would you access those names?
+
+Before running this code, think about it a bit. Recall what happens when you import a module:
+
+* The code is run in the module, top to bottom.
+* The names defined in the module (its global namespace) are made available in the modules namespace.
+
+So: Lines 1-2 assign two names, ``x`` and ``y``. lines 4-5 define a function, named ``do_nothing``. Line 7 prints something.
+
+So: when run, there are three names defined, and one print function run.
+
+Now try it:
+
+.. code-block:: python
+
+    >>> import trivial
+    at the end of the trivial module
+
+yes, we got that print function run.
+
+Let's see if the names are there:
+
+.. code-block:: python
+
+    >>> trivial.x
+    1
+    >>> trivial.y
+    2
+
+.. code-block:: python
+
+
+    >>> trivial.do_nothing(3,4,5)
+    do_nothing was called with: 3 4 5
+
+yes, there are, in the ``trivial`` namespace.
+
 
 Packages
 --------
 
 A package is a module with other modules in it.
 
-On a filesystem, this is represented as a directory that contains one or more ``.py`` files, one of which **must** be called ``__init__.py``.
+On a filesystem, this is represented as a directory that contains one or more ``.py`` files, one of which **must** be called ``__init__.py``. The ``__init__.py`` file can be empty (and often is) -- but it must be there.
 
-When you have a package, you can import only the package, or any of the modules inside it. When a package is imported, the code in the ``__init__.py`` file is run, and any names defined in that file are available in the *package namespace*.
+When there is a package available, you can import only the package, or any of the modules inside it. When a package is imported, the code in the ``__init__.py`` file is run, and any names defined in that file are available in the *package namespace*.
 
 Here we define about the simplest package possible:
 
@@ -181,7 +233,7 @@ What about the module?
 
     AttributeError: module 'my_package' has no attribute 'a_module'
 
-the a_module name does not exist. It must be imported explicitly:
+the ``a_module`` name does not exist. It must be imported explicitly:
 
 .. code-block:: ipython
 
@@ -205,6 +257,7 @@ Note that you can also put a package inside a package. So you can create arbitra
    "Flat is better than nested."
 
 So don't overdo it -- only go as deep as you really need to to keep your code organized.
+
 
 Importing modules
 -----------------
@@ -236,17 +289,21 @@ If you want only a few names in a module, and don't want to type the module name
 
 This brings only the names specified (``this``, ``that``) into the global namespace. All the code in the module is run, but the module's name is not available. But the explicitly imported names are directly available.
 
+Sometimes you want the entire module, but maybe not want to type its entire name eadh time you use. So you can rename a module when you import it. (you may also want to do this if a module has the same name as a variable you want to use...)
+
 .. code-block:: python
 
     import modulename as a_new_name
 
-This imports the module, and gives it a new name in the global namespace.  This is done to avoid a name conflict, or to give the module a shorter name. For example, the numpy module is usually imported as:
+This imports the module, and gives it a new name in the global namespace. For example, the numpy package is usually imported as:
 
 .. code-block:: python
 
     import numpy as np
 
 Because numpy has a LOT of names, some of which may conflict with builtins or other modules, and users want to be able to reference them without too much typing.
+
+You can also import a name within a module and rename it at the same time:
 
 .. code-block:: python
 
@@ -282,6 +339,7 @@ You can play with some of this with the standard library:
     In [8]: cosine(1.2)
     Out[8]: 0.3623577544766736
 
+
 My rules of thumb
 -----------------
 
@@ -308,7 +366,7 @@ Or import it with a nice short name:
 import \* ?
 -----------
 
-**Warning:**
+.. centered:: **Warning:**
 
 You can also import all the names in a module with:
 
@@ -316,7 +374,7 @@ You can also import all the names in a module with:
 
     from modulename import *
 
-But this leads to name conflicts, and a cluttered namespace. It is NOT recommended practice.
+But this leads to name conflicts, and a cluttered namespace. It is NOT recommended practice anymore.
 
 
 Importing from packages
@@ -336,22 +394,23 @@ http://effbot.org/zone/import-confusion.htm
 
 And :ref:`packaging` goes into more detail about creating (and distributing!) your own package.
 
+
 What does ``import`` actually do?
 ---------------------------------
 
-When you import a module, or a symbol from a module, the Python code is *compiled* to **bytecode**.
+When you import a module, or a symbol from a module, the Python code is *compiled* to *bytecode*.
 
 The result is a ``module.pyc`` file.
 
-Then after compiling, all the code in the module is run **at the module scope**.
+Then after compiling, all the code in the module is run **at the module scope** -- that is, in the namespace of the module.
 
-For this reason, it is good to avoid module-scope statements that have global side-effects.
+For this reason, it is good to avoid module-scope statements that have global side-effects. This includes things as simple as a ``print()`` -- it will only print the first time the module is imported.
 
 
 Re-import
 ----------
 
-The code in a module is NOT re-run when imported again. This makes it efficient to import the same module multiple places in a program. But it means that if you change the code in a module after importing it, that change will not be reflected when it is imported again.
+The code in a module is *not* re-run when imported again. This makes it efficient to import the same module multiple places in a program. But it means that if you change the code in a module after importing it, that change will not be reflected when it is imported again.
 
 If you DO want a change to be reflected, you can explicitly reload a module:
 
@@ -427,14 +486,3 @@ Running ``mod2.py`` results in::
 You can see that when ``mod2`` changed the value of ``mod1.x``, that changed the value everywhere that ``mod1`` is imported. You want to be very careful about this.
 
 If you are writing ``mod2.py``, and did not write ``mod3`` (or wrote it long enough ago that you don't remember its details), you might be very surprised that a value in ``mod1`` changes simply because you imported ``mod3``.  This is known as a "side effect", and you generally want to avoid them!
-
-
-
-
-
-
-
-
-
-
-

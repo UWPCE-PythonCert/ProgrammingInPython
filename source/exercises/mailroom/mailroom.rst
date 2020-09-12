@@ -1,15 +1,15 @@
 .. _exercise_mailroom_part1:
 
 
-Mailroom Part 1
-================
+Mailroom
+========
 
 
 **Overall Assignment Structure**
 
-This is the first in a four-part that will make use of your Python programming skills as you develop them during this course. You will start work on the program in this assignment (Part 1) that will will submit for. Lesson 3. You will submit Part 2 for Lesson 4,  Part 3 for Lesson 5, and Part 4 for Lesson 6.
+This is the first in a multi-part exercise that will make use of your Python programming skills as you develop them during this course. You will start work on the program in this assignment, and then you will build on it in future lessons, as you learn more of Python's powerful features.
 
-This progressive work will give you a strong foundation for success in the final project, a Mailroom program using object-oriented programming in lesson 9.
+This progressive work will give you a strong foundation for success in the final project, a Mailroom program using object-oriented structure, fully tested, and bundled up as a Python package.
 
 
 Overall Program Goal:
@@ -21,8 +21,8 @@ gifts. You are tired of doing this over and over again, so you've decided to
 let Python help you out of a jam and do your work for you.
 
 
-The Program: Part 1
--------------------
+The Program:
+------------
 
 Write a small command-line script called ``mailroom.py``. This script should be executable. The script should accomplish the following goals:
 
@@ -34,7 +34,7 @@ Write a small command-line script called ``mailroom.py``. This script should be 
   "Send a Thank You", "Create a Report" or "quit".
 
 Send a Thank You
--------------------
+----------------
 
 * If the user (you) selects "Send a Thank You" option, prompt for a Full Name.
 

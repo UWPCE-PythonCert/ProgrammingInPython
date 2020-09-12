@@ -32,7 +32,7 @@ or, to get the nifty html output:
 
 That will result in a pile of html in an ``htmlcov`` directory -- point your browser to the index.html file in there, and click away...
 
-Once you've run coverage -- add tests to get it up close to 100% on your logic code.
+Once you've run coverage -- add tests to get it up close to 100% on your logic code, if it's not there already.
 
 Fixtures
 --------

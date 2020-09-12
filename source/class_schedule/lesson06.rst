@@ -31,7 +31,7 @@ Exercises:
     :maxdepth: 1
 
     ../exercises/args_kwargs_lab.rst
-    ../exercises/mailroom-part4.rst
+    ../exercises/mailroom/mailroom_with_tests.rst
 
-**NOTE:** you will find that most introductions to unit testing with Python use the built in ``unittest`` module. However, it is a bit heavyweight, and requires some knowledge of OOP -- classes, etc. So we'll be using pytest in this class:
+**NOTE:** you will find that most introductions to unit testing with Python use the built in ``unittest`` module. However, it is a bit heavyweight, and requires some knowledge of OOP -- classes, etc. So we use pytest in this class:
 http://doc.pytest.org/en/latest/. But the principles of testing are the same.

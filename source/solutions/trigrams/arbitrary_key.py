@@ -9,7 +9,7 @@ without removing it:
 dict.popitem() gets you an arbitrary item, but it removes it also.
 In this case, we didn't want to remove it.
 
-In this case, we only needed and arbitrary key, but the principle is
+In this case, we only needed an arbitrary key, but the principle is
 the same if you want the whole item.
 """
 
@@ -135,7 +135,7 @@ except TypeError as err:
 
 r = random.randint(0, len(tiny) - 1)
 
-print("random number")
+print("random number:", r)
 
 # now loop through the keys until you get to that random number:
 for i, key in enumerate(tiny.keys()):
@@ -143,6 +143,20 @@ for i, key in enumerate(tiny.keys()):
         break
 print("A random key:", key)
 
-# this is a bit better than crating the whole list and calling choice() on it,
+# this is a bit better than creating the whole list and calling choice() on it,
 # as it will, on average, only use half the keys
+
+# you can do a similar thing with the iteration protocol:
+r = random.randint(0, len(tiny) - 1)
+print("random number:", r)
+it = iter(dict.keys())
+for _ in range(r):
+    key = next(it)
+
+print("A random key:", key)
+
+
+
+
+
 

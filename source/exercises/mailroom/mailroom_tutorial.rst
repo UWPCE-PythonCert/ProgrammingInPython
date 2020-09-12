@@ -9,12 +9,13 @@ Controlling Main Program Flow
 
 One of the key components of the mailroom program is managing program flow and interacting with the user. Ideally main flow code should be cleanly separate from your feature code.
 
-The best way to manage the program flow is to use a ``while True`` loop, which means you will keep asking the user for input until user selects a feature or exits.
+The best way to manage the program flow of an interactive prompt is to use a ``while True`` loop, which means you will keep asking the user for input until the user selects a feature or exits.
 
-There are several ways to write your main program flow. Let's consider these two options:
+There are several ways to write your main interactive loop. Let's consider these two options:
 
 
 Option 1:
+.........
 
 .. code-block:: python
 
@@ -28,6 +29,7 @@ Option 1:
     main()
 
 Option 2:
+.........
 
 .. code-block:: python
 
@@ -43,10 +45,10 @@ Option 2:
 
 Can you see the advantages of one example over the other?
 
-In the first one, ``do_something`` is not aware of how the main works and as you add more features they shouldn't manage the main either.
+In the first one, ``do_something`` is not aware of how the main function works and as you add more features they don't need to know about how the main function works either.
 The call stack will also keep getting deeper and deeper, which can make error stack traces hard to debug.
 
-Another advantage is simpler code logic, and simpler code logic means less bugs!
+Another advantage is simpler code logic, and simpler code logic means fewer bugs!
 
 Let's look at a simple program to utilize the ``while True`` loop and how we can handle user response:
 

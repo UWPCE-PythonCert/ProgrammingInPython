@@ -9,8 +9,9 @@ Test Driven Development
 
 "Testing" is any strategy for making sure your code behaves as expected. "Unit testing" is a particular strategy, that:
 
-* is easy to run in an automated fashion
-* utilizes isolated tests for each individual
+* is easy to run in an automated fashion.
+* utilizes isolated tests for each individual function.
+
 
 "Test Driven Development" (TDD) is a development strategy that integrates the development of unit tests with the code itself. In particular, you write the tests *before* you write the code, which seems pretty backward, but it has some real strengths.
 

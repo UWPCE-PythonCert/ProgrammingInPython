@@ -208,7 +208,7 @@ the list -- not so good if memory is tight. Note that they are shallow copies, s
 
 Nevertheless, we can do better:
 
-The ``itertools`` module has a ``islice()`` (iterable slice) function.
+The ``itertools`` module has an ``islice()`` (iterable slice) function.
 It returns an iterator over a slice of a sequence -- so no more copies:
 
 .. code-block:: ipython
@@ -248,9 +248,11 @@ Usually returns the iterator object itself.
 Returns the next item from the container. If there are no further items,
 raises the ``StopIteration`` exception.
 
+An *iterable*, on the other hand, must have a ``__iter__`` method that returns an initialized iterator (which may or may not be itself). It doesnot have a ``__next__`` method. So you oculd say that the difference between and iterator and a iterable, is htat iterables do not have ``__next__`` methods: you cannont call ``next()`` on them.
+
 
 Making an Iterator
--------------------
+------------------
 
 A simple version of ``range()``
 

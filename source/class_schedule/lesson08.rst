@@ -38,7 +38,7 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    ../exercises/circle_class.rst
+    ../exercises/circle/circle_class.rst
 
 Optional Exercise:
 ------------------
