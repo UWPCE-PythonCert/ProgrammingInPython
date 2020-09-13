@@ -27,13 +27,16 @@ A "String" is a computerese word for a piece of text -- a "string" of characters
 
 Why "string"?
 
-"String" can be used to mean "a linear sequence (as of characters, words, proteins, etc.)"
+"String" can be used to mean "a linear sequence -- as of characters, words, proteins, etc."
 
 `Definition of string <http://wordnetweb.princeton.edu/perl/webwn?s=string>`_
 
 So a string is a sequence of individual letters or characters.
 
-In Python, each character can be a `Unicode <https://unicode.org/>`_ character -- that is, any character in any language in the world.  Having this built in by default in Python (3) means that you can get very far simply ignoring it -- anything you can type on your computer can be used in strings in Python. If you do need to work with non-English characters, or data encoded in non-utf-8, particularly on Python 2, here are some notes about that: :ref:`unicode`. But for the most part, in Python3 -- strings are text, and text is strings, and that's that. If you know how to type characters (accented, etc.) that are not used in English on your computer, they should "just work".
+In Python, each character can be a `Unicode <https://unicode.org/>`_ character -- that is, any character in any language in the world.
+Having this built in by default in Python(3) means that you can get very far simply ignoring it -- anything you can type on your computer can be used in strings in Python.
+If you do need to work with non-English characters, or data encoded in non-utf-8, particularly on Python 2, here are some notes about that: :ref:`unicode`.
+But for the most part, in Python3 -- strings are text, and text is strings, and that's that. If you know how to type characters (accented, etc.) that are not used in English on your computer, they should "just work".
 
 Creating strings:
 -----------------
@@ -74,6 +77,7 @@ The python string object is very powerful with lots of methods for common text m
 Note that strings are "immutable" -- they can not be changed once they have been created. So the string methods all return new strings, rather than change the string in place. Which is kind of handy if you want to string multiple operations together (pun intended ...).
 
 Here are just a few of the more common string methods:
+
 
 Splitting and Joining Strings
 -----------------------------

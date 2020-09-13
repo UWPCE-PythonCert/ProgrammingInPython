@@ -9,7 +9,7 @@
 #  -- to be nicely served by gh-pages
 
 
-GHPAGESDIR=../IntroToPython.gh-pages
+GHPAGESDIR=../ProgrammingInPython.gh-pages
 
 # make sure gh-pages dir is there -- exit if not
 if [ ! -d $GHPAGESDIR ]; then

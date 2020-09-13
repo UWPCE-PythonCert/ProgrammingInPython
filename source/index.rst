@@ -23,265 +23,175 @@ Topics in the Program
 
     topics/index
 
-The Program
-===========
 
-Setting up your Environment
----------------------------
 
-.. toctree::
-    :maxdepth: 1
+.. Basic Text Handling
+.. -------------------
 
-    modules/dev_environment/index
-    modules/EnvironmentOverview
-    modules/IPythonIntroduction
-    modules/Py2vsPy3
-    modules/Git
-    modules/GitWorkflow
-    modules/Submitting_to_github
-    modules/SubmittingCodeGithubClassroom
-    modules/HowToRunAPythonFile
-    modules/Learning
+.. .. toctree::
+..     :maxdepth: 1
 
-..    modules/ Class_introduction
+..     modules/Strings
 
+.. Exercises:
+.. ..........
 
-Exercise:
-.........
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     exercises/string_formatting.rst
+..     exercises/rot13.rst
+..     exercises/mailroom/mailroom.rst
+..     exercises/mailroom/mailroom_tutorial.rst
 
-    exercises/python_pushups.rst
+.. Exception Handling
+.. ------------------
 
+.. .. toctree::
+..     :maxdepth: 1
 
-Basic Python
-------------
+..     modules/Exceptions
 
-.. toctree::
-    :maxdepth: 1
+.. Exercises:
+.. ..........
 
-    modules/BasicPython
-    modules/Functions
+.. .. toctree::
+..     :maxdepth: 1
 
-.. rubric:: Exercises:
+..     exercises/exceptions_lab.rst
+..     exercises/except_exercise.rst
+..     exercises/mailroom/mailroom_with_exceptions.rst
 
-.. toctree::
-    :maxdepth: 1
 
-    exercises/grid_printer.rst
-    exercises/fizz_buzz.rst
+.. Unit Testing
+.. ------------
 
-Recursion
----------
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     modules/Testing
+..     modules/TestDrivenDevelopment
 
-    modules/Recursion
+.. Exercises:
+.. ..........
 
-Exercises:
-..........
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     exercises/unit_testing/unit_testing.rst
+..     exercises/mailroom/mailroom_with_tests.rst
 
-    exercises/fib_and_lucas.rst
 
+.. Dictionaries and Sets
+.. ---------------------
 
-Booleans
---------
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     modules/DictsAndSets
+..     modules/DictionaryAsSwitch
 
-    modules/Booleans
+.. Exercises:
+.. ..........
 
-Sequences and Iteration
------------------------
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     exercises/dict_lab.rst
+..     exercises/mailroom/mailroom_with_dicts.rst
 
-    modules/Sequences
-    modules/Iteration
+.. Files
+.. -----
 
-Exercises:
-..........
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     modules/Files
 
-    exercises/slicing.rst
-    exercises/list_lab.rst
+.. Exercises:
+.. ..........
 
-Basic Text Handling
--------------------
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     exercises/file_lab.rst
+..     exercises/mailroom/mailroom_with_files.rst
+..     exercises/trigrams/trigrams.rst
 
-    modules/Strings
 
-Exercises:
-..........
+.. Modules and Packages
+.. --------------------
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    exercises/string_formatting.rst
-    exercises/rot13.rst
-    exercises/mailroom/mailroom.rst
-    exercises/mailroom/mailroom_tutorial.rst
+..     modules/NamingThings
+..     modules/Modules
+..     modules/Documentation
+..     modules/Packaging
 
-Exception Handling
-------------------
+.. Exercises:
+.. ..........
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    modules/Exceptions
+..     exercises/mailroom/mailroom-pkg.rst
 
-Exercises:
-..........
+.. Advanced Argument Passing
+.. -------------------------
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    exercises/exceptions_lab.rst
-    exercises/except_exercise.rst
-    exercises/mailroom/mailroom_with_exceptions.rst
+..     modules/AdvancedArgumentPassing
+..     modules/MoreOnMutability
 
+.. Exercises:
 
-Unit Testing
-------------
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     exercises/args_kwargs_lab
 
-    modules/Testing
-    modules/TestDrivenDevelopment
 
-Exercises:
-..........
+.. Comprehensions
+.. --------------
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    exercises/unit_testing/unit_testing.rst
-    exercises/mailroom/mailroom_with_tests.rst
+..     modules/Comprehensions
+..     modules/CollectionsModule
 
+.. Exercises:
+.. ..........
 
-Dictionaries and Sets
----------------------
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
+..     exercises/comprehensions_lab
+..     exercises/mailroom/mailroom_with_comprehensions.rst
 
-    modules/DictsAndSets
-    modules/DictionaryAsSwitch
 
-Exercises:
-..........
 
-.. toctree::
-    :maxdepth: 1
+.. Intro to Object Oriented Programing
+.. -----------------------------------
 
-    exercises/dict_lab.rst
-    exercises/mailroom/mailroom_with_dicts.rst
+.. .. toctree::
+..     :maxdepth: 1
 
-Files
------
+..     modules/ObjectOrientationOverview
+..     modules/PythonClasses
 
-.. toctree::
-    :maxdepth: 1
+.. Exercises:
+.. ..........
 
-    modules/Files
+.. .. toctree::
+..     :maxdepth: 1
 
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/file_lab.rst
-    exercises/mailroom/mailroom_with_files.rst
-    exercises/trigrams/trigrams.rst
-
-
-Modules and Packages
---------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/NamingThings
-    modules/Modules
-    modules/Documentation
-    modules/Packaging
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/mailroom/mailroom-pkg.rst
-
-Advanced Argument Passing
--------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/AdvancedArgumentPassing
-    modules/MoreOnMutability
-
-Exercises:
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/args_kwargs_lab
-
-
-Comprehensions
---------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/Comprehensions
-    modules/CollectionsModule
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/comprehensions_lab
-    exercises/mailroom/mailroom_with_comprehensions.rst
-
-
-
-Intro to Object Oriented Programing
------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/ObjectOrientationOverview
-    modules/PythonClasses
-
-Exercises:
-..........
-
-.. toctree::
-    :maxdepth: 1
-
-    exercises/oo_intro.rst
-    exercises/mailroom/mailroom-oo.rst
+..     exercises/oo_intro.rst
+..     exercises/mailroom/mailroom-oo.rst
 
 
 
