@@ -1,6 +1,6 @@
-######################
-Introduction to Python
-######################
+#####################
+Programming in Python
+#####################
 
 Many of these topics can be useful on their own, but each assumes that you know concepts that were introduced earlier in the program, so working them in order can be helpful.
 
@@ -25,7 +25,7 @@ Many of these topics can be useful on their own, but each assumes that you know 
     15-subclassing/index
     16-multiple_inheritance/index
     17-functional_programming/index
-    18-advnaced_testing/index
+    18-advanced_testing/index
     99-extras/index
 
 

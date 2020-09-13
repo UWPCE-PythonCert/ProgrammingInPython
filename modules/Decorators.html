@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>18.6. Decorators &mdash; Python 210 6.0 documentation</title>
+  <title>19.6. Decorators &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18.7. Context Managers" href="ContextManagers.html" />
-    <link rel="prev" title="18.5. Iterators and Generators" href="IteratorsAndGenerators.html" /> 
+    <link rel="next" title="19.7. Mailroom – Decoratoring it" href="../exercises/mailroom/mailroom-decorator.html" />
+    <link rel="prev" title="19.5. Iterators and Generators" href="IteratorsAndGenerators.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,67 +82,66 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Pep8.html">18.1. Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">18.2. Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">18.3. Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Unicode.html">18.4. Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">18.5. Iterators and Generators</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">18.6. Decorators</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#a-definition">18.6.1. A Definition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#an-example">18.6.2. An Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#syntax">18.6.3. Syntax</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#callables">18.6.4. Callables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">18.6.5. An Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nested-decorators">18.6.6. Nested Decorators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#parameterized-decorators">18.6.7. Parameterized Decorators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#examples-from-the-standard-library">18.6.8. Examples from the Standard Library</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#property">18.6.9. property()</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#import-time-vs-run-time">18.6.10. Import Time vs. Run Time</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-if-my-decorated-function-uses-unknown-inputs">18.6.11. What if my decorated function uses unknown inputs?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#functools-library">18.6.12. Functools Library</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#further-reading">18.6.13. Further Reading:</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">19.6. Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-definition">19.6.1. A Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#an-example">19.6.2. An Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#syntax">19.6.3. Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#callables">19.6.4. Callables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">19.6.5. An Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nested-decorators">19.6.6. Nested Decorators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameterized-decorators">19.6.7. Parameterized Decorators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples-from-the-standard-library">19.6.8. Examples from the Standard Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#property">19.6.9. property()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-time-vs-run-time">19.6.10. Import Time vs. Run Time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-if-my-decorated-function-uses-unknown-inputs">19.6.11. What if my decorated function uses unknown inputs?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functools-library">19.6.12. Functools Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#further-reading">19.6.13. Further Reading:</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">18.7. Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">18.8. A Couple Handy Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">18.9. Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Logging.html">18.10. Logging and the logging module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Debugging.html">18.11. Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">18.12. No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">18.13. Graph Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">18.14. Concurrent Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Async.html">18.15. Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">18.16. Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">18.17. Threading and multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">18.18. Threaded Web Scraper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Profiling.html">18.19. Performance and Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">19.10. Metaprogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Debugging.html">19.13. Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">19.16. Concurrent Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Async.html">19.17. Asychronous Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">19.18. Notes on Coroutines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Profiling.html">19.21. Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -188,11 +187,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../topics/index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="../topics/99-extras/index.html"><span class="section-number">18. </span>Extra Topics</a> &raquo;</li>
+          <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">18.6. </span>Decorators</li>
+      <li><span class="section-number">19.6. </span>Decorators</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -212,7 +211,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="decorators">
-<span id="id1"></span><h1><span class="section-number">18.6. </span>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">19.6. </span>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h1>
 <p><strong>A Short Reminder</strong></p>
 <p>Functions are things that generate values based on input (arguments).</p>
 <p>In Python, functions are first-class objects.</p>
@@ -227,7 +226,7 @@ arguments and/or return functions as values:</p>
 </pre></div>
 </div>
 <div class="section" id="a-definition">
-<h2><span class="section-number">18.6.1. </span>A Definition<a class="headerlink" href="#a-definition" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.1. </span>A Definition<a class="headerlink" href="#a-definition" title="Permalink to this headline">¶</a></h2>
 <p>There are many things you can do with a simple pattern like this one.
 So many, that we give it a special name:</p>
 <p><strong>Decorator</strong></p>
@@ -238,7 +237,7 @@ returns a function as a return value.”</p>
 </div></blockquote>
 </div>
 <div class="section" id="an-example">
-<h2><span class="section-number">18.6.2. </span>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.2. </span>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
 <p>Imagine you are trying to debug a module with a number of functions like this
 one:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -306,7 +305,7 @@ statements</em> leads you to this form:</p>
 </div>
 </div>
 <div class="section" id="syntax">
-<h2><span class="section-number">18.6.3. </span>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.3. </span>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <p>Rebinding the name of a function to the result of calling a decorator on that
 function is called <strong>decoration</strong>.</p>
 <p>Because this is so common, Python provides a special operator to perform it
@@ -369,7 +368,7 @@ but both have the identical result, and can be used interchangeably.</p>
 <p>And they do it with compact, declarative syntax that has the decoration right at the top where the function is defined.</p>
 </div>
 <div class="section" id="callables">
-<h2><span class="section-number">18.6.4. </span>Callables<a class="headerlink" href="#callables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.4. </span>Callables<a class="headerlink" href="#callables" title="Permalink to this headline">¶</a></h2>
 <p>Our original definition of a <em>decorator</em> was nice and simple, but a tiny bit incomplete.</p>
 <p>In reality, decorators can be used with anything that is <em>callable</em>.</p>
 <p>Remember that a <em>callable</em> is a function, a class object, a method in a class, or a instance of a class that implements the <code class="docutils literal notranslate"><span class="pre">__call__</span></code> special method.</p>
@@ -379,7 +378,7 @@ but both have the identical result, and can be used interchangeably.</p>
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">18.6.5. </span>An Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.5. </span>An Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Consider a decorator that would save the results of calling an expensive
 function with given arguments so that it would not have to be re-computed with the same input (which is known an memoizing…).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Memoize</span><span class="p">:</span>
@@ -417,7 +416,7 @@ function with given arguments so that it would not have to be re-computed with t
 how much difference it made?</p>
 </div>
 <div class="section" id="nested-decorators">
-<h2><span class="section-number">18.6.6. </span>Nested Decorators<a class="headerlink" href="#nested-decorators" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.6. </span>Nested Decorators<a class="headerlink" href="#nested-decorators" title="Permalink to this headline">¶</a></h2>
 <p>You can stack decorator expressions.  The result is like calling each
 decorator in order, from bottom to top:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@decorator_two</span>
@@ -459,7 +458,7 @@ decorator:</p>
 </div>
 </div>
 <div class="section" id="parameterized-decorators">
-<h2><span class="section-number">18.6.7. </span>Parameterized Decorators<a class="headerlink" href="#parameterized-decorators" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.7. </span>Parameterized Decorators<a class="headerlink" href="#parameterized-decorators" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of the outer function in the decorator is to receive the function to be decorated, adding anything to scope that should be there before the decorated function is called.</p>
 <p>The inner function runs the function being decorated, so its inputs are the same as the function being decorated.</p>
 <p>How do we add more input parameters to our decorator? Like this example from Django:</p>
@@ -488,7 +487,7 @@ decorator:</p>
 <p>Last example from: <a class="reference external" href="http://scottlobdell.me/2015/04/decorators-arguments-python/">http://scottlobdell.me/2015/04/decorators-arguments-python/</a></p>
 </div>
 <div class="section" id="examples-from-the-standard-library">
-<h2><span class="section-number">18.6.8. </span>Examples from the Standard Library<a class="headerlink" href="#examples-from-the-standard-library" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.8. </span>Examples from the Standard Library<a class="headerlink" href="#examples-from-the-standard-library" title="Permalink to this headline">¶</a></h2>
 <p>It’s going to be a lot more common for you to use pre-defined decorators than for you to be writing your own.</p>
 <p>We’ve seen a few already:</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> can also be used as simple
@@ -525,7 +524,7 @@ rebinds it.</p>
 </div>
 </div>
 <div class="section" id="property">
-<h2><span class="section-number">18.6.9. </span>property()<a class="headerlink" href="#property" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.9. </span>property()<a class="headerlink" href="#property" title="Permalink to this headline">¶</a></h2>
 <p>Remember the <code class="docutils literal notranslate"><span class="pre">property()</span></code> builtin?</p>
 <p>Perhaps most commonly, you’ll see the <code class="docutils literal notranslate"><span class="pre">property()</span></code> builtin used this way.</p>
 <p>Previously, we saw this code:</p>
@@ -578,12 +577,12 @@ object. So you could actually do this:</p>
 <p>But that’s getting really ugly! Makes you appreciate the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, doesn’t it?</p>
 </div>
 <div class="section" id="import-time-vs-run-time">
-<h2><span class="section-number">18.6.10. </span>Import Time vs. Run Time<a class="headerlink" href="#import-time-vs-run-time" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.10. </span>Import Time vs. Run Time<a class="headerlink" href="#import-time-vs-run-time" title="Permalink to this headline">¶</a></h2>
 <p>Decorators are run at import time. Run this code and see what happens when:</p>
 <p><a class="reference download internal" download="" href="../_downloads/df18d0e9b634eac4a2652bc951425357/play_with_imports.py"><code class="xref download docutils literal notranslate"><span class="pre">play_with_imports.py</span></code></a></p>
 </div>
 <div class="section" id="what-if-my-decorated-function-uses-unknown-inputs">
-<h2><span class="section-number">18.6.11. </span>What if my decorated function uses unknown inputs?<a class="headerlink" href="#what-if-my-decorated-function-uses-unknown-inputs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.11. </span>What if my decorated function uses unknown inputs?<a class="headerlink" href="#what-if-my-decorated-function-uses-unknown-inputs" title="Permalink to this headline">¶</a></h2>
 <p>If you don’t know what parameters the decorated function will take (and you usually don’t), you want to make sure the inner function that you are replacing the decorated function with takes ANY arguments, and passes them on to the decorated function.</p>
 <p><code class="docutils literal notranslate"><span class="pre">*args,</span> <span class="pre">**kwargs</span></code> is your friend here:</p>
 <p>A decorator that wraps an html <cite>&lt;p&gt;</cite> tag around the output of any decorated function.</p>
@@ -603,7 +602,7 @@ object. So you could actually do this:</p>
 </div>
 </div>
 <div class="section" id="functools-library">
-<h2><span class="section-number">18.6.12. </span>Functools Library<a class="headerlink" href="#functools-library" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.12. </span>Functools Library<a class="headerlink" href="#functools-library" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>Single dispatch:</dt><dd><ul class="simple">
 <li><p>create many functions that do the same sort of thing, but based on type</p></li>
@@ -615,7 +614,7 @@ object. So you could actually do this:</p>
 <p>Memoize decorator we created earlier is in Functools:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/functools.html#functools.lru_cache">https://docs.python.org/3/library/functools.html#functools.lru_cache</a></p>
 <div class="section" id="lab">
-<h3><span class="section-number">18.6.12.1. </span>LAB<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.6.12.1. </span>LAB<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h3>
 <p>A little excercise. See the “p_decorate” decorator defined above – it wrapped an html &lt;p&gt; tag (paragraph) around the results of any function that returned a string.</p>
 <p>Can you make a version that will wrap any other tag – specified as a parameter of the decorator itself? For example:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go">@add_tag(&#39;p&#39;)</span>
@@ -641,7 +640,7 @@ object. So you could actually do this:</p>
 </div>
 </div>
 <div class="section" id="further-reading">
-<h2><span class="section-number">18.6.13. </span>Further Reading:<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.6.13. </span>Further Reading:<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
 <p><em>Fluent Python</em> by Luciano Ramalho, Chapter 7.</p>
 <p>Another good overview:</p>
 <p><a class="reference external" href="https://dbader.org/blog/python-decorators">https://dbader.org/blog/python-decorators</a></p>
@@ -656,10 +655,10 @@ object. So you could actually do this:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ContextManagers.html" class="btn btn-neutral float-right" title="18.7. Context Managers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/mailroom/mailroom-decorator.html" class="btn btn-neutral float-right" title="19.7. Mailroom – Decoratoring it" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="IteratorsAndGenerators.html" class="btn btn-neutral float-left" title="18.5. Iterators and Generators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="IteratorsAndGenerators.html" class="btn btn-neutral float-left" title="19.5. Iterators and Generators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

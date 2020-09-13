@@ -1,5 +1,7 @@
 :orphan:
 
+NOTE: this is only the start of a tutorial -- it would be nice to complete it some day!
+
 ===============
 Python Tutorial
 ===============
@@ -25,11 +27,12 @@ You may want to also check out some other tutorial options:
   approach and in-browser work.
 
 * **Learn Python the Hard Way**
-  (http://learnpythonthehardway.org/book/): Solid and gradual.
+  (https://learnpythonthehardway.org/python3/): Solid and gradual.
   This course offers a great foundation for folks who have never
-  programmed in any language before. It is, however, only Python2,
-  and pretty opinionated about that. But for the most part, you can
-  simply add paretheses to ``print()`` and you can get pretty far.
+  programmed in any language before. It used be be fully available
+  for free online -- but now you can only get the first bits. But still
+  a good way to get started.
+
 
 Running Your Code
 =================
@@ -44,10 +47,12 @@ There are a number of ways to run python code:
 
 While working with an interactive interpreter can be an excellent way to explore Python (and I highly recommend it), For this tutorial, to get you used to "real" production development, you will write, edit, and save your code in a programmer's text editor, and run it from the command line.
 
+
 A Programmer's Text Editor
 --------------------------
 
 See These notes for getting set up with an editor and Python itself: :ref:`setting_up_dev_environment`
+
 
 
 The Python Interpreter
@@ -65,9 +70,8 @@ There are a few Python interpreters (or run-times) available:
 
 These each have their own special uses for interaction the the Java VM or CLR, or running on micro controllers. But most production Python is run with the cPython interpreter, and most people mean cPython when they say "Python".
 
-[link to setting up your environment here]
 
-For this tutorial, you will need cPython version 3.7, installed and running so that when you type "python" at your command line, it starts up:
+For this tutorial, you will need cPython version 3.7 or 3.8, installed and running so that when you type "python" at your command line, it starts up:
 
 .. code-block:: bash
 
@@ -77,7 +81,7 @@ For this tutorial, you will need cPython version 3.7, installed and running so t
   Type "help", "copyright", "credits" or "license" for more information.
   >>>
 
-Your result may be slightly different, but it should say Python 3.7. *something* there at the top, and give you the command prompt (``>>>``) at the end.
+Your result may be slightly different, but it should say Python 3. *something* there at the top, and give you the command prompt (``>>>``) at the end.
 
 You can get out of it by typing ctrl+D (on OS-X and Linux) or ctrl+Z (On Windows), or typing ``exit()`` and then <return>.
 
@@ -90,7 +94,7 @@ Create your first program by typing this into your text editor::
 
 Type it exactly as above, with no extra space at the beginning, and no other characters.
 
-Save the file as "first.py". Make sure to save it somewhere that makes sense, maybe a directory you create for this purpose, called "tutorial".
+Save the file as ``first.py``. Make sure to save it somewhere that makes sense, maybe a directory you create for this purpose, called "tutorial".
 
 Start up the command line ("Terminal" on OS-X, "Command Prompt" on Windows), and "Navigate" to the directory where you just saved that file::
 
@@ -121,7 +125,7 @@ In this case, python ran the one line of code you put in that file, which told i
 The print function
 ------------------
 
-you can display just about anything in Python with the ``print()`` function. Simply type::
+You can display just about anything in Python with the ``print()`` function. Simply type::
 
   print(what you want to print)
 
@@ -134,14 +138,17 @@ you can print more than one thing by separating them with commas, inside the par
 
   print("the value of pi is:", 3.1459, "to four decimal places")
 
+
 Text in Python
 --------------
 
-Text in python is supported by the "str" datatype, which is short for "string". The text datatype is often referred to as "strings" in computer science because it is a series, or string of characters.
+Text in python is supported by the "str" datatype, which is short for "string". The text datatype is often referred to as "strings" in computer science because it is a series, or string, of characters.
 
 In Python3, strings can be any length, and contain any character (in virtually any language). This is because they support "Unicode" which is a system for representing all the characters of virtually all the languages used on earth.
 
 There are many complications to full support of Unicode, but for the most part, in Python it "just works". Any text you can put in your text editor should work fine.
+
+.. note:: With Unicode, the actual characters can be stored in multiple ways in the files themselves. If you've heard of "plain text", there really is no such thing anymore with Unicode. The exact way the text is stored is known as the "encoding". These days, an encoding known and "utf-8" is the mast commonly used. Python assumes that you are using utf-8 encoded files, but if strange things happen, make sure your editor is using utf-8. (or ASCII, which is an older encoding that does not support multiple languages -- but ASCII is subset of utf-8, so it still works.)
 
 To create a str, you simply type what you want surrounded by either double or single quotes (the apostrophe).
 
@@ -187,7 +194,7 @@ integers can be negative or positive and as large as you want:
 
     2.3, 3.0, 3.2459, -23.21
 
-Note tht while the integer`3` and the float `3.0` have the same value, they are different types of numbers. But for the most part, Python will convert from integer to floating point numbers for you, so this distiction is rarely important.
+Note that while the integer`3` and the float `3.0` have the same value, they are different types of numbers. But for the most part, Python will convert from integer to floating point numbers for you (and back again), so this distinction is rarely important.
 
 Math
 ----
@@ -224,7 +231,7 @@ run the file, and see if you get the answer you expect. The result should be 5.0
 
 That is because multiplication and division are a higher priority than addition, so Python divided 4 by 2 to get 2.0, and then added 3 + 2.0 to get 5.0.
 
-Always keep that in mind when you do math expressions in Python. If you want to change the order of operations, you can group them with parentheses. Add this to the ``math.py`` file and run it:
+Always keep that in mind when you do math expressions in Python. If you want to change the order of operations, you can group them with parentheses. Try adding this to the ``math.py`` file and run it:
 
 .. code-block:: python
 
@@ -238,7 +245,7 @@ Variables
 
 Directly printing things is not all that useful -- though Python does make a good calculator!
 
-To do anything more complicated, you need to store values to be used later. We do this by "assigning" them to a "variable", essentially givng them a name. Save the follwing in a ``variables.py`` file:
+To do anything more complicated, you need to store values to be used later. We do this by "assigning" them to a "variable", essentially giving them a name. Save the following in a ``variables.py`` file:
 
 .. code-block:: python
 
@@ -246,7 +253,7 @@ To do anything more complicated, you need to store values to be used later. We d
     y = 20
     z = x + y
 
-    print("the value of z is", z)
+    print("the value of z is: ", z)
 
 The equals sign: ``=`` is the "assignment operator". It assigns a value to a name, and then when you use the name in the future, Python will replace it with the value it is assigned to when it is used.
 
@@ -290,7 +297,7 @@ And this?
     print ("that")  # I think we need this line too
     print("the other")
 
-comments can come after running code on a line as well. USing the hash to "comment out" parts of code is used in two ways:
+comments can come after running code on a line as well. Using the hash to "comment out" parts of code is used in two ways:
 
 1) To add a little extra description to some code, to explain what it doing.
 

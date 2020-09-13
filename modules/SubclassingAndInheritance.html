@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.1.1. Subclassing and Inheritance &mdash; Python 210 6.0 documentation</title>
+  <title>15.1.1. Subclassing and Inheritance &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14.3.1. HTML Renderer Exercise" href="../exercises/html_renderer.html" />
-    <link rel="prev" title="14. Subclassing and Inheritance" href="../topics/15-subclassing/index.html" /> 
+    <link rel="next" title="15.3.1. HTML Renderer Exercise" href="../exercises/html_renderer.html" />
+    <link rel="prev" title="15. Subclassing and Inheritance" href="../topics/15-subclassing/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,39 +82,36 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../topics/15-subclassing/index.html#to-read">14.1. To Read</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">14.1.1. Subclassing and Inheritance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../topics/15-subclassing/index.html#to-read">15.1. To Read</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">15.1.1. Subclassing and Inheritance</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../topics/15-subclassing/index.html#activities">14.2. Activities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../topics/15-subclassing/index.html#exercises">14.3. Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/15-subclassing/index.html#activities">15.2. Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/15-subclassing/index.html#exercises">15.3. Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -160,11 +157,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../topics/index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="../topics/15-subclassing/index.html"><span class="section-number">14. </span>Subclassing and Inheritance</a> &raquo;</li>
+          <li><a href="../topics/15-subclassing/index.html"><span class="section-number">15. </span>Subclassing and Inheritance</a> &raquo;</li>
         
-      <li><span class="section-number">14.1.1. </span>Subclassing and Inheritance</li>
+      <li><span class="section-number">15.1.1. </span>Subclassing and Inheritance</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,10 +181,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="subclassing-and-inheritance">
-<span id="subclassing-inheritance"></span><h1><span class="section-number">14.1.1. </span>Subclassing and Inheritance<a class="headerlink" href="#subclassing-and-inheritance" title="Permalink to this headline">¶</a></h1>
+<span id="subclassing-inheritance"></span><h1><span class="section-number">15.1.1. </span>Subclassing and Inheritance<a class="headerlink" href="#subclassing-and-inheritance" title="Permalink to this headline">¶</a></h1>
 <p>How to put the pieces together to build a complex system without repeating code.</p>
 <div class="section" id="inheritance">
-<h2><span class="section-number">14.1.1.1. </span>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.1.1.1. </span>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h2>
 <p>In object-oriented programming (OOP), inheritance is a way to reuse the code
 of existing objects, or to establish a subtype from an existing object.</p>
 <p>Objects are defined by classes. Classes can inherit attributes and behavior
@@ -195,7 +192,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p>The resulting classes are known as derived classes or subclasses.</p>
 <p>(<a class="reference external" href="http://en.wikipedia.org/wiki/Inheritance_%28object-oriented_programming%29">http://en.wikipedia.org/wiki/Inheritance_%28object-oriented_programming%29</a>)</p>
 <div class="section" id="subclassing">
-<h3><span class="section-number">14.1.1.1.1. </span>Subclassing<a class="headerlink" href="#subclassing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.1. </span>Subclassing<a class="headerlink" href="#subclassing" title="Permalink to this headline">¶</a></h3>
 <p>A subclass “inherits” all the attributes (methods, etc) of the parent class. This means that a subclass will have everything that its “parents” have.</p>
 <p>You can then change (“override”) some or all of the attributes to change the behavior.  You can also add new attributes to extend the behavior.</p>
 <p>You create a subclass by passing the superclass to the <code class="docutils literal notranslate"><span class="pre">class</span></code> statement.</p>
@@ -207,7 +204,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p><code class="docutils literal notranslate"><span class="pre">A_subclass</span></code>  now has exactly the same behavior as <code class="docutils literal notranslate"><span class="pre">The_superclass</span></code> – all the same attributes and methods.</p>
 </div>
 <div class="section" id="overriding-attributes">
-<h3><span class="section-number">14.1.1.1.2. </span>Overriding attributes<a class="headerlink" href="#overriding-attributes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.2. </span>Overriding attributes<a class="headerlink" href="#overriding-attributes" title="Permalink to this headline">¶</a></h3>
 <p>Overriding is as simple as creating a new attribute with the same name:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span>    <span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
 <span class="gp">   ...: </span>        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
@@ -259,7 +256,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p>Note that this is <em>why</em> self is passed in to every method – when you write the method, you don’t know exactly what class <code class="docutils literal notranslate"><span class="pre">self</span></code> will be – it is an instance of the class at the time the method is called.</p>
 </div>
 <div class="section" id="overriding-methods">
-<h3><span class="section-number">14.1.1.1.3. </span>Overriding methods<a class="headerlink" href="#overriding-methods" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.3. </span>Overriding methods<a class="headerlink" href="#overriding-methods" title="Permalink to this headline">¶</a></h3>
 <p>Overriding methods is exactly the same thing, but with methods (remember, a method <em>is</em> an attribute in Python – one that happens to be a function)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
 <span class="o">...</span>
@@ -284,7 +281,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p>– from <em>Think Python</em></p>
 </div>
 <div class="section" id="overriding-init">
-<h3><span class="section-number">14.1.1.1.4. </span>Overriding <code class="docutils literal notranslate"><span class="pre">__init__</span></code><a class="headerlink" href="#overriding-init" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.4. </span>Overriding <code class="docutils literal notranslate"><span class="pre">__init__</span></code><a class="headerlink" href="#overriding-init" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> is a common method to override.</p>
 <p>You often need to call the super class <code class="docutils literal notranslate"><span class="pre">__init__</span></code>  as well, so that any initialization required is performed:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
@@ -319,7 +316,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> is a way to make it clear that the rest is simply the signature of the superclass.  It is also flexible if the superclass (or others up in the hierarchy) changes – it could completely change its signature, and this subclass would still work.</p>
 </div>
 <div class="section" id="using-the-superclass-methods">
-<h3><span class="section-number">14.1.1.1.5. </span>Using the superclass’ methods<a class="headerlink" href="#using-the-superclass-methods" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.5. </span>Using the superclass’ methods<a class="headerlink" href="#using-the-superclass-methods" title="Permalink to this headline">¶</a></h3>
 <p>In a subclass, you can access everything in the superclass: all attributes and other methods:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
 <span class="o">...</span>
@@ -336,7 +333,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p>Note that there is nothing special about <code class="docutils literal notranslate"><span class="pre">__init__</span></code>  except that it gets called automatically when you instantiate an instance. Otherwise, it is the same as any other method – it gets <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first argument, it can or can not call the superclass’ methods, etc.</p>
 </div>
 <div class="section" id="favor-object-composition-over-class-inheritance">
-<h3><span class="section-number">14.1.1.1.6. </span>“Favor Object Composition Over Class Inheritance”<a class="headerlink" href="#favor-object-composition-over-class-inheritance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.6. </span>“Favor Object Composition Over Class Inheritance”<a class="headerlink" href="#favor-object-composition-over-class-inheritance" title="Permalink to this headline">¶</a></h3>
 <p>That is a quotation from the “Design Patterns” book – one of the gospels of OO programming.</p>
 <p>But what does it mean?</p>
 <p>There are essentially two ways to add multiple functionalities to a class:</p>
@@ -347,7 +344,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Composition_over_inheritance">https://en.wikipedia.org/wiki/Composition_over_inheritance</a></p>
 <p>Composition is when your classes have attributes of various types that they use to gain functionality – “delegate” functionality to – “Delegation” is a related concept in OO.</p>
 <div class="section" id="is-a-vs-has-a">
-<h4><span class="section-number">14.1.1.1.6.1. </span>“Is a” vs “Has a”<a class="headerlink" href="#is-a-vs-has-a" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">15.1.1.1.6.1. </span>“Is a” vs “Has a”<a class="headerlink" href="#is-a-vs-has-a" title="Permalink to this headline">¶</a></h4>
 <p>Thinking about “is a” vs “has a” can help you sort this out.</p>
 <p>For example, you may have a class that needs to accumulate an arbitrary number of objects.</p>
 <p>A list can do that – so maybe you should subclass list?</p>
@@ -359,7 +356,7 @@ from pre-existing classes called base classes or super classes.</p>
 </div>
 </div>
 <div class="section" id="attribute-resolution-order">
-<h3><span class="section-number">14.1.1.1.7. </span>Attribute Resolution Order<a class="headerlink" href="#attribute-resolution-order" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.7. </span>Attribute Resolution Order<a class="headerlink" href="#attribute-resolution-order" title="Permalink to this headline">¶</a></h3>
 <p>Once there is a potentially large hierarchy of subclasses, how do you know which one will be used?</p>
 <p>When you access an attribute:</p>
 <p><code class="docutils literal notranslate"><span class="pre">an_instance.something</span></code></p>
@@ -380,7 +377,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p><a class="reference external" href="http://python-history.blogspot.com/2010/06/method-resolution-order.html">http://python-history.blogspot.com/2010/06/method-resolution-order.html</a></p>
 </div>
 <div class="section" id="what-are-python-classes-really">
-<h3><span class="section-number">14.1.1.1.8. </span>What are Python classes, really?<a class="headerlink" href="#what-are-python-classes-really" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.8. </span>What are Python classes, really?<a class="headerlink" href="#what-are-python-classes-really" title="Permalink to this headline">¶</a></h3>
 <p>Putting aside the OO theory…</p>
 <p>Python classes feature:</p>
 <blockquote>
@@ -400,7 +397,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p>(Well, not really, there is more fancy stuff going on under the hood – but this basic structure will get you far).</p>
 </div>
 <div class="section" id="type-based-dispatch">
-<h3><span class="section-number">14.1.1.1.9. </span>Type-Based Dispatch<a class="headerlink" href="#type-based-dispatch" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.9. </span>Type-Based Dispatch<a class="headerlink" href="#type-based-dispatch" title="Permalink to this headline">¶</a></h3>
 <p>Occasionally you’ll see code that looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">A_Class</span><span class="p">):</span>
     <span class="n">Do_something_with_other</span>
@@ -418,7 +415,7 @@ from pre-existing classes called base classes or super classes.</p>
 <p>But it is <em>very</em> rarely called for! Between Duck Typing, polymorphism, and EAFP, you rarely need to check for type directly.</p>
 </div>
 <div class="section" id="wrap-up">
-<h3><span class="section-number">14.1.1.1.10. </span>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.1.1.1.10. </span>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h3>
 <p>Thinking OO in Python:</p>
 <p>Think about what makes sense for your code:</p>
 <ul class="simple">
@@ -442,10 +439,10 @@ from pre-existing classes called base classes or super classes.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/html_renderer.html" class="btn btn-neutral float-right" title="14.3.1. HTML Renderer Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/html_renderer.html" class="btn btn-neutral float-right" title="15.3.1. HTML Renderer Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../topics/15-subclassing/index.html" class="btn btn-neutral float-left" title="14. Subclassing and Inheritance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../topics/15-subclassing/index.html" class="btn btn-neutral float-left" title="15. Subclassing and Inheritance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

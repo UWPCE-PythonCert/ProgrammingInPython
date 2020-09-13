@@ -67,31 +67,13 @@ at the very very least, make sure it does Python indentation and syntax coloring
 :ref:`setting_up_dev_environment`
 
 
-Readings:
-=========
-
-.. toctree::
-    :maxdepth: 1
-
-    ../modules/Class_introduction
-    ../modules/EnvironmentOverview
-    ../modules/IPythonIntroduction
-    ../modules/BasicPython
-    ../modules/Py2vsPy3
-    ../modules/Git
-    ../modules/SubmittingCodeGithubClassroom
-    ../modules/GitWorkflow
-    ../modules/HowToRunAPythonFile
-    ../modules/Learning
-
-
 Exercises:
 ==========
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    ../exercises/python_pushups.rst
+..     ../exercises/python_pushups.rst
 
 Finish Setting up your dev environment
 --------------------------------------

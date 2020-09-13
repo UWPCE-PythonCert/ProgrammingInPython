@@ -1,4 +1,4 @@
-.. _setup_details:
+.. _advanced_setup:
 
 ==============
 Advanced Setup
@@ -26,8 +26,6 @@ Command Shells
     shell.rst
     ipython.rst
     windows_bash.rst
-    virtualenv.rst
-    Py2vsPy3.rst
 
 
 

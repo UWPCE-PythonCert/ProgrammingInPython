@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>18.14. Concurrent Programming &mdash; Python 210 6.0 documentation</title>
+  <title>19.16. Concurrent Programming &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18.15. Asychronous Programming" href="Async.html" />
-    <link rel="prev" title="18.13. Graph Databases" href="GraphDatabases.html" /> 
+    <link rel="next" title="19.17. Asychronous Programming" href="Async.html" />
+    <link rel="prev" title="19.15. Graph Databases" href="GraphDatabases.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,56 +82,55 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Pep8.html">18.1. Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">18.2. Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">18.3. Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Unicode.html">18.4. Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">18.5. Iterators and Generators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Decorators.html">18.6. Decorators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">18.7. Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">18.8. A Couple Handy Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">18.9. Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Logging.html">18.10. Logging and the logging module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Debugging.html">18.11. Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">18.12. No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">18.13. Graph Databases</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">18.14. Concurrent Programming</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#whirlwind-tour-of-concurrency">18.14.1. Whirlwind Tour of Concurrency</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#when-to-use-what">18.14.2. When to Use What</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Decorators.html">19.6. Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">19.10. Metaprogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Debugging.html">19.13. Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">19.16. Concurrent Programming</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#whirlwind-tour-of-concurrency">19.16.1. Whirlwind Tour of Concurrency</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#when-to-use-what">19.16.2. When to Use What</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Async.html">18.15. Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">18.16. Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">18.17. Threading and multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">18.18. Threaded Web Scraper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Profiling.html">18.19. Performance and Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Async.html">19.17. Asychronous Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">19.18. Notes on Coroutines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Profiling.html">19.21. Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -177,11 +176,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../topics/index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="../topics/99-extras/index.html"><span class="section-number">18. </span>Extra Topics</a> &raquo;</li>
+          <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">18.14. </span>Concurrent Programming</li>
+      <li><span class="section-number">19.16. </span>Concurrent Programming</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -201,7 +200,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="concurrent-programming">
-<span id="concurrency"></span><h1><span class="section-number">18.14. </span>Concurrent Programming<a class="headerlink" href="#concurrent-programming" title="Permalink to this headline">¶</a></h1>
+<span id="concurrency"></span><h1><span class="section-number">19.16. </span>Concurrent Programming<a class="headerlink" href="#concurrent-programming" title="Permalink to this headline">¶</a></h1>
 <p>What does it mean to do something “Concurrently” ? It means multiple things are happening at the same time. But what are those “things”?</p>
 <blockquote>
 <div><ul class="simple">
@@ -211,7 +210,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="whirlwind-tour-of-concurrency">
-<h2><span class="section-number">18.14.1. </span>Whirlwind Tour of Concurrency<a class="headerlink" href="#whirlwind-tour-of-concurrency" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.16.1. </span>Whirlwind Tour of Concurrency<a class="headerlink" href="#whirlwind-tour-of-concurrency" title="Permalink to this headline">¶</a></h2>
 <p><strong>Concurrency:</strong></p>
 <p>Having different code running at the same time, or kind of the same time.</p>
 <p><strong>Asynchrony:</strong></p>
@@ -222,7 +221,7 @@
 <p>In that talk Rob Pike makes a key point: Breaking down tasks into concurrent subtasks only allows parallelism, it’s the scheduling of these subtasks that creates it.</p>
 <p>And, indeed, once you have a set of subtasks, they can be scheduled in a truly parallel fashion, or managed asynchronously in a single thread (concurrent, but not parallel)</p>
 <div class="section" id="types-of-concurrency">
-<h3><span class="section-number">18.14.1.1. </span>Types of Concurrency<a class="headerlink" href="#types-of-concurrency" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.1. </span>Types of Concurrency<a class="headerlink" href="#types-of-concurrency" title="Permalink to this headline">¶</a></h3>
 <p><strong>Multithreading:</strong></p>
 <blockquote>
 <div><p>Multiple code paths sharing memory – one Python interpreter, one set of Python objects.</p>
@@ -246,7 +245,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="motivations-for-parallel-execution">
-<h3><span class="section-number">18.14.1.2. </span>Motivations for parallel execution<a class="headerlink" href="#motivations-for-parallel-execution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.2. </span>Motivations for parallel execution<a class="headerlink" href="#motivations-for-parallel-execution" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Performance
 -  Limited by “Amdahl’s Law”: <a class="reference external" href="http://en.wikipedia.org/wiki/Amdahl%27s_law">http://en.wikipedia.org/wiki/Amdahl%27s_law</a></p>
@@ -273,7 +272,7 @@
 benefits before going parallel.</p>
 </div>
 <div class="section" id="parallelization-strategy-for-performance">
-<h3><span class="section-number">18.14.1.3. </span>Parallelization Strategy for Performance<a class="headerlink" href="#parallelization-strategy-for-performance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.3. </span>Parallelization Strategy for Performance<a class="headerlink" href="#parallelization-strategy-for-performance" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">1. Break problem down into chunks</div>
 <div class="line">2. Execute chunks in parallel</div>
@@ -299,7 +298,7 @@ environment, so make it tunable</p></li>
 </ul>
 </div>
 <div class="section" id="other-options">
-<h3><span class="section-number">18.14.1.4. </span>Other options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.4. </span>Other options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h3>
 <p>Traditionally, concurency has been achieved through multiple process
 communication and in-process threads, as we’ve seen.</p>
 <p>Another strategy is through micro-threads, implemented via coroutines
@@ -312,7 +311,7 @@ entry points for suspending and resuming execution.</p>
 <a class="reference external" href="http://en.wikipedia.org/wiki/Computer_multitasking#Cooperative_multitasking.2Ftime-sharing">cooperative multitasking model:</a></p>
 </div>
 <div class="section" id="threads-versus-processes-in-python">
-<h3><span class="section-number">18.14.1.5. </span>Threads versus processes in Python<a class="headerlink" href="#threads-versus-processes-in-python" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.5. </span>Threads versus processes in Python<a class="headerlink" href="#threads-versus-processes-in-python" title="Permalink to this headline">¶</a></h3>
 <p>Threads are lightweight <a class="reference external" href="https://en.wikipedia.org/wiki/Light-weight_process">processes</a>, run in the address space of an OS
 process, true OS level threads.</p>
 <p>Therefore, a component of a process.</p>
@@ -323,7 +322,7 @@ due to the Global Interpreter Lock (GIL)</p>
 benefit from threading</p>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">18.14.1.6. </span>Processes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.6. </span>Processes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>A process contains all the instructions and data required to execute
 independently, so processes do not share data!</p>
 <p>Mulitple processes best to speed up CPU bound operations.</p>
@@ -335,9 +334,9 @@ independently, so processes do not share data!</p>
 <p>Data moved between processes must be pickleable</p>
 </div>
 <div class="section" id="advantages-disadvantages-of-threads">
-<h3><span class="section-number">18.14.1.7. </span>Advantages / Disadvantages of Threads<a class="headerlink" href="#advantages-disadvantages-of-threads" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.7. </span>Advantages / Disadvantages of Threads<a class="headerlink" href="#advantages-disadvantages-of-threads" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="advantages">
-<h4><span class="section-number">18.14.1.7.1. </span>Advantages:<a class="headerlink" href="#advantages" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.16.1.7.1. </span>Advantages:<a class="headerlink" href="#advantages" title="Permalink to this headline">¶</a></h4>
 <p>They share memory space:</p>
 <blockquote>
 <div><ul class="simple">
@@ -347,7 +346,7 @@ independently, so processes do not share data!</p>
 </div></blockquote>
 </div>
 <div class="section" id="disadvantages">
-<h4><span class="section-number">18.14.1.7.2. </span>Disadvantages:<a class="headerlink" href="#disadvantages" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.16.1.7.2. </span>Disadvantages:<a class="headerlink" href="#disadvantages" title="Permalink to this headline">¶</a></h4>
 <p>They share memory space:</p>
 <blockquote>
 <div><ul>
@@ -367,7 +366,7 @@ independently, so processes do not share data!</p>
 </div>
 </div>
 <div class="section" id="gil">
-<h3><span class="section-number">18.14.1.8. </span>GIL<a class="headerlink" href="#gil" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.8. </span>GIL<a class="headerlink" href="#gil" title="Permalink to this headline">¶</a></h3>
 <p><strong>Global Interpreter Lock</strong></p>
 <p>(<strong>GIL</strong>)</p>
 <p>This is a lock which must be obtained by each thread before it can
@@ -407,13 +406,13 @@ have no GIL</p>
 <p>But: <strong>Personal Opinion:</strong> Python is not really (directly) suited to the kind of computationally intensive work that the GIL really hampers. And extension modules (i.e. numpy) can release the GIL!</p>
 </div>
 <div class="section" id="posted-without-comment">
-<h3><span class="section-number">18.14.1.9. </span>Posted without comment<a class="headerlink" href="#posted-without-comment" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.9. </span>Posted without comment<a class="headerlink" href="#posted-without-comment" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-default">
 <img alt="../_images/killGIL.jpg" class="fill" src="../_images/killGIL.jpg" />
 </div>
 </div>
 <div class="section" id="advantages-disadvantages-of-processes">
-<h3><span class="section-number">18.14.1.10. </span>Advantages / Disadvantages of Processes<a class="headerlink" href="#advantages-disadvantages-of-processes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.10. </span>Advantages / Disadvantages of Processes<a class="headerlink" href="#advantages-disadvantages-of-processes" title="Permalink to this headline">¶</a></h3>
 <p>Processes are heavier weight – each process makes a copy of the entire interpreter (Mostly…) – uses more resources.</p>
 <p>You need to copy the data you need back and forth between processes.</p>
 <p>Slower to start, slower to use, more memory.</p>
@@ -437,7 +436,7 @@ have no GIL</p>
 </div></blockquote>
 </div>
 <div class="section" id="mutex-locks-threading-lock">
-<h3><span class="section-number">18.14.1.11. </span>Mutex locks (<code class="docutils literal notranslate"><span class="pre">threading.Lock</span></code>)<a class="headerlink" href="#mutex-locks-threading-lock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.11. </span>Mutex locks (<code class="docutils literal notranslate"><span class="pre">threading.Lock</span></code>)<a class="headerlink" href="#mutex-locks-threading-lock" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Probably most common</p></li>
@@ -460,7 +459,7 @@ have no GIL</p>
 <p>Or use RLock for code-based locking (locking function/method execution rather than data access)</p>
 </div>
 <div class="section" id="subprocesses-subprocess">
-<h3><span class="section-number">18.14.1.12. </span>Subprocesses (<code class="docutils literal notranslate"><span class="pre">subprocess</span></code>)<a class="headerlink" href="#subprocesses-subprocess" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.16.1.12. </span>Subprocesses (<code class="docutils literal notranslate"><span class="pre">subprocess</span></code>)<a class="headerlink" href="#subprocesses-subprocess" title="Permalink to this headline">¶</a></h3>
 <p>Subprocesses are completely separate processes invoked from a master process (your python program).</p>
 <p>Usually used to call non-python programs (shell commands). But of course, a Python program can be a command line program as well, so you can call either your or other python programs this way.</p>
 <p>Easy invocation:</p>
@@ -475,7 +474,7 @@ have no GIL</p>
 <p><code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code></p>
 <p>Lots of options there!</p>
 <div class="section" id="pipes-and-pickle-and-subprocess">
-<h4><span class="section-number">18.14.1.12.1. </span>Pipes and <code class="docutils literal notranslate"><span class="pre">pickle</span></code> and <code class="docutils literal notranslate"><span class="pre">subprocess</span></code><a class="headerlink" href="#pipes-and-pickle-and-subprocess" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.16.1.12.1. </span>Pipes and <code class="docutils literal notranslate"><span class="pre">pickle</span></code> and <code class="docutils literal notranslate"><span class="pre">subprocess</span></code><a class="headerlink" href="#pipes-and-pickle-and-subprocess" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Very low level, for the brave of heart</p></li>
@@ -487,7 +486,7 @@ have no GIL</p>
 </div>
 </div>
 <div class="section" id="when-to-use-what">
-<h2><span class="section-number">18.14.2. </span>When to Use What<a class="headerlink" href="#when-to-use-what" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.16.2. </span>When to Use What<a class="headerlink" href="#when-to-use-what" title="Permalink to this headline">¶</a></h2>
 <img alt="../_images/proc_thread_async.png" src="../_images/proc_thread_async.png" />
 </div>
 </div>
@@ -500,10 +499,10 @@ have no GIL</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Async.html" class="btn btn-neutral float-right" title="18.15. Asychronous Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Async.html" class="btn btn-neutral float-right" title="19.17. Asychronous Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="GraphDatabases.html" class="btn btn-neutral float-left" title="18.13. Graph Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="GraphDatabases.html" class="btn btn-neutral float-left" title="19.15. Graph Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

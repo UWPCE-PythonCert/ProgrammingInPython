@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.8.3. Using Visual Studio Code as a lightweight Python IDE &mdash; Python 210 6.0 documentation</title>
+  <title>1.4.1.3. Using Visual Studio Code as a lightweight Python IDE &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.8.4. Command line basics" href="command_line.html" />
-    <link rel="prev" title="1.8.2. Turning Atom Into a Lightweight Python IDE" href="atom_as_ide.html" /> 
+    <link rel="next" title="1.4.2.1. Shell Customizations for Python Development" href="shell.html" />
+    <link rel="prev" title="1.4.1.2. Turning Atom Into a Lightweight Python IDE" href="atom_as_ide.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,48 +82,40 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Setting up your Environment</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="python_and_core_tools.html">1. Installing Python and core tools</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#minimal-setup">1.1. Minimal Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#your-development-environment">1.2. Your Development Environment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#the-command-line-cli">1.3. The Command Line (cli)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#the-python-interpreter">1.4. The Python Interpreter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#the-editor">1.5. The Editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#version-control-system">1.6. Version Control System</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python_and_core_tools.html#am-i-ready-to-go">1.7. Am I ready to go?</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="python_and_core_tools.html#specific-documentation">1.8. Specific Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="environment_overview.html">1.1. Introduction to your Programming Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="advanced_setup.html#creating-an-ide">1.4.1. Creating an IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced_setup.html#command-shells">1.4.2. Command Shells</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="setup_details.html">2. Setup Details</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_setup.html">3. Advanced Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="git.html">4. Git</a></li>
-<li class="toctree-l3"><a class="reference internal" href="resources.html">5. Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">1.5. Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../10-modules_packages/index.html">9. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../99-extras/index.html">18. Extra Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -169,13 +161,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="index.html">Setting up your Environment</a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-          <li><a href="python_and_core_tools.html"><span class="section-number">1. </span>Installing Python and core tools</a> &raquo;</li>
+          <li><a href="advanced_setup.html"><span class="section-number">1.4. </span>Advanced Setup</a> &raquo;</li>
         
-      <li><span class="section-number">1.8.3. </span>Using Visual Studio Code as a lightweight Python IDE</li>
+      <li><span class="section-number">1.4.1.3. </span>Using Visual Studio Code as a lightweight Python IDE</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,10 +187,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="using-visual-studio-code-as-a-lightweight-python-ide">
-<span id="vsc-as-ide"></span><h1><span class="section-number">1.8.3. </span>Using Visual Studio Code as a lightweight Python IDE<a class="headerlink" href="#using-visual-studio-code-as-a-lightweight-python-ide" title="Permalink to this headline">¶</a></h1>
+<span id="vsc-as-ide"></span><h1><span class="section-number">1.4.1.3. </span>Using Visual Studio Code as a lightweight Python IDE<a class="headerlink" href="#using-visual-studio-code-as-a-lightweight-python-ide" title="Permalink to this headline">¶</a></h1>
 <p>Visual Studio Code is an extensible and customizable text editor from Microsoft that provides a very minimal layout with additional tooling such as an excellent built-in terminal.</p>
 <div class="section" id="requirements">
-<h2><span class="section-number">1.8.3.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.1.3.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Any IDE should ease your development experience by providing the following:</p>
 <ul class="simple">
 <li><p>It should provide excellent, configurable syntax colorization.</p></li>
@@ -210,28 +202,28 @@
 <p>Visual Studio Code requires that you perform some setup out of the box (see below for details).</p>
 </div>
 <div class="section" id="which-version">
-<h2><span class="section-number">1.8.3.2. </span>Which Version?<a class="headerlink" href="#which-version" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.1.3.2. </span>Which Version?<a class="headerlink" href="#which-version" title="Permalink to this headline">¶</a></h2>
 <p>There’s just the latest version available to download.</p>
 <p>This ensures that all recent bug fixes and updates have been made.</p>
 <p>Visual Studio Code runs on Macs, Windows, and Linux flavors like Ubuntu, Debian, Red Hat, etc.</p>
 <p>Also, Visual Studio Code performs updates on itself, so there’s no need to download newer versions of the app… you should already have it.</p>
 </div>
 <div class="section" id="installation">
-<h2><span class="section-number">1.8.3.3. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.1.3.3. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Check out this solid <a class="reference external" href="https://www.youtube.com/watch?v=TILIcrrVABg/">video</a> that will walk you through the process of setting up Visual Studio Code for Python in detail.</p>
 <p>Go to the Visual Studio Code <a class="reference external" href="https://code.visualstudio.com/">website</a>.</p>
 <p>Scroll down to the bottom of the page and you’ll see links for installers to all the major OS platforms.</p>
 <p>Download your flavor and run the installer.</p>
 </div>
 <div class="section" id="basic-settings">
-<h2><span class="section-number">1.8.3.4. </span>Basic Settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.1.3.4. </span>Basic Settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline">¶</a></h2>
 <p>Visual Studio Code can be used out of the box with no setup as a text editor. It automatically
 recognizes file types and helpfully highlights text accordingly. To use in this manner,
 write your Python files in Visual Studio Code, then run them in your Python command prompt
 or Visual Studio Code’s own built in terminal: Ctrl + ` (control-backtick)</p>
 </div>
 <div class="section" id="extending-the-editor">
-<h2><span class="section-number">1.8.3.5. </span>Extending the Editor<a class="headerlink" href="#extending-the-editor" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.1.3.5. </span>Extending the Editor<a class="headerlink" href="#extending-the-editor" title="Permalink to this headline">¶</a></h2>
 <p>After you’ve install Visual Studio Code, there are many ways to extend it for working with Python.</p>
 <p>The video linked above goes into this much deeper.</p>
 <p>There is also a great tutorial for setting up Python <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">here</a>.</p>
@@ -248,10 +240,10 @@ or Visual Studio Code’s own built in terminal: Ctrl + ` (control-backtick)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="command_line.html" class="btn btn-neutral float-right" title="1.8.4. Command line basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="shell.html" class="btn btn-neutral float-right" title="1.4.2.1. Shell Customizations for Python Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="atom_as_ide.html" class="btn btn-neutral float-left" title="1.8.2. Turning Atom Into a Lightweight Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="atom_as_ide.html" class="btn btn-neutral float-left" title="1.4.1.2. Turning Atom Into a Lightweight Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

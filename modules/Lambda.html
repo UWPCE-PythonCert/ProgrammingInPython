@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>16.1.2. Anonymous Functions: Lambda &mdash; Python 210 6.0 documentation</title>
+  <title>17.1.2. Anonymous Functions: Lambda &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16.1.3. Map Filter and Reduce" href="MapFilterReduce.html" />
-    <link rel="prev" title="16.1.1. Object Oriented vs Functional Programming" href="OO_vs_functional.html" /> 
+    <link rel="next" title="17.1.3. Map Filter and Reduce" href="MapFilterReduce.html" />
+    <link rel="prev" title="17.1.1. Object Oriented vs Functional Programming" href="OO_vs_functional.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,43 +82,40 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../topics/17-functional_programming/index.html#to-read">16.1. To Read</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="OO_vs_functional.html">16.1.1. Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">16.1.2. Anonymous Functions: Lambda</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MapFilterReduce.html">16.1.3. Map Filter and Reduce</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IPythonParallel.html">16.1.4. IPython Parallel Quickstart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Closures.html">16.1.5. Closures and Function Currying</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../topics/17-functional_programming/index.html#to-read">17.1. To Read</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="OO_vs_functional.html">17.1.1. Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">17.1.2. Anonymous Functions: Lambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MapFilterReduce.html">17.1.3. Map Filter and Reduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IPythonParallel.html">17.1.4. IPython Parallel Quickstart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Closures.html">17.1.5. Closures and Function Currying</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../topics/17-functional_programming/index.html#activities">16.2. Activities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../topics/17-functional_programming/index.html#exercises">16.3. Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/17-functional_programming/index.html#activities">17.2. Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/17-functional_programming/index.html#exercises">17.3. Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -164,11 +161,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../topics/index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">16. </span>Introduction to Functional Programming</a> &raquo;</li>
+          <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">17. </span>Introduction to Functional Programming</a> &raquo;</li>
         
-      <li><span class="section-number">16.1.2. </span>Anonymous Functions: Lambda</li>
+      <li><span class="section-number">17.1.2. </span>Anonymous Functions: Lambda</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,12 +185,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="anonymous-functions-lambda">
-<span id="anonymous-functions"></span><h1><span class="section-number">16.1.2. </span>Anonymous Functions: Lambda<a class="headerlink" href="#anonymous-functions-lambda" title="Permalink to this headline">¶</a></h1>
+<span id="anonymous-functions"></span><h1><span class="section-number">17.1.2. </span>Anonymous Functions: Lambda<a class="headerlink" href="#anonymous-functions-lambda" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword is a way to create a function on the fly, without giving it a name. Hence the term “anonymous” – it has no name.</p>
 <div class="section" id="using-lambda">
-<h2><span class="section-number">16.1.2.1. </span>Using <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#using-lambda" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">17.1.2.1. </span>Using <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#using-lambda" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="structure">
-<h3><span class="section-number">16.1.2.1.1. </span>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">17.1.2.1.1. </span>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h3>
 <p>“lambda” is a keyword – it can not be used as a variable name, etc. A lambda expression looks like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="o">&lt;</span><span class="n">parameters</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
 </pre></div>
@@ -205,7 +202,7 @@
 <p>In short, lambda is only for very simple functions with no real flow control.</p>
 </div>
 <div class="section" id="example">
-<h3><span class="section-number">16.1.2.1.2. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">17.1.2.1.2. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
 <span class="gp">In [2]: </span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
@@ -235,7 +232,7 @@
 <p>So <code class="docutils literal notranslate"><span class="pre">lambda</span></code> creates a function, but it doesn’t have a name, and it can only have a single expression in it – no flow control.</p>
 </div>
 <div class="section" id="what-s-the-point">
-<h3><span class="section-number">16.1.2.1.3. </span>What’s the point?<a class="headerlink" href="#what-s-the-point" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">17.1.2.1.3. </span>What’s the point?<a class="headerlink" href="#what-s-the-point" title="Permalink to this headline">¶</a></h3>
 <p>There is nothing you can do with lambda that you can’t do with regular <code class="docutils literal notranslate"><span class="pre">def</span></code> functions. But there are times when you just need a simple quick function that you don’t need to keep around or refer to again – so it’s a handy syntax for these situations.</p>
 <p>A sorting key function is a great example:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [55]: </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Chris&quot;</span><span class="p">,</span><span class="s2">&quot;Barker&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Fred&quot;</span><span class="p">,</span> <span class="s2">&quot;Jones&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Zola&quot;</span><span class="p">,</span> <span class="s2">&quot;Adams&quot;</span><span class="p">)]</span>
@@ -272,7 +269,7 @@
 </div>
 </div>
 <div class="section" id="functions-as-first-class-objects">
-<h2><span class="section-number">16.1.2.2. </span>Functions as first class objects<a class="headerlink" href="#functions-as-first-class-objects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">17.1.2.2. </span>Functions as first class objects<a class="headerlink" href="#functions-as-first-class-objects" title="Permalink to this headline">¶</a></h2>
 <p>lambda functions are python objects; they can be stored in a list or other container:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">]</span>
 <span class="gp">In [8]: </span><span class="nb">type</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -297,7 +294,7 @@
 </div>
 <p>If the goal is to have that little function in the list, and you don’t need to give it a name and/or reference it anywhere else, then lambda is a cleaner way to do it.</p>
 <div class="section" id="lambda-and-keyword-arguments">
-<h3><span class="section-number">16.1.2.2.1. </span>lambda and keyword arguments<a class="headerlink" href="#lambda-and-keyword-arguments" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">17.1.2.2.1. </span>lambda and keyword arguments<a class="headerlink" href="#lambda-and-keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p>lambda functions can take keyword arguments as well:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)(</span><span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="gh">Out[20]: </span><span class="go">8</span>
@@ -335,10 +332,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="MapFilterReduce.html" class="btn btn-neutral float-right" title="16.1.3. Map Filter and Reduce" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="MapFilterReduce.html" class="btn btn-neutral float-right" title="17.1.3. Map Filter and Reduce" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="OO_vs_functional.html" class="btn btn-neutral float-left" title="16.1.1. Object Oriented vs Functional Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="OO_vs_functional.html" class="btn btn-neutral float-left" title="17.1.1. Object Oriented vs Functional Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

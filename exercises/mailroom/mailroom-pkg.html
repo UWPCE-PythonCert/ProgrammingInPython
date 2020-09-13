@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.3.1. Mailroom – as a Python Package &mdash; Python 210 6.0 documentation</title>
+  <title>10.3.1. Mailroom – as a Python Package &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10. Advanced Argument Passing" href="../../topics/11-argument_passing/index.html" />
-    <link rel="prev" title="9.2.1. LAB: A Small Example Package" href="../packaging/package_lab.html" /> 
+    <link rel="next" title="11. Advanced Argument Passing" href="../../topics/11-argument_passing/index.html" />
+    <link rel="prev" title="10.2.1. LAB: A Small Example Package" href="../packaging/package_lab.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,39 +82,36 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../topics/01-setting_up/index.html">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../topics/10-modules_packages/index.html">9. Modules and Packages</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../topics/10-modules_packages/index.html#to-read">9.1. To Read</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../topics/10-modules_packages/index.html#activities">9.2. Activities</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../../topics/10-modules_packages/index.html#exercises">9.3. Exercises</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">9.3.1. Mailroom – as a Python Package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../topics/index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../topics/10-modules_packages/index.html">10. Modules and Packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../topics/10-modules_packages/index.html#to-read">10.1. To Read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../topics/10-modules_packages/index.html#activities">10.2. Activities</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../topics/10-modules_packages/index.html#exercises">10.3. Exercises</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">10.3.1. Mailroom – as a Python Package</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/99-extras/index.html">18. Extra Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -160,11 +157,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../topics/index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../../topics/index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="../../topics/10-modules_packages/index.html"><span class="section-number">9. </span>Modules and Packages</a> &raquo;</li>
+          <li><a href="../../topics/10-modules_packages/index.html"><span class="section-number">10. </span>Modules and Packages</a> &raquo;</li>
         
-      <li><span class="section-number">9.3.1. </span>Mailroom – as a Python Package</li>
+      <li><span class="section-number">10.3.1. </span>Mailroom – as a Python Package</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,10 +181,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mailroom-as-a-python-package">
-<span id="exercise-mailroom-package"></span><h1><span class="section-number">9.3.1. </span>Mailroom – as a Python Package<a class="headerlink" href="#mailroom-as-a-python-package" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-package"></span><h1><span class="section-number">10.3.1. </span>Mailroom – as a Python Package<a class="headerlink" href="#mailroom-as-a-python-package" title="Permalink to this headline">¶</a></h1>
 <p>The mailroom program is a small but complete system – if you wanted to make it available for others to test and run, making a “proper” python package is a great idea. Making a package of it will also make it easier to develop and test, even if you are the only one to use it.</p>
 <div class="section" id="code-structure">
-<h2><span class="section-number">9.3.1.1. </span>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3.1.1. </span>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h2>
 <p>Start with your existing version of mailroom.</p>
 <p>It should already be structured with the “logic” code distinct from the user interface (yes, a command line <em>is</em> a user interface). But you may have it all in one file. This isn’t <em>too</em> bad for such a small program, but as a program grows, you really want to keep things separate, in a well organized package.</p>
 <p>The first step is to re-structure your code into separate files:</p>
@@ -210,7 +207,7 @@
 <p>Yes, that’s it! This has the advantage of keeping the top-level script really simple, as it has to get put somewhere else and it can keep the “real” code in the package where it belongs.</p>
 </div>
 <div class="section" id="making-the-package">
-<h2><span class="section-number">9.3.1.2. </span>Making the Package<a class="headerlink" href="#making-the-package" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3.1.2. </span>Making the Package<a class="headerlink" href="#making-the-package" title="Permalink to this headline">¶</a></h2>
 <p>Put all these in a python package structure, something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mailroom</span>
     <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
@@ -230,12 +227,12 @@
 <p>Now write your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> to support your package.</p>
 </div>
 <div class="section" id="making-the-top-level-script-runnable">
-<h2><span class="section-number">9.3.1.3. </span>Making the top-level script runnable<a class="headerlink" href="#making-the-top-level-script-runnable" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3.1.3. </span>Making the top-level script runnable<a class="headerlink" href="#making-the-top-level-script-runnable" title="Permalink to this headline">¶</a></h2>
 <p>To get the script installed you have two options. I prefer the more straightforward one, <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument">the scripts keyword argument</a></p>
 <p>But if you want to get fancy, you can use <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>’s <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point">entry points</a></p>
 </div>
 <div class="section" id="including-data-files">
-<h2><span class="section-number">9.3.1.4. </span>Including data files<a class="headerlink" href="#including-data-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3.1.4. </span>Including data files<a class="headerlink" href="#including-data-files" title="Permalink to this headline">¶</a></h2>
 <p>NOTE: If you have a database of donors in a file that you load, then that should go in the package as well. Probably inside the mailroom dir, in a <code class="docutils literal notranslate"><span class="pre">data</span></code> dir or similar. Then you need to add it to your setup.py to make sure it gets copied into the installed package.</p>
 <p>There are a few ways to do this:</p>
 <p><a class="reference external" href="http://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files">http://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files</a></p>
@@ -245,7 +242,7 @@
 <p>Now you’ll need to write your code to find that data file. You can do that by using the __file__ module attribute – then the location of the data file will be relative to the __file__ that your code is in. A little massaging with a <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> should do it.</p>
 </div>
 <div class="section" id="testing-your-package">
-<h2><span class="section-number">9.3.1.5. </span>Testing your Package<a class="headerlink" href="#testing-your-package" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3.1.5. </span>Testing your Package<a class="headerlink" href="#testing-your-package" title="Permalink to this headline">¶</a></h2>
 <p>When you are done, you should be able to both install your package fully:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install .
 </pre></div>
@@ -274,10 +271,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../topics/11-argument_passing/index.html" class="btn btn-neutral float-right" title="10. Advanced Argument Passing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../topics/11-argument_passing/index.html" class="btn btn-neutral float-right" title="11. Advanced Argument Passing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../packaging/package_lab.html" class="btn btn-neutral float-left" title="9.2.1. LAB: A Small Example Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../packaging/package_lab.html" class="btn btn-neutral float-left" title="10.2.1. LAB: A Small Example Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

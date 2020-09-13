@@ -15,10 +15,13 @@ The following are some extra topics that might be of interest
     ../../modules/IteratorsAndGenerators
 
     ../../modules/Decorators
+    ../../exercises/mailroom/mailroom-decorator
+
     ../../modules/ContextManagers
-    ../../exercises/context-managers-exercise.rst
+    ../../exercises/context-managers-exercise
 
     ../../modules/MetaProgramming
+    ../../exercises/mailroom/mailroom-meta
 
     ../../modules/Logging
     ../../modules/Debugging

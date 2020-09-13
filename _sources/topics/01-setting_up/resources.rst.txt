@@ -8,4 +8,5 @@ Resources
 
     command_line
     virtualenv
-    Py2vsPy3
+    ../../modules/Py2vsPy3
+

@@ -18,6 +18,9 @@ To Read
 Activities
 ----------
 
+.. toctree::
+    :maxdepth: 1
+
     ../../exercises/lambda_magic
 
 Exercises

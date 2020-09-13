@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>18.8. A Couple Handy Context Managers &mdash; Python 210 6.0 documentation</title>
+  <title>19.9. A Couple Handy Context Managers &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18.9. Metaprogramming" href="../modules/MetaProgramming.html" />
-    <link rel="prev" title="18.7. Context Managers" href="../modules/ContextManagers.html" /> 
+    <link rel="next" title="19.10. Metaprogramming" href="../modules/MetaProgramming.html" />
+    <link rel="prev" title="19.8. Context Managers" href="../modules/ContextManagers.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,56 +82,55 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../modules/Pep8.html">18.1. Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/CodeReviews.html">18.2. Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/PersistanceAndSerialization.html">18.3. Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Unicode.html">18.4. Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/IteratorsAndGenerators.html">18.5. Iterators and Generators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Decorators.html">18.6. Decorators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/ContextManagers.html">18.7. Context Managers</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">18.8. A Couple Handy Context Managers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#timing-context-manager">18.8.1. Timing Context Manager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-pytest-error-handler">18.8.2. The pytest error handler</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../modules/Pep8.html">19.1. Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/CodeReviews.html">19.2. Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Unicode.html">19.4. Unicode in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Decorators.html">19.6. Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/ContextManagers.html">19.8. Context Managers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">19.9. A Couple Handy Context Managers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#timing-context-manager">19.9.1. Timing Context Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-pytest-error-handler">19.9.2. The pytest error handler</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/MetaProgramming.html">18.9. Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Logging.html">18.10. Logging and the logging module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Debugging.html">18.11. Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/NoSQL.html">18.12. No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/GraphDatabases.html">18.13. Graph Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Concurrency.html">18.14. Concurrent Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Async.html">18.15. Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Coroutines.html">18.16. Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/ThreadingMultiprocessing.html">18.17. Threading and multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="threaded_downloader.html">18.18. Threaded Web Scraper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../modules/Profiling.html">18.19. Performance and Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/MetaProgramming.html">19.10. Metaprogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Logging.html">19.12. Logging and the logging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Debugging.html">19.13. Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/NoSQL.html">19.14. No SQL Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/GraphDatabases.html">19.15. Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Concurrency.html">19.16. Concurrent Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Async.html">19.17. Asychronous Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Coroutines.html">19.18. Notes on Coroutines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/Profiling.html">19.21. Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -177,11 +176,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../topics/index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="../topics/99-extras/index.html"><span class="section-number">18. </span>Extra Topics</a> &raquo;</li>
+          <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">18.8. </span>A Couple Handy Context Managers</li>
+      <li><span class="section-number">19.9. </span>A Couple Handy Context Managers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -201,10 +200,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="a-couple-handy-context-managers">
-<span id="exercise-context-manager"></span><h1><span class="section-number">18.8. </span>A Couple Handy Context Managers<a class="headerlink" href="#a-couple-handy-context-managers" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-context-manager"></span><h1><span class="section-number">19.9. </span>A Couple Handy Context Managers<a class="headerlink" href="#a-couple-handy-context-managers" title="Permalink to this headline">¶</a></h1>
 <p>Context managers can be used in a number of ways – the classic is to manage resources - that is, close files and the like.  But they are also useful for other handy things when you want to run some code before and after a block of code, or handle exceptions in special way.</p>
 <div class="section" id="timing-context-manager">
-<h2><span class="section-number">18.8.1. </span>Timing Context Manager<a class="headerlink" href="#timing-context-manager" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.9.1. </span>Timing Context Manager<a class="headerlink" href="#timing-context-manager" title="Permalink to this headline">¶</a></h2>
 <p>This is an example of running some code before and after the enclosed block.</p>
 <p>Create a context manager that will print the elapsed time taken to
 run all the code inside the context:</p>
@@ -225,20 +224,20 @@ run all the code inside the context:</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">time.clock()</span></code> returns the number of seconds that this process has been running.  You can also use <code class="docutils literal notranslate"><span class="pre">time.time()</span></code>, which gives the “wall time”, rather than the process time. <code class="docutils literal notranslate"><span class="pre">time()</span></code> will vary more depending on how busy the system is. But you may want to use it if you want to measure how long it takes to download something, for instance.</p>
 <div class="section" id="extra-credit">
-<h3><span class="section-number">18.8.1.1. </span>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.9.1.1. </span>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h3>
 <p>Allow the <code class="docutils literal notranslate"><span class="pre">Timer</span></code> context manager to take a file-like
 object as an argument (the default should be <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>). The results of the
 timing should be printed to the file-like object. You could also pass in a name for this particular context, so the message in the file-like object is labeled – kind of a poor man’s logging system.</p>
 </div>
 <div class="section" id="extra-extra-credit">
-<h3><span class="section-number">18.8.1.2. </span>Extra Extra Credit<a class="headerlink" href="#extra-extra-credit" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.9.1.2. </span>Extra Extra Credit<a class="headerlink" href="#extra-extra-credit" title="Permalink to this headline">¶</a></h3>
 <p>Implement this as a generator, wrapped by the:</p>
 <p><code class="docutils literal notranslate"><span class="pre">contextlib.contextmanager</span></code></p>
 <p>decorator.</p>
 </div>
 </div>
 <div class="section" id="the-pytest-error-handler">
-<h2><span class="section-number">18.8.2. </span>The pytest error handler<a class="headerlink" href="#the-pytest-error-handler" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.9.2. </span>The pytest error handler<a class="headerlink" href="#the-pytest-error-handler" title="Permalink to this headline">¶</a></h2>
 <p>pytest come with a nifty context manager for testing for error conditions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">)</span>
     <span class="mi">5</span> <span class="o">/</span> <span class="mi">0</span>
@@ -259,13 +258,13 @@ timing should be printed to the file-like object. You could also pass in a name 
 <p>the wrong Exception occurred.</p>
 <p>You task is to write a similar context manager (yes, it’s already written, but this should help you understand how to handle exceptions in context managers…)</p>
 <div class="section" id="id1">
-<h3><span class="section-number">18.8.2.1. </span>Extra Credit<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.9.2.1. </span>Extra Credit<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The pytest version has a few other features:</p>
 <p>[<a class="reference external" href="https://docs.pytest.org/en/latest/assert.html#assertions-about-expected-exceptions">https://docs.pytest.org/en/latest/assert.html#assertions-about-expected-exceptions</a>]</p>
 <p>See if you can implement a few of them….</p>
 </div>
 <div class="section" id="hints">
-<h3><span class="section-number">18.8.2.2. </span>Hints:<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.9.2.2. </span>Hints:<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
 <p>tests fail when an assert fails:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">some_expression</span><span class="p">,</span> <span class="s2">&quot;a message&quot;</span>
 </pre></div>
@@ -296,10 +295,10 @@ timing should be printed to the file-like object. You could also pass in a name 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../modules/MetaProgramming.html" class="btn btn-neutral float-right" title="18.9. Metaprogramming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/MetaProgramming.html" class="btn btn-neutral float-right" title="19.10. Metaprogramming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/ContextManagers.html" class="btn btn-neutral float-left" title="18.7. Context Managers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/ContextManagers.html" class="btn btn-neutral float-left" title="19.8. Context Managers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

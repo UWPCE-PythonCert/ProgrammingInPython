@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>18.11. Debugging &mdash; Python 210 6.0 documentation</title>
+  <title>19.13. Debugging &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18.12. No SQL Databases" href="NoSQL.html" />
-    <link rel="prev" title="18.10. Logging and the logging module" href="Logging.html" /> 
+    <link rel="next" title="19.14. No SQL Databases" href="NoSQL.html" />
+    <link rel="prev" title="19.12. Logging and the logging module" href="Logging.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,55 +82,54 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Pep8.html">18.1. Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">18.2. Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">18.3. Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Unicode.html">18.4. Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">18.5. Iterators and Generators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Decorators.html">18.6. Decorators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">18.7. Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">18.8. A Couple Handy Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">18.9. Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Logging.html">18.10. Logging and the logging module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">18.11. Debugging</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#topics">18.11.1. Topics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Programming in Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Decorators.html">19.6. Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">19.10. Metaprogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">19.13. Debugging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#topics">19.13.1. Topics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">18.12. No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">18.13. Graph Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">18.14. Concurrent Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Async.html">18.15. Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">18.16. Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">18.17. Threading and multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">18.18. Threaded Web Scraper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Profiling.html">18.19. Performance and Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">19.16. Concurrent Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Async.html">19.17. Asychronous Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">19.18. Notes on Coroutines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Profiling.html">19.21. Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -176,11 +175,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+          <li><a href="../topics/index.html">Programming in Python</a> &raquo;</li>
         
-          <li><a href="../topics/99-extras/index.html"><span class="section-number">18. </span>Extra Topics</a> &raquo;</li>
+          <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">18.11. </span>Debugging</li>
+      <li><span class="section-number">19.13. </span>Debugging</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,21 +199,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="debugging">
-<span id="id1"></span><h1><span class="section-number">18.11. </span>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">19.13. </span>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
 <p>System Development with Python</p>
 <ul class="simple">
 <li><p>Maria McKinley</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">parody&#64;uw.edu</span></code></p>
 <div class="section" id="topics">
-<h2><span class="section-number">18.11.1. </span>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.13.1. </span>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The call stack</p></li>
 <li><p>Exceptions</p></li>
 <li><p>Debugging</p></li>
 </ul>
 <div class="section" id="the-call-stack">
-<h3><span class="section-number">18.11.1.1. </span>The Call Stack<a class="headerlink" href="#the-call-stack" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.1. </span>The Call Stack<a class="headerlink" href="#the-call-stack" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>A stack is a Last-In-First-Out (LIFO) data structure (stack of plates)</p></li>
 <li><p>The call stack is a stack data structure that stores information
@@ -233,7 +232,7 @@ program exits</p></li>
 <p><a class="reference external" href="http://www.pythontutor.com/visualize.html#mode=edit">http://www.pythontutor.com/visualize.html#mode=edit</a></p>
 </div>
 <div class="section" id="visualize-the-stack">
-<h3><span class="section-number">18.11.1.2. </span>Visualize the stack!<a class="headerlink" href="#visualize-the-stack" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.2. </span>Visualize the stack!<a class="headerlink" href="#visualize-the-stack" title="Permalink to this headline">¶</a></h3>
 <a class="reference internal image-reference" href="../_images/program_callstack.png"><img alt="../_images/program_callstack.png" src="../_images/program_callstack.png" style="height: 580px;" /></a>
 <p class="rubric">How deep can that stack be?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -266,7 +265,7 @@ program exits</p></li>
 <p>more on recursion <a class="reference external" href="http://www.mariakathryn.net/Blog/60">http://www.mariakathryn.net/Blog/60</a></p>
 </div>
 <div class="section" id="exceptions">
-<h3><span class="section-number">18.11.1.3. </span>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.3. </span>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h3>
 <p>It’s easier to ask for forgiveness than permission (Grace Hopper)</p>
 <p>When either the interpreter or your own code detects an error condition,
 an exception will be raised</p>
@@ -281,7 +280,7 @@ not handled anywhere in the stack, the interpreter will exit the program.</p>
 </ul>
 </div>
 <div class="section" id="handling-exceptions">
-<h3><span class="section-number">18.11.1.4. </span>Handling exceptions<a class="headerlink" href="#handling-exceptions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.4. </span>Handling exceptions<a class="headerlink" href="#handling-exceptions" title="Permalink to this headline">¶</a></h3>
 <p>The most basic form uses the builtins try and except</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">temp_f_to_c</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
@@ -292,7 +291,7 @@ not handled anywhere in the stack, the interpreter will exit the program.</p>
 </div>
 </div>
 <div class="section" id="a-few-more-builtins-for-exception-handling-finally-else-and-raise">
-<h3><span class="section-number">18.11.1.5. </span>A few more builtins for exception handling: finally, else, and raise<a class="headerlink" href="#a-few-more-builtins-for-exception-handling-finally-else-and-raise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.5. </span>A few more builtins for exception handling: finally, else, and raise<a class="headerlink" href="#a-few-more-builtins-for-exception-handling-finally-else-and-raise" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;this&quot;</span>
 
@@ -353,7 +352,7 @@ have reports of exactly what happened and what exception would have been thrown.
 </ul>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">18.11.1.6. </span>Debugging<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.6. </span>Debugging<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p class="rubric" id="python-debugging">Python Debugging</p>
 <ul class="simple">
 <li><p>You will spend most of your time as a developer debugging.</p></li>
@@ -362,7 +361,7 @@ have reports of exactly what happened and what exception would have been thrown.
 <li><p>Find a bug, make a test, so it doesn’t come back</p></li>
 </ul>
 <div class="section" id="tools">
-<h4><span class="section-number">18.11.1.6.1. </span>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.1. </span>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>interpreter hints</p></li>
 <li><p>print()</p></li>
@@ -373,7 +372,7 @@ have reports of exactly what happened and what exception would have been thrown.
 </ul>
 </div>
 <div class="section" id="the-stack-trace">
-<h4><span class="section-number">18.11.1.6.2. </span>The Stack Trace<a class="headerlink" href="#the-stack-trace" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.2. </span>The Stack Trace<a class="headerlink" href="#the-stack-trace" title="Permalink to this headline">¶</a></h4>
 <p>You already know what it looks like. Simple traceback:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>maria$ python3 define.py python
 Traceback (most recent call last):
@@ -389,7 +388,7 @@ TypeError: &#39;method&#39; object is not subscriptable
 <p>But things can quickly get complicated. You may have already run into stacktraces that go on for a 50 lines or more.</p>
 </div>
 <div class="section" id="some-helpful-hints-with-stacktraces">
-<h4><span class="section-number">18.11.1.6.3. </span>Some helpful hints with stacktraces:<a class="headerlink" href="#some-helpful-hints-with-stacktraces" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.3. </span>Some helpful hints with stacktraces:<a class="headerlink" href="#some-helpful-hints-with-stacktraces" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>May seem obvious, but… Read it carefully!</p></li>
 <li><p>What is the error? Try reading it aloud.</p></li>
@@ -417,20 +416,20 @@ TypeError: &#39;method&#39; object is not subscriptable
 <p>Often after writing out this email, you will realize what you forgot to check, and more often than not, this will happen just after you hit send. Good places to send these emails are other people on same project and mailing list for software package. For the purpose of this class, of course, copy it into slack or the class email list.</p>
 </div>
 <div class="section" id="print">
-<h4><span class="section-number">18.11.1.6.4. </span>Print<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.4. </span>Print<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>print(“my_module.py: my_variable: “, my_variable)</p></li>
 <li><p>can use print statements to make sure you are editing a file in the stack</p></li>
 </ul>
 </div>
 <div class="section" id="console-debuggers">
-<h4><span class="section-number">18.11.1.6.5. </span>Console Debuggers<a class="headerlink" href="#console-debuggers" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.5. </span>Console Debuggers<a class="headerlink" href="#console-debuggers" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>pdb/ipdb</p></li>
 </ul>
 </div>
 <div class="section" id="gui-debuggers-more-about-these-below">
-<h4><span class="section-number">18.11.1.6.6. </span>GUI debuggers (more about these below)<a class="headerlink" href="#gui-debuggers-more-about-these-below" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.6. </span>GUI debuggers (more about these below)<a class="headerlink" href="#gui-debuggers-more-about-these-below" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Winpdb</p></li>
 <li><p>IDEs: Eclipse, Wing IDE, PyCharm, Visual Studio Code</p></li>
@@ -452,7 +451,7 @@ TypeError: &#39;method&#39; object is not subscriptable
 <p>Forces interpreter to remain active, and still in scope</p>
 </div>
 <div class="section" id="useful-tools-from-interpreter">
-<h4><span class="section-number">18.11.1.6.7. </span>Useful tools from interpreter:<a class="headerlink" href="#useful-tools-from-interpreter" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.7. </span>Useful tools from interpreter:<a class="headerlink" href="#useful-tools-from-interpreter" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>In IPython, ‘who’ will list all currently defined variables</p></li>
 <li><p>locals()</p></li>
@@ -476,7 +475,7 @@ Debugger</a></p>
 <p class="rubric"><a class="reference external" href="https://docs.python.org/3.7/library/pdb.html">Pdb - The Python Debugger</a></p>
 </div>
 <div class="section" id="the-4-fold-ways-of-invoking-pdb">
-<h4><span class="section-number">18.11.1.6.8. </span>The 4-fold ways of invoking pdb<a class="headerlink" href="#the-4-fold-ways-of-invoking-pdb" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.13.1.6.8. </span>The 4-fold ways of invoking pdb<a class="headerlink" href="#the-4-fold-ways-of-invoking-pdb" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Postmortem mode</p></li>
 <li><p>Run mode</p></li>
@@ -614,7 +613,7 @@ test to understand a certain failure situation:</p>
 </div>
 </div>
 <div class="section" id="python-ides">
-<h3><span class="section-number">18.11.1.7. </span>Python IDEs<a class="headerlink" href="#python-ides" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.7. </span>Python IDEs<a class="headerlink" href="#python-ides" title="Permalink to this headline">¶</a></h3>
 <p class="rubric">PyCharm</p>
 <p>From JetBrains, — integrates some of their vast array of development
 tools</p>
@@ -641,7 +640,7 @@ provided you look in the right places!</p>
 <p><a class="reference external" href="http://winpdb.org/tutorial/WinpdbTutorial.html">http://winpdb.org/tutorial/WinpdbTutorial.html</a></p>
 </div>
 <div class="section" id="remote-debugging">
-<h3><span class="section-number">18.11.1.8. </span>Remote debugging<a class="headerlink" href="#remote-debugging" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.13.1.8. </span>Remote debugging<a class="headerlink" href="#remote-debugging" title="Permalink to this headline">¶</a></h3>
 <p>To debug an application running a different Python, even remotely:</p>
 <p>remote-pdb</p>
 <p><a class="reference external" href="https://pypi.python.org/pypi/remote-pdb">https://pypi.python.org/pypi/remote-pdb</a></p>
@@ -657,10 +656,10 @@ provided you look in the right places!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="NoSQL.html" class="btn btn-neutral float-right" title="18.12. No SQL Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="NoSQL.html" class="btn btn-neutral float-right" title="19.14. No SQL Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Logging.html" class="btn btn-neutral float-left" title="18.10. Logging and the logging module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Logging.html" class="btn btn-neutral float-left" title="19.12. Logging and the logging module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

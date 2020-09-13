@@ -1,3 +1,5 @@
+ .. _setting_up_dev_environment:
+
 Setting up your Environment
 ===========================
 
@@ -11,6 +13,7 @@ Here are some resources to getting yourself set up.
     :numbered:
     :maxdepth: 1
 
+    environment_overview
     python_and_core_tools
     setup_details
     advanced_setup

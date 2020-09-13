@@ -84,6 +84,7 @@ If you are not set up and comfortable with doing all that, read and follow these
 
 Then come back and follow the rest of this review.
 
+
 The Command Line (cli)
 ======================
 
@@ -399,24 +400,3 @@ iPython
 And get something like that.
 
 ``ipython`` can be quit by typing ``quit``
-
-
-Specific Documentation
-======================
-
-.. toctree::
-    :maxdepth: 2
-
-    sublime_as_ide
-    atom_as_ide
-    vsc_as_ide
-    command_line
-    shell
-    ipython
-    windows_bash
-
-    git_overview
-    feature_branching
-    git_hints
-
-    virtualenv

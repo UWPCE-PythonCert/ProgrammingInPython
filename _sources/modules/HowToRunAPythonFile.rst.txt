@@ -29,7 +29,8 @@ If you want to run the code directly (it is a script), you have a couple options
 
        ./the_file.py
 
-3) On Windows, the `.py` extensions can be associated with the python interpreter, so it can be run directly. This is clunkier than the \*nix "shebang line" approach, so I don't recommend it -- but it is an option.
+3) On Windows, the `.py` extensions can be associated with the python interpreter, so it can be run directly. This is clunkier than the \*nix "shebang line" approach, so I don't recommend it -- but it is an option. But Windows does come with the "py" executable, that will examine a python file, look for a "shebang" line, and then run your file with the right executable.
+
 
 4) run ``ipython``, and run it from within iPython with the ``run`` command
 
