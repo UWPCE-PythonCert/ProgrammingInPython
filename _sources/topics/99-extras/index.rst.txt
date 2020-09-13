@@ -1,26 +1,37 @@
-Topic Name
-======================
+Extra Topics
+============
 
 
-To Read
--------
-
-.. toctree::
-    :maxdepth: 1
-
-    ../../modules/xxxxx
-
-
-Activities
-----------
-
-Exercises
----------
+The following are some extra topics that might be of interest
 
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/xxxxx
+    ../../modules/Pep8
+    ../../modules/CodeReviews
+    ../../modules/PersistanceAndSerialization
+    ../../modules/Unicode
+
+    ../../modules/IteratorsAndGenerators
+
+    ../../modules/Decorators
+    ../../modules/ContextManagers
+    ../../exercises/context-managers-exercise.rst
+
+    ../../modules/MetaProgramming
+
+    ../../modules/Logging
+    ../../modules/Debugging
 
 
+    ../../modules/NoSQL
+    ../../modules/GraphDatabases
 
+
+    ../../modules/Concurrency
+    ../../modules/Async
+    ../../modules/Coroutines
+    ../../modules/ThreadingMultiprocessing
+    ../../exercises/threaded_downloader
+
+    ../../modules/Profiling

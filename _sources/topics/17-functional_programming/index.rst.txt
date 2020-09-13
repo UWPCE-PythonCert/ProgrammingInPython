@@ -1,5 +1,5 @@
-Topic Name
-======================
+Introduction to Functional Programming
+======================================
 
 
 To Read
@@ -8,11 +8,17 @@ To Read
 .. toctree::
     :maxdepth: 1
 
-    ../../modules/xxxxx
+    ../../modules/OO_vs_functional
+    ../../modules/Lambda
+    ../../modules/MapFilterReduce
+    ../../modules/IPythonParallel
+    ../../modules/Closures
 
 
 Activities
 ----------
+
+    ../../exercises/lambda_magic
 
 Exercises
 ---------
@@ -20,7 +26,8 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/xxxxx
+    ../../exercises/trapezoid
+
 
 
 

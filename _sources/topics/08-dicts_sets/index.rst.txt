@@ -27,7 +27,7 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/mailroom_with_dicts.rst
+    ../../exercises/mailroom/mailroom_with_dicts.rst
 
 
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>13.3.2. Mailroom - Object Oriented &mdash; Python 210 6.0 documentation</title>
+  <title>12.3.2. Mailroom - Object Oriented &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14. Topic Name" href="../../topics/14-magic_methods/index.html" />
-    <link rel="prev" title="13.3.1. OO Intro - Report Class" href="../oo_intro.html" /> 
+    <link rel="next" title="13. Properties and Magic Methods" href="../../topics/14-magic_methods/index.html" />
+    <link rel="prev" title="12.3.1. OO Intro - Report Class" href="../oo_intro.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,94 +83,39 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../topics/13-intro_oo/index.html#to-read">13.1. To Read</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../topics/13-intro_oo/index.html#activities">13.2. Activities</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../../topics/13-intro_oo/index.html#exercises">13.3. Exercises</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../oo_intro.html">13.3.1. OO Intro - Report Class</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">13.3.2. Mailroom - Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/01-setting_up/index.html">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/06-exceptions/index.html">5. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/09-files/index.html">8. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../topics/13-intro_oo/index.html#to-read">12.1. To Read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../topics/13-intro_oo/index.html#activities">12.2. Activities</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../topics/13-intro_oo/index.html#exercises">12.3. Exercises</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../oo_intro.html">12.3.1. OO Intro - Report Class</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">12.3.2. Mailroom - Object Oriented</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/14-magic_methods/index.html">14. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/15-subclassing/index.html">15. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/16-multiple_inheritance/index.html">16. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/17-functional_programming/index.html">17. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/18-advnaced_testing/index.html">18. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/99-extras/index.html">19. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/99-extras/index.html">18. Extra Topics</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Properties.html">Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../circle/circle_class.html">Circle Class Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sparse_array.html">Sparse Array Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../html_renderer.html">HTML Renderer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../trapezoid.html">Trapezoidal Rule</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing_advanced.html">Advanced Testing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lambda_magic.html">lambda and keyword Magic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Decorators.html">Decorators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Async.html">Asychronous Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../threaded_downloader.html">Threaded Web Scraper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Profiling.html">Performance and Profiling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -218,9 +163,9 @@
         
           <li><a href="../../topics/index.html">Introduction to Python</a> &raquo;</li>
         
-          <li><a href="../../topics/13-intro_oo/index.html"><span class="section-number">13. </span>Intro to Object Oriented Programing</a> &raquo;</li>
+          <li><a href="../../topics/13-intro_oo/index.html"><span class="section-number">12. </span>Intro to Object Oriented Programing</a> &raquo;</li>
         
-      <li><span class="section-number">13.3.2. </span>Mailroom - Object Oriented</li>
+      <li><span class="section-number">12.3.2. </span>Mailroom - Object Oriented</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -240,7 +185,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mailroom-object-oriented">
-<span id="exercise-mailroom-oo"></span><h1><span class="section-number">13.3.2. </span>Mailroom - Object Oriented<a class="headerlink" href="#mailroom-object-oriented" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-oo"></span><h1><span class="section-number">12.3.2. </span>Mailroom - Object Oriented<a class="headerlink" href="#mailroom-object-oriented" title="Permalink to this headline">¶</a></h1>
 <p>Making Mailroom Object Oriented.</p>
 <p><strong>Goal:</strong> Refactor the mailroom program using classes to help organize the code.</p>
 <p>The functionality is the same as the earlier mailroom:</p>
@@ -261,10 +206,10 @@ would start to get a bit unwieldy and hard to maintain. So it’s a pretty good 
 <li><p>As always: <strong>DRY</strong> (Don’t Repeat Yourself): Anywhere you see repeated code; refactor it!</p></li>
 </ol>
 <div class="section" id="the-program">
-<h2><span class="section-number">13.3.2.1. </span>The Program<a class="headerlink" href="#the-program" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.3.2.1. </span>The Program<a class="headerlink" href="#the-program" title="Permalink to this headline">¶</a></h2>
 <p>See: <a class="reference internal" href="mailroom.html#exercise-mailroom-part1"><span class="std std-ref">Mailroom</span></a> to remind yourself what the program needs to do.</p>
 <div class="section" id="guidelines">
-<h3><span class="section-number">13.3.2.1.1. </span>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.3.2.1.1. </span>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
 <p>One of the hardest parts of OO design (particularly in Python) is to know how “low” to go with the classes and data structures. In particular, you might have a bit of data collected together (say, a donor’s name and donation history). This can be a simple tuple with a few items in it; a dict with those same data available as <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs; or a class, with class attributes (and, possibly, methods).</p>
 <p>There are no hard and fast rules, but here are some guidelines:</p>
 <p>For this simple problem, simple tuples could work fine. However, in order for the code to be more flexible in the future: for example, if new “fields” were added to the donor object, it’s probably better to use a more structured data type, so you don’t have to worry about changing the order or number of fields.</p>
@@ -272,7 +217,7 @@ would start to get a bit unwieldy and hard to maintain. So it’s a pretty good 
 <p>Consider <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> vs <code class="docutils literal notranslate"><span class="pre">data[&quot;name&quot;]</span></code> vs <code class="docutils literal notranslate"><span class="pre">data.name</span></code>. Which one is more readable? Keep in mind that another benefit of using OO for data encapsulation is ability of modern IDEs to provide auto-completion, which reduces the number of bugs and helps to produce code faster.</p>
 <p>Below are more detailed suggestions on breaking down your existing code into multiple modules that will be part of a single mailroom program.</p>
 <div class="section" id="modules-and-classes">
-<h4><span class="section-number">13.3.2.1.1.1. </span>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">12.3.2.1.1.1. </span>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">¶</a></h4>
 <p>You may organize your code to your preference and keep it simple by having all of the code in a single file.</p>
 <p>Optionally, you could organize your code into modules, which helps to keep code organized and re-usable.</p>
 <p>What is a module? A module is a python file with a collection of code that can be imported into other python files.</p>
@@ -288,20 +233,25 @@ would start to get a bit unwieldy and hard to maintain. So it’s a pretty good 
 <p>The module <code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code> would include all of your user interaction functions and main program flow.</p>
 </div>
 <div class="section" id="donor-class">
-<h4><span class="section-number">13.3.2.1.1.2. </span><code class="docutils literal notranslate"><span class="pre">Donor</span></code> Class<a class="headerlink" href="#donor-class" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">12.3.2.1.1.2. </span><code class="docutils literal notranslate"><span class="pre">Donor</span></code> Class<a class="headerlink" href="#donor-class" title="Permalink to this headline">¶</a></h4>
 <p><strong>Class responsible for donor data encapsulation</strong></p>
 <p>This class will hold all the information about a <em>single</em> donor, and have attributes, properties, and methods to provide access to the donor-specific information that is needed.
 Any code that only accesses information about a single donor should be part of this class.</p>
 </div>
 <div class="section" id="donorcollection-class">
-<h4><span class="section-number">13.3.2.1.1.3. </span><code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> Class<a class="headerlink" href="#donorcollection-class" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">12.3.2.1.1.3. </span><code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> Class<a class="headerlink" href="#donorcollection-class" title="Permalink to this headline">¶</a></h4>
 <p><strong>Class responsible for donor collection data encapsulation</strong></p>
 <p>This class will hold all of the donor objects, as well as methods to add a new donor, search for a given donor, etc. If you want a way to save and re-load your data, this class would hold that method, too.</p>
 <p>Your class for the collection of donors will also hold the code that generates reports about multiple donors.</p>
 <p>In short: if the functionality involves more than one donor – it belongs in this class.</p>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> class should be holding, and working with, <code class="docutils literal notranslate"><span class="pre">Donor</span></code> objects – it should NOT work directly with a list of donations, etc.</p>
 <p>The main data structure in your class can be a dictionary with a key as donor name and value as donor object:</p>
-<p>this design allows you to quickly look up donor by their name and get a donor object instance to work with.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DonorCollection</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">donors</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">donors</span> <span class="o">=</span> <span class="p">{</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">obj</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">donors</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This design allows you to quickly look up donor by their name and get a donor object instance to work with.</p>
 <p>Another option is to simply use a list of donor objects. You get to choose which you think is more appropriate.</p>
 <p>Remember that you should use <cite>self.donors</cite> attribute any time you want to work with data about a single donor, most of your methods in this class will utilize it in some way. This is really what classes are desined for.</p>
 <p><strong>Examples:</strong></p>
@@ -312,7 +262,7 @@ You’ve previously sorted simple data structures like list and dictionaries, bu
 You can use <cite>operator.attrgetter</cite> with a sorted function (review python docs for usage documentation).</p>
 </div>
 <div class="section" id="command-line-interface">
-<h4><span class="section-number">13.3.2.1.1.4. </span>Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">12.3.2.1.1.4. </span>Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h4>
 <p><strong>Module responsible for main program flow (CLI - Command Line Interface)</strong></p>
 <p>Let’s call this module <code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code> to represent the entry point for the mailroom program.
 This module will be using the classes we defined: <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code>.
@@ -331,7 +281,7 @@ If that was the case, then you would implement the GUI elements and use your dat
 </div>
 </div>
 <div class="section" id="test-driven-development">
-<h3><span class="section-number">13.3.2.1.2. </span>Test-Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.3.2.1.2. </span>Test-Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h3>
 <p>At this point we have done a great job refactoring the more complex code out of data-holding classes and we are left with simple classes that are more straightforward to unit test. As you build your classes, update the tests you already have to the logic code to the new API. Ideally, update the tests first, then the code.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> classes should now have 100 percent code coverage, which means that every line of code in your <code class="docutils literal notranslate"><span class="pre">donor_models.py</span></code> file will be run at least once when your tests are run.</p>
 <p>For the moment, don’t worry about testing most of the command line interface code. That requires simulating user input, which is an advanced testing topic. But you can (hopefully) see some of the benefits of separating the user-interaction code from the logic code; your logic code is much easier to test with no user-interaction involved.</p>
@@ -344,12 +294,12 @@ That is, rather than take a non-OO function and try to make it a method of a cla
 </div>
 </div>
 <div class="section" id="exercise-guidelines">
-<h2><span class="section-number">13.3.2.2. </span>Exercise Guidelines<a class="headerlink" href="#exercise-guidelines" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.3.2.2. </span>Exercise Guidelines<a class="headerlink" href="#exercise-guidelines" title="Permalink to this headline">¶</a></h2>
 <p>OO mailroom is the final project for the class.</p>
 <p>So this is your chance to really do things “right”. Strive to make this code as good, by every definition, as you can.</p>
 <p>With that in mind:</p>
 <div class="section" id="functionality">
-<h3><span class="section-number">13.3.2.2.1. </span>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.3.2.2.1. </span>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The logic is correct – i.e. the program works :-)</p></li>
 <li><p>The logic is robust – you are handling obvious expected errors reasonably:</p>
@@ -403,7 +353,7 @@ That is, rather than take a non-OO function and try to make it a method of a cla
 </dl>
 </div>
 <div class="section" id="extra-ideas">
-<h3><span class="section-number">13.3.2.2.2. </span>Extra Ideas:<a class="headerlink" href="#extra-ideas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.3.2.2.2. </span>Extra Ideas:<a class="headerlink" href="#extra-ideas" title="Permalink to this headline">¶</a></h3>
 <p>In case you are bored – what features can you add?</p>
 <ul class="simple">
 <li><p>How about an html report using your html_render code?</p></li>
@@ -422,10 +372,10 @@ That is, rather than take a non-OO function and try to make it a method of a cla
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../topics/14-magic_methods/index.html" class="btn btn-neutral float-right" title="14. Topic Name" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../topics/14-magic_methods/index.html" class="btn btn-neutral float-right" title="13. Properties and Magic Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../oo_intro.html" class="btn btn-neutral float-left" title="13.3.1. OO Intro - Report Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../oo_intro.html" class="btn btn-neutral float-left" title="12.3.1. OO Intro - Report Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

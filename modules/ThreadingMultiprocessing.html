@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Threading and multiprocessing &mdash; Python 210 6.0 documentation</title>
+  <title>18.17. Threading and multiprocessing &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Threaded Web Scraper" href="../exercises/threaded_downloader.html" />
-    <link rel="prev" title="Notes on Coroutines" href="Coroutines.html" /> 
+    <link rel="next" title="18.18. Threaded Web Scraper" href="../exercises/threaded_downloader.html" />
+    <link rel="prev" title="18.16. Notes on Coroutines" href="Coroutines.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,275 +81,57 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/circle/circle_class.html">Circle Class Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/sparse_array.html">Sparse Array Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">Multiple Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MapFilterReduce.html">Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonParallel.html">IPython Parallel Quickstart</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trapezoid.html">Trapezoidal Rule</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing_advanced.html">Advanced Testing</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Threading and multiprocessing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#threading-multiprocessing">Threading / multiprocessing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#parallelization-strategy-for-performance">Parallelization Strategy for Performance</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Pep8.html">18.1. Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">18.2. Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">18.3. Persistence and Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unicode.html">18.4. Unicode in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">18.5. Iterators and Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Decorators.html">18.6. Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">18.7. Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">18.8. A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">18.9. Metaprogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Logging.html">18.10. Logging and the logging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Debugging.html">18.11. Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">18.12. No SQL Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">18.13. Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">18.14. Concurrent Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Async.html">18.15. Asychronous Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">18.16. Notes on Coroutines</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">18.17. Threading and multiprocessing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#threading-multiprocessing">18.17.1. Threading / multiprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-mechanics-how-do-you-use-threads-and-or-processes">18.17.2. The mechanics: how do you use threads and/or processes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#the-mechanics-how-do-you-use-threads-and-or-processes">The mechanics: how do you use threads and/or processes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#example-a-cpu-bound-problem">Example: A CPU bound problem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#parallel-execution-example">Parallel execution example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-threading-module">The threading module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#subclassing-thread">Subclassing Thread</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#race-conditions">Race Conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#no-race-condition">No race condition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#race-condition">Race Condition!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deadlocks">Deadlocks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#locks">Locks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mutex-locks-threading-lock">Mutex locks (<code class="docutils literal notranslate"><span class="pre">threading.Lock</span></code>)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nonblocking-locking">Nonblocking Locking</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#threading-rlock-reentrant-lock"><code class="docutils literal notranslate"><span class="pre">threading.RLock</span></code> - Reentrant Lock</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#threading-semaphore"><code class="docutils literal notranslate"><span class="pre">threading.Semaphore</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#events-threading-event">Events (<code class="docutils literal notranslate"><span class="pre">threading.Event</span></code>)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#condition-threading-condition">Condition (<code class="docutils literal notranslate"><span class="pre">threading.Condition</span></code>)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#locking-exercise">Locking Exercise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#managing-thread-results">Managing thread results</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#queues-queue">Queues (<code class="docutils literal notranslate"><span class="pre">queue</span></code>)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scheduling-sched">Scheduling (<code class="docutils literal notranslate"><span class="pre">sched</span></code>)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#timed-events-threading-timer">Timed events (<code class="docutils literal notranslate"><span class="pre">threading.timer</span></code>)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-queue-types">Other Queue types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#threading-example-with-a-queue">Threading example with a queue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#threading-on-a-cpu-bound-problem">Threading on a CPU bound problem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multiprocessing">Multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#differences-with-threading">Differences with Threading</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#messaging">Messaging</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pipes-multiprocessing-pipe">Pipes (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pipe</span></code>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#queues-multiprocessing-queue">Queues (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#other-features-of-the-multiprocessing-package">Other features of the multiprocessing package</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#pooling">Pooling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pooling-example">Pooling example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#threadpool">ThreadPool</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#extras">Extras</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Threading and multiprocessing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#threading-multiprocessing">Threading / multiprocessing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-mechanics-how-do-you-use-threads-and-or-processes">The mechanics: how do you use threads and/or processes</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">18.18. Threaded Web Scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Profiling.html">18.19. Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -395,7 +177,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Threading and multiprocessing</li>
+          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../topics/99-extras/index.html"><span class="section-number">18. </span>Extra Topics</a> &raquo;</li>
+        
+      <li><span class="section-number">18.17. </span>Threading and multiprocessing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -415,9 +201,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="threading-and-multiprocessing">
-<span id="threading"></span><h1>Threading and multiprocessing<a class="headerlink" href="#threading-and-multiprocessing" title="Permalink to this headline">¶</a></h1>
+<span id="threading"></span><h1><span class="section-number">18.17. </span>Threading and multiprocessing<a class="headerlink" href="#threading-and-multiprocessing" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="threading-multiprocessing">
-<h2>Threading / multiprocessing<a class="headerlink" href="#threading-multiprocessing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.17.1. </span>Threading / multiprocessing<a class="headerlink" href="#threading-multiprocessing" title="Permalink to this headline">¶</a></h2>
 <p>How to actually DO threading and multiprocessing:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">threading</span></code> module</p></li>
@@ -427,7 +213,7 @@
 <p>If your problem can be solved sequentially, consider the costs and
 benefits before going parallel.</p>
 <div class="section" id="parallelization-strategy-for-performance">
-<h3>Parallelization Strategy for Performance<a class="headerlink" href="#parallelization-strategy-for-performance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.1.1. </span>Parallelization Strategy for Performance<a class="headerlink" href="#parallelization-strategy-for-performance" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">1. Break problem down into chunks</div>
 <div class="line">2. Execute chunks in parallel</div>
@@ -454,7 +240,7 @@ environment, so make it tunable</p></li>
 </div>
 </div>
 <div class="section" id="the-mechanics-how-do-you-use-threads-and-or-processes">
-<h2>The mechanics: how do you use threads and/or processes<a class="headerlink" href="#the-mechanics-how-do-you-use-threads-and-or-processes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.17.2. </span>The mechanics: how do you use threads and/or processes<a class="headerlink" href="#the-mechanics-how-do-you-use-threads-and-or-processes" title="Permalink to this headline">¶</a></h2>
 <p>Python provides the <cite>threading</cite> and <cite>multiprocessing</cite> modules to facility concurrency.</p>
 <p>They have similar APIs – so you can use them in similar ways.</p>
 <p>Key points:</p>
@@ -480,7 +266,7 @@ environment, so make it tunable</p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="example-a-cpu-bound-problem">
-<h3>Example: A CPU bound problem<a class="headerlink" href="#example-a-cpu-bound-problem" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.1. </span>Example: A CPU bound problem<a class="headerlink" href="#example-a-cpu-bound-problem" title="Permalink to this headline">¶</a></h3>
 <p>Numerically integrate the function
 <span class="math notranslate nohighlight">\(y =x^2\)</span> from 0 to 10.</p>
 <p><a class="reference external" href="http://www.wolframalpha.com/input/?i=x%5E2">http://www.wolframalpha.com/input/?i=x%5E2</a></p>
@@ -488,7 +274,7 @@ environment, so make it tunable</p></li>
 <p><a class="reference external" href="http://www.wolframalpha.com/input/?i=int(x%5E2,0,10)">Solution</a></p>
 </div>
 <div class="section" id="parallel-execution-example">
-<h3>Parallel execution example<a class="headerlink" href="#parallel-execution-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.2. </span>Parallel execution example<a class="headerlink" href="#parallel-execution-example" title="Permalink to this headline">¶</a></h3>
 <p>Consider the following code in:
 <a class="reference download internal" download="" href="../_downloads/b45e97459c4dc0a7c22bd8d8dbff0831/integrate.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate.py</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -507,7 +293,7 @@ environment, so make it tunable</p></li>
 together:</p>
 </div>
 <div class="section" id="the-threading-module">
-<h3>The threading module<a class="headerlink" href="#the-threading-module" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.3. </span>The threading module<a class="headerlink" href="#the-threading-module" title="Permalink to this headline">¶</a></h3>
 <p>Starting threads doesn’t take much:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">threading</span>
@@ -536,7 +322,7 @@ things like garbage collection, network keepalives, ..</p></li>
 </ul>
 </div>
 <div class="section" id="subclassing-thread">
-<h3>Subclassing Thread<a class="headerlink" href="#subclassing-thread" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.4. </span>Subclassing Thread<a class="headerlink" href="#subclassing-thread" title="Permalink to this headline">¶</a></h3>
 <p>You can add threading capability to your own classes</p>
 <p>Subclass Thread and implement the run method</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
@@ -552,7 +338,7 @@ things like garbage collection, network keepalives, ..</p></li>
 </div>
 </div>
 <div class="section" id="race-conditions">
-<h3>Race Conditions<a class="headerlink" href="#race-conditions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.5. </span>Race Conditions<a class="headerlink" href="#race-conditions" title="Permalink to this headline">¶</a></h3>
 <p>In the last example we saw threads competing for access to stdout.</p>
 <p>Worse, if competing threads try to update the same value, we might get
 an unexpected race condition</p>
@@ -561,7 +347,7 @@ atomically, but get interrupted midway</p>
 <p><a class="reference download internal" download="" href="../_downloads/bf4f66243b1821869ff6db4d355b7793/race_condition.py"><code class="xref download docutils literal notranslate"><span class="pre">race_condition.py</span></code></a></p>
 </div>
 <div class="section" id="no-race-condition">
-<h3>No race condition<a class="headerlink" href="#no-race-condition" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.6. </span>No race condition<a class="headerlink" href="#no-race-condition" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -616,7 +402,7 @@ atomically, but get interrupted midway</p>
 </table>
 </div>
 <div class="section" id="race-condition">
-<h3>Race Condition!<a class="headerlink" href="#race-condition" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.7. </span>Race Condition!<a class="headerlink" href="#race-condition" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -672,7 +458,7 @@ atomically, but get interrupted midway</p>
 <p><a class="reference external" href="http://en.wikipedia.org/wiki/Race_condition">http://en.wikipedia.org/wiki/Race_condition</a></p>
 </div>
 <div class="section" id="deadlocks">
-<h3>Deadlocks<a class="headerlink" href="#deadlocks" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.8. </span>Deadlocks<a class="headerlink" href="#deadlocks" title="Permalink to this headline">¶</a></h3>
 <p>Synchronization and Critical Sections are used to control race
 conditions</p>
 <p>But they introduce other potential problems…</p>
@@ -688,7 +474,7 @@ up swaying from side to side without making any progress because they
 both repeatedly move the same way at the same time.</em></p>
 </div>
 <div class="section" id="locks">
-<h3>Locks<a class="headerlink" href="#locks" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.9. </span>Locks<a class="headerlink" href="#locks" title="Permalink to this headline">¶</a></h3>
 <p>Lock objects allow threads to control access to a resource until they’re done with it</p>
 <p>This is known as mutual exclusion, often called “mutex”.</p>
 <p>A Lock has two states: locked and unlocked</p>
@@ -698,7 +484,7 @@ themselves by calling its <code class="docutils literal notranslate"><span class
 <p>These threads will wait in line politely for access to the statements in f()</p>
 </div>
 <div class="section" id="mutex-locks-threading-lock">
-<h3>Mutex locks (<code class="docutils literal notranslate"><span class="pre">threading.Lock</span></code>)<a class="headerlink" href="#mutex-locks-threading-lock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.10. </span>Mutex locks (<code class="docutils literal notranslate"><span class="pre">threading.Lock</span></code>)<a class="headerlink" href="#mutex-locks-threading-lock" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Probably most common</p></li>
@@ -737,7 +523,7 @@ themselves by calling its <code class="docutils literal notranslate"><span class
 </div>
 </div>
 <div class="section" id="nonblocking-locking">
-<h3>Nonblocking Locking<a class="headerlink" href="#nonblocking-locking" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.11. </span>Nonblocking Locking<a class="headerlink" href="#nonblocking-locking" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.acquire()</span></code> will return True if it successfully acquires a lock</p>
 <p>Its first argument is a boolean which specifies whether a lock should
 block or not. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
@@ -753,7 +539,7 @@ block or not. The default is <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="section" id="threading-rlock-reentrant-lock">
-<h3><code class="docutils literal notranslate"><span class="pre">threading.RLock</span></code> - Reentrant Lock<a class="headerlink" href="#threading-rlock-reentrant-lock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.12. </span><code class="docutils literal notranslate"><span class="pre">threading.RLock</span></code> - Reentrant Lock<a class="headerlink" href="#threading-rlock-reentrant-lock" title="Permalink to this headline">¶</a></h3>
 <p>Useful for recursive algorithms, a thread-specific count of the locks is
 maintained</p>
 <p>A reentrant lock can be acquired multiple times by the same thread</p>
@@ -761,7 +547,7 @@ maintained</p>
 by that thread</p>
 </div>
 <div class="section" id="threading-semaphore">
-<h3><code class="docutils literal notranslate"><span class="pre">threading.Semaphore</span></code><a class="headerlink" href="#threading-semaphore" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.13. </span><code class="docutils literal notranslate"><span class="pre">threading.Semaphore</span></code><a class="headerlink" href="#threading-semaphore" title="Permalink to this headline">¶</a></h3>
 <p>Like an <code class="docutils literal notranslate"><span class="pre">RLock</span></code>, but in reverse</p>
 <p>A Semaphore is given an initial counter value, defaulting to 1</p>
 <p>Each call to <code class="docutils literal notranslate"><span class="pre">acquire()</span></code> decrements the counter, <code class="docutils literal notranslate"><span class="pre">release()</span></code> increments it</p>
@@ -773,7 +559,7 @@ resource simultaneously</p>
 <a class="reference internal image-reference" href="../_images/flags.jpg"><img alt="../_images/flags.jpg" src="../_images/flags.jpg" style="height: 250px;" /></a>
 </div>
 <div class="section" id="events-threading-event">
-<h3>Events (<code class="docutils literal notranslate"><span class="pre">threading.Event</span></code>)<a class="headerlink" href="#events-threading-event" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.14. </span>Events (<code class="docutils literal notranslate"><span class="pre">threading.Event</span></code>)<a class="headerlink" href="#events-threading-event" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Threads can wait for particular event</p></li>
@@ -783,7 +569,7 @@ resource simultaneously</p>
 <p>Common use: barriers, notification</p>
 </div>
 <div class="section" id="condition-threading-condition">
-<h3>Condition (<code class="docutils literal notranslate"><span class="pre">threading.Condition</span></code>)<a class="headerlink" href="#condition-threading-condition" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.15. </span>Condition (<code class="docutils literal notranslate"><span class="pre">threading.Condition</span></code>)<a class="headerlink" href="#condition-threading-condition" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Combination of locking/signaling</p></li>
@@ -794,7 +580,7 @@ resource simultaneously</p>
 <p>Common use: producer/consumer patterns</p>
 </div>
 <div class="section" id="locking-exercise">
-<h3>Locking Exercise<a class="headerlink" href="#locking-exercise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.16. </span>Locking Exercise<a class="headerlink" href="#locking-exercise" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference download internal" download="" href="../_downloads/7aed047b56b0f01a32459203ca0ca70f/lock_exercise.zip"><code class="xref download docutils literal notranslate"><span class="pre">lock_exercise.zip</span></code></a></p>
 <p>In: <code class="docutils literal notranslate"><span class="pre">lock/stdout_writer.py</span></code></p>
 <p>Multiple threads in the script write to stdout, and their output gets
@@ -806,7 +592,7 @@ stdout</p></li>
 </ol>
 </div>
 <div class="section" id="managing-thread-results">
-<h3>Managing thread results<a class="headerlink" href="#managing-thread-results" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.17. </span>Managing thread results<a class="headerlink" href="#managing-thread-results" title="Permalink to this headline">¶</a></h3>
 <p>We need a thread safe way of storing results from multiple threads of
 execution. That is provided by the Queue module.</p>
 <p>Queues allow multiple producers and multiple consumers to exchange data
@@ -828,7 +614,7 @@ safely</p>
 </ul>
 </div>
 <div class="section" id="queues-queue">
-<h3>Queues (<code class="docutils literal notranslate"><span class="pre">queue</span></code>)<a class="headerlink" href="#queues-queue" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.18. </span>Queues (<code class="docutils literal notranslate"><span class="pre">queue</span></code>)<a class="headerlink" href="#queues-queue" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Easier to use than many of above</p></li>
@@ -852,7 +638,7 @@ safely</p>
 </div>
 </div>
 <div class="section" id="scheduling-sched">
-<h3>Scheduling (<code class="docutils literal notranslate"><span class="pre">sched</span></code>)<a class="headerlink" href="#scheduling-sched" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.19. </span>Scheduling (<code class="docutils literal notranslate"><span class="pre">sched</span></code>)<a class="headerlink" href="#scheduling-sched" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Schedules based on time, either absolute or delay</p></li>
@@ -861,7 +647,7 @@ safely</p>
 </div></blockquote>
 </div>
 <div class="section" id="timed-events-threading-timer">
-<h3>Timed events (<code class="docutils literal notranslate"><span class="pre">threading.timer</span></code>)<a class="headerlink" href="#timed-events-threading-timer" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.20. </span>Timed events (<code class="docutils literal notranslate"><span class="pre">threading.timer</span></code>)<a class="headerlink" href="#timed-events-threading-timer" title="Permalink to this headline">¶</a></h3>
 <p>Run a function at some time in the future:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
 
@@ -882,7 +668,7 @@ safely</p>
 <p><a class="reference download internal" download="" href="../_downloads/d2f4d19315e96ba42fa214da38e3d8b3/simple_timer.py"><code class="xref download docutils literal notranslate"><span class="pre">simple_timer.py</span></code></a></p>
 </div>
 <div class="section" id="other-queue-types">
-<h3>Other Queue types<a class="headerlink" href="#other-queue-types" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.21. </span>Other Queue types<a class="headerlink" href="#other-queue-types" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Queue.LifoQueue</span></code></p>
 <blockquote>
 <div><ul class="simple">
@@ -900,7 +686,7 @@ inserting the tuple:</p>
 <p><code class="docutils literal notranslate"><span class="pre">(priority_number,</span> <span class="pre">data)</span></code></p>
 </div>
 <div class="section" id="threading-example-with-a-queue">
-<h3>Threading example with a queue<a class="headerlink" href="#threading-example-with-a-queue" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.22. </span>Threading example with a queue<a class="headerlink" href="#threading-example-with-a-queue" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference download internal" download="" href="../_downloads/542beff2efdf06b15b303acf100630f1/integrate_threads.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate_main.py</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
@@ -947,7 +733,7 @@ inserting the tuple:</p>
 </div>
 </div>
 <div class="section" id="threading-on-a-cpu-bound-problem">
-<h3>Threading on a CPU bound problem<a class="headerlink" href="#threading-on-a-cpu-bound-problem" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.23. </span>Threading on a CPU bound problem<a class="headerlink" href="#threading-on-a-cpu-bound-problem" title="Permalink to this headline">¶</a></h3>
 <p>Try running the code in <a class="reference download internal" download="" href="../_downloads/b8e9fa621bddde6623aa18c3db828f62/integrate_threads.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate_threads.py</span></code></a></p>
 <p>It has a couple of tunable parameters:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># the start of the integration</span>
@@ -959,7 +745,7 @@ inserting the tuple:</p>
 <p>What happens when you change the thread count? What thread count gives the maximum speed?</p>
 </div>
 <div class="section" id="multiprocessing">
-<h3>Multiprocessing<a class="headerlink" href="#multiprocessing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.24. </span>Multiprocessing<a class="headerlink" href="#multiprocessing" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>processes are completely isolated</p></li>
@@ -985,7 +771,7 @@ inserting the tuple:</p>
 </div>
 </div>
 <div class="section" id="differences-with-threading">
-<h3>Differences with Threading<a class="headerlink" href="#differences-with-threading" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.25. </span>Differences with Threading<a class="headerlink" href="#differences-with-threading" title="Permalink to this headline">¶</a></h3>
 <p>Multiprocessing has its own <code class="docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code> which handles
 interprocess communication</p>
 <p>Also has its own versions of <code class="docutils literal notranslate"><span class="pre">Lock</span></code>, <code class="docutils literal notranslate"><span class="pre">RLock</span></code>, <code class="docutils literal notranslate"><span class="pre">Semaphore</span></code></p>
@@ -1001,9 +787,9 @@ interprocess communication</p>
 </div>
 </div>
 <div class="section" id="messaging">
-<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.26. </span>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="pipes-multiprocessing-pipe">
-<h4>Pipes (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pipe</span></code>)<a class="headerlink" href="#pipes-multiprocessing-pipe" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">18.17.2.26.1. </span>Pipes (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pipe</span></code>)<a class="headerlink" href="#pipes-multiprocessing-pipe" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Returns a pair of connected objects</p></li>
@@ -1013,7 +799,7 @@ interprocess communication</p>
 </div></blockquote>
 </div>
 <div class="section" id="queues-multiprocessing-queue">
-<h4>Queues (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code>)<a class="headerlink" href="#queues-multiprocessing-queue" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">18.17.2.26.2. </span>Queues (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code>)<a class="headerlink" href="#queues-multiprocessing-queue" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>same interface as <code class="docutils literal notranslate"><span class="pre">queue.Queue</span></code></p></li>
@@ -1025,7 +811,7 @@ interprocess communication</p>
 </div></blockquote>
 </div>
 <div class="section" id="other-features-of-the-multiprocessing-package">
-<h4>Other features of the multiprocessing package<a class="headerlink" href="#other-features-of-the-multiprocessing-package" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">18.17.2.26.3. </span>Other features of the multiprocessing package<a class="headerlink" href="#other-features-of-the-multiprocessing-package" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Pools</p></li>
@@ -1038,7 +824,7 @@ interprocess communication</p>
 </div>
 </div>
 <div class="section" id="pooling">
-<h3>Pooling<a class="headerlink" href="#pooling" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.27. </span>Pooling<a class="headerlink" href="#pooling" title="Permalink to this headline">¶</a></h3>
 <p>A processing pool contains worker processes with only a configured
 number running at one time</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
@@ -1050,7 +836,7 @@ number running at one time</p>
 <p><code class="docutils literal notranslate"><span class="pre">map_async(func,</span> <span class="pre">iterable[,</span> <span class="pre">chunksize[,</span> <span class="pre">callback]])</span></code></p>
 </div>
 <div class="section" id="pooling-example">
-<h3>Pooling example<a class="headerlink" href="#pooling-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.28. </span>Pooling example<a class="headerlink" href="#pooling-example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
@@ -1074,7 +860,7 @@ number running at one time</p>
 <p><a class="reference external" href="http://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.pool">http://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.pool</a></p>
 </div>
 <div class="section" id="threadpool">
-<h3>ThreadPool<a class="headerlink" href="#threadpool" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.17.2.29. </span>ThreadPool<a class="headerlink" href="#threadpool" title="Permalink to this headline">¶</a></h3>
 <p>Threading also has a pool</p>
 <p>Confusingly, it lives in the multiprocessing module</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing.pool</span> <span class="kn">import</span> <span class="n">ThreadPool</span>
@@ -1093,10 +879,10 @@ number running at one time</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-right" title="Threaded Web Scraper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-right" title="18.18. Threaded Web Scraper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Coroutines.html" class="btn btn-neutral float-left" title="Notes on Coroutines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Coroutines.html" class="btn btn-neutral float-left" title="18.16. Notes on Coroutines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

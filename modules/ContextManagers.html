@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Context Managers &mdash; Python 210 6.0 documentation</title>
+  <title>18.7. Context Managers &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="A Couple Handy Context Managers" href="../exercises/context-managers-exercise.html" />
-    <link rel="prev" title="Decorators" href="Decorators.html" /> 
+    <link rel="next" title="18.8. A Couple Handy Context Managers" href="../exercises/context-managers-exercise.html" />
+    <link rel="prev" title="18.6. Decorators" href="Decorators.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,244 +81,56 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/circle/circle_class.html">Circle Class Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/sparse_array.html">Sparse Array Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">Multiple Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MapFilterReduce.html">Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonParallel.html">IPython Parallel Quickstart</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trapezoid.html">Trapezoidal Rule</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing_advanced.html">Advanced Testing</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Context Managers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#managing-resources">Managing Resources</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#handling-general-resources">Handling General Resources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#with-a-little-help"><code class="docutils literal notranslate"><span class="pre">with</span></code> a little help</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#close-it-automatically">Close It Automatically</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#do-it-yourself">Do It Yourself</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#an-example">An Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-parameters-to-exit">The parameters to <code class="docutils literal notranslate"><span class="pre">__exit__</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-contextmanager-decorator">The <code class="docutils literal notranslate"><span class="pre">contextmanager</span></code> decorator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mixing-context-managers-with-generators">Mixing context_managers with generators</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Pep8.html">18.1. Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">18.2. Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">18.3. Persistence and Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unicode.html">18.4. Unicode in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">18.5. Iterators and Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Decorators.html">18.6. Decorators</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">18.7. Context Managers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#managing-resources">18.7.1. Managing Resources</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#extras">Extras</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Context Managers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#managing-resources">Managing Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">18.8. A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">18.9. Metaprogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Logging.html">18.10. Logging and the logging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Debugging.html">18.11. Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">18.12. No SQL Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">18.13. Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">18.14. Concurrent Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Async.html">18.15. Asychronous Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">18.16. Notes on Coroutines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">18.17. Threading and multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">18.18. Threaded Web Scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Profiling.html">18.19. Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -364,7 +176,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Context Managers</li>
+          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../topics/99-extras/index.html"><span class="section-number">18. </span>Extra Topics</a> &raquo;</li>
+        
+      <li><span class="section-number">18.7. </span>Context Managers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -384,10 +200,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="context-managers">
-<span id="id1"></span><h1>Context Managers<a class="headerlink" href="#context-managers" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">18.7. </span>Context Managers<a class="headerlink" href="#context-managers" title="Permalink to this headline">¶</a></h1>
 <p>You’ve seen the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement – probably used for working with files. Now you’ll learn what that’s all about.</p>
 <div class="section" id="managing-resources">
-<h2>Managing Resources<a class="headerlink" href="#managing-resources" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.7.1. </span>Managing Resources<a class="headerlink" href="#managing-resources" title="Permalink to this headline">¶</a></h2>
 <p><strong>Repetition in code stinks (DRY!)</strong></p>
 <p>A large source of repetition in code deals with the handling of external
 resources.</p>
@@ -413,7 +229,7 @@ resources.</p>
 </div>
 <p>And that is getting pretty ugly, and hard to get right.</p>
 <div class="section" id="handling-general-resources">
-<h3>Handling General Resources<a class="headerlink" href="#handling-general-resources" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.1. </span>Handling General Resources<a class="headerlink" href="#handling-general-resources" title="Permalink to this headline">¶</a></h3>
 <p>Leaving an open file handle laying around is bad enough. What if the resource
 is a network connection, or a database cursor?</p>
 <p>Starting in version 2.5, Python provides a structure for reducing the
@@ -424,7 +240,7 @@ few simple steps.</p>
 <p>The key is to use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement.</p>
 </div>
 <div class="section" id="with-a-little-help">
-<h3><code class="docutils literal notranslate"><span class="pre">with</span></code> a little help<a class="headerlink" href="#with-a-little-help" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.2. </span><code class="docutils literal notranslate"><span class="pre">with</span></code> a little help<a class="headerlink" href="#with-a-little-help" title="Permalink to this headline">¶</a></h3>
 <p>Since the introduction of the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement in <a class="reference external" href="https://www.python.org/dev/peps/pep-0343/">pep343</a>, the above seven lines of defensive code have been replaced with this simple form:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
     <span class="n">file_content</span> <span class="o">=</span> <span class="n">file_handle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -446,7 +262,7 @@ context managers.</p></li>
 </ul>
 </div>
 <div class="section" id="close-it-automatically">
-<h3>Close It Automatically<a class="headerlink" href="#close-it-automatically" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.3. </span>Close It Automatically<a class="headerlink" href="#close-it-automatically" title="Permalink to this headline">¶</a></h3>
 <p>There are a couple of ways you can go.</p>
 <p>If the resource in questions has a <code class="docutils literal notranslate"><span class="pre">.close()</span></code> method, then you can simply use the <code class="docutils literal notranslate"><span class="pre">closing</span></code> context manager from <code class="docutils literal notranslate"><span class="pre">contextlib</span></code> to handle the issue:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span>
@@ -462,7 +278,7 @@ the thing and it shouldn’t have a <code class="docutils literal notranslate"><
 <p>(full confession: <code class="docutils literal notranslate"><span class="pre">urlib.request</span></code> was not a context manager in py2 – but it is in py3 – but the issue still comes up with third-party packages and your own code!)</p>
 </div>
 <div class="section" id="do-it-yourself">
-<h3>Do It Yourself<a class="headerlink" href="#do-it-yourself" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.4. </span>Do It Yourself<a class="headerlink" href="#do-it-yourself" title="Permalink to this headline">¶</a></h3>
 <p>If you do need to support resource management of some sort, you can create a context manager of your own with the context manager protocol.</p>
 <p>The interface is simple.  It must be a class that implements two
 more of the nifty python <em>special methods</em></p>
@@ -477,7 +293,7 @@ more of the nifty python <em>special methods</em></p>
 <p>Let’s see this in action to get a sense of what happens.</p>
 </div>
 <div class="section" id="an-example">
-<h3>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.5. </span>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
 <p>Consider this code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Context</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;from Doug Hellmann, PyMOTW</span>
@@ -533,7 +349,7 @@ clarify the order in which things happen:</p>
 <p>So this time, the context manager did not catch the error – so it was raised in the usual way.</p>
 </div>
 <div class="section" id="the-parameters-to-exit">
-<h3>The parameters to <code class="docutils literal notranslate"><span class="pre">__exit__</span></code><a class="headerlink" href="#the-parameters-to-exit" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.6. </span>The parameters to <code class="docutils literal notranslate"><span class="pre">__exit__</span></code><a class="headerlink" href="#the-parameters-to-exit" title="Permalink to this headline">¶</a></h3>
 <p>In real life, a context manager could have pretty much any error raised in its context.  And the context manager will likely only be able to “properly” handle particular Exceptions.</p>
 <p>So the <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> method takes all the information about the exception as parameters:</p>
 <p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__exit__(self,</span> <span class="pre">exc_type,</span> <span class="pre">exc_val,</span> <span class="pre">exc_tb)</span></code></p>
@@ -549,7 +365,7 @@ clarify the order in which things happen:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/traceback.html">https://docs.python.org/3/library/traceback.html</a></p>
 </div>
 <div class="section" id="the-contextmanager-decorator">
-<h3>The <code class="docutils literal notranslate"><span class="pre">contextmanager</span></code> decorator<a class="headerlink" href="#the-contextmanager-decorator" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.7. </span>The <code class="docutils literal notranslate"><span class="pre">contextmanager</span></code> decorator<a class="headerlink" href="#the-contextmanager-decorator" title="Permalink to this headline">¶</a></h3>
 <p>Similar to writing iterable classes, there’s a fair bit of bookkeeping involved. It turns out you can take advantage of generator functions to do that bookkeeping for you.</p>
 <p><code class="docutils literal notranslate"><span class="pre">contextlib.contextmanager</span></code> decorator will turn a generator function into context manager.</p>
 <p>Consider this code:</p>
@@ -603,7 +419,7 @@ clarify the order in which things happen:</p>
 </div>
 </div>
 <div class="section" id="mixing-context-managers-with-generators">
-<h3>Mixing context_managers with generators<a class="headerlink" href="#mixing-context-managers-with-generators" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.7.1.8. </span>Mixing context_managers with generators<a class="headerlink" href="#mixing-context-managers-with-generators" title="Permalink to this headline">¶</a></h3>
 <p>You can put a <code class="docutils literal notranslate"><span class="pre">yield</span></code> inside a context manager as well.</p>
 <p>here is a generator function that gives yields all the files in a directory:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
@@ -639,10 +455,10 @@ clarify the order in which things happen:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/context-managers-exercise.html" class="btn btn-neutral float-right" title="A Couple Handy Context Managers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/context-managers-exercise.html" class="btn btn-neutral float-right" title="18.8. A Couple Handy Context Managers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Decorators.html" class="btn btn-neutral float-left" title="Decorators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Decorators.html" class="btn btn-neutral float-left" title="18.6. Decorators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

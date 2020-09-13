@@ -1,5 +1,5 @@
-Topic Name
-======================
+Subclassing and Inheritance
+===========================
 
 
 To Read
@@ -8,7 +8,7 @@ To Read
 .. toctree::
     :maxdepth: 1
 
-    ../../modules/xxxxx
+    ../../modules/SubclassingAndInheritance
 
 
 Activities
@@ -20,7 +20,8 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/xxxxx
+    ../../exercises/html_renderer.rst
+    ../../exercises/html_renderer_tutorial.rst
 
 
 

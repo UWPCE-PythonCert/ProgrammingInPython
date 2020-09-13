@@ -1,5 +1,7 @@
+:orphan:
+
 Topic Name
-======================
+==========
 
 
 To Read
@@ -8,7 +10,7 @@ To Read
 .. toctree::
     :maxdepth: 1
 
-    ../../modules/xxxxx
+..    ../../modules/xxxxx
 
 
 Activities
@@ -20,7 +22,7 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/xxxxx
+..    ../../exercises/xxxxx
 
 
 

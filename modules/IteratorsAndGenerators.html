@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Iterators and Generators &mdash; Python 210 6.0 documentation</title>
+  <title>18.5. Iterators and Generators &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Closures and Function Currying" href="Closures.html" />
-    <link rel="prev" title="lambda and keyword Magic" href="../exercises/lambda_magic.html" /> 
+    <link rel="next" title="18.6. Decorators" href="Decorators.html" />
+    <link rel="prev" title="18.4. Unicode in Python" href="Unicode.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,270 +81,72 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/circle/circle_class.html">Circle Class Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/sparse_array.html">Sparse Array Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">Multiple Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MapFilterReduce.html">Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonParallel.html">IPython Parallel Quickstart</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trapezoid.html">Trapezoidal Rule</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing_advanced.html">Advanced Testing</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Iterators and Generators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a-note-about-python-history">A note about Python History</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#python-2">Python 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python3">Python3</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Pep8.html">18.1. Coding Style and Linting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">18.2. Code Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">18.3. Persistence and Serialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Unicode.html">18.4. Unicode in Python</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">18.5. Iterators and Generators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-note-about-python-history">18.5.1. A note about Python History</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iterators-and-iterables">18.5.2. Iterators and Iterables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iterables">18.5.3. Iterables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iter">18.5.4. <code class="docutils literal notranslate"><span class="pre">iter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-as-an-iterator">18.5.5. List as an Iterator:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-iterators-when-you-can">18.5.6. Using iterators when you can</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-iterator-protocol">18.5.7. The Iterator Protocol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#making-an-iterator">18.5.8. Making an Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-does-for-do">18.5.9. What does <code class="docutils literal notranslate"><span class="pre">for</span></code> do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#itertools">18.5.10. Itertools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#is-an-iterator-a-type">18.5.11. Is an iterator a type?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lab">18.5.12. LAB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generators">18.5.13. Generators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#yield">18.5.14. yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generator-comprehensions">18.5.15. generator comprehensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-uses-for-yield">18.5.16. Other uses for <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">18.5.17. LAB</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#iterators-and-iterables">Iterators and Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#iterables">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#iter"><code class="docutils literal notranslate"><span class="pre">iter()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#list-as-an-iterator">List as an Iterator:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-iterators-when-you-can">Using iterators when you can</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-iterator-protocol">The Iterator Protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#making-an-iterator">Making an Iterator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#what-does-for-do">What does <code class="docutils literal notranslate"><span class="pre">for</span></code> do?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#itertools">Itertools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#is-an-iterator-a-type">Is an iterator a type?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lab">LAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generators">Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#yield">yield</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generator-comprehensions">generator comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#other-uses-for-yield">Other uses for <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">LAB</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#extras">Extras</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Iterators and Generators</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#a-note-about-python-history">A note about Python History</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#iterators-and-iterables">Iterators and Iterables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#iterables">Iterables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#iter"><code class="docutils literal notranslate"><span class="pre">iter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#list-as-an-iterator">List as an Iterator:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-iterators-when-you-can">Using iterators when you can</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-iterator-protocol">The Iterator Protocol</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#making-an-iterator">Making an Iterator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-does-for-do">What does <code class="docutils literal notranslate"><span class="pre">for</span></code> do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#itertools">Itertools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#is-an-iterator-a-type">Is an iterator a type?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#lab">LAB</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generators">Generators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#yield">yield</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generator-comprehensions">generator comprehensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#other-uses-for-yield">Other uses for <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">LAB</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Decorators.html">18.6. Decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">18.7. Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/context-managers-exercise.html">18.8. A Couple Handy Context Managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">18.9. Metaprogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Logging.html">18.10. Logging and the logging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Debugging.html">18.11. Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">18.12. No SQL Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">18.13. Graph Databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">18.14. Concurrent Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Async.html">18.15. Asychronous Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">18.16. Notes on Coroutines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">18.17. Threading and multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/threaded_downloader.html">18.18. Threaded Web Scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Profiling.html">18.19. Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -390,7 +192,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Iterators and Generators</li>
+          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../topics/99-extras/index.html"><span class="section-number">18. </span>Extra Topics</a> &raquo;</li>
+        
+      <li><span class="section-number">18.5. </span>Iterators and Generators</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -410,7 +216,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="iterators-and-generators">
-<span id="iterators-generators"></span><h1>Iterators and Generators<a class="headerlink" href="#iterators-and-generators" title="Permalink to this headline">¶</a></h1>
+<span id="iterators-generators"></span><h1><span class="section-number">18.5. </span>Iterators and Generators<a class="headerlink" href="#iterators-and-generators" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>The Tools of Pythonicity</p>
 <blockquote>
@@ -418,9 +224,9 @@
 </div></blockquote>
 </div></blockquote>
 <div class="section" id="a-note-about-python-history">
-<h2>A note about Python History<a class="headerlink" href="#a-note-about-python-history" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.1. </span>A note about Python History<a class="headerlink" href="#a-note-about-python-history" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="python-2">
-<h3>Python 2<a class="headerlink" href="#python-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.5.1.1. </span>Python 2<a class="headerlink" href="#python-2" title="Permalink to this headline">¶</a></h3>
 <p>Python used to be all about sequences – a good chunk of anything you did
 was stored in a sequence, or involved manipulating a sequence.</p>
 <ul class="simple">
@@ -463,7 +269,7 @@ But why make a full copy of all the keys, when all you want to do is:</p>
 <p>So you could now iterate through that stuff without copying anything. Nice performance benefits, but a somewhat ugly interface.</p>
 </div>
 <div class="section" id="python3">
-<h3>Python3<a class="headerlink" href="#python3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">18.5.1.2. </span>Python3<a class="headerlink" href="#python3" title="Permalink to this headline">¶</a></h3>
 <p>Python3 embraces iterables – now everything that could be an iterable without making a copy is done that way – no unnecessary copies.</p>
 <p>If you DO need an actual sequence (becasue you want to do something with it other than iterate over it), you have to make a list out of them explicitly:</p>
 <p><code class="docutils literal notranslate"><span class="pre">list(dict.keys())</span></code></p>
@@ -477,7 +283,7 @@ to iterate through stuff.</p>
 </div>
 </div>
 <div class="section" id="iterators-and-iterables">
-<h2>Iterators and Iterables<a class="headerlink" href="#iterators-and-iterables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.2. </span>Iterators and Iterables<a class="headerlink" href="#iterators-and-iterables" title="Permalink to this headline">¶</a></h2>
 <p>Iteration is one of the main reasons Python code is so readable:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">just_about_anything</span><span class="p">:</span>
     <span class="n">do_stuff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -494,7 +300,7 @@ not all sequences are iterators. To make a sequence an iterator, you can call it
 <p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#iterator-types">https://docs.python.org/3/library/stdtypes.html#iterator-types</a></p>
 </div>
 <div class="section" id="iterables">
-<h2>Iterables<a class="headerlink" href="#iterables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.3. </span>Iterables<a class="headerlink" href="#iterables" title="Permalink to this headline">¶</a></h2>
 <p>To make an object iterable, you simply have to implement the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">T</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
@@ -505,7 +311,7 @@ not all sequences are iterators. To make a sequence an iterator, you can call it
 </div>
 </div>
 <div class="section" id="iter">
-<h2><code class="docutils literal notranslate"><span class="pre">iter()</span></code><a class="headerlink" href="#iter" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.4. </span><code class="docutils literal notranslate"><span class="pre">iter()</span></code><a class="headerlink" href="#iter" title="Permalink to this headline">¶</a></h2>
 <p>How do you get the iterator object from an “iterable”?</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">iter</span></code> function will make any iterable an iterator. It first looks for the <code class="docutils literal notranslate"><span class="pre">__iter__</span></code>
 method, and if none is found, uses <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> to create the iterator.</p>
@@ -522,7 +328,7 @@ method, and if none is found, uses <code class="docutils literal notranslate"><s
 </div>
 </div>
 <div class="section" id="list-as-an-iterator">
-<h2>List as an Iterator:<a class="headerlink" href="#list-as-an-iterator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.5. </span>List as an Iterator:<a class="headerlink" href="#list-as-an-iterator" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 
 <span class="gp">In [11]: </span><span class="n">list_iter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
@@ -546,7 +352,7 @@ method, and if none is found, uses <code class="docutils literal notranslate"><s
 </div>
 </div>
 <div class="section" id="using-iterators-when-you-can">
-<h2>Using iterators when you can<a class="headerlink" href="#using-iterators-when-you-can" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.6. </span>Using iterators when you can<a class="headerlink" href="#using-iterators-when-you-can" title="Permalink to this headline">¶</a></h2>
 <p>consider the example from the trigrams problem:</p>
 <p>(<a class="reference external" href="http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/">http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/</a>)</p>
 <p>You have a list of words: <code class="docutils literal notranslate"><span class="pre">words</span></code></p>
@@ -584,7 +390,7 @@ It returns an iterator over a slice of a sequence – so no more copies:</p>
 </div>
 </div>
 <div class="section" id="the-iterator-protocol">
-<h2>The Iterator Protocol<a class="headerlink" href="#the-iterator-protocol" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.7. </span>The Iterator Protocol<a class="headerlink" href="#the-iterator-protocol" title="Permalink to this headline">¶</a></h2>
 <p>The main thing that differentiates an iterator from an iterable (sequence)
 is that an iterator saves state.</p>
 <p>An iterable must have the following methods:</p>
@@ -600,7 +406,7 @@ raises the <code class="docutils literal notranslate"><span class="pre">StopIter
 <p>An <em>iterable</em>, on the other hand, must have a <code class="docutils literal notranslate"><span class="pre">__iter__</span></code> method that returns an initialized iterator (which may or may not be itself). It doesnot have a <code class="docutils literal notranslate"><span class="pre">__next__</span></code> method. So you oculd say that the difference between and iterator and a iterable, is htat iterables do not have <code class="docutils literal notranslate"><span class="pre">__next__</span></code> methods: you cannont call <code class="docutils literal notranslate"><span class="pre">next()</span></code> on them.</p>
 </div>
 <div class="section" id="making-an-iterator">
-<h2>Making an Iterator<a class="headerlink" href="#making-an-iterator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.8. </span>Making an Iterator<a class="headerlink" href="#making-an-iterator" title="Permalink to this headline">¶</a></h2>
 <p>A simple version of <code class="docutils literal notranslate"><span class="pre">range()</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">IterateMe_1</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
@@ -618,7 +424,7 @@ raises the <code class="docutils literal notranslate"><span class="pre">StopIter
 </div>
 </div>
 <div class="section" id="what-does-for-do">
-<h2>What does <code class="docutils literal notranslate"><span class="pre">for</span></code> do?<a class="headerlink" href="#what-does-for-do" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.9. </span>What does <code class="docutils literal notranslate"><span class="pre">for</span></code> do?<a class="headerlink" href="#what-does-for-do" title="Permalink to this headline">¶</a></h2>
 <p>Now that we know the iterator protocol, we can write something like a for loop:</p>
 <p><a class="reference download internal" download="" href="../_downloads/a788c1b8e163b053ac6c19b115a5473d/my_for.py"><code class="xref download docutils literal notranslate"><span class="pre">my_for.py</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_for</span><span class="p">(</span><span class="n">an_iterable</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
@@ -639,7 +445,7 @@ raises the <code class="docutils literal notranslate"><span class="pre">StopIter
 </div>
 </div>
 <div class="section" id="itertools">
-<h2>Itertools<a class="headerlink" href="#itertools" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.10. </span>Itertools<a class="headerlink" href="#itertools" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">itertools</span></code>  is a collection of utilities that make it easy to
 build an iterator that iterates over sequences in various common ways</p>
 <p><a class="reference external" href="http://docs.python.org/3/library/itertools.html">http://docs.python.org/3/library/itertools.html</a></p>
@@ -650,7 +456,7 @@ build an iterator that iterates over sequences in various common ways</p>
 <p><code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">sorted</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, …</p>
 </div>
 <div class="section" id="is-an-iterator-a-type">
-<h2>Is an iterator a type?<a class="headerlink" href="#is-an-iterator-a-type" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.11. </span>Is an iterator a type?<a class="headerlink" href="#is-an-iterator-a-type" title="Permalink to this headline">¶</a></h2>
 <p>Iterators are not a type. An “iterable” is anything that has an <code class="docutils literal notranslate"><span class="pre">__iter__</span></code>
 method that returns an iterator and/or has a <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> method that takes 0-based indexes.</p>
 <p>An “iterator” is anything that conforms to the “iterator protocol”:</p>
@@ -678,7 +484,7 @@ method that returns an iterator and/or has a <code class="docutils literal notra
 <p><a class="reference external" href="http://treyhunner.com/2016/12/python-iterator-protocol-how-for-loops-work/">http://treyhunner.com/2016/12/python-iterator-protocol-how-for-loops-work/</a></p>
 </div>
 <div class="section" id="lab">
-<h2>LAB<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.12. </span>LAB<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference download internal" download="" href="../_downloads/fe75a8e5b07d292f8756b94e08aac0db/iterator_1.py"><code class="xref download docutils literal notranslate"><span class="pre">iterator_1.py</span></code></a></p>
 <ul class="simple">
 <li><p>Extend (<code class="docutils literal notranslate"><span class="pre">iterator_1.py</span></code> ) to be more like <code class="docutils literal notranslate"><span class="pre">range()</span></code> – add three input parameters: <code class="docutils literal notranslate"><span class="pre">iterator_2(start,</span> <span class="pre">stop,</span> <span class="pre">step=1)</span></code></p></li>
@@ -704,7 +510,7 @@ method that returns an iterator and/or has a <code class="docutils literal notra
 </ul>
 </div>
 <div class="section" id="generators">
-<h2>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.13. </span>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
 <p>Generators</p>
 <ul class="simple">
 <li><p>give you an iterator object</p></li>
@@ -722,7 +528,7 @@ and pick it back up later where you left off.</p>
 </dl>
 </div>
 <div class="section" id="yield">
-<h2>yield<a class="headerlink" href="#yield" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.14. </span>yield<a class="headerlink" href="#yield" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">yield</span></code>  is a way to make a quickie generator with a function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a_generator_function</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="n">some_stuff</span>
@@ -780,7 +586,7 @@ the data in a class in multiple ways.</p>
 <p><a class="reference download internal" download="" href="../_downloads/d519125b472dd30a1ce63141ae7c30ce/yield_example.py"><code class="xref download docutils literal notranslate"><span class="pre">yield_example.py</span></code></a></p>
 </div>
 <div class="section" id="generator-comprehensions">
-<h2>generator comprehensions<a class="headerlink" href="#generator-comprehensions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.15. </span>generator comprehensions<a class="headerlink" href="#generator-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>yet another way to make a generator:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="go">[2, 4, 6]</span>
@@ -797,7 +603,7 @@ the data in a class in multiple ways.</p>
 – use a generator expression rather than a list comprehension.</p>
 </div>
 <div class="section" id="other-uses-for-yield">
-<h2>Other uses for <code class="docutils literal notranslate"><span class="pre">yield</span></code><a class="headerlink" href="#other-uses-for-yield" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.16. </span>Other uses for <code class="docutils literal notranslate"><span class="pre">yield</span></code><a class="headerlink" href="#other-uses-for-yield" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">yield</span></code> keyword and generator functions were designed with classic “generators” in mind.</p>
 <p>That is – objects that generate values on the fly.</p>
 <p>But, as we alluded to earlier, <code class="docutils literal notranslate"><span class="pre">yield</span></code> can be used for other things as well.</p>
@@ -833,7 +639,7 @@ so the value can be used after the yield to do the teardown.</p>
 <p>Not horrible, but not as clean and simple.</p>
 </div>
 <div class="section" id="id1">
-<h2>LAB<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5.17. </span>LAB<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Write a few generators:</p>
 <ul class="simple">
 <li><p>Sum of integers</p></li>
@@ -874,10 +680,10 @@ so the value can be used after the yield to do the teardown.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Closures.html" class="btn btn-neutral float-right" title="Closures and Function Currying" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Decorators.html" class="btn btn-neutral float-right" title="18.6. Decorators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../exercises/lambda_magic.html" class="btn btn-neutral float-left" title="lambda and keyword Magic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Unicode.html" class="btn btn-neutral float-left" title="18.4. Unicode in Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

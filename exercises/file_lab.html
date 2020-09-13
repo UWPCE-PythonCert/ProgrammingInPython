@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.2.1. File Exercise &mdash; Python 210 6.0 documentation</title>
+  <title>8.2.1. File Exercise &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.3.1. Trigrams – Simple Text Manipulation" href="trigrams/trigrams.html" />
-    <link rel="prev" title="9.1.1. File Reading and Writing" href="../modules/Files.html" /> 
+    <link rel="next" title="8.3.1. Mailroom With Files" href="mailroom/mailroom_with_files.html" />
+    <link rel="prev" title="8.1.1. File Reading and Writing" href="../modules/Files.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,93 +83,38 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../topics/09-files/index.html#to-read">9.1. To Read</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../topics/09-files/index.html#activities">9.2. Activities</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">9.2.1. File Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../topics/09-files/index.html#to-read">8.1. To Read</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../topics/09-files/index.html#activities">8.2. Activities</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">8.2.1. File Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../topics/09-files/index.html#exercises">9.3. Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/09-files/index.html#exercises">8.3. Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">18. Topic Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">19. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Properties.html">Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="circle/circle_class.html">Circle Class Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_array.html">Sparse Array Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="html_renderer.html">HTML Renderer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/MultipleInheritance.html">Multiple Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="trapezoid.html">Trapezoidal Rule</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Testing_advanced.html">Advanced Testing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lambda_magic.html">lambda and keyword Magic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Decorators.html">Decorators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Async.html">Asychronous Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="threaded_downloader.html">Threaded Web Scraper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Profiling.html">Performance and Profiling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -217,9 +162,9 @@
         
           <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
         
-          <li><a href="../topics/09-files/index.html"><span class="section-number">9. </span>File Handling</a> &raquo;</li>
+          <li><a href="../topics/09-files/index.html"><span class="section-number">8. </span>File Handling</a> &raquo;</li>
         
-      <li><span class="section-number">9.2.1. </span>File Exercise</li>
+      <li><span class="section-number">8.2.1. </span>File Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -239,14 +184,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="file-exercise">
-<span id="exercise-file-lab"></span><h1><span class="section-number">9.2.1. </span>File Exercise<a class="headerlink" href="#file-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-file-lab"></span><h1><span class="section-number">8.2.1. </span>File Exercise<a class="headerlink" href="#file-exercise" title="Permalink to this headline">¶</a></h1>
 <p>A bit of practice with files</p>
 <div class="section" id="goal">
-<h2><span class="section-number">9.2.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Get a little bit of practice with handling files and parsing simple text.</p>
 </div>
 <div class="section" id="paths-and-file-processing">
-<h2><span class="section-number">9.2.1.2. </span>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2.1.2. </span>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Write a program which prints the full path for all files in the current
 directory, one per line. Use either the <code class="docutils literal notranslate"><span class="pre">os</span></code> module or <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>.</p></li>
@@ -266,14 +211,14 @@ contents of the file into memory at once.</p></li>
 </ul>
 </div>
 <div class="section" id="file-reading-and-parsing">
-<h2><span class="section-number">9.2.1.3. </span>File reading and parsing<a class="headerlink" href="#file-reading-and-parsing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2.1.3. </span>File reading and parsing<a class="headerlink" href="#file-reading-and-parsing" title="Permalink to this headline">¶</a></h2>
 <p>Download this text file:</p>
 <p><a class="reference download internal" download="" href="../_downloads/f011030f96079534d2ec0a0739f4a16e/students.txt"><code class="xref download docutils literal notranslate"><span class="pre">students.txt</span></code></a></p>
 <p>In it, you will find a list of names and what programming languages they have used in the past. This may be similar to a list generated at the beginning of this class.</p>
 <p>Write a little script that reads that file and generates a list of all the languages that have been used.</p>
 <p>What might be the best data structure to use to keep track of bunch of values (the languages) without duplication?</p>
 <div class="section" id="the-file-format">
-<h3><span class="section-number">9.2.1.3.1. </span>The file format:<a class="headerlink" href="#the-file-format" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.2.1.3.1. </span>The file format:<a class="headerlink" href="#the-file-format" title="Permalink to this headline">¶</a></h3>
 <p>The first line of the file is:</p>
 <p><code class="docutils literal notranslate"><span class="pre">Name:</span> <span class="pre">Nickname,</span> <span class="pre">languages</span></code></p>
 <p>And each line looks something like this:</p>
@@ -294,10 +239,10 @@ contents of the file into memory at once.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="trigrams/trigrams.html" class="btn btn-neutral float-right" title="9.3.1. Trigrams – Simple Text Manipulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom/mailroom_with_files.html" class="btn btn-neutral float-right" title="8.3.1. Mailroom With Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Files.html" class="btn btn-neutral float-left" title="9.1.1. File Reading and Writing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Files.html" class="btn btn-neutral float-left" title="8.1.1. File Reading and Writing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

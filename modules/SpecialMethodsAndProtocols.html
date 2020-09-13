@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Special Methods &amp; Protocols &mdash; Python 210 6.0 documentation</title>
+  <title>13.1.3. Special Methods &amp; Protocols &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Circle Class Exercise" href="../exercises/circle/circle_class.html" />
-    <link rel="prev" title="Static and Class Methods" href="StaticAndClassMethods.html" /> 
+    <link rel="next" title="13.2.1. Circle Class Exercise" href="../exercises/circle/circle_class.html" />
+    <link rel="prev" title="13.1.2. Static and Class Methods" href="StaticAndClassMethods.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,255 +81,42 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Special Methods &amp; Protocols</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-s-in-a-name">What’s in a Name?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generally-useful-special-methods">Generally Useful Special Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#protocols">Protocols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-numerics-protocol">The Numerics Protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#operator-overloading">Operator Overloading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#comparing">Comparing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#total-ordering">Total Ordering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sorting">Sorting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sort-key-methods">Sort key methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#an-example">An Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#emulating-standard-types">Emulating Standard types</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../topics/14-magic_methods/index.html#to-read">13.1. To Read</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Properties.html">13.1.1. Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="StaticAndClassMethods.html">13.1.2. Static and Class Methods</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">13.1.3. Special Methods &amp; Protocols</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#the-container-protocol">The Container Protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#indexing-and-slicing">Indexing and Slicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#callable-classes">Callable classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#callables">“Callables”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#custom-callable-objects">Custom callable objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#callable-example">Callable example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#protocols-in-summary">Protocols in Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/14-magic_methods/index.html#exercises">13.2. Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/14-magic_methods/index.html#advanced-exercise">13.3. Advanced Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/circle/circle_class.html">Circle Class Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/sparse_array.html">Sparse Array Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">Multiple Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MapFilterReduce.html">Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonParallel.html">IPython Parallel Quickstart</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trapezoid.html">Trapezoidal Rule</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing_advanced.html">Advanced Testing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Properties.html">Properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Special Methods &amp; Protocols</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#what-s-in-a-name">What’s in a Name?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generally-useful-special-methods">Generally Useful Special Methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#protocols">Protocols</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-numerics-protocol">The Numerics Protocol</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#operator-overloading">Operator Overloading</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comparing">Comparing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#total-ordering">Total Ordering</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sorting">Sorting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sort-key-methods">Sort key methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#an-example">An Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-container-protocol">The Container Protocol</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#indexing-and-slicing">Indexing and Slicing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#callable-classes">Callable classes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#callables">“Callables”</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#custom-callable-objects">Custom callable objects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#callable-example">Callable example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#protocols-in-summary">Protocols in Summary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#extras">Extras</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -375,7 +162,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Special Methods &amp; Protocols</li>
+          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../topics/14-magic_methods/index.html"><span class="section-number">13. </span>Properties and Magic Methods</a> &raquo;</li>
+        
+      <li><span class="section-number">13.1.3. </span>Special Methods &amp; Protocols</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -395,11 +186,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="special-methods-protocols">
-<span id="special-methods"></span><h1>Special Methods &amp; Protocols<a class="headerlink" href="#special-methods-protocols" title="Permalink to this headline">¶</a></h1>
+<span id="special-methods"></span><h1><span class="section-number">13.1.3. </span>Special Methods &amp; Protocols<a class="headerlink" href="#special-methods-protocols" title="Permalink to this headline">¶</a></h1>
 <p>Special methods (also called <em>magic</em> methods) are the secret sauce to Python’s duck typing.</p>
 <p>Defining the appropriate special methods in your classes is how you make your class act like the standard classes.</p>
 <div class="section" id="what-s-in-a-name">
-<h2>What’s in a Name?<a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.1. </span>What’s in a Name?<a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h2>
 <p>We’ve seen at least one special method so far:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="fm">__init__</span>
 </pre></div>
@@ -409,7 +200,7 @@
 <p>try: <code class="docutils literal notranslate"><span class="pre">dir(2)</span></code>  or <code class="docutils literal notranslate"><span class="pre">dir(list)</span></code></p>
 </div>
 <div class="section" id="generally-useful-special-methods">
-<h2>Generally Useful Special Methods<a class="headerlink" href="#generally-useful-special-methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.2. </span>Generally Useful Special Methods<a class="headerlink" href="#generally-useful-special-methods" title="Permalink to this headline">¶</a></h2>
 <p>Most classes should at least have these special methods:</p>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">object.__str__</span></code>:</dt><dd><p>Called by the str() built-in function and by the print function to compute
@@ -423,13 +214,13 @@ the <em>informal</em> string representation of an object.</p>
 </dl>
 </div>
 <div class="section" id="protocols">
-<h2>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.3. </span>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
 <p>The set of special methods needed to emulate a particular type of Python object is called a <em>protocol</em>.</p>
 <p>Your classes can “become” like Python built-in classes by implementing the methods in a given protocol.</p>
 <p>Remember, these are more <em>guidelines</em> than laws.  Implement only what you need.</p>
 </div>
 <div class="section" id="the-numerics-protocol">
-<h2>The Numerics Protocol<a class="headerlink" href="#the-numerics-protocol" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.4. </span>The Numerics Protocol<a class="headerlink" href="#the-numerics-protocol" title="Permalink to this headline">¶</a></h2>
 <p>Do you want your class to behave like a number? Implement these methods:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">object</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
 <span class="nb">object</span><span class="o">.</span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
@@ -450,7 +241,7 @@ the <em>informal</em> string representation of an object.</p>
 <p>(or the fraction you actually need).</p>
 </div>
 <div class="section" id="operator-overloading">
-<h2>Operator Overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.5. </span>Operator Overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this headline">¶</a></h2>
 <p>Most of the previous examples map to “operators”: <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-</span> <span class="pre">,</span> <span class="pre">*,</span> <span class="pre">//,</span> <span class="pre">/,</span> <span class="pre">%</span></code> etc. This is often known as “operator overloading”, as you are redefining what the operators mean for that specific type.</p>
 <p>Note that you can define these operators to do ANYTHING you want – but it is a really good idea to only define them to mean something that makes sense in the usual way.</p>
 <p>One interesting exception to this rule is the <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> class, that has defined <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> to mean path concatenation:</p>
@@ -468,7 +259,7 @@ the <em>informal</em> string representation of an object.</p>
 <p>While this is not division in any sense, the slash <em>is</em> used as a path separator – so this does make intuitive sense. At least to me – I think it’s pretty cool.</p>
 </div>
 <div class="section" id="comparing">
-<h2>Comparing<a class="headerlink" href="#comparing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.6. </span>Comparing<a class="headerlink" href="#comparing" title="Permalink to this headline">¶</a></h2>
 <p>If you want your objects to be comparable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">&gt;</span> <span class="n">B</span>
 <span class="n">A</span> <span class="o">&lt;</span> <span class="n">B</span>
@@ -502,7 +293,7 @@ the <em>informal</em> string representation of an object.</p>
 <p>This is just one example – the point is that for your particular class, you can define these comparisons however you want.</p>
 </div>
 <div class="section" id="total-ordering">
-<h2>Total Ordering<a class="headerlink" href="#total-ordering" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.7. </span>Total Ordering<a class="headerlink" href="#total-ordering" title="Permalink to this headline">¶</a></h2>
 <p>You may notice that those operators are kind of redundant – if <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&gt;</span> <span class="pre">B</span> <span class="pre">is</span> <span class="pre">True</span></code> then we know that <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&lt;</span> <span class="pre">B</span> <span class="pre">is</span> <span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&lt;=</span> <span class="pre">B</span> <span class="pre">is</span> <span class="pre">False</span></code>.</p>
 <p>In fact, there is a mathematical / computer science concept known as “Total Order”: (<a class="reference external" href="https://en.wikipedia.org/wiki/Total_order">https://en.wikipedia.org/wiki/Total_order</a>), which strictly defines “well behaved” objects in this regard.</p>
 <p>There may be some special cases, where these rules may not apply for your classes (though I can’t think of any :-) ), but for the most part, you want your classes, if they support comparisons at all, to be well behaved, or “total ordered”.</p>
@@ -524,7 +315,7 @@ the <em>informal</em> string representation of an object.</p>
 <p>Note that this makes it a lot easier than implementing all six comparison operators. However, if you read the doc, it lets you know that <code class="docutils literal notranslate"><span class="pre">total_ordering</span></code> has poor performance – it is doing extra method call re-direction when the operators are used. If performance matters to your use case (and it probably doesn’t), you need to write all six comparison dunders.</p>
 </div>
 <div class="section" id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.8. </span>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
 <p>Python has a handful of sorting methods built in:</p>
 <p><code class="docutils literal notranslate"><span class="pre">list.sort()</span></code> – for sorting a list in place.
 <code class="docutils literal notranslate"><span class="pre">sorted(iterable)</span></code> – for creating a sorted copy of an iterable (sequence).</p>
@@ -533,7 +324,7 @@ the <em>informal</em> string representation of an object.</p>
 <p>So if you are using the <code class="docutils literal notranslate"><span class="pre">total_ordering</span></code> decorator, it’s best to define <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> and <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> – that way sorting will be able to use a “native” method for sorting, and maybe get better performance.</p>
 </div>
 <div class="section" id="sort-key-methods">
-<h2>Sort key methods<a class="headerlink" href="#sort-key-methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.9. </span>Sort key methods<a class="headerlink" href="#sort-key-methods" title="Permalink to this headline">¶</a></h2>
 <p>By default, the sorting methods use <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> for comparison, and that algorithm calls <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> O(n log(n)) times. But if you pass a “key” function in to the sort call:</p>
 <p><code class="docutils literal notranslate"><span class="pre">a_list.sort(key=key_fun)</span></code></p>
 <p>then the key_fun is only called n times, and if the key returns a simple type, like an integer or float, then the sorting will be faster.</p>
@@ -564,7 +355,7 @@ the <em>informal</em> string representation of an object.</p>
 <p>So almost 9 times faster for a 10,000 item list. Pretty good, eh?</p>
 </div>
 <div class="section" id="an-example">
-<h2>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.10. </span>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
 <p>Each of these methods supports a common Python operation.</p>
 <p>For example, to make ‘+’ work with a sequence type in a vector-like fashion,
 implement <code class="docutils literal notranslate"><span class="pre">__add__</span></code>:</p>
@@ -577,12 +368,12 @@ implement <code class="docutils literal notranslate"><span class="pre">__add__</
 </div>
 <p>[a slightly more complete example may be seen here <a class="reference download internal" download="" href="../_downloads/e213f0bfbb62319706e85b507075c974/vector.py"><code class="xref download docutils literal notranslate"><span class="pre">vector.py</span></code></a>]</p>
 <div class="section" id="emulating-standard-types">
-<h3>Emulating Standard types<a class="headerlink" href="#emulating-standard-types" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">13.1.3.10.1. </span>Emulating Standard types<a class="headerlink" href="#emulating-standard-types" title="Permalink to this headline">¶</a></h3>
 <p>Making your classes behave like the built-ins.</p>
 </div>
 </div>
 <div class="section" id="the-container-protocol">
-<h2>The Container Protocol<a class="headerlink" href="#the-container-protocol" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.11. </span>The Container Protocol<a class="headerlink" href="#the-container-protocol" title="Permalink to this headline">¶</a></h2>
 <p>Want to make a container type? Here’s what you need:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">object</span><span class="o">.</span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 <span class="nb">object</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
@@ -602,7 +393,7 @@ implement <code class="docutils literal notranslate"><span class="pre">__add__</
 <p><code class="docutils literal notranslate"><span class="pre">__index__</span></code> is used to convert the object into an integer for indexing. So you don’t define this in a container type but rather define it for a type so it can be used as an index.  If you have a class that could reasonably be interpreted as an index, you should define this. It should return an integer.  This was added to support multiple integer types for numpy.</p>
 </div>
 <div class="section" id="indexing-and-slicing">
-<h2>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.12. </span>Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">set__item__</span></code> are used when indexing:</p>
 <p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">object[i]</span></code> calls <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>, and <code class="docutils literal notranslate"><span class="pre">object[i]</span> <span class="pre">=</span> <span class="pre">something</span></code> calls <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code>.</p>
 <p>But indexing is pretty complex in python. There is simple indexing: <code class="docutils literal notranslate"><span class="pre">object[i]</span></code>, but there is also slicing: <code class="docutils literal notranslate"><span class="pre">object[i:j:skip]</span></code></p>
@@ -613,7 +404,7 @@ implement <code class="docutils literal notranslate"><span class="pre">__add__</
 <p>See: <a class="reference download internal" download="" href="../_downloads/ea9ff57dd55d2896b2d5e1454ebbda93/index_slicing.py"><code class="xref download docutils literal notranslate"><span class="pre">index_slicing.py</span></code></a></p>
 </div>
 <div class="section" id="callable-classes">
-<h2>Callable classes<a class="headerlink" href="#callable-classes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.13. </span>Callable classes<a class="headerlink" href="#callable-classes" title="Permalink to this headline">¶</a></h2>
 <p>We’ve been using functions a lot:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_fun</span><span class="p">(</span><span class="n">something</span><span class="p">):</span>
     <span class="n">do_something</span>
@@ -639,7 +430,7 @@ implement <code class="docutils literal notranslate"><span class="pre">__add__</
 (like map) that requires a function that takes a single argument?</p>
 </div>
 <div class="section" id="callables">
-<h2>“Callables”<a class="headerlink" href="#callables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.14. </span>“Callables”<a class="headerlink" href="#callables" title="Permalink to this headline">¶</a></h2>
 <p>Various places in Python expect a “callable” – something that you can
 call like a function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_result</span> <span class="o">=</span> <span class="n">something</span><span class="p">(</span><span class="n">some_arguments</span><span class="p">)</span>
@@ -651,7 +442,7 @@ that is “callable”.</p>
 function object?</p>
 </div>
 <div class="section" id="custom-callable-objects">
-<h2>Custom callable objects<a class="headerlink" href="#custom-callable-objects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.15. </span>Custom callable objects<a class="headerlink" href="#custom-callable-objects" title="Permalink to this headline">¶</a></h2>
 <p>The trick is one of Python’s “magic methods”</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
@@ -672,7 +463,7 @@ code “calls” an instance of your class:</p>
 </div>
 </div>
 <div class="section" id="callable-example">
-<h2>Callable example<a class="headerlink" href="#callable-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.16. </span>Callable example<a class="headerlink" href="#callable-example" title="Permalink to this headline">¶</a></h2>
 <p>An example of writing a callable class:</p>
 <p>Write a class for a quadratic equation.</p>
 <ul class="simple">
@@ -689,7 +480,7 @@ code “calls” an instance of your class:</p>
 <a class="reference download internal" download="" href="../_downloads/b924bf5f9d157f280183dad684e589a2/quadratic.py"><code class="xref download docutils literal notranslate"><span class="pre">quadratic.py</span></code></a></p>
 </div>
 <div class="section" id="protocols-in-summary">
-<h2>Protocols in Summary<a class="headerlink" href="#protocols-in-summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.17. </span>Protocols in Summary<a class="headerlink" href="#protocols-in-summary" title="Permalink to this headline">¶</a></h2>
 <p>Use special methods when you want your class to act like a “standard” type or class in some way.</p>
 <p>Look up the special methods you need and define them (and only the ones you need).</p>
 <p>There’s more to read about the details of implementing these methods:</p>
@@ -698,7 +489,7 @@ code “calls” an instance of your class:</p>
 </ul>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1.3.18. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>Here is a good reference for magic methods:</p>
 <p><a class="reference external" href="http://minhhh.github.io/posts/a-guide-to-pythons-magic-methods">http://minhhh.github.io/posts/a-guide-to-pythons-magic-methods</a></p>
 <p>And with a bit more explanation:</p>
@@ -714,10 +505,10 @@ code “calls” an instance of your class:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/circle/circle_class.html" class="btn btn-neutral float-right" title="Circle Class Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/circle/circle_class.html" class="btn btn-neutral float-right" title="13.2.1. Circle Class Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="StaticAndClassMethods.html" class="btn btn-neutral float-left" title="Static and Class Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="StaticAndClassMethods.html" class="btn btn-neutral float-left" title="13.1.2. Static and Class Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

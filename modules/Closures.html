@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Closures and Function Currying &mdash; Python 210 6.0 documentation</title>
+  <title>16.1.5. Closures and Function Currying &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Decorators" href="Decorators.html" />
-    <link rel="prev" title="Iterators and Generators" href="IteratorsAndGenerators.html" /> 
+    <link rel="next" title="16.3.1. Trapezoidal Rule" href="../exercises/trapezoid.html" />
+    <link rel="prev" title="16.1.4. IPython Parallel Quickstart" href="IPythonParallel.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,259 +81,44 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/circle/circle_class.html">Circle Class Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/sparse_array.html">Sparse Array Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="SubclassingAndInheritance.html">Subclassing and Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer.html">HTML Renderer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/html_renderer_tutorial.html">Tutorial for the Html Render Assignment</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">Multiple Inheritance</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MapFilterReduce.html">Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonParallel.html">IPython Parallel Quickstart</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trapezoid.html">Trapezoidal Rule</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing_advanced.html">Advanced Testing</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Closures and Function Currying</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#scope">Scope</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#global-scope">Global Scope</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#local-scope">Local Scope</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#function-parameters">Function Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#finding-names">Finding Names</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-global-keyword">The <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nonlocal-keyword"><code class="docutils literal notranslate"><span class="pre">nonlocal</span></code> keyword</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">1. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">2. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">3. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">4. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">5. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">6. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">7. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">8. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">9. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">10. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">11. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">12. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">13. Properties and Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">14. Subclassing and Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">15. Multiple Inheritance</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/17-functional_programming/index.html">16. Introduction to Functional Programming</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../topics/17-functional_programming/index.html#to-read">16.1. To Read</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="OO_vs_functional.html">16.1.1. Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Lambda.html">16.1.2. Anonymous Functions: Lambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MapFilterReduce.html">16.1.3. Map Filter and Reduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IPythonParallel.html">16.1.4. IPython Parallel Quickstart</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">16.1.5. Closures and Function Currying</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Closures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#functions-within-functions">Functions Within Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#what-s-going-on-here">What’s going on here?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/17-functional_programming/index.html#activities">16.2. Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/17-functional_programming/index.html#exercises">16.3. Exercises</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#currying">Currying</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#real-world-example">Real world Example</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#using-the-curried-function">Using the Curried Function</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#functools-partial"><code class="docutils literal notranslate"><span class="pre">functools.partial</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#extras">Extras</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Closures and Function Currying</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#scope">Scope</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Closures</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#currying">Currying</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="Decorators.html">Decorators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">17. Advanced Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">18. Extra Topics</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MultipleInheritance.html">15.1.1. Multiple Inheritance</a></li>
 </ul>
 
             
@@ -379,7 +164,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Closures and Function Currying</li>
+          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">16. </span>Introduction to Functional Programming</a> &raquo;</li>
+        
+      <li><span class="section-number">16.1.5. </span>Closures and Function Currying</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -399,15 +188,23 @@
            <div itemprop="articleBody">
             
   <div class="section" id="closures-and-function-currying">
-<span id="closures"></span><h1>Closures and Function Currying<a class="headerlink" href="#closures-and-function-currying" title="Permalink to this headline">¶</a></h1>
+<span id="closures"></span><h1><span class="section-number">16.1.5. </span>Closures and Function Currying<a class="headerlink" href="#closures-and-function-currying" title="Permalink to this headline">¶</a></h1>
 <p>Defining specialized functions on the fly.</p>
+<p>A “Closure” is a fancy CS term that can be very hard to understand. Partly because they are expressed a little differently in every computer language that supports them But this is easiest definition I could find:</p>
+<blockquote>
+<div><p>Closure is when a function “remembers” its lexical scope even when the function is executed outside that lexical scope</p>
+</div></blockquote>
+<p>This definition is provided by Kyle Simpson
+(by way of <a class="reference external" href="https://medium.com/beginners-guide-to-mobile-web-development/closures-in-functional-programming-and-javascript-3ed730e08fc2">an article about closures in Javascript</a>).</p>
+<p>The basic idea behind the concept of a closure lies in the understanding of the fact that closure is a mechanism by which an inner function will have access to the variables defined in its outer function’s lexical scope even after the outer function has returned.</p>
+<p>Which brings us to the key practical part of how this works in Python:</p>
 <div class="section" id="scope">
-<h2>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1.5.1. </span>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h2>
 <p>In order to get a handle on all this, it’s important to understand variable scoping rules in Python.</p>
-<p>“Scope” is the word for where the names in your code are accessible. Another word for a scope is namespace.</p>
+<p>“Scope” is the word for <cite>where</cite> the names in your code are accessible. Another word for a scope is namespace.</p>
 <div class="section" id="global-scope">
-<h3>Global Scope<a class="headerlink" href="#global-scope" title="Permalink to this headline">¶</a></h3>
-<p>The simplest is the global scope. This is where all the names defined right in your code file (module) are. When running in an interactavive interpreter,  it is in the global namespace as well.</p>
+<h3><span class="section-number">16.1.5.1.1. </span>Global Scope<a class="headerlink" href="#global-scope" title="Permalink to this headline">¶</a></h3>
+<p>The simplest is the global scope. This is where all the names defined right in your code file (module) are. When running in an interactive interpreter,  it is in the global namespace as well.</p>
 <p>You can get the global namespace with the <code class="docutils literal notranslate"><span class="pre">globals()</span></code> function, but …</p>
 <p>The Python interpreter defines a handful of names when it starts up, and iPython defines a whole bunch more.
 Recall that a convention in Python is that names that start with an underscore are “special” in some way – double underscore names have a special meaning to Python, and single underscore names are considered “private”.
@@ -460,9 +257,10 @@ Most of the extra names defined by the Python interpreter or iPython that are de
 <span class="go">TestClass</span>
 </pre></div>
 </div>
+<p>Always keep in mind that in Python, “global” means “global to the module”, <em>not</em> global to the entire program. In the case of the interactive interpreter, the module is the “__main__” module (remember <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">__main__:</span></code>?). But in a particular python file (usually one file is one module), the global scope is global to that one file.</p>
 </div>
 <div class="section" id="local-scope">
-<h3>Local Scope<a class="headerlink" href="#local-scope" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.1.5.1.2. </span>Local Scope<a class="headerlink" href="#local-scope" title="Permalink to this headline">¶</a></h3>
 <p>So that’s the global scope – what creates a new scope?</p>
 <p>A new, “local” scope is created by a function or class definition:</p>
 <p>There is a built-in function to get the names in the local scope, too, so we can use it to show us the names in a function’s local namespace. There isn’t a lot of cruft in the local namespace, so we don’t need a special function to print it.</p>
@@ -510,7 +308,7 @@ Most of the extra names defined by the Python interpreter or iPython that are de
 </div>
 </div>
 <div class="section" id="function-parameters">
-<h3>Function Parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.1.5.1.3. </span>Function Parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The other way you can define names in a function’s local namespace is with function parameters:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="k">def</span> <span class="nf">fun_with_parameters</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="go">    ...:     print(&quot;local names are:&quot;, locals().keys())</span>
@@ -524,7 +322,7 @@ Most of the extra names defined by the Python interpreter or iPython that are de
 <p>Notice that no other names have been defined in the function, but both of the parameters (positional and keyword) are local names.</p>
 </div>
 <div class="section" id="finding-names">
-<h3>Finding Names<a class="headerlink" href="#finding-names" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.1.5.1.4. </span>Finding Names<a class="headerlink" href="#finding-names" title="Permalink to this headline">¶</a></h3>
 <p>At any point, there are multiple scopes in play: the local scope, and all the surrounding scopes.
 When you use a name, python checks in the local scope first, then moves out one by one until it finds the name.
 If you define a new name inside a function, it “overrides” the name in any of the outer scopes.
@@ -549,10 +347,10 @@ But any names not defined in an inner scope will be found by looking in the encl
 <span class="go">this is in inner</span>
 </pre></div>
 </div>
-<p>Look carefully to see where each of those names came from. All the print statements are in the inner function, so its local scope is searched first, and then the outer function’s scope, and then the global scope. <code class="docutils literal notranslate"><span class="pre">name1</span></code> is only defined in the global scope, so that one is found.</p>
+<p>Look carefully to see where each of those names came from. All the print statements are in the inner function, so its local scope is searched first, and then the outer function’s scope, and then the global scope. <code class="docutils literal notranslate"><span class="pre">name1</span></code> is only defined in the global scope, so that one is found. but <code class="docutils literal notranslate"><span class="pre">name2</span></code> is redfined in the scope of the <code class="docutils literal notranslate"><span class="pre">outer</span></code> function, so that one is found. And <code class="docutils literal notranslate"><span class="pre">name3</span></code> is only defined in the <code class="docutils literal notranslate"><span class="pre">inner</span></code> function scope.</p>
 </div>
 <div class="section" id="the-global-keyword">
-<h3>The <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword<a class="headerlink" href="#the-global-keyword" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.1.5.1.5. </span>The <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword<a class="headerlink" href="#the-global-keyword" title="Permalink to this headline">¶</a></h3>
 <p>Global names can be accessed from within functions, but not if that same name is created in the local scope. So you can’t change an immutable object that is outside the local scope:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [37]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 
@@ -575,6 +373,7 @@ But any names not defined in an inner scope will be found by looking in the encl
 </pre></div>
 </div>
 <p>The problem here is that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">5</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">5</span></code>, so it is creating a local name, but it can’t be incremented, because it hasn’t had a value set yet.</p>
+<p>How does the interpreter know that <code class="docutils literal notranslate"><span class="pre">x</span></code> is a local name? When it compiles the function definition, it marks all the names assigned in the function as local. So when the function runs, it knows that <code class="docutils literal notranslate"><span class="pre">x</span></code> is local, and thus it won’t go look in the global scope for it.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword tells python that you want to use the global name, rather than create a new, local name:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [40]: </span><span class="k">def</span> <span class="nf">increment_x</span><span class="p">():</span>
 <span class="go">    ...:     global x</span>
@@ -588,11 +387,11 @@ But any names not defined in an inner scope will be found by looking in the encl
 <span class="gh">Out[42]: </span><span class="go">10</span>
 </pre></div>
 </div>
-<p><strong>NOTE:</strong> The use of <code class="docutils literal notranslate"><span class="pre">global</span></code> is frowned upon – having global variables manipulated in arbitrary other scopes makes for buggy, hard to maintain code!</p>
+<p><strong>NOTE:</strong> The use of <code class="docutils literal notranslate"><span class="pre">global</span></code> is frowned upon – having global variables manipulated in arbitrary other scopes makes for buggy, hard to maintain code! You hardly ever need to use <code class="docutils literal notranslate"><span class="pre">global</span></code> – if a function needs to manipulate a value, you should pass that value into the function, or have it return a value that can then be used to change the global name.</p>
 </div>
 <div class="section" id="nonlocal-keyword">
-<h3><code class="docutils literal notranslate"><span class="pre">nonlocal</span></code> keyword<a class="headerlink" href="#nonlocal-keyword" title="Permalink to this headline">¶</a></h3>
-<p>The other limitation with <code class="docutils literal notranslate"><span class="pre">global</span></code> is that there is only one global namespace, so what if you are in a nested scope, and want to get at the value outside the current scope, but not all the way up at the global scope:</p>
+<h3><span class="section-number">16.1.5.1.6. </span><code class="docutils literal notranslate"><span class="pre">nonlocal</span></code> keyword<a class="headerlink" href="#nonlocal-keyword" title="Permalink to this headline">¶</a></h3>
+<p>The other limitation with <code class="docutils literal notranslate"><span class="pre">global</span></code> is that there is only one global namespace. What if you are in a nested scope, and want to get at the value outside the current scope, but not all the way up at the global scope:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="gp">In [2]: </span><span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
@@ -632,7 +431,8 @@ But any names not defined in an inner scope will be found by looking in the encl
 </pre></div>
 </div>
 <p>This indicates that the global <code class="docutils literal notranslate"><span class="pre">x</span></code> is getting changed, but not the one in the <code class="docutils literal notranslate"><span class="pre">outer</span></code> scope.</p>
-<p>This is enough of a limitation that Python 3 added a new keyword: <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code>. What it means is that the name should be looked for outside the local scope, but only as far as you need to go to find it:</p>
+<p>This is enough of a limitation that Python 3 added a new keyword: <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code>.
+What it means is that the name should be looked for outside the local scope, but only as far as you need to go to find it:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
 <span class="go">    ...:     x = 10</span>
 <span class="go">    ...:     def inner():</span>
@@ -680,13 +480,13 @@ But any names not defined in an inner scope will be found by looking in the encl
 </div>
 </div>
 <div class="section" id="id1">
-<h2>Closures<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1.5.2. </span>Closures<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have a good handle on namespace scope, we can get to see why this is all really useful.</p>
 <p>“Closures” is a cool CS term for what is really just defining functions on the fly with some saved state. You can find a “proper” definition here:</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">Closures on Wikipedia</a></p>
 <p>But I have trouble following that, so we’ll look at real world examples to get the idea – it’s actually pretty logical, once you have idea about how scope works in Python.</p>
 <div class="section" id="functions-within-functions">
-<h3>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.1.5.2.1. </span>Functions Within Functions<a class="headerlink" href="#functions-within-functions" title="Permalink to this headline">¶</a></h3>
 <p>We’ve been defining functions within functions to explore namespace scope.  But functions are “first class objects” in python, so we can not only define them and call them, but we can assign names to them and pass them around like any other object.</p>
 <p>So after we define a function within a function, we can actually return that function as an object:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">counter</span><span class="p">(</span><span class="n">start_at</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
@@ -700,7 +500,7 @@ But any names not defined in an inner scope will be found by looking in the encl
 </div>
 <p>This looks a lot like the previous examples, but we are returning the function that was defined inside the function. Which means is can be used elsewhere.</p>
 <div class="section" id="what-s-going-on-here">
-<h4>What’s going on here?<a class="headerlink" href="#what-s-going-on-here" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.1.5.2.1.1. </span>What’s going on here?<a class="headerlink" href="#what-s-going-on-here" title="Permalink to this headline">¶</a></h4>
 <p>We have passed the <code class="docutils literal notranslate"><span class="pre">start_at</span></code> value into the <code class="docutils literal notranslate"><span class="pre">counter</span></code> function.</p>
 <p>We have stored it in <code class="docutils literal notranslate"><span class="pre">counter</span></code>’s scope as a local variable: <code class="docutils literal notranslate"><span class="pre">count</span></code></p>
 <p>Then we defined a function, <code class="docutils literal notranslate"><span class="pre">incr</span></code> that adds one to the value of count, and returns that value.</p>
@@ -743,12 +543,12 @@ But any names not defined in an inner scope will be found by looking in the encl
 </div>
 </div>
 <div class="section" id="currying">
-<h2>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1.5.3. </span>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h2>
 <p>“Currying” is a special case of closures:</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Currying">Currying on Wikipedia</a></p>
 <p>The idea behind currying is that you may have a function with a number of parameters, and you want to make a specialized version of that function with a couple of parameters pre-set.</p>
 <div class="section" id="real-world-example">
-<h3>Real world Example<a class="headerlink" href="#real-world-example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.1.5.3.1. </span>Real world Example<a class="headerlink" href="#real-world-example" title="Permalink to this headline">¶</a></h3>
 <p>I was writing some code to compute the concentration of a contaminant in a river, as it was reduced by exponential decay, defined by a half-life:</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Half-life">https://en.wikipedia.org/wiki/Half-life</a></p>
 <p>So I wanted a function that would compute how much the concentration would reduce as a function of time – that is:</p>
@@ -780,7 +580,7 @@ But any names not defined in an inner scope will be found by looking in the encl
 </pre></div>
 </div>
 <div class="section" id="using-the-curried-function">
-<h4>Using the Curried Function<a class="headerlink" href="#using-the-curried-function" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.1.5.3.1.1. </span>Using the Curried Function<a class="headerlink" href="#using-the-curried-function" title="Permalink to this headline">¶</a></h4>
 <p>Create a scale function with a half-life of one hour:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">scale</span> <span class="o">=</span> <span class="n">get_scale_fun</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
@@ -819,7 +619,7 @@ But any names not defined in an inner scope will be found by looking in the encl
 </div>
 </div>
 <div class="section" id="functools-partial">
-<h3><code class="docutils literal notranslate"><span class="pre">functools.partial</span></code><a class="headerlink" href="#functools-partial" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.1.5.3.2. </span><code class="docutils literal notranslate"><span class="pre">functools.partial</span></code><a class="headerlink" href="#functools-partial" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">functools</span></code> module in the standard library provides utilities for working with functions:</p>
 <p><a class="reference external" href="https://docs.python.org/3.5/library/functools.html">https://docs.python.org/3.5/library/functools.html</a></p>
 <p>Creating a curried function turns out to be common enough that the <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> function provides an optimized way to do it:</p>
@@ -854,10 +654,10 @@ But any names not defined in an inner scope will be found by looking in the encl
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Decorators.html" class="btn btn-neutral float-right" title="Decorators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/trapezoid.html" class="btn btn-neutral float-right" title="16.3.1. Trapezoidal Rule" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="IteratorsAndGenerators.html" class="btn btn-neutral float-left" title="Iterators and Generators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="IPythonParallel.html" class="btn btn-neutral float-left" title="16.1.4. IPython Parallel Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

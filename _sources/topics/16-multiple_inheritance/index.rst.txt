@@ -1,5 +1,5 @@
-Topic Name
-======================
+Multiple Inheritance
+====================
 
 
 To Read
@@ -8,7 +8,7 @@ To Read
 .. toctree::
     :maxdepth: 1
 
-    ../../modules/xxxxx
+    ../../modules/MultipleInheritance
 
 
 Activities
@@ -20,7 +20,9 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/xxxxx
+.. Add old excercise (updated) using mixins with PIL.
+
+..    ../../exercises/xxxxx
 
 
 

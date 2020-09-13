@@ -107,12 +107,13 @@ The main data structure in your class can be a dictionary with a key as donor na
 
 
 .. code-block:: python
+
     class DonorCollection:
         def __init__(self, *donors):
             self.donors = {obj.name: obj for obj in donors}
 
 
-this design allows you to quickly look up donor by their name and get a donor object instance to work with.
+This design allows you to quickly look up donor by their name and get a donor object instance to work with.
 
 Another option is to simply use a list of donor objects. You get to choose which you think is more appropriate.
 
