@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mailroom With Unit Tests &mdash; Python 210 6.0 documentation</title>
+  <title>7.3.1. Mailroom With Unit Tests &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Dictionaries and Sets" href="../../modules/DictsAndSets.html" />
-    <link rel="prev" title="Introduction To Unit Testing" href="../unit_testing/unit_testing.html" /> 
+    <link rel="next" title="8. Dictionaries and Sets" href="../../topics/08-dicts_sets/index.html" />
+    <link rel="prev" title="7.1.2. Test Driven Development" href="../../modules/TestDrivenDevelopment.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,130 +81,37 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Mailroom With Unit Tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#guidelines">Guidelines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mailroom-code-structure">Mailroom Code Structure</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#send-thank-you">Send Thank You</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-report">Create Report</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#send-letters">Send Letters</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../topics/07-unit_testing/index.html#to-read">7.1. To Read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../topics/07-unit_testing/index.html#activities">7.2. Activities</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../topics/07-unit_testing/index.html#exercises">7.3. Exercises</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">7.3.1. Mailroom With Unit Tests</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/14-magic_methods/index.html">14. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/15-subclassing/index.html">15. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/16-multiple_inheritance/index.html">16. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/17-functional_programming/index.html">17. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/18-advnaced_testing/index.html">18. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/99-extras/index.html">19. Topic Name</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mailroom-oo.html">Mailroom - Object Oriented</a></li>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../modules/Properties.html">Properties</a></li>
@@ -264,12 +171,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../class_schedule/index.html">Python 210 Class Schedule</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Introduction to Python Topic Notes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">All Exercises</a></li>
-</ul>
 
             
           
@@ -314,7 +215,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Mailroom With Unit Tests</li>
+          <li><a href="../../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../../topics/07-unit_testing/index.html"><span class="section-number">7. </span>Unit Testing</a> &raquo;</li>
+        
+      <li><span class="section-number">7.3.1. </span>Mailroom With Unit Tests</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -334,14 +239,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mailroom-with-unit-tests">
-<span id="exercise-mailroom-testing"></span><h1>Mailroom With Unit Tests<a class="headerlink" href="#mailroom-with-unit-tests" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-testing"></span><h1><span class="section-number">7.3.1. </span>Mailroom With Unit Tests<a class="headerlink" href="#mailroom-with-unit-tests" title="Permalink to this headline">¶</a></h1>
 <p><strong>Add a full suite of unit tests.</strong></p>
 <p>“Full suite” means all the code is tested. In practice, it’s very hard to test the user interaction, but you can test everything else. Therefore you should make sure that there is as little logic and untested code in the user interaction portion of the program as possible.</p>
 <p>This is a big step; you may find that your code is hard to test. If that’s the case, it’s a good sign that you <em>should refactor your code</em>.</p>
 <p>I like to say: “If it’s hard to test, it’s not well structured.”</p>
 <p>Put in the tests <strong>before</strong> you make the other changes below. That’s much of the point of tests. And while in this case, it’s not really TDD, as you already have working code, you still want to write the tests as early as possible, so you know your refactored code is correct.</p>
 <div class="section" id="guidelines">
-<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3.1.1. </span>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
 <p>Here are some suggestions on what should be refactored in your mailroom code.</p>
 <p>As mentioned above, testing user interaction code (code with <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> functions) is harder than testing the rest of your code. Testing user interaction code requires more advanced unit testing methodologies that will be revisited in future courses. Therefore, you should refactor your code so that the user interaction code contains as little business logic as possible. It should only interact with the user either by asking them for input or by responding to their request to print out data. Separating business logic from user interaction code is a good practice in general and we will come back to this concept in later lessons.</p>
 <p>The refactoring in this lesson will allow you to unit test the functions with business logic, even if you don’t test the user interaction code.</p>
@@ -349,7 +254,7 @@
 <p>For unit testing framework you should use <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a>; it has a simple interface and rich features.</p>
 </div>
 <div class="section" id="mailroom-code-structure">
-<h2>Mailroom Code Structure<a class="headerlink" href="#mailroom-code-structure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3.1.2. </span>Mailroom Code Structure<a class="headerlink" href="#mailroom-code-structure" title="Permalink to this headline">¶</a></h2>
 <p>Your code should have 3 main features so far:</p>
 <ul class="simple">
 <li><p>Send a thank you (adds a new donor or updates existing donor info)</p></li>
@@ -357,12 +262,12 @@
 <li><p>Send letters (creates files)</p></li>
 </ul>
 <div class="section" id="send-thank-you">
-<h3>Send Thank You<a class="headerlink" href="#send-thank-you" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1.2.1. </span>Send Thank You<a class="headerlink" href="#send-thank-you" title="Permalink to this headline">¶</a></h3>
 <p>Even though every mailroom implementation will be unique, most likely this function will require a significant refactor for most of you.
 You can break up the code into components that handle user interaction and data manipulation logic. Your unit tests should test the data manipulation logic code: generating the thank you text, adding or updating donors, and listing donors.</p>
 </div>
 <div class="section" id="create-report">
-<h3>Create Report<a class="headerlink" href="#create-report" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1.2.2. </span>Create Report<a class="headerlink" href="#create-report" title="Permalink to this headline">¶</a></h3>
 <p>This function should only need slight modification. Split up user presentation (<code class="docutils literal notranslate"><span class="pre">print</span></code> function calls) and data logic (actual creating of rows).
 Your data logic function can either return the report string already formatted or return a list of formatted rows that can be joined and printed in the user presentation function.</p>
 <p>This allows you to write a unit test for your data logic function.</p>
@@ -375,7 +280,7 @@ Your data logic function can either return the report string already formatted o
 <p>Here you would write a unit test for <code class="docutils literal notranslate"><span class="pre">get_report</span></code> function. Remember: TDD – write that test <em>before</em> the function!</p>
 </div>
 <div class="section" id="send-letters">
-<h3>Send Letters<a class="headerlink" href="#send-letters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.3.1.2.3. </span>Send Letters<a class="headerlink" href="#send-letters" title="Permalink to this headline">¶</a></h3>
 <p>This function should require very little or no change to make it unit-testable.
 To make it testable, you’ll need to follow the same “separation of concerns” approach: the code that creates the letters should be separate from the code that prints them to the screen. This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc. So the code that makes a letter likley will return a string with the entire letter contents.</p>
 <p>For example:</p>
@@ -411,10 +316,10 @@ To make it testable, you’ll need to follow the same “separation of concerns�
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/DictsAndSets.html" class="btn btn-neutral float-right" title="Dictionaries and Sets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../topics/08-dicts_sets/index.html" class="btn btn-neutral float-right" title="8. Dictionaries and Sets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../unit_testing/unit_testing.html" class="btn btn-neutral float-left" title="Introduction To Unit Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/TestDrivenDevelopment.html" class="btn btn-neutral float-left" title="7.1.2. Test Driven Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

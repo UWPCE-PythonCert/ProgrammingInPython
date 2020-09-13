@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Comprehensions &mdash; Python 210 6.0 documentation</title>
+  <title>12.1.1. Comprehensions &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Collections Module" href="CollectionsModule.html" />
-    <link rel="prev" title="args and kwargs LAB" href="../exercises/args_kwargs_lab.html" /> 
+    <link rel="next" title="12.1.2. The Collections Module" href="CollectionsModule.html" />
+    <link rel="prev" title="12. Comprehensions" href="../topics/12-comprehensions/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,140 +81,38 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TestDrivenDevelopment.html">Test Driven Development</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Comprehensions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#list-comprehensions">List Comprehensions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#nested-loops">Nested Loops</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#zip-with-comprehensions">zip() with comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comprehensions-and-map">Comprehensions and map()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-about-filter">What about filter?</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../topics/12-comprehensions/index.html#to-read">12.1. To Read</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">12.1.1. Comprehensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CollectionsModule.html">12.1.2. The Collections Module</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#set-comprehensions">Set Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dict-comprehensions">Dict Comprehensions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#a-bit-of-history">A bit of History:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/12-comprehensions/index.html#activities">12.2. Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/12-comprehensions/index.html#exercises">12.3. Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#generator-comprehensions">Generator Comprehensions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#when-to-use-what">When to Use What</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">18. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">19. Topic Name</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
@@ -274,45 +172,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Comprehensions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#list-comprehensions">List Comprehensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#set-comprehensions">Set Comprehensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dict-comprehensions">Dict Comprehensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#generator-comprehensions">Generator Comprehensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#extras">Extras</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
-</ul>
 
             
           
@@ -357,7 +216,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Comprehensions</li>
+          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../topics/12-comprehensions/index.html"><span class="section-number">12. </span>Comprehensions</a> &raquo;</li>
+        
+      <li><span class="section-number">12.1.1. </span>Comprehensions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -377,10 +240,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="comprehensions">
-<span id="id1"></span><h1>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">12.1.1. </span>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h1>
 <p><strong>A bit of functional programming.</strong></p>
 <div class="section" id="list-comprehensions">
-<h2>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1.1.1. </span>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>The concept of “functional programming” is clearly defined in some contexts, but is also used in a less strict sense. Python is <strong>not</strong> a functional language in the strict sense, but it does support a number of functional paradigms.</p>
 <p>In general, code is considered “Pythonic” that uses functional paradigms where they are natural, but not when they have to be forced in.</p>
 <p>We will cover functional programming concepts more clearly later in the program, but for now, we’ll talk about the syntax for a common functional paradigm: applying an expression to all the members of a sequence to produce another sequence.</p>
@@ -400,7 +263,7 @@
 This can be a simple (or complex) math operation: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">3</span></code>, or a function or method call: <code class="docutils literal notranslate"><span class="pre">a_string.upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">int(x)</span></code>, etc.
 But it can not contain any statements: code that does not return a value, such as assignment (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span></code>), or <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, or <code class="docutils literal notranslate"><span class="pre">if</span></code> blocks.</p>
 <div class="section" id="nested-loops">
-<h3>Nested Loops<a class="headerlink" href="#nested-loops" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.1.1.1.1. </span>Nested Loops<a class="headerlink" href="#nested-loops" title="Permalink to this headline">¶</a></h3>
 <p>What about nested for loops?  Sometimes you need to build up a list by looping over two sequences like so:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">a_list</span><span class="p">:</span>
@@ -425,7 +288,7 @@ But it can not contain any statements: code that does not return a value, such a
 <p>Note that it makes every combination of the two input lists, and thus will be <code class="docutils literal notranslate"><span class="pre">len(list1)</span> <span class="pre">*</span> <span class="pre">len(list2)</span></code> in size. And there is no reason for them to be the same size.</p>
 </div>
 <div class="section" id="zip-with-comprehensions">
-<h3>zip() with comprehensions<a class="headerlink" href="#zip-with-comprehensions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.1.1.1.2. </span>zip() with comprehensions<a class="headerlink" href="#zip-with-comprehensions" title="Permalink to this headline">¶</a></h3>
 <p>If you want them paired up instead, you can use <code class="docutils literal notranslate"><span class="pre">zip()</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [31]: </span><span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)]</span>
 <span class="gh">Out[31]: </span><span class="go">[(1, 4), (2, 5)]</span>
@@ -433,7 +296,7 @@ But it can not contain any statements: code that does not return a value, such a
 </div>
 </div>
 <div class="section" id="comprehensions-and-map">
-<h3>Comprehensions and map()<a class="headerlink" href="#comprehensions-and-map" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.1.1.1.3. </span>Comprehensions and map()<a class="headerlink" href="#comprehensions-and-map" title="Permalink to this headline">¶</a></h3>
 <p>Comprehensions are another way of expressing the “map” pattern from functional programming.</p>
 <p>Python does have a <code class="docutils literal notranslate"><span class="pre">map()</span></code> function, which pre-dates comprehensions. But it does much of the same things – and most folks think comprehensions are the more “Pythonic” way to do it. And there is nothing that can be expressed with <code class="docutils literal notranslate"><span class="pre">map()</span></code> that cannot be done with a comprehension. If you are not familiar with <code class="docutils literal notranslate"><span class="pre">map()</span></code>, you can safely skip this, but if you are:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span><span class="p">(</span><span class="n">a_function</span><span class="p">,</span> <span class="n">an_iterable</span><span class="p">)</span>
@@ -461,7 +324,7 @@ But it can not contain any statements: code that does not return a value, such a
 <p>But is that easier to read or write?</p>
 </div>
 <div class="section" id="what-about-filter">
-<h3>What about filter?<a class="headerlink" href="#what-about-filter" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.1.1.1.4. </span>What about filter?<a class="headerlink" href="#what-about-filter" title="Permalink to this headline">¶</a></h3>
 <p>“filtering” is another functional concept: building a new list with only <em>some</em> of the elements – “filtering” out the ones you don’t want. Python has a <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function, also pre-dating comprehensions, but you can do it with a comprehension as well, and it does the application of the expression and the filtering in one construct, rather than having to nest <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">filter</span></code> calls.</p>
 <p>This supports the common case of having a conditional in the loop:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -501,7 +364,7 @@ But it can not contain any statements: code that does not return a value, such a
 </div>
 </div>
 <div class="section" id="set-comprehensions">
-<h2>Set Comprehensions<a class="headerlink" href="#set-comprehensions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1.1.2. </span>Set Comprehensions<a class="headerlink" href="#set-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>You can do a similar thing with sets, as well:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">expression_with_variable</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">a_sequence</span><span class="p">}</span>
 </pre></div>
@@ -532,7 +395,7 @@ But it can not contain any statements: code that does not return a value, such a
 </div>
 </div>
 <div class="section" id="dict-comprehensions">
-<h2>Dict Comprehensions<a class="headerlink" href="#dict-comprehensions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1.1.3. </span>Dict Comprehensions<a class="headerlink" href="#dict-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>You can also build up a dictionary with a comprehension:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">a_sequence</span><span class="p">}</span>
 </pre></div>
@@ -551,7 +414,7 @@ But it can not contain any statements: code that does not return a value, such a
 </pre></div>
 </div>
 <div class="section" id="a-bit-of-history">
-<h3>A bit of History:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.1.1.3.1. </span>A bit of History:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this headline">¶</a></h3>
 <p>dict comps are not as useful as they used to be, now that we have the <code class="docutils literal notranslate"><span class="pre">dict()</span></code>  constructor.</p>
 <p>In the early days of Python the only way to create a dict was with a literal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># an empty dict</span>
@@ -618,7 +481,7 @@ But it can not contain any statements: code that does not return a value, such a
 </div>
 </div>
 <div class="section" id="generator-comprehensions">
-<h2>Generator Comprehensions<a class="headerlink" href="#generator-comprehensions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1.1.4. </span>Generator Comprehensions<a class="headerlink" href="#generator-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>There is yet another type of comprehension: generator comprehensions, technically known as “generator expressions”. They are very much like a list comprehension, except that they evaluate to a lazy-evaluated “iterable”, rather than a list. That is, they <em>generate</em> the items on the fly.</p>
 <p>This is useful, because we often create a comprehension simply to loop over it right away:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">a_sequence</span><span class="p">]:</span>
@@ -714,7 +577,7 @@ But if we use it in a generator comprehension:</p>
 </pre></div>
 </div>
 <div class="section" id="when-to-use-what">
-<h3>When to Use What<a class="headerlink" href="#when-to-use-what" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.1.1.4.1. </span>When to Use What<a class="headerlink" href="#when-to-use-what" title="Permalink to this headline">¶</a></h3>
 <p>It’s pretty simple:</p>
 <p>If you need a list (or a set or dict) for further work, then use a list comp.</p>
 <p>If you are going to immediately loop through the items created by the comprehension, use a generator comprehension.</p>
@@ -725,7 +588,7 @@ But if we use it in a generator comprehension:</p>
 </div>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1.1.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>This is a nice intro to comprehensions from Trey Hunner:</p>
 <p><a class="reference external" href="https://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/">https://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/</a></p>
 <p>Once you’ve got the hang of it, you may want to read this so you don’t overdo it :-)</p>
@@ -742,10 +605,10 @@ But if we use it in a generator comprehension:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="CollectionsModule.html" class="btn btn-neutral float-right" title="The Collections Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="CollectionsModule.html" class="btn btn-neutral float-right" title="12.1.2. The Collections Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../exercises/args_kwargs_lab.html" class="btn btn-neutral float-left" title="args and kwargs LAB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../topics/12-comprehensions/index.html" class="btn btn-neutral float-left" title="12. Comprehensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

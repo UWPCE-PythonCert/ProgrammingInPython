@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Test Driven Development &mdash; Python 210 6.0 documentation</title>
+  <title>7.1.2. Test Driven Development &mdash; Python 210 6.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction To Unit Testing" href="../exercises/unit_testing/unit_testing.html" />
-    <link rel="prev" title="Testing" href="Testing.html" /> 
+    <link rel="next" title="7.3.1. Mailroom With Unit Tests" href="../exercises/mailroom/mailroom_with_tests.html" />
+    <link rel="prev" title="7.1.1. Testing" href="Testing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,138 +81,38 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Introduction to Python</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_environment/index.html">Installing Python and core tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EnvironmentOverview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="IPythonIntroduction.html">IPython Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Py2vsPy3.html">Python 2 versus Python 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Git.html">Intro to Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GitWorkflow.html">git Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Submitting_to_github.html">Submitting your work to gitHub (old)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SubmittingCodeGithubClassroom.html">Working with GitHub Classroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HowToRunAPythonFile.html">How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Learning.html">1.1.1. Useful Python Learning Resources</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BasicPython.html">1.1.2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html">1.1.3. More on Functions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/grid_printer.html">1.3.1. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fizz_buzz.html">1.3.2. Fizz Buzz Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Recursion.html">2.1.1. Recursion</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/fib_and_lucas.html">2.3.1. Fibonacci Series Exercise</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Booleans.html">2.1.2. Boolean Expressions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Sequences.html">Python Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Iteration.html">Iteration</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/slicing.html">Slicing Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/list_lab.html">List Lab</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/string_formatting.html">String Formatting Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/rot13.html">ROT13</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom.html">Mailroom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exception Handling</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Test Driven Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#unit-testing">Unit Testing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#not-diving-in">(Not) Diving In</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-rules-for-roman-numerals">The Rules for Roman Numerals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a-single-question">A Single Question</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#write-a-test-that-fails-then-code-until-it-passes">Write a test that fails, then code until it passes.</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/index.html">Introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../topics/07-unit_testing/index.html#to-read">7.1. To Read</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Testing.html">7.1.1. Testing</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">7.1.2. Test Driven Development</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#halt-and-catch-fire">“Halt And Catch Fire”</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#more-halting-more-fire">More Halting, More Fire</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#and-one-more-thing">And One More Thing …</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a-pleasing-symmetry">A Pleasing Symmetry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#more-bad-input">More Bad Input</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#refactoring">Refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/07-unit_testing/index.html#activities">7.2. Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/07-unit_testing/index.html#exercises">7.3. Exercises</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/18-advnaced_testing/index.html">18. Topic Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/99-extras/index.html">19. Topic Name</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DictsAndSets.html">Dictionaries and Sets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Files.html">File Reading and Writing</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/file_lab.html">File Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="NamingThings.html">Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modules.html">Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Packaging.html">Packages and Packaging</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/args_kwargs_lab.html"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> LAB</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CollectionsModule.html">The Collections Module</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">Mailroom With Comprehensions</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ObjectOrientationOverview.html">Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PythonClasses.html">Python Classes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/oo_intro.html">OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Properties.html">Properties</a></li>
@@ -272,41 +172,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../class_schedule/index.html">Python 210 Class Schedule</a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction to Python Topic Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#setting-up-your-environment">Setting up your Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-python">Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#recursion">Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#booleans">Booleans</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#sequences-and-iteration">Sequences and Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#basic-text-handling">Basic Text Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#exception-handling">Exception Handling</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#unit-testing">Unit Testing</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Testing.html">Testing</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Test Driven Development</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#unit-testing">Unit Testing</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dictionaries-and-sets">Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#modules-and-packages">Modules and Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#comprehensions">Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-argument-passing">Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#intro-to-object-oriented-programing">Intro to Object Oriented Programing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#properties-and-magic-methods">Properties and Magic Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#subclassing">Subclassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#multiple-inheritance">Multiple Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction-to-functional-programming">Introduction to Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-testing">Advanced Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#extras">Extras</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/index.html">All Exercises</a></li>
-</ul>
 
             
           
@@ -351,7 +216,11 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Test Driven Development</li>
+          <li><a href="../topics/index.html">Introduction to Python</a> &raquo;</li>
+        
+          <li><a href="../topics/07-unit_testing/index.html"><span class="section-number">7. </span>Unit Testing</a> &raquo;</li>
+        
+      <li><span class="section-number">7.1.2. </span>Test Driven Development</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -372,7 +241,7 @@
             
   <p id="test-driven-development">FIXME: change the path from my personal to something generic</p>
 <div class="section" id="id1">
-<h1>Test Driven Development<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7.1.2. </span>Test Driven Development<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>“Testing” is any strategy for making sure your code behaves as expected. “Unit testing” is a particular strategy, that:</p>
 <ul class="simple">
 <li><p>is easy to run in an automated fashion.</p></li>
@@ -385,7 +254,7 @@
 <p>The primary difference is that this version uses the simpler pytest testing framework, rather than <cite>unittest</cite>, which is discussed in
 <a class="reference internal" href="Testing.html#unit-testing"><span class="std std-ref">Testing</span></a></p>
 <div class="section" id="unit-testing">
-<h2>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1.2.1. </span>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">“Certitude is not the test of certainty. We have been cocksure of
@@ -395,7 +264,7 @@ Jr.</a></div>
 </div>
 </div></blockquote>
 <div class="section" id="not-diving-in">
-<h3>(Not) Diving In<a class="headerlink" href="#not-diving-in" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.1. </span>(Not) Diving In<a class="headerlink" href="#not-diving-in" title="Permalink to this headline">¶</a></h3>
 <p>Kids today. So spoiled by these fast computers and fancy “dynamic”
 languages. Write first, ship second, debug third (if ever). In my day,
 we had discipline. <strong>Discipline, I say!</strong> We had to write programs by
@@ -406,7 +275,7 @@ functions to convert to and from Roman numerals.</p>
 <p>You’ve most likely seen Roman numerals, even if you didn’t recognize them. You may have seen them in copyrights of old movies and television shows (“Copyright MCMXLVI” instead of “Copyright 1946”), or on the dedication walls of libraries or universities (“established MDCCCLXXXVIII” instead of “established 1888”). You may also have seen them in outlines and bibliographical references. It’s a system of representing numbers that really does date back to the ancient Roman empire (hence the name).</p>
 </div>
 <div class="section" id="the-rules-for-roman-numerals">
-<h3>The Rules for Roman Numerals<a class="headerlink" href="#the-rules-for-roman-numerals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.2. </span>The Rules for Roman Numerals<a class="headerlink" href="#the-rules-for-roman-numerals" title="Permalink to this headline">¶</a></h3>
 <p>In Roman numerals, there are seven characters that are repeated and combined in various ways to represent numbers.</p>
 <div class="line-block">
 <div class="line">I = 1</div>
@@ -492,7 +361,7 @@ with others.)</p></li>
 </ul>
 </div>
 <div class="section" id="a-single-question">
-<h3>A Single Question<a class="headerlink" href="#a-single-question" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.3. </span>A Single Question<a class="headerlink" href="#a-single-question" title="Permalink to this headline">¶</a></h3>
 <p class="centered">
 <strong><strong>Every Test is an Island</strong></strong></p><p>A test case answers a single question about the code it is testing. A
 test case should be able to…</p>
@@ -699,7 +568,7 @@ equal to the known correct value:</p>
 eventually exits normally, which means <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> has passed this
 test.</p>
 <div class="section" id="write-a-test-that-fails-then-code-until-it-passes">
-<h4>Write a test that fails, then code until it passes.<a class="headerlink" href="#write-a-test-that-fails-then-code-until-it-passes" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.1.2.1.3.1. </span>Write a test that fails, then code until it passes.<a class="headerlink" href="#write-a-test-that-fails-then-code-until-it-passes" title="Permalink to this headline">¶</a></h4>
 <p>Once you have a test case, you can start coding the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code>
 function. First, you should stub it out as an empty function and make
 sure the tests fail. If the tests succeed before you’ve written any
@@ -1060,7 +929,7 @@ it.</p>
 </div>
 </div>
 <div class="section" id="halt-and-catch-fire">
-<h3>“Halt And Catch Fire”<a class="headerlink" href="#halt-and-catch-fire" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.4. </span>“Halt And Catch Fire”<a class="headerlink" href="#halt-and-catch-fire" title="Permalink to this headline">¶</a></h3>
 <p>The Pythonic way to halt and catch fire is to raise an exception.</p>
 <p>It is not enough to test that functions succeed when given good input;
 you must also test that they fail when given bad input. And not just any
@@ -1186,7 +1055,7 @@ going from “fail” to “pass.” That kind of confidence doesn’t come
 cheap, but it will pay for itself over the lifetime of your code.</p>
 </div>
 <div class="section" id="more-halting-more-fire">
-<h3>More Halting, More Fire<a class="headerlink" href="#more-halting-more-fire" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.5. </span>More Halting, More Fire<a class="headerlink" href="#more-halting-more-fire" title="Permalink to this headline">¶</a></h3>
 <p>Along with testing numbers that are too large, you need to test numbers
 that are too small.
 As we noted in our functional requirements, Roman numerals cannot express zero or negative numbers.</p>
@@ -1295,7 +1164,7 @@ the unit tests and prove it.</p>
 <p>Excellent! The tests all pass – your code is working! Remember that you still have the “too large” test – and all the tests of converting numbers. So you know you haven’t inadvertently broken anything else.</p>
 </div>
 <div class="section" id="and-one-more-thing">
-<h3>And One More Thing …<a class="headerlink" href="#and-one-more-thing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.6. </span>And One More Thing …<a class="headerlink" href="#and-one-more-thing" title="Permalink to this headline">¶</a></h3>
 <p>There was one more functional requirement for converting numbers to Roman numerals: dealing with non-integers.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">run</span> <span class="n">roman6</span><span class="o">.</span><span class="n">py</span>
 
@@ -1405,7 +1274,7 @@ the unit tests and prove it.</p>
 of any more tests, so it’s time to move on to <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code>.</p>
 </div>
 <div class="section" id="a-pleasing-symmetry">
-<h3>A Pleasing Symmetry<a class="headerlink" href="#a-pleasing-symmetry" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.7. </span>A Pleasing Symmetry<a class="headerlink" href="#a-pleasing-symmetry" title="Permalink to this headline">¶</a></h3>
 <p>Converting a string from a Roman numeral to an integer sounds more
 difficult than converting an integer to a Roman numeral. Certainly there
 is the issue of validation. It’s easy to check if an integer is greater
@@ -1604,7 +1473,7 @@ comprehensive test cases until it doesn’t bother you.)</p>
 </div>
 </div>
 <div class="section" id="more-bad-input">
-<h3>More Bad Input<a class="headerlink" href="#more-bad-input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.8. </span>More Bad Input<a class="headerlink" href="#more-bad-input" title="Permalink to this headline">¶</a></h3>
 <p>Now that the <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> function works properly with good input,
 it’s time to fit in the last piece of the puzzle: making it work
 properly with bad input. That means finding a way to look at a string
@@ -2240,7 +2109,7 @@ But if a test fails, like it did here, then it presents you with all the output 
 <p>But don’t forget to remove those print statements from your production code!</p>
 </div>
 <div class="section" id="refactoring">
-<h3>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.1.2.1.9. </span>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h3>
 <p>So now you’ve got working code, that is pretty well tested. But is it as good as it can be? Maybe there are some places it can be improved? This is the real power of unit tests – now that you have well tested code, you can make changes, and if the tests pass, you can be confident that the code still works.</p>
 <p>Refactoring options:</p>
 <p>Do we really need to check if there are any invalid charactors explicitly:</p>
@@ -2278,10 +2147,10 @@ roman17.py ............                                    <span class="o">[</sp
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/unit_testing/unit_testing.html" class="btn btn-neutral float-right" title="Introduction To Unit Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/mailroom/mailroom_with_tests.html" class="btn btn-neutral float-right" title="7.3.1. Mailroom With Unit Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Testing.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Testing.html" class="btn btn-neutral float-left" title="7.1.1. Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
