@@ -1,5 +1,5 @@
-Topic Name
-======================
+Properties and Magic Methods
+============================
 
 
 To Read
@@ -8,11 +8,10 @@ To Read
 .. toctree::
     :maxdepth: 1
 
-    ../../modules/xxxxx
+    ../../modules/Properties
+    ../../modules/StaticAndClassMethods
+    ../../modules/SpecialMethodsAndProtocols
 
-
-Activities
-----------
 
 Exercises
 ---------
@@ -20,7 +19,13 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/xxxxx
+    ../../exercises/circle/circle_class
 
+Advanced Exercise
+-----------------
 
+.. toctree::
+    :maxdepth: 1
+
+    ../../exercises/sparse_array
 

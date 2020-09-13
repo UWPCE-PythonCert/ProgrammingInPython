@@ -1,5 +1,5 @@
-Topic Name
-======================
+Advanced Testing
+================
 
 
 To Read
@@ -8,11 +8,13 @@ To Read
 .. toctree::
     :maxdepth: 1
 
-    ../../modules/xxxxx
+    ../../modules/Testing_advanced
 
 
 Activities
 ----------
+
+.. Add an activity for mocking input() and doing a parameterized test.
 
 Exercises
 ---------
@@ -20,7 +22,7 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/xxxxx
+    ../../exercises/mailroom/mailroom_with_full_tests.rst
 
 
 

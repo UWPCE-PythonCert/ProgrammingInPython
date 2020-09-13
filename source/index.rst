@@ -197,42 +197,42 @@ Topics in the Program
 
 
 
-Properties and Magic Methods
-----------------------------
+.. Properties and Magic Methods
+.. ----------------------------
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    modules/Properties
-    modules/StaticAndClassMethods
-    modules/SpecialMethodsAndProtocols
+..     modules/Properties
+..     modules/StaticAndClassMethods
+..     modules/SpecialMethodsAndProtocols
 
-Exercises:
-..........
+.. Exercises:
+.. ..........
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    exercises/circle/circle_class
-    exercises/sparse_array
+..     exercises/circle/circle_class
+..     exercises/sparse_array
 
-Subclassing
------------
+.. Subclassing
+.. -----------
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    modules/SubclassingAndInheritance
+..     modules/SubclassingAndInheritance
 
 
-Exercises:
-..........
+.. Exercises:
+.. ..........
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    exercises/html_renderer.rst
-    exercises/html_renderer_tutorial.rst
+..     exercises/html_renderer.rst
+..     exercises/html_renderer_tutorial.rst
 
 
 Multiple Inheritance
@@ -244,102 +244,98 @@ Multiple Inheritance
     modules/MultipleInheritance
 
 
-Introduction to Functional Programming
---------------------------------------
+.. Introduction to Functional Programming
+.. --------------------------------------
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    modules/OO_vs_functional
-    modules/Lambda
-    modules/MapFilterReduce
-    modules/IPythonParallel
+..     modules/OO_vs_functional
+..     modules/Lambda
+..     modules/MapFilterReduce
+..     modules/IPythonParallel
 
-Exercises
-.........
+.. Exercises
+.. .........
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 1
 
-    exercises/trapezoid
-
-
-Advanced Testing
-----------------
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/Testing_advanced
+..     exercises/trapezoid
 
 
-Extras
-------
+.. Advanced Testing
+.. ----------------
 
-The following are some extra topics that might be of interest
+.. .. toctree::
+..     :maxdepth: 1
 
-.. toctree::
-    :maxdepth: 1
-
-    modules/Pep8
-    modules/CodeReviews
-    modules/PersistanceAndSerialization
-    modules/Unicode
-
-    modules/Lambda
-    exercises/lambda_magic
-    modules/IteratorsAndGenerators
-
-    modules/Closures
-
-    modules/Decorators
-    modules/ContextManagers
-    exercises/context-managers-exercise.rst
-
-    modules/MetaProgramming
-
-    modules/Logging
-    modules/Debugging
+..     modules/Testing_advanced
 
 
-    modules/NoSQL
-    modules/GraphDatabases
+.. Extras
+.. ------
+
+.. The following are some extra topics that might be of interest
+
+.. .. toctree::
+..     :maxdepth: 1
+
+..     modules/Pep8
+..     modules/CodeReviews
+..     modules/PersistanceAndSerialization
+..     modules/Unicode
+
+..     modules/IteratorsAndGenerators
+
+..     modules/Decorators
+..     modules/ContextManagers
+..     exercises/context-managers-exercise.rst
+
+..     modules/MetaProgramming
+
+..     modules/Logging
+..     modules/Debugging
 
 
-    modules/Concurrency
-    modules/Async
-    modules/Coroutines
-    modules/ThreadingMultiprocessing
-    exercises/threaded_downloader
-
-    modules/Profiling
+..     modules/NoSQL
+..     modules/GraphDatabases
 
 
-10 Lesson Course Program
-========================
+..     modules/Concurrency
+..     modules/Async
+..     modules/Coroutines
+..     modules/ThreadingMultiprocessing
+..     exercises/threaded_downloader
 
-.. toctree::
-    :maxdepth: 2
-
-    class_schedule/index
-
-
-All Topics
-==========
-
-.. toctree::
-    :maxdepth: 1
-
-    modules/index
+..     modules/Profiling
 
 
-All Exercises:
-===============
+.. 10 Lesson Course Program
+.. ========================
 
-.. toctree::
-    :maxdepth: 1
+.. .. toctree::
+..     :maxdepth: 2
 
-    exercises/index
+..     class_schedule/index
+
+
+.. All Topics
+.. ==========
+
+.. .. toctree::
+..     :maxdepth: 1
+
+..     modules/index
+
+
+.. All Exercises:
+.. ===============
+
+.. .. toctree::
+..     :maxdepth: 1
+
+..     exercises/index
 
 
 About this Site

@@ -26,7 +26,7 @@ Exercises
     :maxdepth: 1
 
     ../../exercises/except_exercise.rst
-    ../../exercises/mailroom_with_exceptions.rst
+    ../../exercises/mailroom/mailroom_with_exceptions.rst
 
 
 

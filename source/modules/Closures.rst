@@ -6,18 +6,29 @@ Closures and Function Currying
 
 Defining specialized functions on the fly.
 
+A "Closure" is a fancy CS term that can be very hard to understand. Partly because they are expressed a little differently in every computer language that supports them But this is easiest definition I could find:
+
+    Closure is when a function “remembers” its lexical scope even when the function is executed outside that lexical scope
+
+This definition is provided by Kyle Simpson
+(by way of `an article about closures in Javascript <https://medium.com/beginners-guide-to-mobile-web-development/closures-in-functional-programming-and-javascript-3ed730e08fc2>`_).
+
+The basic idea behind the concept of a closure lies in the understanding of the fact that closure is a mechanism by which an inner function will have access to the variables defined in its outer function’s lexical scope even after the outer function has returned.
+
+Which brings us to the key practical part of how this works in Python:
+
 
 Scope
 =====
 
 In order to get a handle on all this, it's important to understand variable scoping rules in Python.
 
-"Scope" is the word for where the names in your code are accessible. Another word for a scope is namespace.
+"Scope" is the word for `where` the names in your code are accessible. Another word for a scope is namespace.
 
 Global Scope
 ------------
 
-The simplest is the global scope. This is where all the names defined right in your code file (module) are. When running in an interactavive interpreter,  it is in the global namespace as well.
+The simplest is the global scope. This is where all the names defined right in your code file (module) are. When running in an interactive interpreter,  it is in the global namespace as well.
 
 You can get the global namespace with the ``globals()`` function, but ...
 
@@ -78,6 +89,9 @@ names are created by assignment, and by ``def`` and ``class`` statements. We alr
     this
     test
     TestClass
+
+Always keep in mind that in Python, "global" means "global to the module", *not* global to the entire program. In the case of the interactive interpreter, the module is the "__main__" module (remember ``if __name__ == __main__:``?). But in a particular python file (usually one file is one module), the global scope is global to that one file.
+
 
 Local Scope
 -----------
@@ -188,7 +202,7 @@ But any names not defined in an inner scope will be found by looking in the encl
     this is in outer
     this is in inner
 
-Look carefully to see where each of those names came from. All the print statements are in the inner function, so its local scope is searched first, and then the outer function's scope, and then the global scope. ``name1`` is only defined in the global scope, so that one is found.
+Look carefully to see where each of those names came from. All the print statements are in the inner function, so its local scope is searched first, and then the outer function's scope, and then the global scope. ``name1`` is only defined in the global scope, so that one is found. but ``name2`` is redfined in the scope of the ``outer`` function, so that one is found. And ``name3`` is only defined in the ``inner`` function scope.
 
 The ``global`` keyword
 ----------------------
@@ -218,6 +232,8 @@ Global names can be accessed from within functions, but not if that same name is
 
 The problem here is that ``x += 5`` is the same as ``x = x + 5``, so it is creating a local name, but it can't be incremented, because it hasn't had a value set yet.
 
+How does the interpreter know that ``x`` is a local name? When it compiles the function definition, it marks all the names assigned in the function as local. So when the function runs, it knows that ``x`` is local, and thus it won't go look in the global scope for it.
+
 The ``global`` keyword tells python that you want to use the global name, rather than create a new, local name:
 
 .. code-block:: ipython
@@ -233,12 +249,13 @@ The ``global`` keyword tells python that you want to use the global name, rather
     In [42]: x
     Out[42]: 10
 
-**NOTE:** The use of ``global`` is frowned upon -- having global variables manipulated in arbitrary other scopes makes for buggy, hard to maintain code!
+**NOTE:** The use of ``global`` is frowned upon -- having global variables manipulated in arbitrary other scopes makes for buggy, hard to maintain code! You hardly ever need to use ``global`` -- if a function needs to manipulate a value, you should pass that value into the function, or have it return a value that can then be used to change the global name.
+
 
 ``nonlocal`` keyword
 --------------------
 
-The other limitation with ``global`` is that there is only one global namespace, so what if you are in a nested scope, and want to get at the value outside the current scope, but not all the way up at the global scope:
+The other limitation with ``global`` is that there is only one global namespace. What if you are in a nested scope, and want to get at the value outside the current scope, but not all the way up at the global scope:
 
 .. code-block:: ipython
 
@@ -285,7 +302,8 @@ But if we use ``global``, we'll get the global ``x``:
 
 This indicates that the global ``x`` is getting changed, but not the one in the ``outer`` scope.
 
-This is enough of a limitation that Python 3 added a new keyword: ``nonlocal``. What it means is that the name should be looked for outside the local scope, but only as far as you need to go to find it:
+This is enough of a limitation that Python 3 added a new keyword: ``nonlocal``.
+What it means is that the name should be looked for outside the local scope, but only as far as you need to go to find it:
 
 .. code-block:: ipython
 
@@ -336,6 +354,7 @@ But it will go up multiple levels in nested scopes:
 
     In [17]: outer()
     x in outer is: 20
+
 
 Closures
 ========

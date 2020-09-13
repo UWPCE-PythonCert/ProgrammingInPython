@@ -17,7 +17,7 @@ Activities
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/unit_testing.rst
+    ../../exercises/unit_testing/unit_testing.rst
 
 Exercises
 ---------

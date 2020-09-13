@@ -25,7 +25,7 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/mailroom_with_files.rst
+    ../../exercises/mailroom/mailroom_with_files.rst
     ../../exercises/trigrams/trigrams.rst
 
 

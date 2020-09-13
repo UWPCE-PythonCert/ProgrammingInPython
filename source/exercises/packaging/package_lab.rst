@@ -12,7 +12,6 @@ LAB: A Small Example Package
   - ``at least one working test``
 
 
-
 * Here is a ridiculously simple and useless package to use as an example:
 
 :download:`capitalize.zip <capitalize.zip>`

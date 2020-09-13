@@ -970,9 +970,6 @@ In your test file, you would do this:
         new_mocked_input.return_value = 'blue'
         self.assertEqual(mock_input.get_input(), 'blue')
 
-Exercise
-........
 
-See if you can use mocking of the ``input()`` function to write a full set of tests for the interactive portion of your mailroom program.
 
 
