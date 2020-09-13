@@ -22,7 +22,7 @@ Exercises
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/mailroom/mailroom_with_full_tests.rst
+    ../../exercises/mailroom/mailroom-mock.rst
 
 
 

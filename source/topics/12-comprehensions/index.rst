@@ -19,13 +19,13 @@ Activities
 
     ../../exercises/comprehensions_lab
 
-Exercises
----------
+.. Exercises
+.. ---------
 
 .. toctree::
     :maxdepth: 1
 
-    ../../exercises/comprehensions_lab
+    ../../exercises/mailroom/mailroom_with_comprehensions
 
 
 

@@ -1,3 +1,7 @@
+:orphan:
+
+.. NOTE: This is the "old" version, before we adopted gitHub Classroom
+
 .. _git_workflow:
 
 git Workflow

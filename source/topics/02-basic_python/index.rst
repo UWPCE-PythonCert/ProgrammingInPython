@@ -10,12 +10,18 @@ To Read
 .. toctree::
     :maxdepth: 1
 
+    ../../modules/HowToRunAPythonFile
     ../../modules/Learning
     ../../modules/BasicPython
     ../../modules/Functions
 
 Activities
 ----------
+
+.. toctree::
+    :maxdepth: 1
+
+    ../../exercises/python_pushups.rst
 
 Exercises
 ---------

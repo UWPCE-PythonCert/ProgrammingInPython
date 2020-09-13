@@ -1,3 +1,4 @@
+:orphan:
 
 #########################
 Python 210 Class Schedule
