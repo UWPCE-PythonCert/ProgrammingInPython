@@ -5,7 +5,7 @@ Dictionary and Set Lab
 **********************
 
 Learning about dictionaries and sets
-====================================
+
 
 Goal:
 -----
