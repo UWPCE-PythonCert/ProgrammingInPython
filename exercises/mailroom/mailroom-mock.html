@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>18.2. Mocking Mailroom &mdash; Programming in Python 7.0 documentation</title>
+  <title>Mocking Mailroom &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="19. Extra Topics" href="../../topics/99-extras/index.html" />
-    <link rel="prev" title="18.1. Advanced Testing" href="../../modules/Testing_advanced.html" /> 
+    <link rel="prev" title="Advanced Testing" href="../../modules/Testing_advanced.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -101,8 +103,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/18-advanced_testing/index.html">18. Advanced Testing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Testing_advanced.html">18.1. Advanced Testing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">18.2. Mocking Mailroom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Testing_advanced.html">Advanced Testing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mocking Mailroom</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/99-extras/index.html">19. Extra Topics</a></li>
@@ -111,6 +113,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -149,11 +152,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/18-advanced_testing/index.html"><span class="section-number">18. </span>Advanced Testing</a> &raquo;</li>
         
-      <li><span class="section-number">18.2. </span>Mocking Mailroom</li>
+      <li>Mocking Mailroom</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,7 +175,7 @@
         <a href="../../topics/99-extras/index.html" class="btn btn-neutral float-right" title="19. Extra Topics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="18.1. Advanced Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="Advanced Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -182,14 +185,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mocking-mailroom">
-<span id="exercise-mailroom-mocking"></span><h1><span class="section-number">18.2. </span>Mocking Mailroom<a class="headerlink" href="#mocking-mailroom" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-mocking"></span><h1>Mocking Mailroom<a class="headerlink" href="#mocking-mailroom" title="Permalink to this headline">¶</a></h1>
 <p>You should now have a nice mailroom program, complete with an object-oriented structure and bundled up into a nice python package.</p>
 <p>And a complete set of unit tests for the logic code.</p>
 <p>But your command line user interface code is likely not tested. It’s hard to auto-test user-interaction…</p>
 <p>Your mission is to get mailroom fully tested.</p>
 <p>Start with your object oriented mailroom in a proper python package.</p>
 <div class="section" id="coverage">
-<h2><span class="section-number">18.2.1. </span>Coverage<a class="headerlink" href="#coverage" title="Permalink to this headline">¶</a></h2>
+<h2>Coverage<a class="headerlink" href="#coverage" title="Permalink to this headline">¶</a></h2>
 <p>First run coverage on your current tests. I like pytest-cov:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install pytest-cov
 
@@ -204,13 +207,13 @@ $ pytest --cov<span class="o">=</span>mailroom
 <p>Once you’ve run coverage – add tests to get it up close to 100% on your logic code, if it’s not there already.</p>
 </div>
 <div class="section" id="fixtures">
-<h2><span class="section-number">18.2.2. </span>Fixtures<a class="headerlink" href="#fixtures" title="Permalink to this headline">¶</a></h2>
+<h2>Fixtures<a class="headerlink" href="#fixtures" title="Permalink to this headline">¶</a></h2>
 <p>Fixtures are a really good way to make your tests cleaner and more independent. With mailroom, you should have a couple fixtures that set up a donor database with some data in it – and maybe one or two for <code class="docutils literal notranslate"><span class="pre">Donor</span></code> objects.</p>
 <p>Clean up your tests with fixtures – and keep the coverage up!</p>
 <p>One possible use for a fixture is providing a file to write to for the code that writes files. Or maybe a directory to put the files in, and then it can clean up the dir in teardown.</p>
 </div>
 <div class="section" id="mocking-input">
-<h2><span class="section-number">18.2.3. </span>Mocking input<a class="headerlink" href="#mocking-input" title="Permalink to this headline">¶</a></h2>
+<h2>Mocking input<a class="headerlink" href="#mocking-input" title="Permalink to this headline">¶</a></h2>
 <p>Once you have 100% coverage for the logic code – it’s time to test the UI.</p>
 <p>You should be able to use mocking to mock the <code class="docutils literal notranslate"><span class="pre">input</span></code> function, and then actually test your user interface code, too.</p>
 <p>Can you get 100% test coverage?</p>
@@ -228,7 +231,7 @@ $ pytest --cov<span class="o">=</span>mailroom
         <a href="../../topics/99-extras/index.html" class="btn btn-neutral float-right" title="19. Extra Topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="18.1. Advanced Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="Advanced Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -237,11 +240,19 @@ $ pytest --cov<span class="o">=</span>mailroom
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -252,7 +263,6 @@ $ pytest --cov<span class="o">=</span>mailroom
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

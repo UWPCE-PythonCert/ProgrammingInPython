@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>19.18. Notes on Coroutines &mdash; Programming in Python 7.0 documentation</title>
+  <title>Notes on Coroutines &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="19.19. Threading and multiprocessing" href="ThreadingMultiprocessing.html" />
-    <link rel="prev" title="19.17. Asychronous Programming" href="Async.html" /> 
+    <link rel="next" title="Threading and multiprocessing" href="ThreadingMultiprocessing.html" />
+    <link rel="prev" title="Asychronous Programming" href="Async.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -102,27 +104,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Decorators.html">19.6. Decorators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">19.10. Metaprogramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Debugging.html">19.13. Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">19.16. Concurrent Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Async.html">19.17. Asychronous Programming</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">19.18. Notes on Coroutines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Profiling.html">19.21. Performance and Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Decorators.html">Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Notes on Coroutines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -130,6 +132,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -168,11 +171,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">19.18. </span>Notes on Coroutines</li>
+      <li>Notes on Coroutines</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,10 +191,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="ThreadingMultiprocessing.html" class="btn btn-neutral float-right" title="19.19. Threading and multiprocessing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ThreadingMultiprocessing.html" class="btn btn-neutral float-right" title="Threading and multiprocessing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Async.html" class="btn btn-neutral float-left" title="19.17. Asychronous Programming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Async.html" class="btn btn-neutral float-left" title="Asychronous Programming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -201,7 +204,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="notes-on-coroutines">
-<span id="coroutines"></span><h1><span class="section-number">19.18. </span>Notes on Coroutines<a class="headerlink" href="#notes-on-coroutines" title="Permalink to this headline">¶</a></h1>
+<span id="coroutines"></span><h1>Notes on Coroutines<a class="headerlink" href="#notes-on-coroutines" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These notes are incomplete, but maybe the first section is still useful?</p>
@@ -211,7 +214,7 @@
 provides handy utilities, and most importantly, an event loop to actually run the code.</p>
 <p>But it’s helpful to play around a bit with coroutines on their own, to get a better understanding of what they really are, and how they work.</p>
 <div class="section" id="what-is-a-coroutine">
-<h2><span class="section-number">19.18.1. </span>What is a coroutine?<a class="headerlink" href="#what-is-a-coroutine" title="Permalink to this headline">¶</a></h2>
+<h2>What is a coroutine?<a class="headerlink" href="#what-is-a-coroutine" title="Permalink to this headline">¶</a></h2>
 <p>Coroutines are functions that can hold state, and vary between invocations;
 there can be multiple instances of a given coroutine at once.</p>
 <p>This may sound a bit familiar from generators – a generator function can hold
@@ -222,7 +225,7 @@ control flow back to the system while they are holding that state.</p>
 <p>Hopefully this will make a bit more sense after we’ve experimented a bit.</p>
 </div>
 <div class="section" id="coroutines-by-themselves">
-<h2><span class="section-number">19.18.2. </span>Coroutines By Themselves<a class="headerlink" href="#coroutines-by-themselves" title="Permalink to this headline">¶</a></h2>
+<h2>Coroutines By Themselves<a class="headerlink" href="#coroutines-by-themselves" title="Permalink to this headline">¶</a></h2>
 <p>Coroutines are really only useful when controlled by an event loop.  And for the most part, you are going to use an event loop provided by an async framework, like the built in``asyncio`` package.</p>
 <p>But it can be instructive to know about what is going on directly with coroutines, so we’ll experiment a bit here:</p>
 <p>We can make a coroutine with the <code class="docutils literal notranslate"><span class="pre">async</span></code> keyword:</p>
@@ -289,10 +292,10 @@ control flow back to the system while they are holding that state.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ThreadingMultiprocessing.html" class="btn btn-neutral float-right" title="19.19. Threading and multiprocessing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ThreadingMultiprocessing.html" class="btn btn-neutral float-right" title="Threading and multiprocessing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Async.html" class="btn btn-neutral float-left" title="19.17. Asychronous Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Async.html" class="btn btn-neutral float-left" title="Asychronous Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -301,11 +304,19 @@ control flow back to the system while they are holding that state.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -316,7 +327,6 @@ control flow back to the system while they are holding that state.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

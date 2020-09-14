@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,10 +35,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
 </head>
@@ -72,6 +73,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -105,6 +107,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -143,7 +146,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Lession 5: File Handling, Exceptions and Comprehensions</li>
     
@@ -170,12 +173,12 @@
 <h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Files.html">9.1. File Reading and Writing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/NamingThings.html">10.1. Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Documentation.html">10.3. Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Exceptions.html">6.1. Exception Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/Comprehensions.html">12.1. Comprehensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/CollectionsModule.html">12.2. The Collections Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Files.html">File Reading and Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Exceptions.html">Exception Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/Comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/CollectionsModule.html">The Collections Module</a></li>
 </ul>
 </div>
 </div>
@@ -183,11 +186,12 @@
 <h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">6.2. Exceptions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">6.3. Exceptions Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">12.3. Comprehensions Lab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">6.4. Mailroom With Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">9.4. Mailroom With Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/file_processing/file_lab.html">File Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/exceptions_lab.html">Exceptions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/comprehensions_lab.html">Comprehensions Lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
 </ul>
 </div>
 </div>
@@ -204,11 +208,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -219,7 +231,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

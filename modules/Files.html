@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.1. File Reading and Writing &mdash; Programming in Python 7.0 documentation</title>
+  <title>File Reading and Writing &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,13 +35,9 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.2. File Exercise" href="../exercises/file_lab.html" />
+    <link rel="next" title="File Exercise" href="../exercises/file_processing/file_lab.html" />
     <link rel="prev" title="9. File Handling" href="../topics/09-files/index.html" /> 
 </head>
 
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,17 +87,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.1. File Reading and Writing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/file_lab.html">9.2. File Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">9.3. Mailroom With Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/trigrams/trigrams.html">9.4. Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File Reading and Writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/file_processing/file_lab.html">File Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/file_processing/file_processing.html">File Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
@@ -113,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,11 +155,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/09-files/index.html"><span class="section-number">9. </span>File Handling</a> &raquo;</li>
         
-      <li><span class="section-number">9.1. </span>File Reading and Writing</li>
+      <li>File Reading and Writing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,7 +175,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../exercises/file_lab.html" class="btn btn-neutral float-right" title="9.2. File Exercise" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/file_processing/file_lab.html" class="btn btn-neutral float-right" title="File Exercise" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../topics/09-files/index.html" class="btn btn-neutral float-left" title="9. File Handling" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -184,12 +188,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="file-reading-and-writing">
-<span id="files"></span><h1><span class="section-number">9.1. </span>File Reading and Writing<a class="headerlink" href="#file-reading-and-writing" title="Permalink to this headline">¶</a></h1>
+<span id="files"></span><h1>File Reading and Writing<a class="headerlink" href="#file-reading-and-writing" title="Permalink to this headline">¶</a></h1>
 <p>Saving and loading data.</p>
 <div class="section" id="id1">
-<h2><span class="section-number">9.1.1. </span>Files<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Files<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="text-files">
-<h3><span class="section-number">9.1.1.1. </span>Text Files<a class="headerlink" href="#text-files" title="Permalink to this headline">¶</a></h3>
+<h3>Text Files<a class="headerlink" href="#text-files" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">)</span>
 <span class="n">secret_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -202,7 +206,7 @@
 </div>
 </div>
 <div class="section" id="binary-files">
-<h3><span class="section-number">9.1.1.2. </span>Binary Files<a class="headerlink" href="#binary-files" title="Permalink to this headline">¶</a></h3>
+<h3>Binary Files<a class="headerlink" href="#binary-files" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
 <span class="n">secret_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -212,7 +216,7 @@
 <p>(See the <code class="docutils literal notranslate"><span class="pre">struct</span></code>  module to unpack binary data )</p>
 </div>
 <div class="section" id="file-opening-modes">
-<h3><span class="section-number">9.1.1.3. </span>File Opening Modes<a class="headerlink" href="#file-opening-modes" title="Permalink to this headline">¶</a></h3>
+<h3>File Opening Modes<a class="headerlink" href="#file-opening-modes" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">mode</span><span class="p">])</span>
 <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span>
 <span class="s1">&#39;rb&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span>
@@ -226,7 +230,7 @@ in the Python docs. But these BSD docs make it pretty clear:</p>
 <p><strong>Gotcha</strong> – ‘w’ modes always clear the file if it already exists!</p>
 </div>
 <div class="section" id="text-file-notes">
-<h3><span class="section-number">9.1.1.4. </span>Text File Notes<a class="headerlink" href="#text-file-notes" title="Permalink to this headline">¶</a></h3>
+<h3>Text File Notes<a class="headerlink" href="#text-file-notes" title="Permalink to this headline">¶</a></h3>
 <p>Text is default:</p>
 <blockquote>
 <div><ul class="simple">
@@ -244,7 +248,7 @@ in the Python docs. But these BSD docs make it pretty clear:</p>
 </div></blockquote>
 </div>
 <div class="section" id="file-reading">
-<h3><span class="section-number">9.1.1.5. </span>File Reading<a class="headerlink" href="#file-reading" title="Permalink to this headline">¶</a></h3>
+<h3>File Reading<a class="headerlink" href="#file-reading" title="Permalink to this headline">¶</a></h3>
 <p>Reading part of a file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">header_size</span> <span class="o">=</span> <span class="mi">4096</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">)</span>
@@ -255,7 +259,7 @@ in the Python docs. But these BSD docs make it pretty clear:</p>
 </div>
 </div>
 <div class="section" id="common-idioms">
-<h3><span class="section-number">9.1.1.6. </span>Common Idioms<a class="headerlink" href="#common-idioms" title="Permalink to this headline">¶</a></h3>
+<h3>Common Idioms<a class="headerlink" href="#common-idioms" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets.txt&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
@@ -281,7 +285,7 @@ The file remains open while in the <code class="docutils literal notranslate"><s
 At the end of the <code class="docutils literal notranslate"><span class="pre">with</span></code> block, the file is unconditionally closed, even if an Exception is raised.  You code will (mostly) work without it, but it’s a good habit to get into to always use <code class="docutils literal notranslate"><span class="pre">with</span></code> to open a file.</p>
 </div>
 <div class="section" id="file-writing">
-<h3><span class="section-number">9.1.1.7. </span>File Writing<a class="headerlink" href="#file-writing" title="Permalink to this headline">¶</a></h3>
+<h3>File Writing<a class="headerlink" href="#file-writing" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this is line: </span><span class="si">%i</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">i</span><span class="p">)</span>
@@ -294,7 +298,7 @@ At the end of the <code class="docutils literal notranslate"><span class="pre">w
 </div>
 </div>
 <div class="section" id="file-methods">
-<h3><span class="section-number">9.1.1.8. </span>File Methods<a class="headerlink" href="#file-methods" title="Permalink to this headline">¶</a></h3>
+<h3>File Methods<a class="headerlink" href="#file-methods" title="Permalink to this headline">¶</a></h3>
 <p>Commonly Used Methods:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>  <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
@@ -307,7 +311,7 @@ At the end of the <code class="docutils literal notranslate"><span class="pre">w
 </div>
 </div>
 <div class="section" id="stringio">
-<h3><span class="section-number">9.1.1.9. </span><code class="docutils literal notranslate"><span class="pre">StringIO</span></code><a class="headerlink" href="#stringio" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">StringIO</span></code><a class="headerlink" href="#stringio" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">StringIO</span></code> method is a “file like” object that stores the content in memory.
 That is, it has all the methods of a file, and behaves the same way, but never writes anything to disk.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">io</span>
@@ -333,9 +337,9 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 </div>
 </div>
 <div class="section" id="paths-and-directories">
-<h2><span class="section-number">9.1.2. </span>Paths and Directories<a class="headerlink" href="#paths-and-directories" title="Permalink to this headline">¶</a></h2>
+<h2>Paths and Directories<a class="headerlink" href="#paths-and-directories" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="paths">
-<h3><span class="section-number">9.1.2.1. </span>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h3>
+<h3>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h3>
 <p>Paths are generally handled with simple strings.</p>
 <p>Relative paths:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;secret.txt&#39;</span>
@@ -350,14 +354,14 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 <p>Relative paths are relative to the current working directory, which is only relevant to command-line programs.</p>
 </div>
 <div class="section" id="os-module">
-<h3><span class="section-number">9.1.2.2. </span><code class="docutils literal notranslate"><span class="pre">os</span></code> module<a class="headerlink" href="#os-module" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">os</span></code> module<a class="headerlink" href="#os-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="os-path-module">
-<h3><span class="section-number">9.1.2.3. </span><code class="docutils literal notranslate"><span class="pre">os.path</span></code> module<a class="headerlink" href="#os-path-module" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">os.path</span></code> module<a class="headerlink" href="#os-path-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">()</span>
@@ -370,7 +374,7 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 <p>(all platform independent)</p>
 </div>
 <div class="section" id="directories">
-<h3><span class="section-number">9.1.2.4. </span>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h3>
+<h3>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
 <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">()</span>
@@ -379,7 +383,7 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 <p>(Note the <code class="docutils literal notranslate"><span class="pre">shutil</span></code>  module provides higher level operations.)</p>
 </div>
 <div class="section" id="pathlib">
-<h3><span class="section-number">9.1.2.5. </span>pathlib<a class="headerlink" href="#pathlib" title="Permalink to this headline">¶</a></h3>
+<h3>pathlib<a class="headerlink" href="#pathlib" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pathlib</span></code> is a package for handling paths in an OO way:</p>
 <p><a class="reference external" href="http://pathlib.readthedocs.org/en/pep428/">http://pathlib.readthedocs.org/en/pep428/</a></p>
 <p>All the stuff in os.path and more:</p>
@@ -414,7 +418,7 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 <p><a class="reference external" href="https://docs.python.org/3/library/pathlib.html">https://docs.python.org/3/library/pathlib.html</a></p>
 </div>
 <div class="section" id="the-path-protocol">
-<h3><span class="section-number">9.1.2.6. </span>The Path Protocol<a class="headerlink" href="#the-path-protocol" title="Permalink to this headline">¶</a></h3>
+<h3>The Path Protocol<a class="headerlink" href="#the-path-protocol" title="Permalink to this headline">¶</a></h3>
 <p>As of Python 3.6, there is now a protocol for making arbitrary objects act like paths:</p>
 <p>Read about it in PEP 519:</p>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0519/">https://www.python.org/dev/peps/pep-0519/</a></p>
@@ -430,15 +434,15 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 <p>This way, third party path libraries could be used with the standard library as well.</p>
 </div>
 <div class="section" id="what-this-means-to-you">
-<h3><span class="section-number">9.1.2.7. </span>What this means to you<a class="headerlink" href="#what-this-means-to-you" title="Permalink to this headline">¶</a></h3>
+<h3>What this means to you<a class="headerlink" href="#what-this-means-to-you" title="Permalink to this headline">¶</a></h3>
 <p>Unless you are writing a path manipulation library, or a library that deals with paths other than with the stdlib packages (like <code class="docutils literal notranslate"><span class="pre">open()</span></code>), all you need to know is that you can use <code class="docutils literal notranslate"><span class="pre">Path</span></code> objects most places you need a path.</p>
 <p>I expect we will see expanded use of pathlib as python 3.6 and 3.7 becomes widely used.</p>
 </div>
 </div>
 <div class="section" id="some-added-notes">
-<h2><span class="section-number">9.1.3. </span>Some added notes:<a class="headerlink" href="#some-added-notes" title="Permalink to this headline">¶</a></h2>
+<h2>Some added notes:<a class="headerlink" href="#some-added-notes" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-files-and-with">
-<h3><span class="section-number">9.1.3.1. </span>Using files and “with”<a class="headerlink" href="#using-files-and-with" title="Permalink to this headline">¶</a></h3>
+<h3>Using files and “with”<a class="headerlink" href="#using-files-and-with" title="Permalink to this headline">¶</a></h3>
 <p>Sorry for the confusion, but I’ll be more clear now.</p>
 <p>When working with files, unless you have a good reason not to, use <code class="docutils literal notranslate"><span class="pre">with</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">the_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
@@ -456,7 +460,7 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 </div>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">9.1.3.2. </span>Binary files<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Binary files<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Python can open files in one of two modes:</p>
 <blockquote>
 <div><ul class="simple">
@@ -498,7 +502,7 @@ That is, it has all the methods of a file, and behaves the same way, but never w
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/file_lab.html" class="btn btn-neutral float-right" title="9.2. File Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/file_processing/file_lab.html" class="btn btn-neutral float-right" title="File Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../topics/09-files/index.html" class="btn btn-neutral float-left" title="9. File Handling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -510,11 +514,19 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -525,7 +537,6 @@ That is, it has all the methods of a file, and behaves the same way, but never w
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.6.2. Working with Virtualenv &mdash; Programming in Python 7.0 documentation</title>
+  <title>Working with Virtualenv &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.6.3. Python 2 versus Python 3" href="../../modules/Py2vsPy3.html" />
-    <link rel="prev" title="1.6.1. Command line basics" href="command_line.html" /> 
+    <link rel="next" title="Python 2 versus Python 3" href="../../modules/Py2vsPy3.html" />
+    <link rel="prev" title="Command line basics" href="command_line.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,16 @@
               <p class="caption"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">1.1. Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">1.5. Git</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,13 +156,13 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-          <li><a href="resources.html"><span class="section-number">1.6. </span>Resources</a> &raquo;</li>
+          <li><a href="resources.html">Resources</a> &raquo;</li>
         
-      <li><span class="section-number">1.6.2. </span>Working with Virtualenv</li>
+      <li>Working with Virtualenv</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,10 +178,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="1.6.3. Python 2 versus Python 3" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="Python 2 versus Python 3" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="command_line.html" class="btn btn-neutral float-left" title="1.6.1. Command line basics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="command_line.html" class="btn btn-neutral float-left" title="Command line basics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -188,7 +191,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="working-with-virtualenv">
-<span id="virtualenv-section"></span><h1><span class="section-number">1.6.2. </span>Working with Virtualenv<a class="headerlink" href="#working-with-virtualenv" title="Permalink to this headline">¶</a></h1>
+<span id="virtualenv-section"></span><h1>Working with Virtualenv<a class="headerlink" href="#working-with-virtualenv" title="Permalink to this headline">¶</a></h1>
 <p>“For every non-standard package installed in a system Python, the gods kill a kitten”</p>
 <blockquote>
 <div><ul class="simple">
@@ -196,7 +199,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="reasons-why">
-<h2><span class="section-number">1.6.2.1. </span>Reasons Why<a class="headerlink" href="#reasons-why" title="Permalink to this headline">¶</a></h2>
+<h2>Reasons Why<a class="headerlink" href="#reasons-why" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>As a working developer you will need to install packages that aren’t in the
 Python standard Library</p></li>
@@ -208,7 +211,7 @@ cause long-term nightmares</p></li>
 <li><p><strong>Always</strong></p></li>
 </ul>
 <div class="section" id="installing-virtualenv">
-<h3><span class="section-number">1.6.2.1.1. </span>Installing Virtualenv<a class="headerlink" href="#installing-virtualenv" title="Permalink to this headline">¶</a></h3>
+<h3>Installing Virtualenv<a class="headerlink" href="#installing-virtualenv" title="Permalink to this headline">¶</a></h3>
 <p>The best way is to install directly in your system Python (one exception to the rule).</p>
 <p>To do so you will have to have <a class="reference external" href="http://www.pip-installer.org">pip</a> installed.</p>
 <p>Try the following command:</p>
@@ -242,7 +245,7 @@ Options:
 </div>
 </div>
 <div class="section" id="using-virtualenv">
-<h2><span class="section-number">1.6.2.2. </span>Using Virtualenv<a class="headerlink" href="#using-virtualenv" title="Permalink to this headline">¶</a></h2>
+<h2>Using Virtualenv<a class="headerlink" href="#using-virtualenv" title="Permalink to this headline">¶</a></h2>
 <p>Creating a new virtualenv is very very simple:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ virtualenv <span class="o">[</span>options<span class="o">]</span> &lt;ENV&gt;
 </pre></div>
@@ -255,7 +258,7 @@ Installing setuptools, pip...done.
 </pre></div>
 </div>
 <div class="section" id="what-happened">
-<h3><span class="section-number">1.6.2.2.1. </span>What Happened?<a class="headerlink" href="#what-happened" title="Permalink to this headline">¶</a></h3>
+<h3>What Happened?<a class="headerlink" href="#what-happened" title="Permalink to this headline">¶</a></h3>
 <p>When you ran that command, a few things took place:</p>
 <ul class="simple">
 <li><p>A new directory with your requested name was created</p></li>
@@ -268,7 +271,7 @@ installed)</p></li>
 </ul>
 </div>
 <div class="section" id="activation">
-<h3><span class="section-number">1.6.2.2.2. </span>Activation<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h3>
+<h3>Activation<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h3>
 <p>The virtual environment you just created, <code class="docutils literal notranslate"><span class="pre">demoenv</span></code> contains an executable
 Python command, but if you do a quick check to see which Python executable is
 found by your terminal, you’ll see that it is not the one:</p>
@@ -298,7 +301,7 @@ keep things straight when you’ve got a lot of projects going on, so it’s nic
 the makers of virtualenv thought of it.</p>
 </div>
 <div class="section" id="installing-packages">
-<h3><span class="section-number">1.6.2.2.3. </span>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h3>
+<h3>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h3>
 <p>Now that your virtualenv is active, not only has your <code class="docutils literal notranslate"><span class="pre">python</span></code> executable been
 hijacked, so have <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">easy_install</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>demoenv<span class="o">)</span>$ which pip
@@ -344,7 +347,7 @@ built.  What this means is that running these scripts will use the Python
 executable in your virtualenv, <em>even if that virtualenv is not active</em>!</p>
 </div>
 <div class="section" id="deactivation">
-<h3><span class="section-number">1.6.2.2.4. </span>Deactivation<a class="headerlink" href="#deactivation" title="Permalink to this headline">¶</a></h3>
+<h3>Deactivation<a class="headerlink" href="#deactivation" title="Permalink to this headline">¶</a></h3>
 <p>So you’ve got a virtual environment created.  And you’ve activated it so that
 you can install packages and use them. Eventually you’ll need to move on to
 some other project. This likely means that you’ll need to stop working with
@@ -361,7 +364,7 @@ $ which python
 found when you check <code class="docutils literal notranslate"><span class="pre">python</span></code> is the system one again.</p>
 </div>
 <div class="section" id="cleaning-up">
-<h3><span class="section-number">1.6.2.2.5. </span>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Permalink to this headline">¶</a></h3>
+<h3>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Permalink to this headline">¶</a></h3>
 <p>The final great advantage that <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> confers on you as a developer is
 the ability to easily remove a batch of installed Python software from your
 system. Consider a situation where you installed a library that breaks your
@@ -377,7 +380,7 @@ it are now gone. There’s no traces left to pollute your world.</p>
 </div>
 </div>
 <div class="section" id="virtualenvwrapper">
-<h2><span class="section-number">1.6.2.3. </span>VirtualenvWrapper<a class="headerlink" href="#virtualenvwrapper" title="Permalink to this headline">¶</a></h2>
+<h2>VirtualenvWrapper<a class="headerlink" href="#virtualenvwrapper" title="Permalink to this headline">¶</a></h2>
 <p>So you have this great tool that allows you to build isolated environments in
 which you can install Python software. Several questions arise when considering
 this.</p>
@@ -397,7 +400,7 @@ you. It would be better if you could manage your virtual environments easily
 and intuitively.</p>
 <p>With <a class="reference external" href="http://virtualenvwrapper.readthedocs.org">virtualenvwrapper</a> you can.</p>
 <div class="section" id="installation">
-<h3><span class="section-number">1.6.2.3.1. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
 <p>Let’s start by installing the package in our system Python, alongside
 <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> (again, you’ll need <code class="docutils literal notranslate"><span class="pre">superuser</span></code> to do this):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo pip install virtualenvwrapper
@@ -426,7 +429,7 @@ arbitrary.</p>
 </div>
 </div>
 <div class="section" id="using-mkvirtualenv">
-<h3><span class="section-number">1.6.2.3.2. </span>Using <code class="docutils literal notranslate"><span class="pre">mkvirtualenv</span></code><a class="headerlink" href="#using-mkvirtualenv" title="Permalink to this headline">¶</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">mkvirtualenv</span></code><a class="headerlink" href="#using-mkvirtualenv" title="Permalink to this headline">¶</a></h3>
 <p>When you’ve done that, start a new terminal and you’ll have access to the
 <code class="docutils literal notranslate"><span class="pre">mkvirtualenv</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkvirtualenv testenv
@@ -448,7 +451,7 @@ testenv
 you just created to install packages.</p>
 </div>
 <div class="section" id="using-workon">
-<h3><span class="section-number">1.6.2.3.3. </span>Using <code class="docutils literal notranslate"><span class="pre">workon</span></code><a class="headerlink" href="#using-workon" title="Permalink to this headline">¶</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">workon</span></code><a class="headerlink" href="#using-workon" title="Permalink to this headline">¶</a></h3>
 <p>In addition to this nice little feature, you can also use the <code class="docutils literal notranslate"><span class="pre">workon</span></code>
 command to see which environments you have, and to switch from one to another:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>testenv<span class="o">)</span>$ workon
@@ -471,7 +474,7 @@ $
 </div>
 </div>
 <div class="section" id="using-mkproject">
-<h3><span class="section-number">1.6.2.3.4. </span>Using <code class="docutils literal notranslate"><span class="pre">mkproject</span></code><a class="headerlink" href="#using-mkproject" title="Permalink to this headline">¶</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">mkproject</span></code><a class="headerlink" href="#using-mkproject" title="Permalink to this headline">¶</a></h3>
 <p>That takes care of deciding where to put new environments. It also clears up
 the question of how to remember which ones you have and how to start them up
 and switch between them. But we still have to figure out how to remember which
@@ -519,7 +522,7 @@ installing packages into the right environment.</p>
 </div>
 </div>
 <div class="section" id="a-few-last-words">
-<h2><span class="section-number">1.6.2.4. </span>A Few Last Words<a class="headerlink" href="#a-few-last-words" title="Permalink to this headline">¶</a></h2>
+<h2>A Few Last Words<a class="headerlink" href="#a-few-last-words" title="Permalink to this headline">¶</a></h2>
 <p>This quick introduction is <strong>by no means</strong> an exhaustive manual for either of
 the packages we’ve talked about. There is a great deal more that they can do.
 In particular, <code class="docutils literal notranslate"><span class="pre">virtualenvwrapper</span></code> is highly customizable, with support for
@@ -537,10 +540,10 @@ yourself to find out more.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="1.6.3. Python 2 versus Python 3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="Python 2 versus Python 3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="command_line.html" class="btn btn-neutral float-left" title="1.6.1. Command line basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="command_line.html" class="btn btn-neutral float-left" title="Command line basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -549,11 +552,19 @@ yourself to find out more.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -564,7 +575,6 @@ yourself to find out more.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

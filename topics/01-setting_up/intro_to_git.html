@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.5.1. Intro to Git &mdash; Programming in Python 7.0 documentation</title>
+  <title>Intro to Git &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.5.2. git Overview" href="git_overview.html" />
-    <link rel="prev" title="1.5. Git" href="git.html" /> 
+    <link rel="next" title="git Overview" href="git_overview.html" />
+    <link rel="prev" title="Git" href="git.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,16 @@
               <p class="caption"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">1.1. Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="git.html">1.5. Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,13 +156,13 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-          <li><a href="git.html"><span class="section-number">1.5. </span>Git</a> &raquo;</li>
+          <li><a href="git.html">Git</a> &raquo;</li>
         
-      <li><span class="section-number">1.5.1. </span>Intro to Git</li>
+      <li>Intro to Git</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,10 +178,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="git_overview.html" class="btn btn-neutral float-right" title="1.5.2. git Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git_overview.html" class="btn btn-neutral float-right" title="git Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="git.html" class="btn btn-neutral float-left" title="1.5. Git" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-left" title="Git" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -188,13 +191,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="intro-to-git">
-<span id="git"></span><h1><span class="section-number">1.5.1. </span>Intro to Git<a class="headerlink" href="#intro-to-git" title="Permalink to this headline">¶</a></h1>
+<span id="git"></span><h1>Intro to Git<a class="headerlink" href="#intro-to-git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-git">
-<h2><span class="section-number">1.5.1.1. </span>What is Git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h2>
+<h2>What is Git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h2>
 <p>A “version control system”</p>
 </div>
 <div class="section" id="why-version-control">
-<h2><span class="section-number">1.5.1.2. </span>Why Version Control?<a class="headerlink" href="#why-version-control" title="Permalink to this headline">¶</a></h2>
+<h2>Why Version Control?<a class="headerlink" href="#why-version-control" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id1">
 <img alt="http://phdcomics.com/comics/archive/phd101212s.gif" src="http://phdcomics.com/comics/archive/phd101212s.gif" />
 <p class="caption"><span class="caption-text">“Piled Higher and Deeper” by Jorge Cham: www.phdcomics.com</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -207,11 +210,11 @@
 <p>It is incredibly important to learn and understand version control to work as a developer today, so we have incorporated Git into our work flow for submitting students’ work in this class.</p>
 </div>
 <div class="section" id="setting-up-git">
-<h2><span class="section-number">1.5.1.3. </span>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">¶</a></h2>
+<h2>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this headline">¶</a></h2>
 <p>You should have git installed on your machine and accessible from the command line. If you don’t have git working on the command line, revisit the appropriate instructions for your platform here: <a class="reference internal" href="python_and_core_tools.html#installing-python"><span class="std std-ref">Installing Python and core tools</span></a>.</p>
 <p>Once git is installed and working, there is a little bit of setup for git that you should only have to do once:</p>
 <div class="section" id="letting-git-know-your-identity">
-<h3><span class="section-number">1.5.1.3.1. </span>Letting git know your identity<a class="headerlink" href="#letting-git-know-your-identity" title="Permalink to this headline">¶</a></h3>
+<h3>Letting git know your identity<a class="headerlink" href="#letting-git-know-your-identity" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Marie Curie&quot;</span>
 $ git config --global user.email <span class="s2">&quot;marie@radioactive.com&quot;</span>
 </pre></div>
@@ -219,7 +222,7 @@ $ git config --global user.email <span class="s2">&quot;marie@radioactive.com&qu
 <p>(using your email and name, of course)</p>
 </div>
 <div class="section" id="editor">
-<h3><span class="section-number">1.5.1.3.2. </span>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h3>
+<h3>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>git needs an editor occasionally</p></li>
 <li><p>default is VI, which is not very intuitive to non-Unix Geeks</p></li>
@@ -242,14 +245,14 @@ $ git config --global user.email <span class="s2">&quot;marie@radioactive.com&qu
 </div>
 </div>
 <div class="section" id="repositories">
-<h2><span class="section-number">1.5.1.4. </span>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h2>
+<h2>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h2>
 <p>A repository is just a collection of files that ‘belong together’.</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">git</span></code> is a <em>distributed</em> versioning system, there is no <strong>primary</strong>
 repository that serves as the one to rule them all. This simply means that all repositories on each users machine should look the same.</p>
 <p>However, to keep things sane, there is generally one “central” repository chosen that users check with for changes. For us this is the one hosted on GitHub in the UWPCE-PythonCert-ClassRepos organization.</p>
 </div>
 <div class="section" id="working-with-remotes">
-<h2><span class="section-number">1.5.1.5. </span>Working with Remotes<a class="headerlink" href="#working-with-remotes" title="Permalink to this headline">¶</a></h2>
+<h2>Working with Remotes<a class="headerlink" href="#working-with-remotes" title="Permalink to this headline">¶</a></h2>
 <p>With git, you work with <em>local</em> repositories and the <em>remotes</em> that they are connected to.</p>
 <p>Git uses shortcuts to address <em>remotes</em>. When you <em>clone</em> a repository from its remote location to your local machine, you get an <em>origin</em> shortcut for free:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote -v
@@ -261,7 +264,7 @@ origin  https://github.com/UWPCE-PythonCert-ClassRepos/ExampleRepo.git <span cla
 the UWPCE-PythonCert-ClassRepos GitHub account (it shows up twice, because there is a shortcut for both <code class="docutils literal notranslate"><span class="pre">fetch</span></code> from and <code class="docutils literal notranslate"><span class="pre">push</span></code> to this remote).</p>
 </div>
 <div class="section" id="github-forks">
-<h2><span class="section-number">1.5.1.6. </span>GitHub forks<a class="headerlink" href="#github-forks" title="Permalink to this headline">¶</a></h2>
+<h2>GitHub forks<a class="headerlink" href="#github-forks" title="Permalink to this headline">¶</a></h2>
 <p>You can work on any project you wish to that has a public repository on GitHub. However, since you won’t have permission to edit most projects directly, there is such a thing as <em>forking</em> a project.</p>
 <p>When you <em>fork</em> a repository, you make a copy of that repository in your own (GitHub) account.</p>
 <p>When you have made changes that you believe the rest of the community will want to adopt, you make a <em>pull request</em> to the original project. The maintainer(s) of that project than have the option of accepting your changes, in which case your changes will become part of that project.</p>
@@ -280,7 +283,7 @@ the UWPCE-PythonCert-ClassRepos GitHub account (it shows up twice, because there
 <p>This will make it easier to collaborate. Weirdly enough, collaborating is important for developing code, both for class and in the <em>real world</em>.</p>
 </div>
 <div class="section" id="setting-up-your-fork-of-the-class-repository">
-<h2><span class="section-number">1.5.1.7. </span>Setting up Your Fork of the Class Repository<a class="headerlink" href="#setting-up-your-fork-of-the-class-repository" title="Permalink to this headline">¶</a></h2>
+<h2>Setting up Your Fork of the Class Repository<a class="headerlink" href="#setting-up-your-fork-of-the-class-repository" title="Permalink to this headline">¶</a></h2>
 <p>The first thing we have to do is on the GitHub website. You will create a fork of the class repository from the <code class="docutils literal notranslate"><span class="pre">UWPCE-PythonCert-ClassRepos</span></code> account on GitHub into your personal account.</p>
 <p>Before you can do that, you need to create a GitHub account, if you don’t have one already.  Your gitHub id will be associated with this class’ public repo, so it is up to you if you want to use your real name for your gitHub account, or an alias to maintain your privacy.</p>
 <p>Once you are logged in to your gitHub account, go to the appropriate class repository here:</p>
@@ -304,7 +307,7 @@ This can live anywhere on your file system but this outer directory should not b
 <p>Be sure to replace “YourClassRepoNameHere” with the name of your class repository (you can get the url by going to the class repo on gitHub and clicking “clone or download”).</p>
 <p>This will download the repository from your GitHub account into the local directory that you ran the git <em>clone</em> command from.</p>
 <div class="section" id="adding-a-remote">
-<h3><span class="section-number">1.5.1.7.1. </span>Adding a remote<a class="headerlink" href="#adding-a-remote" title="Permalink to this headline">¶</a></h3>
+<h3>Adding a remote<a class="headerlink" href="#adding-a-remote" title="Permalink to this headline">¶</a></h3>
 <p>Since you are working on a repository that you do not own, you will need to make a git shortcut to the original repository, so that you can get changes made by other contributors (i.e. the instructors and other students) before you start working.</p>
 <p>You can add <em>remotes</em> at will, to connect your <em>local</em> repository to other copies of it in different remote locations.</p>
 <p>This allows you to grab changes made to the repository in these other
@@ -383,7 +386,7 @@ $
 <p>Go now to this page: <a class="reference internal" href="git_workflow.html#git-workflow"><span class="std std-ref">git Workflow</span></a>, where you will learn what to do each time you have work to submit for review.</p>
 </div>
 <div class="section" id="privacy-note">
-<h3><span class="section-number">1.5.1.7.2. </span>Privacy Note:<a class="headerlink" href="#privacy-note" title="Permalink to this headline">¶</a></h3>
+<h3>Privacy Note:<a class="headerlink" href="#privacy-note" title="Permalink to this headline">¶</a></h3>
 <p>Because of the way we have set up the class, you will be able
 to see all work submitted to us from everyone in the class in
 the students directory on your machine. This is not a bad thing.
@@ -396,7 +399,7 @@ improve your code, if you are not already.</p>
 </div>
 </div>
 <div class="section" id="structure-of-multiple-git-repos">
-<h2><span class="section-number">1.5.1.8. </span>Structure of multiple git repos<a class="headerlink" href="#structure-of-multiple-git-repos" title="Permalink to this headline">¶</a></h2>
+<h2>Structure of multiple git repos<a class="headerlink" href="#structure-of-multiple-git-repos" title="Permalink to this headline">¶</a></h2>
 <p>Each repository will have a directory called <code class="docutils literal notranslate"><span class="pre">.git</span></code> that is normally
 not seen. This directory is how git keeps track of everything. Leave it alone. :)</p>
 <p>Please do not set up a git repository inside another git repository, this can lead to heartache.</p>
@@ -420,10 +423,10 @@ This will put everything in your home directory up on GitHub, and you do not wan
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="git_overview.html" class="btn btn-neutral float-right" title="1.5.2. git Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git_overview.html" class="btn btn-neutral float-right" title="git Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="git.html" class="btn btn-neutral float-left" title="1.5. Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-left" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -432,11 +435,19 @@ This will put everything in your home directory up on GitHub, and you do not wan
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -447,7 +458,6 @@ This will put everything in your home directory up on GitHub, and you do not wan
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

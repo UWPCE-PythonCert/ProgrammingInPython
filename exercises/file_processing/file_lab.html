@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.2. File Exercise &mdash; Programming in Python 7.0 documentation</title>
+  <title>File Exercise &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.3. File Processing" href="file_processing.html" />
-    <link rel="prev" title="9.1. File Reading and Writing" href="../../modules/Files.html" /> 
+    <link rel="next" title="File Processing" href="file_processing.html" />
+    <link rel="prev" title="File Reading and Writing" href="../../modules/Files.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,11 +94,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Files.html">9.1. File Reading and Writing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.2. File Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_processing.html">9.3. File Processing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom_with_files.html">9.4. Mailroom With Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../trigrams/trigrams.html">9.5. Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_processing.html">File Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
@@ -114,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -152,11 +155,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/09-files/index.html"><span class="section-number">9. </span>File Handling</a> &raquo;</li>
         
-      <li><span class="section-number">9.2. </span>File Exercise</li>
+      <li>File Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,10 +175,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="file_processing.html" class="btn btn-neutral float-right" title="9.3. File Processing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="file_processing.html" class="btn btn-neutral float-right" title="File Processing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Files.html" class="btn btn-neutral float-left" title="9.1. File Reading and Writing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Files.html" class="btn btn-neutral float-left" title="File Reading and Writing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -185,13 +188,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="file-exercise">
-<span id="exercise-file-lab"></span><h1><span class="section-number">9.2. </span>File Exercise<a class="headerlink" href="#file-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-file-lab"></span><h1>File Exercise<a class="headerlink" href="#file-exercise" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="goal">
-<h2><span class="section-number">9.2.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Get a little bit of practice with handling files and parsing simple text.</p>
 </div>
 <div class="section" id="paths-and-file-processing">
-<h2><span class="section-number">9.2.2. </span>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h2>
+<h2>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Write a program which prints the full path for all files in the current
 directory, one per line. Use either the <code class="docutils literal notranslate"><span class="pre">os</span></code> module or <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>.</p></li>
@@ -220,10 +223,10 @@ contents of the file into memory at once.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="file_processing.html" class="btn btn-neutral float-right" title="9.3. File Processing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="file_processing.html" class="btn btn-neutral float-right" title="File Processing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Files.html" class="btn btn-neutral float-left" title="9.1. File Reading and Writing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Files.html" class="btn btn-neutral float-left" title="File Reading and Writing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -232,11 +235,19 @@ contents of the file into memory at once.</p></li>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -247,7 +258,6 @@ contents of the file into memory at once.</p></li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

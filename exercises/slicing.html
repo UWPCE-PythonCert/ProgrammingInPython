@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.3. Slicing Lab &mdash; Programming in Python 7.0 documentation</title>
+  <title>Slicing Lab &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.4. List Lab" href="list_lab.html" />
-    <link rel="prev" title="4.2. Iteration" href="../modules/Iteration.html" /> 
+    <link rel="next" title="List Lab" href="list_lab.html" />
+    <link rel="prev" title="Iteration" href="../modules/Iteration.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,12 +87,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Sequences.html">4.1. Python Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Iteration.html">4.2. Iteration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Slicing Lab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list_lab.html">4.4. List Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Sequences.html">Python Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Iteration.html">Iteration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Slicing Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list_lab.html">List Lab</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
@@ -113,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,11 +154,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/04-sequences_iteration/index.html"><span class="section-number">4. </span>Sequences and Iteration</a> &raquo;</li>
         
-      <li><span class="section-number">4.3. </span>Slicing Lab</li>
+      <li>Slicing Lab</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,10 +174,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="list_lab.html" class="btn btn-neutral float-right" title="4.4. List Lab" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="list_lab.html" class="btn btn-neutral float-right" title="List Lab" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Iteration.html" class="btn btn-neutral float-left" title="4.2. Iteration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Iteration.html" class="btn btn-neutral float-left" title="Iteration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -184,12 +187,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="slicing-lab">
-<span id="exercise-slicing"></span><h1><span class="section-number">4.3. </span>Slicing Lab<a class="headerlink" href="#slicing-lab" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-slicing"></span><h1>Slicing Lab<a class="headerlink" href="#slicing-lab" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="goal">
-<h2><span class="section-number">4.3.1. </span>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Get the basics of sequence slicing down.</p>
 <div class="section" id="tasks">
-<h3><span class="section-number">4.3.1.1. </span>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
+<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
 <p>Write some functions that take a sequence as an argument, and return a copy of that sequence:</p>
 <ul class="simple">
 <li><p>with the first and last items exchanged.</p></li>
@@ -206,7 +209,7 @@
 </div>
 </div>
 <div class="section" id="tests">
-<h3><span class="section-number">4.3.1.2. </span>Tests:<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
+<h3>Tests:<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_string</span> <span class="o">=</span> <span class="s2">&quot;this is a string&quot;</span>
 <span class="n">a_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
 
@@ -227,10 +230,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="list_lab.html" class="btn btn-neutral float-right" title="4.4. List Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="list_lab.html" class="btn btn-neutral float-right" title="List Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Iteration.html" class="btn btn-neutral float-left" title="4.2. Iteration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Iteration.html" class="btn btn-neutral float-left" title="Iteration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -239,11 +242,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -254,7 +265,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

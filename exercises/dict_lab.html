@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8.3. Dictionary and Set Lab &mdash; Programming in Python 7.0 documentation</title>
+  <title>Dictionary and Set Lab &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.4. Mailroom With Dicts" href="mailroom/mailroom_with_dicts.html" />
-    <link rel="prev" title="8.2. Using a Dictionary to switch" href="../modules/DictionaryAsSwitch.html" /> 
+    <link rel="next" title="Mailroom With Dicts" href="mailroom/mailroom_with_dicts.html" />
+    <link rel="prev" title="Using a Dictionary to switch" href="../modules/DictionaryAsSwitch.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -91,10 +93,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/DictsAndSets.html">8.1. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/DictionaryAsSwitch.html">8.2. Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.3. Dictionary and Set Lab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_with_dicts.html">8.4. Mailroom With Dicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dictionary and Set Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
@@ -113,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,11 +154,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/08-dicts_sets/index.html"><span class="section-number">8. </span>Dictionaries and Sets</a> &raquo;</li>
         
-      <li><span class="section-number">8.3. </span>Dictionary and Set Lab</li>
+      <li>Dictionary and Set Lab</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,10 +174,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-right" title="8.4. Mailroom With Dicts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-right" title="Mailroom With Dicts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/DictionaryAsSwitch.html" class="btn btn-neutral float-left" title="8.2. Using a Dictionary to switch" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/DictionaryAsSwitch.html" class="btn btn-neutral float-left" title="Using a Dictionary to switch" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -184,39 +187,41 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dictionary-and-set-lab">
-<span id="exercise-dict-lab"></span><h1><span class="section-number">8.3. </span>Dictionary and Set Lab<a class="headerlink" href="#dictionary-and-set-lab" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-dict-lab"></span><h1>Dictionary and Set Lab<a class="headerlink" href="#dictionary-and-set-lab" title="Permalink to this headline">¶</a></h1>
 <p>Learning about dictionaries and sets</p>
 <div class="section" id="goal">
-<h2><span class="section-number">8.3.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Learn the basic ins and outs of Python dictionaries and sets.</p>
 </div>
 <div class="section" id="procedure">
-<h2><span class="section-number">8.3.2. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
-<p>In your student dir in the class repo, create a <code class="docutils literal notranslate"><span class="pre">lesson04</span></code> dir and put in a new <code class="docutils literal notranslate"><span class="pre">dict_lab.py</span></code> file.</p>
+<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<p>Create a new <code class="docutils literal notranslate"><span class="pre">dict_lab.py</span></code> file.</p>
 <p>The file should be an executable Python script. That is to say that one
 should be able to run the script directly like so:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./dict_lab.py
 </pre></div>
 </div>
-<p>(at least on OS-X and Linux).</p>
+<p>(on OS-X and Linux) or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ py dict_lab.py
+</pre></div>
+</div>
+<p>(on Windows)</p>
 <p>To make this work you, make sure you include the ‘shebang’ on the first line of your file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 </pre></div>
 </div>
-<p>Finally you need to make the file executable; do that with this command:</p>
+<p>Finally (on OS-X and linux) you need to make the file executable; do that with this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ chmod +x dict_lab.py
 </pre></div>
 </div>
 <p>(The +x means make this executable)</p>
 <p>Add the file to your clone of the repository and commit changes frequently
-while working on the following tasks. When you are done, push your changes to
-GitHub and issue a pull request.</p>
-<p>(if you are struggling with git – just write the code for now)</p>
+while working on the following tasks.</p>
 <p>When the script is run, it should accomplish the following four series of
 actions:</p>
 </div>
 <div class="section" id="dictionaries-1">
-<h2><span class="section-number">8.3.3. </span>Dictionaries 1<a class="headerlink" href="#dictionaries-1" title="Permalink to this headline">¶</a></h2>
+<h2>Dictionaries 1<a class="headerlink" href="#dictionaries-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Create a dictionary containing “name”, “city”, and “cake” for “Chris” from “Seattle” who likes “Chocolate” (so the keys should be: “name”, etc, and values: “Chris”, etc.)</p></li>
 <li><p>Display the dictionary.</p></li>
@@ -233,7 +238,7 @@ actions:</p>
 </ul>
 </div>
 <div class="section" id="dictionaries-2">
-<h2><span class="section-number">8.3.4. </span>Dictionaries 2<a class="headerlink" href="#dictionaries-2" title="Permalink to this headline">¶</a></h2>
+<h2>Dictionaries 2<a class="headerlink" href="#dictionaries-2" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Using the dictionary from item 1: Make a dictionary using the same keys but
 with the number of ‘t’s in each value as the value (consider upper and lower case?).</p>
@@ -248,7 +253,7 @@ with the number of ‘t’s in each value as the value (consider upper and lower
 </ul>
 </div>
 <div class="section" id="sets">
-<h2><span class="section-number">8.3.5. </span>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
+<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Create sets s2, s3 and s4 that contain numbers from zero through twenty,
 divisible by 2, 3 and 4 (figure out a way to compute those – don’t just type them in).</p></li>
@@ -258,7 +263,7 @@ divisible by 2, 3 and 4 (figure out a way to compute those – don’t just type
 </ul>
 </div>
 <div class="section" id="sets-2">
-<h2><span class="section-number">8.3.6. </span>Sets 2<a class="headerlink" href="#sets-2" title="Permalink to this headline">¶</a></h2>
+<h2>Sets 2<a class="headerlink" href="#sets-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Create a set with the letters in ‘Python’ and add ‘i’ to the set.</p></li>
 <li><p>Create a frozenset with the letters in ‘marathon’.</p></li>
@@ -275,10 +280,10 @@ divisible by 2, 3 and 4 (figure out a way to compute those – don’t just type
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-right" title="8.4. Mailroom With Dicts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-right" title="Mailroom With Dicts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/DictionaryAsSwitch.html" class="btn btn-neutral float-left" title="8.2. Using a Dictionary to switch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/DictionaryAsSwitch.html" class="btn btn-neutral float-left" title="Using a Dictionary to switch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -287,11 +292,19 @@ divisible by 2, 3 and 4 (figure out a way to compute those – don’t just type
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -302,7 +315,6 @@ divisible by 2, 3 and 4 (figure out a way to compute those – don’t just type
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

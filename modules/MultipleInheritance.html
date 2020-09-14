@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>16.1. Multiple Inheritance &mdash; Programming in Python 7.0 documentation</title>
+  <title>Multiple Inheritance &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,10 +35,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="17. Introduction to Functional Programming" href="../topics/17-functional_programming/index.html" />
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -99,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">16.1. Multiple Inheritance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Multiple Inheritance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
@@ -110,6 +112,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,11 +151,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/16-multiple_inheritance/index.html"><span class="section-number">16. </span>Multiple Inheritance</a> &raquo;</li>
         
-      <li><span class="section-number">16.1. </span>Multiple Inheritance</li>
+      <li>Multiple Inheritance</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -181,11 +184,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="multiple-inheritance">
-<span id="id1"></span><h1><span class="section-number">16.1. </span>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="inheriting-from-more-than-one-class">
-<h2><span class="section-number">16.1.1. </span>Inheriting from more than one class.<a class="headerlink" href="#inheriting-from-more-than-one-class" title="Permalink to this headline">¶</a></h2>
+<h2>Inheriting from more than one class.<a class="headerlink" href="#inheriting-from-more-than-one-class" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-mechanics-of-multiple-inheritance">
-<h3><span class="section-number">16.1.1.1. </span>The mechanics of multiple inheritance<a class="headerlink" href="#the-mechanics-of-multiple-inheritance" title="Permalink to this headline">¶</a></h3>
+<h3>The mechanics of multiple inheritance<a class="headerlink" href="#the-mechanics-of-multiple-inheritance" title="Permalink to this headline">¶</a></h3>
 <p>Simply provide more than one parent:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Combined</span><span class="p">(</span><span class="n">Parent1</span><span class="p">,</span> <span class="n">Parent2</span><span class="p">,</span> <span class="n">Parent3</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">something</span><span class="p">,</span> <span class="n">something</span> <span class="k">else</span><span class="p">):</span>
@@ -200,7 +203,7 @@
 <p>The Combined class now has ALL the attributes and methods of the multiple parent classes. You can bring a lot of functionality into a class that way.</p>
 </div>
 <div class="section" id="purpose">
-<h3><span class="section-number">16.1.1.2. </span>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<h3>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
 <p>What was the purpose behind inheritance?</p>
 <p><em>Code reuse</em></p>
 <p>What is the purpose behind multiple inheritance?</p>
@@ -211,7 +214,7 @@
 <p><em>Building massive class hierarchies for their own sake</em></p>
 </div>
 <div class="section" id="mix-ins">
-<h3><span class="section-number">16.1.1.3. </span>Mix-ins<a class="headerlink" href="#mix-ins" title="Permalink to this headline">¶</a></h3>
+<h3>Mix-ins<a class="headerlink" href="#mix-ins" title="Permalink to this headline">¶</a></h3>
 <p>Why would you want to do this?</p>
 <p>Hierarchies are not always simple:</p>
 <ul class="simple">
@@ -249,7 +252,7 @@
 <p><a class="reference external" href="https://andrewbrookins.com/technology/mixins-in-python-and-ruby-compared/">mixins in Python …</a></p>
 <p>(Ignore the second part about Ruby…)</p>
 <div class="section" id="real-world-example-the-wxpython-floatcanvas">
-<h4><span class="section-number">16.1.1.3.1. </span>Real World Example: The wxPython FloatCanvas:<a class="headerlink" href="#real-world-example-the-wxpython-floatcanvas" title="Permalink to this headline">¶</a></h4>
+<h4>Real World Example: The wxPython FloatCanvas:<a class="headerlink" href="#real-world-example-the-wxpython-floatcanvas" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="https://github.com/wxWidgets/Phoenix/blob/master/wx/lib/floatcanvas/FCObjects.py">https://github.com/wxWidgets/Phoenix/blob/master/wx/lib/floatcanvas/FCObjects.py</a></p>
 <p>I had read about mixins quite a while ago, and I thought they were pretty cool. But I couldn’t imagine where I might actually use them.</p>
 <p>Then I set out to write FloatCanvas  – a scalable, pan-able, object-persistent drawing canvas for the wxPython toolkit.</p>
@@ -293,7 +296,7 @@
 </div>
 </div>
 <div class="section" id="python-s-multiple-inheritance-model">
-<h2><span class="section-number">16.1.2. </span>Python’s Multiple Inheritance Model<a class="headerlink" href="#python-s-multiple-inheritance-model" title="Permalink to this headline">¶</a></h2>
+<h2>Python’s Multiple Inheritance Model<a class="headerlink" href="#python-s-multiple-inheritance-model" title="Permalink to this headline">¶</a></h2>
 <p>Cooperative Multiple Inheritance</p>
 <p>Emphasis on cooperative!</p>
 <ul class="simple">
@@ -303,7 +306,7 @@
 </ul>
 <p>What could go wrong?</p>
 <div class="section" id="the-diamond-problem">
-<h3><span class="section-number">16.1.2.1. </span>The Diamond Problem<a class="headerlink" href="#the-diamond-problem" title="Permalink to this headline">¶</a></h3>
+<h3>The Diamond Problem<a class="headerlink" href="#the-diamond-problem" title="Permalink to this headline">¶</a></h3>
 <p>In Python, everything is descended from ‘object’.  Thus, the moment you invoke multiple inheritance you have the diamond problem.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem">https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem</a></p>
 <p>Here is a toy Python example:</p>
@@ -311,7 +314,7 @@
 <p>Take a look at that code – run it, and notice that class <code class="docutils literal notranslate"><span class="pre">A</span></code>’s method gets run twice. Make sure you know why it is doing what it is doing.</p>
 </div>
 <div class="section" id="super">
-<h3><span class="section-number">16.1.2.2. </span><code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#super" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#super" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">super()</span></code> can help.</p>
 <p><code class="docutils literal notranslate"><span class="pre">super()</span></code>: use it to call a superclass method, rather than explicitly calling the unbound method on the superclass.</p>
 <p>instead of:</p>
@@ -330,7 +333,7 @@
 </div>
 </div>
 <div class="section" id="mro-method-resolution-order">
-<h3><span class="section-number">16.1.2.3. </span>MRO: Method Resolution Order<a class="headerlink" href="#mro-method-resolution-order" title="Permalink to this headline">¶</a></h3>
+<h3>MRO: Method Resolution Order<a class="headerlink" href="#mro-method-resolution-order" title="Permalink to this headline">¶</a></h3>
 <p>How does python decide which method to call, when multiple superclasses may have the <em>same</em> method ?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Combined</span><span class="p">(</span><span class="n">Super1</span><span class="p">,</span> <span class="n">Super2</span><span class="p">,</span> <span class="n">Super3</span><span class="p">)</span>
 </pre></div>
@@ -352,13 +355,13 @@
 <p><a class="reference external" href="http://python-history.blogspot.com/2010/06/method-resolution-order.html">http://python-history.blogspot.com/2010/06/method-resolution-order.html</a></p>
 </div>
 <div class="section" id="super-s-superpowers">
-<h3><span class="section-number">16.1.2.4. </span>Super’s Superpowers<a class="headerlink" href="#super-s-superpowers" title="Permalink to this headline">¶</a></h3>
+<h3>Super’s Superpowers<a class="headerlink" href="#super-s-superpowers" title="Permalink to this headline">¶</a></h3>
 <p>The above system is clear when the hierarchy is simple – but when you have the “diamond problem” – or even more compexity, we need somethign smarter. Enter <code class="docutils literal notranslate"><span class="pre">super()</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">super</span></code> works out – dynamically at runtime – which classes are in the delegation order.</p>
 <p>Do not be afraid.  And be very afraid.</p>
 </div>
 <div class="section" id="what-does-super-do">
-<h3><span class="section-number">16.1.2.5. </span>What does super() do?<a class="headerlink" href="#what-does-super-do" title="Permalink to this headline">¶</a></h3>
+<h3>What does super() do?<a class="headerlink" href="#what-does-super-do" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChildB</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
@@ -395,9 +398,9 @@ you call.</p>
 </div>
 </div>
 <div class="section" id="using-super">
-<h2><span class="section-number">16.1.3. </span>Using <code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#using-super" title="Permalink to this headline">¶</a></h2>
+<h2>Using <code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#using-super" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-rules">
-<h3><span class="section-number">16.1.3.1. </span>The rules:<a class="headerlink" href="#the-rules" title="Permalink to this headline">¶</a></h3>
+<h3>The rules:<a class="headerlink" href="#the-rules" title="Permalink to this headline">¶</a></h3>
 <p>Raymond Hettinger’s rules for <code class="docutils literal notranslate"><span class="pre">super()</span></code></p>
 <ol class="arabic simple">
 <li><p>The method being called by super() needs to exist</p></li>
@@ -420,7 +423,7 @@ you call.</p>
 <p>See the example later for this…</p>
 </div>
 <div class="section" id="matching-argument-signature">
-<h3><span class="section-number">16.1.3.2. </span>Matching Argument Signature<a class="headerlink" href="#matching-argument-signature" title="Permalink to this headline">¶</a></h3>
+<h3>Matching Argument Signature<a class="headerlink" href="#matching-argument-signature" title="Permalink to this headline">¶</a></h3>
 <p>Remember that super does not only delegate to your superclass, it delegates to any class in the MRO.</p>
 <p>Therefore you must be prepared to call any other class’s method in the hierarchy and be prepared to be called from any other class’s method.</p>
 <p>The general rule is to pass all arguments you received on to the super function.</p>
@@ -437,7 +440,7 @@ you call.</p>
 <p>Now your subclass doesn’t really need to think about all the arguments the superclass can take.</p>
 </div>
 <div class="section" id="two-seminal-articles">
-<h3><span class="section-number">16.1.3.3. </span>Two seminal articles<a class="headerlink" href="#two-seminal-articles" title="Permalink to this headline">¶</a></h3>
+<h3>Two seminal articles<a class="headerlink" href="#two-seminal-articles" title="Permalink to this headline">¶</a></h3>
 <p>“Super Considered Harmful” – James Knight</p>
 <p><a class="reference external" href="https://fuhm.net/super-harmful/">https://fuhm.net/super-harmful/</a></p>
 <p>“Super() considered super!”  –  Raymond Hettinger</p>
@@ -457,7 +460,7 @@ of the external interface for your class, like it or not.</p></li>
 <p>If you follow these rules, then it really can be <em>super</em></p>
 </div>
 <div class="section" id="example">
-<h3><span class="section-number">16.1.3.4. </span>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>First, let’s look at the diamond problem again – this time using super:</p>
 <p><a class="reference download internal" download="" href="../_downloads/6fc7890d9fea2c802c990aeac9070f85/diamond_super.py"><code class="xref download docutils literal notranslate"><span class="pre">diamond_super.py</span></code></a></p>
 <p>in this case, we are using <code class="docutils literal notranslate"><span class="pre">super()</span></code>, rather than specifically calling the methods of the superclasses:</p>
@@ -477,7 +480,7 @@ of the external interface for your class, like it or not.</p></li>
 </div>
 </div>
 <div class="section" id="some-more-experiments-with-super">
-<h3><span class="section-number">16.1.3.5. </span>Some more experiments with <code class="docutils literal notranslate"><span class="pre">super</span></code><a class="headerlink" href="#some-more-experiments-with-super" title="Permalink to this headline">¶</a></h3>
+<h3>Some more experiments with <code class="docutils literal notranslate"><span class="pre">super</span></code><a class="headerlink" href="#some-more-experiments-with-super" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">super</span></code> takes a while to wrap your head around – try running the code in:</p>
 <p><a class="reference download internal" download="" href="../_downloads/c0f1640b9673725156d0b85a27003d5a/super_test.py"><code class="xref download docutils literal notranslate"><span class="pre">super_test.py</span></code></a></p>
 <p>See if you can follow all that!</p>
@@ -505,11 +508,19 @@ of the external interface for your class, like it or not.</p></li>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -520,7 +531,6 @@ of the external interface for your class, like it or not.</p></li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

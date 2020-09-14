@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8.4. Mailroom With Dicts &mdash; Programming in Python 7.0 documentation</title>
+  <title>Mailroom With Dicts &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="9. File Handling" href="../../topics/09-files/index.html" />
-    <link rel="prev" title="8.3. Dictionary and Set Lab" href="../dict_lab.html" /> 
+    <link rel="prev" title="Dictionary and Set Lab" href="../dict_lab.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,16 +87,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/DictsAndSets.html">8.1. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/DictionaryAsSwitch.html">8.2. Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dict_lab.html">8.3. Dictionary and Set Lab</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.4. Mailroom With Dicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/DictsAndSets.html">Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mailroom With Dicts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a></li>
@@ -113,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,11 +154,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/08-dicts_sets/index.html"><span class="section-number">8. </span>Dictionaries and Sets</a> &raquo;</li>
         
-      <li><span class="section-number">8.4. </span>Mailroom With Dicts</li>
+      <li>Mailroom With Dicts</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,7 +177,7 @@
         <a href="../../topics/09-files/index.html" class="btn btn-neutral float-right" title="9. File Handling" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dict_lab.html" class="btn btn-neutral float-left" title="8.3. Dictionary and Set Lab" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../dict_lab.html" class="btn btn-neutral float-left" title="Dictionary and Set Lab" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -184,10 +187,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mailroom-with-dicts">
-<span id="exercise-mailroom-with-dicts"></span><h1><span class="section-number">8.4. </span>Mailroom With Dicts<a class="headerlink" href="#mailroom-with-dicts" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-with-dicts"></span><h1>Mailroom With Dicts<a class="headerlink" href="#mailroom-with-dicts" title="Permalink to this headline">¶</a></h1>
 <p><strong>Incorporate dictionary use.</strong></p>
 <div class="section" id="use-dicts-where-appropriate">
-<h2><span class="section-number">8.4.1. </span>Use dicts where appropriate.<a class="headerlink" href="#use-dicts-where-appropriate" title="Permalink to this headline">¶</a></h2>
+<h2>Use dicts where appropriate.<a class="headerlink" href="#use-dicts-where-appropriate" title="Permalink to this headline">¶</a></h2>
 <p>The first version of this assignment used these basic data types: numbers, strings, lists and tuples.</p>
 <p>However, using dictionaries, an import built in data structure in Python, will let you re-write your program a bit more simply and efficiently.</p>
 <p>Update your mailroom program to:</p>
@@ -225,7 +228,7 @@ big template, rather than building up a big string that produces the letter in p
         <a href="../../topics/09-files/index.html" class="btn btn-neutral float-right" title="9. File Handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dict_lab.html" class="btn btn-neutral float-left" title="8.3. Dictionary and Set Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../dict_lab.html" class="btn btn-neutral float-left" title="Dictionary and Set Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -234,11 +237,19 @@ big template, rather than building up a big string that produces the letter in p
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -249,7 +260,6 @@ big template, rather than building up a big string that produces the letter in p
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

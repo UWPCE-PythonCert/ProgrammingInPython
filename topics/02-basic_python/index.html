@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.1. How to run a python file" href="../../modules/HowToRunAPythonFile.html" />
-    <link rel="prev" title="1.6.3. Python 2 versus Python 3" href="../../modules/Py2vsPy3.html" /> 
+    <link rel="next" title="How to run a python file" href="../../modules/HowToRunAPythonFile.html" />
+    <link rel="prev" title="Python 2 versus Python 3" href="../../modules/Py2vsPy3.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,16 +87,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Basic Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">2.1. How to run a python file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Learning.html">2.2. Useful Python Learning Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/BasicPython.html">2.3. Basic Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Functions.html">2.4. More on Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/python_pushups.html">2.5. Python Pushups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/grid_printer.html">2.6. Grid Printer Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/fizz_buzz.html">2.7. Fizz Buzz Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Learning.html">Useful Python Learning Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/BasicPython.html">Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Functions.html">More on Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/python_pushups.html">Python Pushups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/fizz_buzz.html">Fizz Buzz Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -116,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,7 +157,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">2. </span>Basic Python</li>
     
@@ -172,10 +175,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/HowToRunAPythonFile.html" class="btn btn-neutral float-right" title="2.1. How to run a python file" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/HowToRunAPythonFile.html" class="btn btn-neutral float-right" title="How to run a python file" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-left" title="1.6.3. Python 2 versus Python 3" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-left" title="Python 2 versus Python 3" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -191,23 +194,23 @@ the best way to learn is by doing, but you need the basics in order to do anythi
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">2.1. How to run a python file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Learning.html">2.2. Useful Python Learning Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/BasicPython.html">2.3. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Functions.html">2.4. More on Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/HowToRunAPythonFile.html">How to run a python file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Learning.html">Useful Python Learning Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/BasicPython.html">Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Functions.html">More on Functions</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Activities</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/python_pushups.html">2.5. Python Pushups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/python_pushups.html">Python Pushups</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Exercises</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/grid_printer.html">2.6. Grid Printer Exercise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/fizz_buzz.html">2.7. Fizz Buzz Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/grid_printer.html">Grid Printer Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/fizz_buzz.html">Fizz Buzz Exercise</a></li>
 </ul>
 </div>
 </div>
@@ -220,10 +223,10 @@ the best way to learn is by doing, but you need the basics in order to do anythi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/HowToRunAPythonFile.html" class="btn btn-neutral float-right" title="2.1. How to run a python file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/HowToRunAPythonFile.html" class="btn btn-neutral float-right" title="How to run a python file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-left" title="1.6.3. Python 2 versus Python 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-left" title="Python 2 versus Python 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -232,11 +235,19 @@ the best way to learn is by doing, but you need the basics in order to do anythi
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -247,7 +258,6 @@ the best way to learn is by doing, but you need the basics in order to do anythi
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

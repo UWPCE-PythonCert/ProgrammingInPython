@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8.1. Dictionaries and Sets &mdash; Programming in Python 7.0 documentation</title>
+  <title>Dictionaries and Sets &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,13 +35,9 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.2. Using a Dictionary to switch" href="DictionaryAsSwitch.html" />
+    <link rel="next" title="Using a Dictionary to switch" href="DictionaryAsSwitch.html" />
     <link rel="prev" title="8. Dictionaries and Sets" href="../topics/08-dicts_sets/index.html" /> 
 </head>
 
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,16 +87,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.1. Dictionaries and Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DictionaryAsSwitch.html">8.2. Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/dict_lab.html">8.3. Dictionary and Set Lab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">8.4. Mailroom With Dicts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dictionaries and Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DictionaryAsSwitch.html">Using a Dictionary to <code class="docutils literal notranslate"><span class="pre">switch</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/dict_lab.html">Dictionary and Set Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_dicts.html">Mailroom With Dicts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
@@ -113,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,11 +154,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/08-dicts_sets/index.html"><span class="section-number">8. </span>Dictionaries and Sets</a> &raquo;</li>
         
-      <li><span class="section-number">8.1. </span>Dictionaries and Sets</li>
+      <li>Dictionaries and Sets</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,7 +174,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="DictionaryAsSwitch.html" class="btn btn-neutral float-right" title="8.2. Using a Dictionary to switch" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DictionaryAsSwitch.html" class="btn btn-neutral float-right" title="Using a Dictionary to switch" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../topics/08-dicts_sets/index.html" class="btn btn-neutral float-left" title="8. Dictionaries and Sets" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -184,9 +187,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dictionaries-and-sets">
-<span id="dicts-and-sets"></span><h1><span class="section-number">8.1. </span>Dictionaries and Sets<a class="headerlink" href="#dictionaries-and-sets" title="Permalink to this headline">¶</a></h1>
+<span id="dicts-and-sets"></span><h1>Dictionaries and Sets<a class="headerlink" href="#dictionaries-and-sets" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="dictionary">
-<h2><span class="section-number">8.1.1. </span>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
 <p>Python calls it a <code class="docutils literal notranslate"><span class="pre">dict</span></code></p>
 <p>Other languages call it:</p>
 <blockquote>
@@ -215,7 +218,7 @@
 <p>It is <em>very</em> common to use strings as keys in a dictionary. So common that virtually all examples you’ll see both here and on the Internet use strings as keys. And many other languages have similar objects that only allow strings (like JavaScript objects, for instance). Python dicts, on the other hand, can use many types as keys, and this can be a very powerful feature to keep in mind.</p>
 </div>
 <div class="section" id="dictionary-constructors">
-<h3><span class="section-number">8.1.1.1. </span>Dictionary Constructors<a class="headerlink" href="#dictionary-constructors" title="Permalink to this headline">¶</a></h3>
+<h3>Dictionary Constructors<a class="headerlink" href="#dictionary-constructors" title="Permalink to this headline">¶</a></h3>
 <p>So how does one make a dict? There are a few ways…</p>
 <p>The dict “literal”:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This dict &quot;lies&quot;</span>
@@ -242,7 +245,7 @@
 </div>
 </div>
 <div class="section" id="dictionary-indexing">
-<h3><span class="section-number">8.1.1.2. </span>Dictionary Indexing<a class="headerlink" href="#dictionary-indexing" title="Permalink to this headline">¶</a></h3>
+<h3>Dictionary Indexing<a class="headerlink" href="#dictionary-indexing" title="Permalink to this headline">¶</a></h3>
 <p>And how do you get stuff out (index it)?</p>
 <p>The same way you index a sequence, except the index (now called a key) can be various types, rather than just an integer:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
@@ -265,7 +268,7 @@
 </div>
 </div>
 <div class="section" id="what-can-keys-be">
-<h3><span class="section-number">8.1.1.3. </span>What can keys be?<a class="headerlink" href="#what-can-keys-be" title="Permalink to this headline">¶</a></h3>
+<h3>What can keys be?<a class="headerlink" href="#what-can-keys-be" title="Permalink to this headline">¶</a></h3>
 <p>Surely not ANYTHING?</p>
 <p>Not quite: keys can be any “immutable”:</p>
 <blockquote>
@@ -291,7 +294,7 @@
 <p>Although for most intents and purposes, you want to use immutable types as keys in dicts.</p>
 </div>
 <div class="section" id="hashing">
-<h3><span class="section-number">8.1.1.4. </span>Hashing<a class="headerlink" href="#hashing" title="Permalink to this headline">¶</a></h3>
+<h3>Hashing<a class="headerlink" href="#hashing" title="Permalink to this headline">¶</a></h3>
 <p>What does “hashable” mean? (<a class="reference external" href="https://computersciencewiki.org/index.php/Hashing">https://computersciencewiki.org/index.php/Hashing</a>)</p>
 <p>Hash functions convert arbitrarily large data to a small proxy (usually an integer).</p>
 <p>They always return the same proxy for the same input.</p>
@@ -305,7 +308,7 @@
 <p>The access time is constant regardless of the size of the dict.</p>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">8.1.1.5. </span>Dictionary indexing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Dictionary indexing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Note: cPython name look-ups are implemented with dicts – it’s highly optimized.</p>
 <p>Key to value:</p>
 <blockquote>
@@ -323,7 +326,7 @@
 <p>(But note that it’s then up to you to keep them in sync).</p>
 </div>
 <div class="section" id="dictionary-ordering-not">
-<h3><span class="section-number">8.1.1.6. </span>Dictionary Ordering (not)<a class="headerlink" href="#dictionary-ordering-not" title="Permalink to this headline">¶</a></h3>
+<h3>Dictionary Ordering (not)<a class="headerlink" href="#dictionary-ordering-not" title="Permalink to this headline">¶</a></h3>
 <p>Traditionally, dictionaries have had no defined order. See this example from Python 3.5:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [352]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 <span class="gp">In [353]: </span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
@@ -364,7 +367,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 <p>Also: while Python dicts now <em>preserve</em> order, they are not really a fully ordered object: there is no direct way to get, say, the “third” item in a dict, or to inset an item at a particular location.</p>
 </div>
 <div class="section" id="dictionary-iterating">
-<h3><span class="section-number">8.1.1.7. </span>Dictionary Iterating<a class="headerlink" href="#dictionary-iterating" title="Permalink to this headline">¶</a></h3>
+<h3>Dictionary Iterating<a class="headerlink" href="#dictionary-iterating" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>  iterates over the keys</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [23]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
@@ -377,7 +380,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="dict-keys-and-values">
-<h3><span class="section-number">8.1.1.8. </span>dict keys and values<a class="headerlink" href="#dict-keys-and-values" title="Permalink to this headline">¶</a></h3>
+<h3>dict keys and values<a class="headerlink" href="#dict-keys-and-values" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
 <span class="gp">In [26]: </span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -397,7 +400,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">8.1.1.9. </span>dict keys and values<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>dict keys and values<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Iterating on everything</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [26]: </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
 
@@ -410,7 +413,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="dictionary-performance">
-<h3><span class="section-number">8.1.1.10. </span>Dictionary Performance<a class="headerlink" href="#dictionary-performance" title="Permalink to this headline">¶</a></h3>
+<h3>Dictionary Performance<a class="headerlink" href="#dictionary-performance" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><blockquote>
 <div><ul class="simple">
@@ -425,7 +428,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div></blockquote>
 </div>
 <div class="section" id="other-dict-operations">
-<h3><span class="section-number">8.1.1.11. </span>Other dict operations:<a class="headerlink" href="#other-dict-operations" title="Permalink to this headline">¶</a></h3>
+<h3>Other dict operations:<a class="headerlink" href="#other-dict-operations" title="Permalink to this headline">¶</a></h3>
 <p>See them all here:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">https://docs.python.org/3/library/stdtypes.html#mapping-types-dict</a></p>
 <p>Is it in there?</p>
@@ -444,7 +447,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 <p>Is the word “gullible” in the dictionary? is asking if the key is in the dict.</p>
 </div>
 <div class="section" id="getting-something-like-indexing">
-<h3><span class="section-number">8.1.1.12. </span>Getting something: (like indexing)<a class="headerlink" href="#getting-something-like-indexing" title="Permalink to this headline">¶</a></h3>
+<h3>Getting something: (like indexing)<a class="headerlink" href="#getting-something-like-indexing" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;this&#39;</span><span class="p">)</span>
 <span class="gh">Out[9]: </span><span class="go">5</span>
 </pre></div>
@@ -457,7 +460,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 <p><cite>get()</cite> never raises an Exception (default is None).</p>
 </div>
 <div class="section" id="iterating">
-<h3><span class="section-number">8.1.1.13. </span>iterating<a class="headerlink" href="#iterating" title="Permalink to this headline">¶</a></h3>
+<h3>iterating<a class="headerlink" href="#iterating" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
 <span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="gp">   ....:</span>
@@ -492,7 +495,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="pop">
-<h3><span class="section-number">8.1.1.14. </span><code class="docutils literal notranslate"><span class="pre">pop()</span></code><a class="headerlink" href="#pop" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">pop()</span></code><a class="headerlink" href="#pop" title="Permalink to this headline">¶</a></h3>
 <p>“Popping”: getting the value while removing it.</p>
 <p>Pop out a particular key:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [19]: </span><span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;this&#39;</span><span class="p">)</span>
@@ -513,7 +516,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 <p>note that it’s the last item, so not completely arbitrary.</p>
 </div>
 <div class="section" id="setdefault">
-<h3><span class="section-number">8.1.1.15. </span><code class="docutils literal notranslate"><span class="pre">setdefault</span></code><a class="headerlink" href="#setdefault" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">setdefault</span></code><a class="headerlink" href="#setdefault" title="Permalink to this headline">¶</a></h3>
 <p>This one is handy:</p>
 <p><code class="docutils literal notranslate"><span class="pre">setdefault(key[,</span> <span class="pre">default])</span></code></p>
 <p>gets the value if it’s there, sets it to the specified default if it’s not. Returns the value in either case.</p>
@@ -533,7 +536,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="assignment">
-<h3><span class="section-number">8.1.1.16. </span>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h3>
+<h3>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h3>
 <p>Assignment (with <code class="docutils literal notranslate"><span class="pre">=</span></code>) is a link to the original dict, just like lists or anything else. Remember that assignment is simply binding a new name to something.</p>
 <p>And dicts are mutable – so be careful!</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [47]: </span><span class="n">d</span>
@@ -572,12 +575,12 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="sets">
-<h2><span class="section-number">8.1.2. </span>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
+<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
 <p>a <code class="docutils literal notranslate"><span class="pre">set</span></code>  is an unordered collection of distinct values.</p>
 <p>Essentially, a <code class="docutils literal notranslate"><span class="pre">set</span></code> is a dict with only keys.</p>
 <p><a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#set-types-set-frozenset">https://docs.python.org/3.8/library/stdtypes.html#set-types-set-frozenset</a></p>
 <div class="section" id="set-constructors">
-<h3><span class="section-number">8.1.2.1. </span>Set Constructors:<a class="headerlink" href="#set-constructors" title="Permalink to this headline">¶</a></h3>
+<h3>Set Constructors:<a class="headerlink" href="#set-constructors" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">()</span>
 <span class="nb">set</span><span class="p">()</span>
 
@@ -596,7 +599,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="set-properties">
-<h3><span class="section-number">8.1.2.2. </span>Set Properties<a class="headerlink" href="#set-properties" title="Permalink to this headline">¶</a></h3>
+<h3>Set Properties<a class="headerlink" href="#set-properties" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Set</span></code>  members must be hashable, like dictionary keys – and for same reason (efficient lookup).</p>
 <p>No indexing (unordered).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -607,7 +610,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="set-methods">
-<h3><span class="section-number">8.1.2.3. </span>Set Methods<a class="headerlink" href="#set-methods" title="Permalink to this headline">¶</a></h3>
+<h3>Set Methods<a class="headerlink" href="#set-methods" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># an arbitrary member</span>
 <span class="mi">1</span>
@@ -639,7 +642,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="set-operators">
-<h3><span class="section-number">8.1.2.4. </span>Set Operators<a class="headerlink" href="#set-operators" title="Permalink to this headline">¶</a></h3>
+<h3>Set Operators<a class="headerlink" href="#set-operators" title="Permalink to this headline">¶</a></h3>
 <p>All the basic set operations are support with math-class like operators:</p>
 <p>Test whether every element in the set is in other:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">&lt;=</span> <span class="n">other</span>
@@ -676,7 +679,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 <p>In fact, it is the operator versions that make the <code class="docutils literal notranslate"><span class="pre">set</span></code> object “officially” a Set: (<a class="reference external" href="https://docs.python.org/3.8/library/collections.abc.html?highlight=set%20abc#collections.abc.Set">Set ABC</a>)</p>
 </div>
 <div class="section" id="frozen-set">
-<h3><span class="section-number">8.1.2.5. </span>Frozen Set<a class="headerlink" href="#frozen-set" title="Permalink to this headline">¶</a></h3>
+<h3>Frozen Set<a class="headerlink" href="#frozen-set" title="Permalink to this headline">¶</a></h3>
 <p>Another kind of set: <code class="docutils literal notranslate"><span class="pre">frozenset</span></code></p>
 <p>immutable – for use as a key in a dict (or another set…):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -689,9 +692,9 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="a-few-added-notes">
-<h2><span class="section-number">8.1.3. </span>A few added notes:<a class="headerlink" href="#a-few-added-notes" title="Permalink to this headline">¶</a></h2>
+<h2>A few added notes:<a class="headerlink" href="#a-few-added-notes" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-count-method">
-<h3><span class="section-number">8.1.3.1. </span>The count() method<a class="headerlink" href="#the-count-method" title="Permalink to this headline">¶</a></h3>
+<h3>The count() method<a class="headerlink" href="#the-count-method" title="Permalink to this headline">¶</a></h3>
 <p>All Python sequences (including strings) have a <code class="docutils literal notranslate"><span class="pre">count()</span></code> method:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;This is an arbitrary string&quot;</span>
 
@@ -706,7 +709,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 </div>
 </div>
 <div class="section" id="set-update">
-<h3><span class="section-number">8.1.3.2. </span>set.update()<a class="headerlink" href="#set-update" title="Permalink to this headline">¶</a></h3>
+<h3>set.update()<a class="headerlink" href="#set-update" title="Permalink to this headline">¶</a></h3>
 <p>If you want to add a bunch of stuff to a set, you can use update:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
@@ -727,7 +730,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 <p><strong>NOTE:</strong> It’s VERY often the case that when you find yourself writing a trivial loop – there is a way to do it with a built in method!</p>
 </div>
 <div class="section" id="sorting-stuff-in-dictionaries">
-<h3><span class="section-number">8.1.3.3. </span>Sorting stuff in dictionaries:<a class="headerlink" href="#sorting-stuff-in-dictionaries" title="Permalink to this headline">¶</a></h3>
+<h3>Sorting stuff in dictionaries:<a class="headerlink" href="#sorting-stuff-in-dictionaries" title="Permalink to this headline">¶</a></h3>
 <p>dicts aren’t sorted, so what if you want to do something in a sorted way?</p>
 <p>The “standard” way:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
@@ -758,7 +761,7 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="DictionaryAsSwitch.html" class="btn btn-neutral float-right" title="8.2. Using a Dictionary to switch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DictionaryAsSwitch.html" class="btn btn-neutral float-right" title="Using a Dictionary to switch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../topics/08-dicts_sets/index.html" class="btn btn-neutral float-left" title="8. Dictionaries and Sets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -770,11 +773,19 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -785,7 +796,6 @@ Dec 15, 2017 &lt;<a class="reference external" href="https://mail.python.org/pip
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

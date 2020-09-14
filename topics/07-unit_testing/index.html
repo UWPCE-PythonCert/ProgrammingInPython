@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.1. Testing" href="../../modules/Testing.html" />
-    <link rel="prev" title="6.4. Mailroom With Exceptions" href="../../exercises/mailroom/mailroom_with_exceptions.html" /> 
+    <link rel="next" title="Testing" href="../../modules/Testing.html" />
+    <link rel="prev" title="Mailroom With Exceptions" href="../../exercises/mailroom/mailroom_with_exceptions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -90,10 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">7. Unit Testing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Testing.html">7.1. Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">7.2. Test Driven Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/unit_testing/unit_testing.html">7.3. Introduction To Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_tests.html">7.4. Mailroom With Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
@@ -113,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,7 +154,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">7. </span>Unit Testing</li>
     
@@ -169,10 +172,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/Testing.html" class="btn btn-neutral float-right" title="7.1. Testing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-left" title="6.4. Mailroom With Exceptions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-left" title="Mailroom With Exceptions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -186,20 +189,20 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing.html">7.1. Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">7.2. Test Driven Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Activities</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/unit_testing/unit_testing.html">7.3. Introduction To Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/unit_testing/unit_testing.html">Introduction To Unit Testing</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Exercises</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_tests.html">7.4. Mailroom With Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
 </ul>
 </div>
 </div>
@@ -212,10 +215,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/Testing.html" class="btn btn-neutral float-right" title="7.1. Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-left" title="6.4. Mailroom With Exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-left" title="Mailroom With Exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -224,11 +227,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -239,7 +250,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

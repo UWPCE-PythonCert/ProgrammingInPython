@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>17.7. Trapezoidal Rule &mdash; Programming in Python 7.0 documentation</title>
+  <title>Trapezoidal Rule &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="18. Advanced Testing" href="../topics/18-advanced_testing/index.html" />
-    <link rel="prev" title="17.6. lambda and keyword Magic" href="lambda_magic.html" /> 
+    <link rel="prev" title="lambda and keyword Magic" href="lambda_magic.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -100,13 +102,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/OO_vs_functional.html">17.1. Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Lambda.html">17.2. Anonymous Functions: Lambda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/MapFilterReduce.html">17.3. Map Filter and Reduce</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/IPythonParallel.html">17.4. IPython Parallel Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Closures.html">17.5. Closures and Function Currying</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lambda_magic.html">17.6. lambda and keyword Magic</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">17.7. Trapezoidal Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lambda_magic.html">lambda and keyword Magic</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Trapezoidal Rule</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
@@ -116,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,11 +157,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">17. </span>Introduction to Functional Programming</a> &raquo;</li>
         
-      <li><span class="section-number">17.7. </span>Trapezoidal Rule</li>
+      <li>Trapezoidal Rule</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -177,7 +180,7 @@
         <a href="../topics/18-advanced_testing/index.html" class="btn btn-neutral float-right" title="18. Advanced Testing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lambda_magic.html" class="btn btn-neutral float-left" title="17.6. lambda and keyword Magic" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lambda_magic.html" class="btn btn-neutral float-left" title="lambda and keyword Magic" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -187,12 +190,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="trapezoidal-rule">
-<span id="exercise-trapezoidal-rule"></span><h1><span class="section-number">17.7. </span>Trapezoidal Rule<a class="headerlink" href="#trapezoidal-rule" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-trapezoidal-rule"></span><h1>Trapezoidal Rule<a class="headerlink" href="#trapezoidal-rule" title="Permalink to this headline">¶</a></h1>
 <p><strong>Passing functions around</strong></p>
 <p>Goal:</p>
 <p>Making use of functions as objects – functions that act on functions.</p>
 <div class="section" id="id1">
-<h2><span class="section-number">17.7.1. </span>Trapezoidal rule<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Trapezoidal rule<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>The “trapezoidal rule”:</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoidal_rule">https://en.wikipedia.org/wiki/Trapezoidal_rule</a></p>
 <p>Is one of the easiest “quadrature” methods.</p>
@@ -200,12 +203,12 @@
 <p>Computing the area under a curve.</p>
 </div>
 <div class="section" id="the-task">
-<h2><span class="section-number">17.7.2. </span>The task<a class="headerlink" href="#the-task" title="Permalink to this headline">¶</a></h2>
+<h2>The task<a class="headerlink" href="#the-task" title="Permalink to this headline">¶</a></h2>
 <p>Your task is to write a <code class="docutils literal notranslate"><span class="pre">trapz()</span></code> function that will compute the area under an arbitrary function, using the trapezoidal rule.</p>
 <p>The function will take another function as an argument, as well as the start and end points to compute, and return the area under the curve.</p>
 </div>
 <div class="section" id="example">
-<h2><span class="section-number">17.7.3. </span>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<h2>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;a very simple straight horizontal line at y = 5&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="mi">5</span>
@@ -221,7 +224,7 @@
 <p>HINT: this simple example could be a good test case!</p>
 </div>
 <div class="section" id="the-solution">
-<h2><span class="section-number">17.7.4. </span>The Solution:<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h2>
+<h2>The Solution:<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h2>
 <p>Your function definition should look like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapz</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -262,7 +265,7 @@
 <p>Try it for some built-in math functions, like <code class="docutils literal notranslate"><span class="pre">math.sin</span></code></p>
 </div>
 <div class="section" id="tests">
-<h2><span class="section-number">17.7.5. </span>tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<h2>tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
 <p>Do this using test-drive development.</p>
 <p>A few examples of analytical solutions you can use for tests:</p>
 <p>A simple horizontal line – see above.</p>
@@ -277,7 +280,7 @@
 \[\int_a^b \sin(x) = \cos(a) - \cos(b)\]</div>
 </div>
 <div class="section" id="computational-accuracy">
-<h2><span class="section-number">17.7.6. </span>Computational Accuracy<a class="headerlink" href="#computational-accuracy" title="Permalink to this headline">¶</a></h2>
+<h2>Computational Accuracy<a class="headerlink" href="#computational-accuracy" title="Permalink to this headline">¶</a></h2>
 <p>In the case of the linear functions, the result should theoretically be exact. But with the vagaries of floating point math may not be.</p>
 <p>And for non-linear functions, the result will certainly not be exact.</p>
 <p>So you want to check if the answer is <em>close</em> to what you expect.</p>
@@ -285,7 +288,7 @@
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0485/">https://www.python.org/dev/peps/pep-0485/</a></p>
 </div>
 <div class="section" id="stage-two">
-<h2><span class="section-number">17.7.7. </span>Stage Two:<a class="headerlink" href="#stage-two" title="Permalink to this headline">¶</a></h2>
+<h2>Stage Two:<a class="headerlink" href="#stage-two" title="Permalink to this headline">¶</a></h2>
 <p>Some functions need extra parameters to do their thing. But the above will only handle a single parameter. For example, a quadratic function:</p>
 <div class="math notranslate nohighlight">
 \[y = A x^2 + Bx + C\]</div>
@@ -306,7 +309,7 @@
 <p>The function we wrote above only passes x in to the function it is integrating.</p>
 </div>
 <div class="section" id="passing-arguments-through">
-<h2><span class="section-number">17.7.8. </span>Passing arguments through:<a class="headerlink" href="#passing-arguments-through" title="Permalink to this headline">¶</a></h2>
+<h2>Passing arguments through:<a class="headerlink" href="#passing-arguments-through" title="Permalink to this headline">¶</a></h2>
 <p>Update your trapz() function so that you can give it a function that takes arbitrary extra arguments, either positional or keyword, after the x.</p>
 <p>So you can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trapz</span><span class="p">(</span><span class="n">quadratic</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -334,24 +337,24 @@
 <p>The test code has a test for this one, too.</p>
 </div>
 <div class="section" id="currying">
-<h2><span class="section-number">17.7.9. </span>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h2>
+<h2>Currying<a class="headerlink" href="#currying" title="Permalink to this headline">¶</a></h2>
 <p>Another way to solve the above problem is to use the original <code class="docutils literal notranslate"><span class="pre">trapz</span></code>, and create a custom version of the quadratic() function instead.</p>
 <p>Write a function that takes <code class="docutils literal notranslate"><span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">and</span> <span class="pre">C</span></code> as arguments, and returns a function that evaluates the quadratic for those particular coefficients.</p>
 <p>Try passing the results of this into your <code class="docutils literal notranslate"><span class="pre">trapz()</span></code> and see if you get the same answer.</p>
 </div>
 <div class="section" id="partial">
-<h2><span class="section-number">17.7.10. </span>partial<a class="headerlink" href="#partial" title="Permalink to this headline">¶</a></h2>
+<h2>partial<a class="headerlink" href="#partial" title="Permalink to this headline">¶</a></h2>
 <p>Do the above with <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> as well.</p>
 </div>
 <div class="section" id="extra-credit">
-<h2><span class="section-number">17.7.11. </span>Extra credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
+<h2>Extra credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
 <p>This isn’t really the point of the exercise, but see if you can make it dynamically accurate.</p>
 <p>How accurate it is depends on how small the chunks are that you break the function up into.</p>
 <p>See if you can think of a way to dynamically determine how small a step you should use.</p>
 <p>This is one for the math and computational programming geeks!</p>
 </div>
 <div class="section" id="a-bit-about-math-symbology">
-<span id="sum-explained"></span><h2><span class="section-number">17.7.12. </span>A bit about math symbology<a class="headerlink" href="#a-bit-about-math-symbology" title="Permalink to this headline">¶</a></h2>
+<span id="sum-explained"></span><h2>A bit about math symbology<a class="headerlink" href="#a-bit-about-math-symbology" title="Permalink to this headline">¶</a></h2>
 <p>Those of you without a lot of math background may be confused by the symbols. So here’s a quick intro to the “Summation Symbol” (Greek Capital sigma)</p>
 <div class="math notranslate nohighlight">
 \[\sum_{i=a}^{b} x_i\]</div>
@@ -388,7 +391,7 @@
         <a href="../topics/18-advanced_testing/index.html" class="btn btn-neutral float-right" title="18. Advanced Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="lambda_magic.html" class="btn btn-neutral float-left" title="17.6. lambda and keyword Magic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="lambda_magic.html" class="btn btn-neutral float-left" title="lambda and keyword Magic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -397,11 +400,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -412,7 +423,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

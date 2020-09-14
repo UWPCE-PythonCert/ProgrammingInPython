@@ -24,7 +24,7 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    ../exercises/file_lab.rst
+    ../exercises/file_processing/file_lab.rst
     ../exercises/exceptions_lab.rst
     ../exercises/except_exercise.rst
     ../exercises/comprehensions_lab.rst

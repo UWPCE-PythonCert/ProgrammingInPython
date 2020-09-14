@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.5. Mailroom Tutorial &mdash; Programming in Python 7.0 documentation</title>
+  <title>Mailroom Tutorial &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6. Exception Handling" href="../../topics/06-exceptions/index.html" />
-    <link rel="prev" title="5.4. Mailroom" href="mailroom.html" /> 
+    <link rel="prev" title="Mailroom" href="mailroom.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,14 +87,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Strings.html">5.1. Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../string_formatting.html">5.2. String Formatting Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rot13.html">5.3. ROT13</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom.html">5.4. Mailroom</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.5. Mailroom Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../string_formatting.html">String Formatting Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rot13.html">ROT13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom.html">Mailroom</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mailroom Tutorial</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -114,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -152,11 +155,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/05-text_handling/index.html"><span class="section-number">5. </span>Basic Text Handling</a> &raquo;</li>
         
-      <li><span class="section-number">5.5. </span>Mailroom Tutorial</li>
+      <li>Mailroom Tutorial</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,7 +178,7 @@
         <a href="../../topics/06-exceptions/index.html" class="btn btn-neutral float-right" title="6. Exception Handling" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mailroom.html" class="btn btn-neutral float-left" title="5.4. Mailroom" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mailroom.html" class="btn btn-neutral float-left" title="Mailroom" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -185,14 +188,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mailroom-tutorial">
-<span id="exercise-mailroom-part1-tutorial"></span><h1><span class="section-number">5.5. </span>Mailroom Tutorial<a class="headerlink" href="#mailroom-tutorial" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-part1-tutorial"></span><h1>Mailroom Tutorial<a class="headerlink" href="#mailroom-tutorial" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="controlling-main-program-flow">
-<h2><span class="section-number">5.5.1. </span>Controlling Main Program Flow<a class="headerlink" href="#controlling-main-program-flow" title="Permalink to this headline">¶</a></h2>
+<h2>Controlling Main Program Flow<a class="headerlink" href="#controlling-main-program-flow" title="Permalink to this headline">¶</a></h2>
 <p>One of the key components of the mailroom program is managing program flow and interacting with the user. Ideally main flow code should be cleanly separate from your feature code.</p>
 <p>The best way to manage the program flow of an interactive prompt is to use a <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> loop, which means you will keep asking the user for input until the user selects a feature or exits.</p>
 <p>There are several ways to write your main interactive loop. Let’s consider these two options:</p>
 <div class="section" id="option-1">
-<h3><span class="section-number">5.5.1.1. </span>Option 1:<a class="headerlink" href="#option-1" title="Permalink to this headline">¶</a></h3>
+<h3>Option 1:<a class="headerlink" href="#option-1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
     <span class="c1"># do things</span>
 
@@ -205,7 +208,7 @@
 </div>
 </div>
 <div class="section" id="option-2">
-<h3><span class="section-number">5.5.1.2. </span>Option 2:<a class="headerlink" href="#option-2" title="Permalink to this headline">¶</a></h3>
+<h3>Option 2:<a class="headerlink" href="#option-2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_something</span><span class="p">()</span>
     <span class="c1"># do things</span>
     <span class="n">main</span><span class="p">()</span>
@@ -280,7 +283,7 @@ The call stack will also keep getting deeper and deeper, which can make error st
 </div>
 </div>
 <div class="section" id="choosing-a-data-structure">
-<h2><span class="section-number">5.5.2. </span>Choosing A Data Structure<a class="headerlink" href="#choosing-a-data-structure" title="Permalink to this headline">¶</a></h2>
+<h2>Choosing A Data Structure<a class="headerlink" href="#choosing-a-data-structure" title="Permalink to this headline">¶</a></h2>
 <p>So far in this course, we have learned about strings, tuples, and lists. We will apply these data structures to hold our mailroom donor information.
 Choosing the right data structure is critical and our donor data structure will change in Parts 2 and 3 of this assignment as we learn about additional structures.</p>
 <p>What goes into this decision to use a specific data structure? Here are a couple of things to consider.</p>
@@ -304,7 +307,7 @@ Choosing the right data structure is critical and our donor data structure will 
 <p>Why choose tuples for the inner donor record? Well, another part of using the right data structure is to reduce bugs; you are setting clear expectations that a single donor entry only contains two items.</p>
 </div>
 <div class="section" id="sorting">
-<h2><span class="section-number">5.5.3. </span>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
 <p>Python makes sorting fairly easy and has utilities for sorting simple lists as well as more complex structures like lists of tuples as above.</p>
 <p>Let’s start with a structure that represents student records: student name and age.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">39</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Jimmy&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)]</span>
@@ -356,7 +359,7 @@ Choosing the right data structure is critical and our donor data structure will 
         <a href="../../topics/06-exceptions/index.html" class="btn btn-neutral float-right" title="6. Exception Handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mailroom.html" class="btn btn-neutral float-left" title="5.4. Mailroom" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mailroom.html" class="btn btn-neutral float-left" title="Mailroom" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -365,11 +368,19 @@ Choosing the right data structure is critical and our donor data structure will 
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -380,7 +391,6 @@ Choosing the right data structure is critical and our donor data structure will 
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

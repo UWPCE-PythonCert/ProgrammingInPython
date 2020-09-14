@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="17.1. Object Oriented vs Functional Programming" href="../../modules/OO_vs_functional.html" />
-    <link rel="prev" title="16.1. Multiple Inheritance" href="../../modules/MultipleInheritance.html" /> 
+    <link rel="next" title="Object Oriented vs Functional Programming" href="../../modules/OO_vs_functional.html" />
+    <link rel="prev" title="Multiple Inheritance" href="../../modules/MultipleInheritance.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -100,13 +102,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">17. Introduction to Functional Programming</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/OO_vs_functional.html">17.1. Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Lambda.html">17.2. Anonymous Functions: Lambda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/MapFilterReduce.html">17.3. Map Filter and Reduce</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/IPythonParallel.html">17.4. IPython Parallel Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Closures.html">17.5. Closures and Function Currying</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/lambda_magic.html">17.6. lambda and keyword Magic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/trapezoid.html">17.7. Trapezoidal Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/trapezoid.html">Trapezoidal Rule</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../18-advanced_testing/index.html">18. Advanced Testing</a></li>
@@ -116,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,7 +157,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">17. </span>Introduction to Functional Programming</li>
     
@@ -172,10 +175,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/OO_vs_functional.html" class="btn btn-neutral float-right" title="17.1. Object Oriented vs Functional Programming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/OO_vs_functional.html" class="btn btn-neutral float-right" title="Object Oriented vs Functional Programming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/MultipleInheritance.html" class="btn btn-neutral float-left" title="16.1. Multiple Inheritance" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/MultipleInheritance.html" class="btn btn-neutral float-left" title="Multiple Inheritance" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -189,23 +192,23 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/OO_vs_functional.html">17.1. Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">17.2. Anonymous Functions: Lambda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/MapFilterReduce.html">17.3. Map Filter and Reduce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonParallel.html">17.4. IPython Parallel Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Closures.html">17.5. Closures and Function Currying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Closures.html">Closures and Function Currying</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Activities</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/lambda_magic.html">17.6. lambda and keyword Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Exercises</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/trapezoid.html">17.7. Trapezoidal Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/trapezoid.html">Trapezoidal Rule</a></li>
 </ul>
 </div>
 </div>
@@ -218,10 +221,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/OO_vs_functional.html" class="btn btn-neutral float-right" title="17.1. Object Oriented vs Functional Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/OO_vs_functional.html" class="btn btn-neutral float-right" title="Object Oriented vs Functional Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/MultipleInheritance.html" class="btn btn-neutral float-left" title="16.1. Multiple Inheritance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/MultipleInheritance.html" class="btn btn-neutral float-left" title="Multiple Inheritance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -230,11 +233,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -245,7 +256,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

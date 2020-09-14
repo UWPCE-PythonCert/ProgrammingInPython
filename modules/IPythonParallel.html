@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>17.4. IPython Parallel Quickstart &mdash; Programming in Python 7.0 documentation</title>
+  <title>IPython Parallel Quickstart &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="17.5. Closures and Function Currying" href="Closures.html" />
-    <link rel="prev" title="17.3. Map Filter and Reduce" href="MapFilterReduce.html" /> 
+    <link rel="next" title="Closures and Function Currying" href="Closures.html" />
+    <link rel="prev" title="Map Filter and Reduce" href="MapFilterReduce.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -100,13 +102,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="OO_vs_functional.html">17.1. Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Lambda.html">17.2. Anonymous Functions: Lambda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MapFilterReduce.html">17.3. Map Filter and Reduce</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">17.4. IPython Parallel Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Closures.html">17.5. Closures and Function Currying</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/lambda_magic.html">17.6. lambda and keyword Magic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/trapezoid.html">17.7. Trapezoidal Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IPython Parallel Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/lambda_magic.html">lambda and keyword Magic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/trapezoid.html">Trapezoidal Rule</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
@@ -116,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,11 +157,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">17. </span>Introduction to Functional Programming</a> &raquo;</li>
         
-      <li><span class="section-number">17.4. </span>IPython Parallel Quickstart</li>
+      <li>IPython Parallel Quickstart</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,10 +177,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="Closures.html" class="btn btn-neutral float-right" title="17.5. Closures and Function Currying" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Closures.html" class="btn btn-neutral float-right" title="Closures and Function Currying" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="MapFilterReduce.html" class="btn btn-neutral float-left" title="17.3. Map Filter and Reduce" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="MapFilterReduce.html" class="btn btn-neutral float-left" title="Map Filter and Reduce" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -187,7 +190,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ipython-parallel-quickstart">
-<span id="ipyparallel-quickstart"></span><h1><span class="section-number">17.4. </span>IPython Parallel Quickstart<a class="headerlink" href="#ipython-parallel-quickstart" title="Permalink to this headline">¶</a></h1>
+<span id="ipyparallel-quickstart"></span><h1>IPython Parallel Quickstart<a class="headerlink" href="#ipython-parallel-quickstart" title="Permalink to this headline">¶</a></h1>
 <p>Aside from its <a class="reference external" href="https://ipyparallel.readthedocs.io/en/latest/">official documentation</a> the following steps will get you quickly started with IPython Parallel.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install ipyparallel
 </pre></div>
@@ -218,10 +221,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Closures.html" class="btn btn-neutral float-right" title="17.5. Closures and Function Currying" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Closures.html" class="btn btn-neutral float-right" title="Closures and Function Currying" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="MapFilterReduce.html" class="btn btn-neutral float-left" title="17.3. Map Filter and Reduce" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="MapFilterReduce.html" class="btn btn-neutral float-left" title="Map Filter and Reduce" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -230,11 +233,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -245,7 +256,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

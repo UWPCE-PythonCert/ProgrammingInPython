@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.1. Properties &mdash; Programming in Python 7.0 documentation</title>
+  <title>Properties &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,13 +35,9 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14.2. Static and Class Methods" href="StaticAndClassMethods.html" />
+    <link rel="next" title="Static and Class Methods" href="StaticAndClassMethods.html" />
     <link rel="prev" title="14. Properties and Magic Methods" href="../topics/14-magic_methods/index.html" /> 
 </head>
 
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -97,11 +99,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.1. Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="StaticAndClassMethods.html">14.2. Static and Class Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SpecialMethodsAndProtocols.html">14.3. Special Methods &amp; Protocols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/circle/circle_class.html">14.4. Circle Class Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/sparse_array.html">14.5.1. Sparse Array Exercise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StaticAndClassMethods.html">Static and Class Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/circle/circle_class.html">Circle Class Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/sparse_array.html">Sparse Array Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
@@ -114,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -152,11 +155,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/14-magic_methods/index.html"><span class="section-number">14. </span>Properties and Magic Methods</a> &raquo;</li>
         
-      <li><span class="section-number">14.1. </span>Properties</li>
+      <li>Properties</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,7 +175,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="StaticAndClassMethods.html" class="btn btn-neutral float-right" title="14.2. Static and Class Methods" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="StaticAndClassMethods.html" class="btn btn-neutral float-right" title="Static and Class Methods" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../topics/14-magic_methods/index.html" class="btn btn-neutral float-left" title="14. Properties and Magic Methods" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -185,10 +188,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="properties">
-<span id="id1"></span><h1><span class="section-number">14.1. </span>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Property_%28programming%29#Python">https://en.wikipedia.org/wiki/Property_%28programming%29#Python</a></p>
 <div class="section" id="attributes-are-clear-and-concise">
-<h2><span class="section-number">14.1.1. </span>Attributes are clear and concise<a class="headerlink" href="#attributes-are-clear-and-concise" title="Permalink to this headline">¶</a></h2>
+<h2>Attributes are clear and concise<a class="headerlink" href="#attributes-are-clear-and-concise" title="Permalink to this headline">¶</a></h2>
 <div class="docutils container">
 <p>One of the strengths of Python is lack of clutter.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
@@ -206,7 +209,7 @@
 <p>And we want to maintain this clarity as we develop our programs.</p>
 </div>
 <div class="section" id="getter-and-setters">
-<h2><span class="section-number">14.1.2. </span>Getter and Setters<a class="headerlink" href="#getter-and-setters" title="Permalink to this headline">¶</a></h2>
+<h2>Getter and Setters<a class="headerlink" href="#getter-and-setters" title="Permalink to this headline">¶</a></h2>
 <p>But what if you need to add behavior later?</p>
 <ul class="simple">
 <li><p>do some calculation</p></li>
@@ -232,7 +235,7 @@
 <p>This is verbose – <a class="reference external" href="http://dirtsimple.org/2004/12/python-is-not-java.html">Java</a>?</p>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">14.1.3. </span>Properties<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Properties<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
 <span class="gp">   ....: </span>    <span class="n">_x</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="gp">   ....: </span>    <span class="nd">@property</span>
@@ -250,7 +253,7 @@
 <p>Now the interface is like simple attribute access!</p>
 </div>
 <div class="section" id="decorators">
-<h2><span class="section-number">14.1.4. </span>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h2>
+<h2>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h2>
 <p>What’s up with the “&#64;” symbols?</p>
 <p>Those are “decorations”. It is a syntax for wrapping functions up with something special.</p>
 <p>We will cover decorators in detail in another part of the program, but for now just copy the syntax.</p>
@@ -266,7 +269,7 @@
 <p>means: make the “setter” of the ‘x’ property this new function.</p>
 </div>
 <div class="section" id="read-only-attributes">
-<h2><span class="section-number">14.1.5. </span>Read Only Attributes<a class="headerlink" href="#read-only-attributes" title="Permalink to this headline">¶</a></h2>
+<h2>Read Only Attributes<a class="headerlink" href="#read-only-attributes" title="Permalink to this headline">¶</a></h2>
 <p>You do not need to define a setter. If you don’t, you get a “read only” attribute:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="k">class</span> <span class="nc">D</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
@@ -289,7 +292,7 @@
 </div>
 </div>
 <div class="section" id="deleters">
-<h2><span class="section-number">14.1.6. </span>Deleters<a class="headerlink" href="#deleters" title="Permalink to this headline">¶</a></h2>
+<h2>Deleters<a class="headerlink" href="#deleters" title="Permalink to this headline">¶</a></h2>
 <p>If you want to do something special when a property is deleted, you can define a deleter as well:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="k">class</span> <span class="nc">D</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
@@ -317,7 +320,7 @@ what you want.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="StaticAndClassMethods.html" class="btn btn-neutral float-right" title="14.2. Static and Class Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="StaticAndClassMethods.html" class="btn btn-neutral float-right" title="Static and Class Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../topics/14-magic_methods/index.html" class="btn btn-neutral float-left" title="14. Properties and Magic Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -329,11 +332,19 @@ what you want.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -344,7 +355,6 @@ what you want.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

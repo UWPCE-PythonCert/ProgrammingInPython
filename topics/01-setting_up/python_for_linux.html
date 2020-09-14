@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.3.3. Setting Up Linux for Python &mdash; Programming in Python 7.0 documentation</title>
+  <title>Setting Up Linux for Python &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.3.4. Setting up Python via a Linux VM" href="vagrant.html" />
-    <link rel="prev" title="1.3.2. Setting up Windows for Python" href="python_for_windows.html" /> 
+    <link rel="next" title="Setting up Python via a Linux VM" href="vagrant.html" />
+    <link rel="prev" title="Setting up Windows for Python" href="python_for_windows.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,16 @@
               <p class="caption"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">1.1. Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">1.5. Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,13 +156,13 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-          <li><a href="setup_details.html"><span class="section-number">1.3. </span>Setup Details</a> &raquo;</li>
+          <li><a href="setup_details.html">Setup Details</a> &raquo;</li>
         
-      <li><span class="section-number">1.3.3. </span>Setting Up Linux for Python</li>
+      <li>Setting Up Linux for Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,10 +178,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="vagrant.html" class="btn btn-neutral float-right" title="1.3.4. Setting up Python via a Linux VM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vagrant.html" class="btn btn-neutral float-right" title="Setting up Python via a Linux VM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="python_for_windows.html" class="btn btn-neutral float-left" title="1.3.2. Setting up Windows for Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python_for_windows.html" class="btn btn-neutral float-left" title="Setting up Windows for Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -188,11 +191,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="setting-up-linux-for-python">
-<span id="python-for-linux"></span><h1><span class="section-number">1.3.3. </span>Setting Up Linux for Python<a class="headerlink" href="#setting-up-linux-for-python" title="Permalink to this headline">¶</a></h1>
+<span id="python-for-linux"></span><h1>Setting Up Linux for Python<a class="headerlink" href="#setting-up-linux-for-python" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="debian-and-related-distros-ubuntu-linux-mint">
-<h2><span class="section-number">1.3.3.1. </span>Debian and Related Distros (Ubuntu, Linux Mint)<a class="headerlink" href="#debian-and-related-distros-ubuntu-linux-mint" title="Permalink to this headline">¶</a></h2>
+<h2>Debian and Related Distros (Ubuntu, Linux Mint)<a class="headerlink" href="#debian-and-related-distros-ubuntu-linux-mint" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="python">
-<h3><span class="section-number">1.3.3.1.1. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>For this program, you need Python3.6.* or 3.7.*</p>
 <p>Debian distros already have the stable python2 and python3 releases preinstalled (<a class="reference external" href="https://wiki.debian.org/Python">Debian Wiki</a>).</p>
 <p>Try the following command:</p>
@@ -243,11 +246,11 @@ $ sudo apt-get install python3.7
 <p>(If you cant find 3.7, try 3.6 instead)</p>
 </div>
 <div class="section" id="terminal">
-<h3><span class="section-number">1.3.3.1.2. </span>Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
+<h3>Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
 <p>Every Linux box has a terminal emulator – find and use it.</p>
 </div>
 <div class="section" id="pip">
-<h3><span class="section-number">1.3.3.1.3. </span>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
+<h3>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span></code> is the Python package installer.</p>
 <p>Many Python packages are also available directly from your distro – but you’ll get the latest and greatest if you use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install it instead.</p>
 <p>To get pip, the first option is to use your system package manager, something like:</p>
@@ -267,7 +270,7 @@ $ python3 -m ensurepip --upgrade
 </div>
 </div>
 <div class="section" id="using-pip">
-<h3><span class="section-number">1.3.3.1.4. </span>Using pip:<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
+<h3>Using pip:<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
 <p>To use pip to install a package, you invoke it with this command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">the_name_of_the_package</span>
 </pre></div>
@@ -284,7 +287,7 @@ $ python3 -m ensurepip --upgrade
 <p>calls Python, and tells it to run the <code class="docutils literal notranslate"><span class="pre">pip</span></code> module. It is exactly the same as calling pip directly, except that you are assured that you are getting the version of pip connected the version of python that you are running (in this case python3).</p>
 </div>
 <div class="section" id="ipython">
-<h3><span class="section-number">1.3.3.1.5. </span>iPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h3>
+<h3>iPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h3>
 <p>One extra package we are going to use in class is <code class="docutils literal notranslate"><span class="pre">iPython</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo python3 -m pip install ipython
 </pre></div>
@@ -303,13 +306,13 @@ object?   -&gt; Details about &#39;object&#39;, use &#39;object??&#39; for extra
 </div>
 </div>
 <div class="section" id="git">
-<h3><span class="section-number">1.3.3.1.6. </span>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
 <p>Git is likely to be there on your system already, but if not:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install git
 </pre></div>
 </div>
 <div class="section" id="fedora-and-red-hat-related-distros-centos">
-<h4><span class="section-number">1.3.3.1.6.1. </span>Fedora and Red Hat Related Distros (CentOS)<a class="headerlink" href="#fedora-and-red-hat-related-distros-centos" title="Permalink to this headline">¶</a></h4>
+<h4>Fedora and Red Hat Related Distros (CentOS)<a class="headerlink" href="#fedora-and-red-hat-related-distros-centos" title="Permalink to this headline">¶</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>CentOS is probably the most popular distro of these related flavors. However, getting Python3 on it can be a pain. You have been warned! (but there are lots of tutorials on the web – google “install python3 on CentOS”)</p>
@@ -317,7 +320,7 @@ object?   -&gt; Details about &#39;object&#39;, use &#39;object??&#39; for extra
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">1.3.3.1.7. </span>Python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Fedora distros already have the stable python2 and python3 releases preinstalled <a class="reference external" href="FedoraWiki">[2]</a>. However, CentOS, the most popular distro only has the stable python2 release. Try the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>centos@ip-172-31-21-5 ~<span class="o">]</span>$ python2
 Python <span class="m">2</span>.7.5 <span class="o">(</span>default, Jun <span class="m">17</span> <span class="m">2014</span>, <span class="m">18</span>:11:42<span class="o">)</span>
@@ -350,18 +353,18 @@ $ sudo yum install rh-python35
 </div>
 </div>
 <div class="section" id="id3">
-<h3><span class="section-number">1.3.3.1.8. </span>Terminal<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>Terminal<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Every Linux box has a terminal emulator – find and use it.</p>
 </div>
 <div class="section" id="id4">
-<h3><span class="section-number">1.3.3.1.9. </span>git<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>git<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Git is likely to be there on your system already, but if not:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo yum install git
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
-<h3><span class="section-number">1.3.3.1.10. </span>pip<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>pip<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span></code> is the Python package installer.</p>
 <p>Many Python packages are also available directly from your distro – but you’ll get the latest and greatest if you use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install it instead.</p>
 <p>In CentOS, if you used the above technique to install Python3, then it comes with pip. Try:</p>
@@ -371,7 +374,7 @@ pip <span class="m">8</span>.1.2 from /opt/rh/rh-python35/root/usr/lib/python3.5
 </div>
 </div>
 <div class="section" id="id6">
-<h3><span class="section-number">1.3.3.1.11. </span>Using pip:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>Using pip:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>To use pip to install a package, you invoke it with this command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">the_name_of_the_package</span>
 </pre></div>
@@ -388,7 +391,7 @@ pip <span class="m">8</span>.1.2 from /opt/rh/rh-python35/root/usr/lib/python3.5
 <p>calls Python, and tells it to run the <code class="docutils literal notranslate"><span class="pre">pip</span></code> module. It is exactly the same as calling pip directly, except that you are assured that you are getting the version of pip connected the version of python that you are running.</p>
 </div>
 <div class="section" id="id7">
-<h3><span class="section-number">1.3.3.1.12. </span>iPython<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>iPython<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>One we are going to use in class is <code class="docutils literal notranslate"><span class="pre">iPython</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo pip install ipython[all]
 </pre></div>
@@ -408,14 +411,14 @@ pip <span class="m">8</span>.1.2 from /opt/rh/rh-python35/root/usr/lib/python3.5
 </div>
 </div>
 <div class="section" id="footnotes">
-<h2><span class="section-number">1.3.3.2. </span>Footnotes:<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<h2>Footnotes:<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">1.3.3.3. </span>Debian Wiki<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2>Debian Wiki<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://wiki.debian.org/Python">https://wiki.debian.org/Python</a></p>
 </div>
 <div class="section" id="fedora-wiki">
-<h2><span class="section-number">1.3.3.4. </span>Fedora Wiki<a class="headerlink" href="#fedora-wiki" title="Permalink to this headline">¶</a></h2>
+<h2>Fedora Wiki<a class="headerlink" href="#fedora-wiki" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://fedoraproject.org/wiki/Packaging:Python">https://fedoraproject.org/wiki/Packaging:Python</a></p>
 </div>
 </div>
@@ -428,10 +431,10 @@ pip <span class="m">8</span>.1.2 from /opt/rh/rh-python35/root/usr/lib/python3.5
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vagrant.html" class="btn btn-neutral float-right" title="1.3.4. Setting up Python via a Linux VM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vagrant.html" class="btn btn-neutral float-right" title="Setting up Python via a Linux VM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="python_for_windows.html" class="btn btn-neutral float-left" title="1.3.2. Setting up Windows for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python_for_windows.html" class="btn btn-neutral float-left" title="Setting up Windows for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -440,11 +443,19 @@ pip <span class="m">8</span>.1.2 from /opt/rh/rh-python35/root/usr/lib/python3.5
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -455,7 +466,6 @@ pip <span class="m">8</span>.1.2 from /opt/rh/rh-python35/root/usr/lib/python3.5
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

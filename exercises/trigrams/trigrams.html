@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.5. Trigrams – Simple Text Manipulation &mdash; Programming in Python 7.0 documentation</title>
+  <title>Trigrams – Simple Text Manipulation &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="10. Modules and Packages" href="../../topics/10-modules_packages/index.html" />
-    <link rel="prev" title="9.4. Mailroom With Files" href="../mailroom/mailroom_with_files.html" /> 
+    <link rel="prev" title="Mailroom With Files" href="../mailroom/mailroom_with_files.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,11 +94,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Files.html">9.1. File Reading and Writing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../file_processing/file_lab.html">9.2. File Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../file_processing/file_processing.html">9.3. File Processing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom_with_files.html">9.4. Mailroom With Files</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.5. Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file_processing/file_lab.html">File Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file_processing/file_processing.html">File Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Trigrams – Simple Text Manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
@@ -114,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -152,11 +155,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/09-files/index.html"><span class="section-number">9. </span>File Handling</a> &raquo;</li>
         
-      <li><span class="section-number">9.5. </span>Trigrams – Simple Text Manipulation</li>
+      <li>Trigrams – Simple Text Manipulation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,7 +178,7 @@
         <a href="../../topics/10-modules_packages/index.html" class="btn btn-neutral float-right" title="10. Modules and Packages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="9.4. Mailroom With Files" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="Mailroom With Files" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -185,16 +188,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="trigrams-simple-text-manipulation">
-<span id="exercise-trigrams"></span><h1><span class="section-number">9.5. </span>Trigrams – Simple Text Manipulation<a class="headerlink" href="#trigrams-simple-text-manipulation" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-trigrams"></span><h1>Trigrams – Simple Text Manipulation<a class="headerlink" href="#trigrams-simple-text-manipulation" title="Permalink to this headline">¶</a></h1>
 <p class="rubric">Kata Fourteen: Tom Swift Under the Milk Wood</p>
 <p>Adapted from Dave Thomas’s work:</p>
 <p><a class="reference external" href="http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/">http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/</a></p>
 <div class="section" id="trigrams">
-<h2><span class="section-number">9.5.1. </span>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">¶</a></h2>
+<h2>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">¶</a></h2>
 <p>Trigrams can be used to mutate text into new, surreal, forms. But what
 heuristics do we apply to get a reasonable result?</p>
 <div class="section" id="the-problem">
-<h3><span class="section-number">9.5.1.1. </span>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h3>
+<h3>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h3>
 <p>As a boy, one of my treats was go to the shops on a Saturday and spend part
 of my allowance on books; for a nine-year old, I had quite a collection of books from the
 Tom Swift and Hardy Boys series. Wouldn’t it be great to be able to create
@@ -280,7 +283,7 @@ newline).</p>
 <p><a class="reference download internal" download="" href="../../_downloads/b0a0849e9868025eae97a36708407c70/sherlock_small.txt"><code class="xref download docutils literal notranslate"><span class="pre">sherlock_small.txt</span></code></a>.</p>
 </div>
 <div class="section" id="objectives">
-<h3><span class="section-number">9.5.1.2. </span>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
 <p>Katas are about trying something many times. In this one, what
 we’re experimenting with is not just the code, but the heuristics of
 processing the text. What do we do with punctuation? Paragraphs? Do we have
@@ -290,15 +293,15 @@ dead end?</p>
 </div>
 </div>
 <div class="section" id="developing-your-solution">
-<h2><span class="section-number">9.5.2. </span>Developing Your Solution<a class="headerlink" href="#developing-your-solution" title="Permalink to this headline">¶</a></h2>
+<h2>Developing Your Solution<a class="headerlink" href="#developing-your-solution" title="Permalink to this headline">¶</a></h2>
 <p>This assignment has two parts: the key one is the trigrams exercise itself, but you also need to do some text processing to get a full book in shape for the building the trigrams.</p>
 <p>I suggest you write the trigrams part first; it’s more interesting :-)</p>
 <div class="section" id="test-driven-development">
-<h3><span class="section-number">9.5.2.1. </span>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h3>
+<h3>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h3>
 <p>You’ve recently learned about unit testing and Test Driven Development (TDD). Let’s put that to work on this exercise. Remember that the key to TDD is that you first decide on what you need a piece of your code to do, then you write a test to check that it does that, and only then do you write the actual code itself.</p>
 <p>Because you’re new to this, we’re going to give you some tests to get you started. You’ll find them in: <a class="reference download internal" download="" href="../../_downloads/dca7a114a50f893b75615fe55f00435b/test_trigrams.py"><code class="xref download docutils literal notranslate"><span class="pre">test_trigrams.py</span></code></a>, which should be with this assignment.</p>
 <div class="section" id="running-the-tests">
-<h4><span class="section-number">9.5.2.1.1. </span>Running the Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h4>
+<h4>Running the Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h4>
 <p>To run the tests, use the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> test runner: set your working directory the dir with the test file, and run the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">pytest</span>
 <span class="o">=======================</span> <span class="nb">test</span> session <span class="nv">starts</span> <span class="o">=======================</span>
@@ -337,10 +340,10 @@ FAILED test_trigrams.py::test_make_sentence - AttributeError: modul...
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">9.5.2.2. </span>trigrams<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>trigrams<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Key to the trigrams problem is the selection of the data structure to use to hold the “trigrams” themselves. What do we need here?</p>
 <div class="section" id="the-text">
-<h4><span class="section-number">9.5.2.2.1. </span>The text<a class="headerlink" href="#the-text" title="Permalink to this headline">¶</a></h4>
+<h4>The text<a class="headerlink" href="#the-text" title="Permalink to this headline">¶</a></h4>
 <p>First, you’ll want a bit of text to try your code out on. Why not try the example here:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">wish</span> <span class="n">I</span> <span class="n">may</span> <span class="n">I</span> <span class="n">wish</span> <span class="n">I</span> <span class="n">might</span>
 </pre></div>
@@ -361,7 +364,7 @@ FAILED test_trigrams.py::test_make_sentence - AttributeError: modul...
 </div>
 </div>
 <div class="section" id="the-trigrams-structure">
-<h3><span class="section-number">9.5.2.3. </span>The trigrams structure<a class="headerlink" href="#the-trigrams-structure" title="Permalink to this headline">¶</a></h3>
+<h3>The trigrams structure<a class="headerlink" href="#the-trigrams-structure" title="Permalink to this headline">¶</a></h3>
 <p>Now we need to think a bit about what we want the trigrams structure to be.</p>
 <p>From above, we know that we need to build up something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I wish&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span>
@@ -394,7 +397,7 @@ FAILED test_trigrams.py::test_make_sentence - AttributeError: modul...
 </div>
 <p>I like the version that uses tuples better, but either one will work. The test code is designed to check for word pairs in tuples. If you want to write your code using space separated strings, you can modify the tests.</p>
 <div class="section" id="building-the-trigrams-dict">
-<h4><span class="section-number">9.5.2.3.1. </span>Building the Trigrams dict<a class="headerlink" href="#building-the-trigrams-dict" title="Permalink to this headline">¶</a></h4>
+<h4>Building the Trigrams dict<a class="headerlink" href="#building-the-trigrams-dict" title="Permalink to this headline">¶</a></h4>
 <p>So you’ve got a list of words, and you need to build up a dict like one of the above.</p>
 <p>It’s time to create a python file and start writing some code!</p>
 <p>Put this in your <code class="docutils literal notranslate"><span class="pre">trigrams.py</span></code> file</p>
@@ -507,7 +510,7 @@ So contrary to the usual practice, an index can be helpful here:</p>
 <p>Try it out on a longer bit of text (your choice) before you go any further. If it doesn’t work correctly, make sure to write a test that catches the problem before you fix it!</p>
 </div>
 <div class="section" id="using-the-trigrams-dict">
-<h4><span class="section-number">9.5.2.3.2. </span>Using the Trigrams dict<a class="headerlink" href="#using-the-trigrams-dict" title="Permalink to this headline">¶</a></h4>
+<h4>Using the Trigrams dict<a class="headerlink" href="#using-the-trigrams-dict" title="Permalink to this headline">¶</a></h4>
 <p>This is the fun part. Once you have a mapping of word pairs to following words, you can build up some new “fake” text. Re-read the previous sections again to remind yourself of the procedure. Here are a couple of additional hints and questions to consider:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module: <a class="reference external" href="https://docs.python.org/3/library/random.html#module-random">https://docs.python.org/3/library/random.html#module-random</a> is your friend here:</p></li>
@@ -594,7 +597,7 @@ so you’ll need a data structure to build it up in.  You probably want to build
 <p>Note that there are a number of options here as to what to do – but make sure it returns <em>something</em>.</p>
 </div>
 <div class="section" id="putting-it-together">
-<h4><span class="section-number">9.5.2.3.3. </span>Putting it Together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">¶</a></h4>
+<h4>Putting it Together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">¶</a></h4>
 <p>You now have the pieces you need to make some new text. Let’s write a function that will make a single sentence a specified number of words long. The first word should be capitalized, and it should end with a period. Here is the test for that function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_make_sentence</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -630,7 +633,7 @@ so you’ll need a data structure to build it up in.  You probably want to build
 </div>
 </div>
 <div class="section" id="processing-the-input-text">
-<h3><span class="section-number">9.5.2.4. </span>Processing the Input Text<a class="headerlink" href="#processing-the-input-text" title="Permalink to this headline">¶</a></h3>
+<h3>Processing the Input Text<a class="headerlink" href="#processing-the-input-text" title="Permalink to this headline">¶</a></h3>
 <p>If you get a book from Project Gutenberg (or anywhere else), it will not be “clean.” That is, it will have header information, footer information, chapter headings, punctuation, what have you. So you’ll need to clean it up somehow to get a simple list of words to use to build your trigrams.</p>
 <p>The first part of the process is pretty straightforward; open the file and loop through the lines of text and process them.</p>
 <p>You may want to skip the header. How would you do that??</p>
@@ -660,7 +663,7 @@ so you’ll need a data structure to build it up in.  You probably want to build
 <p>Do get the full trigrams code working first, then play with some of the fancier options.</p>
 </div>
 <div class="section" id="code-structure">
-<h3><span class="section-number">9.5.2.5. </span>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h3>
+<h3>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h3>
 <p>You will have found that following TDD forces you to break your code down into a handful of separate functions, each of which does only one thing. This lets you test each function on its own, and it’s easier to refactor one part without messing with the others. Then you can put them all together into a simple program.</p>
 <p>For instance, your <code class="docutils literal notranslate"><span class="pre">__main__</span></code> block might look something like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -695,7 +698,7 @@ so you’ll need a data structure to build it up in.  You probably want to build
         <a href="../../topics/10-modules_packages/index.html" class="btn btn-neutral float-right" title="10. Modules and Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="9.4. Mailroom With Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="Mailroom With Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -704,11 +707,19 @@ so you’ll need a data structure to build it up in.  You probably want to build
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -719,7 +730,6 @@ so you’ll need a data structure to build it up in.  You probably want to build
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

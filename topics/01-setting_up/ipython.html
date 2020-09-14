@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.4.2.2. iPython Interpreter &mdash; Programming in Python 7.0 documentation</title>
+  <title>iPython Interpreter &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.4.2.3. Using Windows Bash for Python Development" href="windows_bash.html" />
-    <link rel="prev" title="1.4.2.1. Shell Customizations for Python Development" href="shell.html" /> 
+    <link rel="next" title="Using Windows Bash for Python Development" href="windows_bash.html" />
+    <link rel="prev" title="Shell Customizations for Python Development" href="shell.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,16 @@
               <p class="caption"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">1.1. Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">1.5. Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,13 +156,13 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-          <li><a href="advanced_setup.html"><span class="section-number">1.4. </span>Advanced Setup</a> &raquo;</li>
+          <li><a href="advanced_setup.html">Advanced Setup</a> &raquo;</li>
         
-      <li><span class="section-number">1.4.2.2. </span>iPython Interpreter</li>
+      <li>iPython Interpreter</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,10 +178,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="windows_bash.html" class="btn btn-neutral float-right" title="1.4.2.3. Using Windows Bash for Python Development" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="windows_bash.html" class="btn btn-neutral float-right" title="Using Windows Bash for Python Development" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="shell.html" class="btn btn-neutral float-left" title="1.4.2.1. Shell Customizations for Python Development" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="shell.html" class="btn btn-neutral float-left" title="Shell Customizations for Python Development" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -188,10 +191,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ipython-interpreter">
-<span id="ipython-resources"></span><h1><span class="section-number">1.4.2.2. </span>iPython Interpreter<a class="headerlink" href="#ipython-interpreter" title="Permalink to this headline">¶</a></h1>
+<span id="ipython-resources"></span><h1>iPython Interpreter<a class="headerlink" href="#ipython-interpreter" title="Permalink to this headline">¶</a></h1>
 <p>iPython is an enhanced interpreter that makes interactive experimentation at the command line much more pleasant and powerful.</p>
 <div class="section" id="the-very-basics-of-ipython">
-<h2><span class="section-number">1.4.2.2.1. </span>The very basics of IPython<a class="headerlink" href="#the-very-basics-of-ipython" title="Permalink to this headline">¶</a></h2>
+<h2>The very basics of IPython<a class="headerlink" href="#the-very-basics-of-ipython" title="Permalink to this headline">¶</a></h2>
 <p>IPython can do a lot for you, but for starters, here are the key pieces
 you’ll want to know:</p>
 <p>Start it up</p>
@@ -251,7 +254,7 @@ object?   -&gt; Details about <span class="s1">&#39;object&#39;</span>, use <spa
 <p>That’s it – you can get a lot done with those.</p>
 </div>
 <div class="section" id="ipython-references">
-<h2><span class="section-number">1.4.2.2.2. </span>iPython references<a class="headerlink" href="#ipython-references" title="Permalink to this headline">¶</a></h2>
+<h2>iPython references<a class="headerlink" href="#ipython-references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>The iPython tutorial</strong></dt><dd><p>(<a class="reference external" href="http://ipython.readthedocs.io/en/stable/interactive/tutorial.html">http://ipython.readthedocs.io/en/stable/interactive/tutorial.html</a>)</p>
@@ -282,10 +285,10 @@ Use this to learn more about iPython’s amazing capabilities.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="windows_bash.html" class="btn btn-neutral float-right" title="1.4.2.3. Using Windows Bash for Python Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="windows_bash.html" class="btn btn-neutral float-right" title="Using Windows Bash for Python Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="shell.html" class="btn btn-neutral float-left" title="1.4.2.1. Shell Customizations for Python Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="shell.html" class="btn btn-neutral float-left" title="Shell Customizations for Python Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -294,11 +297,19 @@ Use this to learn more about iPython’s amazing capabilities.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -309,7 +320,6 @@ Use this to learn more about iPython’s amazing capabilities.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

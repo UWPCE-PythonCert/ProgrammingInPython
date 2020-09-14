@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>19.7. Mailroom – Decoratoring it &mdash; Programming in Python 7.0 documentation</title>
+  <title>Mailroom – Decoratoring it &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="19.8. Context Managers" href="../../modules/ContextManagers.html" />
-    <link rel="prev" title="19.6. Decorators" href="../../modules/Decorators.html" /> 
+    <link rel="next" title="Context Managers" href="../../modules/ContextManagers.html" />
+    <link rel="prev" title="Decorators" href="../../modules/Decorators.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -102,27 +104,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Pep8.html">19.1. Coding Style and Linting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/CodeReviews.html">19.2. Code Reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Unicode.html">19.4. Unicode in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Decorators.html">19.6. Decorators</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">19.7. Mailroom – Decoratoring it</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/ContextManagers.html">19.8. Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/MetaProgramming.html">19.10. Metaprogramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Logging.html">19.12. Logging and the logging module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Debugging.html">19.13. Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/NoSQL.html">19.14. No SQL Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/GraphDatabases.html">19.15. Graph Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Concurrency.html">19.16. Concurrent Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Async.html">19.17. Asychronous Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Coroutines.html">19.18. Notes on Coroutines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Profiling.html">19.21. Performance and Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Decorators.html">Decorators</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Async.html">Asychronous Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../threaded_downloader.html">Threaded Web Scraper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Profiling.html">Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -130,6 +132,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -168,11 +171,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">19.7. </span>Mailroom – Decoratoring it</li>
+      <li>Mailroom – Decoratoring it</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,10 +191,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/ContextManagers.html" class="btn btn-neutral float-right" title="19.8. Context Managers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/ContextManagers.html" class="btn btn-neutral float-right" title="Context Managers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Decorators.html" class="btn btn-neutral float-left" title="19.6. Decorators" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Decorators.html" class="btn btn-neutral float-left" title="Decorators" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -201,10 +204,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mailroom-decoratoring-it">
-<span id="exercise-mailroom-decorator"></span><h1><span class="section-number">19.7. </span>Mailroom – Decoratoring it<a class="headerlink" href="#mailroom-decoratoring-it" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-decorator"></span><h1>Mailroom – Decoratoring it<a class="headerlink" href="#mailroom-decoratoring-it" title="Permalink to this headline">¶</a></h1>
 <p>We want to know who is making changes to our database, so make a decorator that will ask for a user’s name, before making any changes to our donor list. If you want to get really fancy, figure out how to cache the answer, so you don’t have to ask more than once per session.</p>
 <div class="section" id="the-goal">
-<h2><span class="section-number">19.7.1. </span>The Goal<a class="headerlink" href="#the-goal" title="Permalink to this headline">¶</a></h2>
+<h2>The Goal<a class="headerlink" href="#the-goal" title="Permalink to this headline">¶</a></h2>
 <p>Think about which methods will affect the database. Will sending a letter add a user? (Should it? Maybe this is a good time for refactoring.) These are the methods that should get decorated. The decorator should get the user’s name. Eventually, we will want to store this permanently, but that is for a different day. However, you might want to figure out how to store it temporarily, so you don’t repeatedly ask the same user for their name. This could be done on a timeout basis, or you could assume that the user only changes when the interface is instantiated.</p>
 </div>
 </div>
@@ -217,10 +220,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/ContextManagers.html" class="btn btn-neutral float-right" title="19.8. Context Managers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/ContextManagers.html" class="btn btn-neutral float-right" title="Context Managers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Decorators.html" class="btn btn-neutral float-left" title="19.6. Decorators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Decorators.html" class="btn btn-neutral float-left" title="Decorators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -229,11 +232,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -244,7 +255,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

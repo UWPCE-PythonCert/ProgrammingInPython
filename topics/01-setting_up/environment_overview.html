@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.1. Introduction to your Programming Environment &mdash; Programming in Python 7.0 documentation</title>
+  <title>Introduction to your Programming Environment &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,13 +35,9 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.2. Installing Python and core tools" href="python_and_core_tools.html" />
+    <link rel="next" title="Installing Python and core tools" href="python_and_core_tools.html" />
     <link rel="prev" title="1. Setting up your Environment" href="index.html" /> 
 </head>
 
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,16 @@
               <p class="caption"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">1.5. Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to your Programming Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,11 +156,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-      <li><span class="section-number">1.1. </span>Introduction to your Programming Environment</li>
+      <li>Introduction to your Programming Environment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,7 +176,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="python_and_core_tools.html" class="btn btn-neutral float-right" title="1.2. Installing Python and core tools" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python_and_core_tools.html" class="btn btn-neutral float-right" title="Installing Python and core tools" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="1. Setting up your Environment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -186,14 +189,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="introduction-to-your-programming-environment">
-<h1><span class="section-number">1.1. </span>Introduction to your Programming Environment<a class="headerlink" href="#introduction-to-your-programming-environment" title="Permalink to this headline">¶</a></h1>
+<h1>Introduction to your Programming Environment<a class="headerlink" href="#introduction-to-your-programming-environment" title="Permalink to this headline">¶</a></h1>
 <p>This program is a course of instruction in developing with the Python programming language.</p>
 <p>Python is a language with multiple implementations, and many different ways to edit and run code.</p>
 <p>One’s development environment is a personal thing. What is most productive for you depends on what platform you use, how you like to work, what the people you work with are using, etc. It is a very personal choice.</p>
 <p>Each of you starting this program comes with a different background and experience. So we do not require that you use a particular development environment. Indeed, each of the instructors in the program uses their own tools and approach.</p>
 <p>However, there are some core requirements, and we provide advice for what to do if you are just getting started.</p>
 <div class="section" id="core-requirements-for-python-development">
-<h2><span class="section-number">1.1.1. </span>Core Requirements for Python Development<a class="headerlink" href="#core-requirements-for-python-development" title="Permalink to this headline">¶</a></h2>
+<h2>Core Requirements for Python Development<a class="headerlink" href="#core-requirements-for-python-development" title="Permalink to this headline">¶</a></h2>
 <p>There are three basic elements to your environment when working with Python for this class:</p>
 <ul class="simple">
 <li><p>A way to run your code, add packages to Python, use git, etc.</p>
@@ -217,7 +220,7 @@
 <p>and give it a try.</p>
 <p>If you are not sure, then read on …</p>
 <div class="section" id="the-command-line-cli">
-<h3><span class="section-number">1.1.1.1. </span>The Command Line (cli)<a class="headerlink" href="#the-command-line-cli" title="Permalink to this headline">¶</a></h3>
+<h3>The Command Line (cli)<a class="headerlink" href="#the-command-line-cli" title="Permalink to this headline">¶</a></h3>
 <p>Having some facility on the command line is important for a software developer.</p>
 <p>We won’t cover this much in class, so if you are not comfortable,
 please bone up on your own.</p>
@@ -230,16 +233,16 @@ please bone up on your own.</p>
 <p><a class="reference internal" href="windows_bash.html#windows-bash"><span class="std std-ref">Using Windows Bash for Python Development</span></a></p>
 </div>
 <div class="section" id="accessing-the-command-line">
-<h3><span class="section-number">1.1.1.2. </span>Accessing the Command Line<a class="headerlink" href="#accessing-the-command-line" title="Permalink to this headline">¶</a></h3>
+<h3>Accessing the Command Line<a class="headerlink" href="#accessing-the-command-line" title="Permalink to this headline">¶</a></h3>
 <p>On any system, make sure you know how to get to a command line, and set the “working directory” to where your code resides.
 Most modern UIs provide a way to start up a teminal from the file manager:</p>
 <div class="section" id="windows">
-<h4><span class="section-number">1.1.1.2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
 <p>Windows used to provide a “open command window here” options with a <code class="docutils literal notranslate"><span class="pre">shift+right-click</span></code> menu. Give a try; if it works, great. If not, then this might help:</p>
 <p><a class="reference external" href="https://www.windowscentral.com/add-open-command-window-here-back-context-menu-windows-10">Open Command Window Here on Windows 10</a></p>
 </div>
 <div class="section" id="os-x">
-<h4><span class="section-number">1.1.1.2.2. </span>OS-X<a class="headerlink" href="#os-x" title="Permalink to this headline">¶</a></h4>
+<h4>OS-X<a class="headerlink" href="#os-x" title="Permalink to this headline">¶</a></h4>
 <p>On The Mac, you can add a “New Terminal at Folder” right-click menu item by:</p>
 <blockquote>
 <div><p>Head into System Preferences and select Keyboard =&gt; Shortcuts =&gt; Services. Find “New Terminal at Folder” in the settings and click the box. Now, when you’re in Finder, just right-click a folder and you’re shown the open to open Terminal. When you do, it’ll start right in the folder you’re in.</p>
@@ -247,12 +250,12 @@ Most modern UIs provide a way to start up a teminal from the file manager:</p>
 <p><a class="reference external" href="https://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514">Launch an OS-X Terminal Window</a></p>
 </div>
 <div class="section" id="linux">
-<h4><span class="section-number">1.1.1.2.3. </span>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
+<h4>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
 <p>Whether you use the KDE or GNOME Desktop (or anything else), there should be a way to open a shell from the file manager. Find it, it’s very handy.</p>
 </div>
 </div>
 <div class="section" id="the-python-interpreter">
-<h3><span class="section-number">1.1.1.3. </span>The Python Interpreter<a class="headerlink" href="#the-python-interpreter" title="Permalink to this headline">¶</a></h3>
+<h3>The Python Interpreter<a class="headerlink" href="#the-python-interpreter" title="Permalink to this headline">¶</a></h3>
 <p>Python comes with a built-in interpreter.</p>
 <p>You see it when you type <code class="docutils literal notranslate"><span class="pre">python3</span></code> at the command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3
@@ -275,14 +278,14 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 <p>More on that here:</p>
 <p><a class="reference internal" href="../../modules/HowToRunAPythonFile.html#how-to-run-a-python-file"><span class="std std-ref">How to run a python file</span></a></p>
 <div class="section" id="other-interpreters">
-<h4><span class="section-number">1.1.1.3.1. </span>Other interpreters<a class="headerlink" href="#other-interpreters" title="Permalink to this headline">¶</a></h4>
+<h4>Other interpreters<a class="headerlink" href="#other-interpreters" title="Permalink to this headline">¶</a></h4>
 <p>In addition to the built-in interpreter, there are several more advanced
 interpreters available to you.</p>
 <p>We’ll be using one in this course called <code class="docutils literal notranslate"><span class="pre">iPython</span></code> – more on that elsewhere.</p>
 </div>
 </div>
 <div class="section" id="the-editor">
-<h3><span class="section-number">1.1.1.4. </span>The Editor<a class="headerlink" href="#the-editor" title="Permalink to this headline">¶</a></h3>
+<h3>The Editor<a class="headerlink" href="#the-editor" title="Permalink to this headline">¶</a></h3>
 <p>Typing code in an interpreter is great for exploring.</p>
 <p>But for anything “real,” you’ll want to save the work you are doing in a more permanent fashion.</p>
 <p>This is where a “programmer’s text editor” fits in.</p>
@@ -307,19 +310,19 @@ characters hidden behind the scenes.</p>
 <p>Have an editor that does all this? Feel free to use it, and you can skip to the next section.</p>
 <p>If not, we recommend SublimeText or Atom:</p>
 <div class="section" id="sublimetext">
-<h4><span class="section-number">1.1.1.4.1. </span>SublimeText:<a class="headerlink" href="#sublimetext" title="Permalink to this headline">¶</a></h4>
+<h4>SublimeText:<a class="headerlink" href="#sublimetext" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="http://www.sublimetext.com/">Sublime Text</a></p>
 <p><a class="reference internal" href="sublime_as_ide.html#sublime-as-ide"><span class="std std-ref">Turning Sublime Text Into a Lightweight Python IDE</span></a></p>
 </div>
 <div class="section" id="atom">
-<h4><span class="section-number">1.1.1.4.2. </span>Atom<a class="headerlink" href="#atom" title="Permalink to this headline">¶</a></h4>
+<h4>Atom<a class="headerlink" href="#atom" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="https://atom.io/">Atom</a></p>
 <p><a class="reference internal" href="atom_as_ide.html#atom-as-ide"><span class="std std-ref">Turning Atom Into a Lightweight Python IDE</span></a></p>
 <p>And, of course, vim or Emacs on Linux, if you are familiar with those.</p>
 </div>
 </div>
 <div class="section" id="why-no-ide">
-<h3><span class="section-number">1.1.1.5. </span>Why No IDE?<a class="headerlink" href="#why-no-ide" title="Permalink to this headline">¶</a></h3>
+<h3>Why No IDE?<a class="headerlink" href="#why-no-ide" title="Permalink to this headline">¶</a></h3>
 <p>An IDE does not give you much that you can’t get with a good editor plus a good interpreter.</p>
 <p>An IDE often weighs a great deal.</p>
 <p>Setting up IDEs to work with different projects can be challenging and time-consuming.</p>
@@ -330,10 +333,10 @@ characters hidden behind the scenes.</p>
 </div>
 </div>
 <div class="section" id="testing-your-setup">
-<span id="id2"></span><h2><span class="section-number">1.1.2. </span>Testing Your setup<a class="headerlink" href="#testing-your-setup" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Testing Your setup<a class="headerlink" href="#testing-your-setup" title="Permalink to this headline">¶</a></h2>
 <p>If you have access to a command line, and Python installed, and a text editor or IDE ready to go, here’s how you can make sure it’s all working correctly.</p>
 <div class="section" id="python-interpreter">
-<h3><span class="section-number">1.1.2.1. </span>Python Interpreter<a class="headerlink" href="#python-interpreter" title="Permalink to this headline">¶</a></h3>
+<h3>Python Interpreter<a class="headerlink" href="#python-interpreter" title="Permalink to this headline">¶</a></h3>
 <p>If you have Python installed and know how to run a python file, give this a try to make sure you’re all setup:</p>
 <p>Create a file called <code class="docutils literal notranslate"><span class="pre">install_test.py</span></code>, with the following content:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
@@ -370,7 +373,7 @@ You are running python3.6 -- all good!
 <p>And try again.</p>
 </div>
 <div class="section" id="ipython">
-<h3><span class="section-number">1.1.2.2. </span>iPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h3>
+<h3>iPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h3>
 <p>You should also be able to run iPython:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ipython
 Python <span class="m">3</span>.7.0 <span class="o">(</span>v3.7.0:1bf9cc5093, Jun <span class="m">26</span> <span class="m">2018</span>, <span class="m">23</span>:26:24<span class="o">)</span>
@@ -388,7 +391,7 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 <p>If that doesn’t work, go back to the install instructions.</p>
 </div>
 <div class="section" id="git">
-<h3><span class="section-number">1.1.2.3. </span>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
 <p>We will be using the git Source Code Version Control System (along with the gitHub service) to manage your assignments.</p>
 <p>There will be another lesson on getting that all set up for class, but for now, you should have a git client installed. Try:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git --version
@@ -400,7 +403,7 @@ git version <span class="m">2</span>.15.2 <span class="o">(</span>Apple Git-101.
 </div>
 </div>
 <div class="section" id="other-helpful-hints">
-<h2><span class="section-number">1.1.3. </span>Other Helpful Hints<a class="headerlink" href="#other-helpful-hints" title="Permalink to this headline">¶</a></h2>
+<h2>Other Helpful Hints<a class="headerlink" href="#other-helpful-hints" title="Permalink to this headline">¶</a></h2>
 <p>There are a number of other assorted helpful materials here:</p>
 <p><a class="reference internal" href="python_and_core_tools.html#installing-python"><span class="std std-ref">Installing Python and core tools</span></a></p>
 </div>
@@ -414,7 +417,7 @@ git version <span class="m">2</span>.15.2 <span class="o">(</span>Apple Git-101.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="python_and_core_tools.html" class="btn btn-neutral float-right" title="1.2. Installing Python and core tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python_and_core_tools.html" class="btn btn-neutral float-right" title="Installing Python and core tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="1. Setting up your Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -426,11 +429,19 @@ git version <span class="m">2</span>.15.2 <span class="o">(</span>Apple Git-101.
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -441,7 +452,6 @@ git version <span class="m">2</span>.15.2 <span class="o">(</span>Apple Git-101.
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

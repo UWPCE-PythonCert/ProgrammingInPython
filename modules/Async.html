@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>19.17. Asychronous Programming &mdash; Programming in Python 7.0 documentation</title>
+  <title>Asychronous Programming &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="19.18. Notes on Coroutines" href="Coroutines.html" />
-    <link rel="prev" title="19.16. Concurrent Programming" href="Concurrency.html" /> 
+    <link rel="next" title="Notes on Coroutines" href="Coroutines.html" />
+    <link rel="prev" title="Concurrent Programming" href="Concurrency.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -102,27 +104,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Decorators.html">19.6. Decorators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">19.10. Metaprogramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Debugging.html">19.13. Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">19.16. Concurrent Programming</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">19.17. Asychronous Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">19.18. Notes on Coroutines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Profiling.html">19.21. Performance and Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Decorators.html">Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Asychronous Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -130,6 +132,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -168,11 +171,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">19.17. </span>Asychronous Programming</li>
+      <li>Asychronous Programming</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,10 +191,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="Coroutines.html" class="btn btn-neutral float-right" title="19.18. Notes on Coroutines" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Coroutines.html" class="btn btn-neutral float-right" title="Notes on Coroutines" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Concurrency.html" class="btn btn-neutral float-left" title="19.16. Concurrent Programming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Concurrency.html" class="btn btn-neutral float-left" title="Concurrent Programming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -201,10 +204,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="asychronous-programming">
-<span id="async"></span><h1><span class="section-number">19.17. </span>Asychronous Programming<a class="headerlink" href="#asychronous-programming" title="Permalink to this headline">¶</a></h1>
+<span id="async"></span><h1>Asychronous Programming<a class="headerlink" href="#asychronous-programming" title="Permalink to this headline">¶</a></h1>
 <p><strong>Async:</strong> Not knowing what is happening when…</p>
 <div class="section" id="asynchronous-programming">
-<h2><span class="section-number">19.17.1. </span>Asynchronous Programming<a class="headerlink" href="#asynchronous-programming" title="Permalink to this headline">¶</a></h2>
+<h2>Asynchronous Programming<a class="headerlink" href="#asynchronous-programming" title="Permalink to this headline">¶</a></h2>
 <p>Another way to achieve concurrency</p>
 <p>Approaches:</p>
 <ul class="simple">
@@ -213,7 +216,7 @@
 <li><p>Coroutines</p></li>
 </ul>
 <div class="section" id="why-async">
-<h3><span class="section-number">19.17.1.1. </span>Why Async?<a class="headerlink" href="#why-async" title="Permalink to this headline">¶</a></h3>
+<h3>Why Async?<a class="headerlink" href="#why-async" title="Permalink to this headline">¶</a></h3>
 <p>This is a pretty good overview of why you might want to use async:</p>
 <p><a class="reference external" href="https://hackernoon.com/asyncio-for-the-working-python-developer-5c468e6e2e8e#.dlhcuy23h">https://hackernoon.com/asyncio-for-the-working-python-developer-5c468e6e2e8e#.dlhcuy23h</a></p>
 <p>In: “A Web Crawler With asyncio Coroutines”, Guido himself writes:</p>
@@ -222,13 +225,13 @@
 </div></blockquote>
 <p><a class="reference external" href="http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html">http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html</a></p>
 <div class="section" id="my-take">
-<h4><span class="section-number">19.17.1.1.1. </span>My take:<a class="headerlink" href="#my-take" title="Permalink to this headline">¶</a></h4>
+<h4>My take:<a class="headerlink" href="#my-take" title="Permalink to this headline">¶</a></h4>
 <p>Async is the good approach to support many connections that are spending a lot of time waiting, and doing short tasks when they do have something to do.</p>
 <p><strong>NOTE:</strong> the backbone of the web is HTTP – which is a “stateless” protocol. That is, each request is independent (state is “faked” with sessions via cookies). So “classic” web apps are NOT keeping many connections alive, there may be many clients at once, but each request is still independent. And often there is substantial work to be done with each one. A multi-threaded or multi-processes web server works fine for this.</p>
 </div>
 </div>
 <div class="section" id="single-page-apps-and-websockets">
-<h3><span class="section-number">19.17.1.2. </span>Single Page Apps and WebSockets<a class="headerlink" href="#single-page-apps-and-websockets" title="Permalink to this headline">¶</a></h3>
+<h3>Single Page Apps and WebSockets<a class="headerlink" href="#single-page-apps-and-websockets" title="Permalink to this headline">¶</a></h3>
 <p><strong>“Single Page Apps”</strong></p>
 <blockquote>
 <div><p>A single-page application (SPA) is a web application … providing a user experience similar to that of a desktop application. … <em>Interaction with the single page application often involves dynamic communication with the web server behind the scenes.</em></p>
@@ -245,7 +248,7 @@
 <p>Also: often a web service is depending on other web services to do its task. Kind of nice if your web server can do other things while waiting on a third-party service.</p>
 </div>
 <div class="section" id="client-side-http">
-<h3><span class="section-number">19.17.1.3. </span>Client-side HTTP<a class="headerlink" href="#client-side-http" title="Permalink to this headline">¶</a></h3>
+<h3>Client-side HTTP<a class="headerlink" href="#client-side-http" title="Permalink to this headline">¶</a></h3>
 <p>Another nice use for async is client side HTTP:</p>
 <p>When you make an http request, there is often a substantial lag time between making the request and getting the response.</p>
 <p>The server receives the request, and it may have to do a fair bit of processing before it can return something – and it takes time for the response to travel over the wire.</p>
@@ -253,7 +256,7 @@
 <p>With async, the program can do other things while the request is waiting for the server to respond.</p>
 </div>
 <div class="section" id="blocking">
-<h3><span class="section-number">19.17.1.4. </span>Blocking<a class="headerlink" href="#blocking" title="Permalink to this headline">¶</a></h3>
+<h3>Blocking<a class="headerlink" href="#blocking" title="Permalink to this headline">¶</a></h3>
 <p>A “Blocking” call means a function call that does not return until it is complete. That is, an ordinary old function call:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">call_a_func</span><span class="p">()</span>
 </pre></div>
@@ -267,7 +270,7 @@
 <p>Maybe your application needs to be responsive to user input, or you want it to do other work while that function is doing its thing. Especially if it’s mostly just waiting for a response to return. How do you deal with that?</p>
 </div>
 <div class="section" id="event-loops">
-<h3><span class="section-number">19.17.1.5. </span>Event Loops<a class="headerlink" href="#event-loops" title="Permalink to this headline">¶</a></h3>
+<h3>Event Loops<a class="headerlink" href="#event-loops" title="Permalink to this headline">¶</a></h3>
 <p>Asynchronous programming is not new – it is the key component of traditional desktop Graphical User Interface Programs. The GUI version is often referred to as “event-driven” development:</p>
 <p>You write “event handlers” that respond to particular events in the GUI: moving the mouse, clicking on a button, etc.</p>
 <p>The trick is that you don’t know in what order anything might happen – there are multiple GUI objects on the screen at a given time, and users could click on any of them in any order.</p>
@@ -285,7 +288,7 @@
 <p><a class="reference external" href="https://www.blog.pythonlibrary.org/2013/06/27/wxpython-how-to-communicate-with-your-gui-via-sockets/">How To Communicate With Your GUI Via Sockets</a></p>
 </div>
 <div class="section" id="callbacks">
-<h3><span class="section-number">19.17.1.6. </span>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this headline">¶</a></h3>
+<h3>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this headline">¶</a></h3>
 <p>Callbacks are a way to tell a non-blocking function what to do when they are done. This is a common way for systems to handle non-blocking operations. For instance, in Javascript, http requests are non-blocking. The request function call will return right away.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;http://www.google.com&#39;</span><span class="p">,</span>
         <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">){</span>
@@ -308,7 +311,7 @@
 <p>But callbacks are only one way to communicate with the event loop.</p>
 </div>
 <div class="section" id="coroutines">
-<h3><span class="section-number">19.17.1.7. </span>Coroutines<a class="headerlink" href="#coroutines" title="Permalink to this headline">¶</a></h3>
+<h3>Coroutines<a class="headerlink" href="#coroutines" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Coroutines are computer program components that generalize subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. Coroutines are well-suited for implementing more familiar program components such as cooperative tasks, exceptions, event loops, iterators, infinite lists and pipes.</p>
 </div></blockquote>
@@ -323,14 +326,14 @@
 <p>(from: <a class="reference external" href="http://www.dabeaz.com/coroutines/Coroutines.pdf">http://www.dabeaz.com/coroutines/Coroutines.pdf</a> – which is a pretty good talk to read if you want to understand this stuff)</p>
 </div>
 <div class="section" id="async-await">
-<h3><span class="section-number">19.17.1.8. </span><code class="docutils literal notranslate"><span class="pre">async</span></code> / <code class="docutils literal notranslate"><span class="pre">await</span></code><a class="headerlink" href="#async-await" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">async</span></code> / <code class="docutils literal notranslate"><span class="pre">await</span></code><a class="headerlink" href="#async-await" title="Permalink to this headline">¶</a></h3>
 <p>In Python 3.5, the <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> keywords were added to make coroutines “native” and more clear.</p>
 <p><strong>NOTE:</strong> <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> are still pretty new to Python. So if you look for tutorials, blog posts, etc. about asynchronous programming, they mostly either use or refer to the “old” way to do it (Including David Beazley’s talk above). In these notes, I am ONLY talking about the new way. I hope that’s less confusing. But it can be confusing to read older materials.</p>
 <p><strong>NOTE2:</strong> In addition to older documentation, the <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> package in the standard library pre-dates <code class="docutils literal notranslate"><span class="pre">async</span></code> and <code class="docutils literal notranslate"><span class="pre">await</span></code> – so it supports the older style as well as the new style – another source of confusion.
 <a class="reference external" href="https://github.com/python-trio/trio">The Trio project</a> is worth a look for a cleaner API.</p>
 </div>
 <div class="section" id="using-async-await">
-<h3><span class="section-number">19.17.1.9. </span>Using <code class="docutils literal notranslate"><span class="pre">async/await</span></code><a class="headerlink" href="#using-async-await" title="Permalink to this headline">¶</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">async/await</span></code><a class="headerlink" href="#using-async-await" title="Permalink to this headline">¶</a></h3>
 <p>You define a coroutine with the <code class="docutils literal notranslate"><span class="pre">async</span></code> keyword:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">ping_server</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
      <span class="k">pass</span>
@@ -344,7 +347,7 @@
 </pre></div>
 </div>
 <div class="section" id="running-a-coroutine">
-<h4><span class="section-number">19.17.1.9.1. </span>Running a Coroutine<a class="headerlink" href="#running-a-coroutine" title="Permalink to this headline">¶</a></h4>
+<h4>Running a Coroutine<a class="headerlink" href="#running-a-coroutine" title="Permalink to this headline">¶</a></h4>
 <p>So how do you actually <em>run</em> the code in a coroutine?</p>
 <p><strong>await</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">a_coroutine</span></code></p>
@@ -353,7 +356,7 @@
 <p>When you call await on an object, it needs to be an “awaitable” object: an object that defines an <code class="docutils literal notranslate"><span class="pre">__await__()</span></code> method which returns either an iterator which is not a coroutine itself, or a coroutine – which are considered awaitable objects.</p>
 </div>
 <div class="section" id="scheduling-it-to-run">
-<h4><span class="section-number">19.17.1.9.2. </span>Scheduling it to run<a class="headerlink" href="#scheduling-it-to-run" title="Permalink to this headline">¶</a></h4>
+<h4>Scheduling it to run<a class="headerlink" href="#scheduling-it-to-run" title="Permalink to this headline">¶</a></h4>
 <p>Schedule it with</p>
 <p><code class="docutils literal notranslate"><span class="pre">asyncio.ensure_future()</span></code></p>
 <p>or</p>
@@ -361,11 +364,11 @@
 </div>
 </div>
 <div class="section" id="think-of-async-await-as-an-api-for-asynchronous-programming">
-<h3><span class="section-number">19.17.1.10. </span>Think of <code class="docutils literal notranslate"><span class="pre">async/await</span></code> as an API for asynchronous programming<a class="headerlink" href="#think-of-async-await-as-an-api-for-asynchronous-programming" title="Permalink to this headline">¶</a></h3>
+<h3>Think of <code class="docutils literal notranslate"><span class="pre">async/await</span></code> as an API for asynchronous programming<a class="headerlink" href="#think-of-async-await-as-an-api-for-asynchronous-programming" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">async/await</span></code> is really an API for asynchronous programming: People shouldn’t think that <code class="docutils literal notranslate"><span class="pre">async/await</span></code> as synonymous with asyncio, but instead think that asyncio is a framework that can utilize the <code class="docutils literal notranslate"><span class="pre">async/await</span></code> API for asynchronous programming. In fact, this view is supported by the fact that there are other async frameworks that use async/await – like the Trio package mentioned above.</p>
 </div>
 <div class="section" id="future-objects">
-<h3><span class="section-number">19.17.1.11. </span>Future objects<a class="headerlink" href="#future-objects" title="Permalink to this headline">¶</a></h3>
+<h3>Future objects<a class="headerlink" href="#future-objects" title="Permalink to this headline">¶</a></h3>
 <p>A Future object encapsulates the asynchronous execution of a callable – it “holds” the code to be run later.</p>
 <p>It also contains methods like:</p>
 <dl class="simple">
@@ -385,7 +388,7 @@
 <p><strong>NOTE:</strong> there is also the <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> module, which provides “future” objects that work with threads or processes, rather than an async event loop.</p>
 </div>
 <div class="section" id="the-event-loop">
-<h3><span class="section-number">19.17.1.12. </span>The Event Loop<a class="headerlink" href="#the-event-loop" title="Permalink to this headline">¶</a></h3>
+<h3>The Event Loop<a class="headerlink" href="#the-event-loop" title="Permalink to this headline">¶</a></h3>
 <p>The whole point of this to to pass events along to an event loop. So you can’t really do anything without one.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> package provides an event loop:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> event loop can do a lot:</p>
@@ -479,7 +482,7 @@
 </div>
 </div>
 <div class="section" id="calling-a-regular-function">
-<h3><span class="section-number">19.17.1.13. </span>Calling a regular function<a class="headerlink" href="#calling-a-regular-function" title="Permalink to this headline">¶</a></h3>
+<h3>Calling a regular function<a class="headerlink" href="#calling-a-regular-function" title="Permalink to this headline">¶</a></h3>
 <p>The usual way to use the event loop is to schedule “awaitable” tasks – i.e. coroutines.</p>
 <p>But sometimes you need to call a regular old function.</p>
 <p>This is more like the traditional “callback” style:</p>
@@ -495,14 +498,14 @@
 <p><code class="docutils literal notranslate"><span class="pre">event_loop.call_soon_threadsafe(callback,</span> <span class="pre">*args)</span></code></p>
 </div>
 <div class="section" id="giving-up-control">
-<h3><span class="section-number">19.17.1.14. </span>Giving up control<a class="headerlink" href="#giving-up-control" title="Permalink to this headline">¶</a></h3>
+<h3>Giving up control<a class="headerlink" href="#giving-up-control" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">await</span></code> passes control back to the event loop – cooperative multitasking!</p>
 <p>Usually, you actually need to wait for a task of some sort. but if not, and you still need to give up control, you can use:</p>
 <p><code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">asyncio.sleep(0)</span></code></p>
 <p>You can, of course, pause for a period of time (greater than zero), but other than demos, I’m not sure why you’d want to do that.</p>
 </div>
 <div class="section" id="running-blocking-code">
-<h3><span class="section-number">19.17.1.15. </span>Running Blocking Code<a class="headerlink" href="#running-blocking-code" title="Permalink to this headline">¶</a></h3>
+<h3>Running Blocking Code<a class="headerlink" href="#running-blocking-code" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes you really do need to run “blocking” code – maybe a long computation, or reading a big file, or…..</p>
 <p>In that case, if you don’t want your app locked up – you need to put it in a separate thread (or process). Use:</p>
 <p>result = await loop.run_in_executor(Executor, function)</p>
@@ -569,7 +572,7 @@
 </div>
 </div>
 <div class="section" id="running-a-bunch-of-tasks">
-<h3><span class="section-number">19.17.1.16. </span>Running a bunch of tasks<a class="headerlink" href="#running-a-bunch-of-tasks" title="Permalink to this headline">¶</a></h3>
+<h3>Running a bunch of tasks<a class="headerlink" href="#running-a-bunch-of-tasks" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes you have a bunch of individual tasks to complete, but it does not matter in what order they are done.</p>
 <p><code class="docutils literal notranslate"><span class="pre">asyncio.gather()</span></code> collects a bunch of individual coroutines (or futures) together, runs them all (in parallel), and puts the results in a list.</p>
 <p>Remember that they are now run in arbitrary order.</p>
@@ -577,7 +580,7 @@
 </div>
 </div>
 <div class="section" id="doing-real-work-with-async">
-<h2><span class="section-number">19.17.2. </span>Doing real work with async<a class="headerlink" href="#doing-real-work-with-async" title="Permalink to this headline">¶</a></h2>
+<h2>Doing real work with async<a class="headerlink" href="#doing-real-work-with-async" title="Permalink to this headline">¶</a></h2>
 <p>So what kinds of real things can you do with asynchronous programming?</p>
 <p><code class="docutils literal notranslate"><span class="pre">asyncio</span></code> provides the core tools to write asynchronous programs:</p>
 <ul class="simple">
@@ -588,7 +591,7 @@
 </ul>
 <p>But chances are, if you want to do something real, you’ll use a library..</p>
 <div class="section" id="web-servers-and-clients">
-<h3><span class="section-number">19.17.2.1. </span>Web servers and clients<a class="headerlink" href="#web-servers-and-clients" title="Permalink to this headline">¶</a></h3>
+<h3>Web servers and clients<a class="headerlink" href="#web-servers-and-clients" title="Permalink to this headline">¶</a></h3>
 <p>There have been a few async frameworks around for Python for a while:</p>
 <p>The granddaddy of them all:</p>
 <p>Twisted <a class="reference external" href="https://twistedmatrix.com/trac/">https://twistedmatrix.com/trac/</a></p>
@@ -604,7 +607,7 @@ of what is in asyncio, as they existed before asyncio existed)</p>
 <p>As it’s the most “modern” implementation – we will use it for examples in the rest of this class:</p>
 </div>
 <div class="section" id="aiohttp">
-<h3><span class="section-number">19.17.2.2. </span><code class="docutils literal notranslate"><span class="pre">aiohttp</span></code><a class="headerlink" href="#aiohttp" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">aiohttp</span></code><a class="headerlink" href="#aiohttp" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Supports both Client and HTTP Server.</p></li>
 <li><p>Supports both Server WebSockets and Client WebSockets out-of-the-box.</p></li>
@@ -616,7 +619,7 @@ of what is in asyncio, as they existed before asyncio existed)</p>
 </div>
 </div>
 <div class="section" id="an-async-client-example">
-<h3><span class="section-number">19.17.2.3. </span>An async client example:<a class="headerlink" href="#an-async-client-example" title="Permalink to this headline">¶</a></h3>
+<h3>An async client example:<a class="headerlink" href="#an-async-client-example" title="Permalink to this headline">¶</a></h3>
 <p>If you need to make a lot of requests to collect data, or whatever, it’s likely your code is taking a lot of time to wait for the server to return. If it’s a slow server, it could be much more time waiting than doing real work.</p>
 <p>This is where async shines!</p>
 <p>This example borrowed from:</p>
@@ -632,7 +635,7 @@ of what is in asyncio, as they existed before asyncio existed)</p>
 <p>And the Asynchronous version:
 <a class="reference download internal" download="" href="../_downloads/642914b2ed03ec925362d45ac03ce421/nba_stats_async.py"><code class="xref download docutils literal notranslate"><span class="pre">nba_stats_async.py</span></code></a></p>
 <div class="section" id="one-that-works">
-<h4><span class="section-number">19.17.2.3.1. </span>One that works:<a class="headerlink" href="#one-that-works" title="Permalink to this headline">¶</a></h4>
+<h4>One that works:<a class="headerlink" href="#one-that-works" title="Permalink to this headline">¶</a></h4>
 <p>Here is a similar example that works:</p>
 <p>This is a “classic” regular old synchronous version:</p>
 <p><a class="reference download internal" download="" href="../_downloads/cfd6afe51bc5be67deffa8b0c595753c/get_news_sync.py"><code class="xref download docutils literal notranslate"><span class="pre">get_news_sync.py</span></code></a></p>
@@ -644,7 +647,7 @@ of what is in asyncio, as they existed before asyncio existed)</p>
 </div>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">19.17.3. </span>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>The Asyncio Cheat Sheet: This is a pretty helpful, how to do it guide.</p>
 <p><a class="reference external" href="http://cheat.readthedocs.io/en/latest/python/asyncio.html">http://cheat.readthedocs.io/en/latest/python/asyncio.html</a></p>
 <p>David Beazley: Concurrency from the ground up.</p>
@@ -666,10 +669,10 @@ this guy can write code faster than most of us can read it…</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Coroutines.html" class="btn btn-neutral float-right" title="19.18. Notes on Coroutines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Coroutines.html" class="btn btn-neutral float-right" title="Notes on Coroutines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Concurrency.html" class="btn btn-neutral float-left" title="19.16. Concurrent Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Concurrency.html" class="btn btn-neutral float-left" title="Concurrent Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -678,11 +681,19 @@ this guy can write code faster than most of us can read it…</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -693,7 +704,6 @@ this guy can write code faster than most of us can read it…</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

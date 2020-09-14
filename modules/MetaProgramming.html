@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>19.10. Metaprogramming &mdash; Programming in Python 7.0 documentation</title>
+  <title>Metaprogramming &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="19.11. Mailroom – metaprogramming it!" href="../exercises/mailroom/mailroom-meta.html" />
-    <link rel="prev" title="19.9. A Couple Handy Context Managers" href="../exercises/context-managers-exercise.html" /> 
+    <link rel="next" title="Mailroom – metaprogramming it!" href="../exercises/mailroom/mailroom-meta.html" />
+    <link rel="prev" title="A Couple Handy Context Managers" href="../exercises/context-managers-exercise.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -102,27 +104,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Decorators.html">19.6. Decorators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">19.10. Metaprogramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Debugging.html">19.13. Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">19.16. Concurrent Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Async.html">19.17. Asychronous Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">19.18. Notes on Coroutines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Profiling.html">19.21. Performance and Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Decorators.html">Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Metaprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -130,6 +132,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -168,11 +171,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">19.10. </span>Metaprogramming</li>
+      <li>Metaprogramming</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,10 +191,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-right" title="19.11. Mailroom – metaprogramming it!" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-right" title="Mailroom – metaprogramming it!" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../exercises/context-managers-exercise.html" class="btn btn-neutral float-left" title="19.9. A Couple Handy Context Managers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/context-managers-exercise.html" class="btn btn-neutral float-left" title="A Couple Handy Context Managers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -201,10 +204,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="metaprogramming">
-<span id="id1"></span><h1><span class="section-number">19.10. </span>Metaprogramming<a class="headerlink" href="#metaprogramming" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Metaprogramming<a class="headerlink" href="#metaprogramming" title="Permalink to this headline">¶</a></h1>
 <p><strong>Programs that write programs….</strong></p>
 <div class="section" id="id2">
-<h2><span class="section-number">19.10.1. </span>Metaprogramming<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Metaprogramming<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>“Metaprogramming is a programming technique in which computer programs have the ability to treat programs as their data. It means that a program can be designed to read, generate, analyze or transform other programs, and even modify itself while running.”</p>
 </div></blockquote>
@@ -216,7 +219,7 @@
 <div><p>“The ability of a program to examine the type or properties of an object at runtime.”</p>
 </div></blockquote>
 <div class="section" id="everything-is-an-object">
-<h3><span class="section-number">19.10.1.1. </span>Everything  is an object<a class="headerlink" href="#everything-is-an-object" title="Permalink to this headline">¶</a></h3>
+<h3>Everything  is an object<a class="headerlink" href="#everything-is-an-object" title="Permalink to this headline">¶</a></h3>
 <p>Everything is an object in python: simple types like numbers and strings, as well as functions, classes, etc.</p>
 <p>That means that everything:</p>
 <ul class="simple">
@@ -231,9 +234,9 @@
 </div>
 </div>
 <div class="section" id="introspection-and-manipulation-tools">
-<h2><span class="section-number">19.10.2. </span>Introspection and manipulation tools<a class="headerlink" href="#introspection-and-manipulation-tools" title="Permalink to this headline">¶</a></h2>
+<h2>Introspection and manipulation tools<a class="headerlink" href="#introspection-and-manipulation-tools" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="getattr-and-setattr">
-<h3><span class="section-number">19.10.2.1. </span><code class="docutils literal notranslate"><span class="pre">getattr()</span></code> and <code class="docutils literal notranslate"><span class="pre">setattr()</span></code><a class="headerlink" href="#getattr-and-setattr" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">getattr()</span></code> and <code class="docutils literal notranslate"><span class="pre">setattr()</span></code><a class="headerlink" href="#getattr-and-setattr" title="Permalink to this headline">¶</a></h3>
 <p>These are the basic tools for, well, getting and setting attributes. They allow you to get and set attributes of an object by name:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="k">class</span> <span class="nc">Dummy</span><span class="p">():</span>
 <span class="gp">   ...: </span>    <span class="sd">&quot;&quot;&quot;A class with nothing in it&quot;&quot;&quot;</span>
@@ -259,7 +262,7 @@
 <p>Note: there is also <code class="docutils literal notranslate"><span class="pre">delattr</span></code> to remove an attribute.</p>
 </div>
 <div class="section" id="namespaces-are-dictionaries">
-<h3><span class="section-number">19.10.2.2. </span>Namespaces are Dictionaries<a class="headerlink" href="#namespaces-are-dictionaries" title="Permalink to this headline">¶</a></h3>
+<h3>Namespaces are Dictionaries<a class="headerlink" href="#namespaces-are-dictionaries" title="Permalink to this headline">¶</a></h3>
 <p>Another cool feature of python is that namespaces are (often) dictionaries. That means that you can directly manipulate the names and associated values of many objects directly.</p>
 <p>You can get the dict of a namespace with the <code class="docutils literal notranslate"><span class="pre">vars()</span></code> builtin:</p>
 <p>From a note on python-ideas:</p>
@@ -275,12 +278,12 @@ namespace used by the object.”</p>
 <p><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#vars">https://docs.python.org/3.6/library/functions.html#vars</a></p>
 </div>
 <div class="section" id="dict">
-<h3><span class="section-number">19.10.2.3. </span><code class="docutils literal notranslate"><span class="pre">__dict__</span></code><a class="headerlink" href="#dict" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">__dict__</span></code><a class="headerlink" href="#dict" title="Permalink to this headline">¶</a></h3>
 <p>An object’s <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> special attribute is used as the namesapce of an updateable object – it’s what you might expect, an actual dictionary used to hold the names in the namespace.</p>
 <p>For the most part, <code class="docutils literal notranslate"><span class="pre">vars()</span></code> will return the <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> of an object. It’s kind of like <code class="docutils literal notranslate"><span class="pre">len()</span></code> and the <code class="docutils literal notranslate"><span class="pre">__len__</span></code> attribute.  But it’s a bit better to use <code class="docutils literal notranslate"><span class="pre">vars()</span></code> to access an object’s namespace – it will work in more places.</p>
 </div>
 <div class="section" id="dir">
-<h3><span class="section-number">19.10.2.4. </span><code class="docutils literal notranslate"><span class="pre">dir()</span></code><a class="headerlink" href="#dir" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">dir()</span></code><a class="headerlink" href="#dir" title="Permalink to this headline">¶</a></h3>
 <p>You may have used <code class="docutils literal notranslate"><span class="pre">dir()</span></code> to see the names in an object. It looks a lot like vars().keys() – but it’s not. There are two key differences:</p>
 <p><code class="docutils literal notranslate"><span class="pre">dir()</span></code> walks the class hierarchy of an object to give you all the attributes available:</p>
 <p>Create a class with a class attribute and an instance attribute:</p>
@@ -327,7 +330,7 @@ namespace used by the object.”</p>
 <p><code class="docutils literal notranslate"><span class="pre">vars()</span></code> is also giving the namespace dict – both the names and the values. So it’s what you want if you are going to manipulate an object.</p>
 </div>
 <div class="section" id="manipulating-a-namespace">
-<h3><span class="section-number">19.10.2.5. </span>Manipulating a namespace<a class="headerlink" href="#manipulating-a-namespace" title="Permalink to this headline">¶</a></h3>
+<h3>Manipulating a namespace<a class="headerlink" href="#manipulating-a-namespace" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">vars()</span></code> with no argument returns the local namespace (same as <code class="docutils literal notranslate"><span class="pre">locals()</span></code>). So you can manipulate even the local module namespace directly:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">fred</span>
 <span class="gt">---------------------------------------------------------------------------</span>
@@ -363,7 +366,7 @@ namespace used by the object.”</p>
 <p>Keep in mind that not all namespaces are writable. class objects, for instance, return a <code class="docutils literal notranslate"><span class="pre">mappingproxy</span></code>, which is the namespace of the class object, but it is not a regular dict – it’s essentially a read-only dict.</p>
 </div>
 <div class="section" id="example-of-manipulating-instance-attributes">
-<h3><span class="section-number">19.10.2.6. </span>Example of Manipulating Instance Attributes<a class="headerlink" href="#example-of-manipulating-instance-attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Example of Manipulating Instance Attributes<a class="headerlink" href="#example-of-manipulating-instance-attributes" title="Permalink to this headline">¶</a></h3>
 <p>Check out the code here:
 <a class="reference download internal" download="" href="../_downloads/8030e817ab7bd6903c7159bfada9b998/get_set_attr.py"><code class="xref download docutils literal notranslate"><span class="pre">get_set_attr.py</span></code></a></p>
 <p>It uses <code class="docutils literal notranslate"><span class="pre">vars()</span></code> in the str method to dynamically create a nice printable class.</p>
@@ -372,11 +375,11 @@ namespace used by the object.”</p>
 </div>
 </div>
 <div class="section" id="class-objects">
-<h2><span class="section-number">19.10.3. </span>Class Objects<a class="headerlink" href="#class-objects" title="Permalink to this headline">¶</a></h2>
+<h2>Class Objects<a class="headerlink" href="#class-objects" title="Permalink to this headline">¶</a></h2>
 <p>Metaprogramming is all about creating and manipulating programs. Classes are a very important part of programming in Python, so naturally, to do proper metaprogramming, we need to be able to create and manipulate class objects as well.</p>
 <p>And classes can have a lot more complexity than simple objects (or instances).</p>
 <div class="section" id="what-s-in-a-class">
-<h3><span class="section-number">19.10.3.1. </span>What’s in a Class?<a class="headerlink" href="#what-s-in-a-class" title="Permalink to this headline">¶</a></h3>
+<h3>What’s in a Class?<a class="headerlink" href="#what-s-in-a-class" title="Permalink to this headline">¶</a></h3>
 <p>A class (and instance) object stores its attributes in a dictionary, or dictionary-like object. instances use a regular old python dict. You can access that dict with the <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> attribute or <code class="docutils literal notranslate"><span class="pre">vars()</span></code> function:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [56]: </span><span class="k">class</span> <span class="nc">Simple</span><span class="p">():</span>
 <span class="go">    ...:       ...:     this = &quot;a class attribute&quot;</span>
@@ -403,7 +406,7 @@ namespace used by the object.”</p>
 </div>
 </div>
 <div class="section" id="what-class-does-this-object-belong-to">
-<h3><span class="section-number">19.10.3.2. </span>What class does this object belong to?<a class="headerlink" href="#what-class-does-this-object-belong-to" title="Permalink to this headline">¶</a></h3>
+<h3>What class does this object belong to?<a class="headerlink" href="#what-class-does-this-object-belong-to" title="Permalink to this headline">¶</a></h3>
 <p>Every object has a <code class="docutils literal notranslate"><span class="pre">__class__</span></code> attribute specifying what class the object belongs to:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span>
 <span class="gh">Out[16]: </span><span class="go">__main__.Simple</span>
@@ -422,7 +425,7 @@ namespace used by the object.”</p>
 <p>Interesting – we’ve seen <code class="docutils literal notranslate"><span class="pre">type</span></code> as a function that tells you what type an object is (which is it’s <code class="docutils literal notranslate"><span class="pre">__class__</span></code>, by the way…). But it turns out <code class="docutils literal notranslate"><span class="pre">type()</span></code> is so much more…</p>
 </div>
 <div class="section" id="type-or-class">
-<h3><span class="section-number">19.10.3.3. </span>“type” or “class”<a class="headerlink" href="#type-or-class" title="Permalink to this headline">¶</a></h3>
+<h3>“type” or “class”<a class="headerlink" href="#type-or-class" title="Permalink to this headline">¶</a></h3>
 <p>We talk about “classes”, and yet we get the class of an object with <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
 <p>In python, “type” and “class” are essentially the same thing.</p>
 <p>So why the two names?</p>
@@ -432,7 +435,7 @@ namespace used by the object.”</p>
 <p>In python3, the unification is complete – types <em>are</em> classes and vice-versa – the terms are interchangeable.</p>
 </div>
 <div class="section" id="type">
-<h3><span class="section-number">19.10.3.4. </span><code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
 <p>So: <code class="docutils literal notranslate"><span class="pre">type()</span></code> will tell you what type (or class) and object is if you pass it one parameter. But if you pass it more, it does something pretty cool – it makes a brand new class object.</p>
 <p>From the docstring:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">Docstring</span><span class="p">:</span>
@@ -443,7 +446,7 @@ namespace used by the object.”</p>
 <p>So that means if you pass in a single parameter, an object – it will return the type of that object. But if you pass in three arguments, you get a new class object!</p>
 </div>
 <div class="section" id="creating-a-class-from-scratch">
-<h3><span class="section-number">19.10.3.5. </span>Creating a class from scratch<a class="headerlink" href="#creating-a-class-from-scratch" title="Permalink to this headline">¶</a></h3>
+<h3>Creating a class from scratch<a class="headerlink" href="#creating-a-class-from-scratch" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">atts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span><span class="s1">&#39;nice&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span><span class="s1">&#39;sweet&#39;</span><span class="p">}</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;CoolClass&quot;</span><span class="p">,</span> <span class="p">(),</span> <span class="n">atts</span><span class="p">)</span>
@@ -488,7 +491,7 @@ namespace used by the object.”</p>
 <p><code class="docutils literal notranslate"><span class="pre">dict</span></code>: this is a dictionary of the class attributes – this will become the <code class="docutils literal notranslate"><span class="pre">__class__</span></code> of the class object (after some standard stuff is added)</p>
 </div>
 <div class="section" id="using-type-to-build-a-class">
-<h3><span class="section-number">19.10.3.6. </span>Using type() to build a class<a class="headerlink" href="#using-type-to-build-a-class" title="Permalink to this headline">¶</a></h3>
+<h3>Using type() to build a class<a class="headerlink" href="#using-type-to-build-a-class" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword is syntactic sugar, we can get by without it by
 using type</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
@@ -502,7 +505,7 @@ using type</p>
 <p>(<code class="docutils literal notranslate"><span class="pre">object</span></code> is automatically a superclass)</p>
 </div>
 <div class="section" id="adding-methods-to-a-class-built-with-type">
-<h3><span class="section-number">19.10.3.7. </span>Adding methods to a class built with <code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#adding-methods-to-a-class-built-with-type" title="Permalink to this headline">¶</a></h3>
+<h3>Adding methods to a class built with <code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#adding-methods-to-a-class-built-with-type" title="Permalink to this headline">¶</a></h3>
 <p>remember that functions are objects, so methods are simply attributes of a class that happen to be functions. So to add a method to a class created with <code class="docutils literal notranslate"><span class="pre">type()</span></code>, just define a function with the correct signature and add it to the attr dictionary:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;called my_method, x = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
@@ -516,7 +519,7 @@ using type</p>
 <p>Try it yourself…..does it work?</p>
 </div>
 <div class="section" id="what-type-is-type">
-<h3><span class="section-number">19.10.3.8. </span>What type is type?<a class="headerlink" href="#what-type-is-type" title="Permalink to this headline">¶</a></h3>
+<h3>What type is type?<a class="headerlink" href="#what-type-is-type" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
 <span class="gh">Out[30]: </span><span class="go">type</span>
 </pre></div>
@@ -524,14 +527,14 @@ using type</p>
 <p>Hmm, so type is a a type –this is the special case – it has to stop somewhere!</p>
 </div>
 <div class="section" id="metaclasses">
-<h3><span class="section-number">19.10.3.9. </span>Metaclasses<a class="headerlink" href="#metaclasses" title="Permalink to this headline">¶</a></h3>
+<h3>Metaclasses<a class="headerlink" href="#metaclasses" title="Permalink to this headline">¶</a></h3>
 <p>Objects get created from classes. So what is the class of a class?</p>
 <p>The class of a Class is a metaclass</p>
 <p>The metaclass can be used to dynamically create a class</p>
 <p>The metaclass, being a class, also has a metaclass</p>
 </div>
 <div class="section" id="what-is-a-metaclass">
-<h3><span class="section-number">19.10.3.10. </span>What is a metaclass?<a class="headerlink" href="#what-is-a-metaclass" title="Permalink to this headline">¶</a></h3>
+<h3>What is a metaclass?<a class="headerlink" href="#what-is-a-metaclass" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>A class is something that makes instances</p></li>
 <li><p>A metaclass is something that makes classes</p></li>
@@ -544,10 +547,10 @@ dynamically, or even replace the class with something else entirely (sound famil
 </ul>
 </div>
 <div class="section" id="metaclass">
-<h3><span class="section-number">19.10.3.11. </span><code class="docutils literal notranslate"><span class="pre">metaclass</span></code><a class="headerlink" href="#metaclass" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">metaclass</span></code><a class="headerlink" href="#metaclass" title="Permalink to this headline">¶</a></h3>
 <p>So the default metaclass is <code class="docutils literal notranslate"><span class="pre">type</span></code> – that is, type is used to make the class. But now we get to the fun stuff – we can write our own metaclass – and use that to create new class objects.</p>
 <div class="section" id="setting-a-class-metaclass">
-<h4><span class="section-number">19.10.3.11.1. </span>Setting a class’ metaclass:<a class="headerlink" href="#setting-a-class-metaclass" title="Permalink to this headline">¶</a></h4>
+<h4>Setting a class’ metaclass:<a class="headerlink" href="#setting-a-class-metaclass" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">MyMetaClass</span><span class="p">):</span>
     <span class="k">pass</span>
 </pre></div>
@@ -569,7 +572,7 @@ from <a class="reference external" href="http://jfine-python-classes.readthedocs
 </div>
 </div>
 <div class="section" id="why-use-metaclasses">
-<h3><span class="section-number">19.10.3.12. </span>Why use metaclasses?<a class="headerlink" href="#why-use-metaclasses" title="Permalink to this headline">¶</a></h3>
+<h3>Why use metaclasses?<a class="headerlink" href="#why-use-metaclasses" title="Permalink to this headline">¶</a></h3>
 <p>What a metaclass does is create a way to create custom classes on the fly.  You can do it directly with the <code class="docutils literal notranslate"><span class="pre">type</span></code>, but if you write a metaclass, new classes can be made with that metaclass in the usual way.</p>
 <p>They can be useful when creating an API or framework.</p>
 <p>Whenever you need to manage object creation for one or more classes.</p>
@@ -593,7 +596,7 @@ abstracted from the user of the Model class. And the user doesn’t have to know
 <p>pretty ugly, eh?</p>
 </div>
 <div class="section" id="new">
-<h3><span class="section-number">19.10.3.13. </span><code class="docutils literal notranslate"><span class="pre">__new__</span></code><a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">__new__</span></code><a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h3>
 <p>A bit of a sidetrack …</p>
 <p>What is this <code class="docutils literal notranslate"><span class="pre">__new__</span></code> thing? It’s another of Python’s special dunder methods. <code class="docutils literal notranslate"><span class="pre">__new__</span></code> is called when you make a new instance of a class.</p>
 <p>Wait? isn’t <code class="docutils literal notranslate"><span class="pre">__init__</span></code> the constructor of the class?</p>
@@ -630,7 +633,7 @@ abstracted from the user of the Model class. And the user doesn’t have to know
 <p>If there are no superclasses, you can call <code class="docutils literal notranslate"><span class="pre">object.__new__</span></code> (or <code class="docutils literal notranslate"><span class="pre">super().__new__</span></code>)</p>
 </div>
 <div class="section" id="when-to-use-new">
-<h3><span class="section-number">19.10.3.14. </span>When to use <code class="docutils literal notranslate"><span class="pre">__new__</span></code><a class="headerlink" href="#when-to-use-new" title="Permalink to this headline">¶</a></h3>
+<h3>When to use <code class="docutils literal notranslate"><span class="pre">__new__</span></code><a class="headerlink" href="#when-to-use-new" title="Permalink to this headline">¶</a></h3>
 <p>When would  you need to use it:</p>
 <ul class="simple">
 <li><p>Subclassing an immutable type:</p>
@@ -651,7 +654,7 @@ go right.</p>
 <p><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#object.__new__">https://docs.python.org/3/reference/datamodel.html#object.__new__</a></p>
 </div>
 <div class="section" id="new-vs-init-in-metaclasses">
-<h3><span class="section-number">19.10.3.15. </span><code class="docutils literal notranslate"><span class="pre">__new__</span></code>  vs  <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in Metaclasses<a class="headerlink" href="#new-vs-init-in-metaclasses" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">__new__</span></code>  vs  <code class="docutils literal notranslate"><span class="pre">__init__</span></code> in Metaclasses<a class="headerlink" href="#new-vs-init-in-metaclasses" title="Permalink to this headline">¶</a></h3>
 <p>Remember that metaclasses are used to create new class objects (instances of type) – so <code class="docutils literal notranslate"><span class="pre">__new__</span></code> is critical to creating that class.</p>
 <p><code class="docutils literal notranslate"><span class="pre">__new__</span></code> is used when you want to control the creation of the class (object)</p>
 <p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> is used when you want to control the initialization of the class (object)</p>
@@ -679,7 +682,7 @@ go right.</p>
 <p><a class="reference download internal" download="" href="../_downloads/521482e4d637cea6ea62c9301a1c4eb6/cool_meta.py"><code class="xref download docutils literal notranslate"><span class="pre">cool_meta.py</span></code></a></p>
 </div>
 <div class="section" id="metaclass-example">
-<h3><span class="section-number">19.10.3.16. </span>Metaclass example<a class="headerlink" href="#metaclass-example" title="Permalink to this headline">¶</a></h3>
+<h3>Metaclass example<a class="headerlink" href="#metaclass-example" title="Permalink to this headline">¶</a></h3>
 <p>Consider wanting a metaclass which mangles all attribute names to
 provide uppercase and lower case attributes</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">NameMangler</span><span class="p">):</span>
@@ -692,7 +695,7 @@ provide uppercase and lower case attributes</p>
 </div>
 </div>
 <div class="section" id="namemangler">
-<h3><span class="section-number">19.10.3.17. </span>NameMangler<a class="headerlink" href="#namemangler" title="Permalink to this headline">¶</a></h3>
+<h3>NameMangler<a class="headerlink" href="#namemangler" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NameMangler</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">clsname</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">_dict</span><span class="p">):</span>
@@ -713,7 +716,7 @@ provide uppercase and lower case attributes</p>
 </div>
 </div>
 <div class="section" id="lab-working-with-namemangler">
-<h3><span class="section-number">19.10.3.18. </span>LAB: Working with NameMangler<a class="headerlink" href="#lab-working-with-namemangler" title="Permalink to this headline">¶</a></h3>
+<h3>LAB: Working with NameMangler<a class="headerlink" href="#lab-working-with-namemangler" title="Permalink to this headline">¶</a></h3>
 <p>Download: <a class="reference download internal" download="" href="../_downloads/1e3d7760d32a4a9dca2e2779ee15a58c/mangler.py"><code class="xref download docutils literal notranslate"><span class="pre">mangler.py</span></code></a></p>
 <p>Modify the NameMangler metaclass such that setting an attribute f.x also
 sets f.xx</p>
@@ -732,7 +735,7 @@ sets f.xx</p>
 </div>
 </div>
 <div class="section" id="the-singleton">
-<h3><span class="section-number">19.10.3.19. </span>The Singleton<a class="headerlink" href="#the-singleton" title="Permalink to this headline">¶</a></h3>
+<h3>The Singleton<a class="headerlink" href="#the-singleton" title="Permalink to this headline">¶</a></h3>
 <p>One common use of metaclasses is to create a singleton:</p>
 <blockquote>
 <div><p>“The singleton pattern is a software design pattern that restricts the instantiation of a class to one object.”</p>
@@ -745,7 +748,7 @@ sets f.xx</p>
 <p><a class="reference external" href="http://stackoverflow.com/questions/6760685/creating-a-singleton-in-python">http://stackoverflow.com/questions/6760685/creating-a-singleton-in-python</a></p>
 </div>
 <div class="section" id="class-decorators">
-<h3><span class="section-number">19.10.3.20. </span>Class decorators?<a class="headerlink" href="#class-decorators" title="Permalink to this headline">¶</a></h3>
+<h3>Class decorators?<a class="headerlink" href="#class-decorators" title="Permalink to this headline">¶</a></h3>
 <p>We touched on class decorators a bit when decorators were introduced:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@a_decorator</span>
 <span class="k">class</span> <span class="nc">MyClass</span><span class="p">():</span>
@@ -781,7 +784,7 @@ are a clearer solution to some problems?</p>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=cAGliEJV9_o">Jack Diederich: Class Decorators: Radically Simple</a></p>
 </div>
 <div class="section" id="namemangler-decorator-edition">
-<h3><span class="section-number">19.10.3.21. </span>NameMangler Decorator Edition<a class="headerlink" href="#namemangler-decorator-edition" title="Permalink to this headline">¶</a></h3>
+<h3>NameMangler Decorator Edition<a class="headerlink" href="#namemangler-decorator-edition" title="Permalink to this headline">¶</a></h3>
 <p>For a simple example, let’s see how to make NameMangler with a decorator.</p>
 <p>Here is the code:
 <a class="reference download internal" download="" href="../_downloads/b03ea3080d30fc27151bac2341481e59/mangler_dec.py"><code class="xref download docutils literal notranslate"><span class="pre">mangler_dec.py</span></code></a></p>
@@ -806,7 +809,7 @@ attributes.</p></li>
 </div>
 </div>
 <div class="section" id="json-save">
-<h2><span class="section-number">19.10.4. </span>json_save<a class="headerlink" href="#json-save" title="Permalink to this headline">¶</a></h2>
+<h2>json_save<a class="headerlink" href="#json-save" title="Permalink to this headline">¶</a></h2>
 <p>For a more involved (and useful!) example, see the json_save package:</p>
 <p><a class="reference download internal" download="" href="../_downloads/4d6c220fd82d44ba66aaa0feefb1c356/json_save.zip"><code class="xref download docutils literal notranslate"><span class="pre">json_save.zip</span></code></a></p>
 <p>It may also be in your class repo solutions dir:</p>
@@ -814,21 +817,21 @@ attributes.</p></li>
 <p>It is a system for saving and re-loading objects.</p>
 <p>It works a bit like the ORMs – you specify what attributes you want to save, and what their types are.</p>
 <div class="section" id="json">
-<h3><span class="section-number">19.10.4.1. </span>JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
+<h3>JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
 <p>If you are not familiar with JSON:</p>
 <p><a class="reference external" href="https://www.json.org/">JavaScript Object Notation (JSON)</a> is a format borrowed from the Web – Javascript being the de-facto scripting language in browsers.  It is a great format for communicating with browsers, but it has become a common serialization format for many other uses: it is simple, flexible, and human-readable and writable.</p>
 <p>It also maps pretty much directly to (some of) the core Python datatypes: lists, dictionaries, strings, and numbers.</p>
 <p>But it does not directly support more complex objects – that is what json_save is all about.</p>
 </div>
 <div class="section" id="metaclass-json-save">
-<h3><span class="section-number">19.10.4.2. </span>Metaclass json_save<a class="headerlink" href="#metaclass-json-save" title="Permalink to this headline">¶</a></h3>
+<h3>Metaclass json_save<a class="headerlink" href="#metaclass-json-save" title="Permalink to this headline">¶</a></h3>
 <p>The first solution uses a metaclass: <code class="docutils literal notranslate"><span class="pre">json_save_meta.py</span></code></p>
 <p>It turns out that the metaclass part of the code is pretty simple and small.</p>
 <p>But there is a lot of other nifty magic with classes in there
 – so let’s take a look:</p>
 </div>
 <div class="section" id="decorator-json-save">
-<h3><span class="section-number">19.10.4.3. </span>Decorator json_save<a class="headerlink" href="#decorator-json-save" title="Permalink to this headline">¶</a></h3>
+<h3>Decorator json_save<a class="headerlink" href="#decorator-json-save" title="Permalink to this headline">¶</a></h3>
 <p>The second solution uses a decorator: <code class="docutils literal notranslate"><span class="pre">json_save_dec.py</span></code></p>
 <p>As in the metaclass case, the actual decorator is pretty simple.</p>
 <p>And it can use much of the code from the metaclass solution – since not much really had anything specific to metaclasses.</p>
@@ -845,10 +848,10 @@ attributes.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-right" title="19.11. Mailroom – metaprogramming it!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-right" title="Mailroom – metaprogramming it!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../exercises/context-managers-exercise.html" class="btn btn-neutral float-left" title="19.9. A Couple Handy Context Managers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/context-managers-exercise.html" class="btn btn-neutral float-left" title="A Couple Handy Context Managers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -857,11 +860,19 @@ attributes.</p></li>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -872,7 +883,6 @@ attributes.</p></li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

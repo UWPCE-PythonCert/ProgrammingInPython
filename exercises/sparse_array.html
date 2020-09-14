@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.5. Sparse Array Exercise &mdash; Programming in Python 7.0 documentation</title>
+  <title>Sparse Array Exercise &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="15. Subclassing and Inheritance" href="../topics/15-subclassing/index.html" />
-    <link rel="prev" title="14.4. Circle Class Exercise" href="circle/circle_class.html" /> 
+    <link rel="prev" title="Circle Class Exercise" href="circle/circle_class.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -97,11 +99,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Properties.html">14.1. Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/StaticAndClassMethods.html">14.2. Static and Class Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/SpecialMethodsAndProtocols.html">14.3. Special Methods &amp; Protocols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="circle/circle_class.html">14.4. Circle Class Exercise</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.5. Sparse Array Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/StaticAndClassMethods.html">Static and Class Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/SpecialMethodsAndProtocols.html">Special Methods &amp; Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circle/circle_class.html">Circle Class Exercise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sparse Array Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
@@ -114,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -152,11 +155,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/14-magic_methods/index.html"><span class="section-number">14. </span>Properties and Magic Methods</a> &raquo;</li>
         
-      <li><span class="section-number">14.5. </span>Sparse Array Exercise</li>
+      <li>Sparse Array Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,7 +178,7 @@
         <a href="../topics/15-subclassing/index.html" class="btn btn-neutral float-right" title="15. Subclassing and Inheritance" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="circle/circle_class.html" class="btn btn-neutral float-left" title="14.4. Circle Class Exercise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="circle/circle_class.html" class="btn btn-neutral float-left" title="Circle Class Exercise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -185,15 +188,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="sparse-array-exercise">
-<span id="exercise-sparse-array"></span><h1><span class="section-number">14.5. </span>Sparse Array Exercise<a class="headerlink" href="#sparse-array-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-sparse-array"></span><h1>Sparse Array Exercise<a class="headerlink" href="#sparse-array-exercise" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sparse-array">
-<h2><span class="section-number">14.5.1. </span>Sparse Array<a class="headerlink" href="#sparse-array" title="Permalink to this headline">¶</a></h2>
+<h2>Sparse Array<a class="headerlink" href="#sparse-array" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Goal:</p>
 </div></blockquote>
 <p>Learn how to emulate a built-in class.</p>
 <div class="section" id="id1">
-<h3><span class="section-number">14.5.1.1. </span>Sparse Array:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Sparse Array:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Oftentimes, at least in computation programming, we have large arrays of data that hold mostly zeros.</p>
 <p>These are referred to as “sparse” as the information in them is widely scattered, or sparse.</p>
 <p>Since they are mostly zeros, it can be memory and computationally efficient to store only the value that are non-zero.</p>
@@ -202,7 +205,7 @@
 <p>(feel free to make it 2d for an extra challenge!).</p>
 </div>
 <div class="section" id="a-sparse-array-class">
-<h3><span class="section-number">14.5.1.2. </span>A Sparse array class<a class="headerlink" href="#a-sparse-array-class" title="Permalink to this headline">¶</a></h3>
+<h3>A Sparse array class<a class="headerlink" href="#a-sparse-array-class" title="Permalink to this headline">¶</a></h3>
 <p>A sparse array class should present to the user the same interface as a regular list.</p>
 <p>Some ideas of how to do that:</p>
 <ul class="simple">
@@ -261,7 +264,7 @@
         <a href="../topics/15-subclassing/index.html" class="btn btn-neutral float-right" title="15. Subclassing and Inheritance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="circle/circle_class.html" class="btn btn-neutral float-left" title="14.4. Circle Class Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="circle/circle_class.html" class="btn btn-neutral float-left" title="Circle Class Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -270,11 +273,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -285,7 +296,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

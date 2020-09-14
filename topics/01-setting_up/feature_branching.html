@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.5.3. Feature Branching &mdash; Programming in Python 7.0 documentation</title>
+  <title>Feature Branching &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.5.4. git Hints" href="git_hints.html" />
-    <link rel="prev" title="1.5.2. git Overview" href="git_overview.html" /> 
+    <link rel="next" title="git Hints" href="git_hints.html" />
+    <link rel="prev" title="git Overview" href="git_overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,16 @@
               <p class="caption"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">1.1. Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="git.html">1.5. Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,13 +156,13 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-          <li><a href="git.html"><span class="section-number">1.5. </span>Git</a> &raquo;</li>
+          <li><a href="git.html">Git</a> &raquo;</li>
         
-      <li><span class="section-number">1.5.3. </span>Feature Branching</li>
+      <li>Feature Branching</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,10 +178,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="git_hints.html" class="btn btn-neutral float-right" title="1.5.4. git Hints" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git_hints.html" class="btn btn-neutral float-right" title="git Hints" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="git_overview.html" class="btn btn-neutral float-left" title="1.5.2. git Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git_overview.html" class="btn btn-neutral float-left" title="git Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -188,9 +191,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="feature-branching">
-<h1><span class="section-number">1.5.3. </span>Feature Branching<a class="headerlink" href="#feature-branching" title="Permalink to this headline">¶</a></h1>
+<h1>Feature Branching<a class="headerlink" href="#feature-branching" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="why-use-feature-branches">
-<h2><span class="section-number">1.5.3.1. </span>Why use Feature Branches?<a class="headerlink" href="#why-use-feature-branches" title="Permalink to this headline">¶</a></h2>
+<h2>Why use Feature Branches?<a class="headerlink" href="#why-use-feature-branches" title="Permalink to this headline">¶</a></h2>
 <p>The idea is to give a clear, highly focused purpose to each branch,
 which is why we call them feature branches. They represent specific
 feature being added or in our case a single assignment.</p>
@@ -214,13 +217,13 @@ branch while you’re in it.</p>
 <a class="reference internal image-reference" href="../../_images/feature_branching_img1.png"><img alt="../../_images/feature_branching_img1.png" src="../../_images/feature_branching_img1.png" style="width: 643.5px; height: 321.0px;" /></a>
 </div>
 <div class="section" id="workflow">
-<h2><span class="section-number">1.5.3.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="feature-assignment-branch">
-<h3><span class="section-number">1.5.3.2.1. </span>1. Feature / Assignment Branch<a class="headerlink" href="#feature-assignment-branch" title="Permalink to this headline">¶</a></h3>
+<h3>1. Feature / Assignment Branch<a class="headerlink" href="#feature-assignment-branch" title="Permalink to this headline">¶</a></h3>
 <p>Below explains the process for creating your feature branch. You can
 either use the command line or the UI.</p>
 <div class="section" id="creating-feature-branch-via-command-line">
-<h4><span class="section-number">1.5.3.2.1.1. </span>Creating feature branch via Command Line<a class="headerlink" href="#creating-feature-branch-via-command-line" title="Permalink to this headline">¶</a></h4>
+<h4>Creating feature branch via Command Line<a class="headerlink" href="#creating-feature-branch-via-command-line" title="Permalink to this headline">¶</a></h4>
 <p>First make sure you’re on master and make sure you have the latest
 changes</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout master
@@ -262,7 +265,7 @@ instead of master:</p>
 </div>
 </div>
 <div class="section" id="creating-feature-branch-via-github-ui">
-<h4><span class="section-number">1.5.3.2.1.2. </span>Creating feature branch via GitHub UI<a class="headerlink" href="#creating-feature-branch-via-github-ui" title="Permalink to this headline">¶</a></h4>
+<h4>Creating feature branch via GitHub UI<a class="headerlink" href="#creating-feature-branch-via-github-ui" title="Permalink to this headline">¶</a></h4>
 <p>Navigate to your forked GitHub repo and identify Branch dropdown:</p>
 <a class="reference internal image-reference" href="../../_images/feature_branching_img2.png"><img alt="../../_images/feature_branching_img2.png" src="../../_images/feature_branching_img2.png" style="width: 335.0px; height: 281.0px;" /></a>
 <p>Initially you should only see master branch listed. Within that dropdown
@@ -294,12 +297,12 @@ $
 </div>
 </div>
 <div class="section" id="when-feature-work-is-complete">
-<h3><span class="section-number">1.5.3.2.2. </span>2. When Feature Work is Complete<a class="headerlink" href="#when-feature-work-is-complete" title="Permalink to this headline">¶</a></h3>
+<h3>2. When Feature Work is Complete<a class="headerlink" href="#when-feature-work-is-complete" title="Permalink to this headline">¶</a></h3>
 <p>When you’re done working on your feature branch it is time to create a
 Pull Request to get your changes into master branch (both main class
 repo and fork)</p>
 <div class="section" id="create-pr-into-main-repo">
-<h4><span class="section-number">1.5.3.2.2.1. </span>Create PR into main repo<a class="headerlink" href="#create-pr-into-main-repo" title="Permalink to this headline">¶</a></h4>
+<h4>Create PR into main repo<a class="headerlink" href="#create-pr-into-main-repo" title="Permalink to this headline">¶</a></h4>
 <p>In GitHub UI navigate to Pull Requests and select New pull request
 button, you should now see options for source/target and branches</p>
 <a class="reference internal image-reference" href="../../_images/feature_branching_img4.png"><img alt="../../_images/feature_branching_img4.png" src="../../_images/feature_branching_img4.png" style="width: 1118.0px; height: 309.0px;" /></a>
@@ -307,9 +310,9 @@ button, you should now see options for source/target and branches</p>
 Create the PR.</p>
 </div>
 <div class="section" id="merge-your-feature-branch-into-your-forked-master-branch">
-<h4><span class="section-number">1.5.3.2.2.2. </span>Merge your feature branch into <em>your forked</em> master branch<a class="headerlink" href="#merge-your-feature-branch-into-your-forked-master-branch" title="Permalink to this headline">¶</a></h4>
+<h4>Merge your feature branch into <em>your forked</em> master branch<a class="headerlink" href="#merge-your-feature-branch-into-your-forked-master-branch" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="command-line">
-<h5><span class="section-number">1.5.3.2.2.2.1. </span>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h5>
+<h5>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h5>
 <p>note that you can always verify you are in your forked version by
 running the command below which should show URL of origin</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote show origin
@@ -334,7 +337,7 @@ then save and close.</p>
 </div>
 </div>
 <div class="section" id="github-ui">
-<h5><span class="section-number">1.5.3.2.2.2.2. </span>GitHub UI<a class="headerlink" href="#github-ui" title="Permalink to this headline">¶</a></h5>
+<h5>GitHub UI<a class="headerlink" href="#github-ui" title="Permalink to this headline">¶</a></h5>
 <p>If you’re not comfortable with command line, it is very easy to do in
 the GitHub UI!</p>
 <p>Navigate to Pull Requests again, and press New Pull request button, you
@@ -347,7 +350,7 @@ feature branch on the far right.</p>
 </div>
 </div>
 <div class="section" id="extensive-explanation-of-feature-branching">
-<h2><span class="section-number">1.5.3.3. </span>Extensive Explanation of Feature Branching<a class="headerlink" href="#extensive-explanation-of-feature-branching" title="Permalink to this headline">¶</a></h2>
+<h2>Extensive Explanation of Feature Branching<a class="headerlink" href="#extensive-explanation-of-feature-branching" title="Permalink to this headline">¶</a></h2>
 <p>It has been said that git is not a Revision Control System, but rather, a tool you can use to make a Revision Control System. What this means is that git provides a huge number of features for managing your source code, but you still need to decide how to use it for your particular project. This is often referred to as the git “workflow”. The “feature-branch” workflow is one such approach to managing a project.</p>
 <p>Here are a couple nice references that explain the feature branching workflow:</p>
 <p><a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow</a></p>
@@ -363,10 +366,10 @@ feature branch on the far right.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="git_hints.html" class="btn btn-neutral float-right" title="1.5.4. git Hints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git_hints.html" class="btn btn-neutral float-right" title="git Hints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="git_overview.html" class="btn btn-neutral float-left" title="1.5.2. git Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git_overview.html" class="btn btn-neutral float-left" title="git Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -375,11 +378,19 @@ feature branch on the far right.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -390,7 +401,6 @@ feature branch on the far right.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

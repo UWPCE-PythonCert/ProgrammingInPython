@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>19.3. Persistence and Serialization &mdash; Programming in Python 7.0 documentation</title>
+  <title>Persistence and Serialization &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="19.4. Unicode in Python" href="Unicode.html" />
-    <link rel="prev" title="19.2. Code Reviews" href="CodeReviews.html" /> 
+    <link rel="next" title="Unicode in Python" href="Unicode.html" />
+    <link rel="prev" title="Code Reviews" href="CodeReviews.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -102,27 +104,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">19.3. Persistence and Serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Decorators.html">19.6. Decorators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">19.10. Metaprogramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Debugging.html">19.13. Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">19.16. Concurrent Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Async.html">19.17. Asychronous Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">19.18. Notes on Coroutines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Profiling.html">19.21. Performance and Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Persistence and Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Decorators.html">Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Profiling.html">Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -130,6 +132,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -168,11 +171,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">19.3. </span>Persistence and Serialization</li>
+      <li>Persistence and Serialization</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,10 +191,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="Unicode.html" class="btn btn-neutral float-right" title="19.4. Unicode in Python" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Unicode.html" class="btn btn-neutral float-right" title="Unicode in Python" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="CodeReviews.html" class="btn btn-neutral float-left" title="19.2. Code Reviews" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="CodeReviews.html" class="btn btn-neutral float-left" title="Code Reviews" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -201,9 +204,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="persistence-and-serialization">
-<span id="serialization"></span><h1><span class="section-number">19.3. </span>Persistence and Serialization<a class="headerlink" href="#persistence-and-serialization" title="Permalink to this headline">¶</a></h1>
+<span id="serialization"></span><h1>Persistence and Serialization<a class="headerlink" href="#persistence-and-serialization" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
-<h2><span class="section-number">19.3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Persistence and Serialization are closely related.</p>
 <p><em>Serialization</em> means taking a potentially complex data structure and converting it into a single string of bytes.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Serialization">https://en.wikipedia.org/wiki/Serialization</a></p>
@@ -213,7 +216,7 @@
 <p>Serialization is also very useful for transmitting information between systems – over the network, etc.</p>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">19.3.2. </span>Serialization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Serialization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>This module is less about concepts.</p>
 <p>More about learning to use a given module.</p>
 <p>So less talk, more coding.</p>
@@ -221,7 +224,7 @@
 <p>There are third party packages with more options as well.</p>
 </div>
 <div class="section" id="persistence">
-<h2><span class="section-number">19.3.3. </span>Persistence<a class="headerlink" href="#persistence" title="Permalink to this headline">¶</a></h2>
+<h2>Persistence<a class="headerlink" href="#persistence" title="Permalink to this headline">¶</a></h2>
 <p>Persistence is saving your python data structure(s) to disk – so they
 will persist once the python process is finished.</p>
 <p>Any serial form can provide persistence (by dumping/loading it to/from
@@ -229,10 +232,10 @@ a file), but not all persistence mechanisms are serial (i.e RDBMS, etc.)</p>
 <p><a class="reference external" href="http://wiki.python.org/moin/PersistenceTools">http://wiki.python.org/moin/PersistenceTools</a></p>
 </div>
 <div class="section" id="python-specific-formats">
-<h2><span class="section-number">19.3.4. </span>Python Specific Formats<a class="headerlink" href="#python-specific-formats" title="Permalink to this headline">¶</a></h2>
+<h2>Python Specific Formats<a class="headerlink" href="#python-specific-formats" title="Permalink to this headline">¶</a></h2>
 <p>These are formats specific to python – convenient to use, but not useful for interchange with other systems.</p>
 <div class="section" id="python-literals">
-<h3><span class="section-number">19.3.4.1. </span>Python Literals<a class="headerlink" href="#python-literals" title="Permalink to this headline">¶</a></h3>
+<h3>Python Literals<a class="headerlink" href="#python-literals" title="Permalink to this headline">¶</a></h3>
 <p>Putting plain old python literals in your file</p>
 <p>Gives a nice, human-editable form for config files, etc.</p>
 <p>Don’t use for untrusted sources!!!</p>
@@ -243,7 +246,7 @@ a file), but not all persistence mechanisms are serial (i.e RDBMS, etc.)</p>
 <p><code class="docutils literal notranslate"><span class="pre">pprint</span></code>  (pretty print) module can make it easier to read:</p>
 <p><a class="reference external" href="https://docs.python.org/3.5/library/pprint.html">https://docs.python.org/3.5/library/pprint.html</a></p>
 <div class="section" id="python-literal-example">
-<h4><span class="section-number">19.3.4.1.1. </span>Python Literal Example<a class="headerlink" href="#python-literal-example" title="Permalink to this headline">¶</a></h4>
+<h4>Python Literal Example<a class="headerlink" href="#python-literal-example" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># a list of dicts</span>
 <span class="go">data = [{&#39;this&#39;:5, &#39;that&#39;:4}, {&#39;spam&#39;:7, &#39;eggs&#39;:3.4}]</span>
 <span class="gp">In [51]: </span><span class="n">s</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># save a string version:</span>
@@ -272,7 +275,7 @@ a file), but not all persistence mechanisms are serial (i.e RDBMS, etc.)</p>
 </div>
 </div>
 <div class="section" id="pretty-print">
-<h3><span class="section-number">19.3.4.2. </span>pretty print<a class="headerlink" href="#pretty-print" title="Permalink to this headline">¶</a></h3>
+<h3>pretty print<a class="headerlink" href="#pretty-print" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [68]: </span><span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;this&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;that&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;eggs&#39;</span><span class="p">:</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s1">&#39;spam&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span>
 <span class="go">         {&#39;foo&#39;: 86, &#39;bar&#39;: 4.5}, {&#39;fun&#39;: 43, &#39;baz&#39;: 6.5}]</span>
 <span class="gp">In [69]: </span><span class="kn">import</span> <span class="nn">pprint</span>
@@ -289,7 +292,7 @@ a file), but not all persistence mechanisms are serial (i.e RDBMS, etc.)</p>
 <p>This is a nice option if you want the saved form to be human readable / editable.</p>
 </div>
 <div class="section" id="pickle">
-<h3><span class="section-number">19.3.4.3. </span>Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h3>
+<h3>Pickle<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h3>
 <p>Pickle is a custom binary format for python objects.</p>
 <p>You can essentially dump any python object to disk (or string, or socket, or…</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [87]: </span><span class="kn">import</span> <span class="nn">pickle</span>
@@ -314,7 +317,7 @@ a file), but not all persistence mechanisms are serial (i.e RDBMS, etc.)</p>
 <p>But you probably won’t want to do that anyway – pickle is python-specific, not very useful for data interchange.</p>
 </div>
 <div class="section" id="shelve">
-<h3><span class="section-number">19.3.4.4. </span>Shelve<a class="headerlink" href="#shelve" title="Permalink to this headline">¶</a></h3>
+<h3>Shelve<a class="headerlink" href="#shelve" title="Permalink to this headline">¶</a></h3>
 <p>A “shelf” is a persistent, dictionary-like object.</p>
 <p>(It’s also a place you can put a jar of pickles…)</p>
 <p>The values (not the keys!) can be essentially arbitrary Python objects (anything picklable)</p>
@@ -334,7 +337,7 @@ a file), but not all persistence mechanisms are serial (i.e RDBMS, etc.)</p>
 <p><a class="reference external" href="https://docs.python.org/3.5/library/shelve.html">https://docs.python.org/3.5/library/shelve.html</a></p>
 </div>
 <div class="section" id="lab">
-<h3><span class="section-number">19.3.4.5. </span>LAB<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h3>
+<h3>LAB<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h3>
 <p>Here are two datasets embedded in Python:</p>
 <p><a class="reference download internal" download="" href="../_downloads/d9849d58494eee24e51aa7f951726589/add_book_data.py"><code class="xref download docutils literal notranslate"><span class="pre">add_book_data.py</span></code></a>
 and
@@ -365,11 +368,11 @@ and
 </div>
 </div>
 <div class="section" id="interchange-formats">
-<h2><span class="section-number">19.3.5. </span>Interchange Formats<a class="headerlink" href="#interchange-formats" title="Permalink to this headline">¶</a></h2>
+<h2>Interchange Formats<a class="headerlink" href="#interchange-formats" title="Permalink to this headline">¶</a></h2>
 <p>These are formats suitable for interchanging data with other systems – written in arbitrary other languages.</p>
 <p>In other words: standard formats.</p>
 <div class="section" id="ini">
-<h3><span class="section-number">19.3.5.1. </span>INI<a class="headerlink" href="#ini" title="Permalink to this headline">¶</a></h3>
+<h3>INI<a class="headerlink" href="#ini" title="Permalink to this headline">¶</a></h3>
 <p>INI files</p>
 <p>(the old Windows config files)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Section1</span><span class="p">]</span>
@@ -383,7 +386,7 @@ and
 </div>
 <p>Good for configuration data, etc.</p>
 <div class="section" id="configparser">
-<h4><span class="section-number">19.3.5.1.1. </span>ConfigParser<a class="headerlink" href="#configparser" title="Permalink to this headline">¶</a></h4>
+<h4>ConfigParser<a class="headerlink" href="#configparser" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">configparser</span></code> module provides tools for working with INI files:</p>
 <p>Writing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">configparser</span>
@@ -400,7 +403,7 @@ and
 </div>
 </div>
 <div class="section" id="reading-ini-files">
-<h3><span class="section-number">19.3.5.2. </span>Reading <code class="docutils literal notranslate"><span class="pre">ini</span></code>  files:<a class="headerlink" href="#reading-ini-files" title="Permalink to this headline">¶</a></h3>
+<h3>Reading <code class="docutils literal notranslate"><span class="pre">ini</span></code>  files:<a class="headerlink" href="#reading-ini-files" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;example.cfg&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">()</span>
@@ -415,13 +418,13 @@ and
 </div>
 </div>
 <div class="section" id="csv">
-<h2><span class="section-number">19.3.6. </span>CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h2>
+<h2>CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h2>
 <p>CSV (Comma Separated Values) format is the most common import and export format for spreadsheets and databases.</p>
 <p>No real standard – the Python csv package more or less follows MS Excel “standard” (with other “dialects” available)</p>
 <p>Can use delimiters other than commas… (I like tabs better)</p>
 <p>Most useful for simple tabular data</p>
 <div class="section" id="the-csv-module">
-<h3><span class="section-number">19.3.6.1. </span>The CSV module<a class="headerlink" href="#the-csv-module" title="Permalink to this headline">¶</a></h3>
+<h3>The CSV module<a class="headerlink" href="#the-csv-module" title="Permalink to this headline">¶</a></h3>
 <p>Reading <code class="docutils literal notranslate"><span class="pre">CSV</span></code>  files:</p>
 <p>(uses: <a class="reference download internal" download="" href="../_downloads/ef41bf7ef60c6bf0bcaea1137d086b26/eggs.csv"><code class="xref download docutils literal notranslate"><span class="pre">eggs.csv</span></code></a>)</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="kn">import</span> <span class="nn">csv</span>
@@ -455,7 +458,7 @@ interpreting quotes correctly.</p>
 </div>
 </div>
 <div class="section" id="json">
-<h2><span class="section-number">19.3.7. </span>JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
+<h2>JSON<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
 <p>JSON (JavaScript Object Notation) is a subset of JavaScript syntax used as a lightweight data interchange format.</p>
 <p><strong>LOTS</strong> of systems can read JSON – notably browsers…</p>
 <p>Python module has an interface similar to <code class="docutils literal notranslate"><span class="pre">pickle</span></code></p>
@@ -463,7 +466,7 @@ interpreting quotes correctly.</p>
 <p>Specializable encoding/decoding for other types – but I wouldn’t do that!</p>
 <p>Commonly used for configuration files, etc.</p>
 <div class="section" id="python-json-module">
-<h3><span class="section-number">19.3.7.1. </span>Python json module<a class="headerlink" href="#python-json-module" title="Permalink to this headline">¶</a></h3>
+<h3>Python json module<a class="headerlink" href="#python-json-module" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [93]: </span><span class="kn">import</span> <span class="nn">json</span>
 <span class="gp">In [94]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="gh">Out[95]: </span><span class="go">&#39;[{&quot;this&quot;: 5, &quot;that&quot;: 4}, {&quot;eggs&quot;: 3.4, &quot;spam&quot;: 7},</span>
@@ -483,7 +486,7 @@ interpreting quotes correctly.</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/json.html">https://docs.python.org/3/library/json.html</a></p>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">19.3.7.2. </span>LAB<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>LAB<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Use the same addressbook data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># load with:</span>
 <span class="kn">from</span> <span class="nn">add_book_data</span> <span class="kn">import</span> <span class="n">AddressBook</span>
@@ -518,11 +521,11 @@ interpreting quotes correctly.</p>
 </div>
 </div>
 <div class="section" id="xml">
-<h2><span class="section-number">19.3.8. </span>XML<a class="headerlink" href="#xml" title="Permalink to this headline">¶</a></h2>
+<h2>XML<a class="headerlink" href="#xml" title="Permalink to this headline">¶</a></h2>
 <p>XML is a standardized version of SGML, designed for use as a data storage / interchange format.</p>
 <p>NOTE: HTML is also SGML, and modern versions conform to the XML standard.</p>
 <div class="section" id="xml-in-the-python-std-lib">
-<h3><span class="section-number">19.3.8.1. </span>XML in the python std lib<a class="headerlink" href="#xml-in-the-python-std-lib" title="Permalink to this headline">¶</a></h3>
+<h3>XML in the python std lib<a class="headerlink" href="#xml-in-the-python-std-lib" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">xml.dom</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">xml.sax</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">xml.parsers.expat</span></code></p>
@@ -530,7 +533,7 @@ interpreting quotes correctly.</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/xml.html">https://docs.python.org/3/library/xml.html</a></p>
 </div>
 <div class="section" id="elementtree">
-<h3><span class="section-number">19.3.8.2. </span>elementtree<a class="headerlink" href="#elementtree" title="Permalink to this headline">¶</a></h3>
+<h3>elementtree<a class="headerlink" href="#elementtree" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">elementtree</span></code> is the simplest tool – maps pretty directly to XML.</p>
 <p>The Element type is a flexible container object, designed to store hierarchical data structures in memory.</p>
 <p>Essentially an in-memory XML – can be read from/written to XML</p>
@@ -551,11 +554,11 @@ interpreting quotes correctly.</p>
 </div>
 </div>
 <div class="section" id="databases">
-<h2><span class="section-number">19.3.9. </span>DataBases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h2>
+<h2>DataBases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h2>
 <p>A database is a system for storing and retrieving data – usually in a filesystem.</p>
 <p>We usually think RDBMS and SQL – but there are simpler systems.</p>
 <div class="section" id="dbm">
-<h3><span class="section-number">19.3.9.1. </span>dbm<a class="headerlink" href="#dbm" title="Permalink to this headline">¶</a></h3>
+<h3>dbm<a class="headerlink" href="#dbm" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">dbm</span></code>  is a generic interface to variants of the DBM database</p>
 <p>Suitable for storing data that fits well into a python dict with strings as both keys and values</p>
 <p>Note: dbm will use the dbm system that works on your system – this may be different on different systems – so the db files may NOT be compatible! <code class="docutils literal notranslate"><span class="pre">whichdb</span></code>  will try to figure it out, but it’s not guaranteed</p>
@@ -564,7 +567,7 @@ interpreting quotes correctly.</p>
 <p>It’s here for completeness, but there are probably better options!</p>
 </div>
 <div class="section" id="the-dbm-module">
-<h3><span class="section-number">19.3.9.2. </span>the <code class="docutils literal notranslate"><span class="pre">dbm</span></code> module<a class="headerlink" href="#the-dbm-module" title="Permalink to this headline">¶</a></h3>
+<h3>the <code class="docutils literal notranslate"><span class="pre">dbm</span></code> module<a class="headerlink" href="#the-dbm-module" title="Permalink to this headline">¶</a></h3>
 <p>Writing data:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating a dbm file:</span>
 <span class="kn">import</span> <span class="nn">dbm</span>
@@ -597,7 +600,7 @@ interpreting quotes correctly.</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/dbm.html">https://docs.python.org/3/library/dbm.html</a></p>
 </div>
 <div class="section" id="sqlite">
-<h3><span class="section-number">19.3.9.3. </span>sqlite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h3>
+<h3>sqlite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h3>
 <p><strong>SQLite:</strong></p>
 <p>a C library providing a lightweight disk-based single-file database</p>
 <p>Nonstandard variant of the SQL query language</p>
@@ -606,12 +609,12 @@ interpreting quotes correctly.</p>
 <p><a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/">https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/</a></p>
 </div>
 <div class="section" id="python-sqlite-module">
-<h3><span class="section-number">19.3.9.4. </span>python sqlite module<a class="headerlink" href="#python-sqlite-module" title="Permalink to this headline">¶</a></h3>
+<h3>python sqlite module<a class="headerlink" href="#python-sqlite-module" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>  Python module wraps C lib – provides standard DB-API interface</p>
 <p>Allows (and requires) SQL queries</p>
 <p>Can provide high performance, flexible, portable storage for your app</p>
 <div class="section" id="example">
-<h4><span class="section-number">19.3.9.4.1. </span>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<h4>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="c1"># open a connection to a db file:</span>
 <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span>
@@ -623,7 +626,7 @@ interpreting quotes correctly.</p>
 </div>
 </div>
 <div class="section" id="execute-sql-with-the-cursor">
-<h4><span class="section-number">19.3.9.4.2. </span>Execute SQL with the cursor:<a class="headerlink" href="#execute-sql-with-the-cursor" title="Permalink to this headline">¶</a></h4>
+<h4>Execute SQL with the cursor:<a class="headerlink" href="#execute-sql-with-the-cursor" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create table</span>
 <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&#39;CREATE TABLE stocks (date text, trans text, symbol text, qty real, price real)&#39;&quot;</span><span class="p">)</span>
 <span class="c1"># Insert a row of data</span>
@@ -664,7 +667,7 @@ interpreting quotes correctly.</p>
 </div>
 </div>
 <div class="section" id="db-api">
-<h3><span class="section-number">19.3.9.5. </span>DB-API<a class="headerlink" href="#db-api" title="Permalink to this headline">¶</a></h3>
+<h3>DB-API<a class="headerlink" href="#db-api" title="Permalink to this headline">¶</a></h3>
 <p>The DB-API spec (PEP 249) is a specification for interaction between Python and Relational Databases.</p>
 <p>Support for a large number of third-party Database drivers:</p>
 <blockquote>
@@ -680,7 +683,7 @@ interpreting quotes correctly.</p>
 </div>
 </div>
 <div class="section" id="lab-extras">
-<h2><span class="section-number">19.3.10. </span>LAB Extras:<a class="headerlink" href="#lab-extras" title="Permalink to this headline">¶</a></h2>
+<h2>LAB Extras:<a class="headerlink" href="#lab-extras" title="Permalink to this headline">¶</a></h2>
 <p>A few more things you could do:</p>
 <ul class="simple">
 <li><p>Use pickle to save/reload a custom class of yours
@@ -690,10 +693,10 @@ A custom class, or a more complex built-in?</p></li>
 </ul>
 </div>
 <div class="section" id="other-options">
-<h2><span class="section-number">19.3.11. </span>Other Options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h2>
+<h2>Other Options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h2>
 <p>There are a lot of other possibilities outside the standard lib.</p>
 <div class="section" id="object-relation-mappers">
-<h3><span class="section-number">19.3.11.1. </span>Object-Relation Mappers<a class="headerlink" href="#object-relation-mappers" title="Permalink to this headline">¶</a></h3>
+<h3>Object-Relation Mappers<a class="headerlink" href="#object-relation-mappers" title="Permalink to this headline">¶</a></h3>
 <p>Systems for mapping Python objects to tables</p>
 <p>Saves you writing that glue code (and the SQL)</p>
 <p>Usually deal with mapping to variety of back-ends:</p>
@@ -710,14 +713,14 @@ A custom class, or a more complex built-in?</p></li>
 </ul>
 </div>
 <div class="section" id="object-databases">
-<h3><span class="section-number">19.3.11.2. </span>Object Databases<a class="headerlink" href="#object-databases" title="Permalink to this headline">¶</a></h3>
+<h3>Object Databases<a class="headerlink" href="#object-databases" title="Permalink to this headline">¶</a></h3>
 <p>(we’ll be talking more about this in another class: <a class="reference internal" href="NoSQL.html#nosql"><span class="std std-ref">No SQL Databases</span></a>)</p>
 <p>Directly store and retrieve Python Objects.</p>
 <p>Kind of like <code class="docutils literal notranslate"><span class="pre">shelve</span></code>, but more flexible, and give you searching, etc.</p>
 <p>ZODB: (<a class="reference external" href="http://www.zodb.org/">http://www.zodb.org/</a>)</p>
 </div>
 <div class="section" id="nosql">
-<h3><span class="section-number">19.3.11.3. </span>NoSQL<a class="headerlink" href="#nosql" title="Permalink to this headline">¶</a></h3>
+<h3>NoSQL<a class="headerlink" href="#nosql" title="Permalink to this headline">¶</a></h3>
 <p>Map-Reduce, etc.</p>
 <p>– Big deal for “Big Data”: Amazon, Google, etc.</p>
 <p>Document-Oriented Storage</p>
@@ -733,7 +736,7 @@ A custom class, or a more complex built-in?</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
-<h3><span class="section-number">19.3.11.4. </span>LAB<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>LAB<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Load data with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">add_book_data</span> <span class="kn">import</span> <span class="n">AddressBook</span>
 </pre></div>
@@ -767,10 +770,10 @@ A custom class, or a more complex built-in?</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Unicode.html" class="btn btn-neutral float-right" title="19.4. Unicode in Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Unicode.html" class="btn btn-neutral float-right" title="Unicode in Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="CodeReviews.html" class="btn btn-neutral float-left" title="19.2. Code Reviews" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="CodeReviews.html" class="btn btn-neutral float-left" title="Code Reviews" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -779,11 +782,19 @@ A custom class, or a more complex built-in?</p></li>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -794,7 +805,6 @@ A custom class, or a more complex built-in?</p></li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

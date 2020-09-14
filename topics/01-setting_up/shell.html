@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.4.2.1. Shell Customizations for Python Development &mdash; Programming in Python 7.0 documentation</title>
+  <title>Shell Customizations for Python Development &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.4.2.2. iPython Interpreter" href="ipython.html" />
-    <link rel="prev" title="1.4.1.3. Using Visual Studio Code as a lightweight Python IDE" href="vsc_as_ide.html" /> 
+    <link rel="next" title="iPython Interpreter" href="ipython.html" />
+    <link rel="prev" title="Using Visual Studio Code as a lightweight Python IDE" href="vsc_as_ide.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,16 @@
               <p class="caption"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">1.1. Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">1.2. Installing Python and core tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">1.3. Setup Details</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="advanced_setup.html">1.4. Advanced Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">1.5. Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources.html">1.6. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,13 +156,13 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
         
-          <li><a href="advanced_setup.html"><span class="section-number">1.4. </span>Advanced Setup</a> &raquo;</li>
+          <li><a href="advanced_setup.html">Advanced Setup</a> &raquo;</li>
         
-      <li><span class="section-number">1.4.2.1. </span>Shell Customizations for Python Development</li>
+      <li>Shell Customizations for Python Development</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,10 +178,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="ipython.html" class="btn btn-neutral float-right" title="1.4.2.2. iPython Interpreter" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ipython.html" class="btn btn-neutral float-right" title="iPython Interpreter" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vsc_as_ide.html" class="btn btn-neutral float-left" title="1.4.1.3. Using Visual Studio Code as a lightweight Python IDE" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vsc_as_ide.html" class="btn btn-neutral float-left" title="Using Visual Studio Code as a lightweight Python IDE" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -188,13 +191,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="shell-customizations-for-python-development">
-<span id="shell-customization"></span><h1><span class="section-number">1.4.2.1. </span>Shell Customizations for Python Development<a class="headerlink" href="#shell-customizations-for-python-development" title="Permalink to this headline">¶</a></h1>
+<span id="shell-customization"></span><h1>Shell Customizations for Python Development<a class="headerlink" href="#shell-customizations-for-python-development" title="Permalink to this headline">¶</a></h1>
 <p>The command line is your home as a developer.  You must be comfortable there.
 In order to improve your comfort there are a number of enhancements you can
 make to improve your experience, especially with non-standard software like
 <code class="docutils literal notranslate"><span class="pre">git</span></code> and <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code></p>
 <div class="section" id="what-was-that-name-again">
-<h2><span class="section-number">1.4.2.1.1. </span>What was that name, again?<a class="headerlink" href="#what-was-that-name-again" title="Permalink to this headline">¶</a></h2>
+<h2>What was that name, again?<a class="headerlink" href="#what-was-that-name-again" title="Permalink to this headline">¶</a></h2>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">bash</span></code> offers tab completion. But that doesn’t extend to
 interactions with <code class="docutils literal notranslate"><span class="pre">git</span></code>. Considering how many branches, tags and remotes you
 end up interacting with, and how many long-winded commands there are in
@@ -220,7 +223,7 @@ $ curl https://raw.github.com/git/git/v1.8.4.2/contrib/completion/git-completion
 machine and get tab completion of branch names, remotes and all git commands.</p>
 </div>
 <div class="section" id="where-am-i-what-am-i-doing">
-<h2><span class="section-number">1.4.2.1.2. </span>Where am I, what am I doing?<a class="headerlink" href="#where-am-i-what-am-i-doing" title="Permalink to this headline">¶</a></h2>
+<h2>Where am I, what am I doing?<a class="headerlink" href="#where-am-i-what-am-i-doing" title="Permalink to this headline">¶</a></h2>
 <p>As a working developer, you end up with a <em>lot</em> of projects. Even with tab
 completion its a chore to remember which branch is checked out, how far ahead
 or behind the remote you are, and so on.</p>
@@ -283,7 +286,7 @@ providing information about the state of a repo:</p>
 <p>Not half bad at all.</p>
 </div>
 <div class="section" id="but-wait-there-s-more">
-<h2><span class="section-number">1.4.2.1.3. </span>But wait, there’s more.<a class="headerlink" href="#but-wait-there-s-more" title="Permalink to this headline">¶</a></h2>
+<h2>But wait, there’s more.<a class="headerlink" href="#but-wait-there-s-more" title="Permalink to this headline">¶</a></h2>
 <p>The problem with this is that it doesn’t play well with another incredibly
 useful tool, <a class="reference external" href="http://virtualenv.org">virtualenv</a>. When you activate a virtualenv, it prepends the name
 of the environment you are working on to the shell prompt.</p>
@@ -350,7 +353,7 @@ need to know when working on a daily basis:</p>
 <a class="reference internal image-reference" href="../../_images/virtualenv_prompt.png"><img alt="A shell session showing the prompt with both virtualenv and git information" src="../../_images/virtualenv_prompt.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="wrap-up">
-<h2><span class="section-number">1.4.2.1.4. </span>Wrap-Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
+<h2>Wrap-Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
 <p>There is still a great deal more that you could do with your shell, but this
 will suffice for now. If you are interested in reading further, there is
 <a class="reference external" href="http://www.gnu.org/software/bash/manual/bash.html">a lot to learn</a>.</p>
@@ -365,10 +368,10 @@ will suffice for now. If you are interested in reading further, there is
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ipython.html" class="btn btn-neutral float-right" title="1.4.2.2. iPython Interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ipython.html" class="btn btn-neutral float-right" title="iPython Interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="vsc_as_ide.html" class="btn btn-neutral float-left" title="1.4.1.3. Using Visual Studio Code as a lightweight Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="vsc_as_ide.html" class="btn btn-neutral float-left" title="Using Visual Studio Code as a lightweight Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -377,11 +380,19 @@ will suffice for now. If you are interested in reading further, there is
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -392,7 +403,6 @@ will suffice for now. If you are interested in reading further, there is
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="13.1. Object Orientation Overview" href="../../modules/ObjectOrientationOverview.html" />
-    <link rel="prev" title="12.4. Mailroom With Comprehensions" href="../../exercises/mailroom/mailroom_with_comprehensions.html" /> 
+    <link rel="next" title="Object Orientation Overview" href="../../modules/ObjectOrientationOverview.html" />
+    <link rel="prev" title="Mailroom With Comprehensions" href="../../exercises/mailroom/mailroom_with_comprehensions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -96,10 +98,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../12-comprehensions/index.html">12. Comprehensions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">13. Intro to Object Oriented Programing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">13.1. Object Orientation Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/PythonClasses.html">13.2. Python Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/oo_intro.html">13.3. OO Intro - Report Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom-oo.html">13.4. Mailroom - Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/PythonClasses.html">Python Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
@@ -113,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,7 +154,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">13. </span>Intro to Object Oriented Programing</li>
     
@@ -169,10 +172,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/ObjectOrientationOverview.html" class="btn btn-neutral float-right" title="13.1. Object Orientation Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/ObjectOrientationOverview.html" class="btn btn-neutral float-right" title="Object Orientation Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/mailroom/mailroom_with_comprehensions.html" class="btn btn-neutral float-left" title="12.4. Mailroom With Comprehensions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/mailroom/mailroom_with_comprehensions.html" class="btn btn-neutral float-left" title="Mailroom With Comprehensions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -186,8 +189,8 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">13.1. Object Orientation Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/PythonClasses.html">13.2. Python Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/ObjectOrientationOverview.html">Object Orientation Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/PythonClasses.html">Python Classes</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -195,8 +198,8 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Exercises</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/oo_intro.html">13.3. OO Intro - Report Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom-oo.html">13.4. Mailroom - Object Oriented</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/oo_intro.html">OO Intro - Report Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom-oo.html">Mailroom - Object Oriented</a></li>
 </ul>
 </div>
 </div>
@@ -209,10 +212,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/ObjectOrientationOverview.html" class="btn btn-neutral float-right" title="13.1. Object Orientation Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/ObjectOrientationOverview.html" class="btn btn-neutral float-right" title="Object Orientation Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/mailroom/mailroom_with_comprehensions.html" class="btn btn-neutral float-left" title="12.4. Mailroom With Comprehensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/mailroom/mailroom_with_comprehensions.html" class="btn btn-neutral float-left" title="Mailroom With Comprehensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -221,11 +224,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -236,7 +247,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

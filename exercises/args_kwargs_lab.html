@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11.3. args and kwargs Lab &mdash; Programming in Python 7.0 documentation</title>
+  <title>args and kwargs Lab &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="12. Comprehensions" href="../topics/12-comprehensions/index.html" />
-    <link rel="prev" title="11.2. A bit more on mutability (and copies)" href="../modules/MoreOnMutability.html" /> 
+    <link rel="prev" title="A bit more on mutability (and copies)" href="../modules/MoreOnMutability.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -94,9 +96,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/AdvancedArgumentPassing.html">11.1. Advanced Argument Passing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/MoreOnMutability.html">11.2. A bit more on mutability (and copies)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">11.3. <code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/AdvancedArgumentPassing.html">Advanced Argument Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/MoreOnMutability.html">A bit more on mutability (and copies)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> Lab</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
@@ -112,6 +114,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -150,11 +153,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/11-argument_passing/index.html"><span class="section-number">11. </span>Advanced Argument Passing</a> &raquo;</li>
         
-      <li><span class="section-number">11.3. </span><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> Lab</li>
+      <li><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> Lab</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,7 +176,7 @@
         <a href="../topics/12-comprehensions/index.html" class="btn btn-neutral float-right" title="12. Comprehensions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/MoreOnMutability.html" class="btn btn-neutral float-left" title="11.2. A bit more on mutability (and copies)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/MoreOnMutability.html" class="btn btn-neutral float-left" title="A bit more on mutability (and copies)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -183,9 +186,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="args-and-kwargs-lab">
-<span id="exercise-args-kwargs-lab"></span><h1><span class="section-number">11.3. </span><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> Lab<a class="headerlink" href="#args-and-kwargs-lab" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-args-kwargs-lab"></span><h1><code class="docutils literal notranslate"><span class="pre">args</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> Lab<a class="headerlink" href="#args-and-kwargs-lab" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="goal">
-<h2><span class="section-number">11.3.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Develop an understanding of using advanced argument passing and parameter definitons.</p>
 <p>If this is all confusing – you may want to review this:</p>
 <p><a class="reference external" href="http://stupidpythonideas.blogspot.com/2013/08/arguments-and-parameters.html">http://stupidpythonideas.blogspot.com/2013/08/arguments-and-parameters.html</a></p>
@@ -199,18 +202,18 @@ at all, but it will teach you about using parameters effectively.</p>
 </div>
 </div>
 <div class="section" id="test-driven-development">
-<h2><span class="section-number">11.3.2. </span>Test Driven Development?<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h2>
+<h2>Test Driven Development?<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h2>
 <p>Since this code isn’t really going to do anything, it doesn’t make a lot of sense to test it.  However, you need to run the code somehow. So this is a good chance to practice test-driven development – even if only as a way to run your code as you write it.</p>
 <p>For each step of the exercise, write a test that calls your function in a particular way, and test that it returns what you expect. In this case, what you will be testing is not really the code – but rather your own expectations of what the results should be.</p>
 <p>You will also be testing Python’s argument handling, which you can be pretty sure DOES work correctly.</p>
 <p>So while these won’t be useful tests in the usual sense, this is a chance to get used to test driven development.</p>
 </div>
 <div class="section" id="procedure">
-<h2><span class="section-number">11.3.3. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
 <p>We are going to do this as test driven development: Your first task for each step below is to write a test that will ensure your code does what you think it should do.</p>
 </div>
 <div class="section" id="keyword-arguments">
-<h2><span class="section-number">11.3.4. </span>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h2>
+<h2>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Write a function that has four optional parameters (with defaults):</p>
 <ul>
@@ -250,7 +253,7 @@ at all, but it will teach you about using parameters effectively.</p>
 </ul>
 </div>
 <div class="section" id="generic-parameters">
-<h2><span class="section-number">11.3.5. </span>Generic parameters<a class="headerlink" href="#generic-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Generic parameters<a class="headerlink" href="#generic-parameters" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Write a new function with the parameters as:</p></li>
 </ul>
@@ -275,7 +278,7 @@ at all, but it will teach you about using parameters effectively.</p>
         <a href="../topics/12-comprehensions/index.html" class="btn btn-neutral float-right" title="12. Comprehensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/MoreOnMutability.html" class="btn btn-neutral float-left" title="11.2. A bit more on mutability (and copies)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/MoreOnMutability.html" class="btn btn-neutral float-left" title="A bit more on mutability (and copies)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -284,11 +287,19 @@ at all, but it will teach you about using parameters effectively.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -299,7 +310,6 @@ at all, but it will teach you about using parameters effectively.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

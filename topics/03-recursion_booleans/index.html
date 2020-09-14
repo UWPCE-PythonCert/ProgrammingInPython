@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.1. Boolean Expressions" href="../../modules/Booleans.html" />
-    <link rel="prev" title="2.7. Fizz Buzz Exercise" href="../../exercises/fizz_buzz.html" /> 
+    <link rel="next" title="Boolean Expressions" href="../../modules/Booleans.html" />
+    <link rel="prev" title="Fizz Buzz Exercise" href="../../exercises/fizz_buzz.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,9 +88,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Booleans and Recursion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Booleans.html">3.1. Boolean Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Recursion.html">3.2. Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/fib_and_lucas.html">3.3. Fibonacci Series Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Booleans.html">Boolean Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/fib_and_lucas.html">Fibonacci Series Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
@@ -112,6 +114,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -150,7 +153,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">3. </span>Booleans and Recursion</li>
     
@@ -168,10 +171,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/Booleans.html" class="btn btn-neutral float-right" title="3.1. Boolean Expressions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Booleans.html" class="btn btn-neutral float-right" title="Boolean Expressions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/fizz_buzz.html" class="btn btn-neutral float-left" title="2.7. Fizz Buzz Exercise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/fizz_buzz.html" class="btn btn-neutral float-left" title="Fizz Buzz Exercise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -185,8 +188,8 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">3.1. Boolean Expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">3.2. Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">Boolean Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -194,7 +197,7 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Exercises</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/fib_and_lucas.html">3.3. Fibonacci Series Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/fib_and_lucas.html">Fibonacci Series Exercise</a></li>
 </ul>
 </div>
 </div>
@@ -207,10 +210,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/Booleans.html" class="btn btn-neutral float-right" title="3.1. Boolean Expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Booleans.html" class="btn btn-neutral float-right" title="Boolean Expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/fizz_buzz.html" class="btn btn-neutral float-left" title="2.7. Fizz Buzz Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/fizz_buzz.html" class="btn btn-neutral float-left" title="Fizz Buzz Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -219,11 +222,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -234,7 +245,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

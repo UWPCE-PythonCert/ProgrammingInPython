@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.5. A Small Example Package &mdash; Programming in Python 7.0 documentation</title>
+  <title>A Small Example Package &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10.6. Mailroom – as a Python Package" href="../mailroom/mailroom-pkg.html" />
-    <link rel="prev" title="10.4. Packages and Packaging" href="../../modules/Packaging.html" /> 
+    <link rel="next" title="Mailroom – as a Python Package" href="../mailroom/mailroom-pkg.html" />
+    <link rel="prev" title="Packages and Packaging" href="../../modules/Packaging.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -93,12 +95,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/10-modules_packages/index.html">10. Modules and Packages</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/NamingThings.html">10.1. Style and Naming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Modules.html">10.2. Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Documentation.html">10.3. Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Packaging.html">10.4. Packages and Packaging</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.5. A Small Example Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom-pkg.html">10.6. Mailroom – as a Python Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/NamingThings.html">Style and Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Modules.html">Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Packaging.html">Packages and Packaging</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A Small Example Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom-pkg.html">Mailroom – as a Python Package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
@@ -115,6 +117,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -153,11 +156,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/10-modules_packages/index.html"><span class="section-number">10. </span>Modules and Packages</a> &raquo;</li>
         
-      <li><span class="section-number">10.5. </span>A Small Example Package</li>
+      <li>A Small Example Package</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,10 +176,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../mailroom/mailroom-pkg.html" class="btn btn-neutral float-right" title="10.6. Mailroom – as a Python Package" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../mailroom/mailroom-pkg.html" class="btn btn-neutral float-right" title="Mailroom – as a Python Package" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Packaging.html" class="btn btn-neutral float-left" title="10.4. Packages and Packaging" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Packaging.html" class="btn btn-neutral float-left" title="Packages and Packaging" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -186,7 +189,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="a-small-example-package">
-<h1><span class="section-number">10.5. </span>A Small Example Package<a class="headerlink" href="#a-small-example-package" title="Permalink to this headline">¶</a></h1>
+<h1>A Small Example Package<a class="headerlink" href="#a-small-example-package" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Create a small package</p>
 <ul>
@@ -224,10 +227,10 @@ sample_text_file.txt: an example file you can use to try it out.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mailroom/mailroom-pkg.html" class="btn btn-neutral float-right" title="10.6. Mailroom – as a Python Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../mailroom/mailroom-pkg.html" class="btn btn-neutral float-right" title="Mailroom – as a Python Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/Packaging.html" class="btn btn-neutral float-left" title="10.4. Packages and Packaging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Packaging.html" class="btn btn-neutral float-left" title="Packages and Packaging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -236,11 +239,19 @@ sample_text_file.txt: an example file you can use to try it out.
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -251,7 +262,6 @@ sample_text_file.txt: an example file you can use to try it out.
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

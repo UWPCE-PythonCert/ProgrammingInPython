@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.1. File Reading and Writing" href="../../modules/Files.html" />
-    <link rel="prev" title="8.4. Mailroom With Dicts" href="../../exercises/mailroom/mailroom_with_dicts.html" /> 
+    <link rel="next" title="File Reading and Writing" href="../../modules/Files.html" />
+    <link rel="prev" title="Mailroom With Dicts" href="../../exercises/mailroom/mailroom_with_dicts.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,11 +94,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">9. File Handling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Files.html">9.1. File Reading and Writing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/file_processing/file_lab.html">9.2. File Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/file_processing/file_processing.html">9.3. File Processing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_files.html">9.4. Mailroom With Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/trigrams/trigrams.html">9.5. Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/file_processing/file_lab.html">File Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/file_processing/file_processing.html">File Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../10-modules_packages/index.html">10. Modules and Packages</a></li>
@@ -114,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -152,7 +155,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">9. </span>File Handling</li>
     
@@ -170,10 +173,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../modules/Files.html" class="btn btn-neutral float-right" title="9.1. File Reading and Writing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Files.html" class="btn btn-neutral float-right" title="File Reading and Writing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-left" title="8.4. Mailroom With Dicts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-left" title="Mailroom With Dicts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -187,21 +190,21 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Files.html">9.1. File Reading and Writing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Files.html">File Reading and Writing</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Activities</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/file_processing/file_lab.html">9.2. File Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/file_processing/file_lab.html">File Exercise</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Exercises</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/file_processing/file_processing.html">9.3. File Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_files.html">9.4. Mailroom With Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/trigrams/trigrams.html">9.5. Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/file_processing/file_processing.html">File Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom_with_files.html">Mailroom With Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/trigrams/trigrams.html">Trigrams – Simple Text Manipulation</a></li>
 </ul>
 </div>
 </div>
@@ -214,10 +217,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/Files.html" class="btn btn-neutral float-right" title="9.1. File Reading and Writing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Files.html" class="btn btn-neutral float-right" title="File Reading and Writing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-left" title="8.4. Mailroom With Dicts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/mailroom/mailroom_with_dicts.html" class="btn btn-neutral float-left" title="Mailroom With Dicts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -226,11 +229,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -241,7 +252,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

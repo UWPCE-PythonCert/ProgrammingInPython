@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>17.6. lambda and keyword Magic &mdash; Programming in Python 7.0 documentation</title>
+  <title>lambda and keyword Magic &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="17.7. Trapezoidal Rule" href="trapezoid.html" />
-    <link rel="prev" title="17.5. Closures and Function Currying" href="../modules/Closures.html" /> 
+    <link rel="next" title="Trapezoidal Rule" href="trapezoid.html" />
+    <link rel="prev" title="Closures and Function Currying" href="../modules/Closures.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,7 +87,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -100,13 +102,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/OO_vs_functional.html">17.1. Object Oriented vs Functional Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Lambda.html">17.2. Anonymous Functions: Lambda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/MapFilterReduce.html">17.3. Map Filter and Reduce</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/IPythonParallel.html">17.4. IPython Parallel Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Closures.html">17.5. Closures and Function Currying</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">17.6. lambda and keyword Magic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="trapezoid.html">17.7. Trapezoidal Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/OO_vs_functional.html">Object Oriented vs Functional Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Lambda.html">Anonymous Functions: Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/MapFilterReduce.html">Map Filter and Reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/IPythonParallel.html">IPython Parallel Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Closures.html">Closures and Function Currying</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">lambda and keyword Magic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trapezoid.html">Trapezoidal Rule</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
@@ -116,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,11 +157,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">17. </span>Introduction to Functional Programming</a> &raquo;</li>
         
-      <li><span class="section-number">17.6. </span>lambda and keyword Magic</li>
+      <li>lambda and keyword Magic</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,10 +177,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="trapezoid.html" class="btn btn-neutral float-right" title="17.7. Trapezoidal Rule" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="trapezoid.html" class="btn btn-neutral float-right" title="Trapezoidal Rule" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Closures.html" class="btn btn-neutral float-left" title="17.5. Closures and Function Currying" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Closures.html" class="btn btn-neutral float-left" title="Closures and Function Currying" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -187,9 +190,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="lambda-and-keyword-magic">
-<span id="exercise-lambda-magic"></span><h1><span class="section-number">17.6. </span>lambda and keyword Magic<a class="headerlink" href="#lambda-and-keyword-magic" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-lambda-magic"></span><h1>lambda and keyword Magic<a class="headerlink" href="#lambda-and-keyword-magic" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="goals">
-<h2><span class="section-number">17.6.1. </span>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>A bit of lambda</p></li>
@@ -198,7 +201,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="task">
-<h3><span class="section-number">17.6.1.1. </span>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h3>
+<h3>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h3>
 <p>Write a function that returns a list of n functions,
 such that each one, when called, will return the input value,
 incremented by an increasing number.</p>
@@ -208,7 +211,7 @@ incremented by an increasing number.</p>
 <p>Not clear? here’s what you should get…</p>
 </div>
 <div class="section" id="example-calling-code">
-<h3><span class="section-number">17.6.1.2. </span>Example calling code<a class="headerlink" href="#example-calling-code" title="Permalink to this headline">¶</a></h3>
+<h3>Example calling code<a class="headerlink" href="#example-calling-code" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [96]: </span><span class="n">the_list</span> <span class="o">=</span> <span class="n">function_builder</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="go">### so the_list should contain n functions (callables)</span>
 <span class="gp">In [97]: </span><span class="n">the_list</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">2</span><span class="p">)</span>
@@ -243,10 +246,10 @@ incremented by an increasing number.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="trapezoid.html" class="btn btn-neutral float-right" title="17.7. Trapezoidal Rule" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="trapezoid.html" class="btn btn-neutral float-right" title="Trapezoidal Rule" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Closures.html" class="btn btn-neutral float-left" title="17.5. Closures and Function Currying" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Closures.html" class="btn btn-neutral float-left" title="Closures and Function Currying" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -255,11 +258,19 @@ incremented by an increasing number.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -270,7 +281,6 @@ incremented by an increasing number.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

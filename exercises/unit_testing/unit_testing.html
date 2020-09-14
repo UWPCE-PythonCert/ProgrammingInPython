@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.3. Introduction To Unit Testing &mdash; Programming in Python 7.0 documentation</title>
+  <title>Introduction To Unit Testing &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.4. Mailroom With Unit Tests" href="../mailroom/mailroom_with_tests.html" />
-    <link rel="prev" title="7.2. Test Driven Development" href="../../modules/TestDrivenDevelopment.html" /> 
+    <link rel="next" title="Mailroom With Unit Tests" href="../mailroom/mailroom_with_tests.html" />
+    <link rel="prev" title="Test Driven Development" href="../../modules/TestDrivenDevelopment.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,15 +87,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Testing.html">7.1. Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">7.2. Test Driven Development</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.3. Introduction To Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom_with_tests.html">7.4. Mailroom With Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/TestDrivenDevelopment.html">Test Driven Development</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction To Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom_with_tests.html">Mailroom With Unit Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
@@ -113,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,11 +154,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../../topics/07-unit_testing/index.html"><span class="section-number">7. </span>Unit Testing</a> &raquo;</li>
         
-      <li><span class="section-number">7.3. </span>Introduction To Unit Testing</li>
+      <li>Introduction To Unit Testing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,10 +174,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../mailroom/mailroom_with_tests.html" class="btn btn-neutral float-right" title="7.4. Mailroom With Unit Tests" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../mailroom/mailroom_with_tests.html" class="btn btn-neutral float-right" title="Mailroom With Unit Tests" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/TestDrivenDevelopment.html" class="btn btn-neutral float-left" title="7.2. Test Driven Development" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/TestDrivenDevelopment.html" class="btn btn-neutral float-left" title="Test Driven Development" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -184,9 +187,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="introduction-to-unit-testing">
-<span id="exercise-unit-testing"></span><h1><span class="section-number">7.3. </span>Introduction To Unit Testing<a class="headerlink" href="#introduction-to-unit-testing" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-unit-testing"></span><h1>Introduction To Unit Testing<a class="headerlink" href="#introduction-to-unit-testing" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="preparation">
-<h2><span class="section-number">7.3.1. </span>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
 <p>In order to do unit testing, you need a framework in which to write and run your tests.
 Earlier in this class, you’ve been adding “asserts” to your modules – perhaps in the <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> block.  These are, in fact, a kind of unit test.
 But as you build larger systems, you’ll want a more structured way to write and run your tests.</p>
@@ -209,7 +212,7 @@ collected <span class="m">0</span> <span class="nv">items</span>
 <p>If you already HAVE some tests – you may see something different!</p>
 </div>
 <div class="section" id="test-driven-development">
-<h2><span class="section-number">7.3.2. </span>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h2>
+<h2>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h2>
 <p>Download these files, or find them in the exercise repo:</p>
 <p><a class="reference download internal" download="" href="../../_downloads/8015ec2e0a1cc6ebc8514e78227617fc/test_walnut_party.py"><code class="xref download docutils literal notranslate"><span class="pre">test_walnut_party.py</span></code></a></p>
 <p>and:</p>
@@ -232,7 +235,7 @@ collected <span class="m">0</span> <span class="nv">items</span>
 <p>A totally do nothing function – of course the tests all fail!</p>
 </div>
 <div class="section" id="making-tests-pass">
-<h2><span class="section-number">7.3.3. </span>Making tests pass<a class="headerlink" href="#making-tests-pass" title="Permalink to this headline">¶</a></h2>
+<h2>Making tests pass<a class="headerlink" href="#making-tests-pass" title="Permalink to this headline">¶</a></h2>
 <p>Open:</p>
 <p><code class="docutils literal notranslate"><span class="pre">test_walnut_party.py</span></code></p>
 <p>and:</p>
@@ -242,7 +245,7 @@ collected <span class="m">0</span> <span class="nv">items</span>
 <p>When the tests pass – you are done! That’s the beauty of test-driven development.</p>
 </div>
 <div class="section" id="doing-your-own">
-<h2><span class="section-number">7.3.4. </span>Doing your own:<a class="headerlink" href="#doing-your-own" title="Permalink to this headline">¶</a></h2>
+<h2>Doing your own:<a class="headerlink" href="#doing-your-own" title="Permalink to this headline">¶</a></h2>
 <p>Pick another example from codingbat:</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://codingbat.com</span></code></p>
 <p>Do a bit of test-driven development on it:</p>
@@ -275,10 +278,10 @@ If you name your test files: <code class="docutils literal notranslate"><span cl
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mailroom/mailroom_with_tests.html" class="btn btn-neutral float-right" title="7.4. Mailroom With Unit Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../mailroom/mailroom_with_tests.html" class="btn btn-neutral float-right" title="Mailroom With Unit Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/TestDrivenDevelopment.html" class="btn btn-neutral float-left" title="7.2. Test Driven Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/TestDrivenDevelopment.html" class="btn btn-neutral float-left" title="Test Driven Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -287,11 +290,19 @@ If you name your test files: <code class="docutils literal notranslate"><span cl
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -302,7 +313,6 @@ If you name your test files: <code class="docutils literal notranslate"><span cl
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

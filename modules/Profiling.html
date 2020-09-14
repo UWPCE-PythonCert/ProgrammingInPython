@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>19.21. Performance and Profiling &mdash; Programming in Python 7.0 documentation</title>
+  <title>Performance and Profiling &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,13 +35,9 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="19.20. Threaded Web Scraper" href="../exercises/threaded_downloader.html" /> 
+    <link rel="prev" title="Threaded Web Scraper" href="../exercises/threaded_downloader.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -73,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,7 +86,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -101,27 +103,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Pep8.html">19.1. Coding Style and Linting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">19.2. Code Reviews</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">19.3. Persistence and Serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Unicode.html">19.4. Unicode in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">19.5. Iterators and Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Decorators.html">19.6. Decorators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">19.7. Mailroom – Decoratoring it</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">19.8. Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">19.9. A Couple Handy Context Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">19.10. Metaprogramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">19.11. Mailroom – metaprogramming it!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Logging.html">19.12. Logging and the logging module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Debugging.html">19.13. Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">19.14. No SQL Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">19.15. Graph Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">19.16. Concurrent Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Async.html">19.17. Asychronous Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">19.18. Notes on Coroutines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">19.19. Threading and multiprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">19.20. Threaded Web Scraper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">19.21. Performance and Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pep8.html">Coding Style and Linting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CodeReviews.html">Code Reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PersistanceAndSerialization.html">Persistence and Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unicode.html">Unicode in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IteratorsAndGenerators.html">Iterators and Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Decorators.html">Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-decorator.html">Mailroom – Decoratoring it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ContextManagers.html">Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/context-managers-exercise.html">A Couple Handy Context Managers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MetaProgramming.html">Metaprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-meta.html">Mailroom – metaprogramming it!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Logging.html">Logging and the logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NoSQL.html">No SQL Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GraphDatabases.html">Graph Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">Concurrent Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Async.html">Asychronous Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Coroutines.html">Notes on Coroutines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ThreadingMultiprocessing.html">Threading and multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/threaded_downloader.html">Threaded Web Scraper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Performance and Profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -129,6 +131,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -167,11 +170,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
         
-      <li><span class="section-number">19.21. </span>Performance and Profiling</li>
+      <li>Performance and Profiling</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,7 +191,7 @@
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
       
-        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-left" title="19.20. Threaded Web Scraper" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-left" title="Threaded Web Scraper" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -198,16 +201,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="performance-and-profiling">
-<span id="profiling"></span><h1><span class="section-number">19.21. </span>Performance and Profiling<a class="headerlink" href="#performance-and-profiling" title="Permalink to this headline">¶</a></h1>
+<span id="profiling"></span><h1>Performance and Profiling<a class="headerlink" href="#performance-and-profiling" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="today-s-topics">
-<h2><span class="section-number">19.21.1. </span>Today’s topics<a class="headerlink" href="#today-s-topics" title="Permalink to this headline">¶</a></h2>
+<h2>Today’s topics<a class="headerlink" href="#today-s-topics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Determining performance objectives</p></li>
 <li><p>Measuring performance a.k.a. profiling</p></li>
 <li><p>Performance optimizations</p></li>
 </ul>
 <div class="section" id="what-is-software-profiling">
-<h3><span class="section-number">19.21.1.1. </span>What is Software Profiling<a class="headerlink" href="#what-is-software-profiling" title="Permalink to this headline">¶</a></h3>
+<h3>What is Software Profiling<a class="headerlink" href="#what-is-software-profiling" title="Permalink to this headline">¶</a></h3>
 <p>The act of using instrumentation to objectively measure the performance
 of your application</p>
 <p>“Performance” can be a measure of any of the following:</p>
@@ -223,7 +226,7 @@ happens at runtime.</p>
 execution of functions</p>
 </div>
 <div class="section" id="an-optimization-strategy">
-<h3><span class="section-number">19.21.1.2. </span>An optimization strategy<a class="headerlink" href="#an-optimization-strategy" title="Permalink to this headline">¶</a></h3>
+<h3>An optimization strategy<a class="headerlink" href="#an-optimization-strategy" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Write the code for maintainability / readability</p></li>
 <li><p>Test for correctness</p></li>
@@ -243,7 +246,7 @@ forget about small efficiencies, say about 97% of the time:</p>
 <p><a class="reference external" href="http://c2.com/cgi/wiki?ProfileBeforeOptimizing">http://c2.com/cgi/wiki?ProfileBeforeOptimizing</a></p>
 </div>
 <div class="section" id="steps-to-better-performance">
-<h3><span class="section-number">19.21.1.3. </span>Steps to better performance<a class="headerlink" href="#steps-to-better-performance" title="Permalink to this headline">¶</a></h3>
+<h3>Steps to better performance<a class="headerlink" href="#steps-to-better-performance" title="Permalink to this headline">¶</a></h3>
 <p>(In order of importance)</p>
 <ol class="arabic simple">
 <li><p>Efficient Algorithms (big O, etc…)</p></li>
@@ -255,7 +258,7 @@ forget about small efficiencies, say about 97% of the time:</p>
 </ol>
 </div>
 <div class="section" id="big-o-notation">
-<h3><span class="section-number">19.21.1.4. </span>Big O notation<a class="headerlink" href="#big-o-notation" title="Permalink to this headline">¶</a></h3>
+<h3>Big O notation<a class="headerlink" href="#big-o-notation" title="Permalink to this headline">¶</a></h3>
 <p>The efficiency of an algorithm is often described in “big O” notation.</p>
 <p>The letter O is used because the growth rate of a function is also
 referred to as Order of the function</p>
@@ -289,7 +292,7 @@ function of amount of input data</p>
 <p><a class="reference external" href="https://wiki.python.org/moin/TimeComplexity">https://wiki.python.org/moin/TimeComplexity</a></p>
 </div>
 <div class="section" id="measuring-time-with-a-stopwatch">
-<h3><span class="section-number">19.21.1.5. </span>Measuring time with a stopwatch<a class="headerlink" href="#measuring-time-with-a-stopwatch" title="Permalink to this headline">¶</a></h3>
+<h3>Measuring time with a stopwatch<a class="headerlink" href="#measuring-time-with-a-stopwatch" title="Permalink to this headline">¶</a></h3>
 <p>One way to measure performance is with a stopwatch.</p>
 <p>Start the clock when a unit of code such as a function begins, and stop
 it when the code returns</p>
@@ -303,7 +306,7 @@ produce much different results on a system with slow network and fast
 disk</p>
 </div>
 <div class="section" id="time-clock-time-time">
-<h3><span class="section-number">19.21.1.6. </span><code class="docutils literal notranslate"><span class="pre">time.clock()</span></code> : <code class="docutils literal notranslate"><span class="pre">time.time()</span></code><a class="headerlink" href="#time-clock-time-time" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">time.clock()</span></code> : <code class="docutils literal notranslate"><span class="pre">time.time()</span></code><a class="headerlink" href="#time-clock-time-time" title="Permalink to this headline">¶</a></h3>
 <p>Using the time module as a profiling decorator</p>
 <p><code class="docutils literal notranslate"><span class="pre">time.time()</span></code> returns the unix system time (wall clock time)</p>
 <p><code class="docutils literal notranslate"><span class="pre">time.clock()</span></code> returns the CPU time of the current process</p>
@@ -336,7 +339,7 @@ disk</p>
 </div>
 </div>
 <div class="section" id="timeit">
-<h3><span class="section-number">19.21.1.7. </span>timeit<a class="headerlink" href="#timeit" title="Permalink to this headline">¶</a></h3>
+<h3>timeit<a class="headerlink" href="#timeit" title="Permalink to this headline">¶</a></h3>
 <p>Used for testing small bits of code</p>
 <p>Use to test hypotheses about efficiency of algorithms and Python idioms</p>
 <p>Will run the given statement many times and calculate the average
@@ -350,7 +353,7 @@ execution time</p>
 <p><a class="reference external" href="https://hg.python.org/cpython/file/3.5/Lib/timeit.py">https://hg.python.org/cpython/file/3.5/Lib/timeit.py</a></p>
 </div>
 <div class="section" id="timeit-command-line-interface">
-<h3><span class="section-number">19.21.1.8. </span><code class="docutils literal notranslate"><span class="pre">timeit</span></code> command line interface<a class="headerlink" href="#timeit-command-line-interface" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">timeit</span></code> command line interface<a class="headerlink" href="#timeit-command-line-interface" title="Permalink to this headline">¶</a></h3>
 <p>options</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-nN</span></code>: execute the given statement N times in a loop. If this value is
@@ -386,7 +389,7 @@ loops start, so that code is not part of the test</p>
 </div>
 </div>
 <div class="section" id="timeit-via-ipython-magic">
-<h3><span class="section-number">19.21.1.9. </span><code class="docutils literal notranslate"><span class="pre">timeit</span></code> via iPython magic<a class="headerlink" href="#timeit-via-ipython-magic" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">timeit</span></code> via iPython magic<a class="headerlink" href="#timeit-via-ipython-magic" title="Permalink to this headline">¶</a></h3>
 <p>Note that all that setup_code stuff is kind of a pain.</p>
 <p>iPython has your back (again)</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pass
@@ -406,7 +409,7 @@ loops start, so that code is not part of the test</p>
 <p><a class="reference external" href="http://ipython.readthedocs.io/en/stable/interactive/magics.html?#magic-timeit">timeit magic</a></p>
 </div>
 <div class="section" id="exercise">
-<h3><span class="section-number">19.21.1.10. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
 <p>We just tried determining if a character exists in a string:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">statement</span> <span class="o">=</span> <span class="s2">&quot;&#39;f&#39; in &#39;food&#39;&quot;</span>
 <span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">statement</span><span class="p">)</span>
@@ -420,7 +423,7 @@ loops start, so that code is not part of the test</p>
 <p>Which is faster? Why?</p>
 </div>
 <div class="section" id="getting-more-detailed-with-profiling">
-<h3><span class="section-number">19.21.1.11. </span>Getting more detailed with Profiling<a class="headerlink" href="#getting-more-detailed-with-profiling" title="Permalink to this headline">¶</a></h3>
+<h3>Getting more detailed with Profiling<a class="headerlink" href="#getting-more-detailed-with-profiling" title="Permalink to this headline">¶</a></h3>
 <p>That kind of timing is only useful if you know what part of the code you want to optimize.</p>
 <p>But what if you know your program is “slow”, but don’t know where is is spending the time?</p>
 <p><strong>Do not Guess!</strong> – you will often be wrong, and you don’t want to waste time optimizing the wrong thing.</p>
@@ -438,7 +441,7 @@ loops start, so that code is not part of the test</p>
 </ul>
 </div>
 <div class="section" id="python-s-built-in-profilers">
-<h3><span class="section-number">19.21.1.12. </span>Python’s built-in profilers<a class="headerlink" href="#python-s-built-in-profilers" title="Permalink to this headline">¶</a></h3>
+<h3>Python’s built-in profilers<a class="headerlink" href="#python-s-built-in-profilers" title="Permalink to this headline">¶</a></h3>
 <p>Python comes with a couple profiling modules</p>
 <ul class="simple">
 <li><p>profile - older, pure Python. If you need to extend the profiler,
@@ -449,7 +452,7 @@ this might be good. Otherwise, it’s slow.</p></li>
 <p><a class="reference external" href="https://docs.python.org/3/library/profile.html">https://docs.python.org/3/library/profile.html</a></p>
 </div>
 <div class="section" id="cprofile">
-<h3><span class="section-number">19.21.1.13. </span>cProfile<a class="headerlink" href="#cprofile" title="Permalink to this headline">¶</a></h3>
+<h3>cProfile<a class="headerlink" href="#cprofile" title="Permalink to this headline">¶</a></h3>
 <p>Can be run as a module on an entire application</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m cProfile <span class="o">[</span>-o output_file<span class="o">]</span> <span class="o">[</span>-s sort_order<span class="o">]</span> read_bna.py
 <span class="m">11111128</span> <span class="k">function</span> calls in <span class="m">8</span>.283 seconds
@@ -471,7 +474,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno<span class="o">(</spa
 </ul>
 </div>
 <div class="section" id="analyzing-profile-data">
-<h3><span class="section-number">19.21.1.14. </span>Analyzing profile data<a class="headerlink" href="#analyzing-profile-data" title="Permalink to this headline">¶</a></h3>
+<h3>Analyzing profile data<a class="headerlink" href="#analyzing-profile-data" title="Permalink to this headline">¶</a></h3>
 <p>Output to a binary dump with -o &lt;filename&gt;</p>
 <p>While doing performance work, save your profiles for comparison later</p>
 <p>This helps ensure that any changes do actually increase performance</p>
@@ -483,7 +486,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno<span class="o">(</spa
 <p>(help for help…)</p>
 </div>
 <div class="section" id="pstats">
-<h3><span class="section-number">19.21.1.15. </span><code class="docutils literal notranslate"><span class="pre">pstats</span></code><a class="headerlink" href="#pstats" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">pstats</span></code><a class="headerlink" href="#pstats" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">cProfile</span> <span class="o">-</span><span class="n">o</span> <span class="n">prof_dump</span>  <span class="o">./</span><span class="n">read_bna</span><span class="o">.</span><span class="n">py</span>
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pstats</span>
 <span class="o">%</span> <span class="n">read</span> <span class="n">prof_dump</span>
@@ -518,7 +521,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno<span class="o">(</spa
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">19.21.1.16. </span>Analyzing profile data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Analyzing profile data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Inspect only your local code with regular expression syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pstats</span>
 <span class="n">prof</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;prof_dump&#39;</span><span class="p">)</span>
@@ -529,7 +532,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno<span class="o">(</spa
 <p>I tend to write little scripts like this so I don’t have to remember the commands.</p>
 </div>
 <div class="section" id="exercise-example">
-<h3><span class="section-number">19.21.1.17. </span>Exercise / Example<a class="headerlink" href="#exercise-example" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise / Example<a class="headerlink" href="#exercise-example" title="Permalink to this headline">¶</a></h3>
 <p>Real world example:</p>
 <p><code class="docutils literal notranslate"><span class="pre">Examples/profiling/bna_reader/read_bna.py</span></code></p>
 <p>BNA is a (old) text file format for holding geospatial data.</p>
@@ -546,14 +549,14 @@ ncalls  tottime  percall  cumtime  percall filename:lineno<span class="o">(</spa
 </div>
 </div>
 <div class="section" id="some-other-tools-to-consider">
-<h2><span class="section-number">19.21.2. </span>Some other tools to consider<a class="headerlink" href="#some-other-tools-to-consider" title="Permalink to this headline">¶</a></h2>
+<h2>Some other tools to consider<a class="headerlink" href="#some-other-tools-to-consider" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>For better visualizing</p></li>
 <li><p>For C extensions</p></li>
 <li><p>For memory Profiling</p></li>
 </ul>
 <div class="section" id="snakeviz">
-<h3><span class="section-number">19.21.2.1. </span>SNAKEVIZ<a class="headerlink" href="#snakeviz" title="Permalink to this headline">¶</a></h3>
+<h3>SNAKEVIZ<a class="headerlink" href="#snakeviz" title="Permalink to this headline">¶</a></h3>
 <p>A graphical profile viewer for Python</p>
 <p><a class="reference external" href="https://jiffyclub.github.io/snakeviz/">https://jiffyclub.github.io/snakeviz/</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">snakeviz</span>
@@ -564,7 +567,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno<span class="o">(</spa
 <img alt="../_images/snakeviz.png" src="../_images/snakeviz.png" />
 </div>
 <div class="section" id="line-profiler">
-<h3><span class="section-number">19.21.2.2. </span>line profiler<a class="headerlink" href="#line-profiler" title="Permalink to this headline">¶</a></h3>
+<h3>line profiler<a class="headerlink" href="#line-profiler" title="Permalink to this headline">¶</a></h3>
 <p>Thus far, we’ve seen how to collect data on the performance of functions
 as atomic units</p>
 <p><code class="docutils literal notranslate"><span class="pre">line_profiler</span></code> is a module for doing line-by-line profiling of functions</p>
@@ -582,7 +585,7 @@ $ python -m line_profiler integrate_main.py.lprof
 <p><a class="reference external" href="https://github.com/rkern/line_profiler">https://github.com/rkern/line_profiler</a></p>
 </div>
 <div class="section" id="qcachegrind-kcachegrind">
-<h3><span class="section-number">19.21.2.3. </span>qcachegrind / kcachegrind<a class="headerlink" href="#qcachegrind-kcachegrind" title="Permalink to this headline">¶</a></h3>
+<h3>qcachegrind / kcachegrind<a class="headerlink" href="#qcachegrind-kcachegrind" title="Permalink to this headline">¶</a></h3>
 <p>profiling tool based on Valgrind:</p>
 <p><a class="reference external" href="http://kcachegrind.sourceforge.net/html/Valgrind.html">http://kcachegrind.sourceforge.net/html/Valgrind.html</a></p>
 <p>a runtime instrumentation framework for Linux/x86</p>
@@ -599,7 +602,7 @@ provide</p>
 <p><a class="reference external" href="http://kcachegrind.sourceforge.net/cgi-bin/show.cgi/KcacheGrindCalltreeFormat">http://kcachegrind.sourceforge.net/cgi-bin/show.cgi/KcacheGrindCalltreeFormat</a></p>
 </div>
 <div class="section" id="profiling-c-extensions">
-<h3><span class="section-number">19.21.2.4. </span>Profiling C extensions<a class="headerlink" href="#profiling-c-extensions" title="Permalink to this headline">¶</a></h3>
+<h3>Profiling C extensions<a class="headerlink" href="#profiling-c-extensions" title="Permalink to this headline">¶</a></h3>
 <p>Google Performance Tools:</p>
 <p><a class="reference external" href="https://code.google.com/p/gperftools/">https://code.google.com/p/gperftools/</a></p>
 <p>can be used to profile C extensions</p>
@@ -622,7 +625,7 @@ $ qcachegrind output.callgrind
 </div>
 </div>
 <div class="section" id="memory-profilers">
-<h3><span class="section-number">19.21.2.5. </span>memory profilers<a class="headerlink" href="#memory-profilers" title="Permalink to this headline">¶</a></h3>
+<h3>memory profilers<a class="headerlink" href="#memory-profilers" title="Permalink to this headline">¶</a></h3>
 <p>There aren’t any great ones</p>
 <p>One option is heapy, which comes with Guppy, a Python environment for
 memory profiling</p>
@@ -642,10 +645,10 @@ memory profiling</p>
 </div>
 </div>
 <div class="section" id="boosting-python-performance">
-<h2><span class="section-number">19.21.3. </span>Boosting Python performance<a class="headerlink" href="#boosting-python-performance" title="Permalink to this headline">¶</a></h2>
+<h2>Boosting Python performance<a class="headerlink" href="#boosting-python-performance" title="Permalink to this headline">¶</a></h2>
 <p>There are ways to better structure your Python code to improve performance</p>
 <div class="section" id="a-few-key-approaches">
-<h3><span class="section-number">19.21.3.1. </span>A few key approaches<a class="headerlink" href="#a-few-key-approaches" title="Permalink to this headline">¶</a></h3>
+<h3>A few key approaches<a class="headerlink" href="#a-few-key-approaches" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Overhead in function/method runtime lookup can be significant for
 small frequent calls.</p></li>
@@ -662,7 +665,7 @@ numpy for fast array operations.</p></li>
 <p><a class="reference external" href="http://wiki.python.org/moin/PythonSpeed/PerformanceTips/">http://wiki.python.org/moin/PythonSpeed/PerformanceTips/</a></p>
 </div>
 <div class="section" id="managing-memory">
-<h3><span class="section-number">19.21.3.2. </span>Managing memory<a class="headerlink" href="#managing-memory" title="Permalink to this headline">¶</a></h3>
+<h3>Managing memory<a class="headerlink" href="#managing-memory" title="Permalink to this headline">¶</a></h3>
 <p>Don’t forget memory:</p>
 <p>Processors are fast</p>
 <p>It can take longer to push the memory around than do the computation</p>
@@ -674,7 +677,7 @@ numpy for fast array operations.</p></li>
 files, …</p>
 </div>
 <div class="section" id="distraction-pygame">
-<h3><span class="section-number">19.21.3.3. </span>Distraction: pyGame<a class="headerlink" href="#distraction-pygame" title="Permalink to this headline">¶</a></h3>
+<h3>Distraction: pyGame<a class="headerlink" href="#distraction-pygame" title="Permalink to this headline">¶</a></h3>
 <p>There is a nice profiling example that uses PyGame:</p>
 <p><a class="reference external" href="http://www.pygame.org/hifi.html">http://www.pygame.org/hifi.html</a></p>
 <p>Which you can install from binaries:</p>
@@ -686,7 +689,7 @@ files, …</p>
 <p><a class="reference external" href="https://anaconda.org/cogsci">https://anaconda.org/cogsci</a></p>
 </div>
 <div class="section" id="a-more-complex-profile">
-<h3><span class="section-number">19.21.3.4. </span>A more complex profile<a class="headerlink" href="#a-more-complex-profile" title="Permalink to this headline">¶</a></h3>
+<h3>A more complex profile<a class="headerlink" href="#a-more-complex-profile" title="Permalink to this headline">¶</a></h3>
 <p>The amount of data in the previous example is readable, so now we’ll
 look at the output from a more complex application:
 examples/profiling/pygame/swarm.py</p>
@@ -704,7 +707,7 @@ logic or in the pygame operations</p>
 </div>
 </div>
 <div class="section" id="questions">
-<h3><span class="section-number">19.21.3.5. </span>Questions?<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<h3>Questions?<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
@@ -718,7 +721,7 @@ logic or in the pygame operations</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-left" title="19.20. Threaded Web Scraper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-left" title="Threaded Web Scraper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -727,11 +730,19 @@ logic or in the pygame operations</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -742,7 +753,6 @@ logic or in the pygame operations</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

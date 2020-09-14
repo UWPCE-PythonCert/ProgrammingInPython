@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.2. String Formatting Exercise &mdash; Programming in Python 7.0 documentation</title>
+  <title>String Formatting Exercise &mdash; Programming in Python 7.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,14 +35,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.3. ROT13" href="rot13.html" />
-    <link rel="prev" title="5.1. Strings" href="../modules/Strings.html" /> 
+    <link rel="next" title="ROT13" href="rot13.html" />
+    <link rel="prev" title="Strings" href="../modules/Strings.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -85,14 +87,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Strings.html">5.1. Strings</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.2. String Formatting Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rot13.html">5.3. ROT13</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom.html">5.4. Mailroom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_tutorial.html">5.5. Mailroom Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Strings.html">Strings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">String Formatting Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rot13.html">ROT13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom.html">Mailroom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_tutorial.html">Mailroom Tutorial</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -114,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -152,11 +155,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../topics/05-text_handling/index.html"><span class="section-number">5. </span>Basic Text Handling</a> &raquo;</li>
         
-      <li><span class="section-number">5.2. </span>String Formatting Exercise</li>
+      <li>String Formatting Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,10 +175,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="rot13.html" class="btn btn-neutral float-right" title="5.3. ROT13" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rot13.html" class="btn btn-neutral float-right" title="ROT13" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Strings.html" class="btn btn-neutral float-left" title="5.1. Strings" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Strings.html" class="btn btn-neutral float-left" title="Strings" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -185,17 +188,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="string-formatting-exercise">
-<span id="exercise-string-formatting"></span><h1><span class="section-number">5.2. </span>String Formatting Exercise<a class="headerlink" href="#string-formatting-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-string-formatting"></span><h1>String Formatting Exercise<a class="headerlink" href="#string-formatting-exercise" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="goal">
-<h2><span class="section-number">5.2.1. </span>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>In this exercise we will reinforce the important concepts of string formatting, so that these start to become second nature!</p>
 </div>
 <div class="section" id="procedure">
-<h2><span class="section-number">5.2.2. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
 <p>Create a new file called <code class="docutils literal notranslate"><span class="pre">strformat_lab.py</span></code> in your student dir in the class repo.</p>
 <p>When the empty script is available and runnable, complete the following four tasks.</p>
 <div class="section" id="task-one">
-<h3><span class="section-number">5.2.2.1. </span>Task One<a class="headerlink" href="#task-one" title="Permalink to this headline">¶</a></h3>
+<h3>Task One<a class="headerlink" href="#task-one" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Write a format string that will take the following four element tuple:</p>
 <blockquote>
@@ -231,14 +234,14 @@
 </ol>
 </div>
 <div class="section" id="task-two">
-<h3><span class="section-number">5.2.2.2. </span>Task Two<a class="headerlink" href="#task-two" title="Permalink to this headline">¶</a></h3>
+<h3>Task Two<a class="headerlink" href="#task-two" title="Permalink to this headline">¶</a></h3>
 <p>Using your results from Task One, repeat the exercise, but this time using an alternate type of format string (hint: think about alternative ways to use .format() (keywords anyone?), and also consider f-strings if you’ve not used them already).</p>
 </div>
 <div class="section" id="task-three">
-<h3><span class="section-number">5.2.2.3. </span>Task Three<a class="headerlink" href="#task-three" title="Permalink to this headline">¶</a></h3>
+<h3>Task Three<a class="headerlink" href="#task-three" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="dynamically-building-up-format-strings">
-<h3><span class="section-number">5.2.2.4. </span>Dynamically Building up format strings<a class="headerlink" href="#dynamically-building-up-format-strings" title="Permalink to this headline">¶</a></h3>
+<h3>Dynamically Building up format strings<a class="headerlink" href="#dynamically-building-up-format-strings" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Rewrite:</p></li>
 </ul>
@@ -280,7 +283,7 @@
 </div>
 </div>
 <div class="section" id="task-four">
-<h3><span class="section-number">5.2.2.5. </span>Task Four<a class="headerlink" href="#task-four" title="Permalink to this headline">¶</a></h3>
+<h3>Task Four<a class="headerlink" href="#task-four" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Given a 5 element tuple:</p>
 <blockquote>
@@ -293,7 +296,7 @@
 <p>Hint: use index numbers to specify positions.</p>
 </div>
 <div class="section" id="task-five">
-<h3><span class="section-number">5.2.2.6. </span>Task Five<a class="headerlink" href="#task-five" title="Permalink to this headline">¶</a></h3>
+<h3>Task Five<a class="headerlink" href="#task-five" title="Permalink to this headline">¶</a></h3>
 <p>f-strings are new to Python (version 3.6), but are very powerful and efficient. This means they are worth understanding and using. And this is made easier than it might be because they use the same, familiar formatting language that is conventionally used in Python (in .format()).</p>
 <p>So in this exercise we are going to specifically use f-strings.</p>
 <p>Here’s the simplest example, to show how you can use available variables in a f-string:</p>
@@ -336,7 +339,7 @@
 </ul>
 </div>
 <div class="section" id="task-six">
-<h3><span class="section-number">5.2.2.7. </span>Task Six<a class="headerlink" href="#task-six" title="Permalink to this headline">¶</a></h3>
+<h3>Task Six<a class="headerlink" href="#task-six" title="Permalink to this headline">¶</a></h3>
 <p>Often it’s convenient to display data in columns. String formatting helps to make this straightforward.</p>
 <p>Suppose you’d like to display something like:</p>
 <blockquote>
@@ -355,7 +358,7 @@ Then you will need to use alignment specifiers. Do some research on this using t
 </div>
 </div>
 <div class="section" id="resources-on-string-formatting">
-<h2><span class="section-number">5.2.3. </span>Resources on string formatting<a class="headerlink" href="#resources-on-string-formatting" title="Permalink to this headline">¶</a></h2>
+<h2>Resources on string formatting<a class="headerlink" href="#resources-on-string-formatting" title="Permalink to this headline">¶</a></h2>
 <p>The official reference docs:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">https://docs.python.org/3/library/string.html#format-string-syntax</a></p>
 <p>And a more human-readable intro:</p>
@@ -364,7 +367,7 @@ Then you will need to use alignment specifiers. Do some research on this using t
 <p><a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/">https://mkaz.blog/code/python-string-format-cookbook/</a></p>
 </div>
 <div class="section" id="submitting-your-work">
-<h2><span class="section-number">5.2.4. </span>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
 <p>Put the file in your student directory in a new subdirectory named for this lesson, and add it to your clone early.</p>
 <p>Make frequent commits with good, clear messages about what you’re doing and why.</p>
 <p>When you’re done and ready for the instructors to review your work, push your changes to your gitHub fork and then go to the gitHub website and make a pull request.</p>
@@ -380,10 +383,10 @@ Then you will need to use alignment specifiers. Do some research on this using t
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rot13.html" class="btn btn-neutral float-right" title="5.3. ROT13" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rot13.html" class="btn btn-neutral float-right" title="ROT13" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Strings.html" class="btn btn-neutral float-left" title="5.1. Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Strings.html" class="btn btn-neutral float-left" title="Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -392,11 +395,19 @@ Then you will need to use alignment specifiers. Do some research on this using t
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -407,7 +418,6 @@ Then you will need to use alignment specifiers. Do some research on this using t
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
