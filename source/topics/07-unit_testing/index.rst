@@ -1,31 +1,21 @@
 Unit Testing
 ============
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/Testing
     ../../modules/TestDrivenDevelopment
 
-
-Activities
-----------
 .. toctree::
+    :caption: Activities
     :maxdepth: 1
 
     ../../exercises/unit_testing/unit_testing.rst
 
-Exercises
----------
-
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/mailroom/mailroom_with_tests.rst
-
-
-

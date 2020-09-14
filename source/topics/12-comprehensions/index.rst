@@ -1,31 +1,22 @@
 Comprehensions
 ==============
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/Comprehensions
     ../../modules/CollectionsModule
 
-Activities
-----------
-
 .. toctree::
+    :caption: Activities
     :maxdepth: 1
 
     ../../exercises/comprehensions_lab
 
-.. Exercises
-.. ---------
-
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/mailroom/mailroom_with_comprehensions
-
-
 

@@ -1,30 +1,22 @@
 Properties and Magic Methods
 ============================
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/Properties
     ../../modules/StaticAndClassMethods
     ../../modules/SpecialMethodsAndProtocols
 
-
-Exercises
----------
-
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/circle/circle_class
 
-Advanced Exercise
------------------
-
 .. toctree::
+    :caption: Advanced Exercise
     :maxdepth: 1
 
     ../../exercises/sparse_array

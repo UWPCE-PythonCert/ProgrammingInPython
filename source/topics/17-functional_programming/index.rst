@@ -1,11 +1,8 @@
 Introduction to Functional Programming
 ======================================
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/OO_vs_functional
@@ -14,23 +11,15 @@ To Read
     ../../modules/IPythonParallel
     ../../modules/Closures
 
-
-Activities
-----------
-
 .. toctree::
+    :caption: Activities
     :maxdepth: 1
 
     ../../exercises/lambda_magic
 
-Exercises
----------
-
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/trapezoid
-
-
-
 

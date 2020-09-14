@@ -1,32 +1,22 @@
 Exception Handling
 ==================
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/Exceptions
 
-
-Activities
-----------
-
 .. toctree::
+    :caption: Activities
     :maxdepth: 1
 
     ../../exercises/exceptions_lab.rst
 
-Exercises
----------
-
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/except_exercise.rst
     ../../exercises/mailroom/mailroom_with_exceptions.rst
-
-
 

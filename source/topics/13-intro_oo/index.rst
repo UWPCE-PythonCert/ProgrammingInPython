@@ -1,26 +1,21 @@
 Intro to Object Oriented Programing
 ===================================
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/ObjectOrientationOverview
     ../../modules/PythonClasses
 
-Activities
-----------
-
-Exercises
----------
+.. toctree::
+    :caption: Activities
+    :maxdepth: 1
 
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/oo_intro.rst
     ../../exercises/mailroom/mailroom-oo.rst
-
 

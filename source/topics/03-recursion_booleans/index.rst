@@ -1,26 +1,20 @@
-Recursion and Booleans
+Booleans and Recursion
 ======================
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
-    ../../modules/Recursion
     ../../modules/Booleans
-
-Activities
-----------
-
-Exercises
----------
+    ../../modules/Recursion
 
 .. toctree::
+    :caption: Activities
+    :maxdepth: 1
+
+.. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/fib_and_lucas.rst
-
-
 
