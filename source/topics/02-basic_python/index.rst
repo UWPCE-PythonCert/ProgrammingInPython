@@ -4,10 +4,9 @@ Basic Python
 Learning a programming language is a bit of a "bootstrap" problem:
 the best way to learn is by doing, but you need the basics in order to do anything at all. So this topic jumps right in -- if you're confused at first, just keep going and it should start to make sense.
 
-To Read
--------
 
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/HowToRunAPythonFile
@@ -15,18 +14,14 @@ To Read
     ../../modules/BasicPython
     ../../modules/Functions
 
-Activities
-----------
-
 .. toctree::
+    :caption: Activities
     :maxdepth: 1
 
     ../../exercises/python_pushups.rst
 
-Exercises
----------
-
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/grid_printer.rst

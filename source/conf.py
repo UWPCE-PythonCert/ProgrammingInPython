@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Python 210'
+project = 'Programming in Python'
 
 # the one with the text too
 html_logo = "_static/UWPCE_logo_full.png"
@@ -49,7 +49,7 @@ copyright = ("2020, University of Washington, {}. "
              ).format(author)
 
 # The full version, including alpha/beta/rc tags
-release = '6.0'
+release = '7.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -82,19 +82,22 @@ html_theme = "sphinx_rtd_theme"
 html_theme_options = {
     # 'canonical_url': '',
     # 'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+    # 'github_url': 'https://github.com/UWPCE-PythonCert/ProgrammingInPython',
     'logo_only': True,
     'display_version': False,
-    # 'prev_next_buttons_location': 'bottom',
+    'prev_next_buttons_location': 'both',
     'style_external_links': True,
     # 'vcs_pageview_mode': '',
     'style_nav_header_background': '#4b2e83',
     # # Toc options
     # 'collapse_navigation': True,
     # 'sticky_navigation': True,
-    # 'navigation_depth': 4,
+    'navigation_depth': 2,
     # 'includehidden': True,
-    # 'titles_only': False
+    'titles_only': True
 }
+
+github_url = 'https://github.com/UWPCE-PythonCert/ProgrammingInPython'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
