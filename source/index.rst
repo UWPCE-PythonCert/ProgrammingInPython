@@ -13,27 +13,47 @@ This site holds many of the materials for the
 
 This site can be thought of as the textbook for Programming in Python: the first course in the program. It contains notes about the topics covered in the classes, programming exercises, supplemental materials about setting up a development environment, and assorted references about Python-related topics.
 
-Many of these modules can be useful on their own, but each assumes that you know concepts that were introduced earlier in the program, so working them in order can be helpful.
+Many of these topics can be useful on their own, but each assumes that you know concepts that were introduced earlier in the program, so working through them in order can be helpful.
 
-Topics in the Program
-=====================
 
 .. toctree::
+    :numbered:
+    :caption: Topics in the Program
+    :titlesonly:
     :maxdepth: 1
 
-    topics/index
+    topics/01-setting_up/index
+    topics/02-basic_python/index
+    topics/03-recursion_booleans/index
+    topics/04-sequences_iteration/index
+    topics/05-text_handling/index
+    topics/06-exceptions/index
+    topics/07-unit_testing/index
+    topics/08-dicts_sets/index
+    topics/09-files/index
+    topics/10-modules_packages/index
+    topics/11-argument_passing/index
+    topics/12-comprehensions/index
+    topics/13-intro_oo/index
+    topics/14-magic_methods/index
+    topics/15-subclassing/index
+    topics/16-multiple_inheritance/index
+    topics/17-functional_programming/index
+    topics/18-advanced_testing/index
+    topics/99-extras/index
+
 
 
 About this Site
 ===============
 
-This site is Open Source, released under the Creative Commons Attribution-ShareAlike 4.0 license.
+These materials are  Open Source, released under the Creative Commons Attribution-ShareAlike 4.0 license.
 
-It is built with the Sphinx documentation system, utilizing Restructured Text (rst) markup.
+They are built with the Sphinx documentation system, utilizing Restructured Text (rst) markup.
 
 It is managed in this gitHub repository:
 
-https://github.com/UWPCE-PythonCert/Python210CourseMaterials
+https://github.com/UWPCE-PythonCert/ProgrammingInPython
 
 Readers are encouraged to report omissions, typos, or make suggestions for improvements via issues and pull requests on that repository.
 
@@ -41,7 +61,7 @@ Readers are encouraged to report omissions, typos, or make suggestions for impro
 Example Code
 ============
 
-Assorted Example code can be found in the source repository for these documents repository. Most of the examples are linked to directly from these documents, but it might be helpful to have them all in one place:
+Assorted Example code can be found in the source repository for these documents. Most of the examples are linked to directly from these documents, but it might be helpful to have them all in one place:
 
 https://github.com/UWPCE-PythonCert/ProgrammingInPython/tree/master/source/examples
 

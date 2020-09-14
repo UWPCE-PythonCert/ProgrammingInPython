@@ -10,7 +10,6 @@ Here are some resources to getting yourself set up.
 
 
 .. toctree::
-    :numbered:
     :maxdepth: 1
 
     environment_overview
