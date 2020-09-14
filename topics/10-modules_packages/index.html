@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10. Modules and Packages &mdash; Python 210 6.0 documentation</title>
+  <title>10. Modules and Packages &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10.1.1. Style and Naming" href="../../modules/NamingThings.html" />
-    <link rel="prev" title="9.3.2. Trigrams – Simple Text Manipulation" href="../../exercises/trigrams/trigrams.html" /> 
+    <link rel="next" title="10.1. Style and Naming" href="../../modules/NamingThings.html" />
+    <link rel="prev" title="9.5. Trigrams – Simple Text Manipulation" href="../../exercises/trigrams/trigrams.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,7 +85,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-recursion_booleans/index.html">3. Booleans and Recursion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-exceptions/index.html">6. Exception Handling</a></li>
@@ -93,12 +93,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../09-files/index.html">9. File Handling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">10. Modules and Packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/NamingThings.html">10.1.1. Style and Naming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Modules.html">10.1.2. Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Documentation.html">10.1.3. Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Packaging.html">10.1.4. Packages and Packaging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/packaging/package_lab.html">10.2.1. LAB: A Small Example Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom-pkg.html">10.3.1. Mailroom – as a Python Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/NamingThings.html">10.1. Style and Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Modules.html">10.2. Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Documentation.html">10.3. Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Packaging.html">10.4. Packages and Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/packaging/package_lab.html">10.5. A Small Example Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/mailroom/mailroom-pkg.html">10.6. Mailroom – as a Python Package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
@@ -124,7 +124,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Python 210</a>
+          <a href="../../index.html">Programming in Python</a>
         
       </nav>
 
@@ -169,6 +169,15 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../../modules/NamingThings.html" class="btn btn-neutral float-right" title="10.1. Style and Naming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../exercises/trigrams/trigrams.html" class="btn btn-neutral float-left" title="9.5. Trigrams – Simple Text Manipulation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -176,32 +185,26 @@
             
   <div class="section" id="modules-and-packages">
 <h1><span class="section-number">10. </span>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="to-read">
-<h2><span class="section-number">10.1. </span>To Read<a class="headerlink" href="#to-read" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/NamingThings.html">10.1.1. Style and Naming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Modules.html">10.1.2. Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Documentation.html">10.1.3. Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Packaging.html">10.1.4. Packages and Packaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/NamingThings.html">10.1. Style and Naming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Modules.html">10.2. Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Documentation.html">10.3. Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Packaging.html">10.4. Packages and Packaging</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="activities">
-<h2><span class="section-number">10.2. </span>Activities<a class="headerlink" href="#activities" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Activities</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/packaging/package_lab.html">10.2.1. LAB: A Small Example Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/packaging/package_lab.html">10.5. A Small Example Package</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="exercises">
-<h2><span class="section-number">10.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Exercises</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom-pkg.html">10.3.1. Mailroom – as a Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/mailroom/mailroom-pkg.html">10.6. Mailroom – as a Python Package</a></li>
 </ul>
-</div>
 </div>
 </div>
 
@@ -213,10 +216,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/NamingThings.html" class="btn btn-neutral float-right" title="10.1.1. Style and Naming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/NamingThings.html" class="btn btn-neutral float-right" title="10.1. Style and Naming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/trigrams/trigrams.html" class="btn btn-neutral float-left" title="9.3.2. Trigrams – Simple Text Manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/trigrams/trigrams.html" class="btn btn-neutral float-left" title="9.5. Trigrams – Simple Text Manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

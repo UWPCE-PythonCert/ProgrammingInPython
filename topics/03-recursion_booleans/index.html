@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Recursion and Booleans &mdash; Python 210 6.0 documentation</title>
+  <title>3. Booleans and Recursion &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.1.1. Recursion" href="../../modules/Recursion.html" />
-    <link rel="prev" title="2.3.2. Fizz Buzz Exercise" href="../../exercises/fizz_buzz.html" /> 
+    <link rel="next" title="3.1. Boolean Expressions" href="../../modules/Booleans.html" />
+    <link rel="prev" title="2.7. Fizz Buzz Exercise" href="../../exercises/fizz_buzz.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,10 +85,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Recursion and Booleans</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Recursion.html">3.1.1. Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Booleans.html">3.1.2. Boolean Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../exercises/fib_and_lucas.html">3.3.1. Fibonacci Series Exercise</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Booleans and Recursion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Booleans.html">3.1. Boolean Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Recursion.html">3.2. Recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/fib_and_lucas.html">3.3. Fibonacci Series Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
@@ -121,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Python 210</a>
+          <a href="../../index.html">Programming in Python</a>
         
       </nav>
 
@@ -152,7 +152,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">3. </span>Recursion and Booleans</li>
+      <li><span class="section-number">3. </span>Booleans and Recursion</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -166,32 +166,36 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../../modules/Booleans.html" class="btn btn-neutral float-right" title="3.1. Boolean Expressions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../exercises/fizz_buzz.html" class="btn btn-neutral float-left" title="2.7. Fizz Buzz Exercise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="recursion-and-booleans">
-<h1><span class="section-number">3. </span>Recursion and Booleans<a class="headerlink" href="#recursion-and-booleans" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="to-read">
-<h2><span class="section-number">3.1. </span>To Read<a class="headerlink" href="#to-read" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="booleans-and-recursion">
+<h1><span class="section-number">3. </span>Booleans and Recursion<a class="headerlink" href="#booleans-and-recursion" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">To Read</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">3.1.1. Recursion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">3.1.2. Boolean Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Booleans.html">3.1. Boolean Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/Recursion.html">3.2. Recursion</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="activities">
-<h2><span class="section-number">3.2. </span>Activities<a class="headerlink" href="#activities" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="exercises">
-<h2><span class="section-number">3.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../exercises/fib_and_lucas.html">3.3.1. Fibonacci Series Exercise</a></li>
-</ul>
 </div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Exercises</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/fib_and_lucas.html">3.3. Fibonacci Series Exercise</a></li>
+</ul>
 </div>
 </div>
 
@@ -203,10 +207,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../modules/Recursion.html" class="btn btn-neutral float-right" title="3.1.1. Recursion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../modules/Booleans.html" class="btn btn-neutral float-right" title="3.1. Boolean Expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../exercises/fizz_buzz.html" class="btn btn-neutral float-left" title="2.3.2. Fizz Buzz Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../exercises/fizz_buzz.html" class="btn btn-neutral float-left" title="2.7. Fizz Buzz Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

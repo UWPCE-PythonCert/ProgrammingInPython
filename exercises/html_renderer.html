@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.3.1. HTML Renderer Exercise &mdash; Python 210 6.0 documentation</title>
+  <title>15.2. HTML Renderer Exercise &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.3.2. Tutorial for the Html Render Assignment" href="html_renderer_tutorial.html" />
-    <link rel="prev" title="15.1.1. Subclassing and Inheritance" href="../modules/SubclassingAndInheritance.html" /> 
+    <link rel="next" title="15.3. Tutorial for the Html Render Assignment" href="html_renderer_tutorial.html" />
+    <link rel="prev" title="15.1. Subclassing and Inheritance" href="../modules/SubclassingAndInheritance.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,9 +98,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/SubclassingAndInheritance.html">15.1.1. Subclassing and Inheritance</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.3.1. HTML Renderer Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="html_renderer_tutorial.html">15.3.2. Tutorial for the Html Render Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/SubclassingAndInheritance.html">15.1. Subclassing and Inheritance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15.2. HTML Renderer Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html_renderer_tutorial.html">15.3. Tutorial for the Html Render Assignment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
@@ -121,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -154,7 +154,7 @@
         
           <li><a href="../topics/15-subclassing/index.html"><span class="section-number">15. </span>Subclassing and Inheritance</a> &raquo;</li>
         
-      <li><span class="section-number">15.3.1. </span>HTML Renderer Exercise</li>
+      <li><span class="section-number">15.2. </span>HTML Renderer Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,20 +168,29 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="html_renderer_tutorial.html" class="btn btn-neutral float-right" title="15.3. Tutorial for the Html Render Assignment" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../modules/SubclassingAndInheritance.html" class="btn btn-neutral float-left" title="15.1. Subclassing and Inheritance" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="html-renderer-exercise">
-<span id="exercise-html-renderer"></span><h1><span class="section-number">15.3.1. </span>HTML Renderer Exercise<a class="headerlink" href="#html-renderer-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-html-renderer"></span><h1><span class="section-number">15.2. </span>HTML Renderer Exercise<a class="headerlink" href="#html-renderer-exercise" title="Permalink to this headline">¶</a></h1>
 <p>Ever need to write some HTML? Maybe from data?</p>
 <p>And not want to write all those tags yourself?</p>
 <p>OK, maybe not – but trust me, it’s a pain – let’s write some code to do it for us.</p>
 <div class="section" id="html-renderer">
-<h2><span class="section-number">15.3.1.1. </span>HTML Renderer<a class="headerlink" href="#html-renderer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.2.1. </span>HTML Renderer<a class="headerlink" href="#html-renderer" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="goal">
-<h3><span class="section-number">15.3.1.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
 <p>The goal is to create a set of classes to render html pages – in a “pretty printed” way.</p>
 <p>i.e. nicely indented and human readable.</p>
 <p>We’ll try to get to all the features required to render this file:</p>
@@ -200,7 +209,7 @@
 </ul>
 </div>
 <div class="section" id="general-instructions">
-<h3><span class="section-number">15.3.1.1.2. </span>General Instructions:<a class="headerlink" href="#general-instructions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.2. </span>General Instructions:<a class="headerlink" href="#general-instructions" title="Permalink to this headline">¶</a></h3>
 <p>You can start with the framework in:</p>
 <p><a class="reference download internal" download="" href="../_downloads/7b9029310dd0d29fb92c3c68c1bfaf1d/html_render.py"><code class="xref download docutils literal notranslate"><span class="pre">html_render.py</span></code></a></p>
 <p>For each step, add the required functionality. There is example code to run your code for each step in:</p>
@@ -212,7 +221,7 @@
 <code class="docutils literal notranslate"><span class="pre">test_html_ouput?.html</span></code></p>
 </div>
 <div class="section" id="unit-tests">
-<h3><span class="section-number">15.3.1.1.3. </span>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.3. </span>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h3>
 <p>Running the <code class="docutils literal notranslate"><span class="pre">run_html_render.py</span></code> script is a (simple) form of integration testing – it checks how the individual components are working together. But we also want to make sure each individual <em>unit</em> (class, method) of code works. So to do that, we’ll use:</p>
 <p><strong>Test Driven Development</strong></p>
 <p>In addition to checking if the output is what you expect with the running script – you should also write unit tests as you go.</p>
@@ -235,7 +244,7 @@
 <a class="reference internal" href="html_renderer_tutorial.html#html-renderer-tutorial"><span class="std std-ref">Tutorial for the Html Render Assignment</span></a>. But do try to do it yourself first.</p>
 </div>
 <div class="section" id="step-0">
-<h3><span class="section-number">15.3.1.1.4. </span>Step 0:<a class="headerlink" href="#step-0" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.4. </span>Step 0:<a class="headerlink" href="#step-0" title="Permalink to this headline">¶</a></h3>
 <p>Before you can start writing code, you need to get setup.</p>
 <ul class="simple">
 <li><p>In your directory in the class repo called <code class="docutils literal notranslate"><span class="pre">lesson07</span></code></p></li>
@@ -253,7 +262,7 @@
 </ul>
 </div>
 <div class="section" id="step-1">
-<h3><span class="section-number">15.3.1.1.5. </span>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.5. </span>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
 <p class="rubric">1a.</p>
 <p>Create an <code class="docutils literal notranslate"><span class="pre">Element</span></code> class for rendering an html element (xml element).</p>
 <p>There is a skeleton for one in <code class="docutils literal notranslate"><span class="pre">html_render.py</span></code> – it has just enough so that the first few tests in <code class="docutils literal notranslate"><span class="pre">test_html_render.py</span></code> can run – though that won’t pass!</p>
@@ -297,9 +306,9 @@ Some more content.
 <p>If you are stuck – see the tutorial:  <a class="reference internal" href="html_renderer_tutorial.html#render-tutorial-1"><span class="std std-ref">Step 1:</span></a></p>
 </div>
 <div class="section" id="step-2">
-<h3><span class="section-number">15.3.1.1.6. </span>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.6. </span>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="part-a">
-<h4><span class="section-number">15.3.1.1.6.1. </span>Part A:<a class="headerlink" href="#part-a" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">15.2.1.6.1. </span>Part A:<a class="headerlink" href="#part-a" title="Permalink to this headline">¶</a></h4>
 <p>Create a couple subclasses of <code class="docutils literal notranslate"><span class="pre">Element</span></code>, for each of <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tags. All you should have to do is override the <code class="docutils literal notranslate"><span class="pre">tag</span></code> class attribute (you may need to add a <code class="docutils literal notranslate"><span class="pre">tag</span></code> class attribute to the <code class="docutils literal notranslate"><span class="pre">Element</span></code> class first, if you haven’t already).</p>
 <p>Now you can render a few different types of element. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">page</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="s2">&quot;Some content&quot;</span><span class="p">)</span>
@@ -321,7 +330,7 @@ Some more content.
 <p>If you are stuck – see the tutorial: <a class="reference internal" href="html_renderer_tutorial.html#render-tutorial-2-a"><span class="std std-ref">Step 2:</span></a></p>
 </div>
 <div class="section" id="part-b">
-<h4><span class="section-number">15.3.1.1.6.2. </span>Part B:<a class="headerlink" href="#part-b" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">15.2.1.6.2. </span>Part B:<a class="headerlink" href="#part-b" title="Permalink to this headline">¶</a></h4>
 <p>Now it gets fun!</p>
 <p>Now that you have multiple types of elements, it’s worth looking a bit at how html works. A given element can hold text, but it can <em>also</em> hold other elements. So we need to update our <code class="docutils literal notranslate"><span class="pre">Element</span></code> classes to support that.</p>
 <p>Extend the <code class="docutils literal notranslate"><span class="pre">Element.render()</span></code> method so that it can render other elements inside the tag in addition to strings. A recursion-like approach should do it. i.e. it can call the <code class="docutils literal notranslate"><span class="pre">render()</span></code> method of the elements it contains.</p>
@@ -359,7 +368,7 @@ another small paragraph
 </div>
 </div>
 <div class="section" id="step-3">
-<h3><span class="section-number">15.3.1.1.7. </span>Step 3:<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.7. </span>Step 3:<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> element – a simple subclass.</p>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">OneLineTag</span></code> subclass of <code class="docutils literal notranslate"><span class="pre">Element</span></code>:</p>
 <ul>
@@ -375,7 +384,7 @@ title element in that, and a body element with some <code class="docutils litera
 <p>See <a class="reference download internal" download="" href="../_downloads/18981fb71a1d906bd8ce331570c49328/test_html_output3.html"><code class="xref download docutils literal notranslate"><span class="pre">test_html_output3.html</span></code></a></p>
 </div>
 <div class="section" id="step-4">
-<h3><span class="section-number">15.3.1.1.8. </span>Step 4:<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.8. </span>Step 4:<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h3>
 <p>Extend the <code class="docutils literal notranslate"><span class="pre">Element</span></code> class to accept a set of attributes as keywords to the constructor, e.g. <code class="docutils literal notranslate"><span class="pre">run_html_render.py</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;some text content&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;TheList&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;line-height:200%&quot;</span><span class="p">)</span>
 </pre></div>
@@ -411,7 +420,7 @@ So it can’t be used as a keyword argument.</p>
 <p>You could also special-case this in your code – so your users could use “clas” with one s, and you could tranlate it in the generated html. Or even both!</p>
 </div>
 <div class="section" id="step-5">
-<h3><span class="section-number">15.3.1.1.9. </span>Step 5:<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.9. </span>Step 5:<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h3>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">SelfClosingTag</span></code> subclass of Element, to render tags like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">hr</span> <span class="o">/&gt;</span> <span class="ow">and</span> <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span> <span class="p">(</span><span class="n">horizontal</span> <span class="n">rule</span> <span class="ow">and</span> <span class="n">line</span> <span class="k">break</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
@@ -433,7 +442,7 @@ So it can’t be used as a keyword argument.</p>
 <p>See: <a class="reference download internal" download="" href="../_downloads/c205fe025d5cbf59e762b22d0523d062/test_html_output5.html"><code class="xref download docutils literal notranslate"><span class="pre">test_html_output5.html</span></code></a></p>
 </div>
 <div class="section" id="step-6">
-<h3><span class="section-number">15.3.1.1.10. </span>Step 6:<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.10. </span>Step 6:<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h3>
 <p>Create an <code class="docutils literal notranslate"><span class="pre">A</span></code> class for an anchor (link) element. Its constructor should look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
 </pre></div>
@@ -451,7 +460,7 @@ So it can’t be used as a keyword argument.</p>
 <p>See: <a class="reference download internal" download="" href="../_downloads/ef9be52b61ca4b6efa64c7b43ce8fe40/test_html_output6.html"><code class="xref download docutils literal notranslate"><span class="pre">test_html_output6.html</span></code></a></p>
 </div>
 <div class="section" id="step-7">
-<h3><span class="section-number">15.3.1.1.11. </span>Step 7:<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.11. </span>Step 7:<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">Ul</span></code> class for an unordered list (really simple subclass of <code class="docutils literal notranslate"><span class="pre">Element</span></code>).</p>
 <p>Create <code class="docutils literal notranslate"><span class="pre">Li</span></code> class for an element in a list (also really simple).</p>
 <p>Add a list to your web page.</p>
@@ -464,7 +473,7 @@ So it can’t be used as a keyword argument.</p>
 <p>See: <a class="reference download internal" download="" href="../_downloads/e6726755ec5450041c7567ea8ba037c6/test_html_output7.html"><code class="xref download docutils literal notranslate"><span class="pre">test_html_output7.html</span></code></a></p>
 </div>
 <div class="section" id="step-8">
-<h3><span class="section-number">15.3.1.1.12. </span>Step 8:<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.12. </span>Step 8:<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h3>
 <p>Update the <code class="docutils literal notranslate"><span class="pre">Html</span></code> element class to render the “&lt;!DOCTYPE html&gt;” tag at the head of the page, before the html element.</p>
 <p>You can do this by subclassing <code class="docutils literal notranslate"><span class="pre">Element</span></code>, overriding <code class="docutils literal notranslate"><span class="pre">render()</span></code>, but then calling the <code class="docutils literal notranslate"><span class="pre">Element</span></code> render from the new render.</p>
 <p>Create a subclass of <code class="docutils literal notranslate"><span class="pre">SelfClosingTag</span></code> for <code class="docutils literal notranslate"><span class="pre">&lt;meta</span> <span class="pre">charset=&quot;UTF-8&quot;</span> <span class="pre">/&gt;</span></code> (like for <code class="docutils literal notranslate"><span class="pre">&lt;hr</span> <span class="pre">/&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;br</span> <span class="pre">/&gt;</span></code> and add the meta element to the beginning of the head element to give your document an encoding.</p>
@@ -474,13 +483,13 @@ So it can’t be used as a keyword argument.</p>
 <p>See <a class="reference download internal" download="" href="../_downloads/f6bb161d82f83a97c816d1c1907935a8/test_html_output8.html"><code class="xref download docutils literal notranslate"><span class="pre">test_html_output8.html</span></code></a></p>
 </div>
 <div class="section" id="step-9-adding-indentation">
-<h3><span class="section-number">15.3.1.1.13. </span>Step 9: Adding Indentation<a class="headerlink" href="#step-9-adding-indentation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.1.13. </span>Step 9: Adding Indentation<a class="headerlink" href="#step-9-adding-indentation" title="Permalink to this headline">¶</a></h3>
 <p>Indentation is not strictly required for html – html ignores most whitespace.</p>
 <p>But it can make it much easier to read for humans, and it’s a nice exercise to see how one might make it work in arbitrarily nested html.</p>
 <p>There is also more than one way to indent html – so you have a bit of flexibility here.</p>
 <p>You will need to enhance your code in a couple ways to add indentation.</p>
 <div class="section" id="a-specify-the-indentation-level">
-<h4><span class="section-number">15.3.1.1.13.1. </span>A. Specify the indentation level<a class="headerlink" href="#a-specify-the-indentation-level" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">15.2.1.13.1. </span>A. Specify the indentation level<a class="headerlink" href="#a-specify-the-indentation-level" title="Permalink to this headline">¶</a></h4>
 <p>Add a class attribute to the <code class="docutils literal notranslate"><span class="pre">Element</span></code> base class that indicates how much indentation you want – you can either use a simple string: 2 or four spaces:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Element</span><span class="p">:</span>
     <span class="n">indent</span> <span class="o">=</span> <span class="s2">&quot;    &quot;</span>
@@ -495,7 +504,7 @@ So it can’t be used as a keyword argument.</p>
 <p>Then you need to pass this indentation down the tree as you render the page.</p>
 </div>
 <div class="section" id="b-pass-the-current-level-of-indentation-down-the-tree-of-elements">
-<h4><span class="section-number">15.3.1.1.13.2. </span>B. Pass the “current level” of indentation down the tree of elements<a class="headerlink" href="#b-pass-the-current-level-of-indentation-down-the-tree-of-elements" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">15.2.1.13.2. </span>B. Pass the “current level” of indentation down the tree of elements<a class="headerlink" href="#b-pass-the-current-level-of-indentation-down-the-tree-of-elements" title="Permalink to this headline">¶</a></h4>
 <p>html elements can be nested arbitrarily deep:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -546,7 +555,7 @@ So it can’t be used as a keyword argument.</p>
 </div>
 </div>
 <div class="section" id="notes-on-handling-duck-typing">
-<span id="id1"></span><h2><span class="section-number">15.3.1.2. </span>Notes on handling “Duck Typing”<a class="headerlink" href="#notes-on-handling-duck-typing" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><span class="section-number">15.2.2. </span>Notes on handling “Duck Typing”<a class="headerlink" href="#notes-on-handling-duck-typing" title="Permalink to this headline">¶</a></h2>
 <p>In this exercise, we need to deal with the fact that XML (and thus HTML) allows <em>either</em> plain text <em>or</em> other tags to be the content of a tag. So our code needs to handle the fact that there are two possible types that we need to be able to render.</p>
 <p>There are two primary ways to address this (and multiple ways to actually write the code for each of these).</p>
 <ol class="arabic simple">
@@ -555,7 +564,7 @@ So it can’t be used as a keyword argument.</p>
 </ol>
 <p>The difference is where you handle the multiple types – in the render method itself, or ahead of time, when you append new content to the <code class="docutils literal notranslate"><span class="pre">Element</span></code>.</p>
 <div class="section" id="the-ahead-of-time-option">
-<h3><span class="section-number">15.3.1.2.1. </span>The Ahead of Time Option:<a class="headerlink" href="#the-ahead-of-time-option" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.2.1. </span>The Ahead of Time Option:<a class="headerlink" href="#the-ahead-of-time-option" title="Permalink to this headline">¶</a></h3>
 <p>You can handle it ahead of time by creating a simple object that wraps a string and gives it a render method. As simple as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextWrapper</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -581,7 +590,7 @@ So it can’t be used as a keyword argument.</p>
 <p>To accomplish this, you can update the <code class="docutils literal notranslate"><span class="pre">append()</span></code> method to put this wrapper around plain strings when something new is added.</p>
 </div>
 <div class="section" id="checking-if-it-s-the-right-type">
-<h3><span class="section-number">15.3.1.2.2. </span>Checking if it’s the Right Type<a class="headerlink" href="#checking-if-it-s-the-right-type" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.2.2. </span>Checking if it’s the Right Type<a class="headerlink" href="#checking-if-it-s-the-right-type" title="Permalink to this headline">¶</a></h3>
 <p>How do you decide if the wrapper is required?</p>
 <p><strong>Checking it it’s an instance of Element:</strong></p>
 <p>You could check and see if the object being appended is an Element:</p>
@@ -602,7 +611,7 @@ So it can’t be used as a keyword argument.</p>
 <p>I think this is a little better – strings are a pretty core type in Python, so it’s not likely that anyone is going to need to use a “string-like” object.</p>
 </div>
 <div class="section" id="duck-typing">
-<h3><span class="section-number">15.3.1.2.3. </span>Duck Typing<a class="headerlink" href="#duck-typing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.2.3. </span>Duck Typing<a class="headerlink" href="#duck-typing" title="Permalink to this headline">¶</a></h3>
 <p>The Python model of duck typing is: If quacks like a duck, then treat it like a duck.</p>
 <p>But in this case, we’re not actually rendering the object at this stage, so calling the method isn’t appropriate.</p>
 <p><strong>Checking for an attribute</strong></p>
@@ -618,7 +627,7 @@ So it can’t be used as a keyword argument.</p>
 <p>This is my favorite.</p>
 </div>
 <div class="section" id="duck-typing-on-the-fly">
-<h3><span class="section-number">15.3.1.2.4. </span>Duck Typing on the Fly<a class="headerlink" href="#duck-typing-on-the-fly" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.2.4. </span>Duck Typing on the Fly<a class="headerlink" href="#duck-typing-on-the-fly" title="Permalink to this headline">¶</a></h3>
 <p>The other option is to simply put both elements and text in the content list, and figure out what to do in the <code class="docutils literal notranslate"><span class="pre">render()</span></code> method.</p>
 <p>Again, you could type check – but I prefer the duck typing approach, and EAFP:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -636,7 +645,7 @@ So it can’t be used as a keyword argument.</p>
 <p>Then you could write just about anything – numbers, etc.</p>
 </div>
 <div class="section" id="where-did-the-exception-come-from">
-<h3><span class="section-number">15.3.1.2.5. </span>Where did the Exception come from?<a class="headerlink" href="#where-did-the-exception-come-from" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.2.5. </span>Where did the Exception come from?<a class="headerlink" href="#where-did-the-exception-come-from" title="Permalink to this headline">¶</a></h3>
 <p><strong>Caution</strong></p>
 <p>If the object doesn’t have a <code class="docutils literal notranslate"><span class="pre">render</span></code> method, then an AttributeError will be raised. But what if it does have a render method, but that method is broken?</p>
 <p>Depending on what’s broken, it could raise any number of exceptions. Most will not get caught by the except clause, and will halt the program.</p>
@@ -646,12 +655,12 @@ So it can’t be used as a keyword argument.</p>
 </div>
 </div>
 <div class="section" id="html-primer">
-<span id="id2"></span><h2><span class="section-number">15.3.1.3. </span>HTML Primer<a class="headerlink" href="#html-primer" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">15.2.3. </span>HTML Primer<a class="headerlink" href="#html-primer" title="Permalink to this headline">¶</a></h2>
 <p>The very least you need to know about html to do this assignment.</p>
 <p>If you are familiar with html, then this will all make sense to you. If you have never seen html before, this might be a bit intimidating, but you really don’t need to know much to do this assignment.</p>
 <p>First of all, sample output from each step is provided. So all you really need to do is look at that, and make your code do the same thing. But it does help understand a little bit about what you trying to do.</p>
 <div class="section" id="html">
-<h3><span class="section-number">15.3.1.3.1. </span>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.3.1. </span>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
 <p>HTML is “Hyper Text Markup Language”. Hypertext, because it can contain links
 to other pages, and markup language means that text is “marked up” with
 instructions about how to format the text, etc.</p>
@@ -663,7 +672,7 @@ instructions about how to format the text, etc.</p>
 <p>But here is a tiny summary of just what you need to know for this project.</p>
 </div>
 <div class="section" id="elements">
-<h3><span class="section-number">15.3.1.3.2. </span>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.3.2. </span>Elements<a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h3>
 <p>Modern HTML is a particular dialect of XML (eXtensible Markup Language),
 which is itself a special case of SGML (Standard Generalized Markup Language)</p>
 <p>It inherits from SGML a basic structure: each piece of the document is an element. Each element is described by a “tag”. Each tag has a different meaning, but they all have the same structure:</p>
@@ -675,7 +684,7 @@ the element, and the end of the element is indicated by the same tag with a slas
 <p>The real power is that these elements can be nested arbitrarily deep. In order to keep that all readable, we often want to indent the content inside the tags, so it’s clear what belongs with what. That is one of the tricky bits of this assignment.</p>
 </div>
 <div class="section" id="basic-tags">
-<h3><span class="section-number">15.3.1.3.3. </span>Basic tags<a class="headerlink" href="#basic-tags" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.3.3. </span>Basic tags<a class="headerlink" href="#basic-tags" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> is the core tag indicating the entire document <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> is a single paragraph of text <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -687,7 +696,7 @@ the element, and the end of the element is indicated by the same tag with a slas
 </div>
 </div>
 <div class="section" id="attributes">
-<h3><span class="section-number">15.3.1.3.4. </span>Attributes:<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.3.4. </span>Attributes:<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
 <p>In addition to the tag name and the content, extra attributes can be attached to a tag. These are added to the “opening tag”, with name=”something”, another_name=”something else” format:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span>
 </pre></div>
@@ -695,7 +704,7 @@ the element, and the end of the element is indicated by the same tag with a slas
 <p>There can be all sorts of stuff stored in attributes – some required for specific tags, some extra, like font sizes and colors. Note that since tags can essentially have any attributes, your code will need to support that – doesn’t it kind of look like a dict? And keyword arguments?</p>
 </div>
 <div class="section" id="special-elements">
-<h3><span class="section-number">15.3.1.3.5. </span>Special Elements<a class="headerlink" href="#special-elements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.3.5. </span>Special Elements<a class="headerlink" href="#special-elements" title="Permalink to this headline">¶</a></h3>
 <p>The general structure is everything in between the opening and closing tag. But some elements don’t really have content – just attributes. So the slash goes at the end of the tag, after the attributes. We can call these self-closing tags:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
@@ -707,7 +716,7 @@ the element, and the end of the element is indicated by the same tag with a slas
 <p>The <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute is the link (hyper reference).</p>
 </div>
 <div class="section" id="lists">
-<h3><span class="section-number">15.3.1.3.6. </span>lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">15.2.3.6. </span>lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
 <p>To make a bulleted list, you use a &lt;ul&gt; tag (unordered list), and inside that, you put individual list items &lt;li&gt;:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;line-height:200%&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;TheList&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -737,10 +746,10 @@ the element, and the end of the element is indicated by the same tag with a slas
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="html_renderer_tutorial.html" class="btn btn-neutral float-right" title="15.3.2. Tutorial for the Html Render Assignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="html_renderer_tutorial.html" class="btn btn-neutral float-right" title="15.3. Tutorial for the Html Render Assignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/SubclassingAndInheritance.html" class="btn btn-neutral float-left" title="15.1.1. Subclassing and Inheritance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/SubclassingAndInheritance.html" class="btn btn-neutral float-left" title="15.1. Subclassing and Inheritance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

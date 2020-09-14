@@ -1,11 +1,8 @@
 Modules and Packages
 ====================
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/NamingThings
@@ -13,23 +10,15 @@ To Read
     ../../modules/Documentation
     ../../modules/Packaging
 
-
-Activities
-----------
-
 .. toctree::
+    :caption: Activities
     :maxdepth: 1
 
     ../../exercises/packaging/package_lab
 
-
-Exercises
----------
-
 .. toctree::
+    :caption: Exercises
     :maxdepth: 1
 
     ../../exercises/mailroom/mailroom-pkg.rst
-
-
 

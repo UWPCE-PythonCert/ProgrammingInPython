@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.3.1. Exceptions Exercise &mdash; Python 210 6.0 documentation</title>
+  <title>6.3. Exceptions Exercise &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.3.2. Mailroom With Exceptions" href="mailroom/mailroom_with_exceptions.html" />
-    <link rel="prev" title="6.2.1. Exceptions Lab" href="exceptions_lab.html" /> 
+    <link rel="next" title="6.4. Mailroom With Exceptions" href="mailroom/mailroom_with_exceptions.html" />
+    <link rel="prev" title="6.2. Exceptions Lab" href="exceptions_lab.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,10 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Exceptions.html">6.1.1. Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions_lab.html">6.2.1. Exceptions Lab</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3.1. Exceptions Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_with_exceptions.html">6.3.2. Mailroom With Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Exceptions.html">6.1. Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions_lab.html">6.2. Exceptions Lab</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. Exceptions Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_with_exceptions.html">6.4. Mailroom With Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../topics/06-exceptions/index.html"><span class="section-number">6. </span>Exception Handling</a> &raquo;</li>
         
-      <li><span class="section-number">6.3.1. </span>Exceptions Exercise</li>
+      <li><span class="section-number">6.3. </span>Exceptions Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,16 +169,25 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-right" title="6.4. Mailroom With Exceptions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exceptions_lab.html" class="btn btn-neutral float-left" title="6.2. Exceptions Lab" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="exceptions-exercise">
-<span id="exercise-exceptions"></span><h1><span class="section-number">6.3.1. </span>Exceptions Exercise<a class="headerlink" href="#exceptions-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-exceptions"></span><h1><span class="section-number">6.3. </span>Exceptions Exercise<a class="headerlink" href="#exceptions-exercise" title="Permalink to this headline">¶</a></h1>
 <p>This is a little exercise that shows you how to handle exceptions in a way that mirrors actual development.</p>
 <div class="section" id="procedure">
-<h2><span class="section-number">6.3.1.1. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3.1. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
 <p>Here are two files that you should put in your <code class="docutils literal notranslate"><span class="pre">lesson05</span></code> directory in the class repo.</p>
 <p><a class="reference download internal" download="" href="../_downloads/51e0be5fba30ccd96d0af007dd7dadd1/except_exercise.py"><code class="xref download docutils literal notranslate"><span class="pre">except_exercise.py</span></code></a></p>
 <p><a class="reference download internal" download="" href="../_downloads/36cde6fb34f0afa8b462b69367aebb73/except_test.py"><code class="xref download docutils literal notranslate"><span class="pre">except_test.py</span></code></a></p>
@@ -217,7 +226,7 @@ code, so that the code can run.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">NameError</span></code> is coming from line 15 of <code class="docutils literal notranslate"><span class="pre">except_test.py</span></code>. But this is not your code! So you need to look higher up in the traceback to see where in <em>your</em> code the exception is triggered. That is where you put your <code class="docutils literal notranslate"><span class="pre">try--except</span></code> block.</p>
 <p>In this case, that’s line 17 of <code class="docutils literal notranslate"><span class="pre">except_exercise.py</span></code>. In real life, it can be higher up in a much deeper stack trace – but keep looking ‘till you see your code.</p>
 <div class="section" id="results">
-<h3><span class="section-number">6.3.1.1.1. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1.1. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
 <p>When you are done, running except_exercise.py should result in output something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Spam, Spam, Spam, Spam, Beautiful Spam
 
@@ -230,7 +239,7 @@ Customer:  It&#39;s certainly uncontaminated by cheese.
 </div>
 </div>
 <div class="section" id="why-are-you-doing-this">
-<h3><span class="section-number">6.3.1.1.2. </span>Why are you doing this?<a class="headerlink" href="#why-are-you-doing-this" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1.2. </span>Why are you doing this?<a class="headerlink" href="#why-are-you-doing-this" title="Permalink to this headline">¶</a></h3>
 <p>This is a kind of silly exercise, but in real life, this is a common workflow – you call a library, and find that in certain circumstances it raises an exception.  As the code in the library is out of your hands, you need to decide how to handle that exception in your code instead.</p>
 </div>
 </div>
@@ -244,10 +253,10 @@ Customer:  It&#39;s certainly uncontaminated by cheese.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-right" title="6.3.2. Mailroom With Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom/mailroom_with_exceptions.html" class="btn btn-neutral float-right" title="6.4. Mailroom With Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exceptions_lab.html" class="btn btn-neutral float-left" title="6.2.1. Exceptions Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exceptions_lab.html" class="btn btn-neutral float-left" title="6.2. Exceptions Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

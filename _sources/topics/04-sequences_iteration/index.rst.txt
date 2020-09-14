@@ -1,32 +1,21 @@
 Sequences and Iteration
 =======================
 
-
-To Read
--------
-
 .. toctree::
+    :caption: To Read
     :maxdepth: 1
 
     ../../modules/Sequences
     ../../modules/Iteration
 
-
-Activities
-----------
 .. toctree::
+    :caption: Activities
     :maxdepth: 1
 
     ../../exercises/slicing.rst
     ../../exercises/list_lab.rst
 
-.. Exercises
-.. ---------
-
-.. .. toctree::
-..     :maxdepth: 1
-
-..     ../../exercises/xxxxx
-
-
+.. toctree::
+    :caption: Exercises
+    :maxdepth: 1
 

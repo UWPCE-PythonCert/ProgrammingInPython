@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.1.4. Packages and Packaging &mdash; Python 210 6.0 documentation</title>
+  <title>10.4. Packages and Packaging &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10.2.1. LAB: A Small Example Package" href="../exercises/packaging/package_lab.html" />
-    <link rel="prev" title="10.1.3. Documentation" href="Documentation.html" /> 
+    <link rel="next" title="10.5. LAB: A Small Example Package" href="../exercises/packaging/package_lab.html" />
+    <link rel="prev" title="10.3. Documentation" href="Documentation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,12 +93,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="NamingThings.html">10.1.1. Style and Naming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Modules.html">10.1.2. Code Structure, Modules, and Namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Documentation.html">10.1.3. Documentation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.1.4. Packages and Packaging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging/package_lab.html">10.2.1. LAB: A Small Example Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">10.3.1. Mailroom – as a Python Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NamingThings.html">10.1. Style and Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modules.html">10.2. Code Structure, Modules, and Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">10.3. Documentation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.4. Packages and Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/packaging/package_lab.html">10.5. LAB: A Small Example Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom-pkg.html">10.6. Mailroom – as a Python Package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
@@ -124,7 +124,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -157,7 +157,7 @@
         
           <li><a href="../topics/10-modules_packages/index.html"><span class="section-number">10. </span>Modules and Packages</a> &raquo;</li>
         
-      <li><span class="section-number">10.1.4. </span>Packages and Packaging</li>
+      <li><span class="section-number">10.4. </span>Packages and Packaging</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,15 +171,24 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../exercises/packaging/package_lab.html" class="btn btn-neutral float-right" title="10.5. LAB: A Small Example Package" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Documentation.html" class="btn btn-neutral float-left" title="10.3. Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="packages-and-packaging">
-<span id="packaging"></span><h1><span class="section-number">10.1.4. </span>Packages and Packaging<a class="headerlink" href="#packages-and-packaging" title="Permalink to this headline">¶</a></h1>
+<span id="packaging"></span><h1><span class="section-number">10.4. </span>Packages and Packaging<a class="headerlink" href="#packages-and-packaging" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="packages-modules-imports-oh-my">
-<h2><span class="section-number">10.1.4.1. </span>Packages, Modules, Imports, Oh My!<a class="headerlink" href="#packages-modules-imports-oh-my" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4.1. </span>Packages, Modules, Imports, Oh My!<a class="headerlink" href="#packages-modules-imports-oh-my" title="Permalink to this headline">¶</a></h2>
 <p>Before we get started on making your own package – let’s remind
 ourselves about packages and modules, and importing….</p>
 <p class="rubric">Modules</p>
@@ -224,7 +233,7 @@ The code will be run when the package is imported – just like a module.</p>
 <div><p>import a_package.module_a</p>
 </div></blockquote>
 <div class="section" id="more-on-importing">
-<h3><span class="section-number">10.1.4.1.1. </span>More on Importing<a class="headerlink" href="#more-on-importing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.1.1. </span>More on Importing<a class="headerlink" href="#more-on-importing" title="Permalink to this headline">¶</a></h3>
 <p>You usually import a module like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">something</span>
 </pre></div>
@@ -248,7 +257,7 @@ The code will be run when the package is imported – just like a module.</p>
 <p>This is a common pattern for using large packages (maybe with long names) and not having to type a lot.</p>
 </div>
 <div class="section" id="import">
-<h3><span class="section-number">10.1.4.1.2. </span><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code><a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.1.2. </span><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code><a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">something</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
@@ -261,7 +270,7 @@ So the module author can control it, and not accidentally override builtins or b
 <p class="centered">
 <strong><strong>Don’t Use ``import *``</strong></strong></p></div>
 <div class="section" id="relative-imports">
-<h3><span class="section-number">10.1.4.1.3. </span>Relative imports<a class="headerlink" href="#relative-imports" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.1.3. </span>Relative imports<a class="headerlink" href="#relative-imports" title="Permalink to this headline">¶</a></h3>
 <p>Relative imports were added with PEP 328:</p>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0328/">https://www.python.org/dev/peps/pep-0328/</a></p>
 <p>The final version is described here:</p>
@@ -322,7 +331,7 @@ So the module author can control it, and not accidentally override builtins or b
 <p>There is debate about which is the “one way to do it” – a bit unpythonic, but you’ll need to make your own decision.</p>
 </div>
 <div class="section" id="sys-modules">
-<h3><span class="section-number">10.1.4.1.4. </span><code class="docutils literal notranslate"><span class="pre">sys.modules</span></code><a class="headerlink" href="#sys-modules" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.1.4. </span><code class="docutils literal notranslate"><span class="pre">sys.modules</span></code><a class="headerlink" href="#sys-modules" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sys.modules</span></code> is simply a dictionary that stores all the already imported modules.
 The keys are the module names, and the values are the module objects themselves.</p>
 <div class="admonition note">
@@ -384,7 +393,7 @@ The keys are the module names, and the values are the module objects themselves.
 </div></blockquote>
 </div>
 <div class="section" id="implications-of-module-import-process">
-<h3><span class="section-number">10.1.4.1.5. </span>Implications of module import process:<a class="headerlink" href="#implications-of-module-import-process" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.1.5. </span>Implications of module import process:<a class="headerlink" href="#implications-of-module-import-process" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The code in a module only runs once per program run.</p></li>
 <li><p>Importing a module again is cheap and fast.</p></li>
@@ -398,7 +407,7 @@ The keys are the module names, and the values are the module objects themselves.
 </ul>
 </div>
 <div class="section" id="the-module-search-path">
-<h3><span class="section-number">10.1.4.1.6. </span>The module search path<a class="headerlink" href="#the-module-search-path" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.1.6. </span>The module search path<a class="headerlink" href="#the-module-search-path" title="Permalink to this headline">¶</a></h3>
 <p>The interpreter keeps a list (<code class="docutils literal notranslate"><span class="pre">sys.path</span></code>) of all the places that it looks for modules or packages when you do an import:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
@@ -417,7 +426,7 @@ The keys are the module names, and the values are the module objects themselves.
 <p>One “gotcha” in Python is “name shadowing”. The interpreter automatically adds the “current working directory” to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>. This means you can start the interpreter and just <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">something</span></code> to work with your code. But if you happen to have a python file, or package, in your current working directory that’s the same as an installed package, then it will get imported instead, which can lead to some odd errors. If you are getting confusing errors on import – check for python modules in your current working directory that may match an installed package!</p>
 </div>
 <div class="section" id="reloading">
-<h3><span class="section-number">10.1.4.1.7. </span>Reloading<a class="headerlink" href="#reloading" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.1.7. </span>Reloading<a class="headerlink" href="#reloading" title="Permalink to this headline">¶</a></h3>
 <p>Once loaded, a module stays loaded.</p>
 <p>If you import it again (usually in another module) it will simply use the version already there – rather than re-running the code.</p>
 <p>And you can access all the already loaded modules from <code class="docutils literal notranslate"><span class="pre">sys.modules</span></code>. <code class="docutils literal notranslate"><span class="pre">sys.modules</span></code> is a dict with the module names as the keys, and the module objects as the values</p>
@@ -441,7 +450,7 @@ The keys are the module names, and the values are the module objects themselves.
 </div>
 </div>
 <div class="section" id="python-distributions">
-<h2><span class="section-number">10.1.4.2. </span>Python Distributions<a class="headerlink" href="#python-distributions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4.2. </span>Python Distributions<a class="headerlink" href="#python-distributions" title="Permalink to this headline">¶</a></h2>
 <p>So far, we’ve used the Python from python.org. It works great, and supports a lots of packages via pip.</p>
 <p>But there are also a few “curated” distributions. These provide python and a package management system for hard-to-build packages.</p>
 <p>Widely used by the scipy community:</p>
@@ -457,25 +466,25 @@ The keys are the module names, and the values are the module objects themselves.
 <p>If you are doing data science or scientific development – I recommend you take a look at Anaconda, conda and conda-forge.</p>
 </div>
 <div class="section" id="installing-packages">
-<h2><span class="section-number">10.1.4.3. </span>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4.3. </span>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h2>
 <p>Every Python installation has its own stdlib and <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> folder.</p>
 <p><code class="docutils literal notranslate"><span class="pre">site-packages</span></code>  is the default place for third-party packages.</p>
 <div class="section" id="from-source">
-<h3><span class="section-number">10.1.4.3.1. </span>From source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.1. </span>From source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>(<code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">install</span></code> )</p></li>
 <li><p>With the system installer (apt-get, yum, etc…)</p></li>
 </ul>
 </div>
 <div class="section" id="from-binaries">
-<h3><span class="section-number">10.1.4.3.2. </span>From binaries<a class="headerlink" href="#from-binaries" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.2. </span>From binaries<a class="headerlink" href="#from-binaries" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Binary wheels – (More and more of those available)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pip</span></code> should find appropriate binary wheels if they are there.</p></li>
 </ul>
 </div>
 <div class="section" id="a-bit-of-history">
-<h3><span class="section-number">10.1.4.3.3. </span>A bit of history:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.3. </span>A bit of history:<a class="headerlink" href="#a-bit-of-history" title="Permalink to this headline">¶</a></h3>
 <p>In the beginning, there was the <code class="docutils literal notranslate"><span class="pre">distutils</span></code>:</p>
 <p>But <code class="docutils literal notranslate"><span class="pre">distutils</span></code>  is missing some key features:</p>
 <ul class="simple">
@@ -494,14 +503,14 @@ The keys are the module names, and the values are the module objects themselves.
 <p><strong>warning</strong> – setuptools still provides easy_install, but it has mostly been deprecated, so you really want to use pip. And sometimes setuptools will invoke it for you under the hood by accident :-(</p>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">10.1.4.3.4. </span>Installing Packages<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.4. </span>Installing Packages<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Actually, it’s still a bit of a mess</p>
 <p>But getting better, and the mess is <em>almost</em> cleaned up.</p>
 </div>
 <div class="section" id="current-state-of-packaging">
-<h3><span class="section-number">10.1.4.3.5. </span>Current State of Packaging<a class="headerlink" href="#current-state-of-packaging" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.5. </span>Current State of Packaging<a class="headerlink" href="#current-state-of-packaging" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="to-build-packages-setuptools">
-<h4><span class="section-number">10.1.4.3.5.1. </span>To build packages: setuptools<a class="headerlink" href="#to-build-packages-setuptools" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.3.5.1. </span>To build packages: setuptools<a class="headerlink" href="#to-build-packages-setuptools" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://pythonhosted.org/setuptools/">https://pythonhosted.org/setuptools/</a></p></li>
@@ -512,7 +521,7 @@ The keys are the module names, and the values are the module objects themselves.
 <p>But there are a couple of those extensions that you really do need, so most folks use setuptools for everything. In fact, pip itself requires setuptools.</p>
 </div>
 <div class="section" id="to-install-packages-pip">
-<h4><span class="section-number">10.1.4.3.5.2. </span>To install packages: pip<a class="headerlink" href="#to-install-packages-pip" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.3.5.2. </span>To install packages: pip<a class="headerlink" href="#to-install-packages-pip" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://pip.pypa.io/en/latest/installing.html">https://pip.pypa.io/en/latest/installing.html</a></p></li>
@@ -520,7 +529,7 @@ The keys are the module names, and the values are the module objects themselves.
 </div></blockquote>
 </div>
 <div class="section" id="for-binary-packages-wheels">
-<h4><span class="section-number">10.1.4.3.5.3. </span>For binary packages: wheels<a class="headerlink" href="#for-binary-packages-wheels" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.3.5.3. </span>For binary packages: wheels<a class="headerlink" href="#for-binary-packages-wheels" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="http://www.python.org/dev/peps/pep-0427/">http://www.python.org/dev/peps/pep-0427/</a></p></li>
@@ -530,7 +539,7 @@ The keys are the module names, and the values are the module objects themselves.
 </div>
 </div>
 <div class="section" id="compiled-packages">
-<h3><span class="section-number">10.1.4.3.6. </span>Compiled Packages<a class="headerlink" href="#compiled-packages" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.6. </span>Compiled Packages<a class="headerlink" href="#compiled-packages" title="Permalink to this headline">¶</a></h3>
 <p>Biggest issue is with compiled extensions:</p>
 <blockquote>
 <div><ul class="simple">
@@ -546,7 +555,7 @@ The keys are the module names, and the values are the module objects themselves.
 </ul>
 </div></blockquote>
 <div class="section" id="linux">
-<h4><span class="section-number">10.1.4.3.6.1. </span>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.3.6.1. </span>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
 <p>Pretty straightforward:</p>
 <ol class="arabic simple">
 <li><p>Is there a system package?</p></li>
@@ -569,7 +578,7 @@ The keys are the module names, and the values are the module objects themselves.
 <p>(may need “something-devel” packages)</p>
 </div>
 <div class="section" id="windows">
-<h4><span class="section-number">10.1.4.3.6.2. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.3.6.2. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
 <p>Sometimes simpler:</p>
 <ol class="arabic simple">
 <li><p>A lot of packages have Windows wheels now.</p></li>
@@ -597,7 +606,7 @@ The keys are the module names, and the values are the module objects themselves.
 <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019">here</a>.</p>
 </div>
 <div class="section" id="os-x">
-<h4><span class="section-number">10.1.4.3.6.3. </span>OS-X<a class="headerlink" href="#os-x" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.3.6.3. </span>OS-X<a class="headerlink" href="#os-x" title="Permalink to this headline">¶</a></h4>
 <p>Lots of Python versions:</p>
 <blockquote>
 <div><ul class="simple">
@@ -627,7 +636,7 @@ The keys are the module names, and the values are the module objects themselves.
 </div>
 </div>
 <div class="section" id="final-recommendations">
-<h3><span class="section-number">10.1.4.3.7. </span>Final Recommendations<a class="headerlink" href="#final-recommendations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.7. </span>Final Recommendations<a class="headerlink" href="#final-recommendations" title="Permalink to this headline">¶</a></h3>
 <p>First try: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></p>
 <p>If that doesn’t work:</p>
 <p>Read the docs of the package you want to install</p>
@@ -635,7 +644,7 @@ The keys are the module names, and the values are the module objects themselves.
 <p>(Or use conda!)</p>
 </div>
 <div class="section" id="virtualenv">
-<h3><span class="section-number">10.1.4.3.8. </span>virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.3.8. </span>virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> is a tool to create isolated Python environments.</p>
 <p>Very useful for developing multiple apps</p>
 <p>Or deploying more than one app on one system</p>
@@ -645,11 +654,11 @@ The keys are the module names, and the values are the module objects themselves.
 </div>
 </div>
 <div class="section" id="building-your-own-package">
-<h2><span class="section-number">10.1.4.4. </span>Building Your Own Package<a class="headerlink" href="#building-your-own-package" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4.4. </span>Building Your Own Package<a class="headerlink" href="#building-your-own-package" title="Permalink to this headline">¶</a></h2>
 <p>The term “package” is overloaded in Python. AS defined above, it means a collection of python modules. But it often is used to refer to not just the modules themselves, but the whole collection, with documentation and tests, bundled up and installable on other systems.</p>
 <p>Here are the very basics of what you need to know to make your own package.</p>
 <div class="section" id="why-build-a-package">
-<h3><span class="section-number">10.1.4.4.1. </span>Why Build a Package?<a class="headerlink" href="#why-build-a-package" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.1. </span>Why Build a Package?<a class="headerlink" href="#why-build-a-package" title="Permalink to this headline">¶</a></h3>
 <p>There are a bunch of nifty tools that help you build, install and
 distribute packages.</p>
 <p>Using a well structured, standard layout for your package makes it
@@ -658,7 +667,7 @@ easy to use those tools.</p>
 structured package eases development.</p>
 </div>
 <div class="section" id="what-is-a-package">
-<h3><span class="section-number">10.1.4.4.2. </span>What is a Package?<a class="headerlink" href="#what-is-a-package" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.2. </span>What is a Package?<a class="headerlink" href="#what-is-a-package" title="Permalink to this headline">¶</a></h3>
 <p><strong>A collection of modules</strong></p>
 <ul class="simple">
 <li><p>… and the documentation</p></li>
@@ -669,7 +678,7 @@ structured package eases development.</p>
 </ul>
 </div>
 <div class="section" id="python-packaging-tools">
-<h3><span class="section-number">10.1.4.4.3. </span>Python packaging tools:<a class="headerlink" href="#python-packaging-tools" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.3. </span>Python packaging tools:<a class="headerlink" href="#python-packaging-tools" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">distutils</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
 </pre></div>
@@ -684,7 +693,7 @@ structured package eases development.</p>
 <p>This all continues to change quickly, see that site for up to date information.</p>
 </div>
 <div class="section" id="where-do-i-go-to-figure-this-out">
-<h3><span class="section-number">10.1.4.4.4. </span>Where do I go to figure this out?<a class="headerlink" href="#where-do-i-go-to-figure-this-out" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.4. </span>Where do I go to figure this out?<a class="headerlink" href="#where-do-i-go-to-figure-this-out" title="Permalink to this headline">¶</a></h3>
 <p>This is a really good guide:</p>
 <p>Python Packaging User Guide:</p>
 <p><a class="reference external" href="https://packaging.python.org/">https://packaging.python.org/</a></p>
@@ -711,7 +720,7 @@ structured package eases development.</p>
 </div>
 </div>
 <div class="section" id="basic-package-structure">
-<h3><span class="section-number">10.1.4.4.5. </span>Basic Package Structure:<a class="headerlink" href="#basic-package-structure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.5. </span>Basic Package Structure:<a class="headerlink" href="#basic-package-structure" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package_name</span><span class="o">/</span>
     <span class="nb">bin</span><span class="o">/</span>
     <span class="n">CHANGES</span><span class="o">.</span><span class="n">txt</span>
@@ -753,13 +762,13 @@ structured package eases development.</p>
 <p>Some notes on that: <a class="reference external" href="http://pythonchb.github.io/PythonTopics/where_to_put_tests.html">Where to put Tests</a></p>
 </div>
 <div class="section" id="the-setup-py-file">
-<h3><span class="section-number">10.1.4.4.6. </span>The <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> File<a class="headerlink" href="#the-setup-py-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.6. </span>The <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> File<a class="headerlink" href="#the-setup-py-file" title="Permalink to this headline">¶</a></h3>
 <p>Your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file is what describes your package, and tells the distutils how to package, build, and install it</p>
 <p>It is python code, so you can add anything custom you need to it.</p>
 <p>But in the simple case, it is essentially declarative.</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://docs.python.org/3/distutils/</span></code></p>
 <div class="section" id="an-example">
-<h4><span class="section-number">10.1.4.4.6.1. </span>An example:<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.4.6.1. </span>An example:<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 
  <span class="n">setup</span><span class="p">(</span>
@@ -783,7 +792,7 @@ structured package eases development.</p>
 </div>
 </div>
 <div class="section" id="setup-cfg">
-<h3><span class="section-number">10.1.4.4.7. </span><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code><a class="headerlink" href="#setup-cfg" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.7. </span><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code><a class="headerlink" href="#setup-cfg" title="Permalink to this headline">¶</a></h3>
 <p><strong>NOTE:</strong> this is usually a pretty advanced option – simple packages don’t need this.</p>
 <p><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> provides a way to give the end user some ability to customize the install</p>
 <p>It’s an <code class="docutils literal notranslate"><span class="pre">ini</span></code> style file:</p>
@@ -798,7 +807,7 @@ structured package eases development.</p>
 <p>Note that an option spelled <code class="docutils literal notranslate"><span class="pre">--foo-bar</span></code> on the command-line is spelled f``foo_bar`` in configuration files.</p>
 </div>
 <div class="section" id="running-setup-py">
-<h3><span class="section-number">10.1.4.4.8. </span>Running <code class="docutils literal notranslate"><span class="pre">setup.py</span></code><a class="headerlink" href="#running-setup-py" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.8. </span>Running <code class="docutils literal notranslate"><span class="pre">setup.py</span></code><a class="headerlink" href="#running-setup-py" title="Permalink to this headline">¶</a></h3>
 <p>With a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> script defined, setuptools can do a lot:</p>
 <ul>
 <li><p>builds a source distribution (a tar archive of all the files needed to build and install the package):</p>
@@ -836,7 +845,7 @@ structured package eases development.</p>
 </div>
 </div>
 <div class="section" id="setuptools">
-<h3><span class="section-number">10.1.4.4.9. </span>setuptools<a class="headerlink" href="#setuptools" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.9. </span>setuptools<a class="headerlink" href="#setuptools" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">setuptools</span></code> is an extension to <code class="docutils literal notranslate"><span class="pre">distutils</span></code> that provides a number of extensions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 </pre></div>
@@ -855,7 +864,7 @@ structured package eases development.</p>
 <p><a class="reference external" href="http://pythonhosted.org//setuptools/">http://pythonhosted.org//setuptools/</a></p>
 </div>
 <div class="section" id="wheels">
-<h3><span class="section-number">10.1.4.4.10. </span>wheels<a class="headerlink" href="#wheels" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.10. </span>wheels<a class="headerlink" href="#wheels" title="Permalink to this headline">¶</a></h3>
 <p>Wheels are a binary format for packages.</p>
 <p><a class="reference external" href="http://wheel.readthedocs.org/en/latest/">http://wheel.readthedocs.org/en/latest/</a></p>
 <p>Pretty simple, essentially a zip archive of all the stuff that gets put
@@ -878,7 +887,7 @@ in <code class="docutils literal notranslate"><span class="pre">site-packages</s
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--no-use-wheel</span></code> avoids that.</p>
 </div>
 <div class="section" id="manylinux">
-<h3><span class="section-number">10.1.4.4.11. </span>manylinux<a class="headerlink" href="#manylinux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.11. </span>manylinux<a class="headerlink" href="#manylinux" title="Permalink to this headline">¶</a></h3>
 <p>There are a lot of Linux distributions out there. So for a long time, there were not easily available binary wheels for Linux – how could you define a standard with all the Linux distros out there?</p>
 <p>Enter “manylinux” – no one thinks you can support all Linux distros, but it was found that you could support many of the common ones, by building on an older version and restricting system libraries. This approach worked well for Canopy and conda, so PyPi adopted a similar strategy with manylinux:</p>
 <p><a class="reference external" href="https://github.com/pypa/manylinux">https://github.com/pypa/manylinux</a></p>
@@ -886,7 +895,7 @@ in <code class="docutils literal notranslate"><span class="pre">site-packages</s
 <p>The core scipy stack is a great example – you can now <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> on all three systems easily with pip.</p>
 </div>
 <div class="section" id="pypi">
-<h3><span class="section-number">10.1.4.4.12. </span>PyPi<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.12. </span>PyPi<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>The Python package index:</p>
 <p><a class="reference external" href="https://pypi.python.org/pypi">https://pypi.python.org/pypi</a></p>
 <p>You’ve all used this – <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> searches it.</p>
@@ -900,7 +909,7 @@ in <code class="docutils literal notranslate"><span class="pre">site-packages</s
 <p>NOTE: only do this if you really want to share your package with the world!</p>
 </div>
 <div class="section" id="under-development">
-<h3><span class="section-number">10.1.4.4.13. </span>Under Development<a class="headerlink" href="#under-development" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.13. </span>Under Development<a class="headerlink" href="#under-development" title="Permalink to this headline">¶</a></h3>
 <p>Develop mode is <em>really</em> <em>really</em> nice:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python setup.py develop
 </pre></div>
@@ -917,7 +926,7 @@ in <code class="docutils literal notranslate"><span class="pre">site-packages</s
 <p>(requires <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>)</p>
 </div>
 <div class="section" id="running-tests">
-<h3><span class="section-number">10.1.4.4.14. </span>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.14. </span>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h3>
 <p>It can be a good idea to set up your tests to be run from <code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p>
 <p>So that you (or your users) can:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install .
@@ -951,7 +960,7 @@ $ python setup.py <span class="nb">test</span>
 </div>
 </div>
 <div class="section" id="handling-the-version-number">
-<h3><span class="section-number">10.1.4.4.15. </span>Handling the version number:<a class="headerlink" href="#handling-the-version-number" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.15. </span>Handling the version number:<a class="headerlink" href="#handling-the-version-number" title="Permalink to this headline">¶</a></h3>
 <p>One key rule in software (and ANY computer use!):</p>
 <p>Never put the same information in more than one place!</p>
 <p>With a python package, you want:</p>
@@ -972,7 +981,7 @@ $ python setup.py <span class="nb">test</span>
 </div>
 <p>Not Good.</p>
 <div class="section" id="my-solution">
-<h4><span class="section-number">10.1.4.4.15.1. </span>My solution:<a class="headerlink" href="#my-solution" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.4.15.1. </span>My solution:<a class="headerlink" href="#my-solution" title="Permalink to this headline">¶</a></h4>
 <p>Put the version in the package __init__</p>
 <p>__version__ = “1.2.3”</p>
 <p>In the setup.py, you could import the package to get the version
@@ -998,7 +1007,7 @@ it (or building it, or…)</p>
 </div>
 </div>
 <div class="section" id="semantic-versioning">
-<h3><span class="section-number">10.1.4.4.16. </span>Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.16. </span>Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Permalink to this headline">¶</a></h3>
 <p>Another note on version numbers.</p>
 <p>The software development world (at least the open-source one…) has
 established a standard for what version numbers mean, known as semantic
@@ -1017,19 +1026,19 @@ they upgrade.</p>
 <p><a class="reference external" href="http://semver.org/">http://semver.org/</a></p>
 </div>
 <div class="section" id="tools-to-help">
-<h3><span class="section-number">10.1.4.4.17. </span>Tools to help:<a class="headerlink" href="#tools-to-help" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.17. </span>Tools to help:<a class="headerlink" href="#tools-to-help" title="Permalink to this headline">¶</a></h3>
 <p>Tox:</p>
 <p><a class="reference external" href="https://tox.readthedocs.io/en/latest/">https://tox.readthedocs.io/en/latest/</a></p>
 <p>Versioneer:</p>
 <p><a class="reference external" href="https://github.com/warner/python-versioneer">https://github.com/warner/python-versioneer</a></p>
 </div>
 <div class="section" id="dealing-with-data-files">
-<h3><span class="section-number">10.1.4.4.18. </span>Dealing with data files<a class="headerlink" href="#dealing-with-data-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.18. </span>Dealing with data files<a class="headerlink" href="#dealing-with-data-files" title="Permalink to this headline">¶</a></h3>
 <p>Oftentimes a package will require some files that are not Python code. In that case, you need to make sure the files are included with the package some how.</p>
 <p>There are a few ways to do this:</p>
 <p><a class="reference external" href="http://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files">http://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files</a></p>
 <div class="section" id="the-simplest-option-package-data">
-<h4><span class="section-number">10.1.4.4.18.1. </span>The simplest option: package_data<a class="headerlink" href="#the-simplest-option-package-data" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.4.18.1. </span>The simplest option: package_data<a class="headerlink" href="#the-simplest-option-package-data" title="Permalink to this headline">¶</a></h4>
 <p>I personally like the simplest one with the least magic:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span>
@@ -1054,14 +1063,14 @@ they upgrade.</p>
 </div>
 </div>
 <div class="section" id="more-complex-option-data-files">
-<h4><span class="section-number">10.1.4.4.18.2. </span>More complex option: data_files<a class="headerlink" href="#more-complex-option-data-files" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.4.18.2. </span>More complex option: data_files<a class="headerlink" href="#more-complex-option-data-files" title="Permalink to this headline">¶</a></h4>
 <p>Using the data_files setup option lets you put data files outside your package. They will get installed into the path of <code class="docutils literal notranslate"><span class="pre">sys.prefix</span></code>, so you can find them in your code with a path relative to <code class="docutils literal notranslate"><span class="pre">sys.prefix</span></code>.</p>
 <p>However, this means that the location of the files is different depending on whether the code is properly installed or not. And develop mode (or editable mode) does NOT install the data files.</p>
 <p>I honestly can’t think of any reason to do this.</p>
 <p><a class="reference external" href="https://packaging.python.org/tutorials/distributing-packages/#data-files">https://packaging.python.org/tutorials/distributing-packages/#data-files</a></p>
 </div>
 <div class="section" id="more-magic-pkg-resources">
-<h4><span class="section-number">10.1.4.4.18.3. </span>More magic: pkg_resources<a class="headerlink" href="#more-magic-pkg-resources" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.4.4.18.3. </span>More magic: pkg_resources<a class="headerlink" href="#more-magic-pkg-resources" title="Permalink to this headline">¶</a></h4>
 <p>setuptools provides a pkg_resources system to access resources (such as data files) of the packages. It is a complex (and I think ugly) system, with lots of features.</p>
 <p><a class="reference external" href="http://setuptools.readthedocs.io/en/latest/pkg_resources.html">http://setuptools.readthedocs.io/en/latest/pkg_resources.html</a></p>
 <p>But for just using it to find data files, it has some advantages – the primary one that is it can find data files that are inside zipped-up packages. (Python can import modules from zip files, but you can’t easily read data files from inside a zipped package)</p>
@@ -1074,7 +1083,7 @@ they upgrade.</p>
 </div>
 </div>
 <div class="section" id="getting-started-with-a-new-package">
-<h3><span class="section-number">10.1.4.4.19. </span>Getting Started With a New Package<a class="headerlink" href="#getting-started-with-a-new-package" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.19. </span>Getting Started With a New Package<a class="headerlink" href="#getting-started-with-a-new-package" title="Permalink to this headline">¶</a></h3>
 <p>For anything but a single-file script (and maybe even then):</p>
 <ol class="arabic simple">
 <li><p>Create the basic package structure</p></li>
@@ -1087,7 +1096,7 @@ they upgrade.</p>
 <p><a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/">https://cookiecutter.readthedocs.io/en/latest/</a></p>
 </div>
 <div class="section" id="lab-a-small-example-package">
-<h3><span class="section-number">10.1.4.4.20. </span>LAB: A Small Example Package<a class="headerlink" href="#lab-a-small-example-package" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.4.4.20. </span>LAB: A Small Example Package<a class="headerlink" href="#lab-a-small-example-package" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Create a small package</p>
 <ul>
@@ -1113,10 +1122,10 @@ they upgrade.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/packaging/package_lab.html" class="btn btn-neutral float-right" title="10.2.1. LAB: A Small Example Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/packaging/package_lab.html" class="btn btn-neutral float-right" title="10.5. LAB: A Small Example Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Documentation.html" class="btn btn-neutral float-left" title="10.1.3. Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Documentation.html" class="btn btn-neutral float-left" title="10.3. Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

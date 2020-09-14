@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.1.1. Recursion &mdash; Python 210 6.0 documentation</title>
+  <title>3.2. Recursion &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.1.2. Boolean Expressions" href="Booleans.html" />
-    <link rel="prev" title="3. Recursion and Booleans" href="../topics/03-recursion_booleans/index.html" /> 
+    <link rel="next" title="3.3. Fibonacci Series Exercise" href="../exercises/fib_and_lucas.html" />
+    <link rel="prev" title="3.1. Boolean Expressions" href="Booleans.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,10 +85,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1.1. Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Booleans.html">3.1.2. Boolean Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/fib_and_lucas.html">3.3.1. Fibonacci Series Exercise</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Booleans.html">3.1. Boolean Expressions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/fib_and_lucas.html">3.3. Fibonacci Series Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
@@ -121,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -152,9 +152,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../topics/03-recursion_booleans/index.html"><span class="section-number">3. </span>Recursion and Booleans</a> &raquo;</li>
+          <li><a href="../topics/03-recursion_booleans/index.html"><span class="section-number">3. </span>Booleans and Recursion</a> &raquo;</li>
         
-      <li><span class="section-number">3.1.1. </span>Recursion</li>
+      <li><span class="section-number">3.2. </span>Recursion</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,13 +168,22 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../exercises/fib_and_lucas.html" class="btn btn-neutral float-right" title="3.3. Fibonacci Series Exercise" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Booleans.html" class="btn btn-neutral float-left" title="3.1. Boolean Expressions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="recursion">
-<h1><span class="section-number">3.1.1. </span>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2. </span>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h1>
 <p>You’ve seen functions that call other functions.</p>
 <p>If a function calls <em>itself</em>, we call that <strong>recursion</strong></p>
 <p>Like with other functions, a call within a call establishes a <em>call stack</em></p>
@@ -291,7 +300,7 @@ n! = n * (n-1)!
 Think about it first, before you try it. Hint – it won’t work!
 How would you change your code to make it more robust?</p>
 <div class="section" id="summary">
-<h2><span class="section-number">3.1.1.1. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.1. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Whenever you have a function that can be defined in terms of itself, you have a use case for recursion.  It can make for nice compact, clear code.</p></li>
 <li><p>Python will create a new “stack frame” for each call to the function – so each call is kept separate, with separate local variables.</p></li>
@@ -312,10 +321,10 @@ How would you change your code to make it more robust?</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Booleans.html" class="btn btn-neutral float-right" title="3.1.2. Boolean Expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/fib_and_lucas.html" class="btn btn-neutral float-right" title="3.3. Fibonacci Series Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../topics/03-recursion_booleans/index.html" class="btn btn-neutral float-left" title="3. Recursion and Booleans" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Booleans.html" class="btn btn-neutral float-left" title="3.1. Boolean Expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

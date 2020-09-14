@@ -21,27 +21,9 @@ Many of these topics can be useful on their own, but each assumes that you know 
     :caption: Topics in the Program
     :titlesonly:
     :maxdepth: 1
+    :glob:
 
-    topics/01-setting_up/index
-    topics/02-basic_python/index
-    topics/03-recursion_booleans/index
-    topics/04-sequences_iteration/index
-    topics/05-text_handling/index
-    topics/06-exceptions/index
-    topics/07-unit_testing/index
-    topics/08-dicts_sets/index
-    topics/09-files/index
-    topics/10-modules_packages/index
-    topics/11-argument_passing/index
-    topics/12-comprehensions/index
-    topics/13-intro_oo/index
-    topics/14-magic_methods/index
-    topics/15-subclassing/index
-    topics/16-multiple_inheritance/index
-    topics/17-functional_programming/index
-    topics/18-advanced_testing/index
-    topics/99-extras/index
-
+    topics/??-*/index
 
 
 About this Site

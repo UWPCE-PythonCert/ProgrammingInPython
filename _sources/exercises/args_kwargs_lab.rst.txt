@@ -1,6 +1,6 @@
 .. _exercise_args_kwargs_lab:
 
-``args`` and ``kwargs`` LAB
+``args`` and ``kwargs`` Lab
 ===========================
 
 Goal:
@@ -36,9 +36,10 @@ So while these won't be useful tests in the usual sense, this is a chance to get
 Procedure
 ---------
 
-We are going to do this as test driven development: Your first task for each step below is to write a test that will ensure your code does whatvwe are telling you it should do.
+We are going to do this as test driven development: Your first task for each step below is to write a test that will ensure your code does what you think it should do.
 
-**Keyword arguments:**
+Keyword Arguments
+-----------------
 
 * Write a function that has four optional parameters (with defaults):
 
@@ -61,7 +62,7 @@ We are going to do this as test driven development: Your first task for each ste
 
   - using a combination of positional and keyword
 
-    -  ````func('purple', link_color='red', back_color='blue')``
+    -  ``func('purple', link_color='red', back_color='blue')``
 
   - using ``*some_tuple`` and/or ``**some_dict``
 
@@ -72,7 +73,8 @@ We are going to do this as test driven development: Your first task for each ste
     - ``func(*regular, **links)``
 
 
-**Generic parameters:**
+Generic parameters
+------------------
 
 * Write a new function with the parameters as:
 

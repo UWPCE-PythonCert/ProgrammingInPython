@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.2.2. ROT13 &mdash; Python 210 6.0 documentation</title>
+  <title>5.3. ROT13 &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.3.1. Mailroom" href="mailroom/mailroom.html" />
-    <link rel="prev" title="5.2.1. String Formatting Exercise" href="string_formatting.html" /> 
+    <link rel="next" title="5.4. Mailroom" href="mailroom/mailroom.html" />
+    <link rel="prev" title="5.2. String Formatting Exercise" href="string_formatting.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,11 +88,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Strings.html">5.1.1. Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="string_formatting.html">5.2.1. String Formatting Exercise</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.2.2. ROT13</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom.html">5.3.1. Mailroom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_tutorial.html">5.3.2. Mailroom Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Strings.html">5.1. Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string_formatting.html">5.2. String Formatting Exercise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3. ROT13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom.html">5.4. Mailroom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_tutorial.html">5.5. Mailroom Tutorial</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -123,7 +123,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -156,7 +156,7 @@
         
           <li><a href="../topics/05-text_handling/index.html"><span class="section-number">5. </span>Basic Text Handling</a> &raquo;</li>
         
-      <li><span class="section-number">5.2.2. </span>ROT13</li>
+      <li><span class="section-number">5.3. </span>ROT13</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,31 +170,40 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="mailroom/mailroom.html" class="btn btn-neutral float-right" title="5.4. Mailroom" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="string_formatting.html" class="btn btn-neutral float-left" title="5.2. String Formatting Exercise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="rot13">
-<span id="exercise-rot13"></span><h1><span class="section-number">5.2.2. </span>ROT13<a class="headerlink" href="#rot13" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-rot13"></span><h1><span class="section-number">5.3. </span>ROT13<a class="headerlink" href="#rot13" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="goal">
-<h2><span class="section-number">5.2.2.1. </span>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3.1. </span>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Get used to working with the number values (ordinals) for characters.</p>
 <p>Get a bit of practice with string methods and string processing.</p>
 </div>
 <div class="section" id="rot13-encryption">
-<h2><span class="section-number">5.2.2.2. </span>ROT13 encryption<a class="headerlink" href="#rot13-encryption" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3.2. </span>ROT13 encryption<a class="headerlink" href="#rot13-encryption" title="Permalink to this headline">¶</a></h2>
 <p>The ROT13 encryption scheme is a simple substitution cypher where each letter
 in a text is replace by the letter 13 away from it (imagine the alphabet as a
 circle, so it wraps around, or “rotates” by 13 letters, hence “rot13”).</p>
 <div class="section" id="the-task">
-<h3><span class="section-number">5.2.2.2.1. </span>The task<a class="headerlink" href="#the-task" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2.1. </span>The task<a class="headerlink" href="#the-task" title="Permalink to this headline">¶</a></h3>
 <p>Create a python module named <code class="docutils literal notranslate"><span class="pre">rot13.py</span></code>. This module should provide at least one function called <code class="docutils literal notranslate"><span class="pre">rot13</span></code> that takes any amount of text and returns that same text encrypted by ROT13.</p>
 <p>This function should preserve whitespace, punctuation and capitalization.</p>
 <p>Your module should include an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> block with tests (asserts) that demonstrate that your <code class="docutils literal notranslate"><span class="pre">rot13</span></code> function and any helper functions you add work properly.</p>
 </div>
 <div class="section" id="ordinals">
-<h3><span class="section-number">5.2.2.2.2. </span>ordinals…<a class="headerlink" href="#ordinals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2.2. </span>ordinals…<a class="headerlink" href="#ordinals" title="Permalink to this headline">¶</a></h3>
 <p>“Ordinals” are the numerical values associated with characters. Python strings are native unicode, so they are the number values of any character, or “code point”.</p>
 <p>To get the ordinal of a character in Python, you use the <cite>ord()</cite> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
@@ -219,7 +228,7 @@ circle, so it wraps around, or “rotates” by 13 letters, hence “rot13”).<
 </div>
 </div>
 <div class="section" id="hints">
-<h3><span class="section-number">5.2.2.2.3. </span>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2.3. </span>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h3>
 <p>Note that the alphabet has 26 letters, so if you “rotate” by 13 letters twice, you will be back were you started. So if you call your function twice on a string, you should get the same string back.</p>
 <p><code class="docutils literal notranslate"><span class="pre">rot13(rot13(something))</span> <span class="pre">==</span> <span class="pre">something</span></code></p>
 <p>There is a “short-cut” available that will help you accomplish this task. Some
@@ -243,10 +252,10 @@ early and often and include commit messages that are descriptive and concise.</p
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mailroom/mailroom.html" class="btn btn-neutral float-right" title="5.3.1. Mailroom" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom/mailroom.html" class="btn btn-neutral float-right" title="5.4. Mailroom" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="string_formatting.html" class="btn btn-neutral float-left" title="5.2.1. String Formatting Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="string_formatting.html" class="btn btn-neutral float-left" title="5.2. String Formatting Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

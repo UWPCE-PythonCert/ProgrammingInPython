@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.1. Fibonacci Series Exercise &mdash; Python 210 6.0 documentation</title>
+  <title>3.3. Fibonacci Series Exercise &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Sequences and Iteration" href="../topics/04-sequences_iteration/index.html" />
-    <link rel="prev" title="3.1.2. Boolean Expressions" href="../modules/Booleans.html" /> 
+    <link rel="prev" title="3.2. Boolean Expressions" href="../modules/Booleans.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,9 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Recursion.html">3.1.1. Recursion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Booleans.html">3.1.2. Boolean Expressions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3.1. Fibonacci Series Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Recursion.html">3.1. Recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Booleans.html">3.2. Boolean Expressions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Fibonacci Series Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
@@ -121,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -154,7 +154,7 @@
         
           <li><a href="../topics/03-recursion_booleans/index.html"><span class="section-number">3. </span>Recursion and Booleans</a> &raquo;</li>
         
-      <li><span class="section-number">3.3.1. </span>Fibonacci Series Exercise</li>
+      <li><span class="section-number">3.3. </span>Fibonacci Series Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,17 +168,26 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../modules/Booleans.html" class="btn btn-neutral float-left" title="3.2. Boolean Expressions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="fibonacci-series-exercise">
-<span id="exercise-fibonacci"></span><h1><span class="section-number">3.3.1. </span>Fibonacci Series Exercise<a class="headerlink" href="#fibonacci-series-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-fibonacci"></span><h1><span class="section-number">3.3. </span>Fibonacci Series Exercise<a class="headerlink" href="#fibonacci-series-exercise" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="computing-the-fibonacci-and-lucas-series">
-<h2><span class="section-number">3.3.1.1. </span>Computing the Fibonacci and Lucas Series<a class="headerlink" href="#computing-the-fibonacci-and-lucas-series" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.1. </span>Computing the Fibonacci and Lucas Series<a class="headerlink" href="#computing-the-fibonacci-and-lucas-series" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="goal">
-<h3><span class="section-number">3.3.1.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Fibbonaci_Series">Fibonacci Series</a> is a numeric series starting with the integers 0 and 1.</p>
 <p>In this series, the next integer is determined by summing the previous two</p>
 <p>This gives us:</p>
@@ -188,7 +197,7 @@
 <p>We will write a function that computes this series – then generalize it.</p>
 </div>
 <div class="section" id="step-1">
-<h3><span class="section-number">3.3.1.1.2. </span>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.2. </span>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Create a new module <code class="docutils literal notranslate"><span class="pre">series.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">lesson02</span></code> folder in your student folder.</p>
 <ul>
@@ -204,7 +213,7 @@ defined by previous values:</p>
 <p>fib(n) = fib(n-2) + fib(n-1)</p>
 </div>
 <div class="section" id="lucas-numbers">
-<h3><span class="section-number">3.3.1.1.3. </span>Lucas Numbers<a class="headerlink" href="#lucas-numbers" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.3. </span>Lucas Numbers<a class="headerlink" href="#lucas-numbers" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Lucas_number">Lucas Numbers</a> are a related series of integers that start with the
 values 2 and 1 rather than 0 and 1. The resulting series looks like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="o">...</span>
@@ -216,7 +225,7 @@ values 2 and 1 rather than 0 and 1. The resulting series looks like this:</p>
 <p>YOu should find it’s <em>very</em> similar to the <code class="docutils literal notranslate"><span class="pre">fibonacci()</span></code> function.</p>
 </div>
 <div class="section" id="generalizing">
-<h3><span class="section-number">3.3.1.1.4. </span>Generalizing<a class="headerlink" href="#generalizing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.4. </span>Generalizing<a class="headerlink" href="#generalizing" title="Permalink to this headline">¶</a></h3>
 <p>Both the <em>fibonacci series</em> and the <em>lucas numbers</em> are based on an identical formula:</p>
 <p>fib(n) = fib(n-2) + fib(n-1)</p>
 <p>That’s why the code is so similar.</p>
@@ -239,7 +248,7 @@ functions to call <code class="docutils literal notranslate"><span class="pre">s
 <p>Ensure that your function has a well-formed <code class="docutils literal notranslate"><span class="pre">docstring</span></code></p>
 </div>
 <div class="section" id="tests">
-<h3><span class="section-number">3.3.1.1.5. </span>Tests…<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1.5. </span>Tests…<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
 <p>Add a block of code to the end of your <code class="docutils literal notranslate"><span class="pre">series.py</span></code> module.
 Use the block to write a series of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements that
 demonstrate that your three functions work properly.</p>
@@ -264,7 +273,7 @@ Include good commit messages that explain concisely both <em>what</em> you are d
         <a href="../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Booleans.html" class="btn btn-neutral float-left" title="3.1.2. Boolean Expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Booleans.html" class="btn btn-neutral float-left" title="3.2. Boolean Expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

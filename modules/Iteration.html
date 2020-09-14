@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.1.2. Iteration &mdash; Python 210 6.0 documentation</title>
+  <title>4.2. Iteration &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2.1. Slicing Lab" href="../exercises/slicing.html" />
-    <link rel="prev" title="4.1.1. Python Sequences" href="Sequences.html" /> 
+    <link rel="next" title="4.3. Slicing Lab" href="../exercises/slicing.html" />
+    <link rel="prev" title="4.1. Python Sequences" href="Sequences.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,10 +87,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Sequences.html">4.1.1. Python Sequences</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1.2. Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/slicing.html">4.2.1. Slicing Lab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/list_lab.html">4.2.2. List Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sequences.html">4.1. Python Sequences</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/slicing.html">4.3. Slicing Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/list_lab.html">4.4. List Lab</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../topics/04-sequences_iteration/index.html"><span class="section-number">4. </span>Sequences and Iteration</a> &raquo;</li>
         
-      <li><span class="section-number">4.1.2. </span>Iteration</li>
+      <li><span class="section-number">4.2. </span>Iteration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,16 +169,25 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../exercises/slicing.html" class="btn btn-neutral float-right" title="4.3. Slicing Lab" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Sequences.html" class="btn btn-neutral float-left" title="4.1. Python Sequences" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="iteration">
-<span id="id1"></span><h1><span class="section-number">4.1.2. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">4.2. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h1>
 <p>Repetition, Repetition, Repetition, Repe…</p>
 <div class="section" id="for-loops">
-<h2><span class="section-number">4.1.2.1. </span>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.1. </span>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
 <p>We’ve seen simple iteration over a sequence with <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [170]: </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s2">&quot;a string&quot;</span><span class="p">:</span>
 <span class="gp">   .....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -194,7 +203,7 @@
 </pre></div>
 </div>
 <div class="section" id="no-indexing-required">
-<h3><span class="section-number">4.1.2.1.1. </span>No Indexing Required<a class="headerlink" href="#no-indexing-required" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.1. </span>No Indexing Required<a class="headerlink" href="#no-indexing-required" title="Permalink to this headline">¶</a></h3>
 <p>Contrast this with other languages, where you must build and use an <code class="docutils literal notranslate"><span class="pre">index</span></code> to iterate through an array.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
@@ -210,7 +219,7 @@
 </div>
 </div>
 <div class="section" id="range-and-for-loops">
-<h3><span class="section-number">4.1.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#range-and-for-loops" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#range-and-for-loops" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">range</span></code> builtin is useful for looping a known number of times:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [171]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="gp">   .....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -236,7 +245,7 @@
 </div>
 </div>
 <div class="section" id="no-namespace">
-<h3><span class="section-number">4.1.2.1.3. </span>No Namespace<a class="headerlink" href="#no-namespace" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.3. </span>No Namespace<a class="headerlink" href="#no-namespace" title="Permalink to this headline">¶</a></h3>
 <p>Be alert that a loop does not create a local namespace:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [172]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">In [173]: </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
@@ -248,7 +257,7 @@
 </div>
 </div>
 <div class="section" id="loop-control">
-<h3><span class="section-number">4.1.2.1.4. </span>Loop Control<a class="headerlink" href="#loop-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.4. </span>Loop Control<a class="headerlink" href="#loop-control" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes you want to interrupt or alter the flow of control through a loop.</p>
 <p>Loops can be controlled in two ways, with <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword will cause a loop to immediately terminate:</p>
@@ -275,7 +284,7 @@ allow iteration to continue:</p>
 <p>Take some time to look at these examples carefully, and make sure you understand them. It’s probably a good idea to write a bit of code to experiment as well.</p>
 </div>
 <div class="section" id="else">
-<h3><span class="section-number">4.1.2.1.5. </span>else<a class="headerlink" href="#else" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1.5. </span>else<a class="headerlink" href="#else" title="Permalink to this headline">¶</a></h3>
 <p>For loops can also take an optional <code class="docutils literal notranslate"><span class="pre">else</span></code> block.</p>
 <p>This is <strong>not</strong> a feature of most languages, but it can be handy.</p>
 <p>Executed only when the loop exits normally (not via break):</p>
@@ -310,7 +319,7 @@ allow iteration to continue:</p>
 </div>
 </div>
 <div class="section" id="while-loops">
-<h2><span class="section-number">4.1.2.2. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.2. </span>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
 <p>While loops are different – they are not for iterating over a collection, but rather for repeating something an unknown number of times – and maybe even forever – or until the program terminates.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> keyword is for when you don’t know how many loops you need.</p>
 <p>It continues to execute the body until the associated condition does not evaluate to True:</p>
@@ -320,7 +329,7 @@ allow iteration to continue:</p>
 </pre></div>
 </div>
 <div class="section" id="while-vs-for">
-<h3><span class="section-number">4.1.2.2.1. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> vs. <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#while-vs-for" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2.1. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> vs. <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#while-vs-for" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code>  is more general than <code class="docutils literal notranslate"><span class="pre">for</span></code></p>
 <p>– you can always express <code class="docutils literal notranslate"><span class="pre">for</span></code> as <code class="docutils literal notranslate"><span class="pre">while</span></code>, but not always vice-versa.</p>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code>  is more error-prone – requires some care to terminate.</p>
@@ -333,7 +342,7 @@ allow iteration to continue:</p>
 </div>
 </div>
 <div class="section" id="terminating-a-while-loop">
-<h3><span class="section-number">4.1.2.2.2. </span>Terminating a while Loop<a class="headerlink" href="#terminating-a-while-loop" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2.2. </span>Terminating a while Loop<a class="headerlink" href="#terminating-a-while-loop" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">break</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [150]: </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="gp">   .....: </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -366,7 +375,7 @@ allow iteration to continue:</p>
 </div>
 </div>
 <div class="section" id="similarities">
-<h3><span class="section-number">4.1.2.2.3. </span>Similarities<a class="headerlink" href="#similarities" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2.3. </span>Similarities<a class="headerlink" href="#similarities" title="Permalink to this headline">¶</a></h3>
 <p>Both <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops can use <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> for
 internal flow control.</p>
 <p>Both <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops can have an optional <code class="docutils literal notranslate"><span class="pre">else</span></code> block.</p>
@@ -375,11 +384,11 @@ loop terminates normally (no <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="section" id="pythonic-iteration">
-<h2><span class="section-number">4.1.2.3. </span>Pythonic Iteration<a class="headerlink" href="#pythonic-iteration" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.3. </span>Pythonic Iteration<a class="headerlink" href="#pythonic-iteration" title="Permalink to this headline">¶</a></h2>
 <p>I’ve already said it, but it bears repeating:</p>
 <p>for loops are for iterating over something (an “iterable”) – you almost never want to iterate over the indexes, and then access items with the index.</p>
 <div class="section" id="nifty-for-loop-tricks">
-<h3><span class="section-number">4.1.2.3.1. </span>Nifty for loop tricks<a class="headerlink" href="#nifty-for-loop-tricks" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.1. </span>Nifty for loop tricks<a class="headerlink" href="#nifty-for-loop-tricks" title="Permalink to this headline">¶</a></h3>
 <p><strong>tuple unpacking:</strong></p>
 <p>remember this?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
@@ -398,7 +407,7 @@ loop terminates normally (no <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="section" id="looping-through-two-iterables-at-once">
-<h3><span class="section-number">4.1.2.3.2. </span>Looping through two iterables at once:<a class="headerlink" href="#looping-through-two-iterables-at-once" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.2. </span>Looping through two iterables at once:<a class="headerlink" href="#looping-through-two-iterables-at-once" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">zip</span></code></p>
 </div></blockquote>
@@ -420,7 +429,7 @@ loop terminates normally (no <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="section" id="need-the-index-and-the-item">
-<h3><span class="section-number">4.1.2.3.3. </span>Need the index and the item?<a class="headerlink" href="#need-the-index-and-the-item" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3.3. </span>Need the index and the item?<a class="headerlink" href="#need-the-index-and-the-item" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">enumerate</span></code></p>
 </div></blockquote>
@@ -446,10 +455,10 @@ loop terminates normally (no <code class="docutils literal notranslate"><span cl
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/slicing.html" class="btn btn-neutral float-right" title="4.2.1. Slicing Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/slicing.html" class="btn btn-neutral float-right" title="4.3. Slicing Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Sequences.html" class="btn btn-neutral float-left" title="4.1.1. Python Sequences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Sequences.html" class="btn btn-neutral float-left" title="4.1. Python Sequences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

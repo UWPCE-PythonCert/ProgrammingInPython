@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.2.2. List Lab &mdash; Python 210 6.0 documentation</title>
+  <title>4.4. List Lab &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Basic Text Handling" href="../topics/05-text_handling/index.html" />
-    <link rel="prev" title="4.2.1. Slicing Lab" href="slicing.html" /> 
+    <link rel="prev" title="4.3. Slicing Lab" href="slicing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,10 +87,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Sequences.html">4.1.1. Python Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Iteration.html">4.1.2. Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slicing.html">4.2.1. Slicing Lab</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2.2. List Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Sequences.html">4.1. Python Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Iteration.html">4.2. Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slicing.html">4.3. Slicing Lab</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. List Lab</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../topics/04-sequences_iteration/index.html"><span class="section-number">4. </span>Sequences and Iteration</a> &raquo;</li>
         
-      <li><span class="section-number">4.2.2. </span>List Lab</li>
+      <li><span class="section-number">4.4. </span>List Lab</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,22 +169,31 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../topics/05-text_handling/index.html" class="btn btn-neutral float-right" title="5. Basic Text Handling" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="slicing.html" class="btn btn-neutral float-left" title="4.3. Slicing Lab" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="list-lab">
-<span id="exercise-list-lab"></span><h1><span class="section-number">4.2.2. </span>List Lab<a class="headerlink" href="#list-lab" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-list-lab"></span><h1><span class="section-number">4.4. </span>List Lab<a class="headerlink" href="#list-lab" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="learning-about-lists">
-<h2><span class="section-number">4.2.2.1. </span>Learning about lists<a class="headerlink" href="#learning-about-lists" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4.1. </span>Learning about lists<a class="headerlink" href="#learning-about-lists" title="Permalink to this headline">¶</a></h2>
 <p>Inspired by: <a class="reference external" href="http://www.upriss.org.uk/python/session5.html">http://www.upriss.org.uk/python/session5.html</a></p>
 <div class="section" id="goal">
-<h3><span class="section-number">4.2.2.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
 <p>Learn the basic ins and outs of Python lists.</p>
 </div>
 <div class="section" id="hint">
-<h3><span class="section-number">4.2.2.1.2. </span>Hint<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.1.2. </span>Hint<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
 <p>to query the user for info at the command line, you use:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;a prompt for the user &gt; &quot;</span><span class="p">)</span>
 </pre></div>
@@ -192,7 +201,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">response</span></code> will be a string of whatever the user types (until a &lt;return&gt;).</p>
 </div>
 <div class="section" id="procedure">
-<h3><span class="section-number">4.2.2.1.3. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.1.3. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h3>
 <p>In your student dir in the class repo, create a <code class="docutils literal notranslate"><span class="pre">lesson03</span></code> dir and put in a new <code class="docutils literal notranslate"><span class="pre">list_lab.py</span></code> file.</p>
 <p>The file should be an executable Python script. That is to say that one
 should be able to run the script directly like so:</p>
@@ -227,7 +236,7 @@ GitHub and issue a pull request.</p>
 actions:</p>
 </div>
 <div class="section" id="series-1">
-<h3><span class="section-number">4.2.2.1.4. </span>Series 1<a class="headerlink" href="#series-1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.1.4. </span>Series 1<a class="headerlink" href="#series-1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Create a list that contains “Apples”, “Pears”, “Oranges” and “Peaches”.</p></li>
 <li><p>Display the list (plain old <code class="docutils literal notranslate"><span class="pre">print()</span></code> is fine…).</p></li>
@@ -242,7 +251,7 @@ list.</p></li>
 </ul>
 </div>
 <div class="section" id="series-2">
-<h3><span class="section-number">4.2.2.1.5. </span>Series 2<a class="headerlink" href="#series-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.1.5. </span>Series 2<a class="headerlink" href="#series-2" title="Permalink to this headline">¶</a></h3>
 <p>Using the list created in series 1 above:</p>
 <ul class="simple">
 <li><p>Display the list.</p></li>
@@ -253,7 +262,7 @@ list.</p></li>
 </ul>
 </div>
 <div class="section" id="series-3">
-<h3><span class="section-number">4.2.2.1.6. </span>Series 3<a class="headerlink" href="#series-3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.1.6. </span>Series 3<a class="headerlink" href="#series-3" title="Permalink to this headline">¶</a></h3>
 <p>Again, using the list from series 1:</p>
 <ul class="simple">
 <li><p>Ask the user for input displaying a line like “Do you like apples?” for each fruit in the list (making the fruit all lowercase).</p></li>
@@ -264,7 +273,7 @@ of those two values (a while loop is good here)</p></li>
 </ul>
 </div>
 <div class="section" id="series-4">
-<h3><span class="section-number">4.2.2.1.7. </span>Series 4<a class="headerlink" href="#series-4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.1.7. </span>Series 4<a class="headerlink" href="#series-4" title="Permalink to this headline">¶</a></h3>
 <p>Once more, using the list from series 1:</p>
 <ul class="simple">
 <li><p>Make a new list with the contents of the original, but with all the letters in each item reversed.</p></li>
@@ -285,7 +294,7 @@ of those two values (a while loop is good here)</p></li>
         <a href="../topics/05-text_handling/index.html" class="btn btn-neutral float-right" title="5. Basic Text Handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="slicing.html" class="btn btn-neutral float-left" title="4.2.1. Slicing Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="slicing.html" class="btn btn-neutral float-left" title="4.3. Slicing Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

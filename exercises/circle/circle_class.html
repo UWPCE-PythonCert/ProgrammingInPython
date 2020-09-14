@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.2.1. Circle Class Exercise &mdash; Python 210 6.0 documentation</title>
+  <title>14.4. Circle Class Exercise &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14.3.1. Sparse Array Exercise" href="../sparse_array.html" />
-    <link rel="prev" title="14.1.3. Special Methods &amp; Protocols" href="../../modules/SpecialMethodsAndProtocols.html" /> 
+    <link rel="next" title="14.5.1. Sparse Array Exercise" href="../sparse_array.html" />
+    <link rel="prev" title="14.3. Special Methods &amp; Protocols" href="../../modules/SpecialMethodsAndProtocols.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,11 +97,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Properties.html">14.1.1. Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/StaticAndClassMethods.html">14.1.2. Static and Class Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/SpecialMethodsAndProtocols.html">14.1.3. Special Methods &amp; Protocols</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.2.1. Circle Class Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sparse_array.html">14.3.1. Sparse Array Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Properties.html">14.1. Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/StaticAndClassMethods.html">14.2. Static and Class Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/SpecialMethodsAndProtocols.html">14.3. Special Methods &amp; Protocols</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.4. Circle Class Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sparse_array.html">14.5.1. Sparse Array Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
@@ -123,7 +123,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Python 210</a>
+          <a href="../../index.html">Programming in Python</a>
         
       </nav>
 
@@ -156,7 +156,7 @@
         
           <li><a href="../../topics/14-magic_methods/index.html"><span class="section-number">14. </span>Properties and Magic Methods</a> &raquo;</li>
         
-      <li><span class="section-number">14.2.1. </span>Circle Class Exercise</li>
+      <li><span class="section-number">14.4. </span>Circle Class Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,18 +170,27 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../sparse_array.html" class="btn btn-neutral float-right" title="14.5.1. Sparse Array Exercise" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../modules/SpecialMethodsAndProtocols.html" class="btn btn-neutral float-left" title="14.3. Special Methods &amp; Protocols" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="circle-class-exercise">
-<span id="exercise-circle-class"></span><h1><span class="section-number">14.2.1. </span>Circle Class Exercise<a class="headerlink" href="#circle-class-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-circle-class"></span><h1><span class="section-number">14.4. </span>Circle Class Exercise<a class="headerlink" href="#circle-class-exercise" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="circle-class">
-<h2><span class="section-number">14.2.1.1. </span>Circle Class<a class="headerlink" href="#circle-class" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">14.4.1. </span>Circle Class<a class="headerlink" href="#circle-class" title="Permalink to this headline">¶</a></h2>
 <p>The ultimate circle….</p>
 <div class="section" id="goal">
-<h3><span class="section-number">14.2.1.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
 <p>The goal is to create a class that represents a simple circle.</p>
 <p>A Circle can be defined by either specifying the radius or the diameter,
 and the user can query the circle for either its radius or diameter.</p>
@@ -206,7 +215,7 @@ and the user can query the circle for either its radius or diameter.</p>
 </div></blockquote>
 </div>
 <div class="section" id="general-instructions">
-<h3><span class="section-number">14.2.1.1.2. </span>General Instructions:<a class="headerlink" href="#general-instructions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.2. </span>General Instructions:<a class="headerlink" href="#general-instructions" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>For each step, write a couple of unit tests that test the new features.</p></li>
 <li><p>Run these tests (and they will fail the first time)</p></li>
@@ -214,7 +223,7 @@ and the user can query the circle for either its radius or diameter.</p>
 </ol>
 </div>
 <div class="section" id="step-1">
-<h3><span class="section-number">14.2.1.1.3. </span>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.3. </span>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
 <p>Create class called <code class="docutils literal notranslate"><span class="pre">Circle</span></code> – it’s signature should look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">the_radius</span><span class="p">)</span>
 </pre></div>
@@ -233,7 +242,7 @@ and the user can query the circle for either its radius or diameter.</p>
 <p>Remember: tests first!</p>
 </div>
 <div class="section" id="step-2">
-<h3><span class="section-number">14.2.1.1.4. </span>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.4. </span>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
 <p>Add a “diameter” property, so the user can get the diameter of the circle:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">diameter</span><span class="p">)</span>
@@ -242,7 +251,7 @@ and the user can query the circle for either its radius or diameter.</p>
 </div>
 </div>
 <div class="section" id="step-3">
-<h3><span class="section-number">14.2.1.1.5. </span>Step 3:<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.5. </span>Step 3:<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
 <p>Set up the diameter property so that the user can set the diameter of the circle:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">diameter</span> <span class="o">=</span> <span class="mi">2</span>
@@ -256,7 +265,7 @@ and the user can query the circle for either its radius or diameter.</p>
 <p><strong>Important:</strong> Do not store both the radius and the diameter as attributes! If you do that, they could get out of sync. So store only one (the radius), and have the other calculated “on the fly” by the property.</p>
 </div>
 <div class="section" id="step-4">
-<h3><span class="section-number">14.2.1.1.6. </span>Step 4:<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.6. </span>Step 4:<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h3>
 <p>Add an <code class="docutils literal notranslate"><span class="pre">area</span></code> property so the user can get the area of the circle:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
@@ -272,7 +281,7 @@ and the user can query the circle for either its radius or diameter.</p>
 </div>
 </div>
 <div class="section" id="step-5">
-<h3><span class="section-number">14.2.1.1.7. </span>Step 5:<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.7. </span>Step 5:<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h3>
 <p>Add an “alternate constructor” that lets the user create a Circle directly
 with the diameter:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="o">.</span><span class="n">from_diameter</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
@@ -285,7 +294,7 @@ with the diameter:</p>
 <p>Hint: This is a good use case for a <code class="docutils literal notranslate"><span class="pre">classmethod</span></code></p>
 </div>
 <div class="section" id="step-6">
-<h3><span class="section-number">14.2.1.1.8. </span>Step 6:<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.8. </span>Step 6:<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h3>
 <p>Every class should have a nice way to print it out…</p>
 <p>Add <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> methods to your Circle class.</p>
 <p>Now you can print it:</p>
@@ -305,7 +314,7 @@ with the diameter:</p>
 </div>
 </div>
 <div class="section" id="step-7">
-<h3><span class="section-number">14.2.1.1.9. </span>Step 7:<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.9. </span>Step 7:<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h3>
 <p>Add some of the numeric protocol to your Circle:</p>
 <p>You should be able to add two circles:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -324,7 +333,7 @@ with the diameter:</p>
 <p>(what happens with <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">c2</span></code> ? – can you fix that?)</p>
 </div>
 <div class="section" id="step-8">
-<h3><span class="section-number">14.2.1.1.10. </span>Step 8:<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.10. </span>Step 8:<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h3>
 <p>Add the ability to compare two circles:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">c1</span> <span class="o">&gt;</span> <span class="n">c2</span>
 <span class="gh">Out[10]: </span><span class="go">False</span>
@@ -354,7 +363,7 @@ with the diameter:</p>
 <p><strong>NOTE:</strong> make sure to write unit tests for all of this! Ideally before writing the code.</p>
 </div>
 <div class="section" id="step-8-optional-features">
-<h3><span class="section-number">14.2.1.1.11. </span>Step 8: Optional Features:<a class="headerlink" href="#step-8-optional-features" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.11. </span>Step 8: Optional Features:<a class="headerlink" href="#step-8-optional-features" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>See if you can make “reflected” numerics do the right thing:</p></li>
 </ul>
@@ -375,7 +384,7 @@ with the diameter:</p>
 </ul>
 </div>
 <div class="section" id="step-9-subclassing">
-<h3><span class="section-number">14.2.1.1.12. </span>Step 9: Subclassing!<a class="headerlink" href="#step-9-subclassing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">14.4.1.12. </span>Step 9: Subclassing!<a class="headerlink" href="#step-9-subclassing" title="Permalink to this headline">¶</a></h3>
 <p>You’ve got a circle already – what if you needed a Sphere? They have a fair bit in common – both defined by a radius, same relationship of radius to diameter, etc.</p>
 <p>So we can get a pretty useful Sphere class by simply subclassing Circle, and adding and changing a couple things.</p>
 <ul class="simple">
@@ -398,10 +407,10 @@ with the diameter:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sparse_array.html" class="btn btn-neutral float-right" title="14.3.1. Sparse Array Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../sparse_array.html" class="btn btn-neutral float-right" title="14.5.1. Sparse Array Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../modules/SpecialMethodsAndProtocols.html" class="btn btn-neutral float-left" title="14.1.3. Special Methods &amp; Protocols" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/SpecialMethodsAndProtocols.html" class="btn btn-neutral float-left" title="14.3. Special Methods &amp; Protocols" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

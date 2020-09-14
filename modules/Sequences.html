@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.1.1. Python Sequences &mdash; Python 210 6.0 documentation</title>
+  <title>4.1. Python Sequences &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.1.2. Iteration" href="Iteration.html" />
+    <link rel="next" title="4.2. Iteration" href="Iteration.html" />
     <link rel="prev" title="4. Sequences and Iteration" href="../topics/04-sequences_iteration/index.html" /> 
 </head>
 
@@ -87,10 +87,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1.1. Python Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iteration.html">4.1.2. Iteration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/slicing.html">4.2.1. Slicing Lab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/list_lab.html">4.2.2. List Lab</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Python Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iteration.html">4.2. Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/slicing.html">4.3. Slicing Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/list_lab.html">4.4. List Lab</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../topics/04-sequences_iteration/index.html"><span class="section-number">4. </span>Sequences and Iteration</a> &raquo;</li>
         
-      <li><span class="section-number">4.1.1. </span>Python Sequences</li>
+      <li><span class="section-number">4.1. </span>Python Sequences</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,16 +169,25 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="Iteration.html" class="btn btn-neutral float-right" title="4.2. Iteration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-left" title="4. Sequences and Iteration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="python-sequences">
-<span id="sequences"></span><h1><span class="section-number">4.1.1. </span>Python Sequences<a class="headerlink" href="#python-sequences" title="Permalink to this headline">¶</a></h1>
+<span id="sequences"></span><h1><span class="section-number">4.1. </span>Python Sequences<a class="headerlink" href="#python-sequences" title="Permalink to this headline">¶</a></h1>
 <p>Ordered collections of objects</p>
 <div class="section" id="what-is-a-sequence">
-<h2><span class="section-number">4.1.1.1. </span>What is a Sequence?<a class="headerlink" href="#what-is-a-sequence" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.1. </span>What is a Sequence?<a class="headerlink" href="#what-is-a-sequence" title="Permalink to this headline">¶</a></h2>
 <p>A sequence is an ordered collection of objects.</p>
 <p>They are analogous to what are often called “arrays” or “lists” in other programming languages.</p>
 <p>But in Python, there are number of types that all fit this description, each with special customization. But any object that has the behavior expected of a sequence can be treated the same way in Python:</p>
@@ -188,7 +197,7 @@
 <p>Technically, if it satisfies the “Sequence Protocol”, it is a sequence.</p>
 <p>Python is all about these protocols – we will see more of them.</p>
 <div class="section" id="the-sequence-protocol">
-<h3><span class="section-number">4.1.1.1.1. </span>The Sequence Protocol<a class="headerlink" href="#the-sequence-protocol" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.1.1. </span>The Sequence Protocol<a class="headerlink" href="#the-sequence-protocol" title="Permalink to this headline">¶</a></h3>
 <p>A <em>sequence</em> can be considered as anything that supports <em>at least</em> these operations:</p>
 <ul class="simple">
 <li><p>Indexing</p></li>
@@ -201,7 +210,7 @@
 <p>I’ll get into all of those as we go along.</p>
 </div>
 <div class="section" id="sequence-types">
-<h3><span class="section-number">4.1.1.1.2. </span>Sequence Types<a class="headerlink" href="#sequence-types" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.1.2. </span>Sequence Types<a class="headerlink" href="#sequence-types" title="Permalink to this headline">¶</a></h3>
 <p>There are eight built in types in Python that are <em>sequences</em>:</p>
 <ul class="simple">
 <li><p>string</p></li>
@@ -221,7 +230,7 @@ the rest are pretty special purpose.</p>
 </div>
 </div>
 <div class="section" id="indexing">
-<h2><span class="section-number">4.1.1.2. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.2. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
 <p>Items in a sequence may be looked up by <em>index</em> using the indexing
 operator: <code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
 <p>Indexing in Python always starts at zero.</p>
@@ -263,7 +272,7 @@ operator: <code class="docutils literal notranslate"><span class="pre">[]</span>
 </div>
 <p>Pretty straight forward so far…</p>
 <div class="section" id="slicing">
-<h3><span class="section-number">4.1.1.2.1. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2.1. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h3>
 <p>Slicing is a real “power tool” of Python – it can allow very short code.</p>
 <p>Slicing a sequence creates a new sequence with a range of objects from the
 original sequence.</p>
@@ -284,7 +293,7 @@ original sequence.</p>
 </div>
 </div>
 <div class="section" id="helpful-hint">
-<h3><span class="section-number">4.1.1.2.2. </span>Helpful Hint<a class="headerlink" href="#helpful-hint" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2.2. </span>Helpful Hint<a class="headerlink" href="#helpful-hint" title="Permalink to this headline">¶</a></h3>
 <p>It can really help if you think about slicing this way:</p>
 <p>(write this out!)</p>
 <p>Think of the indexes as pointing to the spaces between the items:</p>
@@ -295,7 +304,7 @@ original sequence.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">4.1.1.2.3. </span>Slicing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2.3. </span>Slicing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Python has some other slicing shortcuts…</p>
 <p>You do not have to provide both <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">finish</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a bunch of words&quot;</span>
@@ -317,7 +326,7 @@ original sequence.</p>
 <p><strong>That</strong> is a real-world example I use all the time.</p>
 </div>
 <div class="section" id="why-start-from-zero">
-<h3><span class="section-number">4.1.1.2.4. </span>Why start from zero?<a class="headerlink" href="#why-start-from-zero" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2.4. </span>Why start from zero?<a class="headerlink" href="#why-start-from-zero" title="Permalink to this headline">¶</a></h3>
 <p>Python indexing feels ‘weird’ to some folks – particularly those that don’t come with a background in the C family of languages.</p>
 <p>Why is the “first” item indexed with <strong>zero</strong>?</p>
 <p>Why is the last item in the slice <strong>not</strong> included?</p>
@@ -334,7 +343,7 @@ original sequence.</p>
 <p>There are very many fewer “off by one” errors as a result.</p>
 </div>
 <div class="section" id="more-on-slicing">
-<h3><span class="section-number">4.1.1.2.5. </span>More on Slicing<a class="headerlink" href="#more-on-slicing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2.5. </span>More on Slicing<a class="headerlink" href="#more-on-slicing" title="Permalink to this headline">¶</a></h3>
 <p>Slicing takes a third argument: <code class="docutils literal notranslate"><span class="pre">step</span></code> which controls which items are
 returned:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">a_tuple</span>
@@ -356,7 +365,7 @@ returned:</p>
 <p>Very cool – a negative step reverses the results!</p>
 </div>
 <div class="section" id="slicing-vs-indexing">
-<h3><span class="section-number">4.1.1.2.6. </span>Slicing vs. Indexing<a class="headerlink" href="#slicing-vs-indexing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2.6. </span>Slicing vs. Indexing<a class="headerlink" href="#slicing-vs-indexing" title="Permalink to this headline">¶</a></h3>
 <p>Though they share an operator, slicing and indexing have a few important
 differences:</p>
 <ul class="simple">
@@ -381,7 +390,7 @@ differences:</p>
 </div>
 </div>
 <div class="section" id="membership">
-<h2><span class="section-number">4.1.1.3. </span>Membership<a class="headerlink" href="#membership" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.3. </span>Membership<a class="headerlink" href="#membership" title="Permalink to this headline">¶</a></h2>
 <p>All sequences support the <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> membership operators:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="gp">In [16]: </span><span class="mi">5</span> <span class="ow">in</span> <span class="n">s</span>
@@ -407,7 +416,7 @@ other languages:</p>
 </div>
 </div>
 <div class="section" id="concatenation">
-<h2><span class="section-number">4.1.1.4. </span>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.4. </span>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">*</span></code> on sequences will <em>concatenate</em> them:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="gp">In [19]: </span><span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
@@ -418,7 +427,7 @@ other languages:</p>
 </pre></div>
 </div>
 <div class="section" id="multiplying-and-slicing">
-<h3><span class="section-number">4.1.1.4.1. </span>Multiplying and Slicing<a class="headerlink" href="#multiplying-and-slicing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.4.1. </span>Multiplying and Slicing<a class="headerlink" href="#multiplying-and-slicing" title="Permalink to this headline">¶</a></h3>
 <p>You can apply this concatenation to slices as well, leading to some nicely
 concise code:</p>
 <p>from CodingBat: Warmup-1 – front3</p>
@@ -437,7 +446,7 @@ concise code:</p>
 </div>
 </div>
 <div class="section" id="length">
-<h2><span class="section-number">4.1.1.5. </span>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.5. </span>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h2>
 <p>All sequences have a length.  You can get it with the <code class="docutils literal notranslate"><span class="pre">len</span></code> builtin:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;how long is this, anyway?&quot;</span>
 <span class="gp">In [37]: </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -457,7 +466,7 @@ concise code:</p>
 <p>Better to use <code class="docutils literal notranslate"><span class="pre">s[-1]</span></code></p>
 </div>
 <div class="section" id="miscellaneous">
-<h2><span class="section-number">4.1.1.6. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.6. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
 <p>There are a bunch more operations supported by most sequences.
 Min and Max
 ———–</p>
@@ -483,7 +492,7 @@ Min and Max
 </pre></div>
 </div>
 <div class="section" id="index">
-<h3><span class="section-number">4.1.1.6.1. </span>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.6.1. </span>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
 <p>All sequences also support the <code class="docutils literal notranslate"><span class="pre">index</span></code> method, which returns the index of the first occurrence of an item in the sequence:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [46]: </span><span class="n">all_letters</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
 <span class="gh">Out[46]: </span><span class="go">21</span>
@@ -501,7 +510,7 @@ Min and Max
 </div>
 </div>
 <div class="section" id="count">
-<h3><span class="section-number">4.1.1.6.2. </span>Count<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.6.2. </span>Count<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h3>
 <p>A sequence can also be queried for the number of times a particular item
 appears:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [52]: </span><span class="n">all_letters</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
@@ -518,7 +527,7 @@ appears:</p>
 </div>
 </div>
 <div class="section" id="iteration">
-<h2><span class="section-number">4.1.1.7. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.7. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h2>
 <p>All sequences are “iterables”.</p>
 <p>You can iterate over a sequence with <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
@@ -529,10 +538,10 @@ appears:</p>
 <p>There are some complexities about that – but more on that in another lesson.</p>
 </div>
 <div class="section" id="lists-tuples">
-<h2><span class="section-number">4.1.1.8. </span>Lists, Tuples…<a class="headerlink" href="#lists-tuples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.8. </span>Lists, Tuples…<a class="headerlink" href="#lists-tuples" title="Permalink to this headline">¶</a></h2>
 <p>The <em>primary</em> sequence types.</p>
 <div class="section" id="lists">
-<h3><span class="section-number">4.1.1.8.1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8.1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
 <p>Lists can be constructed using list literals (<code class="docutils literal notranslate"><span class="pre">[]</span></code>):</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="p">[]</span>
 <span class="gh">Out[1]: </span><span class="go">[]</span>
@@ -554,7 +563,7 @@ appears:</p>
 <p>It will take any “iterable” (which means any sequence automatically – remember that all sequences are iterable?)</p>
 </div>
 <div class="section" id="list-elements">
-<h3><span class="section-number">4.1.1.8.2. </span>List Elements<a class="headerlink" href="#list-elements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8.2. </span>List Elements<a class="headerlink" href="#list-elements" title="Permalink to this headline">¶</a></h3>
 <p>The elements contained in a list need not be of a single type.</p>
 <p>Lists are <em>heterogenous</em>, <em>ordered</em> collections.</p>
 <p>Each element in a list is a value, and can be in multiple lists and have
@@ -584,7 +593,7 @@ multiple names (or no name):</p>
 </div>
 </div>
 <div class="section" id="tuples">
-<h3><span class="section-number">4.1.1.8.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h3>
 <p>Tuples can be constructed using tuple literals (<code class="docutils literal notranslate"><span class="pre">()</span></code>):</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="p">()</span>
 <span class="gh">Out[15]: </span><span class="go">()</span>
@@ -598,7 +607,7 @@ multiple names (or no name):</p>
 </div>
 </div>
 <div class="section" id="tuples-and-commas">
-<h3><span class="section-number">4.1.1.8.4. </span>Tuples and Commas…<a class="headerlink" href="#tuples-and-commas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8.4. </span>Tuples and Commas…<a class="headerlink" href="#tuples-and-commas" title="Permalink to this headline">¶</a></h3>
 <p>Tuples don’t NEED parentheses…</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [161]: </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">In [162]: </span><span class="n">t</span>
@@ -642,7 +651,7 @@ multiple names (or no name):</p>
 <p>Would you have seen that?</p>
 </div>
 <div class="section" id="converting-something-to-a-tuple">
-<h3><span class="section-number">4.1.1.8.5. </span>Converting something to a Tuple<a class="headerlink" href="#converting-something-to-a-tuple" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8.5. </span>Converting something to a Tuple<a class="headerlink" href="#converting-something-to-a-tuple" title="Permalink to this headline">¶</a></h3>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> type object to convert any iterable (sequence) into a tuple:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="nb">tuple</span><span class="p">()</span>
 <span class="gh">Out[20]: </span><span class="go">()</span>
@@ -654,7 +663,7 @@ multiple names (or no name):</p>
 </div>
 </div>
 <div class="section" id="tuple-elements">
-<h3><span class="section-number">4.1.1.8.6. </span>Tuple Elements<a class="headerlink" href="#tuple-elements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8.6. </span>Tuple Elements<a class="headerlink" href="#tuple-elements" title="Permalink to this headline">¶</a></h3>
 <p>The elements contained in a tuple need not be of a single type.</p>
 <p>Tuples are <em>heterogenous</em>, <em>ordered</em> collections.</p>
 <p>Each element in a tuple is a value, and can be in multiple tuples and have
@@ -672,19 +681,19 @@ multiple names (or no name):</p>
 <p>Look familiar from lists??</p>
 </div>
 <div class="section" id="lists-vs-tuples">
-<h3><span class="section-number">4.1.1.8.7. </span>Lists vs. Tuples<a class="headerlink" href="#lists-vs-tuples" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8.7. </span>Lists vs. Tuples<a class="headerlink" href="#lists-vs-tuples" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>So why have both?</p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="mutability">
-<h2><span class="section-number">4.1.1.9. </span>Mutability<a class="headerlink" href="#mutability" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.9. </span>Mutability<a class="headerlink" href="#mutability" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/transmogrifier.jpg"><img alt="Presto change-o" class="align-center" src="../_images/transmogrifier.jpg" style="width: 35%;" /></a>
 <p>image from flickr by <a class="reference external" href="https://www.flickr.com/photos/illuminaut/3595530403">illuminaut</a>, (CC by-nc-sa)</p>
 </div>
 <div class="section" id="mutability-in-python">
-<h2><span class="section-number">4.1.1.10. </span>Mutability in Python<a class="headerlink" href="#mutability-in-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.10. </span>Mutability in Python<a class="headerlink" href="#mutability-in-python" title="Permalink to this headline">¶</a></h2>
 <p>All objects in Python fall into one of two camps:</p>
 <ul class="simple">
 <li><p>Mutable</p></li>
@@ -694,7 +703,7 @@ multiple names (or no name):</p>
 <p>Objects which are immutable may not be changed.</p>
 <p>Ever.</p>
 <div class="section" id="the-types-we-know">
-<h3><span class="section-number">4.1.1.10.1. </span>The Types We Know<a class="headerlink" href="#the-types-we-know" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.10.1. </span>The Types We Know<a class="headerlink" href="#the-types-we-know" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 45%" />
@@ -724,7 +733,7 @@ multiple names (or no name):</p>
 <p>Immutable types are the exception</p>
 </div>
 <div class="section" id="lists-are-mutable">
-<h3><span class="section-number">4.1.1.10.2. </span>Lists Are Mutable<a class="headerlink" href="#lists-are-mutable" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.10.2. </span>Lists Are Mutable<a class="headerlink" href="#lists-are-mutable" title="Permalink to this headline">¶</a></h3>
 <p>Try this out:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]</span>
 <span class="gp">In [29]: </span><span class="n">food</span>
@@ -749,7 +758,7 @@ multiple names (or no name):</p>
 </div>
 </div>
 <div class="section" id="watch-out-when-name-binding">
-<h3><span class="section-number">4.1.1.10.3. </span>Watch Out when name binding<a class="headerlink" href="#watch-out-when-name-binding" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.10.3. </span>Watch Out when name binding<a class="headerlink" href="#watch-out-when-name-binding" title="Permalink to this headline">¶</a></h3>
 <p>This property means you need to be aware of what you are doing with your lists:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [36]: </span><span class="n">original</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">In [37]: </span><span class="n">altered</span> <span class="o">=</span> <span class="n">original</span>
@@ -764,7 +773,7 @@ whatever condition caused it to be updated.</p>
 <p>What is the result of this code?</p>
 </div>
 <div class="section" id="perhaps-not-what-you-expect">
-<h3><span class="section-number">4.1.1.10.4. </span>Perhaps Not What You Expect<a class="headerlink" href="#perhaps-not-what-you-expect" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.10.4. </span>Perhaps Not What You Expect<a class="headerlink" href="#perhaps-not-what-you-expect" title="Permalink to this headline">¶</a></h3>
 <p>Our <code class="docutils literal notranslate"><span class="pre">altered</span></code> list has been updated as we’d expect:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [39]: </span><span class="n">altered</span>
 <span class="gh">Out[39]: </span><span class="go">[2, 3, 4]</span>
@@ -782,7 +791,7 @@ whatever condition caused it to be updated.</p>
 <p>That is, there is only one list, even though it is referred to by two names. So when you mutate (or change) that list from <em>either</em> name, the changes show up when you refer to it by the other name.</p>
 </div>
 <div class="section" id="other-gotchas">
-<h3><span class="section-number">4.1.1.10.5. </span>Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.10.5. </span>Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permalink to this headline">¶</a></h3>
 <p>Easy container setup, or deadly trap?</p>
 <p>(note: you can nest lists to make a 2D-ish array)</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[]</span> <span class="p">]</span> <span class="o">*</span> <span class="mi">5</span>
@@ -800,7 +809,7 @@ whatever condition caused it to be updated.</p>
 <p>So, what is going to be in <code class="docutils literal notranslate"><span class="pre">bins</span></code> now?</p>
 </div>
 <div class="section" id="there-is-only-one-bin">
-<h3><span class="section-number">4.1.1.10.6. </span>There is only <strong>One</strong> bin<a class="headerlink" href="#there-is-only-one-bin" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.10.6. </span>There is only <strong>One</strong> bin<a class="headerlink" href="#there-is-only-one-bin" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [65]: </span><span class="n">bins</span>
 <span class="gh">Out[65]:</span>
 <span class="go">[[&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
@@ -814,7 +823,7 @@ whatever condition caused it to be updated.</p>
 <p>We got a list containing five references to a single <em>mutable</em> object.</p>
 </div>
 <div class="section" id="mutable-default-argument">
-<h3><span class="section-number">4.1.1.10.7. </span>Mutable Default Argument<a class="headerlink" href="#mutable-default-argument" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.10.7. </span>Mutable Default Argument<a class="headerlink" href="#mutable-default-argument" title="Permalink to this headline">¶</a></h3>
 <p>Watch out especially for passing mutable objects as default values for function parameters:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [71]: </span><span class="k">def</span> <span class="nf">accumulator</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">ac_list</span><span class="o">=</span><span class="p">[]):</span>
 <span class="gp">   ....: </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
@@ -852,12 +861,12 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="mutable-sequence-methods">
-<h2><span class="section-number">4.1.1.11. </span>Mutable Sequence Methods<a class="headerlink" href="#mutable-sequence-methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.11. </span>Mutable Sequence Methods<a class="headerlink" href="#mutable-sequence-methods" title="Permalink to this headline">¶</a></h2>
 <p>In addition to all the methods supported by sequences we’ve seen above, mutable sequences (the List), have a number of other methods that are used to change it in place.</p>
 <p>You can find all these in the Standard Library Documentation:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq-mutable">https://docs.python.org/3/library/stdtypes.html#typesseq-mutable</a></p>
 <div class="section" id="assignment">
-<h3><span class="section-number">4.1.1.11.1. </span>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.1. </span>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h3>
 <p>You’ve already seen changing a single element of a list by assignment.</p>
 <p>Pretty much the same as “arrays” in most languages:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [100]: </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -868,7 +877,7 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="growing-the-list">
-<h3><span class="section-number">4.1.1.11.2. </span>Growing the List<a class="headerlink" href="#growing-the-list" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.2. </span>Growing the List<a class="headerlink" href="#growing-the-list" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.append()</span></code>, <code class="docutils literal notranslate"><span class="pre">.insert()</span></code>, <code class="docutils literal notranslate"><span class="pre">.extend()</span></code></p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [74]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]</span>
 <span class="gp">In [75]: </span><span class="n">food</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;sushi&#39;</span><span class="p">)</span>
@@ -884,7 +893,7 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="more-on-extend">
-<h3><span class="section-number">4.1.1.11.3. </span>More on Extend<a class="headerlink" href="#more-on-extend" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.3. </span>More on Extend<a class="headerlink" href="#more-on-extend" title="Permalink to this headline">¶</a></h3>
 <p>You can pass any sequence to <code class="docutils literal notranslate"><span class="pre">.extend()</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [85]: </span><span class="n">food</span>
 <span class="gh">Out[85]: </span><span class="go">[&#39;beans&#39;, &#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;, &#39;sushi&#39;, &#39;bread&#39;, &#39;water&#39;]</span>
@@ -898,7 +907,7 @@ whatever condition caused it to be updated.</p>
 <p>So be careful – a string is a single object –but also a sequence of characters.</p>
 </div>
 <div class="section" id="shrinking-the-list">
-<h3><span class="section-number">4.1.1.11.4. </span>Shrinking the List<a class="headerlink" href="#shrinking-the-list" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.4. </span>Shrinking the List<a class="headerlink" href="#shrinking-the-list" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">.remove()</span></code></p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [203]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">,</span> <span class="s1">&#39;toast&#39;</span><span class="p">]</span>
 <span class="gp">In [204]: </span><span class="n">food</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
@@ -926,7 +935,7 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="copying-lists">
-<h3><span class="section-number">4.1.1.11.5. </span>Copying Lists<a class="headerlink" href="#copying-lists" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.5. </span>Copying Lists<a class="headerlink" href="#copying-lists" title="Permalink to this headline">¶</a></h3>
 <p>You can make copies of part of a list using <em>slicing</em>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [227]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">,</span> <span class="s1">&#39;sushi&#39;</span><span class="p">]</span>
 <span class="gp">In [228]: </span><span class="n">some_food</span> <span class="o">=</span> <span class="n">food</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
@@ -947,7 +956,7 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="shallow-copies">
-<h3><span class="section-number">4.1.1.11.6. </span>Shallow Copies<a class="headerlink" href="#shallow-copies" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.6. </span>Shallow Copies<a class="headerlink" href="#shallow-copies" title="Permalink to this headline">¶</a></h3>
 <p>The copy of a list made this way is a <em>shallow copy</em>.</p>
 <p>The list is itself a new object, but the objects it contains are not.</p>
 <p><em>Mutable</em> objects in the list can be mutated in both copies:</p>
@@ -967,7 +976,7 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="copies-can-solve-problems">
-<h3><span class="section-number">4.1.1.11.7. </span>Copies can solve problems<a class="headerlink" href="#copies-can-solve-problems" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.7. </span>Copies can solve problems<a class="headerlink" href="#copies-can-solve-problems" title="Permalink to this headline">¶</a></h3>
 <p>Consider this common pattern:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">somelist</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">should_be_removed</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -977,7 +986,7 @@ whatever condition caused it to be updated.</p>
 <p>This looks benign enough, but changing a list while you are iterating over it can be the cause of some pernicious bugs.</p>
 </div>
 <div class="section" id="the-problem">
-<h3><span class="section-number">4.1.1.11.8. </span>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.8. </span>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h3>
 <p>For example:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="gp">In [28]: </span><span class="n">l</span>
@@ -992,7 +1001,7 @@ whatever condition caused it to be updated.</p>
 <p>Was that what you expected?</p>
 </div>
 <div class="section" id="the-solution">
-<h3><span class="section-number">4.1.1.11.9. </span>The Solution<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.11.9. </span>The Solution<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h3>
 <p>Iterate over a copy, and mutate the original:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 
@@ -1006,7 +1015,7 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="miscellaneous-list-methods">
-<h2><span class="section-number">4.1.1.12. </span>Miscellaneous List Methods<a class="headerlink" href="#miscellaneous-list-methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.12. </span>Miscellaneous List Methods<a class="headerlink" href="#miscellaneous-list-methods" title="Permalink to this headline">¶</a></h2>
 <p>These methods change a list in place and are not available on immutable sequence types.</p>
 <p><code class="docutils literal notranslate"><span class="pre">.reverse()</span></code></p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [129]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]</span>
@@ -1023,7 +1032,7 @@ whatever condition caused it to be updated.</p>
 </div>
 <p>Because these methods mutate the list in place, they have a return value of <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 <div class="section" id="custom-sorting">
-<h3><span class="section-number">4.1.1.12.1. </span>Custom Sorting<a class="headerlink" href="#custom-sorting" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.12.1. </span>Custom Sorting<a class="headerlink" href="#custom-sorting" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.sort()</span></code> can take an optional <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter.</p>
 <p>It should be a function that takes one parameter (list items one at a time) and returns something that can be used for sorting:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [137]: </span><span class="k">def</span> <span class="nf">third_letter</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
@@ -1037,7 +1046,7 @@ whatever condition caused it to be updated.</p>
 <p>You end up with the list sorted by the third letter in each element.</p>
 </div>
 <div class="section" id="list-performance">
-<h3><span class="section-number">4.1.1.12.2. </span>List Performance<a class="headerlink" href="#list-performance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.12.2. </span>List Performance<a class="headerlink" href="#list-performance" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>indexing is fast and constant time: O(1)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">l</span></code> is proportional to n: O(n)</p></li>
@@ -1060,7 +1069,7 @@ whatever condition caused it to be updated.</p>
 </div>
 </div>
 <div class="section" id="choosing-lists-or-tuples">
-<h2><span class="section-number">4.1.1.13. </span>Choosing Lists or Tuples<a class="headerlink" href="#choosing-lists-or-tuples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.13. </span>Choosing Lists or Tuples<a class="headerlink" href="#choosing-lists-or-tuples" title="Permalink to this headline">¶</a></h2>
 <p>Here are a few guidelines on when to choose a list or a tuple:</p>
 <ul class="simple">
 <li><p>If it needs to be mutable: list</p></li>
@@ -1072,7 +1081,7 @@ whatever condition caused it to be updated.</p>
 </ul>
 <p>Otherwise … taste and convention.</p>
 <div class="section" id="convention">
-<h3><span class="section-number">4.1.1.13.1. </span>Convention<a class="headerlink" href="#convention" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.13.1. </span>Convention<a class="headerlink" href="#convention" title="Permalink to this headline">¶</a></h3>
 <p>Lists are homogeneous collections:
 – they alway contain values of the same type
 – they simplify iterating, sorting, etc</p>
@@ -1081,7 +1090,7 @@ whatever condition caused it to be updated.</p>
 – they are similar to simple C structs.</p>
 </div>
 <div class="section" id="other-considerations">
-<h3><span class="section-number">4.1.1.13.2. </span>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.13.2. </span>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Do you need to do the same operation to each element?</p>
 <ul>
@@ -1111,7 +1120,7 @@ whatever condition caused it to be updated.</p>
 </ul>
 </div>
 <div class="section" id="more-documentation">
-<h3><span class="section-number">4.1.1.13.3. </span>More Documentation<a class="headerlink" href="#more-documentation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.13.3. </span>More Documentation<a class="headerlink" href="#more-documentation" title="Permalink to this headline">¶</a></h3>
 <p>For more information, read the list docs:</p>
 <p><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#mutable-sequence-types">https://docs.python.org/3.6/library/stdtypes.html#mutable-sequence-types</a></p>
 <p>(actually any mutable sequence….)</p>
@@ -1127,7 +1136,7 @@ whatever condition caused it to be updated.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Iteration.html" class="btn btn-neutral float-right" title="4.1.2. Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Iteration.html" class="btn btn-neutral float-right" title="4.2. Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-left" title="4. Sequences and Iteration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

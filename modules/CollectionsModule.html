@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12.1.2. The Collections Module &mdash; Python 210 6.0 documentation</title>
+  <title>12.2. The Collections Module &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12.2.1. Comprehensions Lab" href="../exercises/comprehensions_lab.html" />
-    <link rel="prev" title="12.1.1. Comprehensions" href="Comprehensions.html" /> 
+    <link rel="next" title="12.3. Comprehensions Lab" href="../exercises/comprehensions_lab.html" />
+    <link rel="prev" title="12.1. Comprehensions" href="Comprehensions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,10 +95,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/12-comprehensions/index.html">12. Comprehensions</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Comprehensions.html">12.1.1. Comprehensions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">12.1.2. The Collections Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/comprehensions_lab.html">12.2.1. Comprehensions Lab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">12.2.2. Mailroom With Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comprehensions.html">12.1. Comprehensions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.2. The Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/comprehensions_lab.html">12.3. Comprehensions Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_comprehensions.html">12.4. Mailroom With Comprehensions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../topics/12-comprehensions/index.html"><span class="section-number">12. </span>Comprehensions</a> &raquo;</li>
         
-      <li><span class="section-number">12.1.2. </span>The Collections Module</li>
+      <li><span class="section-number">12.2. </span>The Collections Module</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,13 +169,22 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../exercises/comprehensions_lab.html" class="btn btn-neutral float-right" title="12.3. Comprehensions Lab" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Comprehensions.html" class="btn btn-neutral float-left" title="12.1. Comprehensions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="the-collections-module">
-<span id="collections-module"></span><h1><span class="section-number">12.1.2. </span>The Collections Module<a class="headerlink" href="#the-collections-module" title="Permalink to this headline">¶</a></h1>
+<span id="collections-module"></span><h1><span class="section-number">12.2. </span>The Collections Module<a class="headerlink" href="#the-collections-module" title="Permalink to this headline">¶</a></h1>
 <p>Python has a very complete set of built in standard types that support most programming tasks. These include strings and numbers, and also types that can be used to hold other objects – or “collection” types.</p>
 <ul class="simple">
 <li><p>tuples</p></li>
@@ -185,7 +194,7 @@
 <p>You can get pretty darn far with just these basic types – but some problems require (or could be helped by) more complex collection types.</p>
 <p>This was recognised by the Python development team, so a number of genreally useful collection types are provided in the collections module.</p>
 <div class="section" id="id1">
-<h2><span class="section-number">12.1.2.1. </span>The collections module<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.2.1. </span>The collections module<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>The first step is to see what’s there by looking at the documentation:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/collections.html">https://docs.python.org/3/library/collections.html</a></p>
 <p>You can see a pretty nice list of options (kind of in order of usefulness)</p>
@@ -207,7 +216,7 @@
 <p><a class="reference external" href="https://pymotw.com/3/collections/">https://pymotw.com/3/collections/</a></p>
 </div>
 <div class="section" id="using-the-collection-types">
-<h2><span class="section-number">12.1.2.2. </span>Using the collection types<a class="headerlink" href="#using-the-collection-types" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.2.2. </span>Using the collection types<a class="headerlink" href="#using-the-collection-types" title="Permalink to this headline">¶</a></h2>
 <p>To use these special types, they must be imported:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 </pre></div>
@@ -244,10 +253,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/comprehensions_lab.html" class="btn btn-neutral float-right" title="12.2.1. Comprehensions Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/comprehensions_lab.html" class="btn btn-neutral float-right" title="12.3. Comprehensions Lab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Comprehensions.html" class="btn btn-neutral float-left" title="12.1.1. Comprehensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Comprehensions.html" class="btn btn-neutral float-left" title="12.1. Comprehensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

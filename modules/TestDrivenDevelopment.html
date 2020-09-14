@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.1.2. Test Driven Development &mdash; Python 210 6.0 documentation</title>
+  <title>7.2. Test Driven Development &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.2.1. Introduction To Unit Testing" href="../exercises/unit_testing/unit_testing.html" />
-    <link rel="prev" title="7.1.1. Testing" href="Testing.html" /> 
+    <link rel="next" title="7.3. Introduction To Unit Testing" href="../exercises/unit_testing/unit_testing.html" />
+    <link rel="prev" title="7.1. Testing" href="Testing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,10 +90,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/06-exceptions/index.html">6. Exception Handling</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Testing.html">7.1.1. Testing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.1.2. Test Driven Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">7.2.1. Introduction To Unit Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">7.3.1. Mailroom With Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing.html">7.1. Testing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2. Test Driven Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/unit_testing/unit_testing.html">7.3. Introduction To Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/mailroom/mailroom_with_tests.html">7.4. Mailroom With Unit Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../topics/07-unit_testing/index.html"><span class="section-number">7. </span>Unit Testing</a> &raquo;</li>
         
-      <li><span class="section-number">7.1.2. </span>Test Driven Development</li>
+      <li><span class="section-number">7.2. </span>Test Driven Development</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,6 +169,15 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../exercises/unit_testing/unit_testing.html" class="btn btn-neutral float-right" title="7.3. Introduction To Unit Testing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Testing.html" class="btn btn-neutral float-left" title="7.1. Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -176,7 +185,7 @@
             
   <p id="test-driven-development">FIXME: change the path from my personal to something generic</p>
 <div class="section" id="id1">
-<h1><span class="section-number">7.1.2. </span>Test Driven Development<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7.2. </span>Test Driven Development<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>“Testing” is any strategy for making sure your code behaves as expected. “Unit testing” is a particular strategy, that:</p>
 <ul class="simple">
 <li><p>is easy to run in an automated fashion.</p></li>
@@ -189,7 +198,7 @@
 <p>The primary difference is that this version uses the simpler pytest testing framework, rather than <cite>unittest</cite>, which is discussed in
 <a class="reference internal" href="Testing.html#unit-testing"><span class="std std-ref">Testing</span></a></p>
 <div class="section" id="unit-testing">
-<h2><span class="section-number">7.1.2.1. </span>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.1. </span>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">“Certitude is not the test of certainty. We have been cocksure of
@@ -199,7 +208,7 @@ Jr.</a></div>
 </div>
 </div></blockquote>
 <div class="section" id="not-diving-in">
-<h3><span class="section-number">7.1.2.1.1. </span>(Not) Diving In<a class="headerlink" href="#not-diving-in" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.1. </span>(Not) Diving In<a class="headerlink" href="#not-diving-in" title="Permalink to this headline">¶</a></h3>
 <p>Kids today. So spoiled by these fast computers and fancy “dynamic”
 languages. Write first, ship second, debug third (if ever). In my day,
 we had discipline. <strong>Discipline, I say!</strong> We had to write programs by
@@ -210,7 +219,7 @@ functions to convert to and from Roman numerals.</p>
 <p>You’ve most likely seen Roman numerals, even if you didn’t recognize them. You may have seen them in copyrights of old movies and television shows (“Copyright MCMXLVI” instead of “Copyright 1946”), or on the dedication walls of libraries or universities (“established MDCCCLXXXVIII” instead of “established 1888”). You may also have seen them in outlines and bibliographical references. It’s a system of representing numbers that really does date back to the ancient Roman empire (hence the name).</p>
 </div>
 <div class="section" id="the-rules-for-roman-numerals">
-<h3><span class="section-number">7.1.2.1.2. </span>The Rules for Roman Numerals<a class="headerlink" href="#the-rules-for-roman-numerals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.2. </span>The Rules for Roman Numerals<a class="headerlink" href="#the-rules-for-roman-numerals" title="Permalink to this headline">¶</a></h3>
 <p>In Roman numerals, there are seven characters that are repeated and combined in various ways to represent numbers.</p>
 <div class="line-block">
 <div class="line">I = 1</div>
@@ -296,7 +305,7 @@ with others.)</p></li>
 </ul>
 </div>
 <div class="section" id="a-single-question">
-<h3><span class="section-number">7.1.2.1.3. </span>A Single Question<a class="headerlink" href="#a-single-question" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.3. </span>A Single Question<a class="headerlink" href="#a-single-question" title="Permalink to this headline">¶</a></h3>
 <p class="centered">
 <strong><strong>Every Test is an Island</strong></strong></p><p>A test case answers a single question about the code it is testing. A
 test case should be able to…</p>
@@ -503,7 +512,7 @@ equal to the known correct value:</p>
 eventually exits normally, which means <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code> has passed this
 test.</p>
 <div class="section" id="write-a-test-that-fails-then-code-until-it-passes">
-<h4><span class="section-number">7.1.2.1.3.1. </span>Write a test that fails, then code until it passes.<a class="headerlink" href="#write-a-test-that-fails-then-code-until-it-passes" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.2.1.3.1. </span>Write a test that fails, then code until it passes.<a class="headerlink" href="#write-a-test-that-fails-then-code-until-it-passes" title="Permalink to this headline">¶</a></h4>
 <p>Once you have a test case, you can start coding the <code class="docutils literal notranslate"><span class="pre">to_roman()</span></code>
 function. First, you should stub it out as an empty function and make
 sure the tests fail. If the tests succeed before you’ve written any
@@ -864,7 +873,7 @@ it.</p>
 </div>
 </div>
 <div class="section" id="halt-and-catch-fire">
-<h3><span class="section-number">7.1.2.1.4. </span>“Halt And Catch Fire”<a class="headerlink" href="#halt-and-catch-fire" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.4. </span>“Halt And Catch Fire”<a class="headerlink" href="#halt-and-catch-fire" title="Permalink to this headline">¶</a></h3>
 <p>The Pythonic way to halt and catch fire is to raise an exception.</p>
 <p>It is not enough to test that functions succeed when given good input;
 you must also test that they fail when given bad input. And not just any
@@ -990,7 +999,7 @@ going from “fail” to “pass.” That kind of confidence doesn’t come
 cheap, but it will pay for itself over the lifetime of your code.</p>
 </div>
 <div class="section" id="more-halting-more-fire">
-<h3><span class="section-number">7.1.2.1.5. </span>More Halting, More Fire<a class="headerlink" href="#more-halting-more-fire" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.5. </span>More Halting, More Fire<a class="headerlink" href="#more-halting-more-fire" title="Permalink to this headline">¶</a></h3>
 <p>Along with testing numbers that are too large, you need to test numbers
 that are too small.
 As we noted in our functional requirements, Roman numerals cannot express zero or negative numbers.</p>
@@ -1099,7 +1108,7 @@ the unit tests and prove it.</p>
 <p>Excellent! The tests all pass – your code is working! Remember that you still have the “too large” test – and all the tests of converting numbers. So you know you haven’t inadvertently broken anything else.</p>
 </div>
 <div class="section" id="and-one-more-thing">
-<h3><span class="section-number">7.1.2.1.6. </span>And One More Thing …<a class="headerlink" href="#and-one-more-thing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.6. </span>And One More Thing …<a class="headerlink" href="#and-one-more-thing" title="Permalink to this headline">¶</a></h3>
 <p>There was one more functional requirement for converting numbers to Roman numerals: dealing with non-integers.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">run</span> <span class="n">roman6</span><span class="o">.</span><span class="n">py</span>
 
@@ -1209,7 +1218,7 @@ the unit tests and prove it.</p>
 of any more tests, so it’s time to move on to <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code>.</p>
 </div>
 <div class="section" id="a-pleasing-symmetry">
-<h3><span class="section-number">7.1.2.1.7. </span>A Pleasing Symmetry<a class="headerlink" href="#a-pleasing-symmetry" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.7. </span>A Pleasing Symmetry<a class="headerlink" href="#a-pleasing-symmetry" title="Permalink to this headline">¶</a></h3>
 <p>Converting a string from a Roman numeral to an integer sounds more
 difficult than converting an integer to a Roman numeral. Certainly there
 is the issue of validation. It’s easy to check if an integer is greater
@@ -1408,7 +1417,7 @@ comprehensive test cases until it doesn’t bother you.)</p>
 </div>
 </div>
 <div class="section" id="more-bad-input">
-<h3><span class="section-number">7.1.2.1.8. </span>More Bad Input<a class="headerlink" href="#more-bad-input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.8. </span>More Bad Input<a class="headerlink" href="#more-bad-input" title="Permalink to this headline">¶</a></h3>
 <p>Now that the <code class="docutils literal notranslate"><span class="pre">from_roman()</span></code> function works properly with good input,
 it’s time to fit in the last piece of the puzzle: making it work
 properly with bad input. That means finding a way to look at a string
@@ -2044,7 +2053,7 @@ But if a test fails, like it did here, then it presents you with all the output 
 <p>But don’t forget to remove those print statements from your production code!</p>
 </div>
 <div class="section" id="refactoring">
-<h3><span class="section-number">7.1.2.1.9. </span>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1.9. </span>Refactoring<a class="headerlink" href="#refactoring" title="Permalink to this headline">¶</a></h3>
 <p>So now you’ve got working code, that is pretty well tested. But is it as good as it can be? Maybe there are some places it can be improved? This is the real power of unit tests – now that you have well tested code, you can make changes, and if the tests pass, you can be confident that the code still works.</p>
 <p>Refactoring options:</p>
 <p>Do we really need to check if there are any invalid charactors explicitly:</p>
@@ -2082,10 +2091,10 @@ roman17.py ............                                    <span class="o">[</sp
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/unit_testing/unit_testing.html" class="btn btn-neutral float-right" title="7.2.1. Introduction To Unit Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/unit_testing/unit_testing.html" class="btn btn-neutral float-right" title="7.3. Introduction To Unit Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Testing.html" class="btn btn-neutral float-left" title="7.1.1. Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Testing.html" class="btn btn-neutral float-left" title="7.1. Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

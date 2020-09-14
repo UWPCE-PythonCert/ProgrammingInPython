@@ -1,5 +1,5 @@
-LAB: A Small Example Package
-============================
+A Small Example Package
+=======================
 
 * Create a small package
 

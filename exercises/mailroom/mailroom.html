@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.3.1. Mailroom &mdash; Python 210 6.0 documentation</title>
+  <title>5.4. Mailroom &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.3.2. Mailroom Tutorial" href="mailroom_tutorial.html" />
-    <link rel="prev" title="5.2.2. ROT13" href="../rot13.html" /> 
+    <link rel="next" title="5.5. Mailroom Tutorial" href="mailroom_tutorial.html" />
+    <link rel="prev" title="5.3. ROT13" href="../rot13.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,11 +88,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Recursion and Booleans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../modules/Strings.html">5.1.1. Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../string_formatting.html">5.2.1. String Formatting Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rot13.html">5.2.2. ROT13</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3.1. Mailroom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom_tutorial.html">5.3.2. Mailroom Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Strings.html">5.1. Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../string_formatting.html">5.2. String Formatting Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rot13.html">5.3. ROT13</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.4. Mailroom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom_tutorial.html">5.5. Mailroom Tutorial</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
@@ -123,7 +123,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Python 210</a>
+          <a href="../../index.html">Programming in Python</a>
         
       </nav>
 
@@ -156,7 +156,7 @@
         
           <li><a href="../../topics/05-text_handling/index.html"><span class="section-number">5. </span>Basic Text Handling</a> &raquo;</li>
         
-      <li><span class="section-number">5.3.1. </span>Mailroom</li>
+      <li><span class="section-number">5.4. </span>Mailroom</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,25 +170,34 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="mailroom_tutorial.html" class="btn btn-neutral float-right" title="5.5. Mailroom Tutorial" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../rot13.html" class="btn btn-neutral float-left" title="5.3. ROT13" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="mailroom">
-<span id="exercise-mailroom-part1"></span><h1><span class="section-number">5.3.1. </span>Mailroom<a class="headerlink" href="#mailroom" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-part1"></span><h1><span class="section-number">5.4. </span>Mailroom<a class="headerlink" href="#mailroom" title="Permalink to this headline">¶</a></h1>
 <p><strong>Overall Assignment Structure</strong></p>
 <p>This is the first in a multi-part exercise that will make use of your Python programming skills as you develop them during this course. You will start work on the program in this assignment, and then you will build on it in future lessons, as you learn more of Python’s powerful features.</p>
 <p>This progressive work will give you a strong foundation for success in the final project, a Mailroom program using object-oriented structure, fully tested, and bundled up as a Python package.</p>
 <div class="section" id="overall-program-goal">
-<h2><span class="section-number">5.3.1.1. </span>Overall Program Goal:<a class="headerlink" href="#overall-program-goal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.1. </span>Overall Program Goal:<a class="headerlink" href="#overall-program-goal" title="Permalink to this headline">¶</a></h2>
 <p>You work in the mail room at a local charity. Part of your job is to write
 incredibly boring, repetitive emails thanking your donors for their generous
 gifts. You are tired of doing this over and over again, so you’ve decided to
 let Python help you out of a jam and do your work for you.</p>
 </div>
 <div class="section" id="the-program">
-<h2><span class="section-number">5.3.1.2. </span>The Program:<a class="headerlink" href="#the-program" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.2. </span>The Program:<a class="headerlink" href="#the-program" title="Permalink to this headline">¶</a></h2>
 <p>Write a small command-line script called <code class="docutils literal notranslate"><span class="pre">mailroom.py</span></code>. This script should be executable. The script should accomplish the following goals:</p>
 <ul class="simple">
 <li><p>It should have a data structure that holds a list of your donors and a
@@ -199,7 +208,7 @@ at first with at least five donors, with between 1 and 3 donations each. You can
 </ul>
 </div>
 <div class="section" id="send-a-thank-you">
-<h2><span class="section-number">5.3.1.3. </span>Send a Thank You<a class="headerlink" href="#send-a-thank-you" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.3. </span>Send a Thank You<a class="headerlink" href="#send-a-thank-you" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>If the user (you) selects “Send a Thank You” option, prompt for a Full Name.</p>
 <ul>
@@ -219,7 +228,7 @@ at first with at least five donors, with between 1 and 3 donations each. You can
 <p>It is fine (for now) for the program not to store the names of the new donors that had been added, in other words, to forget new donors once the script quits running.</p>
 </div>
 <div class="section" id="create-a-report">
-<h2><span class="section-number">5.3.1.4. </span>Create a Report<a class="headerlink" href="#create-a-report" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.4. </span>Create a Report<a class="headerlink" href="#create-a-report" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>If the user (you) selected “Create a Report,” print a list of your donors,
 sorted by total historical donation amount.</p>
@@ -244,7 +253,7 @@ Paul Allen                 $     708.42           3  $      236.14
 </div>
 </div>
 <div class="section" id="guidelines">
-<h2><span class="section-number">5.3.1.5. </span>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.5. </span>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
 <p>First, factor your script into separate functions. Each of the above
 tasks can be accomplished by a series of steps.  Write discreet functions
 that accomplish individual steps and call them.</p>
@@ -267,10 +276,10 @@ about so far in Lessons 1-3. There is no need to go any farther than that for th
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mailroom_tutorial.html" class="btn btn-neutral float-right" title="5.3.2. Mailroom Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom_tutorial.html" class="btn btn-neutral float-right" title="5.5. Mailroom Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../rot13.html" class="btn btn-neutral float-left" title="5.2.2. ROT13" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../rot13.html" class="btn btn-neutral float-left" title="5.3. ROT13" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

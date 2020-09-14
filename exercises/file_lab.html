@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.2.1. File Exercise &mdash; Python 210 6.0 documentation</title>
+  <title>9.2. File Exercise &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.3.1. Mailroom With Files" href="mailroom/mailroom_with_files.html" />
-    <link rel="prev" title="9.1.1. File Reading and Writing" href="../modules/Files.html" /> 
+    <link rel="next" title="9.3. Mailroom With Files" href="mailroom/mailroom_with_files.html" />
+    <link rel="prev" title="9.1. File Reading and Writing" href="../modules/Files.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,10 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../topics/09-files/index.html">9. File Handling</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../modules/Files.html">9.1.1. File Reading and Writing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.2.1. File Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_with_files.html">9.3.1. Mailroom With Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="trigrams/trigrams.html">9.3.2. Trigrams – Simple Text Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/Files.html">9.1. File Reading and Writing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9.2. File Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mailroom/mailroom_with_files.html">9.3. Mailroom With Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trigrams/trigrams.html">9.4. Trigrams – Simple Text Manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Python 210</a>
+          <a href="../index.html">Programming in Python</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../topics/09-files/index.html"><span class="section-number">9. </span>File Handling</a> &raquo;</li>
         
-      <li><span class="section-number">9.2.1. </span>File Exercise</li>
+      <li><span class="section-number">9.2. </span>File Exercise</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,20 +169,29 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="mailroom/mailroom_with_files.html" class="btn btn-neutral float-right" title="9.3. Mailroom With Files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../modules/Files.html" class="btn btn-neutral float-left" title="9.1. File Reading and Writing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="file-exercise">
-<span id="exercise-file-lab"></span><h1><span class="section-number">9.2.1. </span>File Exercise<a class="headerlink" href="#file-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-file-lab"></span><h1><span class="section-number">9.2. </span>File Exercise<a class="headerlink" href="#file-exercise" title="Permalink to this headline">¶</a></h1>
 <p>A bit of practice with files</p>
 <div class="section" id="goal">
-<h2><span class="section-number">9.2.1.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2.1. </span>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
 <p>Get a little bit of practice with handling files and parsing simple text.</p>
 </div>
 <div class="section" id="paths-and-file-processing">
-<h2><span class="section-number">9.2.1.2. </span>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2.2. </span>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Write a program which prints the full path for all files in the current
 directory, one per line. Use either the <code class="docutils literal notranslate"><span class="pre">os</span></code> module or <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>.</p></li>
@@ -202,14 +211,14 @@ contents of the file into memory at once.</p></li>
 </ul>
 </div>
 <div class="section" id="file-reading-and-parsing">
-<h2><span class="section-number">9.2.1.3. </span>File reading and parsing<a class="headerlink" href="#file-reading-and-parsing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2.3. </span>File reading and parsing<a class="headerlink" href="#file-reading-and-parsing" title="Permalink to this headline">¶</a></h2>
 <p>Download this text file:</p>
 <p><a class="reference download internal" download="" href="../_downloads/f011030f96079534d2ec0a0739f4a16e/students.txt"><code class="xref download docutils literal notranslate"><span class="pre">students.txt</span></code></a></p>
 <p>In it, you will find a list of names and what programming languages they have used in the past. This may be similar to a list generated at the beginning of this class.</p>
 <p>Write a little script that reads that file and generates a list of all the languages that have been used.</p>
 <p>What might be the best data structure to use to keep track of bunch of values (the languages) without duplication?</p>
 <div class="section" id="the-file-format">
-<h3><span class="section-number">9.2.1.3.1. </span>The file format:<a class="headerlink" href="#the-file-format" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.3.1. </span>The file format:<a class="headerlink" href="#the-file-format" title="Permalink to this headline">¶</a></h3>
 <p>The first line of the file is:</p>
 <p><code class="docutils literal notranslate"><span class="pre">Name:</span> <span class="pre">Nickname,</span> <span class="pre">languages</span></code></p>
 <p>And each line looks something like this:</p>
@@ -230,10 +239,10 @@ contents of the file into memory at once.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mailroom/mailroom_with_files.html" class="btn btn-neutral float-right" title="9.3.1. Mailroom With Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mailroom/mailroom_with_files.html" class="btn btn-neutral float-right" title="9.3. Mailroom With Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../modules/Files.html" class="btn btn-neutral float-left" title="9.1.1. File Reading and Writing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/Files.html" class="btn btn-neutral float-left" title="9.1. File Reading and Writing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

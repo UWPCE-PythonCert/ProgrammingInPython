@@ -1,7 +1,6 @@
 Extra Topics
 ============
 
-
 The following are some extra topics that might be of interest
 
 .. toctree::
@@ -26,10 +25,8 @@ The following are some extra topics that might be of interest
     ../../modules/Logging
     ../../modules/Debugging
 
-
     ../../modules/NoSQL
     ../../modules/GraphDatabases
-
 
     ../../modules/Concurrency
     ../../modules/Async
