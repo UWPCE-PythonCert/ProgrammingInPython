@@ -5,7 +5,7 @@ Dictionary and Set Lab
 **********************
 
 Learning about dictionaries and sets
-====================================
+
 
 Goal:
 -----
@@ -15,7 +15,7 @@ Learn the basic ins and outs of Python dictionaries and sets.
 Procedure
 ---------
 
-In your student dir in the class repo, create a ``lesson04`` dir and put in a new ``dict_lab.py`` file.
+Create a new ``dict_lab.py`` file.
 
 The file should be an executable Python script. That is to say that one
 should be able to run the script directly like so:
@@ -24,7 +24,13 @@ should be able to run the script directly like so:
 
     $ ./dict_lab.py
 
-(at least on OS-X and Linux).
+(on OS-X and Linux) or
+
+.. code-block:: bash
+
+    $ py dict_lab.py
+
+(on Windows)
 
 To make this work you, make sure you include the 'shebang' on the first line of your file.
 
@@ -33,7 +39,7 @@ To make this work you, make sure you include the 'shebang' on the first line of 
     #!/usr/bin/env python3
 
 
-Finally you need to make the file executable; do that with this command:
+Finally (on OS-X and linux) you need to make the file executable; do that with this command:
 
 .. code-block:: bash
 
@@ -43,10 +49,7 @@ Finally you need to make the file executable; do that with this command:
 
 
 Add the file to your clone of the repository and commit changes frequently
-while working on the following tasks. When you are done, push your changes to
-GitHub and issue a pull request.
-
-(if you are struggling with git -- just write the code for now)
+while working on the following tasks.
 
 When the script is run, it should accomplish the following four series of
 actions:
