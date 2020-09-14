@@ -1,7 +1,7 @@
  .. _setting_up_dev_environment:
 
-1. Setting up your Environment
-==============================
+Setting up your Environment
+===========================
 
 Before you can begin programming in Python, or work on this program,
 you need to have your computer all set up with the tools you need to do the job.

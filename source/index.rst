@@ -17,6 +17,7 @@ Many of these topics can be useful on their own, but each assumes that you know 
 
 
 .. toctree::
+    :numbered: 1
     :caption: Topics in the Program
     :titlesonly:
     :maxdepth: 1
