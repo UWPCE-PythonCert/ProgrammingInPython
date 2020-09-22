@@ -34,17 +34,19 @@ You can find instructions for setting up git (and the rest of your development e
 :ref:`installing_python`
 
 Once you have all the tools set up, you will need to create a folder (directory) within your development system for keeping your work.
-This is the folder where all your assignment repositories will reside.
-Open Git Bash (if using Git for Windows) or a terminal (Linux and Mac OS), go to the folder (using the `cd` command) you have created for this class and run::
+This is the folder where all your assignment repositories will reside. It will be helpful to keep them all together in one place.
 
-  git init
+.. Open Git Bash (if using Git for Windows) or a terminal (Linux and Mac OS), go to the folder (using the `cd` command) you have created for this class and run::
 
-This will setup your folder to house git repositories.
+..   git init
+
+.. This will setup your folder to house git repositories.
 
 Accepting an assignment
 =======================
 
 Each assignment page will contain a section named "Accepting your Assignment". Click on the corresponding link, which will take you to GitHub Classroom to accept the corresponding assignment.
+
 
 Some things to consider:
 ------------------------
@@ -59,15 +61,19 @@ Some things to consider:
 
 * The name of the new repository will include your GitHub user name at the end.
 
-Once your repository has been created, go to its link and clone it on your development system, under the folder you selected for this purpose (here (Links to an external site.) is GitHub's official guide on how to clone a repository).
+Once your repository has been created, go to its link and clone it on your development system, under the folder you selected for this purpose.
+
+Here: `Clong a repo <https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository>`_
+is GitHub's official guide on how to clone a repository.
 
 
-Before you start working on your assignment
+Before You Start Working on your Assignment
 ===========================================
 
 Once your repository is setup, it's good to get familiar with your repository view.
 You should see a tab there called "Pull Requests": they indicate code changes that are desired to be pulled into a main repository;
-by default you should see one already there called "Feedback". Go ahead and click on it, and take a look at Files Changed tab - as of now it should show "No changes to show". As you start committing your code you will see your changes there.
+by default you should see one already there called "Feedback". Go ahead and click on it, and take a look at "Files Changed" tab - as of now it should show "No changes to show". As you start committing your code you will see your changes there.
+
 
 Committing your code
 ====================
@@ -75,18 +81,22 @@ Committing your code
 A "commit" is snapshot of your code (and any other files included in your project).
 You are encouraged to make frequent commits, as this will make it easier for you to restore your code to an earlier state if things go wrong.
 
-To create a new commit:
------------------------
 
-Type the following to add all files and subdirectories in the folder to your commit (note the command includes a dot, make sure you  include it as well):
-``git add``.
+Creating a New Commit:
+----------------------
 
-Commit your code by typing the following:
-``git commit -m "Commit message"``
+Type the following to add all files and subdirectories in the folder to your commit (note the command includes a dot, make sure you  include it as well)::
+
+  git add .
+
+Commit your code by typing the following::
+
+  git commit -m "Commit message"
 
 Note that the commit message should be replaced with something descriptive of what that commit includes ("added new functionality", "fixed floating point error", "ready for review", etc.) that will later help you remember what that particular commit was about.
 
-Pushing your code
+
+Pushing Your Code
 =================
 
 "Pushing" refers to the process of synchronizing the commits you have made on your development system with your GitHub repository.
@@ -99,17 +109,19 @@ You can push your code immediately after every commit or do it once a day (in wh
 
 The first time you push your code to a repository, GitHub will ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).
 
+
 Asking Coding Questions
 =======================
 
 While working on your code, you might run into a situation in which you would like one of the instructors to look at it and provide some feedback before actually reviewing and grading it.
-In order to do that, go to "Feedback" pull request and write a comment about your question or issue. You should make sure to tag your instructor in your comment, to assure that they ar noticfied of your comment. This is done by writing `@the_instrudtors_github_handle`, e.g. `@natasha-aleksandrova`.
+In order to do that, go to "Feedback" pull request and write a comment about your question or issue. You should make sure to tag your instructor in your comment, to assure that they are notified of your comment. This is done by writing `@the_instructors_github_handle`, e.g. `@natasha-aleksandrova`.
 
 For example::
 
   @natasha-aleksandrova: I need some help on line 20
 
 When you submit a comment with a tag, the instructor will be notified by GitHub and will be able to review your question.
+
 
 Submitting your assignment
 ==========================
@@ -120,8 +132,9 @@ Once your assignment is ready for review, copy the link of your Feedback pull re
 
 As per UW's requirements, you also need to submit a zip file with your code on EdX or Canvas. Note that only the code included in your pull request will be reviewed.
 
-9. Resubmitting your assignment
-===============================
+
+Resubmitting your assignment
+============================
 
 On occasion, your instructor will provide feedback on elements in your assignment that need to be modified in order to get the full grade for the assignment. In those cases, follow the process outlined in the Asking Coding Questions section above. Let us know that you would like another review for grade adjustment and make sure to tag your instructor.
 
