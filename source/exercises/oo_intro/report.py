@@ -15,7 +15,7 @@ class Row:
     with ID, first name, last name and state attributes
     """
     def __init__(self, fname, lname, state):
-        self.row_id = str(uuid4())  # randomly generated unique ID
+        self.id = str(uuid4())  # randomly generated unique ID
         self.fname = fname
         self.lname = lname
         self.state = state
@@ -30,11 +30,11 @@ class Report:
         self.rows = []
 
     def add_row(self, row):
-        """Add a row object to the list"""
+        """Add a row object to the report"""
         pass
 
     def remove_row(self, row_id):
-        """Remove a row object by the row ID"""
+        """Remove a row object by the row's ID"""
         pass
 
     def size(self):

@@ -1,8 +1,8 @@
 .. _oo_intro:
 
-########################
+#######################
 OO Intro - Report Class
-########################
+#######################
 
 This assignment uses Object Oriented Programming to design a class that can be used to manage data reporting.
 
@@ -14,18 +14,28 @@ We will explore here how one can utilize OO to improve and enhance reporting cap
 Procedure
 =========
 
-You will use :download:`report.py` and :download:`test_report.py` file as a starting point for your code.
+Use the :download:`report.py` and :download:`test_report.py` files as a starting point for your code.
 
-You will notice that ``Report`` class will have attributes and methods defined for you, including input parameters (and their types) as well as expected output.
-You will need to fill out the code for each defined method and docstrings containing additional information on what is expected.
+Notice that the ``Report`` class has attributes and methods defined for you, including input parameters as well as expected output.
 
-The ``Report`` class uses another class that is fully defined for you,
-the ``Row`` class. This class represents a single row in your report, and the report class will hold a list of the row instances.
-There are big advantages to using a class like ``Row`` in contrast to a simple dictionary, this design creates a clear contract on what's expected to be as part of a row, where with a dictionary it is easy to misspell or miss a key.
+You will need to fill out the code and docstrings for each defined method containing additional information on what is expected.
+
+There is also some example code in the ``__main__`` block, to see how it's used.
+
+Use TDD: write a test for each method before you add that functionality. There is a test file started for you -- it has one (failing) test for one of the methods.
+
+The Row class
+-------------
+
+The ``Report`` class uses another class, ``Row``, that is fully defined (and tested) for you. This class represents a single row in your report, and the report class will hold a list of the row instances.
+
+There are big advantages to using a class like ``Row`` rather than a simple dictionary. This design creates a clear contract about what is part of a row, whereas with a dictionary you can put anything in it, so it is harder to catch when a key is misspelled or missing.
+
 A class like ``Row`` is often called a "data class" (since it only holds "data" and doesn't actually have any logic to it).
 
-This is such a popular pattern that python introduced ``dataclasses`` in
-`version 3.7 <https://www.python.org/dev/peps/pep-0557>`_ to make this even simpler. You do not use them in this assignment but you should know that they exist and why.
+This is such a popular pattern that Python introduced ``dataclasses`` in
+`version 3.7 <https://www.python.org/dev/peps/pep-0557>`_ to make this even simpler.
+You do not use them in this assignment but you should know that they exist and why.
 
 You can read more about ``dataclasses`` in the Python docs here:
 

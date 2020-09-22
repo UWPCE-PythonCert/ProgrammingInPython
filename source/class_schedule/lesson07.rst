@@ -69,6 +69,6 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    ../exercises/oo_intro.rst
+    ../exercises/oo_intro/oo_intro.rst
     ../exercises/html_renderer.rst
     ../exercises/html_renderer_tutorial.rst
