@@ -16,6 +16,6 @@ Intro to Object Oriented Programing
     :caption: Exercises
     :maxdepth: 1
 
-    ../../exercises/oo_intro.rst
+    ../../exercises/oo_intro/oo_intro.rst
     ../../exercises/mailroom/mailroom-oo.rst
 

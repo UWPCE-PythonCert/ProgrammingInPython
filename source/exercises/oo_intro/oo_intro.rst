@@ -14,9 +14,10 @@ We will explore here how one can utilize OO to improve and enhance reporting cap
 Procedure
 =========
 
-You will use :download:`../examples/oo_intro/oo_intro.py` file as a starting point for your code.
+You will use :download:`report.py` and :download:`test_report.py` file as a starting point for your code.
 
-You will notice that ``Report`` class will have attributes and methods defined for you, including input parameters (and their types) as well as expected output. You will need to fill out the code for each defined method and docstrings containing additional information on what is expected.
+You will notice that ``Report`` class will have attributes and methods defined for you, including input parameters (and their types) as well as expected output.
+You will need to fill out the code for each defined method and docstrings containing additional information on what is expected.
 
 The ``Report`` class uses another class that is fully defined for you,
 the ``Row`` class. This class represents a single row in your report, and the report class will hold a list of the row instances.
