@@ -12,8 +12,18 @@ Here are some resources to getting yourself set up.
     :maxdepth: 1
 
     environment_overview
-    python_and_core_tools
     setup_details
+    python_and_core_tools
     advanced_setup
     git
     resources
+
+.. toctree::
+    :caption: Activities
+    :maxdepth: 1
+
+    testing_your_setup
+    ../../exercises/python_pushups
+
+
+

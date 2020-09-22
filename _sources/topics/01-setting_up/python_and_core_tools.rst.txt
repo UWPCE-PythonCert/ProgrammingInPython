@@ -68,15 +68,15 @@ Minimal Requirements
 In order to be productive in this program, you need to be able to do the following:
 
 * Manipulate files and write and save Python code in files.
-  You really, really want a "real" programmer's editor for this.
+  You really, really want a "real" programmer's editor (not Notepad!) for this.
 
-* Run your code with Python 3.6 or 3.7
+* Run your code with Python 3.8 or higher
 
 * Run the iPython interactive interpreter
 
 * Install new packages with pip
 
-* Use the git source code management system (with GitHub)
+* Use the git source code management system (with GitHub Classroom)
 
 If you are not set up and comfortable with doing all that, read and follow these instructions:
 
@@ -128,17 +128,25 @@ Drag and Drop it into the dock for easy access.
 
 The Terminal app can be interfaced with the Finder, making it easy to open it up with the working dir set to the current folder in the finder:
 
+On The Mac, you can add a "New Terminal at Folder" right-click menu item by:
+
+   Head into System Preferences and select Keyboard => Shortcuts => Services. Find "New Terminal at Folder" in the settings and click the box. Now, when you're in Finder, just right-click a folder and you're shown the open to open Terminal. When you do, it'll start right in the folder you're in.
+
 See: `launch an OS-X terminal in a folder <https://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514>`_
 
-for how to set that up.
+for more detail.
 
 Linux
 -----
 
-On Linux, the terminal is usually very accessible -- each Desktop System has a different way to access it -- figure out how on your machine.
+Whether you use the KDE or GNOME Desktop (or anything else), there should be a way to open a shell from the file manager. Find it, it's very handy.
+
 
 The Python Interpreter
 ======================
+
+If you haven't already, install everything you need following these instructions:
+:ref:`setup_details`
 
 Python comes with a built-in interpreter.
 
@@ -147,14 +155,14 @@ You see it when you type ``python`` at the command line:
 .. code-block:: bash
 
   $ python
-  Python 3.6.1 (v3.5.2:4def2a2901a5, Jun 26 2016, 10:47:25)
+  Python 3.8.2 (v3.5.2:4def2a2901a5, Jun 26 2016, 10:47:25)
   [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>>
 
 That last thing you see, ``>>>`` is the "Python prompt".
 
-This is where you type code.
+This is where you can type code.
 
 
 Python in the Interpreter
@@ -287,14 +295,15 @@ https://atom.io/
 
 :ref:`atom_as_ide`
 
-"Visual Studio Code" is a relatively new cross platfrom offering from Microsoft -- a lot of folks seem to like it:
+"Visual Studio Code" is a relatively new cross platform offering from Microsoft -- a lot of folks seem to like it:
 
 :ref:`vsc_as_ide`
 
 And, of course, vim or Emacs on Linux, if you are familiar with those.
 
-Why No IDE?
------------
+
+Why No Full IDE?
+----------------
 
 An IDE does not give you much that you can't get with a good editor plus a good interpreter.
 
@@ -316,12 +325,13 @@ https://www.jetbrains.com/pycharm-edu/
 
 Which is awesome.
 
-Here are a number of pages to help you get started:
+But do make sure, when you set it up, that you know what its doing when you click "run"
+, and that it is using the version of Python that you expect.
 
 Version Control System
 ========================
 
-While not strictly necessary to develop code, it is a very, very good idea to manage your code in a Version Control System:
+While not strictly necessary to develop code, it is a very, very, good idea to manage your code in a Version Control System:
 
 https://en.wikipedia.org/wiki/Version_control
 
@@ -345,58 +355,6 @@ and get something like this as a response::
 Am I ready to go?
 =================
 
-To see if you have Python ready to start class, try the following:
+To see if you have Python ready to start class, try this:
 
-Create and run a Python "program":
-----------------------------------
-
-Create a file called ``install_test.py``, with the following content:
-
-.. code-block:: python
-
-    import sys
-    print("This is my first python program")
-
-    version = sys.version_info
-    version_string = "{}.{}".format(version.major, version.minor)
-    if version.major == 3:
-        if version.minor not in (6, 7):
-            print("You should be running version 3.6 or 3.7")
-        else:
-            print("You are running python{} -- all good!".format(version_string))
-    else:
-        print("You need to run Python 3!")
-        print("This is version: {}".format(version_string))
-
-Run it with your version of python. It should result in::
-
-    This is my first python program
-    You are running python3.7 -- all good!
-
-If you get something else -- figure out why and fix it!
-
-Run git
--------
-
-You should be able to run git on the command line:
-
-.. code-block:: bash
-
-    $ git --version
-    git version 2.20.1 (Apple Git-117)
-
-It should be version >= 2
-
-iPython
--------
-
-``iPython`` is not critical, but it is very nice. You should be able to run it with::
-
-    $ ipython
-    Python 3.6.2 (v3.6.2:5fd33b5926, Jul 16 2017, 20:11:06)
-    Type 'copyright', 'credits' or 'license' for more information
-    IPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.
-
-And get something like that.
-
-``ipython`` can be quit by typing ``quit``
+:ref:`testing_your_setup`

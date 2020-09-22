@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python Pushups" href="../exercises/python_pushups.html" />
+    <link rel="next" title="Practice with CodingBat" href="../exercises/codingbat.html" />
     <link rel="prev" title="Basic Python" href="BasicPython.html" /> 
 </head>
 
@@ -91,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Learning.html">Useful Python Learning Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicPython.html">Basic Python</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">More on Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exercises/python_pushups.html">Python Pushups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/codingbat.html">Practice with CodingBat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/grid_printer.html">Grid Printer Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exercises/fizz_buzz.html">Fizz Buzz Exercise</a></li>
 </ul>
@@ -177,7 +177,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../exercises/python_pushups.html" class="btn btn-neutral float-right" title="Python Pushups" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/codingbat.html" class="btn btn-neutral float-right" title="Practice with CodingBat" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="BasicPython.html" class="btn btn-neutral float-left" title="Basic Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -206,11 +206,10 @@
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code> are <em>local</em> names.</p>
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> because they are function <em>parameters</em></p>
 <p><code class="docutils literal notranslate"><span class="pre">z</span></code> because it was “bound” inside the function.</p>
-</div>
 <div class="section" id="local-vs-global">
-<h2>Local vs. Global<a class="headerlink" href="#local-vs-global" title="Permalink to this headline">¶</a></h2>
+<h3>Local vs. Global<a class="headerlink" href="#local-vs-global" title="Permalink to this headline">¶</a></h3>
 <p>Names bound in Python have a <em>scope</em></p>
-<p>That <em>scope</em> determines where a symbol is visible, and what value it has in a
+<p>That <em>scope</em> determines where a name is visible, and what value it has in a
 given block.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">32</span>
 <span class="gp">In [15]: </span><span class="n">y</span> <span class="o">=</span> <span class="mi">33</span>
@@ -233,6 +232,7 @@ given block.</p>
 </div>
 <p>No – they did not. The “y” and “z” names <em>inside</em> the function are completely separate from the “y” and “z” outside the function.</p>
 <p>The ones outside the function are “global” names.</p>
+<p>When you use a name in Python, it first checks if it’s a local name. Then, if that name is not in the local scope, it will look in the global scope for it.</p>
 <p><strong>NOTE:</strong> “global” in Python means global to the module (generally a single file), not global to an entire program. Which is really good, as you have little way of knowing what names are being used in packages you are using, but are not writing yourself!</p>
 <p>In general, you should use global names mostly for constants.</p>
 <p>The Python convention is to designate global constants by typing the
@@ -245,7 +245,7 @@ names we bind to them in ALL_CAPS:</p>
 <p>This is just a convention, but it’s a good one to follow.</p>
 </div>
 <div class="section" id="global-gotcha">
-<h2>Global Gotcha<a class="headerlink" href="#global-gotcha" title="Permalink to this headline">¶</a></h2>
+<h3>Global Gotcha<a class="headerlink" href="#global-gotcha" title="Permalink to this headline">¶</a></h3>
 <p>Take a look at this function definition:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 
@@ -282,6 +282,11 @@ the global value already bound. So in the line that caused the error:</p>
 </div>
 <p>Python knows that x is a local name, as it is assigned on the next line.  But on this line,  x has not yet been given a value – hence the error.</p>
 </div>
+<div class="section" id="globals-are-read-only">
+<h3>Globals are “read only”<a class="headerlink" href="#globals-are-read-only" title="Permalink to this headline">¶</a></h3>
+<p>While you have access to the global names in side a function, you can’t change what those names are bound to. Take a look at the previous examples – when we set a new value to a name (using the equal sign), that makes the name local – so it will not change what the global name refers to.</p>
+</div>
+</div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>So far we’ve seen simple parameter lists:</p>
@@ -292,6 +297,8 @@ the global value already bound. So in the line that caused the error:</p>
 <p>These types of parameters are called <em>positional</em></p>
 <p>When you call a function, you <strong>must</strong> provide arguments for all <em>positional</em>
 parameters <em>in the order they are listed</em>.</p>
+<div class="section" id="defaults-for-parameters">
+<h3>Defaults for parameters:<a class="headerlink" href="#defaults-for-parameters" title="Permalink to this headline">¶</a></h3>
 <p>You can provide <em>default values</em> for parameters in a function definition:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
@@ -318,6 +325,9 @@ positionally:</p>
 <span class="go">1 4 3</span>
 </pre></div>
 </div>
+<p>This allows you to specify only those optional parameters that you need to, and keep using the defaults for the rest.
+This is a very powerful feature of Python – you’ll find it’s common to have a pretty long optional parameter list to functions.
+It allows a lot of flexibility (the hard stuff is possible), while in common use, it’s easy to use (the easy stuff is easy).</p>
 <p>Once you’ve provided a <em>keyword</em> argument in this way, you can no longer
 provide any <em>positional</em> arguments:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -325,6 +335,7 @@ provide any <em>positional</em> arguments:</p>
     <span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="ne">SyntaxError</span>: non-keyword arg after keyword arg
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="recursion">
@@ -375,7 +386,7 @@ save your machine from running out of RAM.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../exercises/python_pushups.html" class="btn btn-neutral float-right" title="Python Pushups" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../exercises/codingbat.html" class="btn btn-neutral float-right" title="Practice with CodingBat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="BasicPython.html" class="btn btn-neutral float-left" title="Basic Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

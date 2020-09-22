@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Setup Details" href="setup_details.html" />
-    <link rel="prev" title="Introduction to your Programming Environment" href="environment_overview.html" /> 
+    <link rel="next" title="Advanced Setup" href="advanced_setup.html" />
+    <link rel="prev" title="Making your text Editor work with git on Windows" href="git_editor_windows.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,11 +87,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Installing Python and core tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installing Python and core tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/python_pushups.html">Python Pushups</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
@@ -176,10 +177,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="setup_details.html" class="btn btn-neutral float-right" title="Setup Details" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="advanced_setup.html" class="btn btn-neutral float-right" title="Advanced Setup" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="environment_overview.html" class="btn btn-neutral float-left" title="Introduction to your Programming Environment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git_editor_windows.html" class="btn btn-neutral float-left" title="Making your text Editor work with git on Windows" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -239,11 +240,11 @@
 <p>In order to be productive in this program, you need to be able to do the following:</p>
 <ul class="simple">
 <li><p>Manipulate files and write and save Python code in files.
-You really, really want a “real” programmer’s editor for this.</p></li>
-<li><p>Run your code with Python 3.6 or 3.7</p></li>
+You really, really want a “real” programmer’s editor (not Notepad!) for this.</p></li>
+<li><p>Run your code with Python 3.8 or higher</p></li>
 <li><p>Run the iPython interactive interpreter</p></li>
 <li><p>Install new packages with pip</p></li>
-<li><p>Use the git source code management system (with GitHub)</p></li>
+<li><p>Use the git source code management system (with GitHub Classroom)</p></li>
 </ul>
 <p>If you are not set up and comfortable with doing all that, read and follow these instructions:</p>
 <p><a class="reference internal" href="#installing-python"><span class="std std-ref">Installing Python and core tools</span></a></p>
@@ -274,27 +275,33 @@ on OS-X and Linux: <a class="reference internal" href="python_for_windows.html#g
 <p>Applications =&gt; Utilities =&gt; Terminal.app</p>
 <p>Drag and Drop it into the dock for easy access.</p>
 <p>The Terminal app can be interfaced with the Finder, making it easy to open it up with the working dir set to the current folder in the finder:</p>
+<p>On The Mac, you can add a “New Terminal at Folder” right-click menu item by:</p>
+<blockquote>
+<div><p>Head into System Preferences and select Keyboard =&gt; Shortcuts =&gt; Services. Find “New Terminal at Folder” in the settings and click the box. Now, when you’re in Finder, just right-click a folder and you’re shown the open to open Terminal. When you do, it’ll start right in the folder you’re in.</p>
+</div></blockquote>
 <p>See: <a class="reference external" href="https://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514">launch an OS-X terminal in a folder</a></p>
-<p>for how to set that up.</p>
+<p>for more detail.</p>
 </div>
 <div class="section" id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
-<p>On Linux, the terminal is usually very accessible – each Desktop System has a different way to access it – figure out how on your machine.</p>
+<p>Whether you use the KDE or GNOME Desktop (or anything else), there should be a way to open a shell from the file manager. Find it, it’s very handy.</p>
 </div>
 </div>
 <div class="section" id="the-python-interpreter">
 <h2>The Python Interpreter<a class="headerlink" href="#the-python-interpreter" title="Permalink to this headline">¶</a></h2>
+<p>If you haven’t already, install everything you need following these instructions:
+<a class="reference internal" href="setup_details.html#setup-details"><span class="std std-ref">Setup Details</span></a></p>
 <p>Python comes with a built-in interpreter.</p>
 <p>You see it when you type <code class="docutils literal notranslate"><span class="pre">python</span></code> at the command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python
-Python <span class="m">3</span>.6.1 <span class="o">(</span>v3.5.2:4def2a2901a5, Jun <span class="m">26</span> <span class="m">2016</span>, <span class="m">10</span>:47:25<span class="o">)</span>
+Python <span class="m">3</span>.8.2 <span class="o">(</span>v3.5.2:4def2a2901a5, Jun <span class="m">26</span> <span class="m">2016</span>, <span class="m">10</span>:47:25<span class="o">)</span>
 <span class="o">[</span>GCC <span class="m">4</span>.2.1 <span class="o">(</span>Apple Inc. build <span class="m">5666</span><span class="o">)</span> <span class="o">(</span>dot <span class="m">3</span><span class="o">)]</span> on darwin
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 &gt;&gt;&gt;
 </pre></div>
 </div>
 <p>That last thing you see, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> is the “Python prompt”.</p>
-<p>This is where you type code.</p>
+<p>This is where you can type code.</p>
 <div class="section" id="python-in-the-interpreter">
 <h3>Python in the Interpreter<a class="headerlink" href="#python-in-the-interpreter" title="Permalink to this headline">¶</a></h3>
 <p>Try it out:</p>
@@ -391,12 +398,12 @@ characters hidden behind the scenes.</p>
 <p>“Atom” is another good open source option.</p>
 <p><a class="reference external" href="https://atom.io/">https://atom.io/</a></p>
 <p><a class="reference internal" href="atom_as_ide.html#atom-as-ide"><span class="std std-ref">Turning Atom Into a Lightweight Python IDE</span></a></p>
-<p>“Visual Studio Code” is a relatively new cross platfrom offering from Microsoft – a lot of folks seem to like it:</p>
+<p>“Visual Studio Code” is a relatively new cross platform offering from Microsoft – a lot of folks seem to like it:</p>
 <p><a class="reference internal" href="vsc_as_ide.html#vsc-as-ide"><span class="std std-ref">Using Visual Studio Code as a lightweight Python IDE</span></a></p>
 <p>And, of course, vim or Emacs on Linux, if you are familiar with those.</p>
 </div>
-<div class="section" id="why-no-ide">
-<h3>Why No IDE?<a class="headerlink" href="#why-no-ide" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="why-no-full-ide">
+<h3>Why No Full IDE?<a class="headerlink" href="#why-no-full-ide" title="Permalink to this headline">¶</a></h3>
 <p>An IDE does not give you much that you can’t get with a good editor plus a good interpreter.</p>
 <p>An IDE often weighs a great deal.</p>
 <p>Setting up IDEs to work with different projects can be challenging and time-consuming.</p>
@@ -408,12 +415,13 @@ characters hidden behind the scenes.</p>
 <p>You may want to go get the educational edition of PyCharm:</p>
 <p><a class="reference external" href="https://www.jetbrains.com/pycharm-edu/">https://www.jetbrains.com/pycharm-edu/</a></p>
 <p>Which is awesome.</p>
-<p>Here are a number of pages to help you get started:</p>
+<p>But do make sure, when you set it up, that you know what its doing when you click “run”
+, and that it is using the version of Python that you expect.</p>
 </div>
 </div>
 <div class="section" id="version-control-system">
 <h2>Version Control System<a class="headerlink" href="#version-control-system" title="Permalink to this headline">¶</a></h2>
-<p>While not strictly necessary to develop code, it is a very, very good idea to manage your code in a Version Control System:</p>
+<p>While not strictly necessary to develop code, it is a very, very, good idea to manage your code in a Version Control System:</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Version_control">https://en.wikipedia.org/wiki/Version_control</a></p>
 <p>This is such a critical software development practice the we use it in the program for you to mange your projects and turn in assignments, so that you can gain familiarity with the practice.</p>
 <div class="section" id="git">
@@ -432,53 +440,8 @@ characters hidden behind the scenes.</p>
 </div>
 <div class="section" id="am-i-ready-to-go">
 <h2>Am I ready to go?<a class="headerlink" href="#am-i-ready-to-go" title="Permalink to this headline">¶</a></h2>
-<p>To see if you have Python ready to start class, try the following:</p>
-<div class="section" id="create-and-run-a-python-program">
-<h3>Create and run a Python “program”:<a class="headerlink" href="#create-and-run-a-python-program" title="Permalink to this headline">¶</a></h3>
-<p>Create a file called <code class="docutils literal notranslate"><span class="pre">install_test.py</span></code>, with the following content:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is my first python program&quot;</span><span class="p">)</span>
-
-<span class="n">version</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
-<span class="n">version_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">version</span><span class="o">.</span><span class="n">major</span><span class="p">,</span> <span class="n">version</span><span class="o">.</span><span class="n">minor</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">version</span><span class="o">.</span><span class="n">major</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">version</span><span class="o">.</span><span class="n">minor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should be running version 3.6 or 3.7&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are running python</span><span class="si">{}</span><span class="s2"> -- all good!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">version_string</span><span class="p">))</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You need to run Python 3!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is version: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">version_string</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Run it with your version of python. It should result in:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is my first python program
-You are running python3.7 -- all good!
-</pre></div>
-</div>
-<p>If you get something else – figure out why and fix it!</p>
-</div>
-<div class="section" id="run-git">
-<h3>Run git<a class="headerlink" href="#run-git" title="Permalink to this headline">¶</a></h3>
-<p>You should be able to run git on the command line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git --version
-git version <span class="m">2</span>.20.1 <span class="o">(</span>Apple Git-117<span class="o">)</span>
-</pre></div>
-</div>
-<p>It should be version &gt;= 2</p>
-</div>
-<div class="section" id="ipython">
-<h3>iPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">iPython</span></code> is not critical, but it is very nice. You should be able to run it with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ipython
-Python 3.6.2 (v3.6.2:5fd33b5926, Jul 16 2017, 20:11:06)
-Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information
-IPython 6.1.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
-</pre></div>
-</div>
-<p>And get something like that.</p>
-<p><code class="docutils literal notranslate"><span class="pre">ipython</span></code> can be quit by typing <code class="docutils literal notranslate"><span class="pre">quit</span></code></p>
-</div>
+<p>To see if you have Python ready to start class, try this:</p>
+<p><a class="reference internal" href="testing_your_setup.html#testing-your-setup"><span class="std std-ref">Testing Your setup</span></a></p>
 </div>
 </div>
 
@@ -490,10 +453,10 @@ IPython 6.1.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setup_details.html" class="btn btn-neutral float-right" title="Setup Details" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="advanced_setup.html" class="btn btn-neutral float-right" title="Advanced Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="environment_overview.html" class="btn btn-neutral float-left" title="Introduction to your Programming Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git_editor_windows.html" class="btn btn-neutral float-left" title="Making your text Editor work with git on Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -17,7 +17,7 @@ the best way to learn is by doing, but you need the basics in order to do anythi
     :caption: Activities
     :maxdepth: 1
 
-    ../../exercises/python_pushups.rst
+    ../../exercises/codingbat.rst
 
 .. toctree::
     :caption: Exercises

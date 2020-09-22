@@ -29,6 +29,8 @@ All of programming is really about manipulating values.
 Literals for the Basic Value types:
 ------------------------------------
 
+A "literal" is something you can put in your code to directly get a value. Python has literals for the key built in types.
+
 Numbers:
   - floating point: ``3.4``
   - integers: ``456``
@@ -36,7 +38,7 @@ Numbers:
 Text:
   -  ``"a bit of text"``
   -  ``'a bit of text'``
-  - (either single or double quotes work -- why? If you don't know try looking it up in one of the referenced sources!)
+  - (either single or double quotes work -- why? If you don't know, try looking it up in one of the referenced sources!)
 
 Boolean values:
   -  ``True``
@@ -51,15 +53,18 @@ The nothing object:
 Code structure
 --------------
 
-Each line is a piece of code.
+Each line is a unit of code. Each line is made up of these components:
 
-Comments:
+**Comments:**
 
 .. code-block:: ipython
 
     In [3]: # everything after a '#' is a comment
 
-Expressions:
+
+**Expressions:**
+
+An expression is a unit of code that evaluates to a value:
 
 .. code-block:: ipython
 
@@ -69,8 +74,9 @@ Expressions:
     Out[5]: 7
 
 
-Statements:
-statements carry out an action, but do not evaluate to a value, that is you can't assign to them (or put them in a lamda, or...)
+**Statements:**
+
+statements carry out an action, but do not evaluate to a value, that is, you can't assign to them (or put them in a lamda, or...)
 
 .. code-block:: ipython
 
@@ -80,9 +86,10 @@ statements carry out an action, but do not evaluate to a value, that is you can'
 
     In [8]: return something
 
+Statements include function (and class) definitions (``def``), loop constructs (``for``, ``while``), code forking constructs (``if``), exception handling (``try``, ``except``), and a handful of other more advanced constructs.
 
 
-It is somewhat obvious, but handy when playing with code:
+The ``print()`` function does what you'd expect, and is very handy when playing with code:
 
 .. code-block:: ipython
 
@@ -97,7 +104,6 @@ You can print multiple things:
     the value is 5
 
 
-
 Any Python object can be printed (though it might not be pretty...)
 
 .. code-block:: ipython
@@ -109,9 +115,10 @@ Any Python object can be printed (though it might not be pretty...)
     In [2]: print(bar)
     <class '__main__.bar'>
 
+Code Blocks
+...........
 
-
-Blocks of code are delimited by a colon and indentation:
+Separate blocks of code are delimited by a colon and indentation. Everything indented after a colon is "inside" that block. It can be a function definition, or a loop construct, or a handful of other more advanced constructs.
 
 .. code-block:: python
 
@@ -170,9 +177,8 @@ But they are not:
     for i in range(100):
     \tprint i**2
 
-**ALWAYS INDENT WITH 4 SPACES**
 
-
+.. centered:: **ALWAYS INDENT WITH 4 SPACES**
 
 
 Make sure your editor is set to use spaces only --
@@ -195,14 +201,38 @@ An *expression* is made up of values and operators.
 * Integer vs. float arithmetic
 
   * (Python 3 smooths this out).
-  * Always use ``/`` when you want division with float results, ``//`` when you want floored (integer) results (no remainder).
+  * Always use ``/`` when you want division with float results, ``//`` when you want floored (integer) results (no remainder):
 
-* Type conversions.
 
-  * This is the source of many errors, especially in handling text.
+.. code-block:: ipython
 
-* Type errors - checked at run time only.
+    In [1]: 3 / 4
+    Out[1]: 0.75
 
+    In [2]: 3 // 4
+    Out[2]: 0
+
+* Type conversions: You usually need to convert types explicitly:
+
+.. code-block:: ipython
+
+    In [4]: 3 * "4"
+    Out[4]: '444'
+
+    In [5]: 3 * int("4")
+    Out[5]: 12
+
+* Type errors - checked at run time only:
+
+.. code-block:: ipython
+
+    In [10]: '3' * '4'
+    ---------------------------------------------------------------
+    TypeError                     Traceback (most recent call last)
+    <ipython-input-10-1e6fdc328f08> in <module>
+    ----> 1 '3' * '4'
+
+    TypeError: can't multiply sequence by non-int of type 'str'
 
 Symbols
 -------
@@ -213,13 +243,13 @@ Symbols are how we give names to values (objects).
 * Symbols must begin with an underscore or letter.
 * Symbols can contain any number of underscores, letters and numbers.
 
-  * this_is_a_symbol
-  * this_is_2
-  * _AsIsThis
-  * 1butThisIsNot
-  * nor-is-this
+  * ``this_is_a_symbol``
+  * ``this_is_2``
+  * ``_AsIsThis``
+  * ``1butThisIsNot``
+  * ``nor-is-this``
 
-* Symbols don't have a type; values do.
+* Symbols (names) don't have a type; values do.
 
   * This is why Python is "Dynamic".
 
@@ -250,7 +280,7 @@ it is bound.
     In [26]: type(a)
     Out[26]: float
 
-*wait!* ``a`` has a different type?!? -- yes, because it's the type of the value: "3.14", names don't actually have a type, the same name can refer to any type.
+*wait!* ``a`` has a different type?!? -- yes, because it's the type of the value: ``3.1``, names don't actually have a type, the same name can refer to any type.
 
 
 Assignment
@@ -282,6 +312,7 @@ Evaluating the name will return the value to which it is bound
     In [31]: a_float
     Out[31]: 3.14
 
+
 Variables?
 ----------
 
@@ -299,6 +330,7 @@ Variables?
 
 * A name can be bound to a value -- but that has nothing to do with a
   location in memory.
+
 
 In-Place Assignment
 -------------------
@@ -536,7 +568,7 @@ To check if a name is bound to one of these, you use ``is``:
 
     x is None
 
-Note that in contrast to English -- "is" is asking a question, not making an assertion -- ``a is True`` means "is a set to the value True?"
+Note that in contrast to English -- "is" is asking a question, not making an assertion -- ``a is True`` means "is a set to the True object?"
 
 
 Operator Precedence
@@ -553,6 +585,7 @@ To force statements to be evaluated out of order, use parentheses -- expressions
    (4 + 3) * 5 != 4 + (3 * 5)
 
 Python follows the "usual" rules of algebra.
+
 
 Python Operator Precedence
 --------------------------
