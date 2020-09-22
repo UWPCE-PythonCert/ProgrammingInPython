@@ -4,7 +4,7 @@
 Setup Details
 =============
 
-Python itself is very platform independent. The code itself runs the same on all supported operating systems. But getting it installed and running is a bit different for each platform. CHoose the page for your platform to get started:
+Python itself is very platform independent. The code itself runs the same on all supported operating systems. But getting it installed and running is a bit different for each platform. Choose the page for your platform to get started:
 
 .. toctree::
     :maxdepth: 1
