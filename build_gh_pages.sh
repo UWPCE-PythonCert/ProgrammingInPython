@@ -45,5 +45,5 @@ git push
 popd
 
 echo "Now verify the render on github.io at the following link:"
-echo "https://uwpce-pythoncert.github.io/Python210CourseMaterials/"
+echo "https://uwpce-pythoncert.github.io/ProgrammingInPython/"
 

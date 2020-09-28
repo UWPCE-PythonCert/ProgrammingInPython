@@ -22,7 +22,7 @@ i.e. nicely indented and human readable.
 
 We'll try to get to all the features required to render this file:
 
-:download:`sample_html.html  <../examples/html_render/sample_html.html>`
+:download:`sample_html.html  <./sample_html.html>`
 
 Take a look at it by opening it in your text editor. And also in a browser to see how it's rendered.
 
@@ -45,11 +45,11 @@ General Instructions:
 
 You can start with the framework in:
 
-:download:`html_render.py  <../examples/html_render/html_render.py>`
+:download:`html_render.py  <./html_render.py>`
 
 For each step, add the required functionality. There is example code to run your code for each step in:
 
-:download:`run_html_render.py  <../examples/html_render/run_html_render.py>`
+:download:`run_html_render.py  <./run_html_render.py>`
 
 You should be able to run that code at each step, uncommenting each new step in ``run_html_render.py`` as you go.
 
@@ -80,7 +80,7 @@ That is:
 
 A start of a test file is provided here:
 
-:download:`test_html_render.py  <../examples/html_render/test_html_render.py>`
+:download:`test_html_render.py  <./test_html_render.py>`
 
 It has a few tests for the first few steps -- uncomment them as you go along.
 
@@ -260,7 +260,7 @@ Should result in something like:
     </body>
     </html>
 
-See: :download:`test_html_output2.html  <../examples/html_render/test_html_output2.html>`
+See: :download:`test_html_output2.html  <./test_html_output2.html>`
 
 NOTE: when you run step 2 in ``run_html_render.py``, you will want to comment out step 1 -- that way you'll only get one set of output.
 
@@ -282,7 +282,7 @@ Create a ``Title`` subclass of ``OneLineTag`` class for the title.
 You should now be able to render an html doc with a head element, with a
 title element in that, and a body element with some ``<P>`` elements and some text.
 
-See :download:`test_html_output3.html  <../examples/html_render/test_html_output3.html>`
+See :download:`test_html_output3.html  <./test_html_output3.html>`
 
 Step 4:
 -------
@@ -301,7 +301,7 @@ Note that you may now have *two* render methods -- the one in the ``Element`` ba
 
 You can now render some ``<p>`` tags (and others) with attributes.
 
-See: :download:`test_html_output4.html  <../examples/html_render/test_html_output4.html>`
+See: :download:`test_html_output4.html  <./test_html_output4.html>`
 
 NOTE: if you do "proper" CSS+html, then you wouldn't specify style directly in element attributes.
 
@@ -363,7 +363,7 @@ Note that you now have maybe three render methods -- is there repeated code in t
 
 Can you refactor the common parts into a separate method that all the render methods can call? And do all your tests still pass (you do have tests for everything, don't you?) after refactoring?
 
-See: :download:`test_html_output5.html  <../examples/html_render/test_html_output5.html>`
+See: :download:`test_html_output5.html  <./test_html_output5.html>`
 
 
 Step 6:
@@ -386,7 +386,7 @@ You should be able to subclass from ``Element``, and only override the ``__init_
 
 You can now add a link to your web page.
 
-See: :download:`test_html_output6.html  <../examples/html_render/test_html_output6.html>`
+See: :download:`test_html_output6.html  <./test_html_output6.html>`
 
 Step 7:
 --------
@@ -407,7 +407,7 @@ for an <h2> header.
 
 It can subclass from ``OneLineTag`` -- overriding the ``__init__``, then calling the superclass ``__init__``
 
-See: :download:`test_html_output7.html  <../examples/html_render/test_html_output7.html>`
+See: :download:`test_html_output7.html  <./test_html_output7.html>`
 
 Step 8:
 -------
@@ -424,7 +424,7 @@ http://validator.w3.org/#validate_by_input
 
 You now have a pretty full-featured html renderer -- play with it, add some new tags, etc....
 
-See :download:`test_html_output8.html  <../examples/html_render/test_html_output8.html>`
+See :download:`test_html_output8.html  <./test_html_output8.html>`
 
 
 Step 9: Adding Indentation
@@ -522,7 +522,7 @@ So:
 
 You should have nice pretty indented html now!
 
-See :download:`test_html_output9.html  <../examples/html_render/test_html_output9.html>`
+See :download:`test_html_output9.html  <./test_html_output9.html>`
 
 
 .. _notes_on_handling_duck_typing:
