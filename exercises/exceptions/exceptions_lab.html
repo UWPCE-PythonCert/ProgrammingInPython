@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mailroom With Exceptions &mdash; Programming in Python 7.0 documentation</title>
+  <title>Exceptions Lab &mdash; Programming in Python 7.0 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Unit Testing" href="../../topics/07-unit_testing/index.html" />
-    <link rel="prev" title="Exceptions Exercise" href="../exceptions/except_exercise.html" /> 
+    <link rel="next" title="Exceptions Exercise" href="except_exercise.html" />
+    <link rel="prev" title="Exception Handling" href="../../modules/Exceptions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,9 +92,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../modules/Exceptions.html">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exceptions/exceptions_lab.html">Exceptions Lab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../exceptions/except_exercise.html">Exceptions Exercise</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Mailroom With Exceptions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Exceptions Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="except_exercise.html">Exceptions Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mailroom/mailroom_with_exceptions.html">Mailroom With Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
@@ -158,13 +158,13 @@
         
           <li><a href="../../topics/06-exceptions/index.html"><span class="section-number">6. </span>Exception Handling</a> &raquo;</li>
         
-      <li>Mailroom With Exceptions</li>
+      <li>Exceptions Lab</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/exercises/mailroom/mailroom_with_exceptions.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/exercises/exceptions/exceptions_lab.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,10 +174,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../topics/07-unit_testing/index.html" class="btn btn-neutral float-right" title="7. Unit Testing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="except_exercise.html" class="btn btn-neutral float-right" title="Exceptions Exercise" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../exceptions/except_exercise.html" class="btn btn-neutral float-left" title="Exceptions Exercise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Exceptions.html" class="btn btn-neutral float-left" title="Exception Handling" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -186,25 +186,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mailroom-with-exceptions">
-<span id="exercise-mailroom-exceptions"></span><h1>Mailroom With Exceptions<a class="headerlink" href="#mailroom-with-exceptions" title="Permalink to this headline">¶</a></h1>
-<p><strong>Improve your mailroom by adding exception handling</strong></p>
-<div class="section" id="exceptions">
-<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
-<p>Now that you’ve learned about exception handling, you can update your code to handle errors better, such as when a user inputs bad data.</p>
-<p>This is a great use case for “Easier to Ask Forgiveness Than Permission” (EAFTP)</p>
-<p>For example, when you are asking the user for a donation amount, it should be a number. rather than trying to parse the text they input to make sure it’s a number, simply try to “turn it into” an integer (or float, you decide), and if you get an error, you know they didn’t pass in a number:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;how much?&quot;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">amount</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="c1"># report the error and go back</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you need to provide a number&quot;</span><span class="p">)</span>
-
-<span class="c1"># If the code gets here, then you know that the amount is now an integer.</span>
-</pre></div>
+  <div class="section" id="exceptions-lab">
+<span id="exercise-exceptions-lab"></span><h1>Exceptions Lab<a class="headerlink" href="#exceptions-lab" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learning-exceptions">
+<h2>Learning Exceptions<a class="headerlink" href="#learning-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Just a little bit for the basics – this is a bit of an odd example, but should give you the idea if you’re still not sure.</p>
+<p>Alternatively, see if you can clean up some of your other code (mailroom, maybe) with Exception handling.</p>
+<div class="section" id="id1">
+<h3>Exceptions Lab<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Improving <code class="docutils literal notranslate"><span class="pre">input</span></code></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code>  function can generate two exceptions: <code class="docutils literal notranslate"><span class="pre">EOFError</span></code>
+or <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>  on end-of-file(EOF) or canceled input.</p></li>
+<li><p>Create a wrapper function, perhaps <code class="docutils literal notranslate"><span class="pre">safe_input()</span></code>  that returns <code class="docutils literal notranslate"><span class="pre">None</span></code>
+rather rather than raising these exceptions, when the user enters <code class="docutils literal notranslate"><span class="pre">^C</span></code>  for Keyboard Interrupt, or <code class="docutils literal notranslate"><span class="pre">^D</span></code> (<code class="docutils literal notranslate"><span class="pre">^Z</span></code>  on Windows) for End Of File.</p></li>
+</ul>
 </div>
-<p>There may be other places in your code where handling an Exception would be helpful – keep them in mind! You never want your program to crash if the error is recoverable.</p>
 </div>
 </div>
 
@@ -216,10 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../topics/07-unit_testing/index.html" class="btn btn-neutral float-right" title="7. Unit Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="except_exercise.html" class="btn btn-neutral float-right" title="Exceptions Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../exceptions/except_exercise.html" class="btn btn-neutral float-left" title="Exceptions Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../modules/Exceptions.html" class="btn btn-neutral float-left" title="Exception Handling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

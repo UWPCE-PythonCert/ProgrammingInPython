@@ -11,12 +11,12 @@ Exception Handling
     :caption: Activities
     :maxdepth: 1
 
-    ../../exercises/exceptions_lab.rst
+    ../../exercises/exceptions/exceptions_lab.rst
 
 .. toctree::
     :caption: Exercises
     :maxdepth: 1
 
-    ../../exercises/except_exercise.rst
+    ../../exercises/exceptions/except_exercise.rst
     ../../exercises/mailroom/mailroom_with_exceptions.rst
 

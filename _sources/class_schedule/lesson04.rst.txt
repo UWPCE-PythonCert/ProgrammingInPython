@@ -34,8 +34,8 @@ Exercises:
 .. toctree::
     :maxdepth: 1
 
-    ../exercises/exceptions_lab.rst
-    ../exercises/except_exercise.rst
+    ../exercises/exceptions/exceptions_lab.rst
+    ../exercises/exceptions/except_exercise.rst
     ../exercises/unit_testing/unit_testing.rst
     ../exercises/dict_lab.rst
     ../exercises/mailroom/mailroom_with_dicts.rst

@@ -25,8 +25,8 @@ Exercises:
     :maxdepth: 1
 
     ../exercises/file_processing/file_lab.rst
-    ../exercises/exceptions_lab.rst
-    ../exercises/except_exercise.rst
+    ../exercises/exceptions/exceptions_lab.rst
+    ../exercises/exceptions/except_exercise.rst
     ../exercises/comprehensions_lab.rst
     ../exercises/mailroom/mailroom_with_exceptions.rst
     ../exercises/mailroom/mailroom_with_files.rst

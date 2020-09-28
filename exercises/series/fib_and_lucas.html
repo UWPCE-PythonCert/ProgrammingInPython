@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fibonacci Series Exercise &mdash; Programming in Python 7.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Sequences and Iteration" href="../../topics/04-sequences_iteration/index.html" />
+    <link rel="prev" title="Recursion" href="../../modules/Recursion.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #4b2e83" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../topics/03-recursion_booleans/index.html">3. Booleans and Recursion</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Booleans.html">Boolean Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/Recursion.html">Recursion</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fibonacci Series Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/04-sequences_iteration/index.html">4. Sequences and Iteration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/05-text_handling/index.html">5. Basic Text Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/06-exceptions/index.html">6. Exception Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/07-unit_testing/index.html">7. Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/08-dicts_sets/index.html">8. Dictionaries and Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/09-files/index.html">9. File Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/10-modules_packages/index.html">10. Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/11-argument_passing/index.html">11. Advanced Argument Passing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/12-comprehensions/index.html">12. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/13-intro_oo/index.html">13. Intro to Object Oriented Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/14-magic_methods/index.html">14. Properties and Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/15-subclassing/index.html">15. Subclassing and Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/16-multiple_inheritance/index.html">16. Multiple Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/17-functional_programming/index.html">17. Introduction to Functional Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/18-advanced_testing/index.html">18. Advanced Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/99-extras/index.html">19. Extra Topics</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programming in Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../topics/03-recursion_booleans/index.html"><span class="section-number">3. </span>Booleans and Recursion</a> &raquo;</li>
+        
+      <li>Fibonacci Series Exercise</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/exercises/series/fib_and_lucas.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../modules/Recursion.html" class="btn btn-neutral float-left" title="Recursion" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fibonacci-series-exercise">
+<span id="exercise-fibonacci"></span><h1>Fibonacci Series Exercise<a class="headerlink" href="#fibonacci-series-exercise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="computing-the-fibonacci-and-lucas-series">
+<h2>Computing the Fibonacci and Lucas Series<a class="headerlink" href="#computing-the-fibonacci-and-lucas-series" title="Permalink to this headline">¶</a></h2>
+<p>Some nifty uses of recursion</p>
+<div class="section" id="goal">
+<h3>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Fibbonaci_Series">Fibonacci Series</a> is a numeric series starting with the integers 0 and 1.</p>
+<p>In this series, the next integer is determined by summing the previous two</p>
+<p>This gives us:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>We will write a function that computes this series – then generalize it.</p>
+</div>
+<div class="section" id="step-1">
+<h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a new file <code class="docutils literal notranslate"><span class="pre">series.py</span></code> in the exercise repo.</p>
+<ul>
+<li><p>In it, add a function called <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code>.</p></li>
+<li><p>The function should have one parameter <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
+<li><p>The function should return the <code class="docutils literal notranslate"><span class="pre">nth</span></code> value in the Fibonacci series (starting with zero index).</p></li>
+</ul>
+</li>
+<li><p>Ensure that your function has a well-formed “docstring”</p></li>
+</ul>
+<p>Note that the Fibonacci series is naturally recursive – the value is
+defined by previous values:</p>
+<p>fib(n) = fib(n-2) + fib(n-1)</p>
+</div>
+<div class="section" id="lucas-numbers">
+<h3>Lucas Numbers<a class="headerlink" href="#lucas-numbers" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Lucas_number">Lucas Numbers</a> are a related series of integers that start with the
+values 2 and 1 rather than 0 and 1. The resulting series looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>In your <code class="docutils literal notranslate"><span class="pre">series.py</span></code> file, add a new function <code class="docutils literal notranslate"><span class="pre">lucas</span></code> that returns the
+<code class="docutils literal notranslate"><span class="pre">nth</span></code> value in the <em>Lucas numbers</em> series (starting with zero index).</p>
+<p>Ensure that your function has a well-formed “docstring”</p>
+<p>You should find it’s <em>very</em> similar to the <code class="docutils literal notranslate"><span class="pre">fibonacci()</span></code> function.</p>
+</div>
+<div class="section" id="generalizing">
+<h3>Generalizing<a class="headerlink" href="#generalizing" title="Permalink to this headline">¶</a></h3>
+<p>Both the <em>fibonacci series</em> and the <em>lucas numbers</em> are based on an identical formula:</p>
+<p>f(n) = f(n-2) + f(n-1)</p>
+<p>That’s why the code is so similar.</p>
+<p>This formula creates a class of series that are all related – each with a different two starting numbers.</p>
+<p>Add a third function called <code class="docutils literal notranslate"><span class="pre">sum_series</span></code> that can compute all of these related series.</p>
+<p>It should have one required parameter and two optional parameters.
+The required parameter will determine which element in the
+series to print.
+The two optional parameters will have default values of 0 and 1 and will determine the first two values for the series to be produced.</p>
+<p>Calling this function with no optional parameters will produce numbers from the <em>Fibonacci series</em> (because 0 and 1 are the defaults).</p>
+<p>Calling it with the optional arguments 2 and 1 will produce values from the <em>Lucas numbers</em>.</p>
+<p>Other values for the optional parameters will produce other series.</p>
+<p><strong>Note:</strong> While you <em>could</em> check the input arguments, and then call one
+of the functions you wrote, the idea of this exercise is to make a general
+function, rather than one specialized. So you should re-implement the code
+in this function.</p>
+<p>In fact, you could go back and re-implement your Fibonacci and Lucas
+functions to call <code class="docutils literal notranslate"><span class="pre">sum-series</span></code> with particular arguments.</p>
+<p>Ensure that your function has a well-formed “docstring”</p>
+</div>
+<div class="section" id="tests">
+<h3>Tests…<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
+<p>Add a block of code to the end of your <code class="docutils literal notranslate"><span class="pre">series.py</span></code> module.
+Use the block to write a series of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements that
+demonstrate that your three functions work properly.</p>
+<p>Use comments in this block to inform the observer what your tests do.</p>
+<p>We have created a template for you to use to clarify what we mean by these asserts:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/8c937698ccbd5754c61e94a252163987/series_template.py"><code class="xref download docutils literal notranslate"><span class="pre">series_template.py</span></code></a></p>
+<p>Add your new module to your personal git repo and commit frequently while working on your implementation.
+Include good commit messages that explain concisely both <em>what</em> you are doing and <em>why</em>.</p>
+<p>When you are finished, push your changes to your fork of exercise repository in GitHub and make a pull request to submit it.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../modules/Recursion.html" class="btn btn-neutral float-left" title="Recursion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
