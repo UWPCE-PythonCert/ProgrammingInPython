@@ -16,5 +16,5 @@ Booleans and Recursion
     :caption: Exercises
     :maxdepth: 1
 
-    ../../exercises/fib_and_lucas.rst
+    ../../exercises/series/fib_and_lucas.rst
 

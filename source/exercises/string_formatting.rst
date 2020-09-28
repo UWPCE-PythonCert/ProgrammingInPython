@@ -10,7 +10,7 @@ In this exercise we will reinforce the important concepts of string formatting, 
 
 Procedure
 =========
-Create a new file called ``strformat_lab.py`` in your student dir in the class repo.
+Create a new file called ``strformat_lab.py`` in the exercise repo.
 
 When the empty script is available and runnable, complete the following four tasks.
 
@@ -139,7 +139,7 @@ Hint: use index numbers to specify positions.
 
 Task Five
 ---------
-f-strings are new to Python (version 3.6), but are very powerful and efficient. This means they are worth understanding and using. And this is made easier than it might be because they use the same, familiar formatting language that is conventionally used in Python (in .format()).
+f-strings are new to Python (version 3.6), but are very powerful and efficient. This means they are worth understanding and using. And this is made easier than it might be because they use the same, familiar formatting language that is conventionally used in Python (in ``.format()``).
 
 So in this exercise we are going to specifically use f-strings.
 

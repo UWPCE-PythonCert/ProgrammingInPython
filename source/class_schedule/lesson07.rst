@@ -70,5 +70,5 @@ Exercises:
     :maxdepth: 1
 
     ../exercises/oo_intro/oo_intro.rst
-    ../exercises/html_renderer.rst
-    ../exercises/html_renderer_tutorial.rst
+    ../exercises/html_renderer/html_renderer.rst
+    ../exercises/html_renderer/html_renderer_tutorial.rst

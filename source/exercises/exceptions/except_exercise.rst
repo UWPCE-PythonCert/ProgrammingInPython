@@ -9,7 +9,7 @@ This is a little exercise that shows you how to handle exceptions in a way that 
 Procedure
 =========
 
-Here are two files that you should put in your ``lesson05`` directory in the class repo.
+Here are two files that you should be in the github classroom repo:
 
 :download:`except_exercise.py`
 
@@ -23,8 +23,8 @@ Run ``except_exercise.py``::
 
 You will find that it crashes with an exception.
 
-Your job is to write the proper exception handler in the except_exercise.py
-code, so that the code can run.
+Your job is to write the proper exception handler in the
+``except_exercise.py`` file, so that the code can run.
 
 It will then crash again.
 
@@ -61,7 +61,7 @@ In this case, that's line 17 of ``except_exercise.py``. In real life, it can be 
 Results
 -------
 
-When you are done, running except_exercise.py should result in output something like this::
+When you are done, running ``except_exercise.py`` should result in output something like this::
 
     Spam, Spam, Spam, Spam, Beautiful Spam
 
@@ -75,4 +75,5 @@ When you are done, running except_exercise.py should result in output something 
 Why are you doing this?
 -----------------------
 
-This is a kind of silly exercise, but in real life, this is a common workflow -- you call a library, and find that in certain circumstances it raises an exception.  As the code in the library is out of your hands, you need to decide how to handle that exception in your code instead.
+This is a kind of silly exercise, but in real life, this is a common work flow -- you call a library, and find that in certain circumstances it raises an exception.
+As the code in the library is out of your hands, you need to decide how to handle that exception in your code instead.
