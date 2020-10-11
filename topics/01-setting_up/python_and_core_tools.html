@@ -221,21 +221,21 @@
 <li><p>MicroPython</p></li>
 </ul>
 <p>These each have their own special uses. For example, for interaction with the Java VM or Microsoft CLR, or running on micro controllers. But most production Python is run with the cPython interpreter, and most people mean cPython when they say “Python”.</p>
-<p>For this program, you will need cPython version 3.6, installed and running so that when you type “python” at your command line, it starts up.</p>
-<p>cPython itself is available from a number of sources, or “distributions”. We recommend the version available from python.org.</p>
+<p>For this program, you will need cPython version 3.8, installed and running so that when you type “python” at your command line, it starts up.</p>
+<p>cPython itself is available from a number of sources, or “distributions”. We recommend the version available from <cite>python.org</cite>.</p>
 <p>Python is also available as part of the Anaconda data analysis environment, as well as a few other sources. These Python distributions will work fine for this class, but when we get to advanced topics like virtual environments, there are some differences – and you will be responsible for adapting to these differences.</p>
 </div>
 </div>
 <div class="section" id="your-development-environment">
 <h2>Your Development Environment<a class="headerlink" href="#your-development-environment" title="Permalink to this headline">¶</a></h2>
-<p>There are three basic elements to your environment when working with Python:</p>
+<p>There are four elements to your environment when working with Python:</p>
 <ul class="simple">
 <li><p>The Command Line</p></li>
 <li><p>The Interpreter</p></li>
 <li><p>The Editor</p></li>
 <li><p>The source code version control system</p></li>
 </ul>
-<p>Some folks use an Integrated Development Environment (IDE), which combines some or all of these functions. For this class, we don’t recommend using an IDE, because while it can make some things easier, it can also hide things that will be good for you to understand.</p>
+<p>Some folks use an Integrated Development Environment (IDE), which combines some or all of these functions. For this class, we don’t recommend using an IDE, because while it can make some things easier, it can also hide things that will be good for you to understand. But it’s your call – you should use tools you are comfortable with.</p>
 <div class="section" id="minimal-requirements">
 <h3>Minimal Requirements<a class="headerlink" href="#minimal-requirements" title="Permalink to this headline">¶</a></h3>
 <p>In order to be productive in this program, you need to be able to do the following:</p>
@@ -253,11 +253,11 @@ You really, really want a “real” programmer’s editor (not Notepad!) for th
 </div>
 </div>
 <div class="section" id="the-command-line-cli">
-<h2>The Command Line (cli)<a class="headerlink" href="#the-command-line-cli" title="Permalink to this headline">¶</a></h2>
+<h2>The Command Line (CLI)<a class="headerlink" href="#the-command-line-cli" title="Permalink to this headline">¶</a></h2>
 <p>Having some familiarity with the command line is important</p>
 <p>Familiarity with basic use of the command line is a prerequisite for the program, so we won’t cover this much in class. If you are not comfortable with the command line, please bone up on your own.</p>
 <p>We have some resources here: <a class="reference internal" href="command_line.html#command-line-basics"><span class="std std-ref">Command line basics</span></a></p>
-<p>We suggest running through the <strong>cli</strong> tutorial at “learn code the hard way”:</p>
+<p>We suggest running through the <strong>CLI</strong> tutorial at “learn code the hard way”:</p>
 <p><a class="reference external" href="https://learnpythonthehardway.org/book/appendixa.html">Command Line Crash Course</a></p>
 <p>Or, for Linux and OS-X users:</p>
 <p><a class="reference external" href="https://lym.readthedocs.io/en/latest/">Linux command line for you and me!</a></p>
@@ -276,7 +276,7 @@ on OS-X and Linux: <a class="reference internal" href="python_for_windows.html#g
 <p>Applications =&gt; Utilities =&gt; Terminal.app</p>
 <p>Drag and Drop it into the dock for easy access.</p>
 <p>The Terminal app can be interfaced with the Finder, making it easy to open it up with the working dir set to the current folder in the finder:</p>
-<p>On The Mac, you can add a “New Terminal at Folder” right-click menu item by:</p>
+<p>On The Mac, you may have a “New Terminal at Folder” right-click (or command click – “secondary click”) menu item already – try it! If not, you can turn it on by following these instructions:</p>
 <blockquote>
 <div><p>Head into System Preferences and select Keyboard =&gt; Shortcuts =&gt; Services. Find “New Terminal at Folder” in the settings and click the box. Now, when you’re in Finder, just right-click a folder and you’re shown the open to open Terminal. When you do, it’ll start right in the folder you’re in.</p>
 </div></blockquote>
@@ -368,14 +368,14 @@ interpreters available to you.</p>
 <h2>The Editor<a class="headerlink" href="#the-editor" title="Permalink to this headline">¶</a></h2>
 <p>Typing code in an interpreter is great for exploring.</p>
 <p>But for anything “real”, you’ll want to save the work you are doing in a more permanent fashion.</p>
-<p>This is where an Editor fits in.</p>
+<p>This is where an editor fits in.</p>
 <div class="section" id="text-editors-only">
 <span id="editor-for-python"></span><h3>Text Editors Only<a class="headerlink" href="#text-editors-only" title="Permalink to this headline">¶</a></h3>
-<p>Any good programmers text editor will do.</p>
+<p>Any good programmer’s text editor will do.</p>
 <p>MS Word is <strong>not</strong> a text editor.</p>
 <p>Nor is <em>TextEdit</em> on a Mac.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Notepad</span></code> on Windows is a text editor – but a poor one.</p>
-<p>You need a real “programmers text editor”</p>
+<p>You need a real “Programmer’s Text Editor”</p>
 <p>A text editor saves only what it shows you, with no special formatting
 characters hidden behind the scenes.</p>
 </div>
@@ -401,7 +401,7 @@ characters hidden behind the scenes.</p>
 <p><a class="reference internal" href="atom_as_ide.html#atom-as-ide"><span class="std std-ref">Turning Atom Into a Lightweight Python IDE</span></a></p>
 <p>“Visual Studio Code” is a relatively new cross platform offering from Microsoft – a lot of folks seem to like it:</p>
 <p><a class="reference internal" href="vsc_as_ide.html#vsc-as-ide"><span class="std std-ref">Using Visual Studio Code as a lightweight Python IDE</span></a></p>
-<p>And, of course, vim or Emacs on Linux, if you are familiar with those.</p>
+<p>And, of course, vim or Emacs on Linux, if you are familiar with one of those.</p>
 </div>
 <div class="section" id="why-no-full-ide">
 <h3>Why No Full IDE?<a class="headerlink" href="#why-no-full-ide" title="Permalink to this headline">¶</a></h3>
@@ -410,21 +410,21 @@ characters hidden behind the scenes.</p>
 <p>Setting up IDEs to work with different projects can be challenging and time-consuming.</p>
 <p>Particularly when you are first learning, you don’t want too much done for you.</p>
 </div>
-<div class="section" id="why-not-an-ide">
-<h3>Why Not an IDE?<a class="headerlink" href="#why-not-an-ide" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="why-an-ide">
+<h3>Why an IDE?<a class="headerlink" href="#why-an-ide" title="Permalink to this headline">¶</a></h3>
 <p>That said …</p>
 <p>You may want to go get the educational edition of PyCharm:</p>
 <p><a class="reference external" href="https://www.jetbrains.com/pycharm-edu/">https://www.jetbrains.com/pycharm-edu/</a></p>
-<p>Which is awesome.</p>
-<p>But do make sure, when you set it up, that you know what its doing when you click “run”
-, and that it is using the version of Python that you expect.</p>
+<p>Which a lot of people like a lot.</p>
+<p>VSCode from MS is apretty full featured IDE as well.</p>
+<p>But do make sure, when you set up and IDE, that you know what its doing when you click “run”, and that it is using the version of Python that you expect. (cPython 3.8 in this case)</p>
 </div>
 </div>
 <div class="section" id="version-control-system">
 <h2>Version Control System<a class="headerlink" href="#version-control-system" title="Permalink to this headline">¶</a></h2>
 <p>While not strictly necessary to develop code, it is a very, very, good idea to manage your code in a Version Control System:</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Version_control">https://en.wikipedia.org/wiki/Version_control</a></p>
-<p>This is such a critical software development practice the we use it in the program for you to mange your projects and turn in assignments, so that you can gain familiarity with the practice.</p>
+<p>This is such a critical software development practice the we use it in the program for you to mange your projects and turn in assignments (via gitHub classroom), so that you can gain familiarity with the practice.</p>
 <div class="section" id="git">
 <h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
 <p>git (<a class="reference external" href="https://en.wikipedia.org/wiki/Git">https://en.wikipedia.org/wiki/Git</a>) is an open-source version control system that has become an industry standard – very widely used in both commercial and open-source development.</p>

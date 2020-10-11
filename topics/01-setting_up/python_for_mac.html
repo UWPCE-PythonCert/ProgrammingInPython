@@ -199,7 +199,7 @@
 <p>OS-X comes with Python out of the box, but not the full setup you’ll need for development or this class. It also doesn’t have the latest version(s), and no version of Python 3.</p>
 <p>So we recommend installing a new version.</p>
 <p><strong>Note</strong>:</p>
-<p>If you use <code class="docutils literal notranslate"><span class="pre">macports</span></code> or <code class="docutils literal notranslate"><span class="pre">homebrew</span></code> to manage *nix software on your machine, feel free to use those for <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span></code>, etc, as well. But make sure you have Python 3.7.*</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">macports</span></code> or <code class="docutils literal notranslate"><span class="pre">homebrew</span></code> to manage *nix software on your machine, feel free to use those for <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span></code>, etc, as well. But make sure you have Python 3.8.*</p>
 <p>If not, then read on.</p>
 <div class="section" id="terminal">
 <h3>Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
@@ -215,14 +215,16 @@
 latest version, and you really don’t want to mess with the system
 installation. So we recommend installing an independent installation from
 <code class="docutils literal notranslate"><span class="pre">python.org</span></code>:</p>
-<p>Download the latest realease of Python (currently 3.7.0) installer from Python.org:</p>
+<p>Download the latest release of Python installer from Python.org:</p>
 <p><a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+<p>NOTE: As of this writting, version 3.9.0 was jsut released – it will work fine. But we willnot be using any 3.9 features in this course, and examples will generally be in 3.8 – so 3.8 or 3.9 is fine.</p>
 <p>Double click the installer and follow the prompts. The defaults are your best bet. Simple as that.</p>
 <p>Oddly, this does NOT install a <code class="docutils literal notranslate"><span class="pre">python</span></code> command, but rather a <code class="docutils literal notranslate"><span class="pre">python3</span></code> command. If you want to be able to simply type <code class="docutils literal notranslate"><span class="pre">python</span></code> and get python3, then you can add a symlink to the install. Type this at a terminal prompt:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /Library/Frameworks/Python.framework/Versions/3.7/bin
-$ ln -s python3.7 python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /Library/Frameworks/Python.framework/Versions/3.8/bin
+$ ln -s python3.8 python
 </pre></div>
 </div>
+<p>(replace the 3.8 above with 3.9 if you have installed 3.9)</p>
 <p>Or an add an alias in your shell by adding the following line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">python</span><span class="o">=</span><span class="s1">&#39;python3&#39;</span>
 </pre></div>
@@ -230,7 +232,7 @@ $ ln -s python3.7 python
 <p>to your <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> file.</p>
 <p>Once you have done that, you should be able to type <code class="docutils literal notranslate"><span class="pre">python</span></code> at the command prompt, and get something like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python
-Python <span class="m">3</span>.7.0 <span class="o">(</span>v3.7.0:1bf9cc5093, Jun <span class="m">26</span> <span class="m">2018</span>, <span class="m">23</span>:26:24<span class="o">)</span>
+Python <span class="m">3</span>.8.6 <span class="o">(</span>v3.7.0:1bf9cc5093, Jun <span class="m">26</span> <span class="m">2018</span>, <span class="m">23</span>:26:24<span class="o">)</span>
 <span class="o">[</span>Clang <span class="m">6</span>.0 <span class="o">(</span>clang-600.0.57<span class="o">)]</span> on darwin
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 &gt;&gt;&gt;
@@ -282,9 +284,9 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 <p>(It will install a LOT…).</p>
 <p>Now you should now be able to run <code class="docutils literal notranslate"><span class="pre">iPython</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go">$ ipython</span>
-<span class="go">Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 26 2018, 23:26:24)</span>
+<span class="go">Python 3.8.6 (v3.8.6:db455296be, Sep 23 2020, 13:31:39)</span>
 <span class="go">Type &#39;copyright&#39;, &#39;credits&#39; or &#39;license&#39; for more information</span>
-<span class="go">IPython 6.5.0 -- An enhanced Interactive Python. Type &#39;?&#39; for help.</span>
+<span class="go">IPython 7.18.1 -- An enhanced Interactive Python. Type &#39;?&#39; for help.</span>
 
 <span class="gp">In [1]:</span>
 </pre></div>
@@ -293,31 +295,31 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 </div>
 <div class="section" id="git">
 <h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
-<p>git is a source code version control system. It is not strictly related to Python, but it (or a similar system) is a critical tool for software development in general, and it is very widely used in the Python community. We will be using it, along with the gitHub service, in the program to hand in assignments and support code review.</p>
-<p>You need a git client. The gitHub GUI client may be nice; I honestly don’t know. However, we will be using the command line client in class.</p>
+<p>git is a source code version control system. It is not strictly related to Python, but it (or a similar system) is a critical tool for software development in general, and it is very widely used in the Python community.
+We will be using it, along with the gitHub classroom service, in the program to hand in assignments and support code review.</p>
+<p>You will need a git client. The gitHub GUI client may be nice; I honestly don’t know. However, we will be using the command line client in class.</p>
 <p>There are a couple of options for a command line client.</p>
-<p>This option is a big download and install, but has everything you need out of the box:</p>
-<p><a class="reference external" href="http://sourceforge.net/projects/git-osx-installer/">http://sourceforge.net/projects/git-osx-installer/</a></p>
+<p><a class="reference external" href="https://git-scm.com/download/mac">https://git-scm.com/download/mac</a></p>
+<p>Perhpas the easiest, particularly if you need a compiler for any other reason, is to get git as part of the XCode command line tools, You can install XCode from the App Store. But be forwarned – it is a VERY big download: 11.2GB!</p>
+<p>Ifyou only need git, this has everything you need out of the box, and is a 500(!) times smaller download.</p>
+<p><a class="reference external" href="https://sourceforge.net/projects/git-osx-installer/">https://sourceforge.net/projects/git-osx-installer/</a></p>
 <p>NOTE: if you get a warning like:</p>
 <p>“… can’t be opened because it is from an untrusted developer”</p>
 <p>you’ll need to go to  system preferences:</p>
 <blockquote>
 <div><p>“Security and Privacy”</p>
-<p>Depending on the OS-X version, you will need to check the box saying “Open Anyway,” or perhaps the box saying you can install untrusted packages.</p>
 </div></blockquote>
-<p>This option works great, but you need the XCode command line tools to run it:</p>
-<p><a class="reference external" href="http://git-scm.com/download/mac">http://git-scm.com/download/mac</a></p>
-<p>You can get XCode from the Apple App Store. If you try running “git” on the command line after installing, it should send you there. Warning: XCode is a BIG download. Once installed, run it so it can initialize itself.</p>
+<p>Depending on the OS-X version, you will need to check the box saying “Open Anyway,” or perhaps the box saying you can install untrusted packages.</p>
 <p>After either of these is installed, the <code class="docutils literal notranslate"><span class="pre">git</span></code> command should work:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git --version
-git version <span class="m">2</span>.11.0 <span class="o">(</span>Apple Git-81<span class="o">)</span>
+git version <span class="m">2</span>.24.3 <span class="o">(</span>Apple Git-128<span class="o">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="testing-it-out">
 <h3>Testing it out<a class="headerlink" href="#testing-it-out" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
-<dt>To be ready for the program, you need to have, all available from the command line:</dt><dd><ul class="simple">
+<dt>To be ready for this course, you need to have, all available from the command line:</dt><dd><ul class="simple">
 <li><p>python</p></li>
 <li><p>pip</p></li>
 <li><p>iPython</p></li>
@@ -326,11 +328,11 @@ git version <span class="m">2</span>.11.0 <span class="o">(</span>Apple Git-81<s
 </dd>
 </dl>
 <p>To try it out, you should be able to run all of the following commands, and get something like the results shown:</p>
-<p>(recall that you can get out of the Python or iPython command lines with <code class="docutils literal notranslate"><span class="pre">ctrl+D</span></code>)</p>
+<p>(recall that you can get out of the Python or iPython command lines with <code class="docutils literal notranslate"><span class="pre">ctrl+D</span></code> or <code class="docutils literal notranslate"><span class="pre">exit()</span></code></p>
 <div class="section" id="for-python">
 <h4>For Python:<a class="headerlink" href="#for-python" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3
-Python <span class="m">3</span>.7.0 <span class="o">(</span>v3.7.0:1bf9cc5093, Jun <span class="m">26</span> <span class="m">2018</span>, <span class="m">23</span>:26:24<span class="o">)</span>
+Python <span class="m">3</span>.8.6 <span class="o">(</span>v3.8.6:db455296be, Sep <span class="m">23</span> <span class="m">2020</span>, <span class="m">13</span>:31:39<span class="o">)</span>
 <span class="o">[</span>Clang <span class="m">6</span>.0 <span class="o">(</span>clang-600.0.57<span class="o">)]</span> on darwin
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 &gt;&gt;&gt;
@@ -340,26 +342,30 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 <div class="section" id="for-ipython">
 <h4>For iPython:<a class="headerlink" href="#for-ipython" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ipython
-Python <span class="m">3</span>.7.0 <span class="o">(</span>v3.7.0:1bf9cc5093, Jun <span class="m">26</span> <span class="m">2018</span>, <span class="m">23</span>:26:24<span class="o">)</span>
+Python <span class="m">3</span>.8.6 <span class="o">(</span>v3.8.6:db455296be, Sep <span class="m">23</span> <span class="m">2020</span>, <span class="m">13</span>:31:39<span class="o">)</span>
 Type <span class="s1">&#39;copyright&#39;</span>, <span class="s1">&#39;credits&#39;</span> or <span class="s1">&#39;license&#39;</span> <span class="k">for</span> more information
-IPython <span class="m">6</span>.5.0 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
+IPython <span class="m">7</span>.18.1 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
+
+In <span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 </pre></div>
 </div>
 </div>
 <div class="section" id="for-pip">
 <h4>For pip:<a class="headerlink" href="#for-pip" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip --version
-pip <span class="m">18</span>.0 from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pip <span class="o">(</span>python <span class="m">3</span>.7<span class="o">)</span>
+pip <span class="m">20</span>.2.3 from /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pip <span class="o">(</span>python <span class="m">3</span>.8<span class="o">)</span>
 </pre></div>
 </div>
-<p>Note that when you ask pip for <code class="docutils literal notranslate"><span class="pre">--version</span></code> it tells you which version of python it is “connected” to.</p>
+<p>Note that when you ask pip for <code class="docutils literal notranslate"><span class="pre">--version</span></code> it tells you which version of python it is “connected” to.
+Make sure that’s the one you expect!</p>
 </div>
 <div class="section" id="for-git">
 <h4>For git:<a class="headerlink" href="#for-git" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git --version
-git version <span class="m">2</span>.15.2 <span class="o">(</span>Apple Git-101.1<span class="o">)</span>
+git version <span class="m">2</span>.24.3 <span class="o">(</span>Apple Git-128<span class="o">)</span>
 </pre></div>
 </div>
+<p>If those commands all run – you are all set!</p>
 </div>
 </div>
 </div>
