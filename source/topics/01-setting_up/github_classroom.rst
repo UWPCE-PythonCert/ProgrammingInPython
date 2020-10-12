@@ -1,8 +1,11 @@
+.. _github_classroom:
+
 #############################
 Working with GitHub Classroom
 #############################
 
 The Python Certificate program uses `GitHub Classroom <https://classroom.github.com/>`_ to manage the submission and review of your coding assignments.
+
 
 Why GitHub Classroom?
 =====================
@@ -31,16 +34,12 @@ If you don't have already have a GitHub account or if you would prefer to use cr
 
 You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:
+
 :ref:`installing_python`
 
 Once you have all the tools set up, you will need to create a folder (directory) within your development system for keeping your work.
 This is the folder where all your assignment repositories will reside. It will be helpful to keep them all together in one place.
 
-.. Open Git Bash (if using Git for Windows) or a terminal (Linux and Mac OS), go to the folder (using the `cd` command) you have created for this class and run::
-
-..   git init
-
-.. This will setup your folder to house git repositories.
 
 Accepting an assignment
 =======================
@@ -63,7 +62,7 @@ Some things to consider:
 
 Once your repository has been created, go to its link and clone it on your development system, under the folder you selected for this purpose.
 
-Here: `Clong a repo <https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository>`_
+Here: `Cloning a repo <https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository>`_
 is GitHub's official guide on how to clone a repository.
 
 
@@ -71,8 +70,8 @@ Before You Start Working on your Assignment
 ===========================================
 
 Once your repository is setup, it's good to get familiar with your repository view.
-You should see a tab there called "Pull Requests": they indicate code changes that are desired to be pulled into a main repository;
-by default you should see one already there called "Feedback". Go ahead and click on it, and take a look at "Files Changed" tab - as of now it should show "No changes to show". As you start committing your code you will see your changes there.
+You should see a tab there called "Pull Requests": they indicate code changes that are desired to be pulled into a main repository.
+By default you should see one already there called "Feedback". Go ahead and click on it, and take a look at "Files Changed" tab - as of now it should show "No changes to show". As you start committing your code you will see your changes there.
 
 
 Committing your code
@@ -85,7 +84,7 @@ You are encouraged to make frequent commits, as this will make it easier for you
 Creating a New Commit:
 ----------------------
 
-Type the following to add all files and subdirectories in the folder to your commit (note the command includes a dot, make sure you  include it as well)::
+Type the following to add all files and subdirectories in the folder to your commit (note the command includes a dot, make sure you  include it as well: the dot means "the current working directory")::
 
   git add .
 
@@ -109,6 +108,7 @@ You can push your code immediately after every commit or do it once a day (in wh
 
 The first time you push your code to a repository, GitHub will ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).
 
+git will also askyou for your gitHUb usernameand passwork the firsttime -- it should remember them after that -- until you try on a new machine.
 
 Asking Coding Questions
 =======================
@@ -133,7 +133,7 @@ Once your assignment is ready for review, copy the link of your Feedback pull re
 As per UW's requirements, you also need to submit a zip file with your code on EdX or Canvas. Note that only the code included in your pull request will be reviewed.
 
 
-Resubmitting your assignment
+Resubmitting your Assignment
 ============================
 
 On occasion, your instructor will provide feedback on elements in your assignment that need to be modified in order to get the full grade for the assignment. In those cases, follow the process outlined in the Asking Coding Questions section above. Let us know that you would like another review for grade adjustment and make sure to tag your instructor.
