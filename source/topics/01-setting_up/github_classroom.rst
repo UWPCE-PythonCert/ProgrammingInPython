@@ -30,7 +30,7 @@ Initial setup
 =============
 
 You will need an account on GitHub to participate in this course.
-If you don't have already have a GitHub account or if you would prefer to use create a new one for this course, make sure you setup a new account on `GitHub <https://github.com/>`_. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates.
+If you don't have already have a GitHub account or if you would prefer to create a new one for this course, make sure you setup a new account on `GitHub <https://github.com/>`_. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates.
 
 You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:
@@ -88,11 +88,23 @@ Type the following to add all files and subdirectories in the folder to your com
 
   git add .
 
-Commit your code by typing the following::
+NOTE: this can be a bit dangerous, as it will add everything! It's usually a bit safer to specifically add the file(s) you want to add::
+
+  git add some_code.py
+
+After adding the file(s), you can commit your code by typing the following::
 
   git commit -m "Commit message"
 
 Note that the commit message should be replaced with something descriptive of what that commit includes ("added new functionality", "fixed floating point error", "ready for review", etc.) that will later help you remember what that particular commit was about.
+
+After every change to the file, you will need to "commit" the changes.
+
+You can always know what state git is in by using the "git status" command::
+
+  git status
+
+It's a good idea to do that before committing, so you know what will happen.
 
 
 Pushing Your Code
@@ -108,7 +120,7 @@ You can push your code immediately after every commit or do it once a day (in wh
 
 The first time you push your code to a repository, GitHub will ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).
 
-git will also askyou for your gitHUb usernameand passwork the firsttime -- it should remember them after that -- until you try on a new machine.
+git will also ask you for your gitHUb username and password the first time -- it should remember them after that -- until you try on a new machine.
 
 Asking Coding Questions
 =======================

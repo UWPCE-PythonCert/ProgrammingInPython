@@ -91,21 +91,21 @@ repository that serves as the one to rule them all. This simply means that all r
 However, to keep things sane, there is generally one "central" repository chosen that users check with for changes. For us this is the one hosted on GitHub in the UWPCE-PythonCert-ClassRepos organization.
 
 
-Working with Remotes
---------------------
+.. Working with Remotes
+.. --------------------
 
-With git, you work with *local* repositories and the *remotes* that they are connected to.
+.. With git, you work with *local* repositories and the *remotes* that they are connected to.
 
-Git uses shortcuts to address *remotes*. When you *clone* a repository from its remote location to your local machine, you get an *origin* shortcut for free:
+.. Git uses shortcuts to address *remotes*. When you *clone* a repository from its remote location to your local machine, you get an *origin* shortcut for free:
 
-.. code-block:: bash
+.. .. code-block:: bash
 
-  $ git remote -v
-  origin  https://github.com/UWPCE-PythonCert-ClassRepos/ExampleRepo.git (fetch)
-  origin  https://github.com/UWPCE-PythonCert-ClassRepos/ExampleRepo.git (push)
+..   $ git remote -v
+..   origin  https://github.com/UWPCE-PythonCert-ClassRepos/ExampleRepo.git (fetch)
+..   origin  https://github.com/UWPCE-PythonCert-ClassRepos/ExampleRepo.git (push)
 
-This shows that the local repo on my machine *originated* from one in
-the UWPCE-PythonCert-ClassRepos GitHub account (it shows up twice, because there is a shortcut for both ``fetch`` from and ``push`` to this remote).
+.. This shows that the local repo on my machine *originated* from one in
+.. the UWPCE-PythonCert-ClassRepos GitHub account (it shows up twice, because there is a shortcut for both ``fetch`` from and ``push`` to this remote).
 
 GitHub forks
 ------------
@@ -116,194 +116,16 @@ When you *fork* a repository, you make a copy of that repository in your own (Gi
 
 When you have made changes that you believe the rest of the community will want to adopt, you make a *pull request* to the original project. The maintainer(s) of that project than have the option of accepting your changes, in which case your changes will become part of that project.
 
-This is how we will be working in this class. When you are ready to submit an assignment, you will make a *pull request* to main class repo, and your instructors can review it.
+For this class, we are using gitHub classroom -- whihc does the creating and forkin go repos for you, so you proably dont need to use this feature now. 
 
-The class repositories are on *GitHub* in the *UWPCE-PythonCert-ClassRepos* organization:
+With one exception: your instructor may use a gitHub repository to manage note3s, examples, and solutions for the class -- if so, it may be helpful to make a fork of that repo, particularly if you want to make suggestions etc.
 
-.. figure:: /_static/remotes_start.png
-   :width: 50%
-   :class: center
+Another possiblity is if you notice an error, or can suggest a claification in these very pages. They are managed on gitUb as well, in this repo:
 
-https://github.com/UWPCE-PythonCert-ClassRepos
+https://github.com/UWPCE-PythonCert/ProgrammingInPython
 
-Each class will have a repository created specifically for it, called something like: "Wi2018-Online".
+So you may want to fork that repo in order to make suggestions.
 
-In examples below it is called YourClassRepoNameHere, so replace that in your head with the name of your class' repository.
-
-This class repository will include examples and relevant materials (and some exercise solutions) will be added throughout the class.
-
-There will be a folder called students at the top level, and everyone will create their own directory within it.
-
-Note that you can use any name you want for your personal working directory -- it can be your first name, you full name, or maybe your gitHub handle if you want to remain anonymous. Just make sure you let your instructors know what name you've used so that they can credit you for your work.
-
-Everyone will commit to this repository, and everyone will have access to everyone's code.
-
-This will make it easier to collaborate. Weirdly enough, collaborating is important for developing code, both for class and in the *real world*.
-
-Setting up Your Fork of the Class Repository
---------------------------------------------
-
-The first thing we have to do is on the GitHub website. You will create a fork of the class repository from the ``UWPCE-PythonCert-ClassRepos`` account on GitHub into your personal account.
-
-Before you can do that, you need to create a GitHub account, if you don't have one already.  Your gitHub id will be associated with this class' public repo, so it is up to you if you want to use your real name for your gitHub account, or an alias to maintain your privacy.
-
-Once you are logged in to your gitHub account, go to the appropriate class repository here:
-
-https://github.com/UWPCE-PythonCert-ClassRepos
-
-Make sure you find the right repo for YOUR class!
-
-Once in the repo for your class, click on the "fork" button in the upper right of the page to create a fork in your gitHub account. You will now have a copy of the class repo, and can then set up your personal machine to connect to that copy.
-
-.. figure:: /_static/remotes_fork.png
-   :width: 50%
-   :class: center
-
-Yoy should now have a copy of the class repository in your account on the GitHub website.
-
-The next step is to make a *clone* of your fork on your own computer, which means that **your fork** in GitHub is the *origin*:
-
-.. figure:: /_static/remotes_clone.png
-   :width: 50%
-   :class: center
-
-Begin in a directory on your computer where you want to keep your cloned version of the class repository.
-This can live anywhere on your file system but this outer directory should not be tracked in git.
-
-From that directory, run
-
-.. code-block:: bash
-
-    $ git clone https://github.com/your_github_id/YourClassRepoNameHere
-
-Be sure to replace "YourClassRepoNameHere" with the name of your class repository (you can get the url by going to the class repo on gitHub and clicking "clone or download").
-
-This will download the repository from your GitHub account into the local directory that you ran the git *clone* command from.
-
-Adding a remote
-...............
-
-Since you are working on a repository that you do not own, you will need to make a git shortcut to the original repository, so that you can get changes made by other contributors (i.e. the instructors and other students) before you start working.
-
-You can add *remotes* at will, to connect your *local* repository to other copies of it in different remote locations.
-
-This allows you to grab changes made to the repository in these other
-locations.
-
-For this class, you will add an *upstream* remote to our local copy that points to the original copy of the material in the
-``UWPCE-PythonCert-ClassRepos`` account, and we will call it, appropriately, "upstream".
-Change directories into your local version of the class repository:
-
-.. code-block:: bash
-
-    $ cd YourClassRepoNameHere
-
-and run (remembering to use the name of your class):
-
-
-.. code-block:: bash
-
-    $ git remote add upstream https://github.com/UWPCE-PythonCert-ClassRepos/YourClassRepoNameHere
-
-You can get that full url by going to GitHub, finding the repo, and copying the "clone" url. then you can type the command, and simply paste the url.
-
-Your local setup should now look something like this:
-
-.. code-block:: bash
-
-    $ git remote -v
-    origin  https://github.com/your_github_id/YourClassRepoNameHere (fetch)
-    origin  https://github.com/your_github_id/YourClassRepoNameHere (push)
-    upstream    https://github.com/UWPCE-PythonCert-ClassRepos/YourClassRepoNameHere (fetch)
-    upstream    https://github.com/UWPCE-PythonCert-ClassRepos/YourClassRepoNameHere (push)
-
-This should leave you in a situation that looks like this:
-
-.. figure:: /_static/remotes_upstream.png
-    :width: 50%
-    :class: center
-
-To get the updates from your new remote, you'll need first to fetch everything:
-
-.. code-block:: bash
-
-    $ git fetch --all
-    Fetching origin
-    Fetching upstream
-    ...
-
-Then you can see the branches you have locally available:
-
-.. code-block:: bash
-
-  $ git branch -a
-  * master
-    remotes/origin/HEAD -> origin/master
-    remotes/origin/master
-    remotes/upstream/master
-
-Finally, you can fetch and then merge changes from the upstream master.
-
-Start by making sure you are on your own master branch:
-
-.. code-block:: bash
-
-    $ git checkout master
-
-This is **really really** important. Take the time to ensure you are where you think you are, in other words, that your origin is your own GitHub repository and that you are working on master from that remote.
-You can use `git remote -v` and `git branch -a` to verify.
-
-Now, fetch the upstream master branch and merge it into your master.
-You can do this in one step with:
-
-.. code-block:: bash
-
-  $ git pull upstream master
-  Updating 3239de7..9ddbdbb
-  Fast-forward
-   Examples/README.rst              |  4 ++++
-  ...
-   create mode 100644 Examples/README.rst
-  ...
-
-
-Now all the changes from *upstream* are present in your local clone.
-You should do this pull every time you start to work on code.
-
-In order to preserve the changes made by others in your fork on GitHub, you'll have to push:
-
-.. code-block:: bash
-
-    $ git status
-    On branch master
-    Your branch is ahead of 'origin/master' by 10 commits.
-      (use "git push" to publish your local commits)
-    $ git push origin master
-    Counting objects: 44, done.
-    ...
-    $
-
-(A simple ``git push`` will usually do the right thing)
-
-You are now set up to work with this repository, and the next steps will be similar every time you work on code.
-
-Go now to this page: :ref:`git_workflow`, where you will learn what to do each time you have work to submit for review.
-
-
-Privacy Note:
-.............
-
-Because of the way we have set up the class, you will be able
-to see all work submitted to us from everyone in the class in
-the students directory on your machine. This is not a bad thing.
-And the files tend to be small.
-
-We encourage sharing of knowledge in this class. Helping your
-fellow students will also help you to better understand. Share
-your code, and get used to giving / receiving feedback on how to
-improve your code, if you are not already.
-
-However, you are free to use any name you like for your working directory -- it does not have to be your real name, if you want to keep your privacy.
 
 Structure of multiple git repos
 -------------------------------
@@ -327,3 +149,4 @@ https://try.github.io/levels/1/challenges/1
 
 basic git commands:
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
