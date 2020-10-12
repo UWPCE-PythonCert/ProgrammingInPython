@@ -6,7 +6,7 @@ git Overview
 
 git is a very complex and powerful system. However, it can be very useful even if you only use a small portion of its functionality. This page should be bring you up to speed enough to make good use of git for the Python Certificate class.
 
-Note that in the certificate program we will be using git in conjunction with gitHub, a cloud-based service that provides a collaboration environment for software development based on the git version control system.
+Note that in the certificate program we will be using git in conjunction with gitHub (in particular gitHub Classroom), a cloud-based service that provides a collaboration environment for software development based on the git version control system.
 
 gitHub provides a web service and web interface that hosts projects and supports collaboration among teams and the open source community. It adds other features, but is very much built on the source control system, git. So a basic understanding of git is required to make proper use of gitHub.
 

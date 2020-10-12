@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Resources" href="resources.html" />
-    <link rel="prev" title="git Hints" href="git_hints.html" /> 
+    <link rel="next" title="git Overview" href="git_overview.html" />
+    <link rel="prev" title="Intro to Git" href="intro_to_git.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -180,10 +180,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="resources.html" class="btn btn-neutral float-right" title="Resources" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git_overview.html" class="btn btn-neutral float-right" title="git Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="git_hints.html" class="btn btn-neutral float-left" title="git Hints" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro_to_git.html" class="btn btn-neutral float-left" title="Intro to Git" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -211,7 +211,7 @@
 <div class="section" id="initial-setup">
 <h2>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
 <p>You will need an account on GitHub to participate in this course.
-If you don’t have already have a GitHub account or if you would prefer to use create a new one for this course, make sure you setup a new account on <a class="reference external" href="https://github.com/">GitHub</a>. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates.</p>
+If you don’t have already have a GitHub account or if you would prefer to create a new one for this course, make sure you setup a new account on <a class="reference external" href="https://github.com/">GitHub</a>. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates.</p>
 <p>You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:</p>
 <p><a class="reference internal" href="python_and_core_tools.html#installing-python"><span class="std std-ref">Installing Python and core tools</span></a></p>
@@ -251,11 +251,21 @@ You are encouraged to make frequent commits, as this will make it easier for you
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
 </pre></div>
 </div>
-<p>Commit your code by typing the following:</p>
+<p>NOTE: this can be a bit dangerous, as it will add everything! It’s usually a bit safer to specifically add the file(s) you want to add:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">some_code</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>After adding the file(s), you can commit your code by typing the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Commit message&quot;</span>
 </pre></div>
 </div>
 <p>Note that the commit message should be replaced with something descriptive of what that commit includes (“added new functionality”, “fixed floating point error”, “ready for review”, etc.) that will later help you remember what that particular commit was about.</p>
+<p>After every change to the file, you will need to “commit” the changes.</p>
+<p>You can always know what state git is in by using the “git status” command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+<p>It’s a good idea to do that before committing, so you know what will happen.</p>
 </div>
 </div>
 <div class="section" id="pushing-your-code">
@@ -268,7 +278,7 @@ Also, it makes a copy of your code in your GitHub account that you can later use
 </pre></div>
 </div>
 <p>The first time you push your code to a repository, GitHub will ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).</p>
-<p>git will also askyou for your gitHUb usernameand passwork the firsttime – it should remember them after that – until you try on a new machine.</p>
+<p>git will also ask you for your gitHUb username and password the first time – it should remember them after that – until you try on a new machine.</p>
 </div>
 <div class="section" id="asking-coding-questions">
 <h2>Asking Coding Questions<a class="headerlink" href="#asking-coding-questions" title="Permalink to this headline">¶</a></h2>
@@ -303,10 +313,10 @@ In order to do that, go to “Feedback” pull request and write a comment about
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="resources.html" class="btn btn-neutral float-right" title="Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git_overview.html" class="btn btn-neutral float-right" title="git Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="git_hints.html" class="btn btn-neutral float-left" title="git Hints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro_to_git.html" class="btn btn-neutral float-left" title="Intro to Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
