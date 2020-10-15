@@ -8,7 +8,10 @@ git is a very complex system, and can be used in many ways. Because of this, it 
 
 Every group using git has to establish a standard "work flow". If you google "git workflow" you find a LOT of discussion, and they are not all the same. And depending on the workflow you are using, the problems you'll have and the solutions to them will be different.
 
-We are using a very simplified workflow for this class, and this page seeks to provide solutions to problems that you might encounter specifically with this workflow.
+We are using a very simplified workflow with gitHub classroom for this class, and this page seeks to provide solutions to problems that you might encounter specifically with this workflow.
+
+.. note:: This is a page for reference. It is a bit outdated, and should not be required right off. But do remember that it's here if you get tangled up in git as we move along.
+
 
 "origin" and "upstream"
 =======================
@@ -33,27 +36,18 @@ After cloning a repository (from gitHub, for instance) on your machine, is will 
 
 so I have one remote repository, on gitHub. It is listed twice, as I am both fetching from (pulling) and pushing to the same repository. "origin" is created when you do a clone, and it is the one that is pushed to and pulled from by default. git is so flexible that you could set it up to push and pull be default to two different repos, but I've never seen that done.
 
-In case of the PythonCertclass, we need *another* remote repository:
+There is often use for having more than one remote repository, to keep various workflows in sync. But with gitHub classroom, you will have one: the "origin" remote that was created when you cloned your gitHub repo.
 
-There is the central class repository, which only the instructors have permissions to change. But you want to be able to get updated materials from that repository as well.  Since this repo is the one your personal repo was "forked" from, the convention is to call it the "upstream" repository. You should have set that up with a command like this:
+Adding a remote
+---------------
 
-.. code-block:: bash
-
-    $ git remote add upstream https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git
-
-And it should look something like this when you check your remotes:
+If you do need to add a remote, you it's pretty easy:
 
 .. code-block:: bash
 
-    $ git remote -v
-    origin  https://github.com/PythonCHB/Sp2018-Accelerated.git (fetch)
-    origin  https://github.com/PythonCHB/Sp2018-Accelerated.git (push)
-    upstream    https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git (fetch)
-    upstream    https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git (push)
+  git remote add name_of_remote https://the_long_url_to_the_remote_repo.git
 
-So I now have two more remotes, one for pushing and one for pulling (fetching).
-
-Do this now on your own machine, and make sure that "origin" points to your repo on gitHub, and "upstream" is pointed to the one in the "UWPCE-PythonCert-ClassRepos" gitHub organization.
+"upstream" is a common name for antoher remote you need to talk to.
 
 Changing a remote
 -----------------
@@ -66,9 +60,8 @@ If your remotes are not set up right, you can reset them, but removing one:
 
 and then adding it back correctly:
 
-    $ git remote add upstream https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git
+    $ git remote add upstream https://the_long_url_to_the_remote_repo.git
 
-**make sure to adjust that command for your particular class!**
 
 Working with "upstream"
 -----------------------

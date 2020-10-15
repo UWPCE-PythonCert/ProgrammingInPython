@@ -10,5 +10,5 @@ Git is a very powerful and useful tool. We only use a few of its features for th
     intro_to_git
     github_classroom
     git_overview
-    feature_branching
     git_hints
+    feature_branching

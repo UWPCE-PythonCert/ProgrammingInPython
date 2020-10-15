@@ -30,7 +30,7 @@ Initial setup
 =============
 
 You will need an account on GitHub to participate in this course.
-If you don't have already have a GitHub account or if you would prefer to create a new one for this course, make sure you setup a new account on `GitHub <https://github.com/>`_. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates.
+If you don't have already have a GitHub account or if you would prefer to create a new one for this course, make sure you setup a new account on `GitHub <https://github.com/>`_. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates. Make sure you let your instructors know what your github handle is -- it's not always obvious!
 
 You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:
@@ -46,6 +46,7 @@ Accepting an assignment
 
 Each assignment page will contain a section named "Accepting your Assignment". Click on the corresponding link, which will take you to GitHub Classroom to accept the corresponding assignment.
 
+.. note:: The first time you accept an assignment, gitHUb will "invite" you to join the class organization. You will need to click the link to accept the invitation. ONce you have done that once, you shouldn't need to do it again.
 
 Some things to consider:
 ------------------------
@@ -88,9 +89,7 @@ Type the following to add all files and subdirectories in the folder to your com
 
   git add .
 
-NOTE: this can be a bit dangerous, as it will add everything! It's usually a bit safer to specifically add the file(s) you want to add::
-
-  git add some_code.py
+.. note:: Using the "." (dot) can be a bit dangerous, as it will add everything in that directory! It's usually a bit safer to specifically add the file(s) you want to add: ``git add some_code.py``
 
 After adding the file(s), you can commit your code by typing the following::
 
@@ -98,7 +97,12 @@ After adding the file(s), you can commit your code by typing the following::
 
 Note that the commit message should be replaced with something descriptive of what that commit includes ("added new functionality", "fixed floating point error", "ready for review", etc.) that will later help you remember what that particular commit was about.
 
-After every change to the file, you will need to "commit" the changes.
+After every change to the file, you will need to "commit" the changes. Keep in mind that git will not commit all the changes you have made, only the ones that are "staged for commit". You can stage them with the ``git add`` command again. So ``add`` means either "add this file" or "stage this file for committing", depending on whether it's already been added or not.
+
+Alternatively, you can tell git to commit any changes you have made, since the last commit, with the "-a" (all) flag::
+
+  git commit -a -m "your message"
+
 
 You can always know what state git is in by using the "git status" command::
 
@@ -118,7 +122,7 @@ You can push your code immediately after every commit or do it once a day (in wh
 
   git push
 
-The first time you push your code to a repository, GitHub will ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).
+The first time you push your code to a repository, GitHub may ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).
 
 git will also ask you for your gitHUb username and password the first time -- it should remember them after that -- until you try on a new machine.
 

@@ -284,7 +284,7 @@ In addition, great features to add include:
 
 Have an editor that does all this? Feel free to use it.
 
-If not, we recommend ``SublimeText``:
+If not, we recommend "Sublime Text":
 
 http://www.sublimetext.com/
 
@@ -331,7 +331,7 @@ VSCode from MS is apretty full featured IDE as well.
 But do make sure, when you set up and IDE, that you know what its doing when you click "run", and that it is using the version of Python that you expect. (cPython 3.8 in this case)
 
 Version Control System
-========================
+======================
 
 While not strictly necessary to develop code, it is a very, very, good idea to manage your code in a Version Control System:
 

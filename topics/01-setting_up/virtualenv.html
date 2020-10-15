@@ -87,8 +87,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="resources.html">Resources</a></li>
@@ -194,6 +194,10 @@
             
   <div class="section" id="working-with-virtualenv">
 <span id="virtualenv-section"></span><h1>Working with Virtualenv<a class="headerlink" href="#working-with-virtualenv" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Virtual environments are a critical tool for software development. However, When you are first learning Python, you can safetly ignore them. For the first class, Programming In Python, we make very little use of third-party packages – it is OK to simply use your one system Python. come back to this page if you do find yourself getting tangled up in multiple “requirements”</p>
+</div>
 <p>“For every non-standard package installed in a system Python, the gods kill a kitten”</p>
 <blockquote>
 <div><ul class="simple">
@@ -212,6 +216,10 @@ cause long-term nightmares</p></li>
 <li><p>Use <a class="reference external" href="http://www.virtualenv.org/">virtualenv</a> …</p></li>
 <li><p><strong>Always</strong></p></li>
 </ul>
+<div class="section" id="conda">
+<h3>conda ?<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h3>
+<p>The above principles imply that you need to use <em>some</em> way to manage multiple environments. virtualenv is one (and there is a newer one called pipenv) And these are common and work well for a lot of developers, particulaly web developers. But there is antoher option. The “conda” system, as used by the Anaconda distribution provides another envrionment management system that has the advantage of managing non-python tools, too, like Fortran or C libaries, compilers, even the R statistical programming environment. So it is widely used in the data science world.</p>
+</div>
 <div class="section" id="installing-virtualenv">
 <h3>Installing Virtualenv<a class="headerlink" href="#installing-virtualenv" title="Permalink to this headline">¶</a></h3>
 <p>The best way is to install directly in your system Python (one exception to the rule).</p>

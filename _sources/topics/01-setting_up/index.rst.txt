@@ -12,8 +12,8 @@ Here are some resources to getting yourself set up.
     :maxdepth: 1
 
     environment_overview
-    setup_details
     python_and_core_tools
+    setup_details
     advanced_setup
     git
     resources

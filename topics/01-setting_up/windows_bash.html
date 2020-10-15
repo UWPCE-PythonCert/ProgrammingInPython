@@ -87,8 +87,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
@@ -197,20 +197,30 @@
 <p><strong>CAUTION</strong> – none of the instructors in the program use this – so this is experimental – proceed at your own risk!</p>
 <p>With Windows 10, Microsoft has introduced the “Windows Subsystem for Linux” (WSL). Technically, it’s not Linux at all (it is not running the Linux kernel), but it does provide an actual bash shell, and access to much (all) of the packages available in Ubuntu Linux, providing a very Linux-like environment.</p>
 <p>If you run Windows 10, but want to be able to work in an environment that is very much like Linux (and the OS-X command line) Windows-bash may be a good options for you.</p>
+<div class="section" id="using-wsl-to-build-a-python-development-environment-on-windows">
+<h2>Using WSL to Build a Python Development Environment on Windows<a class="headerlink" href="#using-wsl-to-build-a-python-development-environment-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>Here is a recent post about how to do Python with the “WSL”:</p>
+<p><a class="reference external" href="https://pbpython.com/wsl-python.html">https://pbpython.com/wsl-python.html</a></p>
+<p>Let us know if it works for you!</p>
+</div>
+<div class="section" id="offical-docs">
+<h2>Offical Docs<a class="headerlink" href="#offical-docs" title="Permalink to this headline">¶</a></h2>
+<p>The following are some addition links, of that doesn’t get it done:</p>
 <div class="section" id="installing-the-system">
-<h2>Installing the System<a class="headerlink" href="#installing-the-system" title="Permalink to this headline">¶</a></h2>
+<h3>Installing the System<a class="headerlink" href="#installing-the-system" title="Permalink to this headline">¶</a></h3>
 <p>Here are MS’s docs:</p>
 <p><a class="reference external" href="https://msdn.microsoft.com/commandline/wsl/about">https://msdn.microsoft.com/commandline/wsl/about</a></p>
 <p>and the install guide:</p>
 <p><a class="reference external" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">https://msdn.microsoft.com/en-us/commandline/wsl/install_guide</a></p>
 </div>
 <div class="section" id="installing-running-python">
-<h2>Installing / running Python<a class="headerlink" href="#installing-running-python" title="Permalink to this headline">¶</a></h2>
-<p>To use Python from within the bash shell, you probably want a “linux” Python, rather than the native Windows installer. Unfortunately, the Ubuntu version that Windows Bash is hooked up to does not natively have the latest Python version -:(</p>
+<h3>Installing / running Python<a class="headerlink" href="#installing-running-python" title="Permalink to this headline">¶</a></h3>
+<p>To use Python from within the bash shell, you probably want a “linux” Python, rather than the native Windows installer. Unfortunately, the Ubuntu version that Windows Bash is hooked up to does not natively have the latest Python version -:( (though it may now)</p>
+</div>
 </div>
 <div class="section" id="using-the-environment">
 <h2>Using the environment<a class="headerlink" href="#using-the-environment" title="Permalink to this headline">¶</a></h2>
-<p>The WSL provides a full linux experience – but, most importantly, it does not suport any GUI environment. If you are comfortable with a command line editor like vim or Emacas, then you can work entirely in the bash shell. However, you may very well want to work with a nice modern GUI editor like Sublime Text or Notepad++. This is quite possible, as the systems share a file system. From the FAQ:</p>
+<p>The WSL provides a full linux experience – but, most importantly, it does not suport any GUI environment. If you are comfortable with a command line editor like vim or Emacs, then you can work entirely in the bash shell. However, you may very well want to work with a nice modern GUI editor like Sublime Text or Notepad++. This is quite possible, as the systems share a file system. From the FAQ:</p>
 <blockquote>
 <div><p>One of the benefits of WSL is being able to use the same file with both Windows and Linux apps or tools.</p>
 </div></blockquote>

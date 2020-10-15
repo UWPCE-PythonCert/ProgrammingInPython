@@ -2,6 +2,9 @@
 Feature Branching
 *****************
 
+.. note:: Feature branching is an important topic, but not one you need to know about right off -- if you are brand new to git -- feel free to ignore this, with gitHub classroom, it should handle it for you.
+
+
 Why use Feature Branches?
 =========================
 

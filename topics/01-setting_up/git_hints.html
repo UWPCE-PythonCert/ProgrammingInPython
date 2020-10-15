@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Working with GitHub Classroom" href="github_classroom.html" />
-    <link rel="prev" title="Feature Branching" href="feature_branching.html" /> 
+    <link rel="next" title="Feature Branching" href="feature_branching.html" />
+    <link rel="prev" title="git Overview" href="git_overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,8 +87,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_and_core_tools.html">Installing Python and core tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_details.html">Setup Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_setup.html">Advanced Setup</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="git.html">Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
@@ -180,10 +180,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="github_classroom.html" class="btn btn-neutral float-right" title="Working with GitHub Classroom" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="feature_branching.html" class="btn btn-neutral float-right" title="Feature Branching" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="feature_branching.html" class="btn btn-neutral float-left" title="Feature Branching" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git_overview.html" class="btn btn-neutral float-left" title="git Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -196,7 +196,11 @@
 <span id="id1"></span><h1>git Hints<a class="headerlink" href="#git-hints" title="Permalink to this headline">¶</a></h1>
 <p>git is a very complex system, and can be used in many ways. Because of this, it can be hard to find answers to seemingly simple questions, even though the Internet is full of discussions of how to use git.</p>
 <p>Every group using git has to establish a standard “work flow”. If you google “git workflow” you find a LOT of discussion, and they are not all the same. And depending on the workflow you are using, the problems you’ll have and the solutions to them will be different.</p>
-<p>We are using a very simplified workflow for this class, and this page seeks to provide solutions to problems that you might encounter specifically with this workflow.</p>
+<p>We are using a very simplified workflow with gitHub classroom for this class, and this page seeks to provide solutions to problems that you might encounter specifically with this workflow.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a page for reference. It is a bit outdated, and should not be required right off. But do remember that it’s here if you get tangled up in git as we move along.</p>
+</div>
 <div class="section" id="origin-and-upstream">
 <h2>“origin” and “upstream”<a class="headerlink" href="#origin-and-upstream" title="Permalink to this headline">¶</a></h2>
 <p>git is a “distributed version control system”. That means that git repositories are self contained, and can be “connected” with multiple other, remote repositories – that is, repos on other machines elsewhere on the internet.</p>
@@ -212,21 +216,15 @@ origin  https://github.com/PythonCHB/Sp2018-Accelerated.git <span class="o">(</s
 </pre></div>
 </div>
 <p>so I have one remote repository, on gitHub. It is listed twice, as I am both fetching from (pulling) and pushing to the same repository. “origin” is created when you do a clone, and it is the one that is pushed to and pulled from by default. git is so flexible that you could set it up to push and pull be default to two different repos, but I’ve never seen that done.</p>
-<p>In case of the PythonCertclass, we need <em>another</em> remote repository:</p>
-<p>There is the central class repository, which only the instructors have permissions to change. But you want to be able to get updated materials from that repository as well.  Since this repo is the one your personal repo was “forked” from, the convention is to call it the “upstream” repository. You should have set that up with a command like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git
+<p>There is often use for having more than one remote repository, to keep various workflows in sync. But with gitHub classroom, you will have one: the “origin” remote that was created when you cloned your gitHub repo.</p>
+<div class="section" id="adding-a-remote">
+<h3>Adding a remote<a class="headerlink" href="#adding-a-remote" title="Permalink to this headline">¶</a></h3>
+<p>If you do need to add a remote, you it’s pretty easy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add name_of_remote https://the_long_url_to_the_remote_repo.git
 </pre></div>
 </div>
-<p>And it should look something like this when you check your remotes:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote -v
-origin  https://github.com/PythonCHB/Sp2018-Accelerated.git <span class="o">(</span>fetch<span class="o">)</span>
-origin  https://github.com/PythonCHB/Sp2018-Accelerated.git <span class="o">(</span>push<span class="o">)</span>
-upstream    https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git <span class="o">(</span>fetch<span class="o">)</span>
-upstream    https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git <span class="o">(</span>push<span class="o">)</span>
-</pre></div>
+<p>“upstream” is a common name for antoher remote you need to talk to.</p>
 </div>
-<p>So I now have two more remotes, one for pushing and one for pulling (fetching).</p>
-<p>Do this now on your own machine, and make sure that “origin” points to your repo on gitHub, and “upstream” is pointed to the one in the “UWPCE-PythonCert-ClassRepos” gitHub organization.</p>
 <div class="section" id="changing-a-remote">
 <h3>Changing a remote<a class="headerlink" href="#changing-a-remote" title="Permalink to this headline">¶</a></h3>
 <p>If your remotes are not set up right, you can reset them, but removing one:</p>
@@ -235,9 +233,8 @@ upstream    https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.gi
 </div>
 <p>and then adding it back correctly:</p>
 <blockquote>
-<div><p>$ git remote add upstream <a class="reference external" href="https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git">https://github.com/UWPCE-PythonCert-ClassRepos/Sp2018-Accelerated.git</a></p>
+<div><p>$ git remote add upstream <a class="reference external" href="https://the_long_url_to_the_remote_repo.git">https://the_long_url_to_the_remote_repo.git</a></p>
 </div></blockquote>
-<p><strong>make sure to adjust that command for your particular class!</strong></p>
 </div>
 <div class="section" id="working-with-upstream">
 <h3>Working with “upstream”<a class="headerlink" href="#working-with-upstream" title="Permalink to this headline">¶</a></h3>
@@ -420,10 +417,10 @@ HEAD is now at c03bb5b adding print_grid from class
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="github_classroom.html" class="btn btn-neutral float-right" title="Working with GitHub Classroom" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="feature_branching.html" class="btn btn-neutral float-right" title="Feature Branching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="feature_branching.html" class="btn btn-neutral float-left" title="Feature Branching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git_overview.html" class="btn btn-neutral float-left" title="git Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
