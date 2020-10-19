@@ -1,13 +1,13 @@
-.. _github_classroom:
+.. _gitHub_classroom:
 
 #############################
-Working with GitHub Classroom
+Working with gitHub Classroom
 #############################
 
-The Python Certificate program uses `GitHub Classroom <https://classroom.github.com/>`_ to manage the submission and review of your coding assignments.
+The Python Certificate program uses `gitHub Classroom <https://classroom.github.com/>`_ to manage the submission and review of your coding assignments.
 
 
-Why GitHub Classroom?
+Why gitHub Classroom?
 =====================
 
 A software development project is all about continuous improvement:
@@ -24,14 +24,16 @@ A software development project is all about continuous improvement:
 
 Steps 3-4 will be repeated multiple times until the development team (which could even be a single developer) deems it is ready for release.
 
-In this course, you will not only learn about Python but also about the development process that most Python projects (and virtually any other programming language) go through. GitHub Classroom allows for the steps indicated above to be completed in an academic environment.
+In this course, you will not only learn about Python but also about the development process that most Python projects (and virtually any other programming language) go through. gitHub Classroom allows for the steps indicated above to be completed in an academic environment.
+
+In short: you will be using real professional tools and workflow when doing the work for this program. Be patient -- it is a lot to learn, but the goal is for you to learn useful skills, not to complete the coursework as easily as possible.
 
 
 Initial Setup
 =============
 
-You will need an account on GitHub to participate in this course.
-If you don't have already have a GitHub account or if you would prefer to create a new one for this course, make sure you setup a new account on `GitHub <https://github.com/>`_. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates. Make sure you let your instructors know what your github handle is -- it's not always obvious!
+You will need an account on gitHub to participate in this course.
+If you don't already have a gitHub account, or if you would prefer to create a new one for this course, make sure you setup a new account on `gitHub <https://github.com/>`_. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates. Make sure you let your instructors know what your gitHub handle is -- it's not always obvious!
 
 You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:
@@ -61,52 +63,48 @@ Some Things to Consider
 
 * Any work you do there will not affect the work of your classmates.
 
-* The name of the new repository will include your GitHub user name at the end.
+* The name of the new repository will include your gitHub user name at the end.
 
 Once your repository has been created, go to its link (provided by gitHub) and clone it on your development system, under the folder you selected for this purpose.
 
-Here: `Cloning a repo <https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository>`_
-is GitHub's official guide on how to clone a repository.
+Here: `Cloning a repo <https://docs.github.com/en/gitHub/creating-cloning-and-archiving-repositories/cloning-a-repository>`_
+is gitHub's official guide on how to clone a repository.
 
+.. _gitHub_classroom_workflow:
 
-
-.. _github_classroom_workflow:
-
-GitHub Classroom Assignment Workflow
+gitHub Classroom Assignment Workflow
 ====================================
 
 The following is the workflow you will need to follow for each individual assignment.
 
 
-Accept the Assignment
----------------------
+1) Accept the Assignment
+------------------------
 
 The first step is to click on the link for the assignment in your LMS (Canvas or Edx) -- that will take you to gitHub classroom, where you can accept the assignment.
 
-When you accept, gitHub will create a new repository for the assignment, in your gitHub account.
+When you accept, gitHub will create a new repository for the assignment in your gitHub account.
 
 
-Clone the Repo
---------------
+2) Clone the Repo
+-----------------
 
-Once the repository has been created on gitHUb, you need to make a copy, or "clone" of it on your local workstation, where you will be writing your code.
+Once the repository has been created on gitHub, you need to make a copy, or "clone" of it on your local workstation, where you will be writing your code.
 
-To Clone:
-.........
 
-1) Click on the "Code" button:
+a) Click on the "Code" button in gitHub:
 
-.. image:: images/githubclassroom/code_button.png
+.. image:: images/gitHubclassroom/code_button.png
 ..   :width: 600
 
-2) Copy the "https: " url that shows up -- you can click the little clipboard icon to copy -- or highlight and copy the url
+b) Copy the "https: " url that shows up -- you can click the little clipboard icon to copy -- or highlight and copy the url
 
-.. image:: images/githubclassroom/clone_url.png
+.. image:: images/gitHubclassroom/clone_url.png
 ..   :width: 600
 
-3) Go to your command line in the terminal application (Terminal, git Bash, CMD prompt, etc). Make sure you are "in" the directory that you have set up for this class. ``ls``, ``dir`` and ``pwd`` can be helpful to make sure.
+c) Go to your command line in the terminal application (Terminal, git bash, CMD prompt, etc). Make sure you are "in" the directory that you have set up for this class. ``ls``, ``dir`` and ``pwd`` can be helpful to make sure.
 
-4) Clone the repo
+d) Clone the repo
 
 ::
 
@@ -114,15 +112,21 @@ To Clone:
 
 (you should be able to type ``git clone`` and then paste the url you copied from gitHub)
 
-This will create a new directory for the repository, named by the assignment and your giHub handle -- this is where you will put all the work for that assignment.
+This will create a new directory for the repository, named by the assignment and your gitHub handle -- this is where you will put all the work for that assignment.
 
-5) Start working
+
+3) Create a develop branch for your work
+----------------------------------------
+
+Create and check out a new branch for your work.
+
+a) Change the working directory to the repo just created by the clone:
 
 ::
 
   cd the_name_of_the_assignment_repo
 
-6) Create a new branch for your work and "check it out"
+b) Make a new branch:
 
 ::
 
@@ -130,9 +134,9 @@ This will create a new directory for the repository, named by the assignment and
 
 After that command, git will be "in" the develop branch -- anything you change will only be reflected in that branch.
 
-.. note:: A git "branch" is an independent "part" of a repo where you can write and change code, create and delete files, etc, and it will be kept separate from the main code. When you are happy with this version, it can be merged into the main branch. For the purposed of this course, it will not be merged into the main branch until it has been reviewed, and both you and your instructors think its done.
+.. note:: A git "branch" is an independent "version" of your code where you can write and change code, create and delete files, etc, and it will be kept separate from the main code. When you are happy with this version, it can be merged into the main branch. For the purposed of this course, it will not be merged into the main branch until it has been reviewed, and both you and your instructors think its done.
 
-7) Check the git status
+c) Check the git status
 
 ::
 
@@ -142,7 +146,10 @@ After that command, git will be "in" the develop branch -- anything you change w
 
 That lets you know that you are on the develop branch, and that you haven't made any changes to your files (the "working tree" is the dir and files on your machine)
 
-8) Add some files. Create a new file or files for the assignment with your text editor. Once they are there, it's a good idea to add them before you do much work on them, but you can add them at any time.
+4) Start the Assignment
+-----------------------
+
+a) Add some files. Create a new file or files for the assignment with your text editor. Once they are there, it's a good idea to add them before you do much work on them, but you can add them at any time.
 
 ::
 
@@ -154,7 +161,7 @@ You can also add all the files in the directory with::
 
 But be careful -- only do that if you really want everything added to git.
 
-9) Commit your work. When you have gotten to a good "pause point" in your work -- the first feature works, or you need help from the instructors, etc, you can "commit" the current state of your project. It's a good idea to check the status first.
+b) Commit your work. When you have gotten to a good "pause point" in your work: the first feature works, you need help from the instructors, etc, you can "commit" the current state of your project. It's a good idea to check the status first.
 
 ::
 
@@ -171,7 +178,7 @@ But be careful -- only do that if you really want everything added to git.
       (use "git restore <file>..." to discard changes in working directory)
         modified:   install_test.py
 
-note that in this case, I edited the ``install_test.py`` file after adding it. When you edit a file, git will not track those changes unless you tell it to, which you can to by calling ``git add`` again. So ``git add`` tells git that you want it to keep track of that file -- called "staging for commit"::
+note that in this case, I edited the ``install_test.py`` file after adding it. When you edit a file, git will not track those changes unless you tell it to, which you can do by running ``git add`` again. So ``git add`` tells git that you want it to keep track of that file -- called "staging for commit"::
 
     $ git add install_test.py 
 
@@ -182,6 +189,8 @@ note that in this case, I edited the ``install_test.py`` file after adding it. W
         new file:   a_simple_script.py
         new file:   another_file.py
         new file:   install_test.py
+
+(there is no harm done running ``git add`` any number of times on the same file)
 
 Note that after adding the file (again!) it is now ready to be committed::
 
@@ -201,7 +210,11 @@ There is a trick to save a step -- you can ask git to commit all changes you've 
 
 The ``-a`` means "all". Note that you still need to use ``git add`` to ask git to track a new file that it is not already managing.
 
-10) Push the changes to gitHub: All this adding and committing has only affected the repository on your own machine -- gitHub has not been changed. In order to get your changes up to gitHub you need to "push" them. It's always a good idea to check the status before you push -- to make sure you're ready.
+5) Push your work to gitHub
+---------------------------
+
+All this adding and committing has only affected the repository on your own machine -- gitHub has not been changed.
+In order to get your changes up to gitHub you need to "push" them. It's always a good idea to check the status before you push -- to make sure you're ready.
 
 ::
 
@@ -231,30 +244,126 @@ Hmm -- "fatal" -- I don't like the look of that! But it's pretty simple, really.
     Writing objects: 100% (3/3), 639 bytes | 319.00 KiB/s, done.
     Total 3 (delta 0), reused 0 (delta 0)
     remote: 
-    remote: Create a pull request for 'develop' on GitHub by visiting:
+    remote: Create a pull request for 'develop' on gitHub by visiting:
     remote:      https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB/pull/new/develop
     remote: 
     To https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB.git
      * [new branch]      develop -> develop
     Branch 'develop' set up to track remote branch 'develop' from 'origin'.
 
-So good -- now the local develop branch is hooked up to a develop branch on gitHub. And it even tells you what to do next -- see the "Create a pull request for 'develop' on GitHub by visiting:" -- that's exactly what you need to do!
+Good -- now the local develop branch is hooked up to a develop branch on gitHub. And it even tells you what to do next -- see the "Create a pull request for 'develop' on gitHub by visiting:" -- that's exactly what you need to do!
 
-11) Make a Pull Request: A Pull Request (PR) is a request to "pull" the code you've just written into another branch -- usually the main branch.
-    In "real" development, this means that you have added a feature, or fixed a bug, and want that code to be deployed. But if you are not the primary developer, or if you work on a team, then the code may be need to be reviewed before it's merged into the production branch.
-    For this class, we are mimicking that workflow, but it is the instructors that will review your code. When the code has been reviewed, we mill "Merge" the PR into main, indicating that you have completed the assignment.
+6) Complete the Assignment
+--------------------------
 
-Go to assignment gitHub repo in your browser. It should have a note that you have pushed a develop branch, and a button to click to create a PR:
+Now it's time to write your code! As you work on it, make commits as you go along. Making a commit is essentially saving the state of your project -- so do it at each good "break point" -- when you have a feature working, or have fixed a bug. Do a ``git push`` every once in a while, to save your work to gitHub.
 
-.. image:: images/githubclassroom/compare_and_pr.png
+.. note:: One of the really nice things about using gitHub for this (and your own work) is that now your work is all "in the cloud" -- you can make a clone on any other machine (say one at home and one at work), do work on that machine, push it to gitHub, and then retrieve it from somewhere else. If you want to get changes from gitHub that you don't have locally, you need to "pull" them (opposite of push): ``git pull`` should do it.
 
-Click that button to start making your PR!
+7) Make a Pull Request
+----------------------
+
+When you are done with the assignment, or are at a state where you need some help, it's time to make a Pull Request (PR).
+A PR is a request to "pull" the code you've just written into another branch -- usually the main branch.
+In "real" development, this means that you have added a feature or fixed a bug, and want that code to be deployed.
+But if you are not the primary developer, or if you work on a team, then the code may need to be reviewed before it's merged into the main branch.
+For this class, we are mimicking that workflow, but it is the instructors that will review your code. When the code has been reviewed, we will "Merge" the PR into main, indicating that you have completed the assignment.
+
+You should make the PR when you have finished the assignment, or when you are stuck and need some help. In essence, the PR is a request for review.
+
+Go to the assignment gitHub repo in your browser. It should have a note that you have pushed a develop branch, and a button to click to create a PR:
+
+.. image:: images/gitHubclassroom/compare_and_pr.png
+
+Click the "compare and pull request" button to start making your PR!
+
+After you click that -- scroll down and you can see what has changed -- it will show you the files added or removed, and the individual lines that have changed in each file. Review that, to make sure the changes are what you expect.
+
+.. image:: images/gitHubclassroom/make_pr.png
+
+If so -- put a message in the "leave a comment box", and click "Create Pull Request".
+
+Note that this message is where you can start communicating with the instructors -- it should let them know why you are making the PR.
+If you are all done with the assignment, say so.
+If you are partially done, but have a question -- put your question in this comment box.
+
+Once you create the PR, gitHub will show you the PR view:
+
+.. image:: images/gitHubclassroom/pr_header.png
+
+This is the same view that your instructors will see. 
+If you click on the "conversation" tab, you can see your initial comment and any comments made after the initial PR creation.
+
+If you click on the "files changed" tab, you will see all the changes in this PR. For this class, that should be your entire assignment.
+
+Put a link to the PR in Canvas or EdX, to let us know that you have "turned in" the assignment.
+
+8) Wait for review
+------------------
+
+Once you make your PR, your instructors will be notified by gitHub (and Canvas), and will review your code. They can make general comments, or comment line by line. When a review is done, you should get an email form gitHub. But you can always go and check the PR yourself and see if anything new is there.
+
+At this point, two things might happen.
+
+* If the work is complete and well done, your instructors will make comments, and merge the PR. This is an indication that you are done.
+
+* If there is still more room for improvement, then your instructors will leave the PR open, and wait for you to push more changes.
 
 
+14) Update your Code
+--------------------
+
+If the instructors request a change, or you just want to improve the code, you can make those changes, commit them, and push them to gitHub.
+As long as the PR remains open, any new changes you push to the develop branch will show up in the PR.
+Please ping your instructors if you have something new to review, by "tagging" them in a PR comment.
+(you need to use their gitHub handle to tag them -- make sure you know what it is.
+You can figure out what it is, because they will have been commenting on your PRs). You tag with a ``@`` symbol, like so:
+
+::
+
+  @PythonCHB: I've fixed that issue. Please review again. And I'm a little unclear on line 64 -- why doesn't ``name.upper()`` change the name?
+
+15) After the merge
+-------------------
+
+When the assignment is complete and reviewed, your instructors will merge the PR. Then all that code will be in the "main" branch. If you do a ``git pull`` on your machine, and check out the main branch (``git checkout main``) you will see it there.
+
+16) Want to improve it after it's been accepted?
+------------------------------------------------
+
+If your instructors approve your code, and merge the PR, but you still want to work on it, do that work in the develop branch, and then push and make a new PR.
 
 
-General Advice for working with git
-===================================
+.. _gitHub_classroom_workflow_summary:
+
+Workflow Summary
+================
+
+I'm sure this seems like a lot, but it will get to be a habit, Here are the steps for each assignment:
+
+ 1) Accept the assignment from the gitHub classroom link
+
+ 2) Clone the resulting repo onto your work machine (``git clone``)
+
+ 3) Make a develop branch (``git checkout -b develop``)
+
+ 4) Do the assignment in the develop branch, committing and pushing as you go. (``git add``; ``git commit -a -m "a message"``; ``git push``)
+
+ 5) When complete or when you would like some help, make a PR on gitHub, and post a link to the PR in the LMS (Canvas or EdX)
+
+ 6) Read and respond to the comments on gitHub from your instructors
+
+ 7) Continue working, committing and pushing changes as you go.
+
+ 8) When the PR is accepted -- you are done!
+
+Is that so bad?
+
+Remember: this seems like a lot -- but it *does* reflect he real workflow when doing real coding. Even if you work alone, a version control system is a really good idea.
+
+
+General Advice for working with git and gitHub
+==============================================
 
 Committing your code
 --------------------
@@ -278,6 +387,8 @@ After adding the file(s), you can commit your code by typing the following::
 
 Note that the commit message should be replaced with something descriptive of what that commit includes ("added new functionality", "fixed floating point error", "ready for review", etc.) that will later help you remember what that particular commit was about.
 
+.. note:: If you omit the message, git will bring up a text editor to let you write one. If you have not configured git to use another editor, it will be "vi", an venerable old Unix editor that is a real challenge for some. To get out of vi, hit the >escape> key, the a colon and an x: ``:x``. You can configure git to use an editor you are familiar with. See: :ref:`install_nano_win` for how to do that on Windows.
+
 After every change to the file, you will need to "commit" the changes. Keep in mind that git will not commit all the changes you have made, only the ones that are "staged for commit". You can stage them with the ``git add`` command again. So ``add`` means either "add this file" or "stage this file for committing", depending on whether it's already been added or not.
 
 Alternatively, you can tell git to commit any changes you have made, since the last commit, with the "-a" (all) flag::
@@ -295,29 +406,29 @@ It's a good idea to do that before committing, so you know what will happen.
 Pushing Your Code
 -----------------
 
-"Pushing" refers to the process of synchronizing the commits you have made on your development system with your GitHub repository.
+"Pushing" refers to the process of synchronizing the commits you have made on your development system with your gitHub repository.
 This is an important process, since it is needed before you can submit your code for review.
-Also, it makes a copy of your code in your GitHub account that you can later use to restore it if your local development system fails.
+Also, it makes a copy of your code in your gitHub account that you can later use to restore it if your local development system fails, or access it from another system.
 
 You can push your code immediately after every commit or do it once a day (in which case, several commits will be included in a single push). To do it, simply type::
 
   git push
 
-The first time you push your code to a repository, GitHub may ask you to select the remote repository (i.e., your GitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).
+The first time you push your code to a repository, gitHub may ask you to select the remote repository (i.e., your gitHub repository). Just copy the suggested push command (you will only need to do this once per assignment).
 
-git will also ask you for your gitHUb username and password the first time -- it should remember them after that -- until you try on a new machine.
+git will also ask you for your gitHub username and password the first time -- it should remember them after that -- until you try on a new machine.
 
 Asking Coding Questions
 =======================
 
 While working on your code, you might run into a situation in which you would like one of the instructors to look at it and provide some feedback before actually reviewing and grading it.
-In order to do that, go to PR you've created and write a comment about your question or issue. You should make sure to tag your instructor in your comment, to assure that they are notified of your comment. This is done by writing `@the_instructors_github_handle`, e.g. `@natasha-aleksandrova`.
+In order to do that, go to PR you've created and write a comment about your question or issue. You should make sure to tag your instructor in your comment, to assure that they are notified of your comment. This is done by writing `@the_instructors_gitHub_handle`, e.g. `@natasha-aleksandrova`.
 
 For example::
 
   @natasha-aleksandrova: I need some help on line 20
 
-When you submit a comment with a tag, the instructor will be notified by GitHub and will be able to review your question.
+When you submit a comment with a tag, the instructor will be notified by gitHub and will be able to review your question.
 
 
 Submitting your assignment
@@ -326,8 +437,6 @@ Submitting your assignment
 Once your assignment is ready for review, copy the link of your Feedback pull request and submit it in the submission form. Here is an example of a submission link (yours will look a little different but will end with `/pull/1`)::
 
   https://github.com/UWPCE-Py210-SelfPaced-2021/lesson-02-fizzbuzz-exercise-uw-test-student-natasha/pull/1
-
-As per UW's requirements, you also need to submit a zip file with your code on EdX or Canvas. Note that only the code included in your pull request will be reviewed.
 
 
 Resubmitting your Assignment
