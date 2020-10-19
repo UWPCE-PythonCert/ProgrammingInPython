@@ -4,6 +4,8 @@
 Working with Virtualenv
 #######################
 
+.. note:: Virtual environments are a critical tool for software development. However, When you are first learning Python, you can safetly ignore them. For the first class, Programming In Python, we make very little use of third-party packages -- it is OK to simply use your one system Python. come back to this page if you do find yourself getting tangled up in multiple "requirements"
+
 
 "For every non-standard package installed in a system Python, the gods kill a kitten"
 
@@ -24,6 +26,11 @@ Reasons Why
 * Use `virtualenv`_ ...
 
 * **Always**
+
+conda ?
+-------
+
+The above principles imply that you need to use *some* way to manage multiple environments. virtualenv is one (and there is a newer one called pipenv) And these are common and work well for a lot of developers, particulaly web developers. But there is antoher option. The "conda" system, as used by the Anaconda distribution provides another envrionment management system that has the advantage of managing non-python tools, too, like Fortran or C libaries, compilers, even the R statistical programming environment. So it is widely used in the data science world.
 
 
 Installing Virtualenv

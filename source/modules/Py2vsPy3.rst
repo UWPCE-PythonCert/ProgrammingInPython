@@ -4,8 +4,9 @@
 Python 2 versus Python 3
 ########################
 
+now that Python version 2 has officially reached end of life, most recent information is in/about Python 3.
 
-Much of the example code you'll find online is Python2, rather than Python3
+But you will still find a lot of older example code online in Python2, rather than Python3
 
 For the most part, they are the same -- so you can use those examples to learn from.
 
@@ -98,4 +99,3 @@ Most of the other differences are essentially implementation details, like getti
 
 There are also a few syntax differences with more advanced topics: Exceptions, ``super()``, etc.
 
-We'll talk about all that when we cover those topics as well.
