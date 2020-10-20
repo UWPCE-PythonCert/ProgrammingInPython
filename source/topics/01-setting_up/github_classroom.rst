@@ -115,10 +115,10 @@ d) Clone the repo
 This will create a new directory for the repository, named by the assignment and your gitHub handle -- this is where you will put all the work for that assignment.
 
 
-3) Create a develop branch for your work
-----------------------------------------
+3) Use the develop branch for your work
+---------------------------------------
 
-Create and check out a new branch for your work.
+Check out a different branch for your work.
 
 a) Change the working directory to the repo just created by the clone:
 
@@ -126,11 +126,13 @@ a) Change the working directory to the repo just created by the clone:
 
   cd the_name_of_the_assignment_repo
 
-b) Make a new branch:
+b) Checkout the develop branch
 
 ::
 
-  git checkout -b develop
+  git checkout develop
+
+Note: there should be a "develop" branch already in the repo. If not, you will get an error, but you can create the branch by hand by adding the ``-b`` flag: ``git checkout -b develop``
 
 After that command, git will be "in" the develop branch -- anything you change will only be reflected in that branch.
 
@@ -225,33 +227,21 @@ In order to get your changes up to gitHub you need to "push" them. It's always a
 Note that I am on the "develop" branch, which is what's wanted, and nothing new to commit -- all my changes have been committed -- it's time to push.
 
 ::
-
     $ git push
-    fatal: The current branch develop has no upstream branch.
-    To push the current branch and set the remote as upstream, use
-
-        git push --set-upstream origin develop
-
-Hmm -- "fatal" -- I don't like the look of that! But it's pretty simple, really. git is telling you that it doesn't know where to push the code to -- your gitHub version of the repo doesn't have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that:
-
-::
-
-    $ git push --set-upstream origin develop
-    Enumerating objects: 4, done.
-    Counting objects: 100% (4/4), done.
+    Enumerating objects: 5, done.
+    Counting objects: 100% (5/5), done.
     Delta compression using up to 4 threads
     Compressing objects: 100% (3/3), done.
-    Writing objects: 100% (3/3), 639 bytes | 319.00 KiB/s, done.
-    Total 3 (delta 0), reused 0 (delta 0)
-    remote: 
-    remote: Create a pull request for 'develop' on gitHub by visiting:
-    remote:      https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB/pull/new/develop
-    remote: 
-    To https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB.git
-     * [new branch]      develop -> develop
-    Branch 'develop' set up to track remote branch 'develop' from 'origin'.
+    Writing objects: 100% (3/3), 354 bytes | 354.00 KiB/s, done.
+    Total 3 (delta 1), reused 0 (delta 0)
+    remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+    To https://github.com/UWPCE-Py310-Fall2020/fizz-buzz-PythonCHB.git
+    46d868a..fe3e479  develop -> develop
 
-Good -- now the local develop branch is hooked up to a develop branch on gitHub. And it even tells you what to do next -- see the "Create a pull request for 'develop' on gitHub by visiting:" -- that's exactly what you need to do!
+.. note:: If you don't have a develop branch up on gitHUb, you will get a "fatal" Error. Scary, but it's pretty simple, really. git is telling you that it doesn't know where to push the code to -- your gitHub version of the repo doesn't have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that: ``git push --set-upstream origin develop`` -- and you should be good to go.
+
+Now the local develop branch is hooked up to a develop branch on gitHub. 
+
 
 6) Complete the Assignment
 --------------------------
@@ -345,7 +335,7 @@ I'm sure this seems like a lot, but it will get to be a habit, Here are the step
 
  2) Clone the resulting repo onto your work machine (``git clone``)
 
- 3) Make a develop branch (``git checkout -b develop``)
+ 3) Switch to the develop branch (``git checkout develop``)
 
  4) Do the assignment in the develop branch, committing and pushing as you go. (``git add``; ``git commit -a -m "a message"``; ``git push``)
 
@@ -359,7 +349,7 @@ I'm sure this seems like a lot, but it will get to be a habit, Here are the step
 
 Is that so bad?
 
-Remember: this seems like a lot -- but it *does* reflect he real workflow when doing real coding. Even if you work alone, a version control system is a really good idea.
+Remember: this seems like a lot -- but it *does* reflect the real workflow when doing real coding. Even if you work alone, a version control system is a really good idea.
 
 
 General Advice for working with git and gitHub
