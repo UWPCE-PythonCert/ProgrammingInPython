@@ -18,7 +18,9 @@ Although it is OK to use different tools, there are some requirements to success
 #. A way to run your code -- command line, IDE, etc.
 #. A way to use the "git" source code version control system
 
-You can be successful in the program as long as you have the above. If you don't already have a setup that fulfills those requirements -- read on.
+You can be successful in the program as long as you have the above. If you don't already have a setup that fulfills those requirements: read on.
+
+If you are not sure -- you can go here to test your setup out: :ref:`testing_your_setup` -- if you get stuck, then come back here, and read on.
 
 Platforms
 ---------
@@ -81,7 +83,7 @@ In order to be productive in this program, you need to be able to do the followi
 
 If you are not set up and comfortable with doing all that, read and follow these instructions:
 
-:ref:`installing_python`
+:ref:`setup_details`
 
 Then come back and follow the rest of this review.
 
