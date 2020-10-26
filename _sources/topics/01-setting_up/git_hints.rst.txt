@@ -246,7 +246,7 @@ It's a good way to work -- branching and merging is easy enough it git that it p
 
 Above, we talked about using ``git checkout`` to restore a file to the state it was in in a previous commit, like so::
 
-    git checkout 8e5908a37d7d examples/Session05/maillroom_test.py
+    git checkout 8e5908a37d7d examples/Session05/mailroom_test.py
 
 But what happens if you do a checkout with a commit, and no specific file?
 
@@ -266,7 +266,7 @@ It does what you might expect -- puts ALL the files back the way they were at th
 
     HEAD is now at c03bb5b adding print_grid from class
 
-So the files are set to the old state -- but now there is that note about "detached HEAD" -- this means that changes you make, even commits, will not effect the git repo. IF you want to start from here and make changes that will stick, you need to do what it says, and make a new branch.  But what it DOESN'T tell you is how to simpel "re-attach" the HEAD. Turns out there is an easy way::
+So the files are set to the old state -- but now there is that note about "detached HEAD" -- this means that changes you make, even commits, will not effect the git repo. If you want to start from here and make changes that will stick, you need to do what it says, and make a new branch.  But what it DOESN'T tell you is how to simply "re-attach" the HEAD. Turns out there is an easy way::
 
   $ git checkout -
     Previous HEAD position was c03bb5b adding print_grid from class
@@ -277,7 +277,7 @@ the dash means "the branch or commit you were on before your last checkout comma
 
 For more info about "detached HEAD", see:
 
-https://howtogit.net/recipes/getting-out-of-detached-head-state.html
+https://www.cloudbees.com/blog/git-detached-head
 
 
 

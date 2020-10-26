@@ -215,16 +215,17 @@
 If you don’t already have a gitHub account, or if you would prefer to create a new one for this course, make sure you setup a new account on <a class="reference external" href="https://github.com/">gitHub</a>. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates. Make sure you let your instructors know what your gitHub handle is – it’s not always obvious!</p>
 <p>You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:</p>
-<p><a class="reference internal" href="python_and_core_tools.html#installing-python"><span class="std std-ref">Installing Python and core tools</span></a></p>
+<p><a class="reference internal" href="setup_details.html#setup-details"><span class="std std-ref">Setup Details</span></a></p>
 <p>Once you have all the tools set up, you will need to create a folder (directory) within your development system for keeping your work.
 This is the folder where all your assignment repositories will reside. It will be helpful to keep them all together in one place.
 This folder (directory) should be somewhere in your “user” or “home” directory.</p>
 <div class="section" id="accepting-an-assignment">
 <h3>Accepting an Assignment<a class="headerlink" href="#accepting-an-assignment" title="Permalink to this headline">¶</a></h3>
-<p>On each assignment page there should be a link to the assignment on gitHub classroom. Click on this link, and it should take you to gitHub classroom, and allow you to “Accept this Assignment”.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The first time you accept an assignment, gitHub will “invite” you to join the class organization. You will need to click the link to accept the invitation. Once you have done that the first time, you shouldn’t need to do it again.</p>
+<p>On each assignment page in your LMS (Canvas or Edx), there should be a link to the assignment on gitHub classroom. Click on this link, and it should take you to gitHub classroom, and allow you to “Accept this Assignment”.</p>
+<div class="section" id="possible-confusions">
+<h4>Possible Confusions:<a class="headerlink" href="#possible-confusions" title="Permalink to this headline">¶</a></h4>
+<p>The first time you accept an assignment, gitHub will “invite” you to join the class organization. You will need to click the link to accept the invitation. Once you have done that the first time, you shouldn’t need to do it again. However, gitHub seems to get confused, and may continue to tell you about the invitation. You can ignore it if the invitation is working.</p>
+<p>When accepting the assignment, gitHub will take a little while to set it up. after waiting a minute or two, you can refresh the browser window, and you should get a link to your assignment repo. If you get an error you can do what it suggests, and go back and try to accept the assignment again. It usually works after a try or two.</p>
 </div>
 <div class="section" id="some-things-to-consider">
 <h4>Some Things to Consider<a class="headerlink" href="#some-things-to-consider" title="Permalink to this headline">¶</a></h4>
@@ -246,7 +247,7 @@ is gitHub’s official guide on how to clone a repository.</p>
 <p>The following is the workflow you will need to follow for each individual assignment.</p>
 <div class="section" id="accept-the-assignment">
 <h3>1) Accept the Assignment<a class="headerlink" href="#accept-the-assignment" title="Permalink to this headline">¶</a></h3>
-<p>The first step is to click on the link for the assignment in your LMS (Canvas or Edx) – that will take you to gitHub classroom, where you can accept the assignment.</p>
+<p>The first step is to click on the link for the assignment in your LMS – that will take you to gitHub classroom, where you can accept the assignment.</p>
 <p>When you accept, gitHub will create a new repository for the assignment in your gitHub account.</p>
 </div>
 <div class="section" id="clone-the-repo">
@@ -270,9 +271,9 @@ is gitHub’s official guide on how to clone a repository.</p>
 <p>(you should be able to type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> and then paste the url you copied from gitHub)</p>
 <p>This will create a new directory for the repository, named by the assignment and your gitHub handle – this is where you will put all the work for that assignment.</p>
 </div>
-<div class="section" id="use-the-develop-branch-for-your-work">
-<h3>3) Use the develop branch for your work<a class="headerlink" href="#use-the-develop-branch-for-your-work" title="Permalink to this headline">¶</a></h3>
-<p>Check out a different branch for your work.</p>
+<div class="section" id="create-a-develop-branch-for-your-work">
+<h3>3) Create a develop branch for your work<a class="headerlink" href="#create-a-develop-branch-for-your-work" title="Permalink to this headline">¶</a></h3>
+<p>Create and check out a new branch for your work.</p>
 <ol class="loweralpha simple">
 <li><p>Change the working directory to the repo just created by the clone:</p></li>
 </ol>
@@ -280,17 +281,36 @@ is gitHub’s official guide on how to clone a repository.</p>
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
-<li><p>Checkout the develop branch</p></li>
+<li><p>Make a new branch:</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
 </pre></div>
 </div>
-<p>Note: there should be a “develop” branch already in the repo. If not, you will get an error, but you can create the branch by hand by adding the <code class="docutils literal notranslate"><span class="pre">-b</span></code> flag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">develop</span></code></p>
 <p>After that command, git will be “in” the develop branch – anything you change will only be reflected in that branch.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A git “branch” is an independent “version” of your code where you can write and change code, create and delete files, etc, and it will be kept separate from the main code. When you are happy with this version, it can be merged into the main branch. For the purposed of this course, it will not be merged into the main branch until it has been reviewed, and both you and your instructors think its done.</p>
 </div>
+<p>If you get an error from this command that says:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fatal</span><span class="p">:</span> <span class="n">A</span> <span class="n">branch</span> <span class="n">named</span> <span class="s1">&#39;develop&#39;</span> <span class="n">already</span> <span class="n">exists</span>
+</pre></div>
+</div>
+<p>That means two things:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>You have already created a develop branch. IN which case you chould already be using it, or you can “check it out” again: <cite>git checkout develop</cite></p></li>
+</ol>
+</div></blockquote>
+<p>or</p>
+<blockquote>
+<div><ol class="arabic simple" start="2">
+<li><p>That branch was created already by gitHub classroom. Which you’d think would be nice, but it turns out that the way it’s created doesn’t allow the next steps: the Pull Request. THe solution in this case is to use a different name for your working branch, e.g.</p></li>
+</ol>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop2</span>
+</pre></div>
+</div>
+<p>Then be sure to use the “develop2” branch when you make your PR to accept the assignment (see step 7). It doesn’t really matter what you call this branch, as long as it’s a new one you create.</p>
 <ol class="loweralpha simple" start="3">
 <li><p>Check the git status</p></li>
 </ol>
@@ -371,24 +391,31 @@ nothing to commit, working tree clean
 </pre></div>
 </div>
 <p>Note that I am on the “develop” branch, which is what’s wanted, and nothing new to commit – all my changes have been committed – it’s time to push.</p>
-<dl class="simple">
-<dt>::</dt><dd><p>$ git push
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push
+fatal: The current branch develop has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin develop
+</pre></div>
+</div>
+<p>Hmm – “fatal” – I don’t like the look of that! But it’s pretty simple, really. git is telling you that it doesn’t know where to push the code to – your gitHub version of the repo doesn’t have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push --set-upstream origin develop
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
 Delta compression using up to 4 threads
 Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 354 bytes | 354.00 KiB/s, done.
-Total 3 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To <a class="reference external" href="https://github.com/UWPCE-Py310-Fall2020/fizz-buzz-PythonCHB.git">https://github.com/UWPCE-Py310-Fall2020/fizz-buzz-PythonCHB.git</a>
-46d868a..fe3e479  develop -&gt; develop</p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you don’t have a develop branch up on gitHUb, you will get a “fatal” Error. Scary, but it’s pretty simple, really. git is telling you that it doesn’t know where to push the code to – your gitHub version of the repo doesn’t have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--set-upstream</span> <span class="pre">origin</span> <span class="pre">develop</span></code> – and you should be good to go.</p>
+Writing objects: 100% (3/3), 639 bytes | 319.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for &#39;develop&#39; on gitHub by visiting:
+remote:      https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB/pull/new/develop
+remote:
+To https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB.git
+ * [new branch]      develop -&gt; develop
+Branch &#39;develop&#39; set up to track remote branch &#39;develop&#39; from &#39;origin&#39;.
+</pre></div>
 </div>
-<p>Now the local develop branch is hooked up to a develop branch on gitHub.</p>
+<p>Good – now the local develop branch is hooked up to a develop branch on gitHub. And it even tells you what to do next – see the “Create a pull request for ‘develop’ on gitHub by visiting:” – that’s exactly what you need to do!</p>
 </div>
 <div class="section" id="complete-the-assignment">
 <h3>6) Complete the Assignment<a class="headerlink" href="#complete-the-assignment" title="Permalink to this headline">¶</a></h3>
@@ -420,11 +447,11 @@ If you are partially done, but have a question – put your question in this com
 <p>This is the same view that your instructors will see.
 If you click on the “conversation” tab, you can see your initial comment and any comments made after the initial PR creation.</p>
 <p>If you click on the “files changed” tab, you will see all the changes in this PR. For this class, that should be your entire assignment.</p>
-<p>Put a link to the PR in Canvas or EdX, to let us know that you have “turned in” the assignment.</p>
+<p>Put a link to the PR in the LMS, to let us know that you have “turned in” the assignment.</p>
 </div>
 <div class="section" id="wait-for-review">
 <h3>8) Wait for review<a class="headerlink" href="#wait-for-review" title="Permalink to this headline">¶</a></h3>
-<p>Once you make your PR, your instructors will be notified by gitHub (and Canvas), and will review your code. They can make general comments, or comment line by line. When a review is done, you should get an email form gitHub. But you can always go and check the PR yourself and see if anything new is there.</p>
+<p>Once you make your PR, your instructors will be notified by gitHub (and the LMS), and will review your code. They can make general comments, or comment line by line. When a review is done, you should get an email form gitHub. But you can always go and check the PR yourself and see if anything new is there.</p>
 <p>At this point, two things might happen.</p>
 <ul class="simple">
 <li><p>If the work is complete and well done, your instructors will make comments, and merge the PR. This is an indication that you are done.</p></li>
@@ -458,7 +485,7 @@ You can figure out what it is, because they will have been commenting on your PR
 <div><ol class="arabic simple">
 <li><p>Accept the assignment from the gitHub classroom link</p></li>
 <li><p>Clone the resulting repo onto your work machine (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>)</p></li>
-<li><p>Switch to the develop branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">develop</span></code>)</p></li>
+<li><p>Make a develop branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">develop</span></code>)</p></li>
 <li><p>Do the assignment in the develop branch, committing and pushing as you go. (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>; <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">&quot;a</span> <span class="pre">message&quot;</span></code>; <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>)</p></li>
 <li><p>When complete or when you would like some help, make a PR on gitHub, and post a link to the PR in the LMS (Canvas or EdX)</p></li>
 <li><p>Read and respond to the comments on gitHub from your instructors</p></li>
@@ -467,7 +494,7 @@ You can figure out what it is, because they will have been commenting on your PR
 </ol>
 </div></blockquote>
 <p>Is that so bad?</p>
-<p>Remember: this seems like a lot – but it <em>does</em> reflect the real workflow when doing real coding. Even if you work alone, a version control system is a really good idea.</p>
+<p>Remember: this seems like a lot – but it <em>does</em> reflect he real workflow when doing real coding. Even if you work alone, a version control system is a really good idea.</p>
 </div>
 <div class="section" id="general-advice-for-working-with-git-and-github">
 <h2>General Advice for working with git and gitHub<a class="headerlink" href="#general-advice-for-working-with-git-and-github" title="Permalink to this headline">¶</a></h2>

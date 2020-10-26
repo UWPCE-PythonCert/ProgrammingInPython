@@ -191,8 +191,7 @@
 <span id="id1"></span><h1>Static and Class Methods<a class="headerlink" href="#static-and-class-methods" title="Permalink to this headline">¶</a></h1>
 <p>You’ve seen how methods of a class are <em>bound</em> to an instance when it is
 created.</p>
-<p>And you’ve seen how the argument <code class="docutils literal notranslate"><span class="pre">self</span></code> is then automatically passed to
-the method when it is called.</p>
+<p>And you’ve seen how the argument <code class="docutils literal notranslate"><span class="pre">self</span></code> is then automatically passed to the method when it is called.</p>
 <p>And you’ve seen how you can call <em>unbound</em> methods on a class object so
 long as you pass an instance of that class as the first argument.</p>
 <p><strong>But what if you don’t want or need an instance?</strong></p>
@@ -258,6 +257,9 @@ argument</p>
 <span class="gh">Out[45]: </span><span class="go">64</span>
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">a_class_method</span></code> is defined in the <code class="docutils literal notranslate"><span class="pre">Classy</span></code> class (see above).
+And it prints the class that it is called on. But despite being defined in <code class="docutils literal notranslate"><span class="pre">Classy</span></code>, it gets the <code class="docutils literal notranslate"><span class="pre">SubClassy</span></code> class object as the first parameter (<code class="docutils literal notranslate"><span class="pre">cls</span></code>).
+So a classmethod will “do the right thing” when used in a subclass.</p>
 </div>
 <div class="section" id="alternate-constructors">
 <h2>Alternate Constructors<a class="headerlink" href="#alternate-constructors" title="Permalink to this headline">¶</a></h2>
@@ -289,8 +291,7 @@ implements an alternate constructor that <em>can</em>.</p>
 </div>
 <p>(This is actually from the <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> implementation in <code class="docutils literal notranslate"><span class="pre">collections.py</span></code>).</p>
 <p>See also <code class="docutils literal notranslate"><span class="pre">datetime.datetime.now()</span></code>, etc….</p>
-<p>Properties, Static Methods and Class Methods are powerful features of Python’s
-OO model.</p>
+<p>Properties, Static Methods and Class Methods are powerful features of Python’s OO model.</p>
 <p>They are implemented using an underlying structure called <em>descriptors</em></p>
 <p><a class="reference external" href="https://docs.python.org/2/howto/descriptor.html">Here is a low level look</a> at how the descriptor protocol works.</p>
 <p>The cool part is that this mechanism is available to you, the programmer, as
