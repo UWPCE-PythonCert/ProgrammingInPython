@@ -771,39 +771,75 @@ Other Gotchas
 
 Easy container setup, or deadly trap?
 
-(note: you can nest lists to make a 2D-ish array)
+Say you want something like sort of like a 2D array -- one way to do that is to nest lists -- make a list of lists.
+
+ONe seemingobvious way to create an empty list of lists would be to use multiplcation of lists -- make a list with one list in it, and then multiply it by the number of lists you want:
 
 .. code-block:: ipython
 
-    In [13]: bins = [ [] ] * 5
+    In [12]: bins = [ [] ] * 5
 
-    In [14]: bins
-    Out[14]: [[], [], [], [], []]
+    In [13]: bins
+    Out[13]: [[], [], [], [], []]
 
-    In [15]: words = ['one', 'three', 'rough', 'sad', 'goof']
+OK -- that worked -- you have a list with five empty lists in it. So let's try using that. This is a very contrived example, but say you have list of words:
 
-    In [16]: for word in words:
-       ....:     bins[len(word)-1].append(word)
-       ....:
+.. code-block:: ipython
 
-So, what is going to be in ``bins`` now?
+    In [14]: words = ['one', 'three', 'rough', 'sad', 'goof']
+
+and you want to put one in each of the "inside" lists:
+
+.. code-block:: ipython
+
+
+    In [15]: # loop five times
+        ...: for i in range(5):
+        ...:     # add a word to the corresponding bin
+        ...:     bins[i].append(words[i])
+
+So, what is going to be in ``bins`` now? Think for a bit first -- you added one word to each bin, yes? But are those "sublists" independent? 
 
 There is only **One** bin
 -------------------------
 
 .. code-block:: ipython
 
-    In [65]: bins
-    Out[65]:
+    In [16]: bins
+    Out[16]: 
     [['one', 'three', 'rough', 'sad', 'goof'],
      ['one', 'three', 'rough', 'sad', 'goof'],
      ['one', 'three', 'rough', 'sad', 'goof'],
      ['one', 'three', 'rough', 'sad', 'goof'],
      ['one', 'three', 'rough', 'sad', 'goof']]
 
-We multiplied a sequence containing a single *mutable* object.
+Whoa! So we don't have 5 lists -- we have five *references* to the same list. Remember that in Python you can have any number of names "bound" to any object -- and any object can be contained in any number of containers, or multiple times in one container.
 
-We got a list containing five references to a single *mutable* object.
+So when we multiplied a sequence containing a single *mutable* object. We got a list containing five references to a single *mutable* object.
+
+Since it's mutable -- you can change it "in place", and when you change it -- the change shows everywhere that list is referenced.
+
+So how to make a list of independent lists? You need to loop and call that code that makes an empty list each time in the loop, something like this:
+
+.. code-block:: ipython
+
+    In [21]: bins = []
+
+    In [22]: for i in range(5):
+        ...:     bins.append([])
+        ...: 
+
+    In [23]: bins
+    Out[23]: [[], [], [], [], []]
+
+    In [24]: # loop five times
+        ...: for i in range(5):
+        ...:     # add a word to the corresponding bin
+        ...:     bins[i].append(words[i])
+        ...: 
+
+    In [25]: bins
+    Out[25]: [['one'], ['three'], ['rough'], ['sad'], ['goof']]
 
 
 Mutable Default Argument
@@ -858,11 +894,12 @@ This will ensure that a new list will be created if one is not passed-in.
 Mutable Sequence Methods
 ========================
 
-In addition to all the methods supported by sequences we've seen above, mutable sequences (the List), have a number of other methods that are used to change it in place.
+In addition to all the methods supported by sequences we've seen above, mutable sequences (the list), have a number of other methods that are used to change it in place.
 
 You can find all these in the Standard Library Documentation:
 
 https://docs.python.org/3/library/stdtypes.html#typesseq-mutable
+
 
 Assignment
 -----------
@@ -913,11 +950,11 @@ You can pass any sequence to ``.extend()``:
     ['beans', 'spam', 'eggs', 'ham', 'sushi', 'bread', 'water',
      's', 'p', 'a', 'g', 'h', 'e', 't', 't', 'i']
 
-So be careful -- a string is a single object --but also a sequence of characters.
+So be careful -- a string is a single object -- but also a sequence of characters (technically a sequence of length-1 strings).
 
 
-Shrinking the List
-------------------
+Shrinking a list
+----------------
 
 ``.pop()``, ``.remove()``
 
@@ -1130,8 +1167,8 @@ Otherwise ... taste and convention.
 Convention
 ----------
 
-Lists are homogeneous collections:
--- they alway contain values of the same type
+Lists are typically homogeneous collections:
+-- they always contain values of the same type
 -- they simplify iterating, sorting, etc
 
 Tuples are mixed types:

@@ -796,25 +796,31 @@ whatever condition caused it to be updated.</p>
 <div class="section" id="other-gotchas">
 <h3>Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permalink to this headline">¶</a></h3>
 <p>Easy container setup, or deadly trap?</p>
-<p>(note: you can nest lists to make a 2D-ish array)</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[]</span> <span class="p">]</span> <span class="o">*</span> <span class="mi">5</span>
+<p>Say you want something like sort of like a 2D array – one way to do that is to nest lists – make a list of lists.</p>
+<p>ONe seemingobvious way to create an empty list of lists would be to use multiplcation of lists – make a list with one list in it, and then multiply it by the number of lists you want:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[]</span> <span class="p">]</span> <span class="o">*</span> <span class="mi">5</span>
 
-<span class="gp">In [14]: </span><span class="n">bins</span>
-<span class="gh">Out[14]: </span><span class="go">[[], [], [], [], []]</span>
-
-<span class="gp">In [15]: </span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;rough&#39;</span><span class="p">,</span> <span class="s1">&#39;sad&#39;</span><span class="p">,</span> <span class="s1">&#39;goof&#39;</span><span class="p">]</span>
-
-<span class="gp">In [16]: </span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-<span class="gp">   ....: </span>    <span class="n">bins</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-<span class="gp">   ....:</span>
+<span class="gp">In [13]: </span><span class="n">bins</span>
+<span class="gh">Out[13]: </span><span class="go">[[], [], [], [], []]</span>
 </pre></div>
 </div>
-<p>So, what is going to be in <code class="docutils literal notranslate"><span class="pre">bins</span></code> now?</p>
+<p>OK – that worked – you have a list with five empty lists in it. So let’s try using that. This is a very contrived example, but say you have list of words:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;rough&#39;</span><span class="p">,</span> <span class="s1">&#39;sad&#39;</span><span class="p">,</span> <span class="s1">&#39;goof&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>and you want to put one in each of the “inside” lists:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="c1"># loop five times</span>
+<span class="go">    ...: for i in range(5):</span>
+<span class="go">    ...:     # add a word to the corresponding bin</span>
+<span class="go">    ...:     bins[i].append(words[i])</span>
+</pre></div>
+</div>
+<p>So, what is going to be in <code class="docutils literal notranslate"><span class="pre">bins</span></code> now? Think for a bit first – you added one word to each bin, yes? But are those “sublists” independent?</p>
 </div>
 <div class="section" id="there-is-only-one-bin">
 <h3>There is only <strong>One</strong> bin<a class="headerlink" href="#there-is-only-one-bin" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [65]: </span><span class="n">bins</span>
-<span class="gh">Out[65]:</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">bins</span>
+<span class="gh">Out[16]:</span>
 <span class="go">[[&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
 <span class="go"> [&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
 <span class="go"> [&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;],</span>
@@ -822,8 +828,29 @@ whatever condition caused it to be updated.</p>
 <span class="go"> [&#39;one&#39;, &#39;three&#39;, &#39;rough&#39;, &#39;sad&#39;, &#39;goof&#39;]]</span>
 </pre></div>
 </div>
-<p>We multiplied a sequence containing a single <em>mutable</em> object.</p>
-<p>We got a list containing five references to a single <em>mutable</em> object.</p>
+<p>Whoa! So we don’t have 5 lists – we have five <em>references</em> to the same list. Remember that in Python you can have any number of names “bound” to any object – and any object can be contained in any number of containers, or multiple times in one container.</p>
+<p>So when we multiplied a sequence containing a single <em>mutable</em> object. We got a list containing five references to a single <em>mutable</em> object.</p>
+<p>Since it’s mutable – you can change it “in place”, and when you change it – the change shows everywhere that list is referenced.</p>
+<p>So how to make a list of independent lists? You need to loop and call that code that makes an empty list each time in the loop, something like this:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">bins</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="gp">In [22]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="go">    ...:     bins.append([])</span>
+<span class="go">    ...:</span>
+
+<span class="gp">In [23]: </span><span class="n">bins</span>
+<span class="gh">Out[23]: </span><span class="go">[[], [], [], [], []]</span>
+
+<span class="gp">In [24]: </span><span class="c1"># loop five times</span>
+<span class="go">    ...: for i in range(5):</span>
+<span class="go">    ...:     # add a word to the corresponding bin</span>
+<span class="go">    ...:     bins[i].append(words[i])</span>
+<span class="go">    ...:</span>
+
+<span class="gp">In [25]: </span><span class="n">bins</span>
+<span class="gh">Out[25]: </span><span class="go">[[&#39;one&#39;], [&#39;three&#39;], [&#39;rough&#39;], [&#39;sad&#39;], [&#39;goof&#39;]]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="mutable-default-argument">
 <h3>Mutable Default Argument<a class="headerlink" href="#mutable-default-argument" title="Permalink to this headline">¶</a></h3>
@@ -865,7 +892,7 @@ whatever condition caused it to be updated.</p>
 </div>
 <div class="section" id="mutable-sequence-methods">
 <h2>Mutable Sequence Methods<a class="headerlink" href="#mutable-sequence-methods" title="Permalink to this headline">¶</a></h2>
-<p>In addition to all the methods supported by sequences we’ve seen above, mutable sequences (the List), have a number of other methods that are used to change it in place.</p>
+<p>In addition to all the methods supported by sequences we’ve seen above, mutable sequences (the list), have a number of other methods that are used to change it in place.</p>
 <p>You can find all these in the Standard Library Documentation:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq-mutable">https://docs.python.org/3/library/stdtypes.html#typesseq-mutable</a></p>
 <div class="section" id="assignment">
@@ -907,10 +934,10 @@ whatever condition caused it to be updated.</p>
 <span class="go"> &#39;s&#39;, &#39;p&#39;, &#39;a&#39;, &#39;g&#39;, &#39;h&#39;, &#39;e&#39;, &#39;t&#39;, &#39;t&#39;, &#39;i&#39;]</span>
 </pre></div>
 </div>
-<p>So be careful – a string is a single object –but also a sequence of characters.</p>
+<p>So be careful – a string is a single object – but also a sequence of characters (technically a sequence of length-1 strings).</p>
 </div>
-<div class="section" id="shrinking-the-list">
-<h3>Shrinking the List<a class="headerlink" href="#shrinking-the-list" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="shrinking-a-list">
+<h3>Shrinking a list<a class="headerlink" href="#shrinking-a-list" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">.remove()</span></code></p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [203]: </span><span class="n">food</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">,</span> <span class="s1">&#39;toast&#39;</span><span class="p">]</span>
 <span class="gp">In [204]: </span><span class="n">food</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
@@ -1085,8 +1112,8 @@ whatever condition caused it to be updated.</p>
 <p>Otherwise … taste and convention.</p>
 <div class="section" id="convention">
 <h3>Convention<a class="headerlink" href="#convention" title="Permalink to this headline">¶</a></h3>
-<p>Lists are homogeneous collections:
-– they alway contain values of the same type
+<p>Lists are typically homogeneous collections:
+– they always contain values of the same type
 – they simplify iterating, sorting, etc</p>
 <p>Tuples are mixed types:
 – they group multiple values into one logical thing
