@@ -38,7 +38,7 @@ If you don't already have a gitHub account, or if you would prefer to create a n
 You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:
 
-:ref:`installing_python`
+:ref:`setup_details`
 
 Once you have all the tools set up, you will need to create a folder (directory) within your development system for keeping your work.
 This is the folder where all your assignment repositories will reside. It will be helpful to keep them all together in one place.
@@ -48,9 +48,17 @@ This folder (directory) should be somewhere in your "user" or "home" directory.
 Accepting an Assignment
 -----------------------
 
-On each assignment page there should be a link to the assignment on gitHub classroom. Click on this link, and it should take you to gitHub classroom, and allow you to "Accept this Assignment".
+On each assignment page in your LMS (Canvas or Edx), there should be a link to the assignment on gitHub classroom. Click on this link, and it should take you to gitHub classroom, and allow you to "Accept this Assignment".
 
-.. note:: The first time you accept an assignment, gitHub will "invite" you to join the class organization. You will need to click the link to accept the invitation. Once you have done that the first time, you shouldn't need to do it again.
+
+Possible Confusions:
+....................
+
+The first time you accept an assignment, gitHub will "invite" you to join the class organization. You will need to click the link to accept the invitation. Once you have done that the first time, you shouldn't need to do it again. However, gitHub seems to get confused, and may continue to tell you about the invitation. You can ignore it if the invitation is working.
+
+
+When accepting the assignment, gitHub will take a little while to set it up. after waiting a minute or two, you can refresh the browser window, and you should get a link to your assignment repo. If you get an error you can do what it suggests, and go back and try to accept the assignment again. It usually works after a try or two.
+
 
 Some Things to Consider
 .......................
@@ -81,7 +89,7 @@ The following is the workflow you will need to follow for each individual assign
 1) Accept the Assignment
 ------------------------
 
-The first step is to click on the link for the assignment in your LMS (Canvas or Edx) -- that will take you to gitHub classroom, where you can accept the assignment.
+The first step is to click on the link for the assignment in your LMS -- that will take you to gitHub classroom, where you can accept the assignment.
 
 When you accept, gitHub will create a new repository for the assignment in your gitHub account.
 
@@ -115,10 +123,10 @@ d) Clone the repo
 This will create a new directory for the repository, named by the assignment and your gitHub handle -- this is where you will put all the work for that assignment.
 
 
-3) Use the develop branch for your work
----------------------------------------
+3) Create a develop branch for your work
+----------------------------------------
 
-Check out a different branch for your work.
+Create and check out a new branch for your work.
 
 a) Change the working directory to the repo just created by the clone:
 
@@ -126,17 +134,33 @@ a) Change the working directory to the repo just created by the clone:
 
   cd the_name_of_the_assignment_repo
 
-b) Checkout the develop branch
+b) Make a new branch:
 
 ::
 
-  git checkout develop
-
-Note: there should be a "develop" branch already in the repo. If not, you will get an error, but you can create the branch by hand by adding the ``-b`` flag: ``git checkout -b develop``
+  git checkout -b develop
 
 After that command, git will be "in" the develop branch -- anything you change will only be reflected in that branch.
 
 .. note:: A git "branch" is an independent "version" of your code where you can write and change code, create and delete files, etc, and it will be kept separate from the main code. When you are happy with this version, it can be merged into the main branch. For the purposed of this course, it will not be merged into the main branch until it has been reviewed, and both you and your instructors think its done.
+
+If you get an error from this command that says::
+
+    fatal: A branch named 'develop' already exists
+
+That means two things:
+
+ 1) You have already created a develop branch. IN which case you chould already be using it, or you can "check it out" again: `git checkout develop`
+
+or
+
+ 2) That branch was created already by gitHub classroom. Which you'd think would be nice, but it turns out that the way it's created doesn't allow the next steps: the Pull Request. THe solution in this case is to use a different name for your working branch, e.g.
+
+::
+
+    git checkout -b develop2
+
+Then be sure to use the "develop2" branch when you make your PR to accept the assignment (see step 7). It doesn't really matter what you call this branch, as long as it's a new one you create.
 
 c) Check the git status
 
@@ -227,21 +251,33 @@ In order to get your changes up to gitHub you need to "push" them. It's always a
 Note that I am on the "develop" branch, which is what's wanted, and nothing new to commit -- all my changes have been committed -- it's time to push.
 
 ::
+
     $ git push
-    Enumerating objects: 5, done.
-    Counting objects: 100% (5/5), done.
+    fatal: The current branch develop has no upstream branch.
+    To push the current branch and set the remote as upstream, use
+
+        git push --set-upstream origin develop
+
+Hmm -- "fatal" -- I don't like the look of that! But it's pretty simple, really. git is telling you that it doesn't know where to push the code to -- your gitHub version of the repo doesn't have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that:
+
+::
+
+    $ git push --set-upstream origin develop
+    Enumerating objects: 4, done.
+    Counting objects: 100% (4/4), done.
     Delta compression using up to 4 threads
     Compressing objects: 100% (3/3), done.
-    Writing objects: 100% (3/3), 354 bytes | 354.00 KiB/s, done.
-    Total 3 (delta 1), reused 0 (delta 0)
-    remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-    To https://github.com/UWPCE-Py310-Fall2020/fizz-buzz-PythonCHB.git
-    46d868a..fe3e479  develop -> develop
+    Writing objects: 100% (3/3), 639 bytes | 319.00 KiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    remote: 
+    remote: Create a pull request for 'develop' on gitHub by visiting:
+    remote:      https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB/pull/new/develop
+    remote: 
+    To https://github.com/UWPCE-Py310-Fall2020/initial-setup-PythonCHB.git
+     * [new branch]      develop -> develop
+    Branch 'develop' set up to track remote branch 'develop' from 'origin'.
 
-.. note:: If you don't have a develop branch up on gitHUb, you will get a "fatal" Error. Scary, but it's pretty simple, really. git is telling you that it doesn't know where to push the code to -- your gitHub version of the repo doesn't have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that: ``git push --set-upstream origin develop`` -- and you should be good to go.
-
-Now the local develop branch is hooked up to a develop branch on gitHub. 
-
+Good -- now the local develop branch is hooked up to a develop branch on gitHub. And it even tells you what to do next -- see the "Create a pull request for 'develop' on gitHub by visiting:" -- that's exactly what you need to do!
 
 6) Complete the Assignment
 --------------------------
@@ -286,12 +322,12 @@ If you click on the "conversation" tab, you can see your initial comment and any
 
 If you click on the "files changed" tab, you will see all the changes in this PR. For this class, that should be your entire assignment.
 
-Put a link to the PR in Canvas or EdX, to let us know that you have "turned in" the assignment.
+Put a link to the PR in the LMS, to let us know that you have "turned in" the assignment.
 
 8) Wait for review
 ------------------
 
-Once you make your PR, your instructors will be notified by gitHub (and Canvas), and will review your code. They can make general comments, or comment line by line. When a review is done, you should get an email form gitHub. But you can always go and check the PR yourself and see if anything new is there.
+Once you make your PR, your instructors will be notified by gitHub (and the LMS), and will review your code. They can make general comments, or comment line by line. When a review is done, you should get an email form gitHub. But you can always go and check the PR yourself and see if anything new is there.
 
 At this point, two things might happen.
 
@@ -335,7 +371,7 @@ I'm sure this seems like a lot, but it will get to be a habit, Here are the step
 
  2) Clone the resulting repo onto your work machine (``git clone``)
 
- 3) Switch to the develop branch (``git checkout develop``)
+ 3) Make a develop branch (``git checkout -b develop``)
 
  4) Do the assignment in the develop branch, committing and pushing as you go. (``git add``; ``git commit -a -m "a message"``; ``git push``)
 
@@ -349,7 +385,7 @@ I'm sure this seems like a lot, but it will get to be a habit, Here are the step
 
 Is that so bad?
 
-Remember: this seems like a lot -- but it *does* reflect the real workflow when doing real coding. Even if you work alone, a version control system is a really good idea.
+Remember: this seems like a lot -- but it *does* reflect he real workflow when doing real coding. Even if you work alone, a version control system is a really good idea.
 
 
 General Advice for working with git and gitHub

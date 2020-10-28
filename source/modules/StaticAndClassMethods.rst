@@ -8,8 +8,7 @@ Static and Class Methods
 You've seen how methods of a class are *bound* to an instance when it is
 created.
 
-And you've seen how the argument ``self`` is then automatically passed to
-the method when it is called.
+And you've seen how the argument ``self`` is then automatically passed to the method when it is called.
 
 And you've seen how you can call *unbound* methods on a class object so
 long as you pass an instance of that class as the first argument.
@@ -34,9 +33,6 @@ A *static method* is a method that doesn't get self:
 
     In [37]: StaticAdder.add(3, 6)
     Out[37]: 9
-
-
-.. [demo: :download:`static_method.py <../../Examples/Session08/static_method.py>`]
 
 
 Where are static methods useful?
@@ -80,9 +76,6 @@ argument
     Out[42]: 16
 
 
-.. [demo: :download:`class_method.py <../../Examples/Session08/class_method.py>`]
-
-
 Why?
 ----
 
@@ -102,6 +95,9 @@ Consider this:
     in a class method:  <class '__main__.SubClassy'>
     Out[45]: 64
 
+``a_class_method`` is defined in the ``Classy`` class (see above).
+And it prints the class that it is called on. But despite being defined in ``Classy``, it gets the ``SubClassy`` class object as the first parameter (``cls``).
+So a classmethod will "do the right thing" when used in a subclass.
 
 Alternate Constructors
 -----------------------
@@ -121,7 +117,6 @@ keys:
     ----> 1 d = dict([1,2,3])
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
-
 
 
 The stock constructor for a dictionary won't work this way. So the dict object
@@ -144,8 +139,7 @@ implements an alternate constructor that *can*.
 See also ``datetime.datetime.now()``, etc....
 
 
-Properties, Static Methods and Class Methods are powerful features of Python's
-OO model.
+Properties, Static Methods and Class Methods are powerful features of Python's OO model.
 
 They are implemented using an underlying structure called *descriptors*
 

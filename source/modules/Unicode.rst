@@ -26,7 +26,7 @@ What the heck is Unicode anyway?
 * First there was chaos...
 
   * Different machines used different encodings -- different ways of mapping
-    binary data that the computer stores to letters.
+    the binary data that the computer stores to letters.
 
 * Then there was ASCII -- and all was good (7 bit), 127 characters
 
@@ -84,7 +84,7 @@ http://www.joelonsoftware.com/articles/Unicode.html
 
 Actually, dealing with numbers rather than bytes is big
 
--- but we take that for granted
+-- but we take that for granted.
 
 
 Mechanics
@@ -98,11 +98,11 @@ Py2 strings were simply sequences of bytes.  When text was one per character tha
 Py3 strings (or Unicode strings in py2) are sequences of "platonic characters".
 
 It's almost one code point per character -- there are complications
-with combined characters: accents, etc -- but we can mostly ignore those -- you will get far thiking of a code point as a character.
+with combined characters: accents, etc -- but we can mostly ignore those -- you will get far thinking of a code point as a character.
 
 Platonic characters cannot be written to disk or network!
 
-(ANSI: one character == one byte -- so easy!)
+(ANSI: one character == one byte -- it was so easy!)
 
 
 Strings vs Unicode
@@ -132,7 +132,7 @@ And two ways to work with binary data:
 py3 is more clear:
 
   ``str`` for text
-  ``byte`` for binary data
+  ``bytes`` for binary data
 
 Unicode
 --------
@@ -154,12 +154,12 @@ If you need to deal with the actual bytes for some reason, you may need to conve
 
 And can get even more confusing with py2 strings being *both* text and bytes!
 
-This is actually one of the biggest differences between Python 2 and Python 3. As an ordinary user (particularly one that used English...), you may not notice -- text is text, and things generally "just work", but under the hood it is very different, and folks writing libraries for things like Internet protocols struggle with the differences.
+This is actually one of the biggest differences between Python 2 and Python 3. As an ordinary user (particularly one that used English...), you may not notice -- text is text, and things generally "just work", but under the hood it is very different, and folks writting libraries for things like Internet protocols struggled with the differences.
 
 Using Unicode in Py2
----------------------
+--------------------
 
-If you do need to write Python2 code, you really should use Unicode.
+If you do need to write Python2 code, you really should use Unicode. If you don't -- skip ahead to "Unicode Literals".
 
 Here are the basics:
 
@@ -214,7 +214,9 @@ Encoding and Decoding
 
 
 Unicode Literals
-------------------
+----------------
+
+How do you get text that isn't plain English text?
 
 1) Use Unicode in your source files:
 
@@ -225,6 +227,8 @@ Unicode Literals
 (This is only required on Py2 -- the UTF-8 encoding is default for Python 3)
 
 2) Escape the Unicode characters:
+
+Either by its hexadecimal value, or its name:
 
 .. code-block:: python
 
@@ -239,7 +243,7 @@ One example:  http://inamidst.com/stuff/unidata/
 
 
 Using Unicode
---------------
+-------------
 
 Use ``unicode`` objects in all your code
 
@@ -251,14 +255,17 @@ Many packages do this for you: *XML processing, databases, ...*
 
 **Gotcha:**
 
-Python has a default encoding (usually ascii)
+Python has a default encoding. On Mac and Unix systems, it's usually utf-8 -- Windows? not nearly as consistent.
 
 .. code-block:: ipython
 
-  In [2]: sys.getdefaultencoding()
-  Out[2]: 'ascii'
+ In [7]: sys.getdefaultencoding()
+ Out[7]: 'utf-8'
 
-The default encoding will get used in unexpected places!
+Try this on your machine, and see what you get.
+
+The default encoding will get used in unexpected places! 
+Notably in text files by default.
 
 Using Unicode Everywhere
 -------------------------
@@ -329,11 +336,12 @@ UTF-16
 
 Kind of like UTF-8, except it uses at least 16bits (2 bytes) for each character: NOT ASCII compatible.
 
-But is still needs more than two bytes for some code points, so you still can't process it as two bytes per character.
+But it still needs more than two bytes for some code points, so you still can't simply process it as two bytes per character.
 
-In C/C++ held in a "wide char" or "wide string".
+In C/C++, it is held in a "wide char" or "wide string".
 
 MS Windows uses UTF-16, as does (I think) Java.
+
 
 UTF-16 criticism
 -----------------
@@ -362,7 +370,7 @@ A 1-byte per char encoding.
 
 * The most common one-byte per char encoding for European text.
 
-* Nice property -- every byte value from 0 to 255 is a valid character ( at least in Python )
+* Nice property -- every byte value from 1 to 255 is a valid character ( at least in Python )
 
 * You will never get an UnicodeDecodeError if you try to decode arbitrary bytes with latin-1.
 
@@ -384,27 +392,25 @@ http://docs.python.org/howto/unicode.html
 
 "Reading Unicode from a file is therefore simple"
 
-use io.open:
+use plain old open:
 
 .. code-block:: python
 
-  from io import open
-  io.open('unicode.rst', encoding='utf-8')
+  open('unicode.rst', encoding='utf-8')
   for line in f:
       print repr(line)
 
-(https://docs.python.org/2/library/io.html#module-interface)
-
-.. note: This is all for Python 2 -- the built in ``open`` in Py3 does utf-8 by default.
 
 Encodings Built-in to Python:
-  http://docs.python.org/2/library/codecs.html#standard-encodings
+  http://docs.python.org/3/library/codecs.html#standard-encodings
 
 
 Gotchas in Python 2
---------------------
+-------------------
 
-file names, etc:
+(Probaly do'nt need to worry about this anymore!)
+
+File names, etc:
 
 If you pass in unicode, you get unicode
 
@@ -438,7 +444,7 @@ Exception messages:
 :download:`exception_test.py  <../examples/unicode/exception_test.py>`.
 
 Unicode in Python 3
-----------------------
+-------------------
 
 The "string" object **is** Unicode (always).
 
@@ -456,7 +462,8 @@ It's all much cleaner.
 (by the way, the recent implementations are very efficient...)
 
 So you can pretty much ignore encodings and all that for most basic text processing.
-If you do find yourself needing to deal with binary data, you ay need to encode/decode stuff yourself.  IN which case, Python provides an ``.encode()`` method on strings that encode the string to a bytes object with the encoding you select:
+If you do find yourself needing to deal with binary data, you ay need to encode/decode stuff yourself.
+In which case, Python provides an ``.encode()`` method on strings that encode the string to a bytes object with the encoding you select:
 
 .. code-block:: ipython
 
@@ -477,7 +484,7 @@ It's all quite simple an robust.
 
   But there are a couple key points to remember:
 
-  * The primary people struggling were those that wrote (or wored with) libraries that had to deal with protocols that used both binary and text data in the same data stream.
+  * The primary people struggling were those that wrote (or worked with) libraries that had to deal with protocols that used both binary and text data in the same data stream.
 
   * As of Python 3.4 or so, the python string object had grown the features it needed to support even those ugly binary+text use cases.
 
