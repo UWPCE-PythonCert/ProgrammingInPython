@@ -20,6 +20,8 @@ Write some functions that take a sequence as an argument, and return a copy of t
 * with the elements reversed (just with slicing).
 * with the last third, then first third, then the middle third in the new order.
 
+  - Example:   ``(1,2,3,4,5,6)`` should return: ``(5,6,1,2,3,4)`` (start with a length that's a multiple of three, but make sure it doesn't crash for other lengths)
+
 **NOTE:** These should work with ANY sequence -- but you can use strings to test, if you like.
 
 Your functions should look like:
