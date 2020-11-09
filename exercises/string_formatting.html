@@ -195,19 +195,23 @@
 </div>
 <div class="section" id="procedure">
 <h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
-<p>Create a new file called <code class="docutils literal notranslate"><span class="pre">strformat_lab.py</span></code> in the exercise repo.</p>
+<p>Create a new file called <code class="docutils literal notranslate"><span class="pre">string_formatting.py</span></code> in the exercise repo – or use the one that’s there, if there is one.</p>
 <p>When the empty script is available and runnable, complete the following four tasks.</p>
 <div class="section" id="task-one">
 <h3>Task One<a class="headerlink" href="#task-one" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Write a format string that will take the following four element tuple:</p>
+<li><p>Write a format string that will take the following four values:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">2,</span> <span class="pre">123.4567,</span> <span class="pre">10000,</span> <span class="pre">12345.67)</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">123.4567,</span> <span class="pre">10000,</span> <span class="pre">12345.67)</span></code></p>
 <p>and produce:</p>
 <p><code class="docutils literal notranslate"><span class="pre">'file_002</span> <span class="pre">:</span>&#160;&#160; <span class="pre">123.46,</span> <span class="pre">1.00e+04,</span> <span class="pre">1.23e+04'</span></code></p>
 </div></blockquote>
 </li>
 </ul>
+<p>It should look like:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">print(&quot;some_stuff_in_here&quot;.format(2,</span> <span class="pre">123.4567,</span> <span class="pre">10000,</span> <span class="pre">12345.67))</span></code></p>
+</div></blockquote>
 <p>Let’s look at each of the four tuple elements in turn:</p>
 <ol class="arabic simple">
 <li><p>The first element is used to generate a filename that can help with file sorting. The idea behind the “file_002” is that if you have a bunch of files that you want to name with numbers that can be sorted, you need to “pad” the numbers with zeros to get the right sort order.</p></li>
@@ -235,7 +239,7 @@
 </div>
 <div class="section" id="task-two">
 <h3>Task Two<a class="headerlink" href="#task-two" title="Permalink to this headline">¶</a></h3>
-<p>Using your results from Task One, repeat the exercise, but this time using an alternate type of format string (hint: think about alternative ways to use .format() (keywords anyone?), and also consider f-strings if you’ve not used them already).</p>
+<p>Using your results from Task One, repeat the exercise, but this time use an alternate type of format string (hint: think about alternative ways to use .format() (keywords anyone?, or indexes?), and also consider f-strings if you’ve not used them already).</p>
 </div>
 <div class="section" id="task-three">
 <h3>Task Three<a class="headerlink" href="#task-three" title="Permalink to this headline">¶</a></h3>
@@ -255,7 +259,7 @@
 </pre></div>
 </div>
 <p>The idea here is that you may have a tuple of three numbers, but might also have 4 or 5 or 2 or….</p>
-<p>so you can dynamically build up the format string to accommodate the length of the tuple.</p>
+<p>So you can dynamically build up the format string to accommodate the length of the tuple.</p>
 <p>The string object has the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method, so you can call it with a string that is bound to a name, not just a string literal. For example:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">form_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:d}</span><span class="s2">, </span><span class="si">{:d}</span><span class="s2">&quot;</span>
 
@@ -353,7 +357,7 @@
 Then you will need to use alignment specifiers. Do some research on this using the links below. Then:</p>
 <ul class="simple">
 <li><p>Write some Python code to print a table of several rows, each with a name, an age and a cost. Make sure some of the costs are in the hundreds and thousands to test your alignment specifiers.</p></li>
-<li><p>And for an extra task, given a tuple with 10 consecutive numbers, can you work how to quickly print the tuple in columns that are 5 charaters wide? It can be done on one short line!</p></li>
+<li><p>And for an extra task, given a tuple with 10 consecutive numbers, can you work how to quickly print the tuple in columns that are 5 characters wide? It can be done on one short line!</p></li>
 </ul>
 </div>
 </div>
@@ -368,10 +372,10 @@ Then you will need to use alignment specifiers. Do some research on this using t
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
-<p>Put the file in your student directory in a new subdirectory named for this lesson, and add it to your clone early.</p>
+<p>Add the file to the develop brnach of your repo for this excercise.</p>
 <p>Make frequent commits with good, clear messages about what you’re doing and why.</p>
-<p>When you’re done and ready for the instructors to review your work, push your changes to your gitHub fork and then go to the gitHub website and make a pull request.</p>
-<p>Copy the gitHub link to the pull request, and use the +Submit Assignment link located in the top right corner to submit the URL here.</p>
+<p>When you’re done and ready for the instructors to review your work, push your changes to gitHub fork and then go to the gitHub website and make a pull request.</p>
+<p>Copy the gitHub link to the pull request, and provide it to the insstructors when you submit it in your LMS.</p>
 </div>
 </div>
 

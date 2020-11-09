@@ -196,7 +196,11 @@
 <div class="section" id="guidelines">
 <h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
 <p>Here are some suggestions on what should be refactored in your mailroom code.</p>
-<p>As mentioned above, testing user interaction code (code with <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> functions) is harder than testing the rest of your code. Testing user interaction code requires more advanced unit testing methodologies that will be revisited in future courses. Therefore, you should refactor your code so that the user interaction code contains as little business logic as possible. It should only interact with the user either by asking them for input or by responding to their request to print out data. Separating business logic from user interaction code is a good practice in general and we will come back to this concept in later lessons.</p>
+<p>As mentioned above, testing user interaction code (code with <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> functions) is harder than testing the rest of your code.
+Testing user interaction code requires more advanced unit testing methodologies that will be revisited in future courses.
+Therefore, you should refactor your code so that the user interaction code contains as little business logic as possible.
+It should only interact with the user either by asking them for input or by responding to their request to print out data.
+Separating business logic from user interaction code is a good practice in general and we will come back to this concept in later lessons.</p>
 <p>The refactoring in this lesson will allow you to unit test the functions with business logic, even if you don’t test the user interaction code.</p>
 <p>We will go over the components that should be refactored so that you are able to unit test your mailroom. After the refactor, your code should improve and be better modularized. If that’s not the case then maybe you should revisit your refactoring approach.</p>
 <p>For unit testing framework you should use <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a>; it has a simple interface and rich features.</p>
@@ -230,7 +234,9 @@ Your data logic function can either return the report string already formatted o
 <div class="section" id="send-letters">
 <h3>Send Letters<a class="headerlink" href="#send-letters" title="Permalink to this headline">¶</a></h3>
 <p>This function should require very little or no change to make it unit-testable.
-To make it testable, you’ll need to follow the same “separation of concerns” approach: the code that creates the letters should be separate from the code that prints them to the screen. This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc. So the code that makes a letter likley will return a string with the entire letter contents.</p>
+To make it testable, you’ll need to follow the same “separation of concerns” approach: the code that creates the letters should be separate from the code that prints them to the screen.
+This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc.
+So the code that makes a letter likely will return a string with the entire letter contents.</p>
 <p>For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_letter_text</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Get letter text for file content&quot;&quot;&quot;</span>
@@ -242,11 +248,13 @@ To make it testable, you’ll need to follow the same “separation of concerns�
     <span class="k">assert</span> <span class="n">get_letter_text</span><span class="p">(</span><span class="s2">&quot;Frank&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
 </pre></div>
 </div>
-<p>Note that some thought should go into the test of the letter. IF it’s really simple, then checking comparing to a full letter is OK. But it might be better to test the important parts of the letter: Does it contain the correct name? does it contain the right amounts of money? rather than the entire text.</p>
+<p>Note that some thought should go into the test of the letter. If it’s really simple, then simiply comparing to a full letter is OK. But it might be better to test the important parts of the letter: Does it contain the correct name? does it contain the right amounts of money? rather than the entire text.</p>
 <p>When you are done, every function in mailroom that does not contain a <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">input</span></code> call should be tested.</p>
 <p>And, critically: every function that contains a <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">input</span></code> should contain <em>no other logic at all</em>.</p>
 <p>Yes, that does mean that that you’ll have some very simple functions like:</p>
-<p>..code-block:: python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <dl class="simple">
 <dt>def print_letter(donor):</dt><dd><p>print(make_letter(donor))</p>
 </dd>
