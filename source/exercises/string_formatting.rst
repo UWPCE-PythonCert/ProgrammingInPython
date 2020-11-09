@@ -10,21 +10,24 @@ In this exercise we will reinforce the important concepts of string formatting, 
 
 Procedure
 =========
-Create a new file called ``strformat_lab.py`` in the exercise repo.
+Create a new file called ``string_formatting.py`` in the exercise repo -- or use the one that's there, if there is one.
 
 When the empty script is available and runnable, complete the following four tasks.
 
 
 Task One
 --------
-* Write a format string that will take the following four element tuple:
+* Write a format string that will take the following four values:
 
-    ``( 2, 123.4567, 10000, 12345.67)``
+    ``(2, 123.4567, 10000, 12345.67)``
 
     and produce:
 
     ``'file_002 :   123.46, 1.00e+04, 1.23e+04'``
 
+It should look like:
+
+  ``print("some_stuff_in_here".format(2, 123.4567, 10000, 12345.67))``
 
 Let's look at each of the four tuple elements in turn:
 
@@ -61,7 +64,7 @@ So you need to find a string formatting operator that will "pad" the number with
 Task Two
 --------
 
-Using your results from Task One, repeat the exercise, but this time using an alternate type of format string (hint: think about alternative ways to use .format() (keywords anyone?), and also consider f-strings if you've not used them already).
+Using your results from Task One, repeat the exercise, but this time use an alternate type of format string (hint: think about alternative ways to use .format() (keywords anyone?, or indexes?), and also consider f-strings if you've not used them already).
 
 
 Task Three
@@ -87,7 +90,7 @@ Hint: You can pass in a tuple of values to a function with a ``*``:
 
 The idea here is that you may have a tuple of three numbers, but might also have 4 or 5 or 2 or....
 
-so you can dynamically build up the format string to accommodate the length of the tuple.
+So you can dynamically build up the format string to accommodate the length of the tuple.
 
 The string object has the ``format()`` method, so you can call it with a string that is bound to a name, not just a string literal. For example:
 
@@ -187,7 +190,7 @@ or
 
 
 Task Six
----------
+--------
 Often it's convenient to display data in columns. String formatting helps to make this straightforward.
 
 Suppose you'd like to display something like:
@@ -206,7 +209,7 @@ Then you will need to use alignment specifiers. Do some research on this using t
 
 * Write some Python code to print a table of several rows, each with a name, an age and a cost. Make sure some of the costs are in the hundreds and thousands to test your alignment specifiers.
 
-* And for an extra task, given a tuple with 10 consecutive numbers, can you work how to quickly print the tuple in columns that are 5 charaters wide? It can be done on one short line!
+* And for an extra task, given a tuple with 10 consecutive numbers, can you work how to quickly print the tuple in columns that are 5 characters wide? It can be done on one short line!
 
 
 Resources on string formatting
@@ -227,10 +230,11 @@ https://mkaz.blog/code/python-string-format-cookbook/
 
 Submitting Your Work
 ====================
-Put the file in your student directory in a new subdirectory named for this lesson, and add it to your clone early.
+
+Add the file to the develop brnach of your repo for this excercise.
 
 Make frequent commits with good, clear messages about what you're doing and why.
 
-When you're done and ready for the instructors to review your work, push your changes to your gitHub fork and then go to the gitHub website and make a pull request.
+When you're done and ready for the instructors to review your work, push your changes to gitHub fork and then go to the gitHub website and make a pull request.
 
-Copy the gitHub link to the pull request, and use the +Submit Assignment link located in the top right corner to submit the URL here.
+Copy the gitHub link to the pull request, and provide it to the insstructors when you submit it in your LMS.

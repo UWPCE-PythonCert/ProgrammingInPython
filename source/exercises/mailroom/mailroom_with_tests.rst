@@ -19,7 +19,11 @@ Guidelines
 
 Here are some suggestions on what should be refactored in your mailroom code.
 
-As mentioned above, testing user interaction code (code with ``print`` and ``input`` functions) is harder than testing the rest of your code. Testing user interaction code requires more advanced unit testing methodologies that will be revisited in future courses. Therefore, you should refactor your code so that the user interaction code contains as little business logic as possible. It should only interact with the user either by asking them for input or by responding to their request to print out data. Separating business logic from user interaction code is a good practice in general and we will come back to this concept in later lessons.
+As mentioned above, testing user interaction code (code with ``print`` and ``input`` functions) is harder than testing the rest of your code.
+Testing user interaction code requires more advanced unit testing methodologies that will be revisited in future courses.
+Therefore, you should refactor your code so that the user interaction code contains as little business logic as possible.
+It should only interact with the user either by asking them for input or by responding to their request to print out data.
+Separating business logic from user interaction code is a good practice in general and we will come back to this concept in later lessons.
 
 The refactoring in this lesson will allow you to unit test the functions with business logic, even if you don't test the user interaction code.
 
@@ -68,7 +72,9 @@ Send Letters
 ............
 
 This function should require very little or no change to make it unit-testable.
-To make it testable, you'll need to follow the same "separation of concerns" approach: the code that creates the letters should be separate from the code that prints them to the screen. This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc. So the code that makes a letter likley will return a string with the entire letter contents.
+To make it testable, you'll need to follow the same "separation of concerns" approach: the code that creates the letters should be separate from the code that prints them to the screen.
+This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc.
+So the code that makes a letter likely will return a string with the entire letter contents.
 
 For example:
 
@@ -83,7 +89,7 @@ For example:
         expected = "Frank, thanks a lot!"
         assert get_letter_text("Frank") == expected
 
-Note that some thought should go into the test of the letter. IF it's really simple, then checking comparing to a full letter is OK. But it might be better to test the important parts of the letter: Does it contain the correct name? does it contain the right amounts of money? rather than the entire text.
+Note that some thought should go into the test of the letter. If it's really simple, then simiply comparing to a full letter is OK. But it might be better to test the important parts of the letter: Does it contain the correct name? does it contain the right amounts of money? rather than the entire text.
 
 When you are done, every function in mailroom that does not contain a ``print`` or ``input`` call should be tested.
 
@@ -91,7 +97,7 @@ And, critically: every function that contains a ``print`` or ``input`` should co
 
 Yes, that does mean that that you'll have some very simple functions like:
 
-..code-block:: python
+.. code-block:: python
 
 def print_letter(donor):
     print(make_letter(donor))
