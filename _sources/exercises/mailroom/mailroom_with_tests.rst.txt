@@ -99,8 +99,8 @@ Yes, that does mean that that you'll have some very simple functions like:
 
 .. code-block:: python
 
-def print_letter(donor):
-    print(make_letter(donor))
+    def print_letter(donor):
+        print(make_letter(donor))
 
 But trust me -- that is a Good Thing™
 

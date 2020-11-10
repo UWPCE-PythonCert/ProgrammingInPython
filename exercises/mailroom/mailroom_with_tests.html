@@ -252,13 +252,10 @@ So the code that makes a letter likely will return a string with the entire lett
 <p>When you are done, every function in mailroom that does not contain a <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">input</span></code> call should be tested.</p>
 <p>And, critically: every function that contains a <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">input</span></code> should contain <em>no other logic at all</em>.</p>
 <p>Yes, that does mean that that you’ll have some very simple functions like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_letter</span><span class="p">(</span><span class="n">donor</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">make_letter</span><span class="p">(</span><span class="n">donor</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>def print_letter(donor):</dt><dd><p>print(make_letter(donor))</p>
-</dd>
-</dl>
 <p>But trust me – that is a Good Thing™</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
