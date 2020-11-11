@@ -35,18 +35,24 @@ For unit testing framework you should use `pytest <https://docs.pytest.org/en/la
 Mailroom Code Structure
 -----------------------
 
-Your code should have 3 main features so far:
+Your code should have 2 main features so far:
 
 * Send a thank you (adds a new donor or updates existing donor info)
 * Create a report
-* Send letters (creates files)
 
 
 Send Thank You
 ...............
 
 Even though every mailroom implementation will be unique, most likely this function will require a significant refactor for most of you.
-You can break up the code into components that handle user interaction and data manipulation logic. Your unit tests should test the data manipulation logic code: generating the thank you text, adding or updating donors, and listing donors.
+
+You can break up the code into components that handle user interaction and data manipulation logic. Your unit tests should test the data manipulation logic code:
+
+* generating the thank you text
+
+* adding or updating donors
+
+* listing donors
 
 
 Create Report
@@ -71,8 +77,14 @@ Here you would write a unit test for ``get_report`` function. Remember: TDD -- w
 Send Letters
 ............
 
-This function should require very little or no change to make it unit-testable.
+After adding unit tests, in a future assignment, you will be extending mailroom to save the thank you letters to files on disk.
+
+Don't worry about that now -- but when you get there, keep testing in mind!
+
+This function should be easy to make unit-testable.
+
 To make it testable, you'll need to follow the same "separation of concerns" approach: the code that creates the letters should be separate from the code that prints them to the screen.
+
 This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc.
 So the code that makes a letter likely will return a string with the entire letter contents.
 
@@ -106,7 +118,7 @@ But trust me -- that is a Good Thing™
 
 .. note:: Testing print() is rearely neccesasry if you factor your code correctly. But it would be able to test your menu code with `input()` in it. This is a pretty advanced topic, but if you want to give it a try, there is more on advanced testing here: :ref:`advanced_testing`
 
- 
+
 
 
 
