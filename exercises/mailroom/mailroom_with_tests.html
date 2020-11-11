@@ -207,16 +207,20 @@ Separating business logic from user interaction code is a good practice in gener
 </div>
 <div class="section" id="mailroom-code-structure">
 <h2>Mailroom Code Structure<a class="headerlink" href="#mailroom-code-structure" title="Permalink to this headline">¶</a></h2>
-<p>Your code should have 3 main features so far:</p>
+<p>Your code should have 2 main features so far:</p>
 <ul class="simple">
 <li><p>Send a thank you (adds a new donor or updates existing donor info)</p></li>
 <li><p>Create a report</p></li>
-<li><p>Send letters (creates files)</p></li>
 </ul>
 <div class="section" id="send-thank-you">
 <h3>Send Thank You<a class="headerlink" href="#send-thank-you" title="Permalink to this headline">¶</a></h3>
-<p>Even though every mailroom implementation will be unique, most likely this function will require a significant refactor for most of you.
-You can break up the code into components that handle user interaction and data manipulation logic. Your unit tests should test the data manipulation logic code: generating the thank you text, adding or updating donors, and listing donors.</p>
+<p>Even though every mailroom implementation will be unique, most likely this function will require a significant refactor for most of you.</p>
+<p>You can break up the code into components that handle user interaction and data manipulation logic. Your unit tests should test the data manipulation logic code:</p>
+<ul class="simple">
+<li><p>generating the thank you text</p></li>
+<li><p>adding or updating donors</p></li>
+<li><p>listing donors</p></li>
+</ul>
 </div>
 <div class="section" id="create-report">
 <h3>Create Report<a class="headerlink" href="#create-report" title="Permalink to this headline">¶</a></h3>
@@ -233,9 +237,11 @@ Your data logic function can either return the report string already formatted o
 </div>
 <div class="section" id="send-letters">
 <h3>Send Letters<a class="headerlink" href="#send-letters" title="Permalink to this headline">¶</a></h3>
-<p>This function should require very little or no change to make it unit-testable.
-To make it testable, you’ll need to follow the same “separation of concerns” approach: the code that creates the letters should be separate from the code that prints them to the screen.
-This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc.
+<p>After adding unit tests, in a future assignment, you will be extending mailroom to save the thank you letters to files on disk.</p>
+<p>Don’t worry about that now – but when you get there, keep testing in mind!</p>
+<p>This function should be easy to make unit-testable.</p>
+<p>To make it testable, you’ll need to follow the same “separation of concerns” approach: the code that creates the letters should be separate from the code that prints them to the screen.</p>
+<p>This both allows you to test the letter creation, and leaves the door open to do something else with the letters: save to to a file, send as an email, etc.
 So the code that makes a letter likely will return a string with the entire letter contents.</p>
 <p>For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_letter_text</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
