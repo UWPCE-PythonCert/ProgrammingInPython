@@ -119,6 +119,10 @@ def test_make_sentence():
     as it is supposed to be random, this tests for things other than
     the actual results.
 
+    Which means that it does NOT test everything! This test could pass
+    with a very broken make_sentence function. So you should probably
+    add a few more things to this test.
+
     NOTE that this test relies on the build_trigram() function, so it
          will fail if that doesn't work.
     """

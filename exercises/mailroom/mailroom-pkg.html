@@ -204,7 +204,7 @@
 </ul>
 </div></blockquote>
 <p>You should have all this pretty distinct after having refactored for the unit testing. If not, this is a good time to do it!</p>
-<p>In addition to those three, you will want to write a top-level script file (probably called <code class="docutils literal notranslate"><span class="pre">mailroom.py</span></code>) that does little but import the ui code and run a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. It should look something like this:</p>
+<p>In addition to those three, you will want to write a top-level script file (perhaps called <code class="docutils literal notranslate"><span class="pre">mailman.py</span></code>) that does little but import the ui code and run a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. It should look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="kn">from</span> <span class="nn">mailman</span> <span class="kn">import</span> <span class="n">cli</span>
 
@@ -213,6 +213,10 @@
 </pre></div>
 </div>
 <p>Yes, that’s it! This has the advantage of keeping the top-level script really simple, as it has to get put somewhere else and it can keep the “real” code in the package where it belongs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful here – it is important not to call your top-level script the same thing as your package, in this case <code class="docutils literal notranslate"><span class="pre">mailroom.py</span></code>. If you do, than when installed, python will find the script, rather than the package, when you do <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mailroom</span></code>. You can call it <code class="docutils literal notranslate"><span class="pre">mailroom</span></code> without the Python, but that may confuse Windows.</p>
+</div>
 </div>
 <div class="section" id="making-the-package">
 <h2>Making the Package<a class="headerlink" href="#making-the-package" title="Permalink to this headline">¶</a></h2>
@@ -228,7 +232,7 @@
             <span class="n">test_model</span><span class="o">.</span><span class="n">py</span>
             <span class="n">test_cli</span><span class="o">.</span><span class="n">py</span>
     <span class="nb">bin</span>
-        <span class="n">mailroom</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">mailman</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>You will need to import the logic code from model.py in the cli code in order to use it. You can wait until you learn about mocking to write the code in test_cli.py (so you can leave that out)</p>
@@ -238,6 +242,10 @@
 <h2>Making the top-level script runnable<a class="headerlink" href="#making-the-top-level-script-runnable" title="Permalink to this headline">¶</a></h2>
 <p>To get the script installed you have two options. I prefer the more straightforward one, <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument">the scripts keyword argument</a></p>
 <p>But if you want to get fancy, you can use <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>’s <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point">entry points</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Unix systems, including the Mac, the simple <code class="docutils literal notranslate"><span class="pre">scripts</span></code> keyword argument method works well and is simple. But it may not work as well on Windows – it relies in your script being named <code class="docutils literal notranslate"><span class="pre">something.py</span></code> and that Windows is configured to run all files with <code class="docutils literal notranslate"><span class="pre">.py</span></code> extensions. Not all windows systems are set up this way. But the “entry points” method builds a little exe file to call your script, so it’s more reliable.</p>
+</div>
 </div>
 <div class="section" id="including-data-files">
 <h2>Including data files<a class="headerlink" href="#including-data-files" title="Permalink to this headline">¶</a></h2>
