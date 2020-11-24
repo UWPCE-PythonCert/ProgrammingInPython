@@ -331,9 +331,10 @@ Widely used by the scipy community:
 (lots of hard to build stuff that needs to work together...)
 
   * Anaconda (https://store.continuum.io/cshop/anaconda/) and `miniconda <https://docs.conda.io/en/latest/miniconda.html>`_
+  
   * ActivePython (http://www.activestate.com/activepython)
 
-Anaconda has seen a LOT of growth recently -- it's based on the open-source conda packaging system, and provides both a commercial curated set of packages, and a community-developed collection of packages known as conda-forge:
+Conda has seen a LOT of growth in the last few years -- it's based on the open-source conda packaging system, and provides both a commercial curated set of packages, and a community-developed collection of packages known as conda-forge:
 
 https://conda-forge.org/
 
@@ -548,7 +549,7 @@ You can find some additional notes here: :ref:`virtualenv_section`
 Building Your Own Package
 =========================
 
-The term "package" is overloaded in Python. AS defined above, it means a collection of python modules. But it often is used to refer to not just the modules themselves, but the whole collection, with documentation and tests, bundled up and installable on other systems.
+The term "package" is overloaded in Python. As defined above, it means a collection of python modules. But it often is used to refer to not just the modules themselves, but the whole collection, with documentation and tests, bundled up and installable on other systems.
 
 Here are the very basics of what you need to know to make your own package.
 
@@ -567,7 +568,7 @@ structured package eases development.
 
 
 What is a Package?
---------------------
+------------------
 
 **A collection of modules**
 
@@ -583,7 +584,7 @@ What is a Package?
 
 
 Python packaging tools:
-------------------------
+-----------------------
 
 The ``distutils``::
 
@@ -591,19 +592,20 @@ The ``distutils``::
 
 Getting klunky, hard to extend, maybe destined for deprecation...
 
-But it gets the job done -- and it does it well for the simple cases.
+You really need to use ``setuptools`` these days, which fortunatly has a similar API: ::
 
-``setuptools``: for extra features
+    from setuptools import setup
 
 ``pip``: for installing packages
 
 ``wheel``: for binary distributions
 
-These last three are pretty much the standard now -- very well maintained by:
+These are pretty much the standard now -- very well maintained by:
 
 "The Python Packaging Authority" -- `PaPA <https://www.pypa.io/en/latest/>`_
 
 This all continues to change quickly, see that site for up to date information.
+
 
 Where do I go to figure this out?
 ---------------------------------
@@ -684,8 +686,9 @@ Basic Package Structure:
 
 (http://docutils.sourceforge.net/rst.html)
 
-``setup.py``: distutils script for building/installing package.
+(those are all "metadata" critical if you are distributing to the world -- not so much for your own use)
 
+``setup.py``: ``distutils``/``setuptools`` script for building/installing the package.
 
 ``bin/``: This is where you put top-level scripts
 
@@ -697,29 +700,32 @@ Basic Package Structure:
 
 ``test/``: your unit tests. Options here:
 
-Put it inside the package -- supports ::
+Put it inside the package -- this results in the tests getting isntalled with the package, so they can be run after installation, with::
 
      $ pip install package_name
      >> import package_name.test
      >> package_name.test.runall()
 
-Or keep it at the top level.
+or ::
+
+    $ pytest --pyargs package_name
+
+
+Or, if you have a lot of tests, and do not want the entire set installed with the package, you can keep it at the top level.
 
 Some notes on that: `Where to put Tests <http://pythonchb.github.io/PythonTopics/where_to_put_tests.html>`_
 
 
 The ``setup.py`` File
-----------------------
+---------------------
 
-Your ``setup.py`` file is what describes your package, and tells the distutils how to package, build, and install it
+Your ``setup.py`` file is what describes your package, and tells the setuptools how to package, build, and install it
 
 It is python code, so you can add anything custom you need to it.
 
 But in the simple case, it is essentially declarative.
 
-
 ``http://docs.python.org/3/distutils/``
-
 
 An example:
 ...........
@@ -729,12 +735,15 @@ An example:
   from setuptools import setup
 
   setup(
+    # the critical stuff
     name='PackageName',
+    packages=['package_name', 'package_name.test'],
+    scripts=['bin/script1','bin/script2'],
+
+    # the good to have stuff: particularly if you are distributing it
     version='0.1.0',
     author='An Awesome Coder',
     author_email='aac@example.com',
-    packages=['package_name', 'package_name.test'],
-    scripts=['bin/script1','bin/script2'],
     url='http://pypi.python.org/pypi/PackageName/',
     license='LICENSE.txt',
     description='An awesome package that does something',
@@ -744,6 +753,7 @@ An example:
         "pytest",
     ],
  )
+
 
 ``setup.cfg``
 --------------
@@ -770,7 +780,7 @@ Note that an option spelled ``--foo-bar`` on the command-line is spelled f``foo_
 Running ``setup.py``
 --------------------
 
-With a ``setup.py`` script defined, setuptools can do a lot:
+With a ``setup.py`` script defined, setuptools, along with pip, can do a lot:
 
 * builds a source distribution (a tar archive of all the files needed to build and install the package)::
 
@@ -790,6 +800,12 @@ With a ``setup.py`` script defined, setuptools can do a lot:
 
     python setup.py install
 
+or::
+
+   pip install .
+
+(the dot means "this directory" -- pip will look in the current dir for a ``setup.py`` file)
+
 * install in "develop" or "editable" mode::
 
     python setup.py develop
@@ -798,6 +814,7 @@ or::
 
    pip install -e .
 
+.. note:: setuptools can be used by itself to build and install packages. But over the years, pip has evolved to a more "modern" way of doing things. When you install from source with pip -- it is using setuptools to do the work, but it changes things around, and installs things in a more modern, up to date, and compatible way. For much use, you won't notice the difference, but it setuptools still has some old crufty ways of doing things, so it's better to use pip as a front end as much as possible.
 
 setuptools
 -----------
@@ -816,17 +833,18 @@ This buys you a bunch of additional functionality:
   * **develop mode**
   * a LOT more
 
+In fact, virtually all python packages use setuptools these days, and there is currently discussion of deprecating distutils, and making setuptools "official". So you really want to use it.
+
 http://pythonhosted.org//setuptools/
 
 wheels
--------
+------
 
 Wheels are a binary format for packages.
 
 http://wheel.readthedocs.org/en/latest/
 
-Pretty simple, essentially a zip archive of all the stuff that gets put
-in ``site-packages``.
+Pretty simple, essentially a zip archive of all the stuff that gets installed, i.e. put in ``site-packages``.
 
 Can be just pure python or binary with compiled extensions
 
@@ -836,17 +854,9 @@ Building a wheel::
 
   python setup.py bdist_wheel
 
-Create a set of wheels (a wheelhouse)::
-
-  # Build a directory of wheels for pyramid and all its dependencies
-  pip wheel --wheel-dir=/tmp/wheelhouse pyramid
-
-  # Install from cached wheels
-  pip install --use-wheel --no-index --find-links=/tmp/wheelhouse pyramid
-
 ``pip install packagename`` will find wheels for Windows and OS-X and "manylinux"
 
-``pip install --no-use-wheel`` avoids that.
+``pip install --no-use-wheel`` avoids that, and forces a source install.
 
 manylinux
 ---------
@@ -876,7 +886,6 @@ To upload your package to PyPi::
 
   python setup.py sdist bdist_wheel upload
 
-
 http://docs.python.org/2/distutils/packageindex.html
 
 NOTE: only do this if you really want to share your package with the world!
@@ -885,7 +894,7 @@ NOTE: only do this if you really want to share your package with the world!
 Under Development
 ------------------
 
-Develop mode is *really* *really* nice::
+Develop mode (or "editable install") is *really* *really* nice::
 
   $ python setup.py develop
 
@@ -1127,6 +1136,36 @@ To use pkg_resources, you include the files with ``package_data`` in setup.py bu
 
 http://setuptools.readthedocs.io/en/latest/pkg_resources.html#resourcemanager-api
 
+Command line scripts
+--------------------
+
+The "easy" and traditional way to isntall command line scripts is with the ``scripts`` keyword argument to the ``setup()`` command::
+
+
+    setup(...
+          ...
+          scripts = ["bin/a_script.py"]
+          ...
+          )
+
+This works well on Unix systems (including the mac), but is not as reliable on Windows. All it really does is put a slightly altered copy of the script on PATH -- so it will work if it is named with the ``.py`` extension and the system is set up to run ``.py`` files. 
+
+entry points
+............
+
+A more complicated, but better maintained and robust way is to use setuptools "entry points". Entry points can provide a number of functions, but one of them is to make console scripts. Also an argument to ``setup()``, It is done like so::
+
+    setup(
+        ...
+        entry_points = {
+            'console_scripts': ['script_name=package_name.module_name:main'],
+        }
+        ...
+    )
+
+What this does is tell setuptools to make a little wrapper program called "script_name" that will start up python, and run the function called ``main`` in the package.module module.
+
+
 Getting Started With a New Package
 ----------------------------------
 
@@ -1145,6 +1184,7 @@ For anything but a single-file script (and maybe even then):
 or use "Cookie Cutter":
 
 https://cookiecutter.readthedocs.io/en/latest/
+
 
 
 LAB: A Small Example Package
