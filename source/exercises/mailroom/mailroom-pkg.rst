@@ -20,7 +20,7 @@ The first step is to re-structure your code into separate files:
 
 You should have all this pretty distinct after having refactored for the unit testing. If not, this is a good time to do it!
 
-In addition to those three, you will want to write a top-level script file (probably called ``mailroom.py``) that does little but import the ui code and run a ``main()`` function. It should look something like this:
+In addition to those three, you will want to write a top-level script file (perhaps called ``mailman.py``) that does little but import the ui code and run a ``main()`` function. It should look something like this:
 
 .. code-block:: python
 
@@ -31,6 +31,8 @@ In addition to those three, you will want to write a top-level script file (prob
         cli.main()
 
 Yes, that's it! This has the advantage of keeping the top-level script really simple, as it has to get put somewhere else and it can keep the "real" code in the package where it belongs.
+
+.. note:: Be careful here -- it is important not to call your top-level script the same thing as your package, in this case ``mailroom.py``. If you do, than when installed, python will find the script, rather than the package, when you do ``import mailroom``. You can call it ``mailroom`` without the Python, but that may confuse Windows.
 
 
 Making the Package
@@ -49,7 +51,7 @@ Put all these in a python package structure, something like this::
               test_model.py
               test_cli.py
       bin
-          mailroom.py
+          mailman.py
 
 You will need to import the logic code from model.py in the cli code in order to use it. You can wait until you learn about mocking to write the code in test_cli.py (so you can leave that out)
 
@@ -62,6 +64,8 @@ Making the top-level script runnable
 To get the script installed you have two options. I prefer the more straightforward one, `the scripts keyword argument <http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument>`_
 
 But if you want to get fancy, you can use ``setuptools``'s `entry points <http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point>`_
+
+.. note:: On Unix systems, including the Mac, the simple ``scripts`` keyword argument method works well and is simple. But it may not work as well on Windows -- it relies in your script being named ``something.py`` and that Windows is configured to run all files with ``.py`` extensions. Not all windows systems are set up this way. But the "entry points" method builds a little exe file to call your script, so it's more reliable.
 
 
 Including data files
