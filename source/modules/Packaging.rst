@@ -1086,9 +1086,15 @@ I personally like the simplest one with the least magic:
       ...
         )
 
+This is a dict with the keys being the package(s) you want to add data files to. This is required, as a single setup command can install more than one package. The value(s) is a list of filenames, *relative to the package* - note that in the above example, the "pkg_name" is not part of the path to the file.
+
+WARNING: For some reason, setuptools does not give you an error or warning if it can't find the files you specify -- which is a real shame - makes it harder to debug.
+
 https://packaging.python.org/tutorials/distributing-packages/#package-data
 
 Then you'll get the data file included in the package in the same place relative to your code regardless of how (or whether) it is installed.
+
+.. note:: Debugging package building can be kind of tricky: if you install the package, and it doesn't work, what went wrong?!? One approach that can help is to "build" the package, separately from installing it. setuptools provides a build command: ``python setup.py build`` that does just that. It will create a ``build`` directory, and in there, a ``lib`` dir. In there is what will actually get installed -- your "built" package. So you can look there and see if your data files are getting included, and everything else about the package.
 
 Now you'll need to write your code to find that data file. You can do that by using the ``__file__`` module attribute -- then the location of the data file will be relative to the ``__file__`` that your code is in. A little massaging with a ``pathlib.Path`` should do it. Putting the path to the data directory in the package's ``__init__.py`` provides a way for the rest of your code to find it.
 

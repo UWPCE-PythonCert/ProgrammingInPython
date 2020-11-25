@@ -50,8 +50,6 @@ Put all these in a python package structure, something like this::
               __init__.py
               test_model.py
               test_cli.py
-      bin
-          mailman.py
 
 You will need to import the logic code from model.py in the cli code in order to use it. You can wait until you learn about mocking to write the code in test_cli.py (so you can leave that out)
 
@@ -61,11 +59,13 @@ Now write your ``setup.py`` to support your package.
 Making the top-level script runnable
 ------------------------------------
 
-To get the script installed you have two options. I prefer the more straightforward one, `the scripts keyword argument <http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument>`_
+To get the script installed you have two options. I used to prefer the more straightforward one, `the scripts keyword argument <http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument>`_
 
-But if you want to get fancy, you can use ``setuptools``'s `entry points <http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point>`_
+But it turns out that while the simple ``scripts`` keyword argument method works well and is simple, it may not work as well on Windows -- it relies in your script being named ``something.py`` and that Windows is configured to run all files with ``.py`` extensions. Not all windows systems are set up this way. But the "entry points" method builds a little exe file to call your script, so it's more reliable.
 
-.. note:: On Unix systems, including the Mac, the simple ``scripts`` keyword argument method works well and is simple. But it may not work as well on Windows -- it relies in your script being named ``something.py`` and that Windows is configured to run all files with ``.py`` extensions. Not all windows systems are set up this way. But the "entry points" method builds a little exe file to call your script, so it's more reliable.
+And the Python community has moved very much towards using setuptools entry points, so That's really the way to go now:
+
+http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point
 
 
 Including data files
