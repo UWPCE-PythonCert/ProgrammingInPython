@@ -231,8 +231,6 @@
             <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
             <span class="n">test_model</span><span class="o">.</span><span class="n">py</span>
             <span class="n">test_cli</span><span class="o">.</span><span class="n">py</span>
-    <span class="nb">bin</span>
-        <span class="n">mailman</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>You will need to import the logic code from model.py in the cli code in order to use it. You can wait until you learn about mocking to write the code in test_cli.py (so you can leave that out)</p>
@@ -240,12 +238,10 @@
 </div>
 <div class="section" id="making-the-top-level-script-runnable">
 <h2>Making the top-level script runnable<a class="headerlink" href="#making-the-top-level-script-runnable" title="Permalink to this headline">¶</a></h2>
-<p>To get the script installed you have two options. I prefer the more straightforward one, <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument">the scripts keyword argument</a></p>
-<p>But if you want to get fancy, you can use <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>’s <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point">entry points</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On Unix systems, including the Mac, the simple <code class="docutils literal notranslate"><span class="pre">scripts</span></code> keyword argument method works well and is simple. But it may not work as well on Windows – it relies in your script being named <code class="docutils literal notranslate"><span class="pre">something.py</span></code> and that Windows is configured to run all files with <code class="docutils literal notranslate"><span class="pre">.py</span></code> extensions. Not all windows systems are set up this way. But the “entry points” method builds a little exe file to call your script, so it’s more reliable.</p>
-</div>
+<p>To get the script installed you have two options. I used to prefer the more straightforward one, <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument">the scripts keyword argument</a></p>
+<p>But it turns out that while the simple <code class="docutils literal notranslate"><span class="pre">scripts</span></code> keyword argument method works well and is simple, it may not work as well on Windows – it relies in your script being named <code class="docutils literal notranslate"><span class="pre">something.py</span></code> and that Windows is configured to run all files with <code class="docutils literal notranslate"><span class="pre">.py</span></code> extensions. Not all windows systems are set up this way. But the “entry points” method builds a little exe file to call your script, so it’s more reliable.</p>
+<p>And the Python community has moved very much towards using setuptools entry points, so That’s really the way to go now:</p>
+<p><a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point">http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point</a></p>
 </div>
 <div class="section" id="including-data-files">
 <h2>Including data files<a class="headerlink" href="#including-data-files" title="Permalink to this headline">¶</a></h2>

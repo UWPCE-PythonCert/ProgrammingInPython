@@ -1064,8 +1064,14 @@ they upgrade.</p>
       <span class="p">)</span>
 </pre></div>
 </div>
+<p>This is a dict with the keys being the package(s) you want to add data files to. This is required, as a single setup command can install more than one package. The value(s) is a list of filenames, <em>relative to the package</em> - note that in the above example, the “pkg_name” is not part of the path to the file.</p>
+<p>WARNING: For some reason, setuptools does not give you an error or warning if it can’t find the files you specify – which is a real shame - makes it harder to debug.</p>
 <p><a class="reference external" href="https://packaging.python.org/tutorials/distributing-packages/#package-data">https://packaging.python.org/tutorials/distributing-packages/#package-data</a></p>
 <p>Then you’ll get the data file included in the package in the same place relative to your code regardless of how (or whether) it is installed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Debugging package building can be kind of tricky: if you install the package, and it doesn’t work, what went wrong?!? One approach that can help is to “build” the package, separately from installing it. setuptools provides a build command: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build</span></code> that does just that. It will create a <code class="docutils literal notranslate"><span class="pre">build</span></code> directory, and in there, a <code class="docutils literal notranslate"><span class="pre">lib</span></code> dir. In there is what will actually get installed – your “built” package. So you can look there and see if your data files are getting included, and everything else about the package.</p>
+</div>
 <p>Now you’ll need to write your code to find that data file. You can do that by using the <code class="docutils literal notranslate"><span class="pre">__file__</span></code> module attribute – then the location of the data file will be relative to the <code class="docutils literal notranslate"><span class="pre">__file__</span></code> that your code is in. A little massaging with a <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> should do it. Putting the path to the data directory in the package’s <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> provides a way for the rest of your code to find it.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">pkg_name/__init__.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
