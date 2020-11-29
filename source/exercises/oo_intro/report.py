@@ -25,7 +25,7 @@ class Row:
 
 
 class Report:
-    def __init__(self, limit: int):
+    def __init__(self, limit):
         self.limit = limit
         self.rows = []
 
@@ -44,7 +44,8 @@ class Report:
     def get_number_of_pages(self):
         """
         Get how many pages the report has; this will be based on limit variable.
-        If your limit=4 and rows list has 6 records then there are two pages: page1 has 4 records, page2 has 2 records
+        If your limit=4 and rows list has 6 records then there are two pages:
+          page1 has 4 records, page2 has 2 records
         hint: you'll want to round up
         """
         pass
@@ -75,6 +76,28 @@ class Report:
         pass
 
 
+def run_report(sort_field):
+    print(f"... PAGED REPORT SORTED BY: '{sort_field}'...")
+    page = 1
+    while True:
+        rows = report.get_paged_rows(sort_field, page=page)
+
+        if not rows:
+            break
+
+        input(f"Press ENTER to see page {page}")
+
+        print(f"PAGE: {page} of {report.get_number_of_pages()}")
+        print("---------------------------------------------------------------")
+
+        for row in rows:
+            print(row)
+
+        print("---------------------------------------------------------------")
+
+        page += 1
+
+
 if __name__ == "__main__":
 
     report = Report(4)
@@ -86,32 +109,10 @@ if __name__ == "__main__":
     report.add_row(Row("johny", "jakes", "WA"))
     report.add_row(Row("derek", "wright", "WA"))
 
-
-    def run_report(sort_field):
-        print(f"... PAGED REPORT SORTED BY: '{sort_field}'...")
-        page = 1
-        while True:
-            rows = report.get_paged_rows(sort_field, page=page)
-
-            if not rows:
-                break
-
-            input(f"Press ENTER to see page {page}")
-
-            print(f"PAGE: {page} of {report.get_number_of_pages()}")
-            print("---------------------------------------------------------------")
-
-            for row in rows:
-                print(row)
-
-            print("---------------------------------------------------------------")
-
-            page += 1
-
-
     run_report("fname")
 
-    print(f"\n\nRemoving student: {report.rows[1].fname} [{report.rows[1].row_id}]... \n\n")
+    print("\n\nRemoving student: "
+          f"{report.rows[1].fname} [{report.rows[1].row_id}]... \n\n")
 
     report.remove_row(report.rows[1].row_id)
 
