@@ -21,7 +21,7 @@ class Row:
         self.state = state
 
     def __str__(self):
-        return f"| {self.row_id} | {self.fname + ' ' + self.lname:<15} | {self.state} |"
+        return f"| {self.id} | {self.fname + ' ' + self.lname:<15} | {self.state} |"
 
 
 class Report:
@@ -72,6 +72,8 @@ class Report:
            with slicing you'll want to offset your list by 4 in this case
            (extra hint: we can define offset as `offset = (page - 1) * self.limit`)
 
+        Remember to write tests first! You'll need a few of them to test all the
+        functionality.
         """
         pass
 

@@ -5,7 +5,7 @@ test code for the Report class(es)
 from report import Row, Report
 
 
-def example_report(report):
+def example_report():
     """
     utility function to provide a fresh report to test with
     """
