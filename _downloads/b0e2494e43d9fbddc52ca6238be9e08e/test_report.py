@@ -5,9 +5,20 @@ test code for the Report class(es)
 from report import Row, Report
 
 
+def example_report(report):
+    """
+    utility function to provide a fresh report to test with
+    """
+    report = Report(limit=4)
+
+    populate_report(report)
+    return report
+
+
 def populate_report(report):
     """
-    utility function to populate a Report with some data
+    utility function to populate an existing Report with
+    some additional data
 
     :param report: the report object to populate
 
@@ -24,8 +35,9 @@ def populate_report(report):
 
 
 def test_row_init():
-    """You can initialize a Row, and it stores the attributes"""
-
+    """
+    test that a new row has the proper attributes initialized
+    """
     row1 = Row("Joe", "Camel", "WA")
 
     assert row1.fname == "Joe"
@@ -42,9 +54,21 @@ def test_row_id_unique():
 
 
 def test_report_length():
-    report = Report(4)
-    populate_report(report)
+    """
+    test report size method
+    """
+    report = example_report()
 
     # the test data has 8 rows
     assert report.size() == 8
+
+
+def test_number_of_pages():
+    """
+    check that the number of pages is correct
+    """
+    report = example_report()
+
+    assert report.get_number_of_pages() == 2
+
 
