@@ -190,8 +190,7 @@
 <span id="exercise-mailroom-oo"></span><h1>Mailroom - Object Oriented<a class="headerlink" href="#mailroom-object-oriented" title="Permalink to this headline">¶</a></h1>
 <p>Making Mailroom Object Oriented.</p>
 <p><strong>Goal:</strong> Refactor the mailroom program using classes to help organize the code.</p>
-<p>The functionality is the same as the earlier mailroom:</p>
-<p><a class="reference internal" href="mailroom.html#exercise-mailroom-part1"><span class="std std-ref">Mailroom</span></a></p>
+<p>The functionality is the same as the earlier mailroom(s).</p>
 <p>But this time, we want to use an OO approach to better structure the code to make it more extensible.</p>
 <p>It was quite reasonable to build the simple mailroom program using a
 single module, a simple data structure, and functions that manipulate
@@ -205,6 +204,9 @@ would start to get a bit unwieldy and hard to maintain. So it’s a pretty good 
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_concerns">https://en.wikipedia.org/wiki/Separation_of_concerns</a></p>
 <p>There should be no use of the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function in the classes that hold the data!  Nor any use of <code class="docutils literal notranslate"><span class="pre">print()</span></code> – these are for user interaction, and you want the data handling code to be potentially usable with totally different user interaction – such as a desktop GUI or Web interface.</p>
 </li>
+</ol>
+<p>In the spirit of separation of concerns, you also want keep your Command Line Interface code in a separate file(s), as they already should be in your mailroom-as-a-package version. In fact, you should be able to keep the structure of your package pretty much the same – simply replacing the model code with classes.</p>
+<ol class="arabic simple" start="3">
 <li><p>As always: <strong>DRY</strong> (Don’t Repeat Yourself): Anywhere you see repeated code; refactor it!</p></li>
 </ol>
 <div class="section" id="the-program">
@@ -216,23 +218,33 @@ would start to get a bit unwieldy and hard to maintain. So it’s a pretty good 
 <p>There are no hard and fast rules, but here are some guidelines:</p>
 <p>For this simple problem, simple tuples could work fine. However, in order for the code to be more flexible in the future: for example, if new “fields” were added to the donor object, it’s probably better to use a more structured data type, so you don’t have to worry about changing the order or number of fields.</p>
 <p>So now you have to think about using a dict or class. Again for flexibility, a dict is a bit easier; you can add fields to it very easily. However, with a class, you can build some functionality in there, too. This is where encapsulation comes in. For instance, one thing you might want to do is get the total of all donations a donor has made in the past. If you add a method to compute that (or a property!), then the rest of the code doesn’t need to know how the donations are stored.</p>
-<p>Consider <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> vs <code class="docutils literal notranslate"><span class="pre">data[&quot;name&quot;]</span></code> vs <code class="docutils literal notranslate"><span class="pre">data.name</span></code>. Which one is more readable? Keep in mind that another benefit of using OO for data encapsulation is ability of modern IDEs to provide auto-completion, which reduces the number of bugs and helps to produce code faster.</p>
+<p>Consider <code class="docutils literal notranslate"><span class="pre">data[0]</span></code> (stored in a tuple) vs <code class="docutils literal notranslate"><span class="pre">data[&quot;name&quot;]</span></code> (stored in a dict) vs <code class="docutils literal notranslate"><span class="pre">data.name</span></code> (a class).
+Which one is more readable?
+Keep in mind that another benefit of using OO for data encapsulation is ability of modern IDEs to provide auto-completion, which reduces the number of bugs and helps to produce code faster.</p>
+<p>Another way to think about it is “data” vs “code” – dicts are for data, classes are for code.
+Sometimes it’s not totally clear which is which, but if you think about how static is, that can be be a guide.
+In this example, every donor is going to have a name, and a donation history, and maybe in the future a bunch of other information (address, email, phone number ….).
+Whatever it is, every donor will have the same set – so it’s good to use code to manage it.</p>
 <p>Below are more detailed suggestions on breaking down your existing code into multiple modules that will be part of a single mailroom program.</p>
 <div class="section" id="modules-and-classes">
 <h4>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">¶</a></h4>
-<p>You may organize your code to your preference and keep it simple by having all of the code in a single file.</p>
-<p>Optionally, you could organize your code into modules, which helps to keep code organized and re-usable.</p>
+<p>You may organize your code to your preference and keep it simple by having all of the model code in a single file. But you should at least separate the code that manipulates data (the “model” code) from the command line interface code, as you did for mailroom-as-a-package.</p>
+<p>Optionally, you could further organize your model code into separate modules: maybe one for the Donor object, one for the DonorCollection object.</p>
 <p>What is a module? A module is a python file with a collection of code that can be imported into other python files.</p>
 <p>Modules can contain functions, classes, and even variables (constants).</p>
-<p>Here is an example file structure for <code class="docutils literal notranslate"><span class="pre">mailroom_oo</span></code> package that contains 3 modules:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>└── mailroom_oo
-   ├── cli_main.py
-   ├── donor_models.py
-   └── test_mailroom_oo.py
+<p>Here is an example file structure for <code class="docutils literal notranslate"><span class="pre">mailroom_oo</span></code> package – it should be similar to what you already have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── mailroom
+   ├── __init__.py
+   ├── cli.py
+   ├── model.py
+   └── tests
+      ├── __init__.py
+      ├── test_cli.py
+      └── test_model.py
 </pre></div>
 </div>
-<p>The module <code class="docutils literal notranslate"><span class="pre">donor_models.py</span></code> can contain the <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> classes.</p>
-<p>The module <code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code> would include all of your user interaction functions and main program flow.</p>
+<p>The module <code class="docutils literal notranslate"><span class="pre">model.py</span></code> can contain the <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> classes.</p>
+<p>The module <code class="docutils literal notranslate"><span class="pre">cli.py</span></code> would include all of your user interaction functions and main program flow (and a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function that can be called to start up the program (and used as an entry_point).</p>
 </div>
 <div class="section" id="donor-class">
 <h4><code class="docutils literal notranslate"><span class="pre">Donor</span></code> Class<a class="headerlink" href="#donor-class" title="Permalink to this headline">¶</a></h4>
@@ -255,19 +267,20 @@ Any code that only accesses information about a single donor should be part of t
 </div>
 <p>This design allows you to quickly look up donor by their name and get a donor object instance to work with.</p>
 <p>Another option is to simply use a list of donor objects. You get to choose which you think is more appropriate.</p>
-<p>Remember that you should use <cite>self.donors</cite> attribute any time you want to work with data about a single donor, most of your methods in this class will utilize it in some way. This is really what classes are desined for.</p>
+<p>Remember that you should use <cite>self.donors</cite> attribute in any methods that need access the individual donors. Most of your methods in this class will utilize it in some way. This is really what classes are designed for.</p>
+<p>Note that external code probably shouldn’t access the <code class="docutils literal notranslate"><span class="pre">.donors</span></code> list (or dict, or …) directly but rather ask the DonorCollection class for the information it needs: e.g. if you need to add a new donation to a particular donor, calla method like <code class="docutils literal notranslate"><span class="pre">find_donor()</span></code> to get the donor you want, and then work with that Donor object directly.</p>
 <p><strong>Examples:</strong></p>
 <p>Generating a thank you letter to a donor only requires knowledge of that one donor – so that code belongs in the <code class="docutils literal notranslate"><span class="pre">Donor</span></code> class.</p>
 <p>Generating a report about all the donors requires knowledge of all the donors, so that code belongs in the <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code> class.</p>
-<p>Hint:
-You’ve previously sorted simple data structures like list and dictionaries, but here we’re dealing with objects - not to worry that is a really simple thing to do with python!
-You can use <cite>operator.attrgetter</cite> with a sorted function (review python docs for usage documentation).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You’ve previously sorted simple data structures like list and dictionaries, but here we’re dealing with objects – not to worry, that is a really simple thing to do with python! You can use <code class="docutils literal notranslate"><span class="pre">operator.attrgetter</span></code> with the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function (review the python docs for usage documentation) to make it easy to sort based on various attributes of a Donor.</p>
+</div>
 </div>
 <div class="section" id="command-line-interface">
 <h4>Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h4>
 <p><strong>Module responsible for main program flow (CLI - Command Line Interface)</strong></p>
-<p>Let’s call this module <code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code> to represent the entry point for the mailroom program.
-This module will be using the classes we defined: <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code>.
+<p>Let’s call this module <code class="docutils literal notranslate"><span class="pre">cli.py</span></code>.  This module will be using the classes we defined: <code class="docutils literal notranslate"><span class="pre">Donor</span></code> and <code class="docutils literal notranslate"><span class="pre">DonorCollection</span></code>.
 It will also handle interaction with the user via the <code class="docutils literal notranslate"><span class="pre">input</span></code> function calls that gather user input and to provide the output to the console.</p>
 <p>What should go into this module?</p>
 <p>A set of user-interaction menu functions – to handle each of the modes of the program.</p>
@@ -280,6 +293,8 @@ It will also handle interaction with the user via the <code class="docutils lite
 <p>The idea here is that we should be able to fairly easy replace this CLI program with a different type of interface,
 such as a GUI (Graphical User Interface), without having to make any changes to our data classes.
 If that was the case, then you would implement the GUI elements and use your data classes the same way as they are used in CLI.</p>
+<p>Note that this arrangement is a one-way street: the CLI code will need to know about the Donor and DonorCollection classes, but the model code shouldn’t need to know anything about the CLI code: it manages the information, and returns what’s asked for (like a donor letter or report), but it doesn’t know what is done with that information.</p>
+<p>In short: the cli.py module will import the model module, but the model module shouldn’t import the cli module.</p>
 </div>
 </div>
 <div class="section" id="test-driven-development">
@@ -292,13 +307,13 @@ If that was the case, then you would implement the GUI elements and use your dat
 However, you should still start with the OO structure/design.
 That is, rather than take a non-OO function and try to make it a method of a class, decide what method you need, and what it’s API should be, and then see if you have code you can use to fill in that function.</p>
 <p>You should expect to re-use a lot of the command line interface code, while refactoring most of the logic code.</p>
-<p>If you are not sure at the start what functionality you data classes will need, you can start with the CLI code, and as you find the need for a function, add it to your data classes (after writing a test first, of course).</p>
+<p>If you are not sure at the start what functionality you data classes will need, you can start with the CLI code, and as you find the need for a function, add it to your model classes (after writing a test first, of course).</p>
 </div>
 </div>
 <div class="section" id="exercise-guidelines">
 <h2>Exercise Guidelines<a class="headerlink" href="#exercise-guidelines" title="Permalink to this headline">¶</a></h2>
-<p>OO mailroom is the final project for the class.</p>
-<p>So this is your chance to really do things “right”. Strive to make this code as good, by every definition, as you can.</p>
+<p>OO mailroom is the final step in the mailroom project. And you are near the end of the class.</p>
+<p>So this is your chance to really do things “right”. Strive to make this code as good, by every definition, as you can. If you have gotten feedback from your instructors, now is the chance to incorporate recommended changes.</p>
 <p>With that in mind:</p>
 <div class="section" id="functionality">
 <h3>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h3>
@@ -324,8 +339,8 @@ That is, rather than take a non-OO function and try to make it a method of a cla
 <li><p>Any user interaction should be outside the “logic” code. (Sometimes called the “Model”, or “Business logic”)</p>
 <ul>
 <li><p>You should be able to re-use all the logic code with a different UI – Web App, GUI, etc.</p></li>
-<li><p>There should be no <code class="docutils literal notranslate"><span class="pre">input()</span></code> or <code class="docutils literal notranslate"><span class="pre">print</span></code> functions in the logic code.</p></li>
-<li><p>The logic code should be 100% testable (without mocking input() or any fancy stuff like that)</p></li>
+<li><p>There should be no <code class="docutils literal notranslate"><span class="pre">input()</span></code> or <code class="docutils literal notranslate"><span class="pre">print()</span></code> functions in the logic code.</p></li>
+<li><p>The logic code should be 100% testable (without mocking <code class="docutils literal notranslate"><span class="pre">input()</span></code> or any fancy stuff like that)</p></li>
 </ul>
 </li>
 </ul>
@@ -344,8 +359,8 @@ That is, rather than take a non-OO function and try to make it a method of a cla
 <p class="rubric">The “soft” stuff:</p>
 <dl class="simple">
 <dt>Style:</dt><dd><ul class="simple">
-<li><p>conform to PEP8! (or another consistent style)</p></li>
-<li><p>You can use 95 or some other reasonable number for line length</p></li>
+<li><p>Conform to PEP8! (or another consistent style)
+(You can use 95 char or some other reasonable number for line length)</p></li>
 </ul>
 </dd>
 <dt>Docstrings:</dt><dd><p>Functions and classes should all have good docstrings. They can be very short if the function does something simple.</p>
@@ -358,9 +373,10 @@ That is, rather than take a non-OO function and try to make it a method of a cla
 <h3>Extra Ideas:<a class="headerlink" href="#extra-ideas" title="Permalink to this headline">¶</a></h3>
 <p>In case you are bored – what features can you add?</p>
 <ul class="simple">
-<li><p>How about an html report using your html_render code?</p></li>
 <li><p>Fancier reporting</p></li>
-<li><p>The sky’s the limit</p></li>
+<li><p>More error checking – does the user really want to create a new donor? or was it a typo in the donor name?</p></li>
+<li><p>The next project is an html renderer – maybe use it to make a nice html report?</p></li>
+<li><p>The sky’s the limit!</p></li>
 </ul>
 </div>
 </div>
