@@ -8,9 +8,7 @@ Making Mailroom Object Oriented.
 
 **Goal:** Refactor the mailroom program using classes to help organize the code.
 
-The functionality is the same as the earlier mailroom:
-
-:ref:`exercise_mailroom_part1`
+The functionality is the same as the earlier mailroom(s).
 
 But this time, we want to use an OO approach to better structure the code to make it more extensible.
 
@@ -32,6 +30,9 @@ As you design appropriate classes, keep in mind these three guidelines for good 
 
    There should be no use of the ``input()`` function in the classes that hold the data!  Nor any use of ``print()`` -- these are for user interaction, and you want the data handling code to be potentially usable with totally different user interaction -- such as a desktop GUI or Web interface.
 
+In the spirit of separation of concerns, you also want keep your Command Line Interface code in a separate file(s), as they already should be in your mailroom-as-a-package version. In fact, you should be able to keep the structure of your package pretty much the same -- simply replacing the model code with classes.
+
+
 3) As always: **DRY** (Don't Repeat Yourself): Anywhere you see repeated code; refactor it!
 
 
@@ -52,7 +53,14 @@ For this simple problem, simple tuples could work fine. However, in order for th
 
 So now you have to think about using a dict or class. Again for flexibility, a dict is a bit easier; you can add fields to it very easily. However, with a class, you can build some functionality in there, too. This is where encapsulation comes in. For instance, one thing you might want to do is get the total of all donations a donor has made in the past. If you add a method to compute that (or a property!), then the rest of the code doesn't need to know how the donations are stored.
 
-Consider ``data[0]`` vs ``data["name"]`` vs ``data.name``. Which one is more readable? Keep in mind that another benefit of using OO for data encapsulation is ability of modern IDEs to provide auto-completion, which reduces the number of bugs and helps to produce code faster.
+Consider ``data[0]`` (stored in a tuple) vs ``data["name"]`` (stored in a dict) vs ``data.name`` (a class).
+Which one is more readable?
+Keep in mind that another benefit of using OO for data encapsulation is ability of modern IDEs to provide auto-completion, which reduces the number of bugs and helps to produce code faster.
+
+Another way to think about it is "data" vs "code" -- dicts are for data, classes are for code.
+Sometimes it's not totally clear which is which, but if you think about how static is, that can be be a guide.
+In this example, every donor is going to have a name, and a donation history, and maybe in the future a bunch of other information (address, email, phone number ....).
+Whatever it is, every donor will have the same set -- so it's good to use code to manage it.
 
 Below are more detailed suggestions on breaking down your existing code into multiple modules that will be part of a single mailroom program.
 
@@ -60,26 +68,32 @@ Below are more detailed suggestions on breaking down your existing code into mul
 Modules and Classes
 ...................
 
-You may organize your code to your preference and keep it simple by having all of the code in a single file.
+You may organize your code to your preference and keep it simple by having all of the model code in a single file. But you should at least separate the code that manipulates data (the "model" code) from the command line interface code, as you did for mailroom-as-a-package.
 
-Optionally, you could organize your code into modules, which helps to keep code organized and re-usable.
+Optionally, you could further organize your model code into separate modules: maybe one for the Donor object, one for the DonorCollection object.
 
 What is a module? A module is a python file with a collection of code that can be imported into other python files.
 
 Modules can contain functions, classes, and even variables (constants).
 
-Here is an example file structure for ``mailroom_oo`` package that contains 3 modules:
+Here is an example file structure for ``mailroom_oo`` package -- it should be similar to what you already have:
 
-.. code-block:: bash
+::
 
-  └── mailroom_oo
-     ├── cli_main.py
-     ├── donor_models.py
-     └── test_mailroom_oo.py
+  └── mailroom
+     ├── __init__.py
+     ├── cli.py
+     ├── model.py
+     └── tests
+        ├── __init__.py
+        ├── test_cli.py
+        └── test_model.py
 
-The module ``donor_models.py`` can contain the ``Donor`` and ``DonorCollection`` classes.
 
-The module ``cli_main.py`` would include all of your user interaction functions and main program flow.
+The module ``model.py`` can contain the ``Donor`` and ``DonorCollection`` classes.
+
+The module ``cli.py`` would include all of your user interaction functions and main program flow (and a ``main()`` function that can be called to start up the program (and used as an entry_point).
+
 
 ``Donor`` Class
 ...............
@@ -117,7 +131,9 @@ This design allows you to quickly look up donor by their name and get a donor ob
 
 Another option is to simply use a list of donor objects. You get to choose which you think is more appropriate.
 
-Remember that you should use `self.donors` attribute any time you want to work with data about a single donor, most of your methods in this class will utilize it in some way. This is really what classes are desined for.
+Remember that you should use `self.donors` attribute in any methods that need access the individual donors. Most of your methods in this class will utilize it in some way. This is really what classes are designed for.
+
+Note that external code probably shouldn't access the ``.donors`` list (or dict, or ...) directly but rather ask the DonorCollection class for the information it needs: e.g. if you need to add a new donation to a particular donor, calla method like ``find_donor()`` to get the donor you want, and then work with that Donor object directly.
 
 **Examples:**
 
@@ -125,17 +141,15 @@ Generating a thank you letter to a donor only requires knowledge of that one don
 
 Generating a report about all the donors requires knowledge of all the donors, so that code belongs in the ``DonorCollection`` class.
 
-Hint:
-You've previously sorted simple data structures like list and dictionaries, but here we're dealing with objects - not to worry that is a really simple thing to do with python!
-You can use `operator.attrgetter` with a sorted function (review python docs for usage documentation).
+.. note:: You've previously sorted simple data structures like list and dictionaries, but here we're dealing with objects -- not to worry, that is a really simple thing to do with python! You can use ``operator.attrgetter`` with the ``sorted`` function (review the python docs for usage documentation) to make it easy to sort based on various attributes of a Donor.
+
 
 Command Line Interface
 .......................
 
 **Module responsible for main program flow (CLI - Command Line Interface)**
 
-Let's call this module ``cli_main.py`` to represent the entry point for the mailroom program.
-This module will be using the classes we defined: ``Donor`` and ``DonorCollection``.
+Let's call this module ``cli.py``.  This module will be using the classes we defined: ``Donor`` and ``DonorCollection``.
 It will also handle interaction with the user via the ``input`` function calls that gather user input and to provide the output to the console.
 
 What should go into this module?
@@ -151,6 +165,10 @@ These will include ``input()`` function calls to gather user input, and ``print(
 The idea here is that we should be able to fairly easy replace this CLI program with a different type of interface,
 such as a GUI (Graphical User Interface), without having to make any changes to our data classes.
 If that was the case, then you would implement the GUI elements and use your data classes the same way as they are used in CLI.
+
+Note that this arrangement is a one-way street: the CLI code will need to know about the Donor and DonorCollection classes, but the model code shouldn't need to know anything about the CLI code: it manages the information, and returns what's asked for (like a donor letter or report), but it doesn't know what is done with that information.
+
+In short: the cli.py module will import the model module, but the model module shouldn't import the cli module.
 
 
 Test-Driven Development
@@ -170,15 +188,15 @@ That is, rather than take a non-OO function and try to make it a method of a cla
 
 You should expect to re-use a lot of the command line interface code, while refactoring most of the logic code.
 
-If you are not sure at the start what functionality you data classes will need, you can start with the CLI code, and as you find the need for a function, add it to your data classes (after writing a test first, of course).
+If you are not sure at the start what functionality you data classes will need, you can start with the CLI code, and as you find the need for a function, add it to your model classes (after writing a test first, of course).
 
 
 Exercise Guidelines
 ===================
 
-OO mailroom is the final project for the class.
+OO mailroom is the final step in the mailroom project. And you are near the end of the class.
 
-So this is your chance to really do things "right". Strive to make this code as good, by every definition, as you can.
+So this is your chance to really do things "right". Strive to make this code as good, by every definition, as you can. If you have gotten feedback from your instructors, now is the chance to incorporate recommended changes.
 
 With that in mind:
 
@@ -209,9 +227,9 @@ Functionality
 
   - You should be able to re-use all the logic code with a different UI -- Web App, GUI, etc.
 
-  - There should be no ``input()`` or ``print`` functions in the logic code.
+  - There should be no ``input()`` or ``print()`` functions in the logic code.
 
-  - The logic code should be 100% testable (without mocking input() or any fancy stuff like that)
+  - The logic code should be 100% testable (without mocking ``input()`` or any fancy stuff like that)
 
 .. rubric:: Testing
 
@@ -231,9 +249,8 @@ Functionality
 .. rubric:: The "soft" stuff:
 
 Style:
-    - conform to PEP8! (or another consistent style)
-
-    - You can use 95 or some other reasonable number for line length
+    - Conform to PEP8! (or another consistent style)
+      (You can use 95 char or some other reasonable number for line length)
 
 Docstrings:
     Functions and classes should all have good docstrings. They can be very short if the function does something simple.
@@ -241,13 +258,16 @@ Docstrings:
 Naming:
     All classes, functions, methods, attributes, variables should have appropriate names: meaningful, but not too detailed.
 
+
 Extra Ideas:
 ------------
 
 In case you are bored -- what features can you add?
 
-* How about an html report using your html_render code?
-
 * Fancier reporting
 
-* The sky's the limit
+* More error checking -- does the user really want to create a new donor? or was it a typo in the donor name?
+
+* The next project is an html renderer -- maybe use it to make a nice html report?
+
+* The sky's the limit!

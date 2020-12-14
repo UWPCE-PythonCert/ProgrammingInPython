@@ -29,9 +29,9 @@ to query the user for info at the command line, you use:
 Procedure
 ---------
 
-In your student dir in the class repo, create a ``lesson03`` dir and put in a new ``list_lab.py`` file.
+In the github classroom repo for this exercise, you will find a``list_lab.py`` file (if it not there, you can create it and add it to git yourself).
 
-The file should be an executable Python script. That is to say that one
+The file should be made an executable Python script. That is to say that one
 should be able to run the script directly like so:
 
 .. code-block:: bash
@@ -50,11 +50,11 @@ should be able to run the script directly like so:
 
 The file will also need this on the first line::
 
-    #!/usr/bin/env python3
+    #!/usr/bin/env python
 
-This is known as the "she-bang" line -- it tells the shell how to execute that file -- in this case, with ``python3``
+This is known as the "she-bang" line -- it tells the shell how to execute that file -- in this case, with ``python``
 
-NOTE: on Windows, there is a python launcher which, if everything is configured correctly will look at that line to know you want python3 if there is more than one python on your system.
+NOTE: on Windows, there is a python launcher which, if everything is configured correctly will look at that line to know you want python if there is more than one python on your system.
 
 If this doesn't work on Windows, just run the file some other way:
 
@@ -63,14 +63,11 @@ If this doesn't work on Windows, just run the file some other way:
  - from your IDE or editor is you are using one
 
 
-Add the file to your clone of the repository and commit changes frequently
+Make sure the file is added to your clone of the repository and commit changes frequently
 while working on the following tasks. When you are done, push your changes to
-GitHub and issue a pull request.
+GitHub and issue a pull request to let the instructors know it is ready for review.
 
-(if you are still struggling with git -- just write the code for now).
-
-When the script is run, it should accomplish the following four series of
-actions:
+When the script is run, it should accomplish the following four series of actions:
 
 Series 1
 --------
@@ -79,8 +76,8 @@ Series 1
 - Display the list (plain old ``print()`` is fine...).
 - Ask the user for another fruit and add it to the end of the list.
 - Display the list.
-- Ask the user for a number and display the number back to the user and the
-  fruit corresponding to that number (on a 1-is-first basis). Remember that Python uses zero-based indexing, so you will need to correct.
+- Ask the user for a number and display the number back to the user
+  and the fruit corresponding to that number (on a 1-is-first basis). Remember that Python uses zero-based indexing, so you will need to correct for that.
 - Add another fruit to the beginning of the list using "+" and display the
   list.
 - Add another fruit to the beginning of the list using ``insert()`` and display the list.
@@ -105,8 +102,8 @@ Again, using the list from series 1:
 
 - Ask the user for input displaying a line like "Do you like apples?" for each fruit in the list (making the fruit all lowercase).
 - For each "no", delete that fruit from the list.
-- For any answer that is not "yes" or "no", prompt the user to answer with one
-  of those two values (a while loop is good here)
+- For any answer that is not "yes" or "no", prompt the user to answer
+  with one of those two values (a while loop is good here)
 - Display the list.
 
 Series 4
