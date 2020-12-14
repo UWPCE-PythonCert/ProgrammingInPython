@@ -205,8 +205,8 @@
 </div>
 <div class="section" id="procedure">
 <h3>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h3>
-<p>In your student dir in the class repo, create a <code class="docutils literal notranslate"><span class="pre">lesson03</span></code> dir and put in a new <code class="docutils literal notranslate"><span class="pre">list_lab.py</span></code> file.</p>
-<p>The file should be an executable Python script. That is to say that one
+<p>In the github classroom repo for this exercise, you will find a``list_lab.py`` file (if it not there, you can create it and add it to git yourself).</p>
+<p>The file should be made an executable Python script. That is to say that one
 should be able to run the script directly like so:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./list_lab.py
 </pre></div>
@@ -218,11 +218,11 @@ should be able to run the script directly like so:</p>
 </div>
 <p>(The +x means make this executable).</p>
 <p>The file will also need this on the first line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 </pre></div>
 </div>
-<p>This is known as the “she-bang” line – it tells the shell how to execute that file – in this case, with <code class="docutils literal notranslate"><span class="pre">python3</span></code></p>
-<p>NOTE: on Windows, there is a python launcher which, if everything is configured correctly will look at that line to know you want python3 if there is more than one python on your system.</p>
+<p>This is known as the “she-bang” line – it tells the shell how to execute that file – in this case, with <code class="docutils literal notranslate"><span class="pre">python</span></code></p>
+<p>NOTE: on Windows, there is a python launcher which, if everything is configured correctly will look at that line to know you want python if there is more than one python on your system.</p>
 <p>If this doesn’t work on Windows, just run the file some other way:</p>
 <blockquote>
 <div><ul class="simple">
@@ -231,12 +231,10 @@ should be able to run the script directly like so:</p>
 <li><p>from your IDE or editor is you are using one</p></li>
 </ul>
 </div></blockquote>
-<p>Add the file to your clone of the repository and commit changes frequently
+<p>Make sure the file is added to your clone of the repository and commit changes frequently
 while working on the following tasks. When you are done, push your changes to
-GitHub and issue a pull request.</p>
-<p>(if you are still struggling with git – just write the code for now).</p>
-<p>When the script is run, it should accomplish the following four series of
-actions:</p>
+GitHub and issue a pull request to let the instructors know it is ready for review.</p>
+<p>When the script is run, it should accomplish the following four series of actions:</p>
 </div>
 <div class="section" id="series-1">
 <h3>Series 1<a class="headerlink" href="#series-1" title="Permalink to this headline">¶</a></h3>
@@ -245,8 +243,8 @@ actions:</p>
 <li><p>Display the list (plain old <code class="docutils literal notranslate"><span class="pre">print()</span></code> is fine…).</p></li>
 <li><p>Ask the user for another fruit and add it to the end of the list.</p></li>
 <li><p>Display the list.</p></li>
-<li><p>Ask the user for a number and display the number back to the user and the
-fruit corresponding to that number (on a 1-is-first basis). Remember that Python uses zero-based indexing, so you will need to correct.</p></li>
+<li><p>Ask the user for a number and display the number back to the user
+and the fruit corresponding to that number (on a 1-is-first basis). Remember that Python uses zero-based indexing, so you will need to correct for that.</p></li>
 <li><p>Add another fruit to the beginning of the list using “+” and display the
 list.</p></li>
 <li><p>Add another fruit to the beginning of the list using <code class="docutils literal notranslate"><span class="pre">insert()</span></code> and display the list.</p></li>
@@ -270,8 +268,8 @@ list.</p></li>
 <ul class="simple">
 <li><p>Ask the user for input displaying a line like “Do you like apples?” for each fruit in the list (making the fruit all lowercase).</p></li>
 <li><p>For each “no”, delete that fruit from the list.</p></li>
-<li><p>For any answer that is not “yes” or “no”, prompt the user to answer with one
-of those two values (a while loop is good here)</p></li>
+<li><p>For any answer that is not “yes” or “no”, prompt the user to answer
+with one of those two values (a while loop is good here)</p></li>
 <li><p>Display the list.</p></li>
 </ul>
 </div>
