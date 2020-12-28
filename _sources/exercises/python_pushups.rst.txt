@@ -4,7 +4,8 @@
 Python Pushups
 ##############
 
-These are a couple exercises to kick you off with Python
+These are a quick exercise to kick you off with Python:
+
 
 Explore Errors
 ==============

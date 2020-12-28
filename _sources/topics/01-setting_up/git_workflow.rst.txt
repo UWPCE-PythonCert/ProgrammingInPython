@@ -1,6 +1,7 @@
 :orphan:
 
 .. NOTE: This is the "old" version, before we adopted gitHub Classroom
+..       It is not currently published.
 
 .. _git_workflow:
 
@@ -9,7 +10,7 @@ git Workflow
 
 Git is a very flexible system that can be used in a lot of different ways to manage code development. This page describes the workflow we are using for this class -- about as simple a workflow as you can have with git.
 
-We start with an overview of the usual process. This overview may be all you need for future work, once you have created your home directory within the students directory.
+We start with an overview of the usual process. This overview may be all you need for future work, once you have set up git on your workstation.
 
 The instructions following the overview are very explicit for those new to git and the command line.
 
@@ -17,6 +18,7 @@ The usual process
 -----------------
 
 This is the usual series of steps you will want to go through when you do a new project / assignment.
+
 
 First make sure you are on the command line "in" your copy of the class repo.
 

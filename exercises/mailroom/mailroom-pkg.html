@@ -194,28 +194,23 @@
 <div class="section" id="code-structure">
 <h2>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h2>
 <p>Start with your existing version of mailroom.</p>
-<p>It should already be structured with the “logic” code distinct from the user interface (yes, a command line <em>is</em> a user interface). But you may have it all in one file. This isn’t <em>too</em> bad for such a small program, but as a program grows, you really want to keep things separate, in a well organized package.</p>
+<p>It may already be structured with the “logic” code distinct from the user interface (yes, a command line <em>is</em> a user interface). But you may have it all in one file. This isn’t <em>too</em> bad for such a small program, but as a program grows, you really want to keep things separate, in a well organized package.</p>
 <p>The first step is to re-structure your code into separate files:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>one (or more) for the logic code: the code than manipulates the data</p></li>
-<li><p>one for the user-interface code: the code with the interactive loops and all the “input” and “print” statements</p></li>
-<li><p>one (or more) for tests.</p></li>
+<li><p>One (or more) for the logic code: the code that manipulates the data</p></li>
+<li><p>One for the user-interface code: the code with the interactive loops and all the “input” and “print” statements</p></li>
+<li><p>One (or more) for the unit tests.</p></li>
 </ul>
 </div></blockquote>
 <p>You should have all this pretty distinct after having refactored for the unit testing. If not, this is a good time to do it!</p>
-<p>In addition to those three, you will want to write a top-level script file (perhaps called <code class="docutils literal notranslate"><span class="pre">mailman.py</span></code>) that does little but import the ui code and run a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. It should look something like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="kn">from</span> <span class="nn">mailman</span> <span class="kn">import</span> <span class="n">cli</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">cli</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+<p>In addition to those three, you will need a single function to call that will start the program.
+That can be defined in a new file, as a “script”, but for something as simple as this, it can be in with your interface code.
+That file can then have an <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> block
+which should be as simple as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
 </pre></div>
-</div>
-<p>Yes, that’s it! This has the advantage of keeping the top-level script really simple, as it has to get put somewhere else and it can keep the “real” code in the package where it belongs.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Be careful here – it is important not to call your top-level script the same thing as your package, in this case <code class="docutils literal notranslate"><span class="pre">mailroom.py</span></code>. If you do, than when installed, python will find the script, rather than the package, when you do <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mailroom</span></code>. You can call it <code class="docutils literal notranslate"><span class="pre">mailroom</span></code> without the Python, but that may confuse Windows.</p>
 </div>
 </div>
 <div class="section" id="making-the-package">
@@ -233,25 +228,47 @@
             <span class="n">test_cli</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>You will need to import the logic code from model.py in the cli code in order to use it. You can wait until you learn about mocking to write the code in test_cli.py (so you can leave that out)</p>
-<p>Now write your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> to support your package.</p>
+<p>You will need to import the logic code from model.py in the cli code in order to use it.
+You can wait until you learn about mocking to write the code in test_cli.py (so you can leave that out)</p>
+<p>Now write a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file to support the installation of your package.</p>
 </div>
 <div class="section" id="making-the-top-level-script-runnable">
 <h2>Making the top-level script runnable<a class="headerlink" href="#making-the-top-level-script-runnable" title="Permalink to this headline">¶</a></h2>
 <p>To get the script installed you have two options. I used to prefer the more straightforward one, <a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-scripts-keyword-argument">the scripts keyword argument</a></p>
-<p>But it turns out that while the simple <code class="docutils literal notranslate"><span class="pre">scripts</span></code> keyword argument method works well and is simple, it may not work as well on Windows – it relies in your script being named <code class="docutils literal notranslate"><span class="pre">something.py</span></code> and that Windows is configured to run all files with <code class="docutils literal notranslate"><span class="pre">.py</span></code> extensions. Not all windows systems are set up this way. But the “entry points” method builds a little exe file to call your script, so it’s more reliable.</p>
-<p>And the Python community has moved very much towards using setuptools entry points, so That’s really the way to go now:</p>
+<p>But it turns out that while the simple <code class="docutils literal notranslate"><span class="pre">scripts</span></code> keyword argument method works well and is simple, it may not work as well on Windows – it relies in your script being named <code class="docutils literal notranslate"><span class="pre">something.py</span></code> and that Windows is configured to run all files with <code class="docutils literal notranslate"><span class="pre">.py</span></code> extensions. Not all windows systems are set up this way. But the “entry points” method builds a little <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file to call your script, so it’s more reliable.</p>
+<p>And the Python community has moved very much towards using setuptools entry points, so that’s really the way to go now:</p>
 <p><a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point">http://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point</a></p>
+<p>In this case, that will look a lot like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mailroom=mailroom.cli:main&#39;</span><span class="p">]},</span>
+</pre></div>
+</div>
+<p>That’s a bit complicated, so I’ll break it down for you. In this case, we only want a single script, but setuptools allows multiple types of entry points, and multiple instances of each type (e.g. you can have more than one script) to the code, so the argument is a potentially large dictionary.
+The keys of the dict are the various types of entry points.
+In this case, we want a single script that can be run in a terminal (or “console”),  so we have a dict with one key: <code class="docutils literal notranslate"><span class="pre">console_scripts</span></code>.</p>
+<p>The value of that entry is a list of strings – each one describing the console script. This string is of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SCRIPTNAME</span><span class="o">=</span><span class="n">MODULE</span><span class="p">:</span><span class="n">FUNCTION_NAME</span>
+</pre></div>
+</div>
+<p>setuptools will create a wrapper script with the name given, and that wrapper will call the function in the module that is specified.
+So: <code class="docutils literal notranslate"><span class="pre">'mailroom=mailroom.cli:main'</span></code> means: create a start up script called “mailroom” that will then call the <code class="docutils literal notranslate"><span class="pre">main</span></code> function in the <code class="docutils literal notranslate"><span class="pre">cli</span></code> module in the <code class="docutils literal notranslate"><span class="pre">mailroom</span></code> package.</p>
+<p>Once this is all set up, and you install the package (either in editable mode or not):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">./</span>
+</pre></div>
+</div>
+<p>you should then be able to type “mailroom” at the command line and have your program run.</p>
 </div>
 <div class="section" id="including-data-files">
-<h2>Including data files<a class="headerlink" href="#including-data-files" title="Permalink to this headline">¶</a></h2>
-<p>NOTE: If you have a database of donors in a file that you load, then that should go in the package as well. Probably inside the mailroom dir, in a <code class="docutils literal notranslate"><span class="pre">data</span></code> dir or similar. Then you need to add it to your setup.py to make sure it gets copied into the installed package.</p>
+<h2>Including Data Files<a class="headerlink" href="#including-data-files" title="Permalink to this headline">¶</a></h2>
+<p>If you have a database of donors in a file that you load, then that should go in the package as well. Probably inside the mailroom dir, in a <code class="docutils literal notranslate"><span class="pre">data</span></code> dir or similar. Then you need to add it to your setup.py to make sure it gets copied into the installed package.</p>
+<p>(If you are not saving the donor data to a file – that’s fine. You can ignore this section for now)</p>
 <p>There are a few ways to do this:</p>
 <p><a class="reference external" href="http://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files">http://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files</a></p>
 <p>I personally like the simplest one with the least magic:</p>
 <p><a class="reference external" href="http://python-packaging.readthedocs.io/en/latest/non-code-files.html#adding-non-code-files">include_package_data=True</a></p>
 <p>Then you’ll get the data file included in the package in the same place.</p>
-<p>Now you’ll need to write your code to find that data file. You can do that by using the __file__ module attribute – then the location of the data file will be relative to the __file__ that your code is in. A little massaging with a <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> should do it.</p>
+<p>Now you’ll need to write your code to find that data file.
+You can do that by using the <code class="docutils literal notranslate"><span class="pre">__file__</span></code> module attribute, which is the path to a python module at run time  – then the location of the data file will be relative to the path that your code is in.
+A little massaging with a <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> should do it.</p>
 </div>
 <div class="section" id="testing-your-package">
 <h2>Testing your Package<a class="headerlink" href="#testing-your-package" title="Permalink to this headline">¶</a></h2>
@@ -264,13 +281,14 @@
 </pre></div>
 </div>
 <p>When that is done, you should be able to run the top-level script from anywhere:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mailroom.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mailroom
 </pre></div>
 </div>
 <p>and run the test from within the package:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pytest --pyargs mailroom
 </pre></div>
 </div>
+<p>(or run the tests from the test dir as well)</p>
 <p>If you installed in editable mode, then you can update the code and re-run the tests or the script, and it will use the new code right away.</p>
 </div>
 </div>
