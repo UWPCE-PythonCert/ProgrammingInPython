@@ -108,12 +108,12 @@ Any Python object can be printed (though it might not be pretty...)
 
 .. code-block:: ipython
 
-    In [1]: class bar(object):
+    In [1]: class Bar:
        ...:     pass
        ...:
 
-    In [2]: print(bar)
-    <class '__main__.bar'>
+    In [2]: print(Bar)
+    <class '__main__.Bar'>
 
 Code Blocks
 ...........

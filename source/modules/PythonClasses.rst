@@ -124,31 +124,33 @@ see: :download:`simple_classes.py <../examples/classes/simple_classes.py>`
 The Initializer
 ---------------
 
-The ``__init__``  special method is known as the initializer. It is automatically called when a new instance of a class is created.
+The ``__init__``  special method serves as the initializer for class instances. It is automatically called when a new instance of a class is created.
 
 You can use it to do any set-up you need:
 
 .. code-block:: python
 
-    class Point(object):
+    class Point:
         def __init__(self, x, y):
             self.x = x
             self.y = y
 
 
-It gets the arguments passed when you call the class object:
+It gets the arguments passed when you call the class object, e.g.:
 
 .. code-block:: python
 
     Point(x, y)
 
-Once you have defined an __init__, you can create "instances" of the class:
+Will call ``Point.__init__()`` with x and y as arguments.
+
+Once you have defined an ``__init__``, you can create "instances" of the class:
 
 .. code-block:: python
 
-    p = Point(3,4)
+    p = Point(3, 4)
 
-And access the attributes:
+And access its attributes:
 
 .. code-block:: python
 
@@ -182,19 +184,19 @@ That's where all the instance-specific data is.
 Class Attributes
 ----------------
 
-In the above example, we assigned two attributes to ``self`` -- these are going to be different for each instance, or copy of this class. But what if you want all the instances of a class to share the same values?
+In the above example, we assigned two attributes to ``self`` -- these are going to be different for each instance, or copy, of this class. But what if you want all the instances of a class to share the same values?
 
 .. code-block:: python
 
-    class Point(object):
+    class Point:
         size = 4
-        color= "red"
+        color = "red"
         def __init__(self, x, y):
             self.x = x
             self.y = y
 
 Anything assigned in the class scope is a class attribute -- every
-instance of the class shares the same one.
+instance of the class shares the same one. So in this case, all Points will have the same size and color, but different x and y coordinates.
 
 Note: the methods defined by ``def`` are class attributes as well.
 
@@ -215,21 +217,21 @@ So in this case, ``size`` and ``color`` are class attributes.
 
 But note in ``get_color`` -- it accesses color from ``self``:
 
-class attributes are accessed with ``self``  also.
+Class attributes are accessed with ``self``  also.
 
 So what is the difference?
 
- * class attributes are shared by ALL the instances of the class.
- * instance attributes are unique to each instance -- each one has its own copy.
+ * Class attributes are shared by ALL the instances of the class.
+ * Instance attributes are unique to each instance -- each one has its own copy.
 
 Example:
 
 .. code-block:: ipython
 
     In [6]: class C:
-       ...:     x = [1,2,3] # class attribute
+       ...:     x = [1, 2, 3] # class attribute
        ...:     def __init__(self):
-       ...:         self.y = [4,5,6] # instance attribute
+       ...:         self.y = [4, 5, 6] # instance attribute
        ...:
 
     In [7]: c1 = C()

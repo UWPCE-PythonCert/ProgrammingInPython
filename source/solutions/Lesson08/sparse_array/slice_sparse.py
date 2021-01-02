@@ -4,7 +4,7 @@ example of emulating a sequence using slices
 """
 
 
-class SparseArray(object):
+class SparseArray:
 
     def __init__(self, my_array=()):
         self.length = len(my_array)

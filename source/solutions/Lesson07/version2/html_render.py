@@ -4,7 +4,7 @@
 
 
 # This is the framework for the base class
-class Element(object):
+class Element:
 
     tag = "html"
     indent = "  "

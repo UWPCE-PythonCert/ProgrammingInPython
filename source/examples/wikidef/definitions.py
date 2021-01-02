@@ -1,7 +1,7 @@
 from api import Wikipedia
 
 
-class Definitions(object):
+class Definitions:
 
     @staticmethod
     def article(title):

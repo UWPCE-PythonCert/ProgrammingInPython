@@ -1,7 +1,6 @@
 import sqlalchemy
 
-
-class AccessTable(object):
+class AccessTable:
 
     engine = None
 
@@ -49,7 +48,7 @@ class AccessTable(object):
         access = self.metadata.tables['access']
         select = sqlalchemy.select([access.c.privilege]).where(sqlalchemy.sql.and_(access.c.name == name,
             access.c.group == group))
-        
+
         # TODO handle result including case where it doesn't find any records
         _result = engine.execute(select)
         return 'readwrite'

@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 """
-sample data for NOSQL examples
+Sample data for NOSQL examples
 
 This version has a not completely-trival data model
 """
 
 
-class Person(object):
+class Person:
     """
     class to represent an individual person
     """
@@ -43,7 +43,7 @@ class Person(object):
         return self.__str__()
 
 
-class Address(object):
+class Address:
     """
     class that represents an address
     """
@@ -70,11 +70,11 @@ class Address(object):
         return msg
 
 
-class Household(object):
+class Household:
     """
     Class that represents a Household.
 
-    A household has one or more people, and a Location
+    A household has one or more people, and an address
     """
 
     def __init__(self,
@@ -97,7 +97,7 @@ class Household(object):
         return self.__str__()
 
 
-class Business(Household):
+class Business:
     """
     Class that represents a Business
 
@@ -108,7 +108,7 @@ class Business(Household):
     pass
 
 
-class AddressBook(object):
+class AddressBook:
     """
     And address book -- has people, households, businesses.
 

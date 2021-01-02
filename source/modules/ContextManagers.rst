@@ -135,8 +135,9 @@ Consider this code:
 
 .. code-block:: python
 
-    class Context(object):
-        """from Doug Hellmann, PyMOTW
+    class Context:
+        """
+        from Doug Hellmann, PyMOTW
         https://pymotw.com/3/contextlib/#module-contextlib
         """
         def __init__(self, handle_error):

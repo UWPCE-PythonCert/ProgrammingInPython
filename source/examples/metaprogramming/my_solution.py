@@ -1,5 +1,6 @@
 # original class made as simple as possible
-class TestClass(object):
+
+class TestClass:
 
     engine = None
 
@@ -22,9 +23,9 @@ class TestClass(object):
         return self.data, TestClass.engine
 
 
-class MyClass(object):
-    
-    class __MyClass(object):
+class MyClass:
+
+    class __MyClass:
         def __init__(self, db_config):
             self.db_config = db_config
             self.data = None

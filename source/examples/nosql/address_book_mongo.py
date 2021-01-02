@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-sample data for NOSQL examples
+Sample data for NOSQL examples
 
 This version uses mongoDB to store the data.
 
@@ -168,7 +168,7 @@ class Business(Household):
     pass
 
 
-class AddressBook(object):
+class AddressBook:
     """
     An address book -- has people, households, businesses.
 
@@ -223,7 +223,8 @@ class AddressBook(object):
         Find all the people with name in their name somewhere
         """
         # fixme -- can this query be combined?
-        # like this: db.inventory.find( { $or: [ { qty: { $lt: 20 } }, { sale: true } ] } )
+        # like this:
+        #   db.inventory.find( { $or: [ { qty: { $lt: 20 } }, { sale: true } ] } )
 
         cursor = self.people.find({"first_name": {'$regex': '.*' + name + '.*',
                                                   '$options': 'i'}})

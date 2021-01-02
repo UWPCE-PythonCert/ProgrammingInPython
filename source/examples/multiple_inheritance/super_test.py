@@ -50,7 +50,7 @@ d = D()
 # specify them:
 #
 # ```
-# class A(object):
+# class A:
 #     def __init__(self):
 #         super(A, self).__init__()
 # ```

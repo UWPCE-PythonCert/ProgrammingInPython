@@ -10,7 +10,7 @@ This version does not support slicing.
 """
 
 
-class SparseArray(object):
+class SparseArray:
 
     def __init__(self, my_array=()):
         """

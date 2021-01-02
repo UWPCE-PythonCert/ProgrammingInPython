@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-class A(object):
+class A:
     def my_method(self):
         print("called A")
 

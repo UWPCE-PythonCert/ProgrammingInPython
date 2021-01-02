@@ -34,7 +34,7 @@ But using super() makes sure all the methods get called, but none of them twice.
 """
 
 
-class A(object):
+class A:
     def do_your_stuff(self):
         print("doing A's stuff")
 

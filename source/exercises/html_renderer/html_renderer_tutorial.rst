@@ -110,13 +110,13 @@ But this one failed:
         assert file_contents.startswith("<html>")
         assert file_contents.endswith("</html>")
 
-OK -- this one really does something real -- it tries to render an html element -- which did NOT pass -- so it's time to put some real functionality in the Element class.
+OK -- this one really does something real -- it tries to render an html element -- which did NOT pass -- so it's time to put some real functionality in the ``Element`` class.
 
 This is the code:
 
 .. code-block:: python
 
-    class Element(object):
+    class Element:
 
         def __init__(self, content=None):
             pass
@@ -139,7 +139,7 @@ So we need to add a tiny bit of code:
 
 .. code-block:: python
 
-    class Element(object):
+    class Element:
 
         tag = "html"
 

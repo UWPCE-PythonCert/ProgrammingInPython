@@ -36,7 +36,7 @@ B and C's method.
 """
 
 
-class A(object):
+class A:
     def do_your_stuff(self):
         print("doing A's stuff")
 

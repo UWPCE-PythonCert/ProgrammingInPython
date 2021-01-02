@@ -13,7 +13,7 @@ import functools
 # this is a trick to make all the greater than, less than, etc work.
 # see: https://docs.python.org/3.5/library/functools.html#functools.total_ordering
 @functools.total_ordering
-class Circle(object):
+class Circle:
 
     def __init__(self, radius):
         self.radius = float(radius)

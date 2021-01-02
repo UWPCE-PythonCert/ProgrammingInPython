@@ -487,8 +487,7 @@ same signature as type(): (``(name, bases, dict)``)
 
 **Python2 NOTE:**
 
-In Python 2, instead of the keyword argument, a special class attribute:
-``__metaclass__`` is used:
+In Python 2, instead of the keyword argument, a special class attribute: ``__metaclass__`` is used:
 
 .. code-block:: python
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-nifty Circle class
+Nifty Circle class
 
 Used to demo propeties and "magic methods"
 """
@@ -13,7 +13,7 @@ import functools
 # this is a trick to make all the greater than, less than, etc work.
 # see: https://docs.python.org/3.6/library/functools.html#functools.total_ordering
 @functools.total_ordering
-class Circle(object):
+class Circle:
     """
     simple class to represent a circle
 

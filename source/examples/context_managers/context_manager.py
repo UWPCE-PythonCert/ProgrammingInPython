@@ -1,7 +1,7 @@
 # Demo of a contextmanager
 
 
-class Context(object):
+class Context:
     """
     from Doug Hellmann, PyMOTW
     https://pymotw.com/3/contextlib/#module-contextlib

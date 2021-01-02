@@ -11,7 +11,7 @@ module_variable = 0
 
 float = 1.0
 
-long = "loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong"        
+long = "loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong"
 
 
 
@@ -22,8 +22,8 @@ def functionName(self, int):
     module_variable = 5*5
     return module_variable
 
-class my_class(object):
-    
+class my_class:
+
     def __init__(self, arg1, string):
         self.value = True
         return
@@ -35,20 +35,20 @@ class my_class(object):
     def method2(self):
         return
         print('How did we get here?')
-    
+
     def method1(self):
         return self.value + 1
     method2 = method1
-    
+
 class my_subclass(my_class):
-    
+
     def __init__(self, arg1, string):
         self.value = arg1
         return
 
 
 
-class Food(object):
+class Food:
     pass
 
 class Pizza(Food):
