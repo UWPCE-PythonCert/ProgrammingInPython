@@ -110,13 +110,13 @@ But this one failed:
         assert file_contents.startswith("<html>")
         assert file_contents.endswith("</html>")
 
-OK -- this one really does something real -- it tries to render an html element -- which did NOT pass -- so it's time to put some real functionality in the Element class.
+OK -- this one really does something real -- it tries to render an html element -- which did NOT pass -- so it's time to put some real functionality in the ``Element`` class.
 
 This is the code:
 
 .. code-block:: python
 
-    class Element(object):
+    class Element:
 
         def __init__(self, content=None):
             pass
@@ -139,7 +139,7 @@ So we need to add a tiny bit of code:
 
 .. code-block:: python
 
-    class Element(object):
+    class Element:
 
         tag = "html"
 
@@ -492,7 +492,8 @@ Part A
 .. rubric:: Instructions:
 
 
-"Create a couple subclasses of ``Element``, for each of ``<html>``, ``<body>``, and ``<p>`` tags. All you should have to do is override the ``tag`` class attribute (you may need to add a ``tag`` class attribute to the ``Element`` class first, if you haven't already)."
+"Create a couple subclasses of ``Element``, for each of ``<html>``, ``<body>``, and ``<p>`` tags.
+All you should have to do is override the ``tag`` class attribute (you may need to add a ``tag`` class attribute to the ``Element`` class first, if you haven't already)."
 
 So this is very straightforward. We have a class that represents an element, and the only difference between basic elements is that they have a different tag. For example::
 
@@ -509,7 +510,9 @@ and::
     </p>
 
 
-The ``<body>`` tag is for the entire contents of an html page, and the ``<p>`` tag is for a paragraph.  But you can see that the form of the tags is identical, so we don't have to change much to make classes for these tags. In fact, all we need to change is the ``tag`` class attribute.
+The ``<body>`` tag is for the entire contents of an html page, and the ``<p>`` tag is for a paragraph.
+But you can see that the form of the tags is identical, so we don't have to change much to make classes for these tags.
+In fact, all we need to change is the ``tag`` class attribute.
 
 Before we do that -- let's do some test-driven development. Uncomment the next few tests in ``test_html_render.py``: ``test_html``, ``test_body``, and ``test_p``, and run the tests::
 
@@ -546,7 +549,8 @@ Before we do that -- let's do some test-driven development. Uncomment the next f
     ====================== 3 failed, 4 passed in 0.08 seconds ======================
 
 So we have three failures. Of course we do, because we haven't written any new code yet!
-Yes, this is pedantic, and there is no real reason to run tests you know are going to fail. But there is a reason to *write* tests that you know are going to fail, and you have to run them to know that you have written them correctly.
+Yes, this is pedantic, and there is no real reason to run tests you know are going to fail.
+But there is a reason to *write* tests that you know are going to fail, and you have to run them to know that you have written them correctly.
 
 Now we can write the code for those three new element types. Try to do that yourself first, before you read on.
 
@@ -664,24 +668,28 @@ Uncomment ``test_subelement`` in the test file, and run the tests::
     out_file = <_io.StringIO object at 0x10325b5e8>
 
         def render(self, out_file):
+            out_file.write("<{}>\n".format(self.tag))
             # loop through the list of contents:
             for content in self.contents:
-                out_file.write("<{}>\n".format(self.tag))
     >           out_file.write(content)
     E           TypeError: string argument expected, got 'P'
 
     html_render.py:26: TypeError
     ====================== 1 failed, 7 passed in 0.11 seconds ======================
 
-Again, the new test failed; no surprise because we haven't written any new code yet. But do read the report carefully; it did not fail on an assert, but rather with a ``TypeError``.  The code itself raised an exception before it could produce results to test.
+Again, the new test failed; no surprise because we haven't written any new code yet.
+But do read the error report carefully; it did not fail on an assert, but rather with a ``TypeError``.  The code itself raised an exception before it could produce results to test.
 
 So now it's time to write the code. Look at where the exception was raised: line 26 in my code, inside the ``render()`` method. The line number will likely be different in your code, but it probably failed on the render method. Looking closer at the error::
 
     >           out_file.write(content)
     E           TypeError: string argument expected, got 'P'
 
-It occurred in the file ``write`` method, complaining that it expected to be writing a string to the file, but it got a ``'P'``. ``'P'`` is the name of the paragraph element class.
-So we need a way to write an element to a file. How might we do that? Inside the element's render method, we need to render an element...
+It occurred in the file ``write`` method, complaining that it expected to be writing a string to the file, but it got a ``'P'``.
+``'P'`` is the name of the paragraph element class.
+So we need a way to write an element to a file. How might we do that?
+
+Inside the element's render method, we need to render an element...
 
 Well, elements already know how to render themselves. This is what is meant by a recursive approach. In the ``render`` method, we want to make use of the ``render`` method itself.
 
@@ -696,25 +704,25 @@ it becomes clear -- we render an element by passing the output file to the eleme
 .. code-block:: python
 
     def render(self, out_file):
+        out_file.write("<{}>\n".format(self.tag))
         # loop through the list of contents:
         for content in self.contents:
-            out_file.write("<{}>\n".format(self.tag))
             out_file.write(content)
             out_file.write("\n")
-            out_file.write("</{}>\n".format(self.tag))
+        out_file.write("</{}>\n".format(self.tag))
 
 So let's update our render by replacing that ``out_file.write()`` call with a call to the content's ``render`` method:
 
 .. code-block:: python
 
     def render(self, out_file):
+        out_file.write("<{}>\n".format(self.tag))
         # loop through the list of contents:
         for content in self.contents:
-            out_file.write("<{}>\n".format(self.tag))
             # out_file.write(content)
             content.render(out_file)
             out_file.write("\n")
-            out_file.write("</{}>\n".format(self.tag))
+        out_file.write("</{}>\n".format(self.tag))
 
 And let's see what happens when we run the tests::
 
@@ -779,20 +787,21 @@ There are a number of approaches you can take. This is a good time to read the n
 You may want to try one of the more complex methods, but for now, we're going to use the one that suggests itself from the error.
 
 We need to know whether we want to call a ``render()`` method, or simply write the content to the file. How would we know which to do? Again, look at the error:
+
 We tried to call the render() method of a piece of content, but got an ``AttributeError``. So the way to know whether we can call a render method is to try to call it -- if it works, great! If not, we can catch the exception, and do something else. In this case, the something else is to try to write the content directly to the file:
 
 .. code-block:: python
 
     def render(self, out_file):
+        out_file.write("<{}>\n".format(self.tag))
         # loop through the list of contents:
         for content in self.contents:
-            out_file.write("<{}>\n".format(self.tag))
             try:
                 content.render(out_file)
             except AttributeError:
                 out_file.write(content)
             out_file.write("\n")
-            out_file.write("</{}>\n".format(self.tag))
+        out_file.write("</{}>\n".format(self.tag))
 
 And run the tests again::
 
@@ -815,7 +824,7 @@ So what are the downsides to this method? Well, there are two:
 
 1. When we successfully call the ``render`` method, we have no idea if it's actually done the right thing -- it could do anything. If someone puts some completely unrelated object in the content list that happens to have a ``render`` method, this is not going to work. But what are the odds of that?
 
-2. This is the bigger one: if the object *HAS* a render method, but that render method has something wrong with it, then it could conceivably raise an ``AttributeError`` itself, but it would not be the Attribute Error we are expecting. The trick here is that this is very hard to debug.
+2. This is the bigger one: if the object *HAS* a render method, but that render method has something wrong with it, then it could conceivably raise an ``AttributeError`` itself, but it would not be the ``AttributeError`` we are expecting. The trick here is that this can be very hard to debug.
 
 However, we are saved by tests. If the render method works in all the other tests, It's not going to raise an ``AttributeError`` only in this case. Another reason to have a good test suite.
 
@@ -965,14 +974,14 @@ So how do we get this test to pass? We need a new render method for ``OneLineTag
     class OneLineTag(Element):
 
         def render(self, out_file):
+            out_file.write("<{}>".format(self.tag))
             # loop through the list of contents:
             for content in self.contents:
-                out_file.write("<{}>".format(self.tag))
                 try:
                     content.render(out_file)
                 except AttributeError:
                     out_file.write(content)
-                out_file.write("</{}>\n".format(self.tag))
+            out_file.write("</{}>\n".format(self.tag))
 
 Notice that I left the newline in at the end of the closing tag -- we do want a newline there, so the next element won't get rendered on the same line.  And the tests::
 
@@ -1109,7 +1118,7 @@ Now that we know how to initialize an element with attributes, and how it should
         # but it starts the same:
         assert file_contents.startswith("<p")
 
-Note that this doesn't (yet) test that the attributes are actually rendered, but it does test that you can pass them in to constructor. What happens when we run this test? ::
+Note that this doesn't (yet) test that the attributes are actually rendered, but it does test that you can pass them in to the constructor. What happens when we run this test? ::
 
     =================================== FAILURES ===================================
     _______________________________ test_attributes ________________________________
@@ -1123,7 +1132,7 @@ Note that this doesn't (yet) test that the attributes are actually rendered, but
 
 Yes, the new test failed -- isn't TDD a bit hard on the ego? So many failures! But why? Well, we passed in the ``style`` and ``id`` attributes as keyword arguments, but the ``__init__`` doesn't expect those arguments. Hence the failure.
 
-So should be add those two as keyword parameters? Well, no we shouldn't because those are two arbitrary attribute names; we need to support virtually any attribute name. So how do you write a method that will accept ANY keyword argument? Time for our old friend ``**kwargs``. ``**kwargs**`` will allow any keyword argument to be used, and will store them in the ``kwargs`` dict. So time to update the ``Element.__init__`` like so:
+So should be add those two as keyword parameters? Well, no we shouldn't because those are two arbitrary attribute names; we need to support virtually any attribute name. So how do you write a method that will accept ANY keyword argument? Time for our old friend ``**kwargs``. ``**kwargs`` will allow any keyword argument to be used, and will store them in the ``kwargs`` dict. So time to update the ``Element.__init__`` like so:
 
 .. code-block:: python
 
@@ -1135,7 +1144,7 @@ And let's try to run the tests again::
 
     ========================== 12 passed in 0.07 seconds ===========================
 
-They passed! Great, but did we test whether the attributes get rendered in the tag correctly? No -- not yet, let's make sure to add that.  It may be helpful to add and ``assert False`` in there, so we can see what our tag looks like while we work on it::
+They passed! Great, but did we test whether the attributes get rendered in the tag correctly? No -- not yet, let's make sure to add that.  It may be helpful to add an ``assert False`` in there, so we can see what our tag looks like while we work on it::
 
     ...
            assert False
@@ -1167,7 +1176,6 @@ So we need to render the ``<``, then the ``p``, then a bunch of attribute name=v
 .. code-block:: python
 
     def render(self, out_file):
-        # loop through the list of contents:
         open_tag = ["<{}".format(self.tag)]
         open_tag.append(">\n")
         out_file.write("".join(open_tag))
@@ -1205,7 +1213,7 @@ Note that I added a space after the ``p`` in the test. Now my test is failing on
     A paragraph of text
     </p>
 
-However, my code for rendering the opening tag is a bit klunky -- how about yours? Perhaps you'd like to refactor it? Before you do that, you might want to make your tests a bit more robust. This is really tricky. It's very hard to test for everytihng that might go wrong, without nailing down the expected results too much. For example, in this case, we haven't tested that there is a space between the two attributes. In fact, this would pass our test::
+However, my code for rendering the opening tag is a bit klunky -- how about yours? Perhaps you'd like to refactor it? Before you do that, you might want to make your tests a bit more robust. This is really tricky. It's very hard to test for everything that might go wrong, without nailing down the expected results too much. For example, in this case, we haven't tested that there is a space between the two attributes. In fact, this would pass our test::
 
     <p style="text-align: center"id="intro">
     A paragraph of text
@@ -1315,7 +1323,7 @@ You'll need to override the ``render()`` method:
 What needs to be there? Well, self closing tags can have attributes, same as other elements.
 So we need a lot of the same code here as with the other ``render()`` methods.  You could copy and paste the ``Element.render()`` method, and edit it a bit.  But that's a "Bad Idea" -- remember DRY (Don't Repeat Yourself)?
 You really don't want two copies of that attribute rendering code you worked so hard on.
-How do we avoid that? We take advantage of the power of subclassing. If you put the code to render the opening (and closing) tags in it's own method, then we can call that method from multiple render methods, something like:
+How do we avoid that? We take advantage of the power of subclassing. If you put the code to render the opening (and closing) tags in its own method, then we can call that method from multiple render methods, something like:
 
 .. code-block:: python
 
