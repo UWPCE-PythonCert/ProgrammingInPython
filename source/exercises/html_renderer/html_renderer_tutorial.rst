@@ -261,12 +261,12 @@ So the method looks something like this:
 .. code-block:: python
 
     def render(self, out_file):
+        out_file.write("<{}>\n".format(self.tag))
         # loop through the list of contents:
         for content in self.contents:
-            out_file.write("<{}>\n".format(self.tag))
             out_file.write(content)
             out_file.write("\n")
-            out_file.write("</{}>\n".format(self.tag))
+        out_file.write("</{}>\n".format(self.tag))
 
 Now run the tests again::
 
@@ -854,7 +854,7 @@ OK, that should have been straightforward.  Now this part:
 
 Some html elements don't tend to have a lot of content, such as the document title. So it makes sense to render them all on one line.  This is going to require a new render method.  Since there are multiple types of elements that should be rendered on one line, we want to create a base class for all one-line elements. It should subclass from ``Element``, and override the render method with a new one, which will be pretty much the same as the main ``Element`` method, but without the newlines.
 
-Before we do that though -- let's write a test for that!  Because the ``ONeLineTag`` class is a base class for actual elements that should be rendered on one line, we really don't need to write a test directly for it. We can write one for its first subclass: ``Title``. The title elements should be rendered something like this::
+Before we do that though -- let's write a test for that!  Because the ``OneLineTag`` class is a base class for actual elements that should be rendered on one line, we really don't need to write a test directly for it. We can write one for its first subclass: ``Title``. The title elements should be rendered something like this::
 
     <title> PythonClass - title example </title>
 
