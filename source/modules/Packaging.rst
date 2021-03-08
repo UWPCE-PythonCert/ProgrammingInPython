@@ -405,7 +405,7 @@ Current State of Packaging
 To build packages: setuptools
 .............................
 
-  * https://pythonhosted.org/setuptools/
+  * https://setuptools.readthedocs.io/en/latest/
 
 setuptools provides extensions to the build-in distutils:
 
