@@ -136,11 +136,13 @@ Here is a potential data structure to consider:
 
 .. code-block:: python
 
-    donor_db = [("William Gates, III", [653772.32, 12.17]),
+    donor_db = [("William Gates, III", [100.0, 120.10]),
                 ("Jeff Bezos", [877.33]),
-                ("Paul Allen", [663.23, 43.87, 1.32]),
-                ("Mark Zuckerberg", [1663.23, 4300.87, 10432.0]),
+                ("Paul Allen", [663.23, 343.87, 411.32]),
+                ("Mark Zuckerberg", [1660.23, 4320.87, 10432.0]),
                 ]
+
+Here we have the first item in a tuple as a donor name, which we will use to determine if we need to add to existing donor or add a new one and the second item is a list of donation values.
 
 Why choose tuples for the inner donor record? Well, another part of using the right data structure is to reduce bugs; you are setting clear expectations that a single donor entry only contains two items.
 
