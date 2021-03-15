@@ -297,13 +297,14 @@ Choosing the right data structure is critical and our donor data structure will 
 <p>A tuple would be an issue when adding donors since it is an immutable data structure.</p>
 <p>A list would satisfy all of the needed features with a fairly simple code to implement. It makes the most sense to use a list for the main data structure. Actually, we can use a combination of both tuples and a list.</p>
 <p>Here is a potential data structure to consider:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">donor_db</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;William Gates, III&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">653772.32</span><span class="p">,</span> <span class="mf">12.17</span><span class="p">]),</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">donor_db</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;William Gates, III&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">120.10</span><span class="p">]),</span>
             <span class="p">(</span><span class="s2">&quot;Jeff Bezos&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">877.33</span><span class="p">]),</span>
-            <span class="p">(</span><span class="s2">&quot;Paul Allen&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">663.23</span><span class="p">,</span> <span class="mf">43.87</span><span class="p">,</span> <span class="mf">1.32</span><span class="p">]),</span>
-            <span class="p">(</span><span class="s2">&quot;Mark Zuckerberg&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">1663.23</span><span class="p">,</span> <span class="mf">4300.87</span><span class="p">,</span> <span class="mf">10432.0</span><span class="p">]),</span>
+            <span class="p">(</span><span class="s2">&quot;Paul Allen&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">663.23</span><span class="p">,</span> <span class="mf">343.87</span><span class="p">,</span> <span class="mf">411.32</span><span class="p">]),</span>
+            <span class="p">(</span><span class="s2">&quot;Mark Zuckerberg&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">1660.23</span><span class="p">,</span> <span class="mf">4320.87</span><span class="p">,</span> <span class="mf">10432.0</span><span class="p">]),</span>
             <span class="p">]</span>
 </pre></div>
 </div>
+<p>Here we have the first item in a tuple as a donor name, which we will use to determine if we need to add to existing donor or add a new one and the second item is a list of donation values.</p>
 <p>Why choose tuples for the inner donor record? Well, another part of using the right data structure is to reduce bugs; you are setting clear expectations that a single donor entry only contains two items.</p>
 </div>
 <div class="section" id="sorting">
