@@ -33,7 +33,9 @@ Initial Setup
 =============
 
 You will need an account on gitHub to participate in this course.
-If you don't already have a gitHub account, or if you would prefer to create a new one for this course, make sure you setup a new account on `gitHub <https://github.com/>`_. Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates. Make sure you let your instructors know what your gitHub handle is -- it's not always obvious!
+If you don't already have a gitHub account, or if you would prefer to create a new one for this course, make sure you setup a new account on `gitHub <https://github.com/>`_.
+Always keep in mind that your account name will be part of the private repositories that will be created for each of your assignments and it will be visible to both your instructors and your classmates.
+Make sure you let your instructors know what your gitHub handle is -- it's not always obvious!
 
 You will need to have git setup on the computer you will use for developing your code for this course.
 You can find instructions for setting up git (and the rest of your development environment) here:
@@ -142,19 +144,19 @@ b) Make a new branch:
 
 After that command, git will be "in" the develop branch -- anything you change will only be reflected in that branch.
 
-.. note:: A git "branch" is an independent "version" of your code where you can write and change code, create and delete files, etc, and it will be kept separate from the main code. When you are happy with this version, it can be merged into the main branch. For the purposed of this course, it will not be merged into the main branch until it has been reviewed, and both you and your instructors think its done.
+.. note:: A git "branch" is an independent "version" of your code where you can write and change code, create and delete files, etc, and it will be kept separate from the main code. When you are happy with this version, it can be merged into the main branch. For the purposed of this course, it will not be merged into the main branch until it has been reviewed, and both you and your instructors think it's done.
 
 If you get an error from this command that says::
 
     fatal: A branch named 'develop' already exists
 
-That means two things:
+That means one of two things:
 
- 1) You have already created a develop branch. IN which case you chould already be using it, or you can "check it out" again: `git checkout develop`
+ 1) You have already created a develop branch. In which case you should already be using it, or you can "check it out" again: `git checkout develop`
 
 or
 
- 2) That branch was created already by gitHub classroom. Which you'd think would be nice, but it turns out that the way it's created doesn't allow the next steps: the Pull Request. THe solution in this case is to use a different name for your working branch, e.g.
+ 2) That branch was created already by gitHub classroom. Which you'd think would be nice, but it turns out that the way it's created doesn't allow the next steps: the Pull Request. The solution in this case is to use a different name for your working branch, e.g.
 
 ::
 
@@ -204,7 +206,7 @@ b) Commit your work. When you have gotten to a good "pause point" in your work: 
       (use "git restore <file>..." to discard changes in working directory)
         modified:   install_test.py
 
-note that in this case, I edited the ``install_test.py`` file after adding it. When you edit a file, git will not track those changes unless you tell it to, which you can do by running ``git add`` again. So ``git add`` tells git that you want it to keep track of that file -- called "staging for commit"::
+Note that in this case, I edited the ``install_test.py`` file after adding it. When you edit a file, git will not track those changes unless you tell it to, which you can do by running ``git add`` again. So ``git add`` tells git that you want it to keep track of that file -- called "staging for commit"::
 
     $ git add install_test.py 
 
@@ -234,12 +236,12 @@ There is a trick to save a step -- you can ask git to commit all changes you've 
      create mode 100644 another_file.py
      create mode 100644 install_test.py
 
-The ``-a`` means "all". Note that you still need to use ``git add`` to ask git to track a new file that it is not already managing.
+The ``-a`` means "all". Note that you still need to use ``git add`` to ask git to track a new file that it is not already managing. And be sure to run ``git status`` first to make sure you haven't accidentally added things you didn't want to.
 
 5) Push your work to gitHub
 ---------------------------
 
-All this adding and committing has only affected the repository on your own machine -- gitHub has not been changed.
+All this adding and committing has only affected the repository on your own machine -- the one on gitHub has not been changed.
 In order to get your changes up to gitHub you need to "push" them. It's always a good idea to check the status before you push -- to make sure you're ready.
 
 ::
@@ -258,7 +260,8 @@ Note that I am on the "develop" branch, which is what's wanted, and nothing new 
 
         git push --set-upstream origin develop
 
-Hmm -- "fatal" -- I don't like the look of that! But it's pretty simple, really. git is telling you that it doesn't know where to push the code to -- your gitHub version of the repo doesn't have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that:
+Hmm -- **fatal** -- I don't like the look of that!
+But it's pretty simple, really. git is telling you that it doesn't know where to push the code to -- your gitHub version of the repo doesn't have a develop branch. But it tells you want to do to create that branch on gitHub (origin), so do that:
 
 ::
 
@@ -327,7 +330,7 @@ Put a link to the PR in the LMS, to let us know that you have "turned in" the as
 8) Wait for review
 ------------------
 
-Once you make your PR, your instructors will be notified by gitHub (and the LMS), and will review your code. They can make general comments, or comment line by line. When a review is done, you should get an email form gitHub. But you can always go and check the PR yourself and see if anything new is there.
+Once you make your PR, your instructors will be notified by gitHub (and the LMS), and will review your code. They can make general comments, or comment line by line. When a review is done, you should get an email from gitHub. But you can always go and check the PR yourself and see if anything new is there.
 
 At this point, two things might happen.
 
@@ -413,7 +416,7 @@ After adding the file(s), you can commit your code by typing the following::
 
 Note that the commit message should be replaced with something descriptive of what that commit includes ("added new functionality", "fixed floating point error", "ready for review", etc.) that will later help you remember what that particular commit was about.
 
-.. note:: If you omit the message, git will bring up a text editor to let you write one. If you have not configured git to use another editor, it will be "vi", an venerable old Unix editor that is a real challenge for some. To get out of vi, hit the >escape> key, the a colon and an x: ``:x``. You can configure git to use an editor you are familiar with. See: :ref:`install_nano_win` for how to do that on Windows.
+.. note:: If you omit the message, git will bring up a text editor to let you write one. If you have not configured git to use another editor, it will be "vi", a venerable old Unix editor that is a real challenge for some. To get out of vi, hit the <escape> key, the a colon and an x: ``:x``. You can configure git to use an editor you are familiar with. See: :ref:`install_nano_win` for how to do that on Windows.
 
 After every change to the file, you will need to "commit" the changes. Keep in mind that git will not commit all the changes you have made, only the ones that are "staged for commit". You can stage them with the ``git add`` command again. So ``add`` means either "add this file" or "stage this file for committing", depending on whether it's already been added or not.
 
@@ -460,7 +463,7 @@ When you submit a comment with a tag, the instructor will be notified by gitHub 
 Submitting your assignment
 --------------------------
 
-Once your assignment is ready for review, copy the link of your Feedback pull request and submit it in the submission form. Here is an example of a submission link (yours will look a little different but will end with `/pull/1`)::
+Once your assignment is ready for review, copy the link of your Feedback Pull Request and submit it in the submission form. Here is an example of a submission link (yours will look a little different but will end with `/pull/1`)::
 
   https://github.com/UWPCE-Py210-SelfPaced-2021/lesson-02-fizzbuzz-exercise-uw-test-student-natasha/pull/1
 
