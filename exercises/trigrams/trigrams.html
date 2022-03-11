@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trigrams – Simple Text Manipulation &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="10. Modules and Packages" href="../../topics/10-modules_packages/index.html" />
     <link rel="prev" title="Mailroom With Files" href="../mailroom/mailroom_with_files.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -113,91 +67,45 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../topics/09-files/index.html"><span class="section-number">9. </span>File Handling</a> &raquo;</li>
-        
       <li>Trigrams – Simple Text Manipulation</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/exercises/trigrams/trigrams.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../../topics/10-modules_packages/index.html" class="btn btn-neutral float-right" title="10. Modules and Packages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="Mailroom With Files" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="Mailroom With Files" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../topics/10-modules_packages/index.html" class="btn btn-neutral float-right" title="10. Modules and Packages" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="trigrams-simple-text-manipulation">
-<span id="exercise-trigrams"></span><h1>Trigrams – Simple Text Manipulation<a class="headerlink" href="#trigrams-simple-text-manipulation" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-trigrams"></span><h1>Trigrams – Simple Text Manipulation<a class="headerlink" href="#trigrams-simple-text-manipulation" title="Permalink to this headline"></a></h1>
 <p class="rubric">Kata Fourteen: Tom Swift Under the Milk Wood</p>
 <p>Adapted from Dave Thomas’s work:</p>
 <p><a class="reference external" href="http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/">http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/</a></p>
 <div class="section" id="trigrams">
-<h2>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline">¶</a></h2>
+<h2>Trigrams<a class="headerlink" href="#trigrams" title="Permalink to this headline"></a></h2>
 <p>Trigrams can be used to mutate text into new, surreal, forms. But what
 heuristics do we apply to get a reasonable result?</p>
 <div class="section" id="the-problem">
-<h3>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h3>
+<h3>The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline"></a></h3>
 <p>As a boy, one of my treats was go to the shops on a Saturday and spend part
 of my allowance on books; for a nine-year old, I had quite a collection of books from the
 Tom Swift and Hardy Boys series. Wouldn’t it be great to be able to create
@@ -278,12 +186,12 @@ books (<em>Tom Swift and His Airship</em> is <a class="reference external" href=
 <p>Be warned that these files have DOS line endings (carriage return followed by
 newline).</p>
 <p>Here is a copy of short-story collection <em>The Adventures of Sherlock Holmes</em>:</p>
-<p><a class="reference download internal" download="" href="../../_downloads/66a363e2c87413f5419e3e039a731e36/sherlock.txt"><code class="xref download docutils literal notranslate"><span class="pre">sherlock.txt</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../../_downloads/9f634eee56ccdd2ea8c081c80013fb12/sherlock.txt"><code class="xref download docutils literal notranslate"><span class="pre">sherlock.txt</span></code></a>.</p>
 <p>And a shorter copy for testing (a paragraph from one of the stories, “A Scandal in Bohemia”):</p>
-<p><a class="reference download internal" download="" href="../../_downloads/b0a0849e9868025eae97a36708407c70/sherlock_small.txt"><code class="xref download docutils literal notranslate"><span class="pre">sherlock_small.txt</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../../_downloads/348f5dbfabfa7d9ee9f70955645ff009/sherlock_small.txt"><code class="xref download docutils literal notranslate"><span class="pre">sherlock_small.txt</span></code></a>.</p>
 </div>
 <div class="section" id="objectives">
-<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline"></a></h3>
 <p>Katas are about trying something many times. In this one, what
 we’re experimenting with is not just the code, but the heuristics of
 processing the text. What do we do with punctuation? Paragraphs? Do we have
@@ -293,15 +201,15 @@ dead end?</p>
 </div>
 </div>
 <div class="section" id="developing-your-solution">
-<h2>Developing Your Solution<a class="headerlink" href="#developing-your-solution" title="Permalink to this headline">¶</a></h2>
+<h2>Developing Your Solution<a class="headerlink" href="#developing-your-solution" title="Permalink to this headline"></a></h2>
 <p>This assignment has two parts: the key one is the trigrams exercise itself, but you also need to do some text processing to get a full book in shape for the building the trigrams.</p>
 <p>I suggest you write the trigrams part first; it’s more interesting :-)</p>
 <div class="section" id="test-driven-development">
-<h3>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline">¶</a></h3>
+<h3>Test Driven Development<a class="headerlink" href="#test-driven-development" title="Permalink to this headline"></a></h3>
 <p>You’ve recently learned about unit testing and Test Driven Development (TDD). Let’s put that to work on this exercise. Remember that the key to TDD is that you first decide on what you need a piece of your code to do, then you write a test to check that it does that, and only then do you write the actual code itself.</p>
-<p>Because you’re new to this, we’re going to give you some tests to get you started. You’ll find them in: <a class="reference download internal" download="" href="../../_downloads/dca7a114a50f893b75615fe55f00435b/test_trigrams.py"><code class="xref download docutils literal notranslate"><span class="pre">test_trigrams.py</span></code></a>, which should be with this assignment.</p>
+<p>Because you’re new to this, we’re going to give you some tests to get you started. You’ll find them in: <a class="reference download internal" download="" href="../../_downloads/635b3b2d18f105d5824bbb9721a88320/test_trigrams.py"><code class="xref download docutils literal notranslate"><span class="pre">test_trigrams.py</span></code></a>, which should be with this assignment.</p>
 <div class="section" id="running-the-tests">
-<h4>Running the Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h4>
+<h4>Running the Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline"></a></h4>
 <p>To run the tests, use the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> test runner: set your working directory the dir with the test file, and run the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">pytest</span>
 <span class="o">=======================</span> <span class="nb">test</span> session <span class="nv">starts</span> <span class="o">=======================</span>
@@ -314,13 +222,13 @@ ________________ ERROR collecting test_trigrams.py ________________
 ImportError <span class="k">while</span> importing <span class="nb">test</span> module <span class="s1">&#39;/Users/chris.barker/Personal/UWPCE/Python210CourseMaterials/source/exercises/trigrams/test_trigrams.py&#39;</span>.
 Hint: make sure your <span class="nb">test</span> modules/packages have valid Python names.
 Traceback:
-test_trigrams.py:17: in &lt;module&gt;
+test_trigrams.py:17: <span class="k">in</span> &lt;module&gt;
     import trigrams
 E   ModuleNotFoundError: No module named <span class="s1">&#39;trigrams&#39;</span>
 <span class="o">=====================</span> short <span class="nb">test</span> summary <span class="nv">info</span> <span class="o">=====================</span>
 ERROR test_trigrams.py
 !!!!!!!!!!!!! Interrupted: <span class="m">1</span> error during collection !!!!!!!!!!!!!!
-<span class="o">========================</span> <span class="m">1</span> error in <span class="m">0</span>.13s <span class="o">=========================</span>
+<span class="o">========================</span> <span class="m">1</span> error <span class="k">in</span> <span class="m">0</span>.13s <span class="o">=========================</span>
 </pre></div>
 </div>
 <p>You should have gotten something like that error: it is indicating that the “trigrams” module does not exist – which makes sense, as you haven’t written it yet. So the first step is to create your code file: name it <code class="docutils literal notranslate"><span class="pre">trigrams.py</span></code> and put it in the same directory as the <code class="docutils literal notranslate"><span class="pre">test_trigrams.py</span></code> file. It can be empty for now. Now try running pytest again, and it should get farther: you’ll have a lot of test failures, but the test should actually run. You should get something like:</p>
@@ -333,17 +241,17 @@ FAILED test_trigrams.py::test_get_last_pair - AttributeError: modul...
 FAILED test_trigrams.py::test_get_random_follower - AttributeError:...
 FAILED test_trigrams.py::test_get_random_follower_not_there - Attri...
 FAILED test_trigrams.py::test_make_sentence - AttributeError: modul...
-<span class="o">=========================</span> <span class="m">7</span> failed in <span class="m">0</span>.18s <span class="o">==========================</span>
+<span class="o">=========================</span> <span class="m">7</span> failed <span class="k">in</span> <span class="m">0</span>.18s <span class="o">==========================</span>
 </pre></div>
 </div>
 <p>You get a bunch of AttributeErrors, as you haven’t defined anything in your <code class="docutils literal notranslate"><span class="pre">trigrams.py</span></code> file. So now it’s time to actually work on the code!</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h3>trigrams<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>trigrams<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p>Key to the trigrams problem is the selection of the data structure to use to hold the “trigrams” themselves. What do we need here?</p>
 <div class="section" id="the-text">
-<h4>The text<a class="headerlink" href="#the-text" title="Permalink to this headline">¶</a></h4>
+<h4>The text<a class="headerlink" href="#the-text" title="Permalink to this headline"></a></h4>
 <p>First, you’ll want a bit of text to try your code out on. Why not try the example here:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">wish</span> <span class="n">I</span> <span class="n">may</span> <span class="n">I</span> <span class="n">wish</span> <span class="n">I</span> <span class="n">might</span>
 </pre></div>
@@ -364,7 +272,7 @@ FAILED test_trigrams.py::test_make_sentence - AttributeError: modul...
 </div>
 </div>
 <div class="section" id="the-trigrams-structure">
-<h3>The trigrams structure<a class="headerlink" href="#the-trigrams-structure" title="Permalink to this headline">¶</a></h3>
+<h3>The trigrams structure<a class="headerlink" href="#the-trigrams-structure" title="Permalink to this headline"></a></h3>
 <p>Now we need to think a bit about what we want the trigrams structure to be.</p>
 <p>From above, we know that we need to build up something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I wish&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span>
@@ -397,7 +305,7 @@ FAILED test_trigrams.py::test_make_sentence - AttributeError: modul...
 </div>
 <p>I like the version that uses tuples better, but either one will work. The test code is designed to check for word pairs in tuples. If you want to write your code using space separated strings, you can modify the tests.</p>
 <div class="section" id="building-the-trigrams-dict">
-<h4>Building the Trigrams dict<a class="headerlink" href="#building-the-trigrams-dict" title="Permalink to this headline">¶</a></h4>
+<h4>Building the Trigrams dict<a class="headerlink" href="#building-the-trigrams-dict" title="Permalink to this headline"></a></h4>
 <p>So you’ve got a list of words, and you need to build up a dict like one of the above.</p>
 <p>It’s time to create a python file and start writing some code!</p>
 <p>Put this in your <code class="docutils literal notranslate"><span class="pre">trigrams.py</span></code> file</p>
@@ -510,7 +418,7 @@ So contrary to the usual practice, an index can be helpful here:</p>
 <p>Try it out on a longer bit of text (your choice) before you go any further. If it doesn’t work correctly, make sure to write a test that catches the problem before you fix it!</p>
 </div>
 <div class="section" id="using-the-trigrams-dict">
-<h4>Using the Trigrams dict<a class="headerlink" href="#using-the-trigrams-dict" title="Permalink to this headline">¶</a></h4>
+<h4>Using the Trigrams dict<a class="headerlink" href="#using-the-trigrams-dict" title="Permalink to this headline"></a></h4>
 <p>This is the fun part. Once you have a mapping of word pairs to following words, you can build up some new “fake” text. Re-read the previous sections again to remind yourself of the procedure. Here are a couple of additional hints and questions to consider:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module: <a class="reference external" href="https://docs.python.org/3/library/random.html#module-random">https://docs.python.org/3/library/random.html#module-random</a> is your friend here:</p></li>
@@ -597,7 +505,7 @@ so you’ll need a data structure to build it up in.  You probably want to build
 <p>Note that there are a number of options here as to what to do – but make sure it returns <em>something</em>.</p>
 </div>
 <div class="section" id="putting-it-together">
-<h4>Putting it Together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">¶</a></h4>
+<h4>Putting it Together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline"></a></h4>
 <p>You now have the pieces you need to make some new text. Let’s write a function that will make a single sentence a specified number of words long. The first word should be capitalized, and it should end with a period. Here is the test for that function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_make_sentence</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -633,7 +541,7 @@ so you’ll need a data structure to build it up in.  You probably want to build
 </div>
 </div>
 <div class="section" id="processing-the-input-text">
-<h3>Processing the Input Text<a class="headerlink" href="#processing-the-input-text" title="Permalink to this headline">¶</a></h3>
+<h3>Processing the Input Text<a class="headerlink" href="#processing-the-input-text" title="Permalink to this headline"></a></h3>
 <p>If you get a book from Project Gutenberg (or anywhere else), it will not be “clean.” That is, it will have header information, footer information, chapter headings, punctuation, what have you. So you’ll need to clean it up somehow to get a simple list of words to use to build your trigrams.</p>
 <p>The first part of the process is pretty straightforward; open the file and loop through the lines of text and process them.</p>
 <p>You may want to skip the header. How would you do that??</p>
@@ -663,7 +571,7 @@ so you’ll need a data structure to build it up in.  You probably want to build
 <p>Do get the full trigrams code working first, then play with some of the fancier options.</p>
 </div>
 <div class="section" id="code-structure">
-<h3>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h3>
+<h3>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline"></a></h3>
 <p>You will have found that following TDD forces you to break your code down into a handful of separate functions, each of which does only one thing. This lets you test each function on its own, and it’s easier to refactor one part without messing with the others. Then you can put them all together into a simple program.</p>
 <p>For instance, your <code class="docutils literal notranslate"><span class="pre">__main__</span></code> block might look something like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -689,58 +597,33 @@ so you’ll need a data structure to build it up in.  You probably want to build
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../topics/10-modules_packages/index.html" class="btn btn-neutral float-right" title="10. Modules and Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="Mailroom With Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mailroom/mailroom_with_files.html" class="btn btn-neutral float-left" title="Mailroom With Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../topics/10-modules_packages/index.html" class="btn btn-neutral float-right" title="10. Modules and Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

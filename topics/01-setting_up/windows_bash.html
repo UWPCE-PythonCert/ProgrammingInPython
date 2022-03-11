@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using Windows Bash for Python Development &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Git" href="git.html" />
     <link rel="prev" title="iPython Interpreter" href="ipython.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
@@ -116,110 +70,63 @@
 <li class="toctree-l1"><a class="reference internal" href="../99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
-        
           <li><a href="advanced_setup.html">Advanced Setup</a> &raquo;</li>
-        
       <li>Using Windows Bash for Python Development</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/topics/01-setting_up/windows_bash.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="git.html" class="btn btn-neutral float-right" title="Git" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="ipython.html" class="btn btn-neutral float-left" title="iPython Interpreter" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="ipython.html" class="btn btn-neutral float-left" title="iPython Interpreter" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-right" title="Git" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="using-windows-bash-for-python-development">
-<span id="windows-bash"></span><h1>Using Windows Bash for Python Development<a class="headerlink" href="#using-windows-bash-for-python-development" title="Permalink to this headline">¶</a></h1>
+<span id="windows-bash"></span><h1>Using Windows Bash for Python Development<a class="headerlink" href="#using-windows-bash-for-python-development" title="Permalink to this headline"></a></h1>
 <p><strong>CAUTION</strong> – none of the instructors in the program use this – so this is experimental – proceed at your own risk!</p>
 <p>With Windows 10, Microsoft has introduced the “Windows Subsystem for Linux” (WSL). Technically, it’s not Linux at all (it is not running the Linux kernel), but it does provide an actual bash shell, and access to much (all) of the packages available in Ubuntu Linux, providing a very Linux-like environment.</p>
 <p>If you run Windows 10, but want to be able to work in an environment that is very much like Linux (and the OS-X command line) Windows-bash may be a good options for you.</p>
 <div class="section" id="using-wsl-to-build-a-python-development-environment-on-windows">
-<h2>Using WSL to Build a Python Development Environment on Windows<a class="headerlink" href="#using-wsl-to-build-a-python-development-environment-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2>Using WSL to Build a Python Development Environment on Windows<a class="headerlink" href="#using-wsl-to-build-a-python-development-environment-on-windows" title="Permalink to this headline"></a></h2>
 <p>Here is a recent post about how to do Python with the “WSL”:</p>
 <p><a class="reference external" href="https://pbpython.com/wsl-python.html">https://pbpython.com/wsl-python.html</a></p>
 <p>Let us know if it works for you!</p>
 </div>
 <div class="section" id="offical-docs">
-<h2>Offical Docs<a class="headerlink" href="#offical-docs" title="Permalink to this headline">¶</a></h2>
+<h2>Offical Docs<a class="headerlink" href="#offical-docs" title="Permalink to this headline"></a></h2>
 <p>The following are some addition links, of that doesn’t get it done:</p>
 <div class="section" id="installing-the-system">
-<h3>Installing the System<a class="headerlink" href="#installing-the-system" title="Permalink to this headline">¶</a></h3>
+<h3>Installing the System<a class="headerlink" href="#installing-the-system" title="Permalink to this headline"></a></h3>
 <p>Here are MS’s docs:</p>
 <p><a class="reference external" href="https://msdn.microsoft.com/commandline/wsl/about">https://msdn.microsoft.com/commandline/wsl/about</a></p>
 <p>and the install guide:</p>
 <p><a class="reference external" href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">https://msdn.microsoft.com/en-us/commandline/wsl/install_guide</a></p>
 </div>
 <div class="section" id="installing-running-python">
-<h3>Installing / running Python<a class="headerlink" href="#installing-running-python" title="Permalink to this headline">¶</a></h3>
+<h3>Installing / running Python<a class="headerlink" href="#installing-running-python" title="Permalink to this headline"></a></h3>
 <p>To use Python from within the bash shell, you probably want a “linux” Python, rather than the native Windows installer. Unfortunately, the Ubuntu version that Windows Bash is hooked up to does not natively have the latest Python version -:( (though it may now)</p>
 </div>
 </div>
 <div class="section" id="using-the-environment">
-<h2>Using the environment<a class="headerlink" href="#using-the-environment" title="Permalink to this headline">¶</a></h2>
+<h2>Using the environment<a class="headerlink" href="#using-the-environment" title="Permalink to this headline"></a></h2>
 <p>The WSL provides a full linux experience – but, most importantly, it does not suport any GUI environment. If you are comfortable with a command line editor like vim or Emacs, then you can work entirely in the bash shell. However, you may very well want to work with a nice modern GUI editor like Sublime Text or Notepad++. This is quite possible, as the systems share a file system. From the FAQ:</p>
 <blockquote>
 <div><p>One of the benefits of WSL is being able to use the same file with both Windows and Linux apps or tools.</p>
@@ -230,58 +137,33 @@
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="git.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="ipython.html" class="btn btn-neutral float-left" title="iPython Interpreter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ipython.html" class="btn btn-neutral float-left" title="iPython Interpreter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

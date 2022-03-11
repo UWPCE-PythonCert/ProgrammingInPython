@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Working with Virtualenv &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Python 2 versus Python 3" href="../../modules/Py2vsPy3.html" />
     <link rel="prev" title="Command line basics" href="command_line.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
@@ -116,84 +70,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
-        
           <li><a href="resources.html">Resources</a> &raquo;</li>
-        
       <li>Working with Virtualenv</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/topics/01-setting_up/virtualenv.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="Python 2 versus Python 3" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="command_line.html" class="btn btn-neutral float-left" title="Command line basics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="command_line.html" class="btn btn-neutral float-left" title="Command line basics" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="Python 2 versus Python 3" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="working-with-virtualenv">
-<span id="virtualenv-section"></span><h1>Working with Virtualenv<a class="headerlink" href="#working-with-virtualenv" title="Permalink to this headline">¶</a></h1>
+<span id="virtualenv-section"></span><h1>Working with Virtualenv<a class="headerlink" href="#working-with-virtualenv" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Virtual environments are a critical tool for software development. However, When you are first learning Python, you can safetly ignore them. For the first class, Programming In Python, we make very little use of third-party packages – it is OK to simply use your one system Python. come back to this page if you do find yourself getting tangled up in multiple “requirements”</p>
@@ -205,7 +112,7 @@
 </ul>
 </div></blockquote>
 <div class="section" id="reasons-why">
-<h2>Reasons Why<a class="headerlink" href="#reasons-why" title="Permalink to this headline">¶</a></h2>
+<h2>Reasons Why<a class="headerlink" href="#reasons-why" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>As a working developer you will need to install packages that aren’t in the
 Python standard Library</p></li>
@@ -217,11 +124,11 @@ cause long-term nightmares</p></li>
 <li><p><strong>Always</strong></p></li>
 </ul>
 <div class="section" id="conda">
-<h3>conda ?<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h3>
+<h3>conda ?<a class="headerlink" href="#conda" title="Permalink to this headline"></a></h3>
 <p>The above principles imply that you need to use <em>some</em> way to manage multiple environments. virtualenv is one (and there is a newer one called pipenv) And these are common and work well for a lot of developers, particulaly web developers. But there is antoher option. The “conda” system, as used by the Anaconda distribution provides another envrionment management system that has the advantage of managing non-python tools, too, like Fortran or C libaries, compilers, even the R statistical programming environment. So it is widely used in the data science world.</p>
 </div>
 <div class="section" id="installing-virtualenv">
-<h3>Installing Virtualenv<a class="headerlink" href="#installing-virtualenv" title="Permalink to this headline">¶</a></h3>
+<h3>Installing Virtualenv<a class="headerlink" href="#installing-virtualenv" title="Permalink to this headline"></a></h3>
 <p>The best way is to install directly in your system Python (one exception to the rule).</p>
 <p>To do so you will have to have <a class="reference external" href="http://www.pip-installer.org">pip</a> installed.</p>
 <p>Try the following command:</p>
@@ -255,7 +162,7 @@ Options:
 </div>
 </div>
 <div class="section" id="using-virtualenv">
-<h2>Using Virtualenv<a class="headerlink" href="#using-virtualenv" title="Permalink to this headline">¶</a></h2>
+<h2>Using Virtualenv<a class="headerlink" href="#using-virtualenv" title="Permalink to this headline"></a></h2>
 <p>Creating a new virtualenv is very very simple:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ virtualenv <span class="o">[</span>options<span class="o">]</span> &lt;ENV&gt;
 </pre></div>
@@ -263,12 +170,12 @@ Options:
 <p><code class="docutils literal notranslate"><span class="pre">&lt;ENV&gt;</span></code> is just the name of the environment you want to create. It’s
 arbitrary. Let’s make one for demonstration purposes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ virtualenv demoenv
-New python executable in demoenv/bin/python
+New python executable <span class="k">in</span> demoenv/bin/python
 Installing setuptools, pip...done.
 </pre></div>
 </div>
 <div class="section" id="what-happened">
-<h3>What Happened?<a class="headerlink" href="#what-happened" title="Permalink to this headline">¶</a></h3>
+<h3>What Happened?<a class="headerlink" href="#what-happened" title="Permalink to this headline"></a></h3>
 <p>When you ran that command, a few things took place:</p>
 <ul class="simple">
 <li><p>A new directory with your requested name was created</p></li>
@@ -281,7 +188,7 @@ installed)</p></li>
 </ul>
 </div>
 <div class="section" id="activation">
-<h3>Activation<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h3>
+<h3>Activation<a class="headerlink" href="#activation" title="Permalink to this headline"></a></h3>
 <p>The virtual environment you just created, <code class="docutils literal notranslate"><span class="pre">demoenv</span></code> contains an executable
 Python command, but if you do a quick check to see which Python executable is
 found by your terminal, you’ll see that it is not the one:</p>
@@ -311,7 +218,7 @@ keep things straight when you’ve got a lot of projects going on, so it’s nic
 the makers of virtualenv thought of it.</p>
 </div>
 <div class="section" id="installing-packages">
-<h3>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h3>
+<h3>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline"></a></h3>
 <p>Now that your virtualenv is active, not only has your <code class="docutils literal notranslate"><span class="pre">python</span></code> executable been
 hijacked, so have <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">easy_install</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>demoenv<span class="o">)</span>$ which pip
@@ -357,7 +264,7 @@ built.  What this means is that running these scripts will use the Python
 executable in your virtualenv, <em>even if that virtualenv is not active</em>!</p>
 </div>
 <div class="section" id="deactivation">
-<h3>Deactivation<a class="headerlink" href="#deactivation" title="Permalink to this headline">¶</a></h3>
+<h3>Deactivation<a class="headerlink" href="#deactivation" title="Permalink to this headline"></a></h3>
 <p>So you’ve got a virtual environment created.  And you’ve activated it so that
 you can install packages and use them. Eventually you’ll need to move on to
 some other project. This likely means that you’ll need to stop working with
@@ -374,7 +281,7 @@ $ which python
 found when you check <code class="docutils literal notranslate"><span class="pre">python</span></code> is the system one again.</p>
 </div>
 <div class="section" id="cleaning-up">
-<h3>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Permalink to this headline">¶</a></h3>
+<h3>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Permalink to this headline"></a></h3>
 <p>The final great advantage that <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> confers on you as a developer is
 the ability to easily remove a batch of installed Python software from your
 system. Consider a situation where you installed a library that breaks your
@@ -390,7 +297,7 @@ it are now gone. There’s no traces left to pollute your world.</p>
 </div>
 </div>
 <div class="section" id="virtualenvwrapper">
-<h2>VirtualenvWrapper<a class="headerlink" href="#virtualenvwrapper" title="Permalink to this headline">¶</a></h2>
+<h2>VirtualenvWrapper<a class="headerlink" href="#virtualenvwrapper" title="Permalink to this headline"></a></h2>
 <p>So you have this great tool that allows you to build isolated environments in
 which you can install Python software. Several questions arise when considering
 this.</p>
@@ -410,7 +317,7 @@ you. It would be better if you could manage your virtual environments easily
 and intuitively.</p>
 <p>With <a class="reference external" href="http://virtualenvwrapper.readthedocs.org">virtualenvwrapper</a> you can.</p>
 <div class="section" id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h3>
 <p>Let’s start by installing the package in our system Python, alongside
 <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> (again, you’ll need <code class="docutils literal notranslate"><span class="pre">superuser</span></code> to do this):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo pip install virtualenvwrapper
@@ -439,11 +346,11 @@ arbitrary.</p>
 </div>
 </div>
 <div class="section" id="using-mkvirtualenv">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">mkvirtualenv</span></code><a class="headerlink" href="#using-mkvirtualenv" title="Permalink to this headline">¶</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">mkvirtualenv</span></code><a class="headerlink" href="#using-mkvirtualenv" title="Permalink to this headline"></a></h3>
 <p>When you’ve done that, start a new terminal and you’ll have access to the
 <code class="docutils literal notranslate"><span class="pre">mkvirtualenv</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkvirtualenv testenv
-New python executable in testenv/bin/python
+New python executable <span class="k">in</span> testenv/bin/python
 Installing setuptools, pip...done.
 <span class="o">(</span>testenv<span class="o">)</span>$ ls ~/.virtualenvs
 testenv
@@ -461,13 +368,13 @@ testenv
 you just created to install packages.</p>
 </div>
 <div class="section" id="using-workon">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">workon</span></code><a class="headerlink" href="#using-workon" title="Permalink to this headline">¶</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">workon</span></code><a class="headerlink" href="#using-workon" title="Permalink to this headline"></a></h3>
 <p>In addition to this nice little feature, you can also use the <code class="docutils literal notranslate"><span class="pre">workon</span></code>
 command to see which environments you have, and to switch from one to another:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>testenv<span class="o">)</span>$ workon
 testenv
 <span class="o">(</span>testenv<span class="o">)</span>$ mkvirtualenv number2
-New python executable in number2/bin/python
+New python executable <span class="k">in</span> number2/bin/python
 Installing setuptools, pip...done.
 <span class="o">(</span>number2<span class="o">)</span>$ workon
 number2
@@ -484,7 +391,7 @@ $
 </div>
 </div>
 <div class="section" id="using-mkproject">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">mkproject</span></code><a class="headerlink" href="#using-mkproject" title="Permalink to this headline">¶</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">mkproject</span></code><a class="headerlink" href="#using-mkproject" title="Permalink to this headline"></a></h3>
 <p>That takes care of deciding where to put new environments. It also clears up
 the question of how to remember which ones you have and how to start them up
 and switch between them. But we still have to figure out how to remember which
@@ -502,7 +409,7 @@ environment goes with which project.</p>
 </div>
 <p>After all that, fire up a new shell to pick up the changes and try this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkproject foo
-New python executable in foo/bin/python
+New python executable <span class="k">in</span> foo/bin/python
 Installing setuptools, pip...done.
 Creating /Users/cewing/projects/foo
 Setting project <span class="k">for</span> foo to /Users/cewing/projects/foo
@@ -532,7 +439,7 @@ installing packages into the right environment.</p>
 </div>
 </div>
 <div class="section" id="a-few-last-words">
-<h2>A Few Last Words<a class="headerlink" href="#a-few-last-words" title="Permalink to this headline">¶</a></h2>
+<h2>A Few Last Words<a class="headerlink" href="#a-few-last-words" title="Permalink to this headline"></a></h2>
 <p>This quick introduction is <strong>by no means</strong> an exhaustive manual for either of
 the packages we’ve talked about. There is a great deal more that they can do.
 In particular, <code class="docutils literal notranslate"><span class="pre">virtualenvwrapper</span></code> is highly customizable, with support for
@@ -544,58 +451,33 @@ yourself to find out more.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="Python 2 versus Python 3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="command_line.html" class="btn btn-neutral float-left" title="Command line basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="command_line.html" class="btn btn-neutral float-left" title="Command line basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../modules/Py2vsPy3.html" class="btn btn-neutral float-right" title="Python 2 versus Python 3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

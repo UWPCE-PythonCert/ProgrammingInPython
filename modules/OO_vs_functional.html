@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Object Oriented vs Functional Programming &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Anonymous Functions: Lambda" href="Lambda.html" />
     <link rel="prev" title="17. Introduction to Functional Programming" href="../topics/17-functional_programming/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -115,101 +69,55 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">17. </span>Introduction to Functional Programming</a> &raquo;</li>
-        
       <li>Object Oriented vs Functional Programming</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/modules/OO_vs_functional.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="Lambda.html" class="btn btn-neutral float-right" title="Anonymous Functions: Lambda" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../topics/17-functional_programming/index.html" class="btn btn-neutral float-left" title="17. Introduction to Functional Programming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../topics/17-functional_programming/index.html" class="btn btn-neutral float-left" title="17. Introduction to Functional Programming" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lambda.html" class="btn btn-neutral float-right" title="Anonymous Functions: Lambda" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="object-oriented-vs-functional-programming">
-<span id="oo-vs-functional"></span><h1>Object Oriented vs Functional Programming<a class="headerlink" href="#object-oriented-vs-functional-programming" title="Permalink to this headline">¶</a></h1>
+<span id="oo-vs-functional"></span><h1>Object Oriented vs Functional Programming<a class="headerlink" href="#object-oriented-vs-functional-programming" title="Permalink to this headline"></a></h1>
 <p>Functional Programming is an alternative to Object Oriented Programming, which is to say that it takes a different perspective.  As to a definition, that can be rather tricky.</p>
 <p>Definitions–by definition–are a statement of the exact meaning of a word: an exact statement or description of the nature, scope or meaning of something – I looked it up.</p>
 <p>What we’re talking about here is more akin to two constellations of related ideas.  I tend to picture a three dimensional space with the Functional Programming cloud here and a separate Object Oriented cloud coalescing over here.</p>
 <p>There are ideas that are somewhere in the middle between the two, and those might represent either equally shared ideas or in some cases, when you drill into them, you might find different approaches to address one thing, one idea.</p>
 <p>Let’s think of it in another way….</p>
 <div class="section" id="programming-paradigms-are-like-human-cultures">
-<h2>Programming paradigms are like human cultures<a class="headerlink" href="#programming-paradigms-are-like-human-cultures" title="Permalink to this headline">¶</a></h2>
+<h2>Programming paradigms are like human cultures<a class="headerlink" href="#programming-paradigms-are-like-human-cultures" title="Permalink to this headline"></a></h2>
 <p>Programming paradigms coalesce around certain values and tend to have unique aesthetics. The people of these cultures generally need to solve the same problems, but they often find different solutions, or prefer one approach to another due to their differential weighting of cultural values.  In some cases a given culture might not even recognize a problem that another culture considers among its first priorities to solve.</p>
 <p>Cultures can have variations and can mix, borrowing ideas from one another as they see fit.  Let’s consider an example.</p>
 <p>There is, arguably, a North American culture with Canada, Mexico and the United States interacting with each other in commerce, academics, politics and in the general exchange of ideas.  However, the three clearly have distinct ways of solving problems.  And then, within any one country, there are sub cultures and cross-cutting cultures.  The Northwest of the United States for instance has a culture which is different from the culture in the Southwest.  Indeed the Northwestern United States likely has more in common with British Columbia in Canada than it has with Florida or Alabama in the Southeastern US.</p>
 <p>This is all to say that to try to define–to actually nail down a definition–of Object Oriented Programming, Functional Programming, or of any other paradigm is perhaps a misguided errand.  It is perhaps better to think of them as constellations of ideas or as rich cultures that help you think about solutions to the problems you’re trying to solve with software.</p>
 </div>
 <div class="section" id="objects">
-<h2>Objects!<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
+<h2>Objects!<a class="headerlink" href="#objects" title="Permalink to this headline"></a></h2>
 <p>Take one of the main ideas in OBJECT Oriented programs: Objects.</p>
 <p>In Python perhaps we talk and even think more often about classes (or types), but when we instantiate a class, when we make an instance of a class, we have an object.</p>
 </div>
 <div class="section" id="functions">
-<h2>Functions!<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<h2>Functions!<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
 <p>Take one of the main ideas in FUNCTIONAL programming:  Functions.</p>
 <p>Since we discuss objects and classes elsewhere, let’s jump into functions. We’ll start with high school math.</p>
 <p>As you may recall, functions take arguments and return a value.  The strict definition can be found on Wikipedia:</p>
@@ -219,7 +127,7 @@
 <p>Keep this definition in mind as we work through this material.</p>
 <p>Keep in mind also the fact that functions in Python are first-class language constructs.  Likewise we’ll talk about what that means as we work our way through the material.</p>
 <div class="section" id="mutability-immutability-and-state-management">
-<h3>Mutability, Immutability and State Management<a class="headerlink" href="#mutability-immutability-and-state-management" title="Permalink to this headline">¶</a></h3>
+<h3>Mutability, Immutability and State Management<a class="headerlink" href="#mutability-immutability-and-state-management" title="Permalink to this headline"></a></h3>
 <p>Think about functions and the stability they imply.  One set of inputs, one result.  Hand in hand with this, is the idea of immutability.</p>
 <p>When you started with Python you might have been all over lists like I was.  You might have wondered:</p>
 <blockquote>
@@ -228,7 +136,7 @@
 <p>Well, a part of the answer there is immutability.  When you start to think functionally you start to think about state – the management of state – in a different way.  You start to think that nailing things down can be a good thing.</p>
 </div>
 <div class="section" id="control-flow-versus-data-flow">
-<h3>Control Flow versus Data Flow<a class="headerlink" href="#control-flow-versus-data-flow" title="Permalink to this headline">¶</a></h3>
+<h3>Control Flow versus Data Flow<a class="headerlink" href="#control-flow-versus-data-flow" title="Permalink to this headline"></a></h3>
 <p>Another idea that typically falls more into the functional camp than into the object oriented camp is data flow.  What is data flow?  If you come from a programming environment like Matlab, Octave or R you do it all the time.</p>
 <p>You’re mapping transformations en masse across entire sets of data and transforming your way to a solution.  You’re doing mutations on Numpy arrays or Pandas DataFrames.  You’re not focused as much on if/then/else constructs.  It’s more like working toward a solution with a Rubik’s Cube.</p>
 <p>You’re thinking, “What series of transformations do I need to make on this collection of data, in order to get it into a state that represents a solution?”</p>
@@ -245,58 +153,33 @@
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Lambda.html" class="btn btn-neutral float-right" title="Anonymous Functions: Lambda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../topics/17-functional_programming/index.html" class="btn btn-neutral float-left" title="17. Introduction to Functional Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../topics/17-functional_programming/index.html" class="btn btn-neutral float-left" title="17. Introduction to Functional Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lambda.html" class="btn btn-neutral float-right" title="Anonymous Functions: Lambda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,67 +1,32 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>git Workflow &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,19 +34,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02-basic_python/index.html">2. Basic Python</a></li>
@@ -104,76 +58,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>git Workflow</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/topics/01-setting_up/git_workflow.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="git-workflow">
-<span id="id1"></span><h1>git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this headline"></a></h1>
 <p>Git is a very flexible system that can be used in a lot of different ways to manage code development. This page describes the workflow we are using for this class – about as simple a workflow as you can have with git.</p>
 <p>We start with an overview of the usual process. This overview may be all you need for future work, once you have set up git on your workstation.</p>
 <p>The instructions following the overview are very explicit for those new to git and the command line.</p>
 <div class="section" id="the-usual-process">
-<h2>The usual process<a class="headerlink" href="#the-usual-process" title="Permalink to this headline">¶</a></h2>
+<h2>The usual process<a class="headerlink" href="#the-usual-process" title="Permalink to this headline"></a></h2>
 <p>This is the usual series of steps you will want to go through when you do a new project / assignment.</p>
 <p>First make sure you are on the command line “in” your copy of the class repo.</p>
 <p>Remember that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> is your friend – when in doubt, run that command to see what’s going on in your repo.</p>
@@ -207,12 +122,12 @@
 <p>Now put that to work to get you set up for class:</p>
 </div>
 <div class="section" id="required-initial-setup">
-<h2>Required Initial Setup<a class="headerlink" href="#required-initial-setup" title="Permalink to this headline">¶</a></h2>
+<h2>Required Initial Setup<a class="headerlink" href="#required-initial-setup" title="Permalink to this headline"></a></h2>
 <p>The first step in getting ready for the class is to create an individual directory for yourself inside the class repository, initiated with a README file. This step is necessary to ensure you have everything setup correctly and understand the process for future assignment submissions. Your instructor can review the workflow and give you early feedback before you start working on your first assignment submission.</p>
 <p>When you start a new class project or exercise, you should create a folder within this folder for that particular project (ex. lesson1). You should only ever add things inside your OWN directory – don’t add or change anything anywhere else.</p>
 <p>Note that when you start doing projects on your own (outside of classwork), you will want to create a whole new repository for each project.</p>
 <div class="section" id="create-your-own-working-directory">
-<h3>Create Your Own Working Directory<a class="headerlink" href="#create-your-own-working-directory" title="Permalink to this headline">¶</a></h3>
+<h3>Create Your Own Working Directory<a class="headerlink" href="#create-your-own-working-directory" title="Permalink to this headline"></a></h3>
 <p>The first step is to <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the students directory:</p>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">students</span></code></p>
 <p>Then create a directory for yourself. You can use your first name, your gitHub handle (username), or any nickname you like – just make sure your instructor knows who you are so you can get credit for your work.</p>
@@ -221,7 +136,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">marie_curie</span></code></p>
 </div>
 <div class="section" id="adding-a-new-file">
-<h3>Adding a new file<a class="headerlink" href="#adding-a-new-file" title="Permalink to this headline">¶</a></h3>
+<h3>Adding a new file<a class="headerlink" href="#adding-a-new-file" title="Permalink to this headline"></a></h3>
 <p>Note that git does not track directories – you do not have to add a new dir to git – when you add a new file in that dir, git will track where it is.</p>
 <p>Now you can do your coding. For this example, that is simply adding a readme file. You can do that with your text editor, or directly on the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">rst</span>
@@ -236,7 +151,7 @@
 <p>Carefully observe new files or files that you have changed to ensure no other files are being committed outside of your student directory.</p>
 </div>
 <div class="section" id="committing-your-changes">
-<h3>Committing your changes<a class="headerlink" href="#committing-your-changes" title="Permalink to this headline">¶</a></h3>
+<h3>Committing your changes<a class="headerlink" href="#committing-your-changes" title="Permalink to this headline"></a></h3>
 <p>Commit the changes with a summary of what you have done:</p>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">'added</span> <span class="pre">a</span> <span class="pre">readme</span> <span class="pre">file'</span></code></p>
 <p>Push your changes to your repo on gitHub:</p>
@@ -247,7 +162,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p>
 </div>
 <div class="section" id="make-a-pr">
-<h3>Make a PR<a class="headerlink" href="#make-a-pr" title="Permalink to this headline">¶</a></h3>
+<h3>Make a PR<a class="headerlink" href="#make-a-pr" title="Permalink to this headline"></a></h3>
 <p>In high level overview, pull request provides a view to see the difference between a source branch (your fork) and a target branch (the main class repo), this view is used for code reviews and to provide feedback to the author. Keep in mind that this view is not static, meaning any subsequent commits to the source branch will show in this diff view.</p>
 <p>Now go onto GitHub, and make your first pull request (PR)!</p>
 <p>Here is some gitHub help for that:</p>
@@ -257,7 +172,7 @@
 </div>
 </div>
 <div class="section" id="starting-a-new-exercise">
-<h2>Starting a new Exercise<a class="headerlink" href="#starting-a-new-exercise" title="Permalink to this headline">¶</a></h2>
+<h2>Starting a new Exercise<a class="headerlink" href="#starting-a-new-exercise" title="Permalink to this headline"></a></h2>
 <p>Once you have created your directory, and are starting a new project, the process will look very much the same. This example is for marie_curie working on her mailroom exercise:</p>
 <p>Make sure you are “in” your copy of the class repo on your machine:</p>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">students/marie_curie</span></code></p>
@@ -283,7 +198,7 @@
 <p>If you are ready for an instructor to review it, go to your repo on the gitHub website and make a pull request.</p>
 </div>
 <div class="section" id="final-thoughts">
-<h2>Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permalink to this headline">¶</a></h2>
+<h2>Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permalink to this headline"></a></h2>
 <p>We are using gitHub to submit and review your work because it provides a nice interface for code review. But more importantly, because the git revision control system, and the gitHub collaborative code development platform are industry standard tools for developing code.</p>
 <p>Learning git is a great skill – we are only requiring the very basics for this class, but do take the opportunity to explore git a bit more – making branches, reverting to older versions, etc.</p>
 <p>Also – by doing it this way, you are getting an automatic back up of your work. Each time you “push”, a copy of your work is getting backed up on gitHub. And you can also use it to coordinate your work among multiple computers – you can have as many clones of your repo on gitHub as you like – say one on a computer at work, and one at home. If you push a change from one computer, then running:</p>
@@ -294,49 +209,30 @@
 
 
            </div>
-           
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

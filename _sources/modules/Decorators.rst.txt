@@ -43,8 +43,7 @@ So many, that we give it a special name:
 An Example
 ----------
 
-Imagine you are trying to debug a module with a number of functions like this
-one:
+Imagine you are trying to debug a module with a number of functions like this one:
 
 .. code-block:: python
 

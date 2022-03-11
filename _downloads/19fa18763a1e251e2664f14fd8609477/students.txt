@@ -1,0 +1,31 @@
+Name: Nickname, languages
+Swift, Taylor: python, java, perl
+Swift, Samuel: Sam
+Brooks, Garth: fortran, java, matlab, bash
+Buble, Michael: python, powershell
+Stefani, Gwen: c#, javascript, python, typescript
+Gaye, Marvin: c++, java
+Jagger, Michael: Mick, shell, python
+Lennon, John:
+Nelson, Willy: python, java
+McCartney, Paul: nothing
+Dylan, Bob: java, python, ruby
+Springsteen, Bruce: c++, python
+Jackson, Michael: java, c#, python
+Berry, Charles: Chuck c++, matlab,
+Wonder, Steven: Stevie, c, perl, java, erlang, python
+Nicks, Stevie:  java, perl, c#, c++, python
+Turner, Tina: bash, python
+Plant, Robert: Bob, bash, python, ansible
+Townshend, Peter: Pete, c#, powershell, python, sql
+Moon, Keith: python, r, visualbasic
+Mitchell, Joni: php, mysql, python
+Ramone, John: Johnny, rex, db
+King, Carol: r
+Waters, Muddy: perl, python
+Star, Richard: Ringo, shell, python, vb
+Smith, Patricia: Patti, python
+Morrison, Jim: fortran, perl, sql, python
+Marley, Robert: Bob, c, c++, lisp
+Simon, Paul: bash, python, sql
+Charles, Ray: Chuck, java, python

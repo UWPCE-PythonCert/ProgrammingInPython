@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using Visual Studio Code as a lightweight Python IDE &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Shell Customizations for Python Development" href="shell.html" />
     <link rel="prev" title="Turning Atom Into a Lightweight Python IDE" href="atom_as_ide.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Setting up your Environment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_overview.html">Introduction to your Programming Environment</a></li>
@@ -116,87 +70,40 @@
 <li class="toctree-l1"><a class="reference internal" href="../99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html"><span class="section-number">1. </span>Setting up your Environment</a> &raquo;</li>
-        
           <li><a href="advanced_setup.html">Advanced Setup</a> &raquo;</li>
-        
       <li>Using Visual Studio Code as a lightweight Python IDE</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/topics/01-setting_up/vsc_as_ide.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="shell.html" class="btn btn-neutral float-right" title="Shell Customizations for Python Development" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="atom_as_ide.html" class="btn btn-neutral float-left" title="Turning Atom Into a Lightweight Python IDE" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="atom_as_ide.html" class="btn btn-neutral float-left" title="Turning Atom Into a Lightweight Python IDE" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shell.html" class="btn btn-neutral float-right" title="Shell Customizations for Python Development" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="using-visual-studio-code-as-a-lightweight-python-ide">
-<span id="vsc-as-ide"></span><h1>Using Visual Studio Code as a lightweight Python IDE<a class="headerlink" href="#using-visual-studio-code-as-a-lightweight-python-ide" title="Permalink to this headline">¶</a></h1>
+<span id="vsc-as-ide"></span><h1>Using Visual Studio Code as a lightweight Python IDE<a class="headerlink" href="#using-visual-studio-code-as-a-lightweight-python-ide" title="Permalink to this headline"></a></h1>
 <p>Visual Studio Code is an extensible and customizable text editor from Microsoft that provides a very minimal layout with additional tooling such as an excellent built-in terminal.</p>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>Any IDE should ease your development experience by providing the following:</p>
 <ul class="simple">
 <li><p>It should provide excellent, configurable syntax colorization.</p></li>
@@ -208,28 +115,28 @@
 <p>Visual Studio Code requires that you perform some setup out of the box (see below for details).</p>
 </div>
 <div class="section" id="which-version">
-<h2>Which Version?<a class="headerlink" href="#which-version" title="Permalink to this headline">¶</a></h2>
+<h2>Which Version?<a class="headerlink" href="#which-version" title="Permalink to this headline"></a></h2>
 <p>There’s just the latest version available to download.</p>
 <p>This ensures that all recent bug fixes and updates have been made.</p>
 <p>Visual Studio Code runs on Macs, Windows, and Linux flavors like Ubuntu, Debian, Red Hat, etc.</p>
 <p>Also, Visual Studio Code performs updates on itself, so there’s no need to download newer versions of the app… you should already have it.</p>
 </div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
 <p>Check out this solid <a class="reference external" href="https://www.youtube.com/watch?v=TILIcrrVABg/">video</a> that will walk you through the process of setting up Visual Studio Code for Python in detail.</p>
 <p>Go to the Visual Studio Code <a class="reference external" href="https://code.visualstudio.com/">website</a>.</p>
 <p>Scroll down to the bottom of the page and you’ll see links for installers to all the major OS platforms.</p>
 <p>Download your flavor and run the installer.</p>
 </div>
 <div class="section" id="basic-settings">
-<h2>Basic Settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline">¶</a></h2>
+<h2>Basic Settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline"></a></h2>
 <p>Visual Studio Code can be used out of the box with no setup as a text editor. It automatically
 recognizes file types and helpfully highlights text accordingly. To use in this manner,
 write your Python files in Visual Studio Code, then run them in your Python command prompt
 or Visual Studio Code’s own built in terminal: Ctrl + ` (control-backtick)</p>
 </div>
 <div class="section" id="extending-the-editor">
-<h2>Extending the Editor<a class="headerlink" href="#extending-the-editor" title="Permalink to this headline">¶</a></h2>
+<h2>Extending the Editor<a class="headerlink" href="#extending-the-editor" title="Permalink to this headline"></a></h2>
 <p>After you’ve install Visual Studio Code, there are many ways to extend it for working with Python.</p>
 <p>The video linked above goes into this much deeper.</p>
 <p>There is also a great tutorial for setting up Python <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">here</a>.</p>
@@ -240,58 +147,33 @@ or Visual Studio Code’s own built in terminal: Ctrl + ` (control-backtick)</p>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="shell.html" class="btn btn-neutral float-right" title="Shell Customizations for Python Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="atom_as_ide.html" class="btn btn-neutral float-left" title="Turning Atom Into a Lightweight Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="atom_as_ide.html" class="btn btn-neutral float-left" title="Turning Atom Into a Lightweight Python IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shell.html" class="btn btn-neutral float-right" title="Shell Customizations for Python Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

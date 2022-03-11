@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Map Filter and Reduce &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="IPython Parallel Quickstart" href="IPythonParallel.html" />
     <link rel="prev" title="Anonymous Functions: Lambda" href="Lambda.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -115,87 +69,41 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../topics/17-functional_programming/index.html"><span class="section-number">17. </span>Introduction to Functional Programming</a> &raquo;</li>
-        
       <li>Map Filter and Reduce</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/modules/MapFilterReduce.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="IPythonParallel.html" class="btn btn-neutral float-right" title="IPython Parallel Quickstart" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Lambda.html" class="btn btn-neutral float-left" title="Anonymous Functions: Lambda" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="Lambda.html" class="btn btn-neutral float-left" title="Anonymous Functions: Lambda" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IPythonParallel.html" class="btn btn-neutral float-right" title="IPython Parallel Quickstart" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="map-filter-and-reduce">
-<span id="map-filter-reduce"></span><h1>Map Filter and Reduce<a class="headerlink" href="#map-filter-and-reduce" title="Permalink to this headline">¶</a></h1>
+<span id="map-filter-reduce"></span><h1>Map Filter and Reduce<a class="headerlink" href="#map-filter-and-reduce" title="Permalink to this headline"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, and <code class="docutils literal notranslate"><span class="pre">reduce</span></code> are considered key parts of “functional programming”</p>
 <p>But there is no real consensus about what “functional” means.</p>
 <p>But Python does support these “classic” functional methods.</p>
 <div class="section" id="map">
-<h2>map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h2>
+<h2>map<a class="headerlink" href="#map" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">map</span></code>  “maps” a function onto a sequence of objects – It applies the function to each item in the sequence, returning an “iterable” “map object”.</p>
 <p>The map object delays evaluation until you iterate over it. That way you can pass it to another map, or use it in a for loop, without creating an unnecessary copy of the list.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -218,7 +126,7 @@
 </div>
 </div>
 <div class="section" id="filter">
-<h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">filter</span></code>  “filters” a sequence of objects with a boolean function –
 It keeps only those for which the function is True – filtering out the rest.</p>
 <p>It similarly returns an iterable object.</p>
@@ -237,7 +145,7 @@ It keeps only those for which the function is True – filtering out the rest.</
 </div>
 </div>
 <div class="section" id="reduce">
-<h2>reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
+<h2>reduce<a class="headerlink" href="#reduce" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>  “reduces” a sequence of objects to a single object with a function that combines two arguments.</p>
 <p>In python3, reduce has been a bit hidden in the “functools” module:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
@@ -263,7 +171,7 @@ It keeps only those for which the function is True – filtering out the rest.</
 </div>
 </div>
 <div class="section" id="comprehensions">
-<h2>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h2>
+<h2>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline"></a></h2>
 <p>Couldn’t you do all this with comprehensions?</p>
 <p>Yes:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [33]: </span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
@@ -282,7 +190,7 @@ It keeps only those for which the function is True – filtering out the rest.</
 <p>But Guido thinks almost all uses of reduce are really <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. In fact, that’s why it got moved out of built-ins into the <code class="docutils literal notranslate"><span class="pre">functools</span></code> module.</p>
 </div>
 <div class="section" id="functional-programming">
-<h2>Functional Programming<a class="headerlink" href="#functional-programming" title="Permalink to this headline">¶</a></h2>
+<h2>Functional Programming<a class="headerlink" href="#functional-programming" title="Permalink to this headline"></a></h2>
 <p>Comprehensions and map, filter, reduce are all “functional programming” approaches.</p>
 <p><code class="docutils literal notranslate"><span class="pre">map,</span> <span class="pre">filter</span></code>  and <code class="docutils literal notranslate"><span class="pre">reduce</span></code>  pre-date comprehensions in Python’s history</p>
 <p>Some people like that syntax better.</p>
@@ -293,58 +201,33 @@ It keeps only those for which the function is True – filtering out the rest.</
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="IPythonParallel.html" class="btn btn-neutral float-right" title="IPython Parallel Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Lambda.html" class="btn btn-neutral float-left" title="Anonymous Functions: Lambda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Lambda.html" class="btn btn-neutral float-left" title="Anonymous Functions: Lambda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IPythonParallel.html" class="btn btn-neutral float-right" title="IPython Parallel Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mocking Mailroom &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="19. Extra Topics" href="../../topics/99-extras/index.html" />
     <link rel="prev" title="Advanced Testing" href="../../modules/Testing_advanced.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -110,89 +64,43 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../topics/18-advanced_testing/index.html"><span class="section-number">18. </span>Advanced Testing</a> &raquo;</li>
-        
       <li>Mocking Mailroom</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/exercises/mailroom/mailroom-mock.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../../topics/99-extras/index.html" class="btn btn-neutral float-right" title="19. Extra Topics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="Advanced Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="Advanced Testing" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../topics/99-extras/index.html" class="btn btn-neutral float-right" title="19. Extra Topics" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="mocking-mailroom">
-<span id="exercise-mailroom-mocking"></span><h1>Mocking Mailroom<a class="headerlink" href="#mocking-mailroom" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-mailroom-mocking"></span><h1>Mocking Mailroom<a class="headerlink" href="#mocking-mailroom" title="Permalink to this headline"></a></h1>
 <p>You should now have a nice mailroom program, complete with an object-oriented structure and bundled up into a nice python package.</p>
 <p>And a complete set of unit tests for the logic code.</p>
 <p>But your command line user interface code is likely not tested. It’s hard to auto-test user-interaction…</p>
 <p>Your mission is to get mailroom fully tested.</p>
 <p>Start with your object oriented mailroom in a proper python package.</p>
 <div class="section" id="coverage">
-<h2>Coverage<a class="headerlink" href="#coverage" title="Permalink to this headline">¶</a></h2>
+<h2>Coverage<a class="headerlink" href="#coverage" title="Permalink to this headline"></a></h2>
 <p>First run coverage on your current tests. I like pytest-cov:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install pytest-cov
 
@@ -207,13 +115,13 @@ $ pytest --cov<span class="o">=</span>mailroom
 <p>Once you’ve run coverage – add tests to get it up close to 100% on your logic code, if it’s not there already.</p>
 </div>
 <div class="section" id="fixtures">
-<h2>Fixtures<a class="headerlink" href="#fixtures" title="Permalink to this headline">¶</a></h2>
+<h2>Fixtures<a class="headerlink" href="#fixtures" title="Permalink to this headline"></a></h2>
 <p>Fixtures are a really good way to make your tests cleaner and more independent. With mailroom, you should have a couple fixtures that set up a donor database with some data in it – and maybe one or two for <code class="docutils literal notranslate"><span class="pre">Donor</span></code> objects.</p>
 <p>Clean up your tests with fixtures – and keep the coverage up!</p>
 <p>One possible use for a fixture is providing a file to write to for the code that writes files. Or maybe a directory to put the files in, and then it can clean up the dir in teardown.</p>
 </div>
 <div class="section" id="mocking-input">
-<h2>Mocking input<a class="headerlink" href="#mocking-input" title="Permalink to this headline">¶</a></h2>
+<h2>Mocking input<a class="headerlink" href="#mocking-input" title="Permalink to this headline"></a></h2>
 <p>Once you have 100% coverage for the logic code – it’s time to test the UI.</p>
 <p>You should be able to use mocking to mock the <code class="docutils literal notranslate"><span class="pre">input</span></code> function, and then actually test your user interface code, too.</p>
 <p>Can you get 100% test coverage?</p>
@@ -222,58 +130,33 @@ $ pytest --cov<span class="o">=</span>mailroom
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../topics/99-extras/index.html" class="btn btn-neutral float-right" title="19. Extra Topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="Advanced Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../modules/Testing_advanced.html" class="btn btn-neutral float-left" title="Advanced Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../topics/99-extras/index.html" class="btn btn-neutral float-right" title="19. Extra Topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,67 +1,32 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 1: Setting up Your Environment &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -69,19 +34,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -104,80 +58,41 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Lesson 1: Setting up Your Environment</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/class_schedule/lesson01.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="lesson-1-setting-up-your-environment">
-<span id="lesson01"></span><h1>Lesson 1: Setting up Your Environment<a class="headerlink" href="#lesson-1-setting-up-your-environment" title="Permalink to this headline">¶</a></h1>
+<span id="lesson01"></span><h1>Lesson 1: Setting up Your Environment<a class="headerlink" href="#lesson-1-setting-up-your-environment" title="Permalink to this headline"></a></h1>
 <p><strong>Intro to the class and Python</strong></p>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
 <p>Learning to program, whether in Python or in any other language, is about more than the fundamentals of the language. Learning to program also involves learning the tools involved. You might liken it to carpentry. Without an adequately provisioned workshop, and without tools appropriate for the job, a carpenter wouldn’t get very far.</p>
 <p>Under ideal circumstances, learning to program also involves learning to collaborate with others on code development. Working with other programmers is one of the best ways to improve as a programmer. The tools involved in collaboration are also a part of a programmer’s workshop.</p>
 <p>In this lesson we are looking to provision your workshop. We are going to set up an environment that will facilitate the collaborative creation of Python code. We are also going to introduce you to Python itself.</p>
 </div>
 <div class="section" id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline"></a></h2>
 <p>After completing this lesson, students will be able to:</p>
 <ol class="arabic simple">
 <li><p>Install and use your own functional Python development environment appropriate for your operating system of choice</p></li>
@@ -189,7 +104,7 @@
 1. Create and run a simple Python script</p>
 </div>
 <div class="section" id="suggested-workflow">
-<h2>Suggested Workflow<a class="headerlink" href="#suggested-workflow" title="Permalink to this headline">¶</a></h2>
+<h2>Suggested Workflow<a class="headerlink" href="#suggested-workflow" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Submit Exercise: <a class="reference internal" href="../topics/01-setting_up/python_and_core_tools.html#installing-python"><span class="std std-ref">Install Python and Core Tools (graded)</span></a></p></li>
 <li><p>Do the Readings for this week</p></li>
@@ -198,10 +113,10 @@
 </ul>
 </div>
 <div class="section" id="at-the-end-of-the-lesson">
-<h2>At the End of the Lesson<a class="headerlink" href="#at-the-end-of-the-lesson" title="Permalink to this headline">¶</a></h2>
+<h2>At the End of the Lesson<a class="headerlink" href="#at-the-end-of-the-lesson" title="Permalink to this headline"></a></h2>
 <p>What material in this lesson do you still feel unclear about? Please use ??? to describe any concepts or ideas you’ve struggled with this week. Your instructor will address concepts that seem problematic for several students. You may also want to address issues raised by other students or ask for their help.</p>
 <div class="section" id="pre-class-preparation">
-<h3>Pre-class Preparation<a class="headerlink" href="#pre-class-preparation" title="Permalink to this headline">¶</a></h3>
+<h3>Pre-class Preparation<a class="headerlink" href="#pre-class-preparation" title="Permalink to this headline"></a></h3>
 <p>Get your Environment set up!</p>
 <p>If you were able to attend the pre-class orientation, you should be all set. if not, then do this:</p>
 <p><strong>Install Python</strong></p>
@@ -216,9 +131,9 @@ at the very very least, make sure it does Python indentation and syntax coloring
 </div>
 </div>
 <div class="section" id="exercises">
-<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
 <div class="section" id="finish-setting-up-your-dev-environment">
-<h3>Finish Setting up your dev environment<a class="headerlink" href="#finish-setting-up-your-dev-environment" title="Permalink to this headline">¶</a></h3>
+<h3>Finish Setting up your dev environment<a class="headerlink" href="#finish-setting-up-your-dev-environment" title="Permalink to this headline"></a></h3>
 <p>Make sure you know how to create a python file, save it, edit it, run it, etc.</p>
 <p>Also make sure you are comfortable “playing” with python in the iPython command line.</p>
 <p>If you are uncomfortable with the command line, brush up on that:
@@ -229,49 +144,30 @@ at the very very least, make sure it does Python indentation and syntax coloring
 
 
            </div>
-           
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

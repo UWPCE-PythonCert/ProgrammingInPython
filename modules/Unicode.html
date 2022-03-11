@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Unicode in Python &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Iterators and Generators" href="IteratorsAndGenerators.html" />
     <link rel="prev" title="Persistence and Serialization" href="PersistanceAndSerialization.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -129,90 +83,44 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
-        
       <li>Unicode in Python</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/modules/Unicode.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="IteratorsAndGenerators.html" class="btn btn-neutral float-right" title="Iterators and Generators" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="PersistanceAndSerialization.html" class="btn btn-neutral float-left" title="Persistence and Serialization" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="PersistanceAndSerialization.html" class="btn btn-neutral float-left" title="Persistence and Serialization" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IteratorsAndGenerators.html" class="btn btn-neutral float-right" title="Iterators and Generators" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="unicode-in-python">
-<span id="unicode"></span><h1>Unicode in Python<a class="headerlink" href="#unicode-in-python" title="Permalink to this headline">¶</a></h1>
+<span id="unicode"></span><h1>Unicode in Python<a class="headerlink" href="#unicode-in-python" title="Permalink to this headline"></a></h1>
 <p>A quick run-down of Unicode,</p>
 <p>Its use in Python 2 and 3,</p>
 <p>and some of the gotchas that arise.</p>
 <div class="section" id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline"></a></h2>
 <p>A bit about where all this mess came from…</p>
 <div class="section" id="what-the-heck-is-unicode-anyway">
-<h3>What the heck is Unicode anyway?<a class="headerlink" href="#what-the-heck-is-unicode-anyway" title="Permalink to this headline">¶</a></h3>
+<h3>What the heck is Unicode anyway?<a class="headerlink" href="#what-the-heck-is-unicode-anyway" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>First there was chaos…</p>
 <ul>
@@ -236,7 +144,7 @@ the binary data that the computer stores to letters.</p></li>
 </ul>
 </div>
 <div class="section" id="enter-unicode">
-<h3>Enter Unicode<a class="headerlink" href="#enter-unicode" title="Permalink to this headline">¶</a></h3>
+<h3>Enter Unicode<a class="headerlink" href="#enter-unicode" title="Permalink to this headline"></a></h3>
 <dl class="simple">
 <dt>The Unicode idea is pretty simple:</dt><dd><ul class="simple">
 <li><p>One “code point” for all characters in all languages</p></li>
@@ -257,7 +165,7 @@ the binary data that the computer stores to letters.</p></li>
 </dl>
 </div>
 <div class="section" id="id1">
-<h3>Unicode<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>Unicode<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p>A good start:</p>
 <p>The Absolute Minimum Every Software Developer Absolutely,
 Positively Must Know About Unicode and Character Sets (No Excuses!)</p>
@@ -273,9 +181,9 @@ Positively Must Know About Unicode and Character Sets (No Excuses!)</p>
 </div>
 </div>
 <div class="section" id="mechanics">
-<h2>Mechanics<a class="headerlink" href="#mechanics" title="Permalink to this headline">¶</a></h2>
+<h2>Mechanics<a class="headerlink" href="#mechanics" title="Permalink to this headline"></a></h2>
 <div class="section" id="what-are-strings">
-<h3>What are strings?<a class="headerlink" href="#what-are-strings" title="Permalink to this headline">¶</a></h3>
+<h3>What are strings?<a class="headerlink" href="#what-are-strings" title="Permalink to this headline"></a></h3>
 <p>Py2 strings were simply sequences of bytes.  When text was one per character that worked fine.</p>
 <p>Py3 strings (or Unicode strings in py2) are sequences of “platonic characters”.</p>
 <p>It’s almost one code point per character – there are complications
@@ -284,7 +192,7 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 <p>(ANSI: one character == one byte – it was so easy!)</p>
 </div>
 <div class="section" id="strings-vs-unicode">
-<h3>Strings vs Unicode<a class="headerlink" href="#strings-vs-unicode" title="Permalink to this headline">¶</a></h3>
+<h3>Strings vs Unicode<a class="headerlink" href="#strings-vs-unicode" title="Permalink to this headline"></a></h3>
 <p>Python 2 had two types that let you work with text:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
@@ -308,12 +216,12 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 </div></blockquote>
 </div>
 <div class="section" id="id2">
-<h3>Unicode<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Unicode<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
 <p>The py3 string (py2 <code class="docutils literal notranslate"><span class="pre">Unicode</span></code>) object lets you work with characters, instead of bytes.</p>
 <p>It has all the same methods you’d expect a string object to have.</p>
 </div>
 <div class="section" id="encoding-decoding">
-<h3>Encoding / Decoding<a class="headerlink" href="#encoding-decoding" title="Permalink to this headline">¶</a></h3>
+<h3>Encoding / Decoding<a class="headerlink" href="#encoding-decoding" title="Permalink to this headline"></a></h3>
 <p>If you need to deal with the actual bytes for some reason, you may need to convert between a string object and a particular set of bytes.</p>
 <p><strong>“encoding”</strong> is converting from a string object to bytes</p>
 <p><strong>“decoding”</strong> is converting from bytes to a string object</p>
@@ -322,11 +230,11 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 <p>This is actually one of the biggest differences between Python 2 and Python 3. As an ordinary user (particularly one that used English…), you may not notice – text is text, and things generally “just work”, but under the hood it is very different, and folks writting libraries for things like Internet protocols struggled with the differences.</p>
 </div>
 <div class="section" id="using-unicode-in-py2">
-<h3>Using Unicode in Py2<a class="headerlink" href="#using-unicode-in-py2" title="Permalink to this headline">¶</a></h3>
+<h3>Using Unicode in Py2<a class="headerlink" href="#using-unicode-in-py2" title="Permalink to this headline"></a></h3>
 <p>If you do need to write Python2 code, you really should use Unicode. If you don’t – skip ahead to “Unicode Literals”.</p>
 <p>Here are the basics:</p>
 <div class="section" id="built-in-functions">
-<h4>Built in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">¶</a></h4>
+<h4>Built in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline"></a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">()</span>
 <span class="nb">chr</span><span class="p">()</span>
 <span class="n">unichr</span><span class="p">()</span>
@@ -336,7 +244,7 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 </div>
 </div>
 <div class="section" id="the-codecs-module">
-<h4>The codecs module<a class="headerlink" href="#the-codecs-module" title="Permalink to this headline">¶</a></h4>
+<h4>The codecs module<a class="headerlink" href="#the-codecs-module" title="Permalink to this headline"></a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">codecs</span>
 <span class="n">codecs</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
 <span class="n">codecs</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
@@ -346,7 +254,7 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 </div>
 </div>
 <div class="section" id="encoding-and-decoding">
-<h3>Encoding and Decoding<a class="headerlink" href="#encoding-and-decoding" title="Permalink to this headline">¶</a></h3>
+<h3>Encoding and Decoding<a class="headerlink" href="#encoding-and-decoding" title="Permalink to this headline"></a></h3>
 <p>(Python 2!)</p>
 <p><strong>Encoding:</strong> text to bytes – you get a bytes (str) object</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="sa">u</span><span class="s2">&quot;this&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
@@ -368,7 +276,7 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 </div>
 </div>
 <div class="section" id="unicode-literals">
-<h3>Unicode Literals<a class="headerlink" href="#unicode-literals" title="Permalink to this headline">¶</a></h3>
+<h3>Unicode Literals<a class="headerlink" href="#unicode-literals" title="Permalink to this headline"></a></h3>
 <p>How do you get text that isn’t plain English text?</p>
 <ol class="arabic simple">
 <li><p>Use Unicode in your source files:</p></li>
@@ -387,10 +295,10 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 </div>
 <p>Lots of tables of code points are available online:</p>
 <p>One example:  <a class="reference external" href="http://inamidst.com/stuff/unidata/">http://inamidst.com/stuff/unidata/</a></p>
-<p><a class="reference download internal" download="" href="../_downloads/e6037965b4bb1adfbf99c46c99f6c723/hello_unicode.py"><code class="xref download docutils literal notranslate"><span class="pre">hello_unicode.py</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/da2475249504456dba1a0c7efa6f352d/hello_unicode.py"><code class="xref download docutils literal notranslate"><span class="pre">hello_unicode.py</span></code></a>.</p>
 </div>
 <div class="section" id="using-unicode">
-<h3>Using Unicode<a class="headerlink" href="#using-unicode" title="Permalink to this headline">¶</a></h3>
+<h3>Using Unicode<a class="headerlink" href="#using-unicode" title="Permalink to this headline"></a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">unicode</span></code> objects in all your code</p>
 <p><strong>Decode on input</strong></p>
 <p><strong>Encode on output</strong></p>
@@ -406,7 +314,7 @@ with combined characters: accents, etc – but we can mostly ignore those – yo
 Notably in text files by default.</p>
 </div>
 <div class="section" id="using-unicode-everywhere">
-<h3>Using Unicode Everywhere<a class="headerlink" href="#using-unicode-everywhere" title="Permalink to this headline">¶</a></h3>
+<h3>Using Unicode Everywhere<a class="headerlink" href="#using-unicode-everywhere" title="Permalink to this headline"></a></h3>
 <p>Python 2.6 and above have a nice feature to make it easier to use Unicode everywhere</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 </pre></div>
@@ -426,7 +334,7 @@ Notably in text files by default.</p>
 <p>This is a really good idea if you want to write code compatible with Python2 and 3.</p>
 </div>
 <div class="section" id="encodings">
-<h3>Encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">¶</a></h3>
+<h3>Encodings<a class="headerlink" href="#encodings" title="Permalink to this headline"></a></h3>
 <p>What encoding should I use???</p>
 <p>There are a lot:</p>
 <p><a class="reference external" href="http://en.wikipedia.org/wiki/Comparison_of_Unicode_encodings">http://en.wikipedia.org/wiki/Comparison_of_Unicode_encodings</a></p>
@@ -442,7 +350,7 @@ Notably in text files by default.</p>
 </ul>
 </div>
 <div class="section" id="utf-8">
-<h3>UTF-8<a class="headerlink" href="#utf-8" title="Permalink to this headline">¶</a></h3>
+<h3>UTF-8<a class="headerlink" href="#utf-8" title="Permalink to this headline"></a></h3>
 <p>Probably the one you’ll use most – most common in Internet protocols (xml, JSON, etc.)</p>
 <p>Nice properties:</p>
 <ul class="simple">
@@ -457,14 +365,14 @@ Notably in text files by default.</p>
 </ul>
 </div>
 <div class="section" id="utf-16">
-<h3>UTF-16<a class="headerlink" href="#utf-16" title="Permalink to this headline">¶</a></h3>
+<h3>UTF-16<a class="headerlink" href="#utf-16" title="Permalink to this headline"></a></h3>
 <p>Kind of like UTF-8, except it uses at least 16bits (2 bytes) for each character: NOT ASCII compatible.</p>
 <p>But it still needs more than two bytes for some code points, so you still can’t simply process it as two bytes per character.</p>
 <p>In C/C++, it is held in a “wide char” or “wide string”.</p>
 <p>MS Windows uses UTF-16, as does (I think) Java.</p>
 </div>
 <div class="section" id="utf-16-criticism">
-<h3>UTF-16 criticism<a class="headerlink" href="#utf-16-criticism" title="Permalink to this headline">¶</a></h3>
+<h3>UTF-16 criticism<a class="headerlink" href="#utf-16-criticism" title="Permalink to this headline"></a></h3>
 <p>There is a lot of criticism on the net about UTF-16 – it’s kind of the worst of both worlds:</p>
 <ul class="simple">
 <li><p>You can’t assume every character is the same number of bytes</p></li>
@@ -476,7 +384,7 @@ Notably in text files by default.</p>
 <p>When it turned out that 4 bytes were really needed, they were kind of stuck in the middle.</p>
 </div>
 <div class="section" id="latin-1">
-<h3>Latin-1<a class="headerlink" href="#latin-1" title="Permalink to this headline">¶</a></h3>
+<h3>Latin-1<a class="headerlink" href="#latin-1" title="Permalink to this headline"></a></h3>
 <p><strong>NOT Unicode</strong>:</p>
 <p>A 1-byte per char encoding.</p>
 <ul class="simple">
@@ -488,10 +396,10 @@ Notably in text files by default.</p>
 <li><p>Useful if you don’t know the encoding – at least it won’t raise an Exception</p></li>
 <li><p>Useful if you need to work with combined text+binary data.</p></li>
 </ul>
-<p><a class="reference download internal" download="" href="../_downloads/e1d379f89af956a8f57b8da769442c22/latin1_test.py"><code class="xref download docutils literal notranslate"><span class="pre">latin1_test.py</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c71f489791c94e7196c17ed340e069b0/latin1_test.py"><code class="xref download docutils literal notranslate"><span class="pre">latin1_test.py</span></code></a>.</p>
 </div>
 <div class="section" id="unicode-docs">
-<h3>Unicode Docs<a class="headerlink" href="#unicode-docs" title="Permalink to this headline">¶</a></h3>
+<h3>Unicode Docs<a class="headerlink" href="#unicode-docs" title="Permalink to this headline"></a></h3>
 <p>Python Docs Unicode HowTo:</p>
 <p><a class="reference external" href="http://docs.python.org/howto/unicode.html">http://docs.python.org/howto/unicode.html</a></p>
 <p>“Reading Unicode from a file is therefore simple”</p>
@@ -507,7 +415,7 @@ Notably in text files by default.</p>
 </dl>
 </div>
 <div class="section" id="gotchas-in-python-2">
-<h3>Gotchas in Python 2<a class="headerlink" href="#gotchas-in-python-2" title="Permalink to this headline">¶</a></h3>
+<h3>Gotchas in Python 2<a class="headerlink" href="#gotchas-in-python-2" title="Permalink to this headline"></a></h3>
 <p>(Probaly do’nt need to worry about this anymore!)</p>
 <p>File names, etc:</p>
 <p>If you pass in unicode, you get unicode</p>
@@ -534,10 +442,10 @@ Notably in text files by default.</p>
 </ul>
 <p>NOPE: it swallows it instead.</p>
 </div></blockquote>
-<p><a class="reference download internal" download="" href="../_downloads/d1dcda5d6afa07687a95d49dd77d3fe0/exception_test.py"><code class="xref download docutils literal notranslate"><span class="pre">exception_test.py</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/bb22abb4db949be359ed622d72ba6613/exception_test.py"><code class="xref download docutils literal notranslate"><span class="pre">exception_test.py</span></code></a>.</p>
 </div>
 <div class="section" id="unicode-in-python-3">
-<h3>Unicode in Python 3<a class="headerlink" href="#unicode-in-python-3" title="Permalink to this headline">¶</a></h3>
+<h3>Unicode in Python 3<a class="headerlink" href="#unicode-in-python-3" title="Permalink to this headline"></a></h3>
 <p>The “string” object <strong>is</strong> Unicode (always).</p>
 <p>Py3 has two distinct concepts:</p>
 <ul class="simple">
@@ -576,30 +484,30 @@ Out[5]: ‘this’</p>
 </div>
 </div>
 <div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
 <div class="section" id="basic-unicode-lab">
-<h3>Basic Unicode LAB<a class="headerlink" href="#basic-unicode-lab" title="Permalink to this headline">¶</a></h3>
+<h3>Basic Unicode LAB<a class="headerlink" href="#basic-unicode-lab" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Find some nifty non-ascii characters you might use.</p>
 <ul>
 <li><p>Create a unicode object with them in two different ways.</p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/e6037965b4bb1adfbf99c46c99f6c723/hello_unicode.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> is one example</p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/da2475249504456dba1a0c7efa6f352d/hello_unicode.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> is one example</p></li>
 </ul>
 </li>
 <li><p>Read the contents into unicode objects:</p></li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference download internal" download="" href="../_downloads/3d642a64786adc4483a66074a502119c/ICanEatGlass.utf8.txt"><code class="xref download docutils literal notranslate"><span class="pre">ICanEatGlass.utf8.txt</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/4885db03ed9fb66cf70e84169cdd3ce9/ICanEatGlass.utf16.txt"><code class="xref download docutils literal notranslate"><span class="pre">ICanEatGlass.utf16.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/8cfc8668d4a488ede3e3281cb5fcd659/ICanEatGlass.utf8.txt"><code class="xref download docutils literal notranslate"><span class="pre">ICanEatGlass.utf8.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/d8a2901456b14379487d17a1625a4d3b/ICanEatGlass.utf16.txt"><code class="xref download docutils literal notranslate"><span class="pre">ICanEatGlass.utf16.txt</span></code></a></p></li>
 </ul>
 </div></blockquote>
 <p>and / or</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference download internal" download="" href="../_downloads/5d01595023d1aac45b0a74309a3fc5fe/text.utf8"><code class="xref download docutils literal notranslate"><span class="pre">text.utf8</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/68a40820b64deef88fa892002df63041/text.utf16"><code class="xref download docutils literal notranslate"><span class="pre">text.utf16</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/7b94ecfeddc45b179f0950f24ccd113e/text.utf32"><code class="xref download docutils literal notranslate"><span class="pre">text.utf32</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/8996f535304b3e2e4a45ee10526d0bed/text.utf8"><code class="xref download docutils literal notranslate"><span class="pre">text.utf8</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/f945dd005bb544a3776f773f5b1cee8f/text.utf16"><code class="xref download docutils literal notranslate"><span class="pre">text.utf16</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/755eb41102dde9e2c2ec1db66c41339b/text.utf32"><code class="xref download docutils literal notranslate"><span class="pre">text.utf32</span></code></a></p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
@@ -607,13 +515,13 @@ Out[5]: ‘this’</p>
 </ul>
 </div>
 <div class="section" id="some-help">
-<h3>Some Help<a class="headerlink" href="#some-help" title="Permalink to this headline">¶</a></h3>
+<h3>Some Help<a class="headerlink" href="#some-help" title="Permalink to this headline"></a></h3>
 <p>reference: <a class="reference external" href="http://inamidst.com/stuff/unidata/">http://inamidst.com/stuff/unidata/</a></p>
 <p>NOTE: if your terminal does not support unicode – you’ll get an error trying to print.
 Try a different terminal or IDE, or google for a solution.</p>
 </div>
 <div class="section" id="challenge-unicode-lab">
-<h3>Challenge Unicode LAB<a class="headerlink" href="#challenge-unicode-lab" title="Permalink to this headline">¶</a></h3>
+<h3>Challenge Unicode LAB<a class="headerlink" href="#challenge-unicode-lab" title="Permalink to this headline"></a></h3>
 <p>Here is an error in Python2:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [38]: </span><span class="sa">u</span><span class="s1">&#39;to </span><span class="se">\N{INFINITY}</span><span class="s1"> and beyond!&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 <span class="gt">---------------------------------------------------------------------------</span>
@@ -647,7 +555,7 @@ Try a different terminal or IDE, or google for a solution.</p>
 <p>Read:</p>
 <p><a class="reference external" href="http://axialcorps.com/2014/03/20/unicode-str/">http://axialcorps.com/2014/03/20/unicode-str/</a></p>
 <p>See if you can figure out the decorators:</p>
-<p><a class="reference download internal" download="" href="../_downloads/0a8e2144d3df54cba18b122dfca38574/unicodify.py"><code class="xref download docutils literal notranslate"><span class="pre">unicodify.py</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/1299d43327253c58b8a484d1185dc914/unicodify.py"><code class="xref download docutils literal notranslate"><span class="pre">unicodify.py</span></code></a>.</p>
 <p>(This is advanced Python JuJu: Aren’t you glad I didn’t ask you to write that yourself?)</p>
 </div>
 </div>
@@ -655,58 +563,33 @@ Try a different terminal or IDE, or google for a solution.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="IteratorsAndGenerators.html" class="btn btn-neutral float-right" title="Iterators and Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="PersistanceAndSerialization.html" class="btn btn-neutral float-left" title="Persistence and Serialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PersistanceAndSerialization.html" class="btn btn-neutral float-left" title="Persistence and Serialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="IteratorsAndGenerators.html" class="btn btn-neutral float-right" title="Iterators and Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

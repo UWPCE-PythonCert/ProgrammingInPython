@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Code Structure, Modules, and Namespaces &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Documentation" href="Documentation.html" />
     <link rel="prev" title="Style and Naming" href="NamingThings.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -114,85 +68,39 @@
 <li class="toctree-l1"><a class="reference internal" href="../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../topics/10-modules_packages/index.html"><span class="section-number">10. </span>Modules and Packages</a> &raquo;</li>
-        
       <li>Code Structure, Modules, and Namespaces</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/modules/Modules.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="Documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="NamingThings.html" class="btn btn-neutral float-left" title="Style and Naming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="NamingThings.html" class="btn btn-neutral float-left" title="Style and Naming" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="code-structure-modules-and-namespaces">
-<span id="modules-and-namespaces"></span><h1>Code Structure, Modules, and Namespaces<a class="headerlink" href="#code-structure-modules-and-namespaces" title="Permalink to this headline">¶</a></h1>
+<span id="modules-and-namespaces"></span><h1>Code Structure, Modules, and Namespaces<a class="headerlink" href="#code-structure-modules-and-namespaces" title="Permalink to this headline"></a></h1>
 <p class="centered">
 <strong><strong>How to get what you want when you want it</strong></strong></p><div class="section" id="code-structure">
-<h2>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h2>
+<h2>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline"></a></h2>
 <p>In Python, the structure of your code is determined by whitespace. This is nicely clear, and you’ve probably already figured it out, but we’ll formally spell it out here:</p>
 <p>How you <em>indent</em> your code determines how it is structured</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">block</span> <span class="n">statement</span><span class="p">:</span>
@@ -208,7 +116,7 @@
 </div>
 <p>The colon that terminates a block statement is also important…</p>
 <div class="section" id="one-liners">
-<h3>One-liners<a class="headerlink" href="#one-liners" title="Permalink to this headline">¶</a></h3>
+<h3>One-liners<a class="headerlink" href="#one-liners" title="Permalink to this headline"></a></h3>
 <p>You can put a one-liner after the colon:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [167]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="gp">In [168]: </span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -219,7 +127,7 @@
 <p>So you need both the colon and the indentation to start a new a block.  But the end of the indented section is the only indication of the end of the block.</p>
 </div>
 <div class="section" id="spaces-vs-tabs">
-<h3>Spaces vs. Tabs<a class="headerlink" href="#spaces-vs-tabs" title="Permalink to this headline">¶</a></h3>
+<h3>Spaces vs. Tabs<a class="headerlink" href="#spaces-vs-tabs" title="Permalink to this headline"></a></h3>
 <p>Whitespace is important in Python.</p>
 <p>An indent <em>could</em> be:</p>
 <ul class="simple">
@@ -236,7 +144,7 @@
 <p class="centered">
 <strong><strong>Never mix tabs and spaces in Python code</strong></strong></p></div>
 <div class="section" id="spaces-elsewhere">
-<h3>Spaces Elsewhere<a class="headerlink" href="#spaces-elsewhere" title="Permalink to this headline">¶</a></h3>
+<h3>Spaces Elsewhere<a class="headerlink" href="#spaces-elsewhere" title="Permalink to this headline"></a></h3>
 <p>Other than indenting – space doesn’t matter, technically.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="mi">12</span><span class="o">/</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">12</span> <span class="o">/</span>   <span class="n">func</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span>   <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
@@ -251,7 +159,7 @@
 <strong><strong>Read</strong> <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">**PEP 8**</a> <strong>and install a linter in your editor.</strong></strong></p></div>
 </div>
 <div class="section" id="modules-and-packages">
-<h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this headline">¶</a></h2>
+<h2>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this headline"></a></h2>
 <p>Python is all about <em>namespaces</em> – the “dots”</p>
 <p><code class="docutils literal notranslate"><span class="pre">name.another_name</span></code></p>
 <p>The “dot” indicates that you are looking for a name in the <em>namespace</em> of the given object. It could be:</p>
@@ -264,28 +172,22 @@
 <p>The only way to know is to know what type of object the name refers to.  But in all cases, it is looking up a name in the namespace of the object.</p>
 <p>So what <em>are</em> all these different types of namespaces?</p>
 <div class="section" id="modules">
-<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h3>
 <p>A module is simply a namespace. But a module more or less maps to a file with python code in it.</p>
 <p>It might be a single file, or it could be a collection of files that define a shared API.</p>
 <p>But in the common and simplest case, a single file is a single module.</p>
 <p>So you can think of the files you write that end in <code class="docutils literal notranslate"><span class="pre">.py</span></code> as modules.</p>
 <p>When a module is imported, the code in that file is run, and any names defined in that file are now available in the module namespace.</p>
 <p>For a really simple example, if you have the following in the <code class="docutils literal notranslate"><span class="pre">trivial.py</span></code> file:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
- <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
-
- <span class="k">def</span> <span class="nf">do_nothing</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;do_nothing was called with:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-
- <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;at the end of the trivial module&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">2</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span> <span class="k">def</span> <span class="nf">do_nothing</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="linenos">5</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;do_nothing was called with:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;at the end of the trivial module&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>What do you think happens when you import that module? What will get printed?</p>
 <p>What names will be defined in that module?</p>
 <p>How would you access those names?</p>
@@ -316,7 +218,7 @@
 <p>yes, there are, in the <code class="docutils literal notranslate"><span class="pre">trivial</span></code> namespace.</p>
 </div>
 <div class="section" id="packages">
-<h3>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h3>
+<h3>Packages<a class="headerlink" href="#packages" title="Permalink to this headline"></a></h3>
 <p>A package is a module with other modules in it.</p>
 <p>On a filesystem, this is represented as a directory that contains one or more <code class="docutils literal notranslate"><span class="pre">.py</span></code> files, one of which <strong>must</strong> be called <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file can be empty (and often is) – but it must be there.</p>
 <p>When there is a package available, you can import only the package, or any of the modules inside it. When a package is imported, the code in the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file is run, and any names defined in that file are available in the <em>package namespace</em>.</p>
@@ -381,7 +283,7 @@
 <p>So don’t overdo it – only go as deep as you really need to to keep your code organized.</p>
 </div>
 <div class="section" id="importing-modules">
-<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h3>
+<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline"></a></h3>
 <p>You have probably imported a module or two already:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">math</span>
@@ -416,7 +318,7 @@
 <p>This imports only one name from a module, while also giving it a new name in the global namespace.</p>
 </div>
 <div class="section" id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
 <p>You can play with some of this with the standard library:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -441,7 +343,7 @@
 </div>
 </div>
 <div class="section" id="my-rules-of-thumb">
-<h3>My rules of thumb<a class="headerlink" href="#my-rules-of-thumb" title="Permalink to this headline">¶</a></h3>
+<h3>My rules of thumb<a class="headerlink" href="#my-rules-of-thumb" title="Permalink to this headline"></a></h3>
 <p>If you only need a few names from a module, import only those:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">tan</span>
 </pre></div>
@@ -458,7 +360,7 @@
 </div>
 </div>
 <div class="section" id="import">
-<h3>import * ?<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h3>
+<h3>import * ?<a class="headerlink" href="#import" title="Permalink to this headline"></a></h3>
 <p class="centered">
 <strong><strong>Warning:</strong></strong></p><p>You can also import all the names in a module with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modulename</span> <span class="kn">import</span> <span class="o">*</span>
@@ -467,7 +369,7 @@
 <p>But this leads to name conflicts, and a cluttered namespace. It is NOT recommended practice anymore.</p>
 </div>
 <div class="section" id="importing-from-packages">
-<h3>Importing from packages<a class="headerlink" href="#importing-from-packages" title="Permalink to this headline">¶</a></h3>
+<h3>Importing from packages<a class="headerlink" href="#importing-from-packages" title="Permalink to this headline"></a></h3>
 <p>Packages can contain modules, which can be nested – ideally not very deeply.</p>
 <p>In that case, you can simply add more “dots” and follow the same rules as above.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">packagename</span> <span class="kn">import</span> <span class="n">my_funcs</span><span class="o">.</span><span class="n">this_func</span>
@@ -478,14 +380,14 @@
 <p>And <a class="reference internal" href="Packaging.html#packaging"><span class="std std-ref">Packages and Packaging</span></a> goes into more detail about creating (and distributing!) your own package.</p>
 </div>
 <div class="section" id="what-does-import-actually-do">
-<h3>What does <code class="docutils literal notranslate"><span class="pre">import</span></code> actually do?<a class="headerlink" href="#what-does-import-actually-do" title="Permalink to this headline">¶</a></h3>
+<h3>What does <code class="docutils literal notranslate"><span class="pre">import</span></code> actually do?<a class="headerlink" href="#what-does-import-actually-do" title="Permalink to this headline"></a></h3>
 <p>When you import a module, or a symbol from a module, the Python code is <em>compiled</em> to <em>bytecode</em>.</p>
 <p>The result is a <code class="docutils literal notranslate"><span class="pre">module.pyc</span></code> file.</p>
 <p>Then after compiling, all the code in the module is run <strong>at the module scope</strong> – that is, in the namespace of the module.</p>
 <p>For this reason, it is good to avoid module-scope statements that have global side-effects. This includes things as simple as a <code class="docutils literal notranslate"><span class="pre">print()</span></code> – it will only print the first time the module is imported.</p>
 </div>
 <div class="section" id="re-import">
-<h3>Re-import<a class="headerlink" href="#re-import" title="Permalink to this headline">¶</a></h3>
+<h3>Re-import<a class="headerlink" href="#re-import" title="Permalink to this headline"></a></h3>
 <p>The code in a module is <em>not</em> re-run when imported again. This makes it efficient to import the same module multiple places in a program. But it means that if you change the code in a module after importing it, that change will not be reflected when it is imported again.</p>
 <p>If you DO want a change to be reflected, you can explicitly reload a module:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
@@ -495,7 +397,7 @@
 <p>This is rarely needed (which is why it’s a bit buried in the <code class="docutils literal notranslate"><span class="pre">importlib</span></code> module), but is good to keep in mind when you are interactively working on code under development.</p>
 </div>
 <div class="section" id="import-interactions">
-<h3>Import Interactions<a class="headerlink" href="#import-interactions" title="Permalink to this headline">¶</a></h3>
+<h3>Import Interactions<a class="headerlink" href="#import-interactions" title="Permalink to this headline"></a></h3>
 <p>Another key point to keep in mind is that all code files in a given python program are sharing the same modules. So if you change a value in a module, that value’s change will be reflected in other parts of the code that have imported that same module.</p>
 <p>This can create dangerous side effects and hard to find bugs if you change anything in an imported module, but it can also be used as a handy way to store truly global state, like application preferences, for instance.</p>
 <p>A rule of thumb for managing global state is to have only <em>one</em> part of your code change the values, and everywhere else considers them read-only. You can’t enforce this, but you can structure you own code that way.</p>
@@ -551,58 +453,33 @@ mod3 changed the value in mod1, and that change shows up in mod2
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="NamingThings.html" class="btn btn-neutral float-left" title="Style and Naming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NamingThings.html" class="btn btn-neutral float-left" title="Style and Naming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

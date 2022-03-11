@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logging and the logging module &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Debugging" href="Debugging.html" />
     <link rel="prev" title="Mailroom – metaprogramming it!" href="../exercises/mailroom/mailroom-meta.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -129,84 +83,38 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
-        
       <li>Logging and the logging module</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/modules/Logging.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="Debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-left" title="Mailroom – metaprogramming it!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-left" title="Mailroom – metaprogramming it!" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="logging-and-the-logging-module">
-<span id="logging"></span><h1>Logging and the logging module<a class="headerlink" href="#logging-and-the-logging-module" title="Permalink to this headline">¶</a></h1>
+<span id="logging"></span><h1>Logging and the logging module<a class="headerlink" href="#logging-and-the-logging-module" title="Permalink to this headline"></a></h1>
 <div class="section" id="what-is-logging">
-<h2>What is Logging?<a class="headerlink" href="#what-is-logging" title="Permalink to this headline">¶</a></h2>
+<h2>What is Logging?<a class="headerlink" href="#what-is-logging" title="Permalink to this headline"></a></h2>
 <p class="left small">What is logging?</p>
 <blockquote class="left small">
 <div><p>In computing, a logfile is a file that records either events that occur in an operating system or other software runs, or messages between different users of a communication software.</p>
@@ -215,14 +123,14 @@
 <p class="left small">(<a class="reference external" href="https://en.wikipedia.org/wiki/Logfile">https://en.wikipedia.org/wiki/Logfile</a>)</p>
 <p class="left small">But in fact, a file is only <em>one</em> place to keep a log. You may want to send a log of what your program is doing to another system, to the console, or????</p>
 <div class="section" id="what-to-log">
-<h3>what to log?<a class="headerlink" href="#what-to-log" title="Permalink to this headline">¶</a></h3>
+<h3>what to log?<a class="headerlink" href="#what-to-log" title="Permalink to this headline"></a></h3>
 <p class="medium">What might you want to log?</p>
 <p>System information</p>
 <p>Error messages</p>
 <p>Fine-grain tracing output</p>
 </div>
 <div class="section" id="the-logging-module">
-<h3>The logging module<a class="headerlink" href="#the-logging-module" title="Permalink to this headline">¶</a></h3>
+<h3>The logging module<a class="headerlink" href="#the-logging-module" title="Permalink to this headline"></a></h3>
 <p>A flexible logging system that comes with the standard library</p>
 <p>Any module using the logging api can have logging output routed the same
 as your code.</p>
@@ -232,7 +140,7 @@ as your code.</p>
 <p><a class="reference external" href="https://pymotw.com/3/logging/">https://pymotw.com/3/logging/</a></p>
 </div>
 <div class="section" id="why-not-print">
-<h3>Why not <code class="docutils literal notranslate"><span class="pre">print()</span></code>?<a class="headerlink" href="#why-not-print" title="Permalink to this headline">¶</a></h3>
+<h3>Why not <code class="docutils literal notranslate"><span class="pre">print()</span></code>?<a class="headerlink" href="#why-not-print" title="Permalink to this headline"></a></h3>
 <p>We’ve all been using <code class="docutils literal notranslate"><span class="pre">print()</span></code> all over the place to track what’s going on in a program.</p>
 <p>And I still use it – a lot.</p>
 <p>But we (usually) don’t want all sorts of crap sent to stdout when the program is running in production.</p>
@@ -241,13 +149,13 @@ as your code.</p>
 </div>
 </div>
 <div class="section" id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline"></a></h2>
 <p class="left">There are lots of good tutorials, etc, on the web for getting you started with <em>using</em> the logging module.</p>
 <p class="left">But not much about how it works – how it is structured.</p>
 <p class="left">I found it hard to get beyond the basics without that knowledge, so the following should help.</p>
 <p class="left">The logging module provides a very flexible framework for customizing the logging in a simple or complex application.</p>
 <div class="section" id="id1">
-<h3>The <code class="docutils literal notranslate"><span class="pre">logging</span></code> module<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">logging</span></code> module<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 </pre></div>
 </div>
@@ -258,7 +166,7 @@ as your code.</p>
 <p>(NOTE: this is one good reason to prefer logging over <code class="docutils literal notranslate"><span class="pre">print()</span></code>)</p>
 </div>
 <div class="section" id="logging-levels">
-<h3>Logging “levels”<a class="headerlink" href="#logging-levels" title="Permalink to this headline">¶</a></h3>
+<h3>Logging “levels”<a class="headerlink" href="#logging-levels" title="Permalink to this headline"></a></h3>
 <p>The built in way to catagorize logging messages is by level.</p>
 <p>Levels are ordered numerically, so you can think of them as in order of importance, and it’s easy to choose how much detail you want.</p>
 <p>The built-in set is:</p>
@@ -287,7 +195,7 @@ as your code.</p>
 <p>This is actually particularly nice – you can add logging messages to your code, and they will “do the right thing” when run inside any application, whether it’s been spcifically configured or not.</p>
 </div>
 <div class="section" id="the-logging-classes">
-<h3>The logging classes<a class="headerlink" href="#the-logging-classes" title="Permalink to this headline">¶</a></h3>
+<h3>The logging classes<a class="headerlink" href="#the-logging-classes" title="Permalink to this headline"></a></h3>
 <p>The four main classes (you need to deal with) for logging</p>
 <ul class="simple">
 <li><p>Loggers  - the interface for your code</p></li>
@@ -297,7 +205,7 @@ as your code.</p>
 </ul>
 </div>
 <div class="section" id="the-logger-class">
-<h3>The <code class="docutils literal notranslate"><span class="pre">Logger</span></code> class<a class="headerlink" href="#the-logger-class" title="Permalink to this headline">¶</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">Logger</span></code> class<a class="headerlink" href="#the-logger-class" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Logger</span></code> class is the core class that handles logging.</p>
 <p>Messages get sent to a <code class="docutils literal notranslate"><span class="pre">Logger</span></code> instance, and it is responsibile for routing them appropriately.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Logger</span></code> s can be  nested in a hierarchical fashion, so that a message can be sent to sub-loggers, and any messages not handled will be passed the chain to eventually be handled by the “root” logger.</p>
@@ -314,7 +222,7 @@ as your code.</p>
 <p>The logging module keeps track of all the loggers you create, so you can reference them by name.</p>
 </div>
 <div class="section" id="logging-getlogger">
-<h3><code class="docutils literal notranslate"><span class="pre">logging.getLogger()</span></code><a class="headerlink" href="#logging-getlogger" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">logging.getLogger()</span></code><a class="headerlink" href="#logging-getlogger" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">logging.getLogger()</span></code> function returns the logger you ask for:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">the_root_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
 <span class="n">another_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
@@ -324,7 +232,7 @@ as your code.</p>
 <p>This whole system allows you to have multiple loggers without having to pass logging instances around.</p>
 </div>
 <div class="section" id="the-handler-classes">
-<h3>The <code class="docutils literal notranslate"><span class="pre">Handler</span></code> classes<a class="headerlink" href="#the-handler-classes" title="Permalink to this headline">¶</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">Handler</span></code> classes<a class="headerlink" href="#the-handler-classes" title="Permalink to this headline"></a></h3>
 <p>logging <code class="docutils literal notranslate"><span class="pre">Handler</span></code> s are what actually do the work of, well, handling, the log message.</p>
 <p>Formatting it, and actually writing to a file or somehow performing the ‘log’ duty.</p>
 <p>There are handlers for writing to files, streams (stdout, stderr), sockets, and nifty things like automaticaly rotating log files.</p>
@@ -341,7 +249,7 @@ as your code.</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/logging.handlers.html#module-logging.handlers">https://docs.python.org/3/library/logging.handlers.html#module-logging.handlers</a></p>
 </div>
 <div class="section" id="the-formatter-classes">
-<h3>The <code class="docutils literal notranslate"><span class="pre">Formatter</span></code> classes<a class="headerlink" href="#the-formatter-classes" title="Permalink to this headline">¶</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">Formatter</span></code> classes<a class="headerlink" href="#the-formatter-classes" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Formatters</span></code> are responsible for formatting the log message.</p>
 <p>Each log message is stored in a <code class="docutils literal notranslate"><span class="pre">LogRecord</span></code> object, which has a lot of data about the message and where it came from.</p>
 <p>So you can use a formatter to add the data you want to your log entry.</p>
@@ -354,7 +262,7 @@ as your code.</p>
 <p>Each <code class="docutils literal notranslate"><span class="pre">Handler</span></code> can have its own <code class="docutils literal notranslate"><span class="pre">Formatter</span></code></p>
 </div>
 <div class="section" id="the-filter-classes">
-<h3>The Filter classes<a class="headerlink" href="#the-filter-classes" title="Permalink to this headline">¶</a></h3>
+<h3>The Filter classes<a class="headerlink" href="#the-filter-classes" title="Permalink to this headline"></a></h3>
 <p>Each <code class="docutils literal notranslate"><span class="pre">Logger</span></code> can have a <code class="docutils literal notranslate"><span class="pre">Filter</span></code> object.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Filters</span></code> determine which messages will be handled by a given logger, and which pass on to other loggers up the hierarchy.</p>
 <p>They can do very flexible filtering based on where the message came from, etc.</p>
@@ -362,7 +270,7 @@ as your code.</p>
 <p>Loggers filter by “level” by default – which is enough for most uses.</p>
 </div>
 <div class="section" id="basic-logging-usage">
-<h3>Basic logging usage<a class="headerlink" href="#basic-logging-usage" title="Permalink to this headline">¶</a></h3>
+<h3>Basic logging usage<a class="headerlink" href="#basic-logging-usage" title="Permalink to this headline"></a></h3>
 <p>As you can see from the above – the logging system is a complex nest of classes that can be configured and mixed and matched in complex ways.</p>
 <p>The system was ported from Java – can you tell?</p>
 <p>However, the module provides a Pythonic API for common usage: the <code class="docutils literal notranslate"><span class="pre">logging.basicConfig()</span></code> function.</p>
@@ -393,7 +301,7 @@ as your code.</p>
 </ul>
 </div>
 <div class="section" id="what-does-basicconfig-do-for-you">
-<h3>What does <code class="docutils literal notranslate"><span class="pre">basicConfig</span></code> do for you?<a class="headerlink" href="#what-does-basicconfig-do-for-you" title="Permalink to this headline">¶</a></h3>
+<h3>What does <code class="docutils literal notranslate"><span class="pre">basicConfig</span></code> do for you?<a class="headerlink" href="#what-does-basicconfig-do-for-you" title="Permalink to this headline"></a></h3>
 <p>A LOT!</p>
 <p>If you were to do this by hand:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;example.log&#39;</span>
@@ -409,14 +317,14 @@ as your code.</p>
 <p>Wouldn’t that be fun?</p>
 </div>
 <div class="section" id="a-more-complex-logging-setup">
-<h3>A more complex logging setup<a class="headerlink" href="#a-more-complex-logging-setup" title="Permalink to this headline">¶</a></h3>
+<h3>A more complex logging setup<a class="headerlink" href="#a-more-complex-logging-setup" title="Permalink to this headline"></a></h3>
 <p>See:</p>
 <p><code class="docutils literal notranslate"><span class="pre">examples/logging/example.py</span></code></p>
 <p>In there, a logging system is set up that logs to a file, and also the console.</p>
 <p>It calls a fake “application” that does things in random order, logging as it goes…</p>
 </div>
 <div class="section" id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h3>
 <p>The logging system is very powerful and flexible.</p>
 <p>And frankly, not as clean and Pythonic as it could be…</p>
 <p>So it’s pretty tricky to figure out.</p>
@@ -431,58 +339,33 @@ as your code.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-left" title="Mailroom – metaprogramming it!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../exercises/mailroom/mailroom-meta.html" class="btn btn-neutral float-left" title="Mailroom – metaprogramming it!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

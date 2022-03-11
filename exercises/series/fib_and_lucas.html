@@ -1,69 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fibonacci Series Exercise &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4. Sequences and Iteration" href="../../topics/04-sequences_iteration/index.html" />
     <link rel="prev" title="Recursion" href="../../modules/Recursion.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +36,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -111,87 +65,41 @@
 <li class="toctree-l1"><a class="reference internal" href="../../topics/99-extras/index.html">19. Extra Topics</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../topics/03-recursion_booleans/index.html"><span class="section-number">3. </span>Booleans and Recursion</a> &raquo;</li>
-        
       <li>Fibonacci Series Exercise</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/exercises/series/fib_and_lucas.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../../modules/Recursion.html" class="btn btn-neutral float-left" title="Recursion" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../../modules/Recursion.html" class="btn btn-neutral float-left" title="Recursion" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="fibonacci-series-exercise">
-<span id="exercise-fibonacci"></span><h1>Fibonacci Series Exercise<a class="headerlink" href="#fibonacci-series-exercise" title="Permalink to this headline">¶</a></h1>
+<span id="exercise-fibonacci"></span><h1>Fibonacci Series Exercise<a class="headerlink" href="#fibonacci-series-exercise" title="Permalink to this headline"></a></h1>
 <div class="section" id="computing-the-fibonacci-and-lucas-series">
-<h2>Computing the Fibonacci and Lucas Series<a class="headerlink" href="#computing-the-fibonacci-and-lucas-series" title="Permalink to this headline">¶</a></h2>
+<h2>Computing the Fibonacci and Lucas Series<a class="headerlink" href="#computing-the-fibonacci-and-lucas-series" title="Permalink to this headline"></a></h2>
 <p>Some nifty uses of recursion</p>
 <div class="section" id="goal">
-<h3>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<h3>Goal:<a class="headerlink" href="#goal" title="Permalink to this headline"></a></h3>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Fibbonaci_Series">Fibonacci Series</a> is a numeric series starting with the integers 0 and 1.</p>
 <p>In this series, the next integer is determined by summing the previous two</p>
 <p>This gives us:</p>
@@ -201,7 +109,7 @@
 <p>We will write a function that computes this series – then generalize it.</p>
 </div>
 <div class="section" id="step-1">
-<h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Create a new file <code class="docutils literal notranslate"><span class="pre">series.py</span></code> in the exercise repo.</p>
 <ul>
@@ -217,7 +125,7 @@ defined by previous values:</p>
 <p>fib(n) = fib(n-2) + fib(n-1)</p>
 </div>
 <div class="section" id="lucas-numbers">
-<h3>Lucas Numbers<a class="headerlink" href="#lucas-numbers" title="Permalink to this headline">¶</a></h3>
+<h3>Lucas Numbers<a class="headerlink" href="#lucas-numbers" title="Permalink to this headline"></a></h3>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Lucas_number">Lucas Numbers</a> are a related series of integers that start with the
 values 2 and 1 rather than 0 and 1. The resulting series looks like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="o">...</span>
@@ -229,7 +137,7 @@ values 2 and 1 rather than 0 and 1. The resulting series looks like this:</p>
 <p>You should find it’s <em>very</em> similar to the <code class="docutils literal notranslate"><span class="pre">fibonacci()</span></code> function.</p>
 </div>
 <div class="section" id="generalizing">
-<h3>Generalizing<a class="headerlink" href="#generalizing" title="Permalink to this headline">¶</a></h3>
+<h3>Generalizing<a class="headerlink" href="#generalizing" title="Permalink to this headline"></a></h3>
 <p>Both the <em>fibonacci series</em> and the <em>lucas numbers</em> are based on an identical formula:</p>
 <p>f(n) = f(n-2) + f(n-1)</p>
 <p>That’s why the code is so similar.</p>
@@ -251,13 +159,13 @@ functions to call <code class="docutils literal notranslate"><span class="pre">s
 <p>Ensure that your function has a well-formed “docstring”</p>
 </div>
 <div class="section" id="tests">
-<h3>Tests…<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
+<h3>Tests…<a class="headerlink" href="#tests" title="Permalink to this headline"></a></h3>
 <p>Add a block of code to the end of your <code class="docutils literal notranslate"><span class="pre">series.py</span></code> module.
 Use the block to write a series of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements that
 demonstrate that your three functions work properly.</p>
 <p>Use comments in this block to inform the observer what your tests do.</p>
 <p>We have created a template for you to use to clarify what we mean by these asserts:</p>
-<p><a class="reference download internal" download="" href="../../_downloads/8c937698ccbd5754c61e94a252163987/series_template.py"><code class="xref download docutils literal notranslate"><span class="pre">series_template.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/cd0d110b299e491b9cbd63083e7f9f5e/series_template.py"><code class="xref download docutils literal notranslate"><span class="pre">series_template.py</span></code></a></p>
 <p>Add your new module to your personal git repo and commit frequently while working on your implementation.
 Include good commit messages that explain concisely both <em>what</em> you are doing and <em>why</em>.</p>
 <p>When you are finished, push your changes to your fork of exercise repository in GitHub and make a pull request to submit it.</p>
@@ -267,58 +175,33 @@ Include good commit messages that explain concisely both <em>what</em> you are d
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../../modules/Recursion.html" class="btn btn-neutral float-left" title="Recursion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../modules/Recursion.html" class="btn btn-neutral float-left" title="Recursion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../topics/04-sequences_iteration/index.html" class="btn btn-neutral float-right" title="4. Sequences and Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

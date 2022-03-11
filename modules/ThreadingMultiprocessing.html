@@ -1,69 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Threading and multiprocessing &mdash; Programming in Python 7.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Threaded Web Scraper" href="../exercises/threaded_downloader.html" />
     <link rel="prev" title="Notes on Coroutines" href="Coroutines.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #4b2e83" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/UWPCE_logo_full.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,19 +37,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Topics in the Program</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Topics in the Program</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../topics/01-setting_up/index.html">1. Setting up your Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/02-basic_python/index.html">2. Basic Python</a></li>
@@ -129,84 +84,38 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4b2e83" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Programming in Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../topics/99-extras/index.html"><span class="section-number">19. </span>Extra Topics</a> &raquo;</li>
-        
       <li>Threading and multiprocessing</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/modules/ThreadingMultiprocessing.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-right" title="Threaded Web Scraper" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Coroutines.html" class="btn btn-neutral float-left" title="Notes on Coroutines" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="Coroutines.html" class="btn btn-neutral float-left" title="Notes on Coroutines" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-right" title="Threaded Web Scraper" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="threading-and-multiprocessing">
-<span id="threading"></span><h1>Threading and multiprocessing<a class="headerlink" href="#threading-and-multiprocessing" title="Permalink to this headline">¶</a></h1>
+<span id="threading"></span><h1>Threading and multiprocessing<a class="headerlink" href="#threading-and-multiprocessing" title="Permalink to this headline"></a></h1>
 <div class="section" id="threading-multiprocessing">
-<h2>Threading / multiprocessing<a class="headerlink" href="#threading-multiprocessing" title="Permalink to this headline">¶</a></h2>
+<h2>Threading / multiprocessing<a class="headerlink" href="#threading-multiprocessing" title="Permalink to this headline"></a></h2>
 <p>How to actually DO threading and multiprocessing:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">threading</span></code> module</p></li>
@@ -216,7 +125,7 @@
 <p>If your problem can be solved sequentially, consider the costs and
 benefits before going parallel.</p>
 <div class="section" id="parallelization-strategy-for-performance">
-<h3>Parallelization Strategy for Performance<a class="headerlink" href="#parallelization-strategy-for-performance" title="Permalink to this headline">¶</a></h3>
+<h3>Parallelization Strategy for Performance<a class="headerlink" href="#parallelization-strategy-for-performance" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line">1. Break problem down into chunks</div>
 <div class="line">2. Execute chunks in parallel</div>
@@ -243,7 +152,7 @@ environment, so make it tunable</p></li>
 </div>
 </div>
 <div class="section" id="the-mechanics-how-do-you-use-threads-and-or-processes">
-<h2>The mechanics: how do you use threads and/or processes<a class="headerlink" href="#the-mechanics-how-do-you-use-threads-and-or-processes" title="Permalink to this headline">¶</a></h2>
+<h2>The mechanics: how do you use threads and/or processes<a class="headerlink" href="#the-mechanics-how-do-you-use-threads-and-or-processes" title="Permalink to this headline"></a></h2>
 <p>Python provides the <cite>threading</cite> and <cite>multiprocessing</cite> modules to facility concurrency.</p>
 <p>They have similar APIs – so you can use them in similar ways.</p>
 <p>Key points:</p>
@@ -269,7 +178,7 @@ environment, so make it tunable</p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="example-a-cpu-bound-problem">
-<h3>Example: A CPU bound problem<a class="headerlink" href="#example-a-cpu-bound-problem" title="Permalink to this headline">¶</a></h3>
+<h3>Example: A CPU bound problem<a class="headerlink" href="#example-a-cpu-bound-problem" title="Permalink to this headline"></a></h3>
 <p>Numerically integrate the function
 <span class="math notranslate nohighlight">\(y =x^2\)</span> from 0 to 10.</p>
 <p><a class="reference external" href="http://www.wolframalpha.com/input/?i=x%5E2">http://www.wolframalpha.com/input/?i=x%5E2</a></p>
@@ -277,9 +186,9 @@ environment, so make it tunable</p></li>
 <p><a class="reference external" href="http://www.wolframalpha.com/input/?i=int(x%5E2,0,10)">Solution</a></p>
 </div>
 <div class="section" id="parallel-execution-example">
-<h3>Parallel execution example<a class="headerlink" href="#parallel-execution-example" title="Permalink to this headline">¶</a></h3>
+<h3>Parallel execution example<a class="headerlink" href="#parallel-execution-example" title="Permalink to this headline"></a></h3>
 <p>Consider the following code in:
-<a class="reference download internal" download="" href="../_downloads/b45e97459c4dc0a7c22bd8d8dbff0831/integrate.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate.py</span></code></a></p>
+<a class="reference download internal" download="" href="../_downloads/c1cc9b924fb183dcd627bdd88e164621/integrate.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate.py</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
@@ -296,7 +205,7 @@ environment, so make it tunable</p></li>
 together:</p>
 </div>
 <div class="section" id="the-threading-module">
-<h3>The threading module<a class="headerlink" href="#the-threading-module" title="Permalink to this headline">¶</a></h3>
+<h3>The threading module<a class="headerlink" href="#the-threading-module" title="Permalink to this headline"></a></h3>
 <p>Starting threads doesn’t take much:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">threading</span>
@@ -325,7 +234,7 @@ things like garbage collection, network keepalives, ..</p></li>
 </ul>
 </div>
 <div class="section" id="subclassing-thread">
-<h3>Subclassing Thread<a class="headerlink" href="#subclassing-thread" title="Permalink to this headline">¶</a></h3>
+<h3>Subclassing Thread<a class="headerlink" href="#subclassing-thread" title="Permalink to this headline"></a></h3>
 <p>You can add threading capability to your own classes</p>
 <p>Subclass Thread and implement the run method</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
@@ -341,16 +250,16 @@ things like garbage collection, network keepalives, ..</p></li>
 </div>
 </div>
 <div class="section" id="race-conditions">
-<h3>Race Conditions<a class="headerlink" href="#race-conditions" title="Permalink to this headline">¶</a></h3>
+<h3>Race Conditions<a class="headerlink" href="#race-conditions" title="Permalink to this headline"></a></h3>
 <p>In the last example we saw threads competing for access to stdout.</p>
 <p>Worse, if competing threads try to update the same value, we might get
 an unexpected race condition</p>
 <p>Race conditions occur when multiple statements need to execute
 atomically, but get interrupted midway</p>
-<p><a class="reference download internal" download="" href="../_downloads/bf4f66243b1821869ff6db4d355b7793/race_condition.py"><code class="xref download docutils literal notranslate"><span class="pre">race_condition.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/dd35fde1efea7d19ffe17d2f7a3cd0b5/race_condition.py"><code class="xref download docutils literal notranslate"><span class="pre">race_condition.py</span></code></a></p>
 </div>
 <div class="section" id="no-race-condition">
-<h3>No race condition<a class="headerlink" href="#no-race-condition" title="Permalink to this headline">¶</a></h3>
+<h3>No race condition<a class="headerlink" href="#no-race-condition" title="Permalink to this headline"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -405,7 +314,7 @@ atomically, but get interrupted midway</p>
 </table>
 </div>
 <div class="section" id="race-condition">
-<h3>Race Condition!<a class="headerlink" href="#race-condition" title="Permalink to this headline">¶</a></h3>
+<h3>Race Condition!<a class="headerlink" href="#race-condition" title="Permalink to this headline"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -461,7 +370,7 @@ atomically, but get interrupted midway</p>
 <p><a class="reference external" href="http://en.wikipedia.org/wiki/Race_condition">http://en.wikipedia.org/wiki/Race_condition</a></p>
 </div>
 <div class="section" id="deadlocks">
-<h3>Deadlocks<a class="headerlink" href="#deadlocks" title="Permalink to this headline">¶</a></h3>
+<h3>Deadlocks<a class="headerlink" href="#deadlocks" title="Permalink to this headline"></a></h3>
 <p>Synchronization and Critical Sections are used to control race
 conditions</p>
 <p>But they introduce other potential problems…</p>
@@ -477,7 +386,7 @@ up swaying from side to side without making any progress because they
 both repeatedly move the same way at the same time.</em></p>
 </div>
 <div class="section" id="locks">
-<h3>Locks<a class="headerlink" href="#locks" title="Permalink to this headline">¶</a></h3>
+<h3>Locks<a class="headerlink" href="#locks" title="Permalink to this headline"></a></h3>
 <p>Lock objects allow threads to control access to a resource until they’re done with it</p>
 <p>This is known as mutual exclusion, often called “mutex”.</p>
 <p>A Lock has two states: locked and unlocked</p>
@@ -487,7 +396,7 @@ themselves by calling its <code class="docutils literal notranslate"><span class
 <p>These threads will wait in line politely for access to the statements in f()</p>
 </div>
 <div class="section" id="mutex-locks-threading-lock">
-<h3>Mutex locks (<code class="docutils literal notranslate"><span class="pre">threading.Lock</span></code>)<a class="headerlink" href="#mutex-locks-threading-lock" title="Permalink to this headline">¶</a></h3>
+<h3>Mutex locks (<code class="docutils literal notranslate"><span class="pre">threading.Lock</span></code>)<a class="headerlink" href="#mutex-locks-threading-lock" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Probably most common</p></li>
@@ -526,7 +435,7 @@ themselves by calling its <code class="docutils literal notranslate"><span class
 </div>
 </div>
 <div class="section" id="nonblocking-locking">
-<h3>Nonblocking Locking<a class="headerlink" href="#nonblocking-locking" title="Permalink to this headline">¶</a></h3>
+<h3>Nonblocking Locking<a class="headerlink" href="#nonblocking-locking" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.acquire()</span></code> will return True if it successfully acquires a lock</p>
 <p>Its first argument is a boolean which specifies whether a lock should
 block or not. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
@@ -542,7 +451,7 @@ block or not. The default is <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="section" id="threading-rlock-reentrant-lock">
-<h3><code class="docutils literal notranslate"><span class="pre">threading.RLock</span></code> - Reentrant Lock<a class="headerlink" href="#threading-rlock-reentrant-lock" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">threading.RLock</span></code> - Reentrant Lock<a class="headerlink" href="#threading-rlock-reentrant-lock" title="Permalink to this headline"></a></h3>
 <p>Useful for recursive algorithms, a thread-specific count of the locks is
 maintained</p>
 <p>A reentrant lock can be acquired multiple times by the same thread</p>
@@ -550,7 +459,7 @@ maintained</p>
 by that thread</p>
 </div>
 <div class="section" id="threading-semaphore">
-<h3><code class="docutils literal notranslate"><span class="pre">threading.Semaphore</span></code><a class="headerlink" href="#threading-semaphore" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">threading.Semaphore</span></code><a class="headerlink" href="#threading-semaphore" title="Permalink to this headline"></a></h3>
 <p>Like an <code class="docutils literal notranslate"><span class="pre">RLock</span></code>, but in reverse</p>
 <p>A Semaphore is given an initial counter value, defaulting to 1</p>
 <p>Each call to <code class="docutils literal notranslate"><span class="pre">acquire()</span></code> decrements the counter, <code class="docutils literal notranslate"><span class="pre">release()</span></code> increments it</p>
@@ -562,7 +471,7 @@ resource simultaneously</p>
 <a class="reference internal image-reference" href="../_images/flags.jpg"><img alt="../_images/flags.jpg" src="../_images/flags.jpg" style="height: 250px;" /></a>
 </div>
 <div class="section" id="events-threading-event">
-<h3>Events (<code class="docutils literal notranslate"><span class="pre">threading.Event</span></code>)<a class="headerlink" href="#events-threading-event" title="Permalink to this headline">¶</a></h3>
+<h3>Events (<code class="docutils literal notranslate"><span class="pre">threading.Event</span></code>)<a class="headerlink" href="#events-threading-event" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Threads can wait for particular event</p></li>
@@ -572,7 +481,7 @@ resource simultaneously</p>
 <p>Common use: barriers, notification</p>
 </div>
 <div class="section" id="condition-threading-condition">
-<h3>Condition (<code class="docutils literal notranslate"><span class="pre">threading.Condition</span></code>)<a class="headerlink" href="#condition-threading-condition" title="Permalink to this headline">¶</a></h3>
+<h3>Condition (<code class="docutils literal notranslate"><span class="pre">threading.Condition</span></code>)<a class="headerlink" href="#condition-threading-condition" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Combination of locking/signaling</p></li>
@@ -583,8 +492,8 @@ resource simultaneously</p>
 <p>Common use: producer/consumer patterns</p>
 </div>
 <div class="section" id="locking-exercise">
-<h3>Locking Exercise<a class="headerlink" href="#locking-exercise" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference download internal" download="" href="../_downloads/7aed047b56b0f01a32459203ca0ca70f/lock_exercise.zip"><code class="xref download docutils literal notranslate"><span class="pre">lock_exercise.zip</span></code></a></p>
+<h3>Locking Exercise<a class="headerlink" href="#locking-exercise" title="Permalink to this headline"></a></h3>
+<p><a class="reference download internal" download="" href="../_downloads/f08b1501d4508a3350b31cfe284ba554/lock_exercise.zip"><code class="xref download docutils literal notranslate"><span class="pre">lock_exercise.zip</span></code></a></p>
 <p>In: <code class="docutils literal notranslate"><span class="pre">lock/stdout_writer.py</span></code></p>
 <p>Multiple threads in the script write to stdout, and their output gets
 jumbled</p>
@@ -595,7 +504,7 @@ stdout</p></li>
 </ol>
 </div>
 <div class="section" id="managing-thread-results">
-<h3>Managing thread results<a class="headerlink" href="#managing-thread-results" title="Permalink to this headline">¶</a></h3>
+<h3>Managing thread results<a class="headerlink" href="#managing-thread-results" title="Permalink to this headline"></a></h3>
 <p>We need a thread safe way of storing results from multiple threads of
 execution. That is provided by the Queue module.</p>
 <p>Queues allow multiple producers and multiple consumers to exchange data
@@ -617,7 +526,7 @@ safely</p>
 </ul>
 </div>
 <div class="section" id="queues-queue">
-<h3>Queues (<code class="docutils literal notranslate"><span class="pre">queue</span></code>)<a class="headerlink" href="#queues-queue" title="Permalink to this headline">¶</a></h3>
+<h3>Queues (<code class="docutils literal notranslate"><span class="pre">queue</span></code>)<a class="headerlink" href="#queues-queue" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Easier to use than many of above</p></li>
@@ -641,7 +550,7 @@ safely</p>
 </div>
 </div>
 <div class="section" id="scheduling-sched">
-<h3>Scheduling (<code class="docutils literal notranslate"><span class="pre">sched</span></code>)<a class="headerlink" href="#scheduling-sched" title="Permalink to this headline">¶</a></h3>
+<h3>Scheduling (<code class="docutils literal notranslate"><span class="pre">sched</span></code>)<a class="headerlink" href="#scheduling-sched" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Schedules based on time, either absolute or delay</p></li>
@@ -650,7 +559,7 @@ safely</p>
 </div></blockquote>
 </div>
 <div class="section" id="timed-events-threading-timer">
-<h3>Timed events (<code class="docutils literal notranslate"><span class="pre">threading.timer</span></code>)<a class="headerlink" href="#timed-events-threading-timer" title="Permalink to this headline">¶</a></h3>
+<h3>Timed events (<code class="docutils literal notranslate"><span class="pre">threading.timer</span></code>)<a class="headerlink" href="#timed-events-threading-timer" title="Permalink to this headline"></a></h3>
 <p>Run a function at some time in the future:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
 
@@ -671,7 +580,7 @@ safely</p>
 <p><a class="reference download internal" download="" href="../_downloads/d2f4d19315e96ba42fa214da38e3d8b3/simple_timer.py"><code class="xref download docutils literal notranslate"><span class="pre">simple_timer.py</span></code></a></p>
 </div>
 <div class="section" id="other-queue-types">
-<h3>Other Queue types<a class="headerlink" href="#other-queue-types" title="Permalink to this headline">¶</a></h3>
+<h3>Other Queue types<a class="headerlink" href="#other-queue-types" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Queue.LifoQueue</span></code></p>
 <blockquote>
 <div><ul class="simple">
@@ -689,8 +598,8 @@ inserting the tuple:</p>
 <p><code class="docutils literal notranslate"><span class="pre">(priority_number,</span> <span class="pre">data)</span></code></p>
 </div>
 <div class="section" id="threading-example-with-a-queue">
-<h3>Threading example with a queue<a class="headerlink" href="#threading-example-with-a-queue" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference download internal" download="" href="../_downloads/542beff2efdf06b15b303acf100630f1/integrate_threads.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate_main.py</span></code></a></p>
+<h3>Threading example with a queue<a class="headerlink" href="#threading-example-with-a-queue" title="Permalink to this headline"></a></h3>
+<p><a class="reference download internal" download="" href="../_downloads/b8e9fa621bddde6623aa18c3db828f62/integrate_threads.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate_main.py</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="kn">import</span> <span class="nn">threading</span>
@@ -736,7 +645,7 @@ inserting the tuple:</p>
 </div>
 </div>
 <div class="section" id="threading-on-a-cpu-bound-problem">
-<h3>Threading on a CPU bound problem<a class="headerlink" href="#threading-on-a-cpu-bound-problem" title="Permalink to this headline">¶</a></h3>
+<h3>Threading on a CPU bound problem<a class="headerlink" href="#threading-on-a-cpu-bound-problem" title="Permalink to this headline"></a></h3>
 <p>Try running the code in <a class="reference download internal" download="" href="../_downloads/b8e9fa621bddde6623aa18c3db828f62/integrate_threads.py"><code class="xref download docutils literal notranslate"><span class="pre">integrate_threads.py</span></code></a></p>
 <p>It has a couple of tunable parameters:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># the start of the integration</span>
@@ -748,7 +657,7 @@ inserting the tuple:</p>
 <p>What happens when you change the thread count? What thread count gives the maximum speed?</p>
 </div>
 <div class="section" id="multiprocessing">
-<h3>Multiprocessing<a class="headerlink" href="#multiprocessing" title="Permalink to this headline">¶</a></h3>
+<h3>Multiprocessing<a class="headerlink" href="#multiprocessing" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>processes are completely isolated</p></li>
@@ -774,7 +683,7 @@ inserting the tuple:</p>
 </div>
 </div>
 <div class="section" id="differences-with-threading">
-<h3>Differences with Threading<a class="headerlink" href="#differences-with-threading" title="Permalink to this headline">¶</a></h3>
+<h3>Differences with Threading<a class="headerlink" href="#differences-with-threading" title="Permalink to this headline"></a></h3>
 <p>Multiprocessing has its own <code class="docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code> which handles
 interprocess communication</p>
 <p>Also has its own versions of <code class="docutils literal notranslate"><span class="pre">Lock</span></code>, <code class="docutils literal notranslate"><span class="pre">RLock</span></code>, <code class="docutils literal notranslate"><span class="pre">Semaphore</span></code></p>
@@ -790,9 +699,9 @@ interprocess communication</p>
 </div>
 </div>
 <div class="section" id="messaging">
-<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
+<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline"></a></h3>
 <div class="section" id="pipes-multiprocessing-pipe">
-<h4>Pipes (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pipe</span></code>)<a class="headerlink" href="#pipes-multiprocessing-pipe" title="Permalink to this headline">¶</a></h4>
+<h4>Pipes (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pipe</span></code>)<a class="headerlink" href="#pipes-multiprocessing-pipe" title="Permalink to this headline"></a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Returns a pair of connected objects</p></li>
@@ -802,7 +711,7 @@ interprocess communication</p>
 </div></blockquote>
 </div>
 <div class="section" id="queues-multiprocessing-queue">
-<h4>Queues (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code>)<a class="headerlink" href="#queues-multiprocessing-queue" title="Permalink to this headline">¶</a></h4>
+<h4>Queues (<code class="docutils literal notranslate"><span class="pre">multiprocessing.Queue</span></code>)<a class="headerlink" href="#queues-multiprocessing-queue" title="Permalink to this headline"></a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>same interface as <code class="docutils literal notranslate"><span class="pre">queue.Queue</span></code></p></li>
@@ -814,7 +723,7 @@ interprocess communication</p>
 </div></blockquote>
 </div>
 <div class="section" id="other-features-of-the-multiprocessing-package">
-<h4>Other features of the multiprocessing package<a class="headerlink" href="#other-features-of-the-multiprocessing-package" title="Permalink to this headline">¶</a></h4>
+<h4>Other features of the multiprocessing package<a class="headerlink" href="#other-features-of-the-multiprocessing-package" title="Permalink to this headline"></a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Pools</p></li>
@@ -827,7 +736,7 @@ interprocess communication</p>
 </div>
 </div>
 <div class="section" id="pooling">
-<h3>Pooling<a class="headerlink" href="#pooling" title="Permalink to this headline">¶</a></h3>
+<h3>Pooling<a class="headerlink" href="#pooling" title="Permalink to this headline"></a></h3>
 <p>A processing pool contains worker processes with only a configured
 number running at one time</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
@@ -839,7 +748,7 @@ number running at one time</p>
 <p><code class="docutils literal notranslate"><span class="pre">map_async(func,</span> <span class="pre">iterable[,</span> <span class="pre">chunksize[,</span> <span class="pre">callback]])</span></code></p>
 </div>
 <div class="section" id="pooling-example">
-<h3>Pooling example<a class="headerlink" href="#pooling-example" title="Permalink to this headline">¶</a></h3>
+<h3>Pooling example<a class="headerlink" href="#pooling-example" title="Permalink to this headline"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
@@ -863,7 +772,7 @@ number running at one time</p>
 <p><a class="reference external" href="http://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.pool">http://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.pool</a></p>
 </div>
 <div class="section" id="threadpool">
-<h3>ThreadPool<a class="headerlink" href="#threadpool" title="Permalink to this headline">¶</a></h3>
+<h3>ThreadPool<a class="headerlink" href="#threadpool" title="Permalink to this headline"></a></h3>
 <p>Threading also has a pool</p>
 <p>Confusingly, it lives in the multiprocessing module</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing.pool</span> <span class="kn">import</span> <span class="n">ThreadPool</span>
@@ -876,58 +785,33 @@ number running at one time</p>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-right" title="Threaded Web Scraper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Coroutines.html" class="btn btn-neutral float-left" title="Notes on Coroutines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Coroutines.html" class="btn btn-neutral float-left" title="Notes on Coroutines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../exercises/threaded_downloader.html" class="btn btn-neutral float-right" title="Threaded Web Scraper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license
-
-    </p>
+    <p>&#169; Copyright 2020, University of Washington, Natasha Aleksandrova, Christopher Barker, Brian Dorsey, Cris Ewing, Christy Heaton, Jon Jacky, Maria McKinley, Andy Miles, Rick Riehle, Joseph Schilz, Joseph Sheedy, Hosung Song. Creative Commons Attribution-ShareAlike 4.0 license.</p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
