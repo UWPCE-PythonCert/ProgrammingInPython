@@ -15,12 +15,12 @@ However, using dictionaries, an import built in data structure in Python, will l
 
 Update your mailroom program to:
 
+  - Convert your main donor data structure to be a dict. Think about an appropriate key for easy donations look up.
+
   - Use dicts where appropriate.
 
-  - See if you can use a dict to switch between the users selections.
+  - Use a dict to switch between the users selections.
     see :ref:`dict_as_switch` for what this means.
-
-  - Convert your main donor data structure to be a dict.
 
   - Try to use a dict and the ``.format()`` method to produce the letter as one
     big template, rather than building up a big string that produces the letter in parts.
