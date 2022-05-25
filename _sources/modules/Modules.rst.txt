@@ -84,7 +84,7 @@ But you should strive for proper style. Isn't this easier to read?
     x = (3 * 4) + (12 / func(x, y, z))
 
 
-.. centered:: **Read** `**PEP 8** <https://www.python.org/dev/peps/pep-0008/>`_ **and install a linter in your editor.**
+.. centered:: **Read** `PEP 8 <https://www.python.org/dev/peps/pep-0008/>`_ **and install a linter in your editor.**
 
 
 Modules and Packages
@@ -388,11 +388,13 @@ In that case, you can simply add more "dots" and follow the same rules as above.
 
     from packagename import my_funcs.this_func
 
-Here's a nice reference for more detail:
+.. Here's a nice reference for more detail:
 
-http://effbot.org/zone/import-confusion.htm
+.. http://effbot.org/zone/import-confusion.htm
 
-And :ref:`packaging` goes into more detail about creating (and distributing!) your own package.
+.. And
+
+:ref:`packaging` goes into more detail about creating (and distributing!) your own package.
 
 
 What does ``import`` actually do?

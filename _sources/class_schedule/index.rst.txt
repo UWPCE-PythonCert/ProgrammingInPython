@@ -1,7 +1,7 @@
 :orphan:
 
 #########################
-Python 210 Class Schedule
+Python 310 Class Schedule
 #########################
 
 .. toctree::
