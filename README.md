@@ -1,6 +1,6 @@
-# Python210CourseMaterials
+# Python310CourseMaterials
 
-Course Materials for Python 210
+Course Materials for Python 310: the first course in the UWPCE Python Certificate Program.
 
 Published here:
 

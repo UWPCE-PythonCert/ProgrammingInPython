@@ -84,7 +84,7 @@ But you should strive for proper style. Isn't this easier to read?
     x = (3 * 4) + (12 / func(x, y, z))
 
 
-.. centered:: **Read** `**PEP 8** <https://www.python.org/dev/peps/pep-0008/>`_ **and install a linter in your editor.**
+.. centered:: **Read** `PEP 8 <https://www.python.org/dev/peps/pep-0008/>`_ **and install a linter in your editor.**
 
 
 Modules and Packages
