@@ -485,6 +485,6 @@ Running ``mod2.py`` results in::
     Still in mod2: mod1.x = 555
     mod3 changed the value in mod1, and that change shows up in mod2
 
-You can see that when ``mod2`` changed the value of ``mod1.x``, that changed the value everywhere that ``mod1`` is imported. You want to be very careful about this.
+You can see that when ``mod3`` changed the value of ``mod1.x``, that changed the value everywhere that ``mod1`` is imported. You want to be very careful about this.
 
 If you are writing ``mod2.py``, and did not write ``mod3`` (or wrote it long enough ago that you don't remember its details), you might be very surprised that a value in ``mod1`` changes simply because you imported ``mod3``.  This is known as a "side effect", and you generally want to avoid them!
